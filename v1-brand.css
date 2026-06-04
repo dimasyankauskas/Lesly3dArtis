@@ -224,6 +224,7 @@
 :root[data-version="v1"] .work-card .thumb{
   aspect-ratio:4/3;background:linear-gradient(135deg,#1a1d27,#0e1118);
   border:0;border-radius:0;display:block;position:relative;overflow:hidden;
+  margin:0;
 }
 :root[data-version="v1"] .work-card .thumb img{
   display:block;width:100%;height:100%;object-fit:cover;
@@ -234,14 +235,16 @@
   pointer-events:none;
 }
 :root[data-version="v1"] .work-card .card-body{padding:1.25rem 1.4rem 1.4rem}
-:root[data-version="v1"] .work-card h3{font-style:italic;font-weight:500;font-size:1.1rem;margin:0 0 .35rem;line-height:1.3}
+:root[data-version="v1"] .work-card h3{
+  font-style:italic;font-weight:500;font-size:1.1rem;margin:1.1rem 1.4rem .35rem;line-height:1.3;
+}
 :root[data-version="v1"] .work-card .meta{
   font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--subtle);margin:0 0 .6rem;display:inline-block;
+  color:var(--subtle);margin:0 1.4rem .6rem;display:inline-block;
   border:1px solid var(--border);border-radius:999px;
   padding:.3rem .65rem;
 }
-:root[data-version="v1"] .work-card p{color:var(--muted);font-size:.92rem;line-height:1.55;margin:0}
+:root[data-version="v1"] .work-card p{color:var(--muted);font-size:.92rem;line-height:1.55;margin:0 1.4rem 1.4rem}
 :root[data-version="v1"] .work-card.is-hidden{display:none}
 
 /* ============================== */
