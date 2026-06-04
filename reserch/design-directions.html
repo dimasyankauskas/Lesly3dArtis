@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesly — 4 Design Directions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* ============================== */
+/* Document chrome (the frame)    */
+/* ============================== */
+:root{--frame-bg:#0e0e10;--frame-text:#e8e4dc;--frame-muted:#8a857c;--frame-accent:#d4a574;--frame-border:#26252a;--frame-code-bg:#1a1a1e}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--frame-bg);color:var(--frame-text);font-family:'Inter',system-ui,sans-serif;line-height:1.55}
+.frame-header{position:sticky;top:0;z-index:50;background:rgba(14,14,16,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--frame-border);padding:.75rem clamp(1rem,3vw,2rem);display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.frame-header h1{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;margin:0;letter-spacing:.01em;color:var(--frame-text);flex:1 1 240px;min-width:240px}
+.frame-header h1 small{display:block;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--frame-muted);margin-bottom:.25rem}
+.frame-nav{display:flex;gap:.5rem;flex-wrap:wrap}
+.frame-nav a{text-decoration:none;color:var(--frame-muted);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.5rem .8rem;border:1px solid transparent;border-radius:8px;transition:.15s ease}
+.frame-nav a:hover{color:var(--frame-text);border-color:var(--frame-border);background:rgba(255,255,255,.04)}
+.frame-intro{max-width:920px;margin:0 auto;padding:clamp(2rem,5vw,4rem) clamp(1rem,4vw,2rem) 2rem}
+.frame-intro p{color:var(--frame-muted);font-size:1.05rem;margin:0 0 1rem}
+.frame-intro p strong{color:var(--frame-text)}
+
+/* ============================== */
+/* Direction wrapper + dividers   */
+/* ============================== */
+.dir{padding:0;position:relative}
+.dir + .dir{border-top:1px solid var(--frame-border)}
+.dir-marker{position:relative;background:#18181b;padding:clamp(2.5rem,6vw,5rem) clamp(1rem,4vw,2rem) 1.5rem;text-align:center;border-bottom:1px solid var(--frame-border)}
+.dir-marker .num{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5rem);font-weight:500;line-height:1;color:var(--frame-accent);margin:0 0 .25rem}
+.dir-marker .label{display:inline-block;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--frame-muted);font-weight:700;margin-bottom:.5rem}
+.dir-marker h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:500;margin:0 0 1rem;line-height:1.1;color:var(--frame-text)}
+.dir-marker p{max-width:640px;margin:0 auto 1.5rem;color:var(--frame-muted);font-size:1rem}
+.dir-scores{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.dir-score{padding:.75rem 1rem;border:1px solid var(--frame-border);border-radius:10px;background:#0e0e10;min-width:200px;text-align:left}
+.dir-score b{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--frame-muted);font-weight:700;display:block;margin-bottom:.35rem}
+.dir-score .v{font-family:'JetBrains Mono',monospace;font-size:1.1rem;color:var(--frame-accent);font-weight:600}
+.dir-score .n{color:var(--frame-text);font-size:.85rem;margin-top:.25rem;display:block}
+.dir-pick{display:inline-block;margin-top:1.5rem;padding:.7rem 1.4rem;background:var(--frame-accent);color:#0e0e10;border:0;border-radius:999px;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;font-family:inherit}
+.dir-note{font-size:.85rem;color:var(--frame-muted);margin:1rem auto 0;max-width:580px}
+
+/* ============================== */
+/* Shared shape tokens per dir    */
+/* Each .dir-N sets its own       */
+/* colors, type, spacing, motion  */
+/* ============================== */
+.dir-header{padding:1.25rem clamp(1rem,4vw,2.5rem);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.dir-header .brand{font-weight:700;letter-spacing:.05em;text-decoration:none;color:inherit;display:inline-flex;align-items:center;gap:.6rem}
+.dir-header .brand .mark{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:.9rem}
+.dir-header .nav{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap}
+.dir-header .nav a{text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.dir-header .nav a.cta{padding:.55rem 1rem;border-radius:999px;opacity:1}
+.dir-hero{padding:clamp(2.5rem,5vw,4.5rem) clamp(1rem,4vw,2.5rem);min-height:60vh;display:flex;flex-direction:column;justify-content:center}
+.dir-hero .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;margin-bottom:1rem;display:inline-block}
+.dir-hero h1{font-size:clamp(2.2rem,5.5vw,4.2rem);line-height:1.02;margin:0 0 1.25rem;letter-spacing:-.02em}
+.dir-hero .lead{font-size:clamp(1rem,1.6vw,1.2rem);max-width:620px;margin:0 0 1.5rem;opacity:.85}
+.dir-hero .actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+.dir-hero .actions a{padding:.85rem 1.4rem;border-radius:10px;text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.4rem}
+.dir-hero .actions .primary{background:var(--accent);color:var(--accent-text);border:1px solid var(--accent)}
+.dir-hero .actions .secondary{border:1px solid var(--accent);color:var(--accent);background:transparent}
+.dir-section{padding:clamp(3rem,6vw,5rem) clamp(1rem,4vw,2.5rem)}
+.dir-section .head{max-width:760px;margin:0 auto 2.5rem;text-align:center}
+.dir-section .head .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;margin-bottom:.75rem;display:inline-block;opacity:.8}
+.dir-section .head h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.05;margin:0 0 1rem;letter-spacing:-.02em}
+.dir-section .head p{margin:0;opacity:.8;font-size:1rem}
+.dir-section.alt{background:rgba(255,255,255,.02)}
+.dir-grid{display:grid;gap:1.25rem}
+.dir-card{padding:1.5rem;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.dir-card .ph{aspect-ratio:4/3;border-radius:8px;background:rgba(255,255,255,.04);display:grid;place-items:center;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;opacity:.5;margin-bottom:1rem;border:1px dashed rgba(255,255,255,.12)}
+.dir-card h3{font-size:1.1rem;margin:0 0 .5rem;line-height:1.2}
+.dir-card p{margin:0;font-size:.92rem;opacity:.8}
+.dir-strip{display:flex;flex-wrap:wrap;gap:.5rem;padding:1.5rem clamp(1rem,4vw,2.5rem);border-block:1px solid rgba(255,255,255,.06);justify-content:center}
+.dir-strip span{padding:.4rem .8rem;border:1px solid rgba(255,255,255,.1);border-radius:999px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+.dir-form{display:grid;gap:1rem;padding:1.5rem;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.dir-form label{display:grid;gap:.35rem;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8;font-weight:600}
+.dir-form input,.dir-form select,.dir-form textarea{width:100%;padding:.8rem .9rem;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.2);color:inherit;font:inherit;font-size:.95rem}
+.dir-form textarea{min-height:120px;resize:vertical}
+.dir-form button{padding:.85rem 1.4rem;border:0;background:var(--accent);color:var(--accent-text);border-radius:10px;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+.dir-footer{padding:2rem clamp(1rem,4vw,2.5rem);border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.85rem;opacity:.7}
+.dir-casestudy{padding:clamp(2.5rem,5vw,4.5rem) clamp(1rem,4vw,2.5rem);border-top:1px solid rgba(255,255,255,.06)}
+.dir-casestudy .ph-hero{aspect-ratio:16/9;border-radius:14px;background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(0,0,0,.2));display:grid;place-items:center;margin-bottom:2rem;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;opacity:.4;border:1px dashed rgba(255,255,255,.12)}
+.dir-casestudy .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;padding:1.25rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.06);margin-bottom:2rem}
+.dir-casestudy .meta div b{display:block;font-family:'JetBrains Mono',monospace;font-size:1.1rem;margin-bottom:.15rem}
+.dir-casestudy .meta div span{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+.dir-casestudy .steps{display:grid;gap:1rem;margin-top:1.5rem}
+.dir-casestudy .step{padding:1.25rem;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);display:grid;grid-template-columns:60px 1fr;gap:1rem;align-items:start}
+.dir-casestudy .step b{font-family:'JetBrains Mono',monospace;font-size:1.4rem;line-height:1;opacity:.8}
+.dir-casestudy .step h4{margin:0 0 .35rem;font-size:1rem}
+.dir-casestudy .step p{margin:0;font-size:.9rem;opacity:.8}
+.dir-casestudy .step .tool{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-bottom:.5rem;display:block}
+
+/* ============================== */
+/* DIRECTION 1 — Editorial Atelier*/
+/* (gold-on-black, 3-col,         */
+/* all-caps condensed + serif)    */
+/* ============================== */
+.dir-1{--accent:#d4a574;--accent-text:#0a0a0c;background:#0a0a0c;color:#f0e8d8}
+.dir-1 .dir-marker{background:#0a0a0c;color:#f0e8d8}
+.dir-1 .dir-marker h2,.dir-1 .dir-marker .num{color:#d4a574}
+.dir-1 .dir-header{border-bottom:1px solid #1c1c1f}
+.dir-1 .dir-header .brand .mark{border:1px solid #d4a574;color:#d4a574}
+.dir-1 .dir-header .nav a.cta{border:1px solid #d4a574;color:#d4a574}
+.dir-1 .dir-hero{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:2rem;align-items:center;padding-top:clamp(1.5rem,3vw,2.5rem);padding-bottom:clamp(2rem,4vw,3.5rem)}
+.dir-1 .dir-hero .left,.dir-1 .dir-hero .right{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;line-height:1.6;opacity:.85}
+.dir-1 .dir-hero .left h2,.dir-1 .dir-hero .right h2{font-family:'Anton',sans-serif;font-style:normal;font-size:clamp(1.4rem,2.4vw,1.9rem);letter-spacing:.04em;line-height:1.05;margin:0 0 1rem;color:#d4a574;text-transform:uppercase}
+.dir-1 .dir-hero .left a,.dir-1 .dir-hero .right a{color:#d4a574;text-decoration:none;font-family:'Anton',sans-serif;font-style:normal;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;display:inline-block;margin-bottom:.75rem}
+.dir-1 .dir-hero .left a::before{content:"↗ ";opacity:.7}
+.dir-1 .dir-hero .right a::before{content:"↗ ";opacity:.7}
+.dir-1 .dir-hero .center{position:relative;aspect-ratio:3/4;border-radius:0;overflow:hidden;background:radial-gradient(circle at 50% 30%,#25201b,#0a0a0c 70%);display:grid;place-items:center;border:1px solid #1c1c1f}
+.dir-1 .dir-hero .center::after{content:"[Stylized 3D character — front 3/4 pose]";font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;opacity:.4;position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);text-align:center;width:80%}
+.dir-1 .dir-section.alt{background:#101013}
+.dir-1 .dir-grid{grid-template-columns:repeat(3,1fr)}
+.dir-1 .dir-card{background:#101013;border:1px solid #1c1c1f}
+.dir-1 .dir-card h3{font-family:'Anton',sans-serif;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase}
+.dir-1 .dir-strip{border-color:#1c1c1f}
+.dir-1 .dir-strip span{border-color:#2a2a2e;background:#101013;color:#d4a574;font-family:'JetBrains Mono',monospace;font-size:.7rem}
+.dir-1 .dir-casestudy .ph-hero{background:radial-gradient(circle at 50% 40%,#25201b,#0a0a0c 70%);border:1px solid #1c1c1f}
+.dir-1 .dir-casestudy .meta{background:#101013;border-color:#1c1c1f}
+.dir-1 .dir-casestudy .meta div b{color:#d4a574}
+.dir-1 .dir-casestudy .step{background:#101013;border-color:#1c1c1f}
+.dir-1 .dir-casestudy .step b{color:#d4a574}
+.dir-1 .dir-form{background:#101013;border-color:#1c1c1f}
+.dir-1 .dir-form input,.dir-1 .dir-form select,.dir-1 .dir-form textarea{background:#0a0a0c;border-color:#2a2a2e;color:#f0e8d8}
+.dir-1 .dir-footer{border-color:#1c1c1f}
+.dir-1 .dir-section .head h2,.dir-1 .dir-section .head .eyebrow{font-family:'Anton',sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.dir-1 .dir-section .head h2{font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.05}
+.dir-1 .dir-section .head .eyebrow{color:#d4a574}
+
+/* ============================== */
+/* DIRECTION 2 — Pipeline Atelier*/
+/* (light, dense, scannable,      */
+/* technical, B&W + red accent)   */
+/* ============================== */
+.dir-2{--accent:#c44536;--accent-text:#faf7f1;background:#faf7f1;color:#0e0e0e}
+.dir-2 .dir-marker{background:#faf7f1;color:#0e0e0e}
+.dir-2 .dir-marker h2,.dir-2 .dir-marker .num{color:#c44536}
+.dir-2 .dir-header{border-bottom:1px solid #e0dcd0;background:#faf7f1}
+.dir-2 .dir-header .brand .mark{border:1px solid #0e0e0e;color:#0e0e0e}
+.dir-2 .dir-header .nav a.cta{border:1px solid #0e0e0e;background:#0e0e0e;color:#faf7f1}
+.dir-2 .dir-hero{padding-bottom:1rem}
+.dir-2 .dir-hero h1{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.95}
+.dir-2 .dir-hero .eyebrow{color:#c44536}
+.dir-2 .dir-hero .lead{max-width:none;font-size:1.1rem}
+.dir-2 .dir-section.alt{background:#f0ece2}
+.dir-2 .dir-grid{grid-template-columns:repeat(3,1fr);gap:1px;background:#e0dcd0;border:1px solid #e0dcd0}
+.dir-2 .dir-card{background:#faf7f1;border:0;border-radius:0}
+.dir-2 .dir-card .ph{background:#f0ece2;border:1px dashed #c4bfb0;color:#7a756a}
+.dir-2 .dir-card h3{font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;display:flex;align-items:baseline;gap:.5rem}
+.dir-2 .dir-card h3::before{content:attr(data-n);font-family:'JetBrains Mono',monospace;font-size:.7rem;color:#c44536;font-weight:600;letter-spacing:.05em}
+.dir-2 .dir-card p{font-size:.88rem;color:#3a3a3a}
+.dir-2 .dir-strip{background:#0e0e0e;border-color:#0e0e0e;justify-content:flex-start}
+.dir-2 .dir-strip span{border-color:#2a2a2a;background:transparent;color:#e0dcd0;font-family:'JetBrains Mono',monospace;text-transform:none;letter-spacing:0;font-size:.75rem}
+.dir-2 .dir-casestudy .ph-hero{background:linear-gradient(135deg,#f0ece2,#d8d2c2);border:1px solid #c4bfb0;color:#7a756a}
+.dir-2 .dir-casestudy .meta{background:#0e0e0e;color:#faf7f1;border-color:#0e0e0e}
+.dir-2 .dir-casestudy .meta div b{color:#c44536}
+.dir-2 .dir-casestudy .meta div span{color:#c4bfb0}
+.dir-2 .dir-casestudy .step{background:#faf7f1;border:1px solid #e0dcd0;border-radius:0;display:grid;grid-template-columns:50px 80px 1fr;gap:1rem}
+.dir-2 .dir-casestudy .step b{color:#c44536;font-size:1.2rem}
+.dir-2 .dir-casestudy .step .tool{color:#7a756a}
+.dir-2 .dir-form{background:#faf7f1;border:1px solid #0e0e0e;border-radius:0}
+.dir-2 .dir-form input,.dir-2 .dir-form select,.dir-2 .dir-form textarea{background:#faf7f1;border:1px solid #c4bfb0;color:#0e0e0e}
+.dir-2 .dir-form button{background:#0e0e0e;color:#faf7f1;border-radius:0}
+.dir-2 .dir-footer{border-color:#0e0e0e;color:#3a3a3a}
+.dir-2 .dir-section .head{text-align:left;border-bottom:1px solid #0e0e0e;padding-bottom:1.5rem;margin-bottom:2rem}
+.dir-2 .dir-section .head h2{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1}
+.dir-2 .dir-section .head .eyebrow{color:#c44536}
+
+/* ============================== */
+/* DIRECTION 3 — Studio Reel      */
+/* (deep navy, full-bleed,        */
+/* game-studio cinematic)         */
+/* ============================== */
+.dir-3{--accent:#e8c98a;--accent-text:#0e1320;background:#0e1320;color:#f3f0e9}
+.dir-3 .dir-marker{background:#0a0f1c;color:#f3f0e9}
+.dir-3 .dir-marker h2,.dir-3 .dir-marker .num{color:#e8c98a}
+.dir-3 .dir-header{border-bottom:1px solid #1a2030;background:rgba(14,19,32,.9);backdrop-filter:blur(10px);position:sticky;top:0;z-index:5}
+.dir-3 .dir-header .brand .mark{border:1px solid #e8c98a;color:#e8c98a}
+.dir-3 .dir-header .nav a.cta{border:1px solid #e8c98a;color:#e8c98a}
+.dir-3 .dir-hero{position:relative;min-height:80vh;padding:0;display:block}
+.dir-3 .dir-hero .bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,#1f2a3f 0%,#0e1320 60%),linear-gradient(180deg,#0e1320,#0a0f1c);display:grid;place-items:center}
+.dir-3 .dir-hero .bg::after{content:"[Cinematic 3D character render — full bleed, 16:9]";font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;opacity:.35}
+.dir-3 .dir-hero .overlay{position:relative;padding:clamp(2rem,5vw,4rem) clamp(1rem,4vw,2.5rem) clamp(2.5rem,6vw,5rem);min-height:80vh;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(0deg,#0e1320 5%,transparent 60%)}
+.dir-3 .dir-hero .eyebrow{color:#e8c98a}
+.dir-3 .dir-hero h1{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.03em;line-height:1.02;font-size:clamp(2.4rem,6vw,4.8rem);max-width:14ch}
+.dir-3 .dir-hero .lead{max-width:540px;font-size:1.05rem}
+.dir-3 .dir-section.alt{background:#0a0f1c}
+.dir-3 .dir-grid{grid-template-columns:repeat(2,1fr);gap:0;background:#0a0f1c}
+.dir-3 .dir-card{background:transparent;border:1px solid #1a2030;border-radius:0;padding:0;overflow:hidden}
+.dir-3 .dir-card .ph{aspect-ratio:16/9;border-radius:0;background:linear-gradient(135deg,#1f2a3f,#0e1320);border:0;margin-bottom:0;color:#e8c98a}
+.dir-3 .dir-card .body{padding:1.25rem}
+.dir-3 .dir-card h3{font-family:'Space Grotesk',sans-serif;font-weight:600}
+.dir-3 .dir-strip{border-color:#1a2030}
+.dir-3 .dir-strip span{border-color:#1a2030;background:transparent;color:#e8c98a;font-family:'JetBrains Mono',monospace}
+.dir-3 .dir-casestudy .ph-hero{aspect-ratio:21/9;background:radial-gradient(circle at 70% 50%,#1f2a3f,#0e1320 70%);border:0;border-radius:0;color:#e8c98a}
+.dir-3 .dir-casestudy .meta{background:#0a0f1c;border-color:#1a2030}
+.dir-3 .dir-casestudy .meta div b{color:#e8c98a}
+.dir-3 .dir-casestudy .step{background:#0a0f1c;border-color:#1a2030}
+.dir-3 .dir-casestudy .step b{color:#e8c98a}
+.dir-3 .dir-casestudy .step .tool{color:#e8c98a;opacity:.7}
+.dir-3 .dir-form{background:#0a0f1c;border-color:#1a2030}
+.dir-3 .dir-form input,.dir-3 .dir-form select,.dir-3 .dir-form textarea{background:#0e1320;border-color:#1a2030;color:#f3f0e9}
+.dir-3 .dir-footer{border-color:#1a2030}
+.dir-3 .dir-section .head h2{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em}
+.dir-3 .dir-section .head .eyebrow{color:#e8c98a}
+
+/* ============================== */
+/* DIRECTION 4 — Quiet Premium    */
+/* (cream, generous whitespace,   */
+/* type-driven, restrained)       */
+/* ============================== */
+.dir-4{--accent:#a64b2a;--accent-text:#faf7f1;background:#faf7f1;color:#0c0c0e}
+.dir-4 .dir-marker{background:#faf7f1;color:#0c0c0e}
+.dir-4 .dir-marker h2,.dir-4 .dir-marker .num{color:#a64b2a}
+.dir-4 .dir-header{border-bottom:1px solid #ece6d8;background:rgba(250,247,241,.92);backdrop-filter:blur(8px)}
+.dir-4 .dir-header .brand .mark{border:1px solid #0c0c0e;color:#0c0c0e;font-family:'Cormorant Garamond',serif;font-size:1.1rem}
+.dir-4 .dir-header .nav a.cta{border:1px solid #0c0c0e;color:#0c0c0e}
+.dir-4 .dir-hero{max-width:720px;margin:0 auto;padding:clamp(4rem,10vw,8rem) clamp(1rem,4vw,2rem) clamp(3rem,6vw,5rem);text-align:left}
+.dir-4 .dir-hero .eyebrow{color:#a64b2a}
+.dir-4 .dir-hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;letter-spacing:-.01em;line-height:1.05;font-size:clamp(2.4rem,5vw,3.8rem)}
+.dir-4 .dir-hero .lead{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;line-height:1.5;opacity:.75}
+.dir-4 .dir-hero .actions a.primary{background:#0c0c0e;color:#faf7f1;border-color:#0c0c0e}
+.dir-4 .dir-hero .actions a.secondary{color:#0c0c0e;border-color:#0c0c0e}
+.dir-4 .dir-section{max-width:880px;margin:0 auto;padding:clamp(3rem,7vw,6rem) clamp(1rem,4vw,2rem)}
+.dir-4 .dir-section.alt{background:#f3eee0}
+.dir-4 .dir-section .head{text-align:left;margin-bottom:3rem}
+.dir-4 .dir-section .head h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1}
+.dir-4 .dir-section .head .eyebrow{color:#a64b2a}
+.dir-4 .dir-section .head p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;opacity:.75}
+.dir-4 .dir-grid{grid-template-columns:1fr;gap:1.5rem}
+.dir-4 .dir-card{background:transparent;border:0;border-top:1px solid #d8d0bc;border-radius:0;padding:1.5rem 0;display:grid;grid-template-columns:80px 1fr;gap:1.5rem;align-items:start}
+.dir-4 .dir-card .ph{aspect-ratio:1;background:#ece6d8;border:0;color:#a64b2a}
+.dir-4 .dir-card h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;font-size:1.3rem}
+.dir-4 .dir-card p{font-size:.92rem;opacity:.75;line-height:1.6}
+.dir-4 .dir-strip{justify-content:flex-start;padding-inline:clamp(1rem,4vw,2rem);border-color:#ece6d8}
+.dir-4 .dir-strip span{border:0;border-bottom:1px solid #d8d0bc;background:transparent;color:#0c0c0e;font-family:'Cormorant Garamond',serif;font-size:.95rem;text-transform:none;letter-spacing:0;padding:.3rem 0;margin-right:1.5rem}
+.dir-4 .dir-casestudy .ph-hero{aspect-ratio:16/10;background:#ece6d8;border:0;border-radius:0;color:#a64b2a}
+.dir-4 .dir-casestudy .meta{background:transparent;border:0;border-top:1px solid #d8d0bc;border-bottom:1px solid #d8d0bc;border-radius:0;padding-block:1.5rem}
+.dir-4 .dir-casestudy .meta div b{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:#0c0c0e}
+.dir-4 .dir-casestudy .meta div span{font-family:'Cormorant Garamond',serif;text-transform:none;letter-spacing:0;font-size:.85rem;opacity:.6}
+.dir-4 .dir-casestudy .step{background:transparent;border:0;border-top:1px solid #d8d0bc;border-radius:0;display:grid;grid-template-columns:60px 1fr;gap:1.5rem;padding-block:1.5rem}
+.dir-4 .dir-casestudy .step b{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;font-weight:500;color:#a64b2a}
+.dir-4 .dir-casestudy .step h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;font-size:1.2rem}
+.dir-4 .dir-casestudy .step .tool{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.5;margin-bottom:.5rem}
+.dir-4 .dir-casestudy .step p{font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.6;opacity:.8}
+.dir-4 .dir-form{background:transparent;border:0;padding:0}
+.dir-4 .dir-form label{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#0c0c0e;opacity:.7;font-weight:500}
+.dir-4 .dir-form input,.dir-4 .dir-form select,.dir-4 .dir-form textarea{background:transparent;border:0;border-bottom:1px solid #d8d0bc;color:#0c0c0e;padding:.5rem 0;border-radius:0}
+.dir-4 .dir-form button{background:#0c0c0e;color:#faf7f1;border-radius:0;padding:1rem 2rem}
+.dir-4 .dir-footer{border-color:#d8d0bc;color:#0c0c0e;opacity:.7}
+
+/* Responsive */
+@media(max-width:900px){
+  .dir-1 .dir-hero{grid-template-columns:1fr}
+  .dir-1 .dir-hero .left,.dir-1 .dir-hero .right{order:2}
+  .dir-1 .dir-hero .center{order:1;aspect-ratio:4/5}
+  .dir-2 .dir-grid{grid-template-columns:1fr 1fr}
+  .dir-3 .dir-grid{grid-template-columns:1fr}
+  .dir-4 .dir-card{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .dir-2 .dir-grid{grid-template-columns:1fr}
+  .frame-header{flex-direction:column;align-items:flex-start}
+}
+  </style>
+</head>
+<body>
+
+<!-- ========== Frame header ========== -->
+<header class="frame-header">
+  <h1><small>Lesly 3D Artist — pick a design direction</small>4 design systems, one content brief</h1>
+  <nav class="frame-nav" aria-label="Direction nav">
+    <a href="#d1">Direction 1</a>
+    <a href="#d2">Direction 2</a>
+    <a href="#d3">Direction 3</a>
+    <a href="#d4">Direction 4</a>
+  </nav>
+</header>
+
+<section class="frame-intro">
+  <p>Below are <strong>4 fully-realized design directions</strong> for the Lesly 3D Character Artist site. Each one uses the same content brief, so the contrast is purely design and audience fit, not copy. Open this file in a browser and scroll. After each direction you'll find a score and a 2-line note about what the direction is <em>for</em> and what it <em>trades off</em>.</p>
+  <p>Two audiences are being weighed: <strong>hiring managers at US game studios</strong> who spend 6–15 seconds on a portfolio, and <strong>clients hiring an elite $100/hr freelance character artist</strong> who decide on taste, process visibility, and production maturity. A direction that scores 5/5 for one audience usually scores 2–3/5 for the other. Pick the one that matches where Lesly's next year is going.</p>
+  <p>Placeholder geometry stands in for the real portfolio images. When you pick a direction, those blocks are replaced with the actual mockup art from <code>reserch/visuals/</code>.</p>
+</section>
+
+<!-- ========== DIRECTION 1 — Editorial Atelier ========== -->
+<section class="dir dir-1" id="d1">
+  <div class="dir-marker">
+    <div class="label">Direction 1</div>
+    <div class="num">I.</div>
+    <h2>Editorial Atelier</h2>
+    <p>Gold-on-black, 3-column hero, all-caps condensed display + serif italics body. Fashion-magazine composition. The character is the brand, not a card with borders.</p>
+    <div class="dir-scores">
+      <div class="dir-score"><b>FT recruiter skim</b><span class="v">3 / 5</span><span class="n">Beautiful but skimmable only after the 1st scroll. 6-second filter is harder to pass.</span></div>
+      <div class="dir-score"><b>Elite $100/hr freelance</b><span class="v">5 / 5</span><span class="n">"I'm a working artist, not a marketing site" — taste signal, no template aesthetic.</span></div>
+    </div>
+    <p class="dir-note">Why this works: art-direction circles share this aesthetic. The character is the entire brand.<br>What you trade: recruiters may bounce at the 1st screen thinking it's a portfolio-only site with no "production proof" density.</p>
+    <a class="dir-pick" href="#d1">← Pick Direction 1</a>
+  </div>
+
+  <!-- Mock page for Direction 1 -->
+  <div>
+    <header class="dir-header">
+      <a class="brand" href="#top"><span class="mark">L</span><strong>Lesly</strong></a>
+      <nav class="nav">
+        <a href="#d1-work">Work</a>
+        <a href="#d1-services">Services</a>
+        <a href="#d1-process">Process</a>
+        <a href="#d1-about">About</a>
+        <a class="cta" href="#d1-contact">Start a Project</a>
+      </nav>
+    </header>
+
+    <section class="dir-hero">
+      <div class="left">
+        <h2>Projects &amp; Visuals</h2>
+        <a href="#d1-work">Explore Work</a>
+        <p>A look into my work as a 3D character artist — characters, outfits, and game-ready assets. Production-ready 3D for games, creators, startups, and real-time worlds.</p>
+      </div>
+      <div class="center"></div>
+      <div class="right">
+        <h2>About Me</h2>
+        <a href="#d1-about">Read More</a>
+        <p>I'm Lesly — a 3D character artist focused on stylized characters, avatars, mascots, and game-ready assets. Painter's eye, production-ready delivery.</p>
+      </div>
+    </section>
+
+    <div class="dir-strip" id="d1-services">
+      <span>3D Character Artist</span><span>Character Modeling</span><span>Game-Ready</span><span>Avatars &amp; Mascots</span><span>Outfits</span><span>AI Workflow Support</span>
+    </div>
+
+    <section class="dir-section">
+      <div class="head"><div class="eyebrow">Services</div><h2>3D character services using current job-description language</h2><p>Service names are aligned to terms found in recent 3D Character Artist, Character Artist, 3D Modeler, Senior 3D Generalist, and contract/freelance project descriptions.</p></div>
+      <div class="dir-grid">
+        <article class="dir-card"><div class="ph">[Sculpt / model stage]</div><h3>3D Character Modeling</h3><p>From sketches, moodboards, written briefs, AI references, or existing concepts.</p></article>
+        <article class="dir-card"><div class="ph">[Final + wireframe]</div><h3>Game-Ready Character Assets</h3><p>Topology, UVs, textures, materials, and export-ready files for real-time workflows.</p></article>
+        <article class="dir-card"><div class="ph">[Avatar face + expressions]</div><h3>Avatars &amp; Mascots</h3><p>Stylized avatars, mascot characters, expressions, poses, and creator identities.</p></article>
+        <article class="dir-card"><div class="ph">[Outfit + accessories]</div><h3>Outfits, Skins &amp; Accessories</h3><p>Style consistency, texture/material detail, character fit, and variation sets.</p></article>
+        <article class="dir-card"><div class="ph">[Topology + UVs]</div><h3>Sculpting, Retopo, UVs &amp; Texturing</h3><p>High-poly sculpt, low-poly retopo, UV mapping, PBR or stylized texturing.</p></article>
+        <article class="dir-card"><div class="ph">[Deliverables grid]</div><h3>Production-Ready Delivery</h3><p>BLEND, FBX, OBJ, texture maps, turnarounds, and handoff notes per scope.</p></article>
+      </div>
+    </section>
+
+    <section class="dir-section alt" id="d1-work">
+      <div class="head"><div class="eyebrow">Work</div><h2>Selected 3D character work</h2><p>Characters, avatars, mascots, outfits, and production-ready assets. Each card leads to a case study showing process and production proof.</p></div>
+      <div class="dir-grid">
+        <article class="dir-card"><div class="ph">[Final render + wireframe]</div><h3>Game-Ready Character</h3><p>Final render, topology, UVs, textures, materials, export-ready delivery.</p></article>
+        <article class="dir-card"><div class="ph">[Sculpt → low-poly]</div><h3>Sculpting to Retopology</h3><p>High-poly sculpt, low-poly model, clean topology, UV layout.</p></article>
+        <article class="dir-card"><div class="ph">[Avatar with expressions]</div><h3>Avatar Character</h3><p>Personality, silhouette, expressions, poses, presentation renders.</p></article>
+        <article class="dir-card"><div class="ph">[Mascot with pose set]</div><h3>Mascot Character</h3><p>Mascot design, pose set, expression set, brand or product use case.</p></article>
+        <article class="dir-card"><div class="ph">[Outfit variations]</div><h3>Outfits, Skins &amp; Accessories</h3><p>Outfit variations, texture/material closeups, character fit.</p></article>
+        <article class="dir-card"><div class="ph">[Texture maps sheet]</div><h3>PBR / Stylized Texturing</h3><p>Texture maps, materials, UVs, closeups, final presentation.</p></article>
+      </div>
+    </section>
+
+    <section class="dir-casestudy" id="d1-process">
+      <div class="head"><div class="eyebrow">Case study peek</div><h2>From sculpt to engine-ready</h2><p>What a case study looks like in this direction. One project, six stages, audit-grade per-stage tool credits.</p></div>
+      <div class="ph-hero">[Final 16:9 render with rim light, mid-3/4 pose]</div>
+      <div class="meta">
+        <div><b>~18k</b><span>Triangles</span></div>
+        <div><b>2k / 1k</b><span>Texture sets</span></div>
+        <div><b>UE5</b><span>Target engine</span></div>
+        <div><b>4 wks</b><span>Window</span></div>
+      </div>
+      <div class="steps">
+        <div class="step"><b>01</b><div><span class="tool">ZBrush</span><h4>Sculpt</h4><p>Blocking primary and secondary forms, surface breakup, references collected and used for proportion and material read.</p></div></div>
+        <div class="step"><b>02</b><div><span class="tool">Maya</span><h4>Retopology</h4><p>Edge loops around deformation zones, target 18k triangles, hand-retopoed for clean deformation.</p></div></div>
+        <div class="step"><b>03</b><div><span class="tool">Maya · UV Toolkit</span><h4>UVs</h4><p>Head on UDIM 1000, body on 1001, packed for 2K / 1K texture sets with consistent texel density.</p></div></div>
+        <div class="step"><b>04</b><div><span class="tool">Marmoset Toolbag</span><h4>Bake</h4><p>Normal, AO, curvature, ID bake; cage adjusted, smoothing-group mismatches resolved.</p></div></div>
+        <div class="step"><b>05</b><div><span class="tool">Substance Painter</span><h4>Texture</h4><p>PBR set with smart materials, hand-painted variation, base color + roughness + normal + metalness.</p></div></div>
+        <div class="step"><b>06</b><div><span class="tool">Marmoset Toolbag</span><h4>Presentation</h4><p>3-point stylized lighting — key Rembrandt, sharp rim, HDRI sky fill — across hero, turnaround, closeup.</p></div></div>
+      </div>
+    </section>
+
+    <section class="dir-section" id="d1-about">
+      <div class="head"><div class="eyebrow">About</div><h2>Painter and 3D Character Artist</h2><p>Lesly creates 3D characters, avatars, mascots, outfits, skins, accessories, and game-ready assets for games, creators, startups, agencies, and brands.</p></div>
+    </section>
+
+    <section class="dir-section alt" id="d1-contact">
+      <div class="head"><div class="eyebrow">Start a project</div><h2>Tell Lesly about your character, avatar, mascot, outfit, or 3D asset.</h2><p>Share the character idea, references, use case, timeline, and required deliverables. Include sketches, moodboards, written briefs, AI references, or existing character concepts if available.</p></div>
+      <form class="dir-form" style="max-width:560px;margin:0 auto">
+        <label>Name<input placeholder="Your name"></label>
+        <label>Email<input type="email" placeholder="you@example.com"></label>
+        <label>Project type<select><option>3D Character Modeling</option><option>Game-Ready Character Asset</option><option>Avatar / Mascot</option></select></label>
+        <label>Message<textarea placeholder="Describe the character, style, references, timeline, deliverables…"></textarea></label>
+        <button type="button">Submit Project Brief</button>
+      </form>
+    </section>
+
+    <footer class="dir-footer"><strong>Lesly</strong><span>3D Character Artist · Game-Ready · Avatars · Mascots</span><span>© 2026</span></footer>
+  </div>
+</section>
+
+<!-- ========== DIRECTION 2 — Pipeline Atelier ========== -->
+<section class="dir dir-2" id="d2">
+  <div class="dir-marker">
+    <div class="label">Direction 2</div>
+    <div class="num">II.</div>
+    <h2>Pipeline Atelier</h2>
+    <p>Light, dense, scannable. Inter type, JetBrains Mono data. Production-grade technical aesthetic. Every section shows its work — triangle counts, poly budgets, texture resolutions visible inline.</p>
+    <div class="dir-scores">
+      <div class="dir-score"><b>FT recruiter skim</b><span class="v">5 / 5</span><span class="n">Role + level + production signal in &lt;2 seconds. 6-second filter is trivially passed.</span></div>
+      <div class="dir-score"><b>Elite $100/hr freelance</b><span class="v">2 / 5</span><span class="n">Reads "production artist", not "taste-led craftsperson". Less boutique, more agency.</span></div>
+    </div>
+    <p class="dir-note">Why this works: recruiters see "production-ready" before the second scroll.<br>What you trade: clients hiring a $100/hr specialist may not feel the artistic confidence. Feels more generalist than expert.</p>
+    <a class="dir-pick" href="#d2">← Pick Direction 2</a>
+  </div>
+
+  <div>
+    <header class="dir-header">
+      <a class="brand" href="#d2"><span class="mark">L</span><strong>Lesly — 3D Character Artist</strong></a>
+      <nav class="nav">
+        <a href="#d2-work">Work</a>
+        <a href="#d2-services">Services</a>
+        <a href="#d2-process">Process</a>
+        <a href="#d2-about">About</a>
+        <a class="cta" href="#d2-contact">Start a Project</a>
+      </nav>
+    </header>
+
+    <section class="dir-hero">
+      <p class="eyebrow">3D Character Artist · Character Modeling · Sculpting · Retopology · UVs · PBR Texturing</p>
+      <h1>Game-Ready Characters, Avatars, Mascots, Outfits &amp; Accessories.</h1>
+      <p class="lead">Lesly creates 3D characters and character assets from sketches, moodboards, written briefs, AI references, and existing concepts — with a focus on character modeling, sculpting, retopology, UVs, texturing, materials, and production-ready delivery.</p>
+      <div class="actions"><a class="primary" href="#d2-contact">Start a Project</a><a class="secondary" href="#d2-work">View Work</a></div>
+    </section>
+
+    <div class="dir-strip"><span>Blender</span><span>ZBrush</span><span>Substance Painter</span><span>Marmoset Toolbag</span><span>Maya</span><span>Unity</span><span>Unreal</span><span>Marvelous Designer</span><span>AI Workflow Support</span></div>
+
+    <section class="dir-section" id="d2-services">
+      <div class="head"><div class="eyebrow">Services / 01–06</div><h2>3D character services using current job-description language.</h2><p>Service names are aligned to terms found in recent 3D Character Artist, Character Artist, 3D Modeler, Senior 3D Generalist, and contract/freelance project descriptions.</p></div>
+      <div class="dir-grid">
+        <article class="dir-card"><div class="ph">[Reference → sculpt → final]</div><h3 data-n="01">3D Character Modeling</h3><p>From sketches, moodboards, written briefs, AI references, or existing concepts.</p></article>
+        <article class="dir-card"><div class="ph">[Final + wireframe + UVs]</div><h3 data-n="02">Game-Ready Character Assets</h3><p>Topology, UVs, textures, materials, and export-ready files for real-time workflows.</p></article>
+        <article class="dir-card"><div class="ph">[Avatar + expression set]</div><h3 data-n="03">Avatars &amp; Mascots</h3><p>Stylized avatars, mascot characters, expressions, poses, and creator identities.</p></article>
+        <article class="dir-card"><div class="ph">[Outfit + accessories grid]</div><h3 data-n="04">Outfits, Skins &amp; Accessories</h3><p>Style consistency, texture/material detail, character fit, variation sets.</p></article>
+        <article class="dir-card"><div class="ph">[Sculpt → retopo → UVs]</div><h3 data-n="05">Sculpting, Retopo, UVs &amp; Texturing</h3><p>High-poly sculpt, low-poly retopo, UV mapping, PBR or stylized texturing.</p></article>
+        <article class="dir-card"><div class="ph">[Deliverables checklist]</div><h3 data-n="06">Production-Ready Delivery</h3><p>BLEND, FBX, OBJ, texture maps, turnarounds, and handoff notes per scope.</p></article>
+      </div>
+    </section>
+
+    <section class="dir-section alt" id="d2-work">
+      <div class="head"><div class="eyebrow">Work / portfolio</div><h2>Portfolio work should show process and production proof.</h2><p>Current roles and projects ask for strong portfolios showing character art skills, topology, textures, optimization workflows, and production-ready assets. Each project card leads to a case study.</p></div>
+      <div class="dir-grid">
+        <article class="dir-card"><div class="ph">[Final render + wireframe]</div><h3 data-n="01">Game-Ready Character</h3><p>Final render, topology, UVs, textures, materials, export-ready delivery.</p></article>
+        <article class="dir-card"><div class="ph">[High-poly → low-poly]</div><h3 data-n="02">Sculpting to Retopology</h3><p>High-poly sculpt, low-poly model, clean topology, UV layout.</p></article>
+        <article class="dir-card"><div class="ph">[Avatar + expressions]</div><h3 data-n="03">Avatar Character</h3><p>Personality, silhouette, expressions, poses, presentation renders.</p></article>
+        <article class="dir-card"><div class="ph">[Mascot + pose set]</div><h3 data-n="04">Mascot Character</h3><p>Mascot design, pose set, expression set, brand or product use case.</p></article>
+        <article class="dir-card"><div class="ph">[Outfit variations]</div><h3 data-n="05">Outfits, Skins &amp; Accessories</h3><p>Outfit variations, texture/material closeups, character fit.</p></article>
+        <article class="dir-card"><div class="ph">[Texture maps sheet]</div><h3 data-n="06">PBR / Stylized Texturing</h3><p>Texture maps, materials, UVs, closeups, final presentation.</p></article>
+      </div>
+    </section>
+
+    <section class="dir-casestudy" id="d2-process">
+      <div class="head"><div class="eyebrow">Case study / process</div><h2>Sculpt to engine-ready, in order.</h2><p>One project, six stages with per-stage tool credits. Triangle count and texture resolution inline so recruiters can read the production signal at a glance.</p></div>
+      <div class="ph-hero">[Final 16:9 render]</div>
+      <div class="meta">
+        <div><b>18,432</b><span>Triangles</span></div>
+        <div><b>2048 / 1024</b><span>Body / head maps</span></div>
+        <div><b>UE5</b><span>Target engine</span></div>
+        <div><b>4 wks</b><span>Production window</span></div>
+        <div><b>~12k</b><span>Texture vertices</span></div>
+        <div><b>0</b><span>UV overlaps</span></div>
+      </div>
+      <div class="steps">
+        <div class="step"><b>01</b><span class="tool" style="align-self:center">ZBrush</span><div><h4>Sculpt</h4><p>Blocking primary and secondary forms, surface breakup, references for proportion and material read.</p></div></div>
+        <div class="step"><b>02</b><span class="tool" style="align-self:center">Maya</span><div><h4>Retopology</h4><p>Edge loops around deformation zones, target 18k triangles, hand-retopoed for clean deformation.</p></div></div>
+        <div class="step"><b>03</b><span class="tool" style="align-self:center">Maya · UV Toolkit</span><div><h4>UVs</h4><p>Head on UDIM 1000, body on 1001, packed for 2K / 1K texture sets with consistent texel density.</p></div></div>
+        <div class="step"><b>04</b><span class="tool" style="align-self:center">Marmoset Toolbag</span><div><h4>Bake</h4><p>Normal, AO, curvature, ID bake; cage adjusted, smoothing-group mismatches resolved.</p></div></div>
+        <div class="step"><b>05</b><span class="tool" style="align-self:center">Substance Painter</span><div><h4>Texture</h4><p>PBR set with smart materials, hand-painted variation, base color + roughness + normal + metalness.</p></div></div>
+        <div class="step"><b>06</b><span class="tool" style="align-self:center">Marmoset Toolbag</span><div><h4>Presentation</h4><p>3-point stylized lighting — key Rembrandt, sharp rim, HDRI sky fill — across hero, turnaround, closeup.</p></div></div>
+      </div>
+    </section>
+
+    <section class="dir-section" id="d2-about">
+      <div class="head"><div class="eyebrow">About / 01</div><h2>Painter and 3D Character Artist.</h2><p>Lesly creates 3D characters, avatars, mascots, outfits, skins, accessories, and game-ready assets for games, creators, startups, agencies, and brands. Her painting background supports color, form, anatomy, silhouette, texture, and storytelling.</p></div>
+    </section>
+
+    <section class="dir-section alt" id="d2-contact">
+      <div class="head"><div class="eyebrow">Start a project / form</div><h2>Tell Lesly about your character, avatar, mascot, outfit, or 3D asset.</h2><p>Share the character idea, references, use case, timeline, and required deliverables.</p></div>
+      <form class="dir-form" style="max-width:600px;margin:0 auto">
+        <label>Name<input placeholder="Your name"></label>
+        <label>Email<input type="email" placeholder="you@example.com"></label>
+        <label>Project type<select><option>3D Character Modeling</option><option>Game-Ready Character Asset</option><option>Avatar / Mascot</option></select></label>
+        <label>Message<textarea placeholder="Describe the character, style, references, timeline, deliverables…"></textarea></label>
+        <button type="button">Submit Project Brief</button>
+      </form>
+    </section>
+
+    <footer class="dir-footer"><strong>Lesly</strong><span>3D Character Artist · Character Modeling · Game-Ready Assets · AI Workflow Support</span><span>© 2026</span></footer>
+  </div>
+</section>
+
+<!-- ========== DIRECTION 3 — Studio Reel ========== -->
+<section class="dir dir-3" id="d3">
+  <div class="dir-marker">
+    <div class="label">Direction 3</div>
+    <div class="num">III.</div>
+    <h2>Studio Reel</h2>
+    <p>Deep navy, full-bleed 16:9, cinematic. Game-studio art-station aesthetic. Subtle parallax, the character is the brand. Title overlay bottom-left, the recruiter recognizes the studio language in &lt;2 seconds.</p>
+    <div class="dir-scores">
+      <div class="dir-score"><b>FT recruiter skim</b><span class="v">5 / 5</span><span class="n">"This person works in the game industry" reads in 2 seconds. Cinematic aesthetic matches studio reels.</span></div>
+      <div class="dir-score"><b>Elite $100/hr freelance</b><span class="v">4 / 5</span><span class="n">Has the "I make art" vibe, but the studio-aesthetic reads more agency than boutique.</span></div>
+    </div>
+    <p class="dir-note">Why this works: studio aesthetic = automatic cultural match. Recruiter skim + elite client both work.<br>What you trade: feels less like a personal atelier, more like a studio site. Some boutique clients may want more "Lesly as a person".</p>
+    <a class="dir-pick" href="#d3">← Pick Direction 3</a>
+  </div>
+
+  <div>
+    <header class="dir-header">
+      <a class="brand" href="#d3"><span class="mark">L</span><strong>Lesly</strong></a>
+      <nav class="nav">
+        <a href="#d3-work">Work</a>
+        <a href="#d3-services">Services</a>
+        <a href="#d3-process">Process</a>
+        <a href="#d3-about">About</a>
+        <a class="cta" href="#d3-contact">Start a Project</a>
+      </nav>
+    </header>
+
+    <section class="dir-hero">
+      <div class="bg"></div>
+      <div class="overlay">
+        <p class="eyebrow">3D Character Artist</p>
+        <h1>Game-Ready Characters, Avatars, Mascots, Outfits &amp; Accessories.</h1>
+        <p class="lead">Lesly creates 3D characters and character assets from sketches, moodboards, written briefs, AI references, and existing concepts — with a focus on character modeling, sculpting, retopology, UVs, texturing, materials, and production-ready delivery.</p>
+        <div class="actions"><a class="primary" href="#d3-contact">Start a Project</a><a class="secondary" href="#d3-work">View Work</a></div>
+      </div>
+    </section>
+
+    <div class="dir-strip" id="d3-services">
+      <span>3D Character Artist</span><span>Character Modeling</span><span>Game-Ready</span><span>Avatars &amp; Mascots</span><span>Outfits</span><span>AI Workflow Support</span>
+    </div>
+
+    <section class="dir-section">
+      <div class="head"><div class="eyebrow">Services</div><h2>3D character services using current job-description language</h2><p>Service names are aligned to terms found in recent 3D Character Artist, Character Artist, 3D Modeler, Senior 3D Generalist, and contract/freelance project descriptions.</p></div>
+      <div class="dir-grid">
+        <article class="dir-card"><div class="ph">[Sculpt / model stage]</div><div class="body"><h3>3D Character Modeling</h3><p>From sketches, moodboards, written briefs, AI references, or existing concepts.</p></div></article>
+        <article class="dir-card"><div class="ph">[Final + wireframe]</div><div class="body"><h3>Game-Ready Character Assets</h3><p>Topology, UVs, textures, materials, and export-ready files for real-time workflows.</p></div></article>
+        <article class="dir-card"><div class="ph">[Avatar face + expressions]</div><div class="body"><h3>Avatars &amp; Mascots</h3><p>Stylized avatars, mascot characters, expressions, poses, and creator identities.</p></div></article>
+        <article class="dir-card"><div class="ph">[Outfit + accessories]</div><div class="body"><h3>Outfits, Skins &amp; Accessories</h3><p>Style consistency, texture/material detail, character fit, and variation sets.</p></div></article>
+        <article class="dir-card"><div class="ph">[Topology + UVs]</div><div class="body"><h3>Sculpting, Retopo, UVs &amp; Texturing</h3><p>High-poly sculpt, low-poly retopo, UV mapping, PBR or stylized texturing.</p></div></article>
+        <article class="dir-card"><div class="ph">[Deliverables grid]</div><div class="body"><h3>Production-Ready Delivery</h3><p>BLEND, FBX, OBJ, texture maps, turnarounds, and handoff notes per scope.</p></div></article>
+      </div>
+    </section>
+
+    <section class="dir-section alt" id="d3-work">
+      <div class="head"><div class="eyebrow">Work</div><h2>Selected 3D character work</h2><p>Characters, avatars, mascots, outfits, and production-ready assets. Each card leads to a case study showing process and production proof.</p></div>
+      <div class="dir-grid">
+        <article class="dir-card"><div class="ph">[Final render + wireframe]</div><div class="body"><h3>Game-Ready Character</h3><p>Final render, topology, UVs, textures, materials, export-ready delivery.</p></div></article>
+        <article class="dir-card"><div class="ph">[Sculpt → low-poly]</div><div class="body"><h3>Sculpting to Retopology</h3><p>High-poly sculpt, low-poly model, clean topology, UV layout.</p></div></article>
+        <article class="dir-card"><div class="ph">[Avatar with expressions]</div><div class="body"><h3>Avatar Character</h3><p>Personality, silhouette, expressions, poses, presentation renders.</p></div></article>
+        <article class="dir-card"><div class="ph">[Mascot with pose set]</div><div class="body"><h3>Mascot Character</h3><p>Mascot design, pose set, expression set, brand or product use case.</p></div></article>
+        <article class="dir-card"><div class="ph">[Outfit variations]</div><div class="body"><h3>Outfits, Skins &amp; Accessories</h3><p>Outfit variations, texture/material closeups, character fit.</p></div></article>
+        <article class="dir-card"><div class="ph">[Texture maps sheet]</div><div class="body"><h3>PBR / Stylized Texturing</h3><p>Texture maps, materials, UVs, closeups, final presentation.</p></div></article>
+      </div>
+    </section>
+
+    <section class="dir-casestudy" id="d3-process">
+      <div class="head"><div class="eyebrow">Case study peek</div><h2>From sculpt to engine-ready</h2><p>What a case study looks like in this direction. Cinematic 21:9 hero, six stages, audit-grade per-stage tool credits.</p></div>
+      <div class="ph-hero">[Final 21:9 cinematic render]</div>
+      <div class="meta">
+        <div><b>~18k</b><span>Triangles</span></div>
+        <div><b>2k / 1k</b><span>Texture sets</span></div>
+        <div><b>UE5</b><span>Target engine</span></div>
+        <div><b>4 wks</b><span>Window</span></div>
+      </div>
+      <div class="steps">
+        <div class="step"><b>01</b><div><span class="tool">ZBrush</span><h4>Sculpt</h4><p>Blocking primary and secondary forms, surface breakup, references for proportion and material read.</p></div></div>
+        <div class="step"><b>02</b><div><span class="tool">Maya</span><h4>Retopology</h4><p>Edge loops around deformation zones, target 18k triangles, hand-retopoed for clean deformation.</p></div></div>
+        <div class="step"><b>03</b><div><span class="tool">Maya · UV Toolkit</span><h4>UVs</h4><p>Head on UDIM 1000, body on 1001, packed for 2K / 1K texture sets with consistent texel density.</p></div></div>
+        <div class="step"><b>04</b><div><span class="tool">Marmoset Toolbag</span><h4>Bake</h4><p>Normal, AO, curvature, ID bake; cage adjusted, smoothing-group mismatches resolved.</p></div></div>
+        <div class="step"><b>05</b><div><span class="tool">Substance Painter</span><h4>Texture</h4><p>PBR set with smart materials, hand-painted variation, base color + roughness + normal + metalness.</p></div></div>
+        <div class="step"><b>06</b><div><span class="tool">Marmoset Toolbag</span><h4>Presentation</h4><p>3-point stylized lighting — key Rembrandt, sharp rim, HDRI sky fill — across hero, turnaround, closeup.</p></div></div>
+      </div>
+    </section>
+
+    <section class="dir-section" id="d3-about">
+      <div class="head"><div class="eyebrow">About</div><h2>Painter and 3D Character Artist</h2><p>Lesly creates 3D characters, avatars, mascots, outfits, skins, accessories, and game-ready assets for games, creators, startups, agencies, and brands.</p></div>
+    </section>
+
+    <section class="dir-section alt" id="d3-contact">
+      <div class="head"><div class="eyebrow">Start a project</div><h2>Tell Lesly about your character, avatar, mascot, outfit, or 3D asset.</h2><p>Share the character idea, references, use case, timeline, and required deliverables.</p></div>
+      <form class="dir-form" style="max-width:560px;margin:0 auto">
+        <label>Name<input placeholder="Your name"></label>
+        <label>Email<input type="email" placeholder="you@example.com"></label>
+        <label>Project type<select><option>3D Character Modeling</option><option>Game-Ready Character Asset</option><option>Avatar / Mascot</option></select></label>
+        <label>Message<textarea placeholder="Describe the character, style, references, timeline, deliverables…"></textarea></label>
+        <button type="button">Submit Project Brief</button>
+      </form>
+    </section>
+
+    <footer class="dir-footer"><strong>Lesly</strong><span>3D Character Artist · Game-Ready · Avatars · Mascots</span><span>© 2026</span></footer>
+  </div>
+</section>
+
+<!-- ========== DIRECTION 4 — Quiet Premium ========== -->
+<section class="dir dir-4" id="d4">
+  <div class="dir-marker">
+    <div class="label">Direction 4</div>
+    <div class="num">IV.</div>
+    <h2>Quiet Premium</h2>
+    <p>Cream, generous whitespace, type-driven, restrained. Cormorant Garamond italic display + Inter body. The aesthetic of a luxury craftsperson's site. No CTAs above the fold; conversion happens by trust, not buttons.</p>
+    <div class="dir-scores">
+      <div class="dir-score"><b>FT recruiter skim</b><span class="v">3 / 5</span><span class="n">Skimmable after the 1st scroll. 6-second filter is harder but not impossible — type carries it.</span></div>
+      <div class="dir-score"><b>Elite $100/hr freelance</b><span class="v">5 / 5</span><span class="n">Luxury aesthetic signals "$100/hr craftsperson" by visual grammar alone. Restrained, confident, taste-led.</span></div>
+    </div>
+    <p class="dir-note">Why this works: luxury brands all share this restraint. It says "I'm not chasing clients" — and that attracts the right ones.<br>What you trade: recruiters used to dense production portfolios may under-read it. Slows the funnel, raises the floor.</p>
+    <a class="dir-pick" href="#d4">← Pick Direction 4</a>
+  </div>
+
+  <div>
+    <header class="dir-header">
+      <a class="brand" href="#d4"><span class="mark">L</span><em>Lesly</em></a>
+      <nav class="nav">
+        <a href="#d4-work">Work</a>
+        <a href="#d4-services">Services</a>
+        <a href="#d4-process">Process</a>
+        <a href="#d4-about">About</a>
+        <a class="cta" href="#d4-contact">Start a Project</a>
+      </nav>
+    </header>
+
+    <section class="dir-hero" id="d4-services">
+      <p class="eyebrow">3D Character Artist</p>
+      <h1>Game-Ready Characters, Avatars, Mascots, Outfits &amp; Accessories.</h1>
+      <p class="lead">Lesly creates 3D characters and character assets from sketches, moodboards, written briefs, AI references, and existing concepts — with a focus on character modeling, sculpting, retopology, UVs, texturing, materials, and production-ready delivery.</p>
+      <div class="actions"><a class="primary" href="#d4-contact">Start a Project</a><a class="secondary" href="#d4-work">View Work</a></div>
+    </section>
+
+    <div class="dir-strip">
+      <span>3D Character Artist</span>
+      <span>Character Modeling</span>
+      <span>Sculpting</span>
+      <span>Retopology</span>
+      <span>UV Mapping</span>
+      <span>PBR Texturing</span>
+      <span>Blender · ZBrush · Substance</span>
+      <span>AI Workflow Support</span>
+    </div>
+
+    <section class="dir-section" id="d4-work">
+      <div class="head"><div class="eyebrow">Services</div><h2>3D character services using current job-description language.</h2><p>Service names are aligned to terms found in recent 3D Character Artist, Character Artist, 3D Modeler, Senior 3D Generalist, and contract/freelance project descriptions.</p></div>
+      <div class="dir-grid">
+        <article class="dir-card"><div class="ph">[Reference → sculpt → final]</div><h3>3D Character Modeling</h3><p>From sketches, moodboards, written briefs, AI references, or existing concepts.</p></article>
+        <article class="dir-card"><div class="ph">[Final + wireframe + UVs]</div><h3>Game-Ready Character Assets</h3><p>Topology, UVs, textures, materials, and export-ready files for real-time workflows.</p></article>
+        <article class="dir-card"><div class="ph">[Avatar + expression set]</div><h3>Avatars &amp; Mascots</h3><p>Stylized avatars, mascot characters, expressions, poses, and creator identities.</p></article>
+        <article class="dir-card"><div class="ph">[Outfit + accessories grid]</div><h3>Outfits, Skins &amp; Accessories</h3><p>Style consistency, texture/material detail, character fit, variation sets.</p></article>
+        <article class="dir-card"><div class="ph">[Sculpt → retopo → UVs]</div><h3>Sculpting, Retopo, UVs &amp; Texturing</h3><p>High-poly sculpt, low-poly retopo, UV mapping, PBR or stylized texturing.</p></article>
+        <article class="dir-card"><div class="ph">[Deliverables checklist]</div><h3>Production-Ready Delivery</h3><p>BLEND, FBX, OBJ, texture maps, turnarounds, and handoff notes per scope.</p></article>
+      </div>
+    </section>
+
+    <section class="dir-casestudy" id="d4-process">
+      <div class="head"><div class="eyebrow">Case study / process</div><h2>From sculpt to engine-ready, in order.</h2><p>One project, six stages with per-stage tool credits. Production detail presented as a quiet document, not a billboard.</p></div>
+      <div class="ph-hero">[Final 16:10 render]</div>
+      <div class="meta">
+        <div><b>~18k</b><span>Triangles</span></div>
+        <div><b>2k / 1k</b><span>Texture sets</span></div>
+        <div><b>UE5</b><span>Target engine</span></div>
+        <div><b>4 wks</b><span>Window</span></div>
+      </div>
+      <div class="steps">
+        <div class="step"><b>01</b><div><span class="tool">ZBrush</span><h4>Sculpt</h4><p>Blocking primary and secondary forms, surface breakup, references for proportion and material read.</p></div></div>
+        <div class="step"><b>02</b><div><span class="tool">Maya</span><h4>Retopology</h4><p>Edge loops around deformation zones, target 18k triangles, hand-retopoed for clean deformation.</p></div></div>
+        <div class="step"><b>03</b><div><span class="tool">Maya · UV Toolkit</span><h4>UVs</h4><p>Head on UDIM 1000, body on 1001, packed for 2K / 1K texture sets with consistent texel density.</p></div></div>
+        <div class="step"><b>04</b><div><span class="tool">Marmoset Toolbag</span><h4>Bake</h4><p>Normal, AO, curvature, ID bake; cage adjusted, smoothing-group mismatches resolved.</p></div></div>
+        <div class="step"><b>05</b><div><span class="tool">Substance Painter</span><h4>Texture</h4><p>PBR set with smart materials, hand-painted variation, base color + roughness + normal + metalness.</p></div></div>
+        <div class="step"><b>06</b><div><span class="tool">Marmoset Toolbag</span><h4>Presentation</h4><p>3-point stylized lighting — key Rembrandt, sharp rim, HDRI sky fill — across hero, turnaround, closeup.</p></div></div>
+      </div>
+    </section>
+
+    <section class="dir-section" id="d4-about">
+      <div class="head"><div class="eyebrow">About</div><h2>Painter and 3D Character Artist.</h2><p>Lesly creates 3D characters, avatars, mascots, outfits, skins, accessories, and game-ready assets for games, creators, startups, agencies, and brands. Her painting background supports color, form, anatomy, silhouette, texture, and storytelling.</p></div>
+    </section>
+
+    <section class="dir-section alt" id="d4-contact">
+      <div class="head"><div class="eyebrow">Start a project</div><h2>Tell Lesly about your character, avatar, mascot, outfit, or 3D asset.</h2><p>Share the character idea, references, use case, timeline, and required deliverables.</p></div>
+      <form class="dir-form" style="max-width:520px;margin:0 auto">
+        <label>Name<input placeholder="Your name"></label>
+        <label>Email<input type="email" placeholder="you@example.com"></label>
+        <label>Project type<select><option>3D Character Modeling</option><option>Game-Ready Character Asset</option><option>Avatar / Mascot</option></select></label>
+        <label>Message<textarea placeholder="Describe the character, style, references, timeline, deliverables…"></textarea></label>
+        <button type="button">Submit Project Brief</button>
+      </form>
+    </section>
+
+    <footer class="dir-footer"><em>Lesly</em><span>3D Character Artist · Game-Ready · Avatars · Mascots</span><span>© 2026</span></footer>
+  </div>
+</section>
+
+<!-- ========== Tail of the file ========== -->
+<section class="frame-intro" style="border-top:1px solid var(--frame-border);padding-bottom:5rem">
+  <p><strong>How to review.</strong> Open this file in your browser. Use the top nav to jump between directions. Each direction uses the same content so the contrast is purely design. The 9 mockups in <code>reserch/visuals/</code> are reference; if any of these directions matches the aesthetic of those mockups, that's the one to pick — we replace the placeholder geometry with the actual mockup art in the rebuild.</p>
+  <p><strong>After you pick.</strong> I rebuild <code>index.html</code> and <code>case-study.html</code> to match the chosen direction, replace placeholder blocks with the actual mockup art, wire the 6 portfolio cards to case-study pages, and tune the responsive layout. The content brief (JD-aligned positioning, final AI workflow support framing, 5-part case study structure) is already aligned and will not change between directions.</p>
+</section>
+
+</body>
+</html>
