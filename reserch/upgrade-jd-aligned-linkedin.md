@@ -1,36 +1,36 @@
-# Upgrade Copy — JD-Aligned LinkedIn Materials
+# Upgrade Copy — JD-Aligned LinkedIn Materials with AI Workflow Support
 
 ## Purpose
 
-This document rebuilds Lesly’s LinkedIn profile using professional terms found in current/recent 3D-character-related job descriptions and freelance project excerpts.
+This document rebuilds Lesly’s LinkedIn profile using professional terms found in current/recent 3D-character-related job descriptions and freelance project excerpts, then adds a careful AI workflow support layer using terms found in AI-creative and agent/coding workflow roles.
 
 The key correction:
 
 > Use **3D Character Artist** as the primary professional title. Do not use “AI-Assisted Visual Designer” as the headline/title.
 
-AI can be referenced only as an input/reference phrase, such as “AI references,” because that language appeared in freelance/project contexts.
+AI can be referenced as workflow support, not as the main identity.
 
 ---
 
 # 1. Recommended LinkedIn Headline
 
-## Best JD-aligned headline
+## Best balanced headline
+
+**3D Character Artist | Character Modeling, Sculpting, Retopology, UVs & PBR Texturing | Game-Ready Characters, Avatars & Mascots | AI Workflow Support | Blender · ZBrush · Substance Painter**
+
+## Strong JD-aligned headline without AI
 
 **3D Character Artist | Character Modeling, Sculpting, Retopology, UVs & PBR Texturing | Game-Ready Characters, Avatars & Mascots | Blender · ZBrush · Substance Painter | Open to Contract + Full-Time**
-
-## Shorter alternative
-
-**3D Character Artist | Game-Ready Models, Character Assets & Real-Time Workflows | Blender · ZBrush · Substance Painter**
 
 ## Freelance/service alternative
 
 **3D Character Artist | Concept / AI Reference → 3D Characters | Game-Ready Models, Avatars, Mascots, Outfits & Accessories**
 
-## Avoid
+## Avoid as title
 
 **3D Character Artist & AI-Assisted Visual Designer**
 
-Reason: “3D Character Artist” is JD language. “AI-Assisted Visual Designer” was not found as a role title in the JD sample.
+Reason: “3D Character Artist” is JD language. “AI-Assisted Visual Designer” was not found as a role title in the 3D-character JD sample.
 
 ---
 
@@ -47,6 +47,10 @@ Reason: “3D Character Artist” is JD language. “AI-Assisted Visual Designer
 ## Workflow line
 
 **Character Modeling · Sculpting · Retopology · UVs · PBR Texturing · Final Renders**
+
+## Optional small support line
+
+**AI Workflow Support · Reference Organization · Documentation · Portfolio/Web Materials**
 
 ## Tool line
 
@@ -105,6 +109,12 @@ Blender · ZBrush · Substance Painter · Photoshop · Procreate
 
 Also familiar with Unity / Unreal workflows where applicable.
 
+AI workflow support:
+
+I also use AI tools, AI agents, Codex, Claude Code, and MCP-connected workflows to support parts of my production process, including reference organization, prompt-based visual exploration, simple portfolio/web materials, documentation, workflow automation, and project setup.
+
+These tools support my workflow. The core work remains character modeling, sculpting, retopology, UV mapping, texturing, materials, final renders, and production-ready delivery.
+
 I’m open to full-time, contract, freelance, and remote opportunities as a 3D Character Artist, Character Artist, 3D Modeler, 3D Artist, or character asset creator.
 
 Portfolio: [add website link]  
@@ -145,6 +155,12 @@ Core work includes:
 - BLEND, FBX, OBJ, and texture map delivery depending on project scope
 - Remote collaboration, staged reviews, and structured project handoff
 
+Workflow support includes:
+
+- AI tools and AI agents for reference organization and project setup
+- Codex, Claude Code, and MCP-connected workflows for simple portfolio/web materials, documentation, workflow automation, and production organization
+- Prompt-based visual exploration when appropriate
+
 Open to full-time, contract, freelance, and remote 3D character opportunities.
 
 ---
@@ -176,6 +192,11 @@ Character design, expressions, pose concepts, presentation renders, and brand/cr
 **PDF Portfolio**  
 Selected character modeling, game-ready assets, avatars, mascots, outfits, and accessories.
 
+## Featured item 6 — AI workflow support, optional
+
+**AI Workflow Support for Creative Production**  
+Reference organization, prompt-based visual exploration, simple portfolio/web materials, documentation, workflow automation, and project setup.
+
 ---
 
 # 6. Skills Section
@@ -188,7 +209,7 @@ Selected character modeling, game-ready assets, avatars, mascots, outfits, and a
 4. ZBrush
 5. Substance Painter
 
-## Additional skills to add only if accurate
+## Additional 3D skills to add only if accurate
 
 - 3D Modeling
 - Digital Sculpting
@@ -223,6 +244,21 @@ Selected character modeling, game-ready assets, avatars, mascots, outfits, and a
 - Unity
 - Unreal Engine
 
+## Additional AI/workflow skills to add only if accurate
+
+- AI Workflow Support
+- AI Tools
+- AI Agents
+- Prompt Engineering
+- Workflow Automation
+- Documentation
+- ComfyUI Workflows
+- LoRA
+- Codex
+- Claude Code
+- MCP-connected workflows
+- n8n
+
 Only include tools and workflows she can confidently discuss and demonstrate.
 
 ---
@@ -252,6 +288,15 @@ Use only if accurate:
 - Roblox UGC Artist
 - VTuber Character Artist
 
+Do not use these as Open to Work titles unless she wants to target AI-video/content roles:
+
+- AI Artist
+- AI Generative Artist
+- AI Visual Generalist
+- AI Creator / Artist / Technical Artist
+- AI Video Systems Artist
+- Generative Video Engineer
+
 ---
 
 # 8. Services Section
@@ -276,6 +321,7 @@ Services include:
 - Sculpting, retopology, UV mapping, and texturing
 - Final renders, turnarounds, and presentation assets
 - BLEND, FBX, OBJ, and texture map delivery depending on scope
+- AI workflow support for reference organization, documentation, simple portfolio/web materials, workflow automation, and project setup
 
 Best for:
 
@@ -340,6 +386,25 @@ This helps clients and teams understand not only how the character looks, but ho
 
 ---
 
+## Post 4 — AI workflow support
+
+I use AI tools, AI agents, and MCP-connected workflows as workflow support, not as a replacement for 3D craft.
+
+For my work, they can help with:
+
+- reference organization
+- prompt-based visual exploration
+- simple portfolio/web materials
+- documentation
+- workflow automation
+- project setup
+
+The core work remains character modeling, sculpting, retopology, UVs, texturing, materials, final renders, and production-ready delivery.
+
+[Attach process board or workflow visual]
+
+---
+
 # 10. Connection Request Templates
 
 ## Recruiter
@@ -364,6 +429,8 @@ Thanks for connecting, [Name].
 
 I’m open to full-time, contract, freelance, and remote 3D character opportunities. My work focuses on character modeling, sculpting, retopology, UVs, texturing, final renders, and game-ready character assets.
 
+I also use AI tools, AI agents, Codex, Claude Code, and MCP-connected workflows for workflow support such as reference organization, documentation, simple portfolio/web materials, workflow automation, and project setup.
+
 Portfolio: [link]
 
 Please feel free to keep me in mind for relevant 3D Character Artist, Character Artist, 3D Modeler, or 3D Artist roles.
@@ -373,6 +440,8 @@ Please feel free to keep me in mind for relevant 3D Character Artist, Character 
 Thanks for connecting, [Name].
 
 I create 3D characters, avatars, mascots, outfits, skins, accessories, and game-ready character assets from sketches, moodboards, written briefs, AI references, or existing concepts.
+
+I also use AI tools and MCP-connected workflows to support reference organization, documentation, portfolio/web materials, workflow automation, and project setup.
 
 Portfolio: [link]
 
@@ -384,7 +453,7 @@ Happy to stay connected.
 
 ## Headline
 
-**3D Character Artist | Character Modeling, Sculpting, Retopology, UVs & PBR Texturing | Game-Ready Characters, Avatars & Mascots | Blender · ZBrush · Substance Painter | Open to Contract + Full-Time**
+**3D Character Artist | Character Modeling, Sculpting, Retopology, UVs & PBR Texturing | Game-Ready Characters, Avatars & Mascots | AI Workflow Support | Blender · ZBrush · Substance Painter**
 
 ## About opening
 
@@ -397,6 +466,7 @@ Hi, I’m Lesly — a 3D Character Artist creating game-ready characters, avatar
 3. Sculpting → Retopology → UVs → Textures case study
 4. Avatar / mascot work
 5. PDF portfolio
+6. AI workflow support, optional
 
 ## Core CTA
 
