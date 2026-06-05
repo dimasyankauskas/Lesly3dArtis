@@ -88,9 +88,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
    with higher-specificity selectors that match :root[data-version="v1"]. */
 :root:not([data-version="v1"]) .work-tag,
 :root:not([data-version="v1"]) .card-corner,
-:root:not([data-version="v1"]) .thumb-caption,
-:root:not([data-version="v1"]) .hero-tags,
-:root:not([data-version="v1"]) .case-corner{display:none}
+:root:not([data-version="v1"]) .hero-tags{display:none}
 body{
   margin:0;
   background:var(--bg);

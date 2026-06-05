@@ -10,7 +10,7 @@ Strict, documented design tokens, components, and patterns for the V2 (Quiet Pre
 | `v1-brand.css` | V1 Dark Editorial (warm near-black + gold, Playfair Display + Montserrat) | `data-version="v1"` |
 | `script.js` | Theme + version toggle, mobile nav, portfolio filters, reveal-on-scroll, form placeholder | both |
 
-All V1 selectors are scoped to `:root[data-version="v1"] { ... }` so V2 is the unstyled default. V1-only markup (`.work-tag`, `.card-corner`, `.hero-tags`, `.case-corner`) is hidden in V2 via `:root:not([data-version="v1"]) .work-tag { display: none }`.
+All V1 selectors are scoped to `:root[data-version="v1"] { ... }` so V2 is the unstyled default. V1-only markup (`.work-tag`, `.card-corner`, `.hero-tags`) is hidden in V2 via `:root:not([data-version="v1"]) .work-tag { display: none }`.
 
 ## Tokens (V2 — `styles.css`)
 
