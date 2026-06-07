@@ -1,6 +1,6 @@
 ---
 name: 3d-character-portfolio-finalizer
-description: Use when finalizing, auditing, or launch-checking Lesly's V2 3D Character Artist portfolio, especially content strategy, real portfolio assets, case studies, work cards, services, pricing, contact flows, and anti-misrepresentation proof.
+description: Use when finalizing, auditing, or launch-checking Lesly's final 3D Character Artist portfolio, especially content strategy, real portfolio assets, case studies, work cards, services, pricing, contact flows, and anti-misrepresentation proof.
 ---
 
 # 3D Character Portfolio Finalizer
@@ -18,8 +18,8 @@ Use this skill for launch-readiness work on a senior-facing 3D Character Artist 
    - `final-ai-workflow-update.md`
    - `visual-assets-checklist.md`
    - `implementation-plan.md`
-4. Current `v2/CONTENT_STRATEGY.md`.
-5. Current files in `v2/`, especially `LAUNCH_CHECKLIST.md` and `ASSET_INTAKE.md` when they exist.
+4. Current `CONTENT_STRATEGY.md`.
+5. Current root site files, especially `LAUNCH_CHECKLIST.md` and `ASSET_INTAKE.md` when they exist.
 
 The folder is intentionally named `reserch/`; do not rename it.
 
@@ -116,12 +116,12 @@ Environment proof to request for real Lesly projects:
 
 ## Content Finalization Checklist
 
-Before editing V2:
+Before editing the final site:
 
 1. Read required strategy docs.
-2. Audit `v2/index.html`, `v2/case-study.html`, `v2/styles.css`, `v2/script.js`, and `v2/CONTENT_STRATEGY.md`.
+2. Audit `index.html`, `case-study.html`, `styles.css`, `script.js`, and `CONTENT_STRATEGY.md`.
 3. Inventory local assets with `find` and verify what is real, placeholder, or reference-only.
-4. Check `v2/ASSET_INTAKE.md` before replacing any visible placeholder.
+4. Check `ASSET_INTAKE.md` before replacing any visible placeholder.
 5. Run targeted `rg` searches for placeholder/fake-risk terms.
 
 For a deterministic local audit, run:
@@ -145,9 +145,9 @@ Before claiming launch-ready:
 Use targeted searches such as:
 
 ```bash
-rg -n "\\[|placeholder|drop image|Project Name|One paragraph|One or two|~18k|18\\.4k|2k / 1k|Unreal 5|4 weeks|client|shipped|trusted|testimonial|logo|Lorem|TBD|TODO|fake|mockup" v2
-rg -n "AI-Assisted Visual Designer|AI Artist|generative AI artist|can make anything|stunning|passionate|bringing .* to life" v2 reserch
-rg -n "reserch/visuals/image[0-9]*\\.png|image[0-9]*\\.png" v2 reserch
+rg -n "\\[|placeholder|drop image|Project Name|One paragraph|One or two|~18k|18\\.4k|2k / 1k|Unreal 5|4 weeks|client|shipped|trusted|testimonial|logo|Lorem|TBD|TODO|fake|mockup" index.html case-study.html case-study.js ASSET_INTAKE.md LAUNCH_CHECKLIST.md
+rg -n "AI-Assisted Visual Designer|AI Artist|generative AI artist|can make anything|stunning|passionate|bringing .* to life" index.html case-study.html CONTENT_STRATEGY.md reserch
+rg -n "reserch/visuals/image[0-9]*\\.png|image[0-9]*\\.png" index.html case-study.html case-study.js ASSET_INTAKE.md LAUNCH_CHECKLIST.md reserch
 ```
 
 ## Stop Rule

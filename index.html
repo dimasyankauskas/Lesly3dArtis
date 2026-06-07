@@ -9,10 +9,9 @@
   <title>Lesly — 3D Character Artist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="v1-brand.css" />
-  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');document.documentElement.setAttribute('data-version',localStorage.getItem('lesly-version')==='v1'?'v1':'v2');</script>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');</script>
 </head>
 <body>
 
@@ -20,7 +19,7 @@
 
   <header class="site-header">
     <div class="site-header-inner">
-      <a class="brand" href="#top"><span class="mark">L</span><em>Lesly</em></a>
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><em>Lesly</em></a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       <nav class="nav" aria-label="Primary">
         <a href="#work">Work</a>
@@ -32,10 +31,6 @@
           <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
           <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
         </div>
-        <div class="version-toggle" role="group" aria-label="Design version">
-          <button type="button" data-version-set="v2" aria-pressed="true">V2</button>
-          <button type="button" data-version-set="v1" aria-pressed="false">V1</button>
-        </div>
       </nav>
     </div>
   </header>
@@ -44,19 +39,20 @@
 
     <!-- ============== HERO ============== -->
     <section class="hero reveal">
-      <p class="eyebrow">3D Character Artist</p>
-      <h1>Game-Ready Characters, Avatars, Mascots, Outfits &amp; Accessories.</h1>
-      <p class="lead">Lesly creates 3D characters and character assets from sketches, moodboards, written briefs, AI references, and existing concepts — with a focus on character modeling, sculpting, retopology, UVs, texturing, materials, and production-ready delivery.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Start a Project</a>
-        <a class="btn" href="#work">View Work</a>
+      <div class="hero-copy">
+        <p class="eyebrow">3D Character Artist</p>
+        <h1>Production-Ready 3D Characters from Concepts, Sketches, and AI References.</h1>
+        <p class="lead">Lesly creates expressive 3D characters, avatars, mascots, outfits, and game-ready assets from sketches, moodboards, written briefs, AI references, and existing concepts, with a focus on sculpting, modeling, retopology, UVs, textures, final renders, and production-ready delivery.</p>
+        <div class="ornament" aria-hidden="true"><span class="o-dot"></span><span class="o-dia"></span><span class="o-dot"></span></div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Start a Project</a>
+          <a class="btn" href="#work">View Work</a>
+        </div>
       </div>
-      <ul class="hero-tags" aria-label="Aesthetic directions">
-        <li>Artistic</li>
-        <li>Dark</li>
-        <li>Strong</li>
-        <li>Stylized</li>
-      </ul>
+      <figure class="hero-visual">
+        <img class="hero-image" src="assets/portfolio/hero-original-site-concept.webp" width="1599" height="900" alt="Original generated site concept character render in a warm dark studio presentation." fetchpriority="high">
+        <figcaption class="asset-note">Original site concept visual generated for this site. Not client work or shipped production proof.</figcaption>
+      </figure>
     </section>
 
     <ul class="capabilities container-wide" aria-label="Capabilities">
@@ -73,33 +69,39 @@
     <section id="services" class="section">
       <div class="container">
         <p class="eyebrow">Services</p>
-        <h2>3D character services, aligned to current job-description language.</h2>
-        <p class="lead">Service names follow terms found in recent 3D Character Artist, Character Artist, 3D Modeler, Senior 3D Generalist, and contract / freelance project descriptions.</p>
+        <h2>Character services for games, creators, brands, and real-time worlds.</h2>
+        <p class="lead">Projects are quoted by scope, complexity, timeline, and deliverables. Small assets and consultation can start lower; complete character packages are scoped after reviewing references and technical requirements.</p>
+
+        <div class="ornament" aria-hidden="true"><span class="o-dot"></span><span class="o-dia"></span><span class="o-dot"></span></div>
 
         <ol class="services-list mt-3">
           <li class="service-row">
             <span class="num">01</span>
-            <div><h3>3D Character Modeling</h3><p>Character modeling from sketches, moodboards, written briefs, AI references, or existing character concepts.</p></div>
+            <div><h3>Concept / AI Reference to 3D Character</h3><p>Turn a sketch, AI reference, moodboard, written brief, or rough idea into a polished 3D character with strong personality and usable deliverables.</p></div>
           </li>
           <li class="service-row">
             <span class="num">02</span>
-            <div><h3>Game-Ready Character Assets</h3><p>Characters prepared with topology, UVs, textures, materials, and export-ready files for real-time workflows.</p></div>
+            <div><h3>Game-Ready Character Asset</h3><p>Custom characters prepared for real-time pipelines with clean topology, UVs, textures, materials, and export-ready files.</p></div>
           </li>
           <li class="service-row">
             <span class="num">03</span>
-            <div><h3>Avatars &amp; Mascots</h3><p>Stylized avatars, mascot characters, expression / pose concepts, and creator or brand character assets.</p></div>
+            <div><h3>Avatar / VTuber / Creator Character</h3><p>Expressive custom avatars and 3D character identities for creators, streamers, VR/XR, and interactive experiences.</p></div>
           </li>
           <li class="service-row">
             <span class="num">04</span>
-            <div><h3>Outfits, Skins &amp; Accessories</h3><p>Character outfits, skins, props, and accessories with style consistency and texture / material detail.</p></div>
+            <div><h3>Brand Mascot / Product Character</h3><p>Memorable 3D mascots and product characters for startups, apps, AI products, education brands, campaigns, and creator businesses.</p></div>
           </li>
           <li class="service-row">
             <span class="num">05</span>
-            <div><h3>Sculpting, Retopology, UVs &amp; Texturing</h3><p>High-poly sculpting, low-poly retopology, UV mapping, PBR or stylized texturing, and final renders.</p></div>
+            <div><h3>Outfits, Skins, Props &amp; Accessories</h3><p>Stylized outfits, skins, props, clothing, and character add-ons for games, avatars, Roblox-style worlds, and creator identities.</p></div>
           </li>
           <li class="service-row">
             <span class="num">06</span>
-            <div><h3>Production-Ready Delivery</h3><p>BLEND, FBX, OBJ, texture maps, turnarounds, process breakdowns, and handoff notes depending on scope.</p></div>
+            <div><h3>Sculpting, Retopology, UVs &amp; Texturing</h3><p>High-poly sculpting, low-poly retopology, UV mapping, PBR or stylized texturing, materials, and final renders.</p></div>
+          </li>
+          <li class="service-row">
+            <span class="num">07</span>
+            <div><h3>Art Direction &amp; AI Workflow Support</h3><p>Character exploration, style direction, reference organization, documentation, and production planning using sketches, references, moodboards, and optional AI-assisted ideation.</p></div>
           </li>
         </ol>
       </div>
@@ -110,7 +112,8 @@
       <div class="container-wide">
         <p class="eyebrow">Work</p>
         <h2>Selected 3D character work.</h2>
-        <p class="lead">Each piece leads to a case study showing process and production proof — not only finished beauty renders.</p>
+        <div class="ornament" aria-hidden="true"><span class="o-dot"></span><span class="o-dia"></span><span class="o-dot"></span></div>
+        <p class="lead">Original site concept visuals created for this portfolio direction. They show the type of character presentation Lesly can lead with; technical production proof should still be replaced with true mesh, UV, texture, and handoff evidence when available.</p>
 
         <div class="filters" role="tablist" aria-label="Work filters">
           <button data-filter="all" class="active">All</button>
@@ -124,7 +127,7 @@
         <div class="work-grid">
           <a class="work-card reveal" data-category="game process" href="case-study.html?id=game-hero">
             <div class="thumb">
-              [Final + wireframe]
+              <img src="assets/portfolio/work-game-ready-character.webp" width="1200" height="900" alt="Original generated site concept render of a stylized game character on a dark studio pedestal." loading="lazy">
               <span class="work-tag" aria-hidden="true">Gaming Character</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -132,12 +135,12 @@
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
             <h3>Game-Ready Character</h3>
-            <p class="meta">Game · Process</p>
-            <p>Final render, topology, UVs, textures, materials, and export-ready delivery.</p>
+            <p class="meta">Game · Concept visual</p>
+            <p>Original presentation render for the site direction. Replace with real topology, UVs, textures, and export proof when available.</p>
           </a>
           <a class="work-card reveal" data-category="process" href="case-study.html?id=sculpt-to-retopo">
             <div class="thumb">
-              [Sculpt → low-poly]
+              <img src="assets/portfolio/work-sculpt-retopo.webp" width="1200" height="900" alt="Original generated site process concept showing character sculpt studies and illustrative mesh-style panels." loading="lazy">
               <span class="work-tag" aria-hidden="true">Process</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -145,12 +148,12 @@
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
             <h3>Sculpting to Retopology</h3>
-            <p class="meta">Process</p>
-            <p>High-poly sculpt, low-poly model, clean topology, and UV layout.</p>
+            <p class="meta">Process · Concept visual</p>
+            <p>Illustrative process visual for staging. It is not a real topology screenshot or mesh proof.</p>
           </a>
           <a class="work-card reveal" data-category="avatar" href="case-study.html?id=avatar-character">
             <div class="thumb">
-              [Avatar + expressions]
+              <img src="assets/portfolio/work-avatar-character.webp" width="1200" height="900" alt="Original generated site avatar character concept with expression variations." loading="lazy">
               <span class="work-tag" aria-hidden="true">Avatar</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -158,12 +161,12 @@
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
             <h3>Avatar Character</h3>
-            <p class="meta">Avatar</p>
-            <p>Character personality, silhouette, expressions, poses, and presentation renders.</p>
+            <p class="meta">Avatar · Concept visual</p>
+            <p>Original avatar concept board showing expression range, personality, and creator-facing presentation.</p>
           </a>
           <a class="work-card reveal" data-category="mascot" href="case-study.html?id=mascot-character">
             <div class="thumb">
-              [Mascot + pose set]
+              <img src="assets/portfolio/work-mascot-character.webp" width="1200" height="900" alt="Original generated site mascot concept with pose and expression variations." loading="lazy">
               <span class="work-tag" aria-hidden="true">Brand Mascot</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -171,12 +174,12 @@
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
             <h3>Mascot Character</h3>
-            <p class="meta">Mascot</p>
-            <p>Mascot design, pose set, expression set, and brand or product use case.</p>
+            <p class="meta">Mascot · Concept visual</p>
+            <p>Original mascot concept board for startup, creator, and product-character positioning.</p>
           </a>
           <a class="work-card reveal" data-category="outfit" href="case-study.html?id=outfits-accessories">
             <div class="thumb">
-              [Outfit variations]
+              <img src="assets/portfolio/work-outfits-accessories.webp" width="1200" height="900" alt="Original generated site outfit and accessory concept board with material closeups." loading="lazy">
               <span class="work-tag" aria-hidden="true">Outfit</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -184,21 +187,21 @@
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
             <h3>Outfits, Skins &amp; Accessories</h3>
-            <p class="meta">Outfits</p>
-            <p>Outfit variations, texture / material closeups, and character fit.</p>
+            <p class="meta">Outfits · Concept visual</p>
+            <p>Original outfit and accessory board showing costume read, material detail, and supporting asset ideas.</p>
           </a>
           <a class="work-card reveal" data-category="game process" href="case-study.html?id=pbr-texturing">
             <div class="thumb">
-              [Texture maps]
+              <img src="assets/portfolio/work-concept-to-3d.webp" width="1200" height="900" alt="Original generated site concept-to-character visual board showing sketch, refinement, and final render." loading="lazy">
               <span class="work-tag" aria-hidden="true">Texture</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>PBR / Stylized Texturing</h3>
-            <p class="meta">Game · Process</p>
-            <p>Texture maps, materials, UVs, closeups, and final character presentation.</p>
+            <h3>Concept to Character</h3>
+            <p class="meta">AI Reference · Concept visual</p>
+            <p>Original concept-to-render visual showing how early direction can become a polished character presentation.</p>
           </a>
         </div>
       </div>
@@ -208,29 +211,31 @@
     <section class="section">
       <div class="container">
         <p class="eyebrow">Case study</p>
-        <h2>From sculpt to engine-ready, in order.</h2>
-        <p class="lead">A look at one project, six stages, with per-stage tool credits — the production proof that recruiters and clients both read.</p>
+        <h2>Original site concept case study.</h2>
+        <p class="lead">A transparent case study for the generated site concept asset set. It documents visual direction and presentation assets without claiming shipped client work or real topology proof.</p>
 
         <div class="case-preview">
           <div>
-            <div class="case-hero">[Final 4:3 render with rim light]</div>
+            <figure class="case-hero">
+              <img src="assets/process/original-site-concept/hero.webp" width="1400" height="788" alt="Original generated site concept character hero render.">
+            </figure>
             <div class="case-stats">
-              <div><b>~18k</b><span>Triangles</span></div>
-              <div><b>2k / 1k</b><span>Texture sets</span></div>
-              <div><b>UE5</b><span>Target engine</span></div>
-              <div><b>4 wks</b><span>Window</span></div>
+              <div><b>Original</b><span>site concept</span></div>
+              <div><b>7</b><span>Web assets</span></div>
+              <div><b>Generated</b><span>Visual source</span></div>
+              <div><b>No</b><span>Client claim</span></div>
             </div>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="case-study.html?id=game-hero">Read full case study</a>
+              <a class="btn btn-primary" href="case-study.html?id=original-site-concept">Read concept case study</a>
             </div>
           </div>
           <ol class="case-steps">
-            <li class="case-step"><b>01</b><div><span class="step-tool">ZBrush</span><h4>Sculpt</h4><p>Blocking primary and secondary forms, surface breakup, references for proportion and material read.</p></div></li>
-            <li class="case-step"><b>02</b><div><span class="step-tool">Maya</span><h4>Retopology</h4><p>Edge loops around deformation zones, target 18k triangles, hand-retopoed for clean deformation.</p></div></li>
-            <li class="case-step"><b>03</b><div><span class="step-tool">Maya · UV Toolkit</span><h4>UVs</h4><p>Head on UDIM 1000, body on 1001, packed for 2K / 1K texture sets with consistent texel density.</p></div></li>
-            <li class="case-step"><b>04</b><div><span class="step-tool">Marmoset Toolbag</span><h4>Bake</h4><p>Normal, AO, curvature, ID bake; cage adjusted, smoothing-group mismatches resolved.</p></div></li>
-            <li class="case-step"><b>05</b><div><span class="step-tool">Substance Painter</span><h4>Texture</h4><p>PBR set with smart materials, hand-painted variation, base color + roughness + normal + metalness.</p></div></li>
-            <li class="case-step"><b>06</b><div><span class="step-tool">Marmoset Toolbag</span><h4>Presentation</h4><p>3-point stylized lighting — key Rembrandt, sharp rim, HDRI sky fill — across hero, turnaround, closeup.</p></div></li>
+            <li class="case-step"><b>01</b><div><span class="step-tool">Goal</span><h4>Visual direction</h4><p>Create a premium character-art direction for the final site using original generated visuals.</p></div></li>
+            <li class="case-step"><b>02</b><div><span class="step-tool">Input</span><h4>Prompted reference</h4><p>Sketch-to-render and studio-presentation prompts established the character, palette, and asset slots.</p></div></li>
+            <li class="case-step"><b>03</b><div><span class="step-tool">Process</span><h4>Concept board</h4><p>Generated boards show concept, sculpt-style, avatar, mascot, and outfit directions.</p></div></li>
+            <li class="case-step"><b>04</b><div><span class="step-tool">Integrity</span><h4>No fake topology</h4><p>Illustrative process images are labeled as concept visuals, not real mesh, UV, or engine proof.</p></div></li>
+            <li class="case-step"><b>05</b><div><span class="step-tool">Final</span><h4>Web-ready renders</h4><p>Assets are optimized WebP files sized for homepage, work cards, and case-study sections.</p></div></li>
+            <li class="case-step"><b>06</b><div><span class="step-tool">Handoff</span><h4>Replacement path</h4><p>True Lesly production proof can replace this concept set using the same filenames and sections.</p></div></li>
           </ol>
         </div>
       </div>
@@ -257,16 +262,42 @@
       <div class="container">
         <p class="eyebrow">About</p>
         <h2>Painter and 3D Character Artist.</h2>
-        <div class="about">
-          <div class="about-portrait reveal" aria-label="Lesly portrait — drop reference photo here">[Lesly portrait — ref photo]</div>
+        <p class="lead">Painter by training, 3D character artist by craft. I build game-ready characters, avatars, mascots, outfits, and accessories — with a focus on production-ready handoff, not just final renders.</p>
+        <div class="ornament" aria-hidden="true"><span class="o-dot"></span><span class="o-dia"></span><span class="o-dot"></span></div>
+
+        <div class="about mt-2">
+          <figure class="about-portrait reveal">
+            <img src="assets/profile/studio-process-portrait.webp" width="1000" height="1250" alt="Original generated studio process visual showing character sculpt work on a pen display.">
+            <figcaption class="asset-note">Original generated studio/process visual. Not Lesly's portrait or client work.</figcaption>
+          </figure>
           <div class="about-bio">
             <p>Lesly creates 3D characters, avatars, mascots, outfits, skins, accessories, and game-ready assets for games, creators, startups, agencies, and brands.</p>
             <p>Her painting background supports color, form, anatomy, silhouette, texture, and storytelling. Her 3D work focuses on character design, sculpting, modeling, retopology, UVs, texturing, materials, final renders, and production-ready handoff.</p>
+            <p>Lesly also uses AI tools, AI agents, Codex, Claude Code, and MCP-connected workflows to support parts of her production process: reference organization, prompt-based visual exploration, simple portfolio and web materials, documentation, workflow automation, and project setup. The core work remains character modeling, sculpting, retopology, UV mapping, texturing, materials, final renders, and production-ready delivery.</p>
             <div class="about-tools">
               <span>Blender</span><span>ZBrush</span><span>Substance Painter</span><span>Marmoset</span><span>Maya</span><span>Photoshop</span><span>Procreate</span><span>Unity / Unreal</span>
             </div>
           </div>
         </div>
+
+        <dl class="about-facts mt-3" aria-label="Working facts">
+          <div>
+            <dt>Discipline</dt>
+            <dd>Stylized &amp; game-ready characters</dd>
+          </div>
+          <div>
+            <dt>Pipeline</dt>
+            <dd>Sculpt · Retopo · UVs · Bake · Texture · Present</dd>
+          </div>
+          <div>
+            <dt>Delivery</dt>
+            <dd>FBX, source files, texture sets, handoff notes</dd>
+          </div>
+          <div>
+            <dt>Working with</dt>
+            <dd>Game studios, brand teams, creators, agencies</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -275,7 +306,7 @@
       <div class="container">
         <p class="eyebrow">Workflow support</p>
         <h2>AI tools, AI agents, and MCP-connected workflows.</h2>
-        <p class="lead">Lesly uses AI tools, AI agents, Codex, Claude Code, and MCP-connected workflows to support parts of her production process — reference organization, prompt-based visual exploration, simple portfolio / web materials, documentation, workflow automation, and project setup. These tools support the workflow. The core work remains character modeling, sculpting, retopology, UV mapping, texturing, materials, final renders, and production-ready delivery.</p>
+        <p class="lead">Lesly uses AI tools, AI agents, Codex, Claude Code, and MCP-connected workflows to support parts of her production process: reference organization, prompt-based visual exploration, simple portfolio and web materials, documentation, workflow automation, and project setup. These tools support the workflow. The core work remains character modeling, sculpting, retopology, UV mapping, texturing, materials, final renders, and production-ready delivery.</p>
         <div class="ai-support">
           <div class="ai-card">
             <h3>Production organization</h3>
@@ -300,12 +331,13 @@
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email"></div>
           <div class="field"><label for="project-type">Project type</label>
             <select id="project-type" name="project-type">
-              <option>3D Character Modeling</option>
+              <option>Concept / AI Reference to 3D Character</option>
               <option>Game-Ready Character Asset</option>
-              <option>Avatar / Mascot</option>
+              <option>Avatar / VTuber / Creator Character</option>
+              <option>Brand Mascot / Product Character</option>
               <option>Outfit / Skin / Accessory</option>
               <option>Sculpting / Retopology / Texturing</option>
-              <option>AI workflow support</option>
+              <option>Art Direction / AI Workflow Support</option>
               <option>Not sure yet</option>
             </select>
           </div>
@@ -345,8 +377,8 @@
       <div>3D Character Artist · Character Modeling · Game-Ready Assets · Avatars · Mascots · AI Workflow Support</div>
     </div>
     <div>
-      <a href="reserch/README.md">Research</a>
-      <a href="reserch/final-ai-workflow-update.md">AI workflow update</a>
+      <a href="../reserch/README.md">Research</a>
+      <a href="../reserch/final-ai-workflow-update.md">AI workflow update</a>
     </div>
   </footer>
 

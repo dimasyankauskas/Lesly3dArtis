@@ -1,4 +1,4 @@
-# V2 Environment And Render Presentation Strategy
+# Final Environment And Render Presentation Strategy
 
 This strategy defines how environment, lighting, camera, stage, and real-time viewer details should support Lesly's 2026 senior-level 3D Character Artist portfolio.
 
@@ -88,6 +88,6 @@ Unsafe wording unless verified:
 - "Production lighting."
 - "Delivered environment."
 
-## Current V2 Status
+## Current final status
 
-The current V2 generated visuals use studio-style presentation and simple character staging. They are approved only as generated/site-created concept visuals. They do not prove real Lesly environment art, lighting setup, render scene, engine integration, or viewer setup.
+The current final generated visuals use studio-style presentation and simple character staging. They are approved only as generated/site-created concept visuals. They do not prove real Lesly environment art, lighting setup, render scene, engine integration, or viewer setup.

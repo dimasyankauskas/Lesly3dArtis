@@ -1,6 +1,6 @@
-# Lesly V2 Content Strategy
+# Lesly Final Content Strategy
 
-This is the working content strategy for finalizing the V2 site before hosting.
+This is the working content strategy for finalizing the final site before hosting.
 
 ## Executive Recommendation
 
@@ -16,7 +16,7 @@ Do not lead with "AI artist," "AI-Assisted Visual Designer," or broad "3D design
 
 ## Primary Audience
 
-The V2 site should prioritize paid project inquiries while still being credible for full-time or contract review.
+The final site should prioritize paid project inquiries while still being credible for full-time or contract review.
 
 Primary clients:
 
@@ -80,7 +80,7 @@ Avoid as title:
 
 ## Services
 
-Recommended service order for V2:
+Recommended service order for the site:
 
 1. Concept / AI Reference to 3D Character
 2. Game-Ready Character Asset
@@ -199,7 +199,7 @@ Must show if available:
 
 ## Environment And Render Presentation Strategy
 
-Use environment detail as a senior presentation layer around the character, not as a second discipline. V2 should look like Lesly understands camera, lighting, scale, story, and material response, while keeping the portfolio unmistakably character-first.
+Use environment detail as a senior presentation layer around the character, not as a second discipline. The final site should look like Lesly understands camera, lighting, scale, story, and material response, while keeping the portfolio unmistakably character-first.
 
 ### 2026 top-tier target
 
@@ -230,13 +230,13 @@ Each real flagship character should eventually have two presentation modes:
 - Do not use generated background detail as proof of modeling, set dressing, lighting setup, engine setup, or delivered environment work.
 - Do not bury the character in scenery. If a thumbnail is more about the set than the character, it is wrong for this portfolio.
 
-### Current V2 state
+### Current final state
 
-The generated V2 concept visuals already follow a simple studio-stage direction. They can support the site as generated concept presentation, but they are not proof of Lesly's real lighting setup, render scene, engine scene, or environment art. Future real assets should replace them with beauty-stage and technical-stage evidence.
+The generated site concept visuals already follow a simple studio-stage direction. They can support the site as generated concept presentation, but they are not proof of Lesly's real lighting setup, render scene, engine scene, or environment art. Future real assets should replace them with beauty-stage and technical-stage evidence.
 
 ## Homepage Content Order
 
-Recommended V2 homepage order:
+Recommended homepage order:
 
 1. Hero with real character image visible above the fold.
 2. Capability chips.
@@ -296,6 +296,6 @@ High-value but not necessarily launch-blocking:
 15. Does Lesly offer rigging, rig-ready prep only, or no rigging?
 16. Does Lesly offer animation, or should animation be excluded?
 17. Which tools are accurate: Blender, ZBrush, Substance Painter, Maya, Marmoset, Photoshop, Procreate, Unity, Unreal?
-18. Should V2 be hosted at `/v2/` first or copied to the root as the main public site?
+18. Is the root GitHub Pages target approved for launch?
 
 Recommendation: answer questions 1-10 before the final content/image pass.

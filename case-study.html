@@ -3,16 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Case study — [Project Name]. 3D character work by Lesly." />
+  <meta name="description" content="Transparent visual study for Lesly's generated site 3D character portfolio concept assets." />
   <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)" />
-  <title>Case study — [Project Name] · Lesly</title>
+  <title>Visual Study · Lesly</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="v1-brand.css" />
-  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');document.documentElement.setAttribute('data-version',localStorage.getItem('lesly-version')==='v1'?'v1':'v2');</script>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');</script>
 </head>
 <body class="case-study">
 
@@ -20,7 +19,7 @@
 
   <header class="site-header">
     <div class="site-header-inner">
-      <a class="brand" href="index.html"><span class="mark">L</span><em>Lesly</em></a>
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><em>Lesly</em></a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       <nav class="nav" aria-label="Primary">
         <a href="index.html#work">Work</a>
@@ -32,10 +31,6 @@
           <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
           <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
         </div>
-        <div class="version-toggle" role="group" aria-label="Design version">
-          <button type="button" data-version-set="v2" aria-pressed="true">V2</button>
-          <button type="button" data-version-set="v1" aria-pressed="false">V1</button>
-        </div>
       </nav>
     </div>
   </header>
@@ -45,229 +40,87 @@
   </nav>
 
   <main id="main">
-
-    <!-- ============== HERO ============== -->
-    <section class="cs-hero">
-      <div class="cs-hero-bg">[Final 16:9 render — drop image here]</div>
+    <section class="cs-hero cs-visual-study-hero">
+      <figure class="cs-hero-bg">
+        <img data-case-hero src="assets/portfolio/work-game-ready-character.webp" width="1200" height="900" alt="Original generated site game character concept visual.">
+      </figure>
       <div class="cs-hero-copy">
-        <p class="eyebrow">Case study</p>
-        <h1>[Project Name]</h1>
-        <p class="cs-meta">
-          <span>Stylized hero character</span>
-          <span>·</span>
-          <span>Game-ready pipeline</span>
-          <span>·</span>
-          <span>2026</span>
-        </p>
-        <p class="cs-lead">A one-line description of what this character is and who it was made for. Keep this concrete — character name, genre, intended use — not aspirational.</p>
-        <div class="cs-tools">
-          <span>ZBrush</span><span>Maya</span><span>Substance Painter</span><span>Marmoset Toolbag</span>
-        </div>
+        <p class="eyebrow" data-case-kicker>Visual study</p>
+        <h1 data-case-title>Game-Ready Character Concept</h1>
+        <p class="cs-meta" data-case-meta></p>
+        <p class="cs-lead" data-case-lead>Original generated character presentation for the site. This page documents what the visual can support and what real production evidence is still needed.</p>
       </div>
     </section>
 
-    <!-- ============== CONSTRAINTS (recruiter-scanable stat row) ============== -->
     <section class="cs-section">
       <div class="container">
-        <p class="cs-eyebrow">Constraints</p>
-        <h2>The numbers behind the work.</h2>
-        <div class="case-stats mt-2">
-          <div><b>~18k</b><span>Triangles (hero)</span></div>
-          <div><b>2k / 1k</b><span>Texture sets (body / head)</span></div>
-          <div><b>Unreal 5</b><span>Target engine</span></div>
-          <div><b>4 weeks</b><span>Production window</span></div>
-        </div>
+        <p class="cs-eyebrow">Status</p>
+        <h2>Visual presentation, not production proof.</h2>
+        <p class="cs-lead">Generated concept presentation, not a shipped client project. Source 3D proof is still missing until Lesly provides approved model files, topology, UVs, textures, renders, and deliverable facts.</p>
+        <div class="case-stats mt-2" data-case-stats></div>
       </div>
     </section>
 
-    <!-- ============== WHAT THIS IS ============== -->
     <section class="cs-section">
       <div class="container">
         <p class="cs-eyebrow">What this is</p>
-        <h2>The character and the brief.</h2>
-        <p class="cs-lead">One or two concrete sentences about the character and the brief. State the use case (game, brand, avatar), the audience, and the defining constraint. Skip adjectives — the renders carry the weight.</p>
+        <h2 data-case-what-title>A generated concept study for the site presentation.</h2>
+        <p class="cs-lead" data-case-what-copy>This page is intentionally transparent. It shows a direction for how Lesly's portfolio can present character work, without inventing a client, shipped project, topology, UVs, texture maps, engine capture, or source-file proof.</p>
       </div>
     </section>
 
-    <!-- ============== GOALS ============== -->
     <section class="cs-section">
       <div class="container">
-        <p class="cs-eyebrow">Goals</p>
-        <h2>What success looked like.</h2>
-        <ol class="cs-goals">
-          <li>Silhouette readable at thumbnail size and from the back.</li>
-          <li>Topology clean enough to deform for facial animation without UV stretching.</li>
-          <li>One material set that holds up at 2 m and 20 m from camera.</li>
-          <li>Texture density and export naming that drop into the existing pipeline without rework.</li>
-        </ol>
+        <p class="cs-eyebrow">Generated presentation board</p>
+        <h2>Distinct visual reads for this case.</h2>
+        <div class="case-gallery" data-case-gallery></div>
       </div>
     </section>
 
-    <!-- ============== PROCESS (6 stages, alternating flip) ============== -->
-    <section class="cs-section cs-process">
-      <div class="container">
-        <p class="cs-eyebrow">Process</p>
-        <h2>Sculpt to engine-ready, in order.</h2>
-
-        <article class="cs-step">
-          <div class="cs-step-text">
-            <span class="cs-step-num">01</span>
-            <h3>Sculpt</h3>
-            <span class="cs-step-tool">ZBrush</span>
-            <p>One paragraph on the sculpt pass: blocking the silhouette, primary forms, secondary forms, surface breakup. Mention any references collected and how they were used.</p>
-          </div>
-          <figure class="cs-step-media">
-            <div class="ph">[Sculpt screenshot]</div>
-            <figcaption>Blocking pass — primary forms only.</figcaption>
-          </figure>
-        </article>
-
-        <article class="cs-step cs-step-flip">
-          <div class="cs-step-text">
-            <span class="cs-step-num">02</span>
-            <h3>Retopology</h3>
-            <span class="cs-step-tool">Maya</span>
-            <p>One paragraph on the retopo strategy: target poly count, edge loop placement around deformation zones (face, hands, joints), whether you used a base mesh or retopoed by hand. State the final triangle count.</p>
-          </div>
-          <figure class="cs-step-media">
-            <div class="ph">[Wireframe over sculpt]</div>
-            <figcaption>Final wireframe over the sculpt.</figcaption>
-          </figure>
-        </article>
-
-        <article class="cs-step">
-          <div class="cs-step-text">
-            <span class="cs-step-num">03</span>
-            <h3>UVs</h3>
-            <span class="cs-step-tool">Maya · UV Toolkit</span>
-            <p>One paragraph: how you split the UV islands, target texel density, and what you packed onto which UDIM. State the texture set dimensions.</p>
-          </div>
-          <figure class="cs-step-media">
-            <div class="ph">[UV layout]</div>
-            <figcaption>UV layout — head on UDIM 1000, body on 1001.</figcaption>
-          </figure>
-        </article>
-
-        <article class="cs-step cs-step-flip">
-          <div class="cs-step-text">
-            <span class="cs-step-num">04</span>
-            <h3>Bake</h3>
-            <span class="cs-step-tool">Marmoset Toolbag</span>
-            <p>One paragraph on the bake: cage settings, what maps were generated (normal, AO, curvature, ID), any issues you fixed (floating geometry, smoothing-group mismatches).</p>
-          </div>
-          <figure class="cs-step-media">
-            <div class="ph">[Bake maps]</div>
-            <figcaption>Normal + curvature + ID bake, ready for texturing.</figcaption>
-          </figure>
-        </article>
-
-        <article class="cs-step">
-          <div class="cs-step-text">
-            <span class="cs-step-num">05</span>
-            <h3>Texture</h3>
-            <span class="cs-step-tool">Substance Painter</span>
-            <p>One paragraph on the texturing pass: how you built up materials (base color, roughness variation, metalness where applicable), any custom smart materials, how you handled the PBR-vs-stylized look decision.</p>
-          </div>
-          <figure class="cs-step-media">
-            <div class="ph">[Textured character]</div>
-            <figcaption>Final PBR set — base color, roughness, normal, metalness.</figcaption>
-          </figure>
-        </article>
-
-        <article class="cs-step cs-step-flip">
-          <div class="cs-step-text">
-            <span class="cs-step-num">06</span>
-            <h3>Presentation</h3>
-            <span class="cs-step-tool">Marmoset Toolbag</span>
-            <p>One paragraph on the presentation: the lighting setup (3-point is a safe default — key, sharp rim, HDRI fill), camera angles, and what the renders needed to prove (silhouette, material readability, character acting).</p>
-          </div>
-          <figure class="cs-step-media">
-            <div class="ph">[Final render]</div>
-            <figcaption>Three-point stylized lighting — key Rembrandt + sharp rim + HDRI sky fill.</figcaption>
-          </figure>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============== OUTCOMES ============== -->
     <section class="cs-section">
       <div class="container">
-        <p class="cs-eyebrow">Outcomes</p>
-        <h2>What was delivered.</h2>
+        <p class="cs-eyebrow">Visual read</p>
+        <h2>What the image is doing.</h2>
+        <div class="case-detail-grid" data-case-details></div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <p class="cs-eyebrow">Proof needed</p>
+        <h2>What would make this a real senior case study.</h2>
+        <div class="proof-grid" data-case-proof></div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <p class="cs-eyebrow">Asset plan</p>
+        <h2>Files to replace before claiming production work.</h2>
         <div class="cs-outcomes-grid">
           <div>
-            <h3>Deliverables</h3>
-            <ul>
-              <li><code>character_hero.fbx</code> — final mesh + skeleton, 18.4k tris</li>
-              <li><code>character_hero.blend</code> — editable source file</li>
-              <li><code>textures/hero_body/</code> — 2K PBR set, 6 maps</li>
-              <li><code>textures/hero_head/</code> — 1K PBR set, 6 maps</li>
-              <li><code>turntable.mp4</code> — 360° presentation render</li>
-              <li><code>handoff_notes.md</code> — engine import + LOD guide</li>
-            </ul>
+            <h3>Current generated visual</h3>
+            <ul data-case-current-assets></ul>
           </div>
           <div>
-            <h3>Where it shipped</h3>
-            <p>One or two sentences on where the asset ended up: which game, which brand, which client. If the work was personal / speculative, say so and explain the intent (style exploration, pipeline test, new direction).</p>
-            <p>If the work was AI-assisted, name the human-authored step explicitly. Example: "Direction and refinement by Lesly. AI reference generated with Midjourney, hand-picked from 40 candidates, then re-sculpted and re-lit in ZBrush."</p>
+            <h3>Required real proof</h3>
+            <ul data-case-required-assets></ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============== RELATED ============== -->
     <section class="cs-section cs-related">
       <div class="container">
         <p class="cs-eyebrow">More work</p>
-        <h2>Other case studies.</h2>
-        <div class="work-grid cs-related-grid mt-2">
-          <a class="work-card" href="case-study.html?id=avatar-character">
-            <div class="thumb">
-              [Avatar]
-              <span class="work-tag" aria-hidden="true">Avatar</span>
-              <span class="card-corner card-corner-tl" aria-hidden="true"></span>
-              <span class="card-corner card-corner-tr" aria-hidden="true"></span>
-              <span class="card-corner card-corner-bl" aria-hidden="true"></span>
-              <span class="card-corner card-corner-br" aria-hidden="true"></span>
-            </div>
-            <h3>Creator Avatar</h3>
-            <p class="meta">Avatar</p>
-            <p>Streamer character with expression set.</p>
-          </a>
-          <a class="work-card" href="case-study.html?id=mascot-character">
-            <div class="thumb">
-              [Mascot]
-              <span class="work-tag" aria-hidden="true">Mascot</span>
-              <span class="card-corner card-corner-tl" aria-hidden="true"></span>
-              <span class="card-corner card-corner-tr" aria-hidden="true"></span>
-              <span class="card-corner card-corner-bl" aria-hidden="true"></span>
-              <span class="card-corner card-corner-br" aria-hidden="true"></span>
-            </div>
-            <h3>Brand Mascot</h3>
-            <p class="meta">Mascot</p>
-            <p>Three-pose, two-colorway mascot system.</p>
-          </a>
-          <a class="work-card" href="case-study.html?id=ai-to-3d">
-            <div class="thumb">
-              [AI → 3D]
-              <span class="work-tag" aria-hidden="true">AI → 3D</span>
-              <span class="card-corner card-corner-tl" aria-hidden="true"></span>
-              <span class="card-corner card-corner-tr" aria-hidden="true"></span>
-              <span class="card-corner card-corner-bl" aria-hidden="true"></span>
-              <span class="card-corner card-corner-br" aria-hidden="true"></span>
-            </div>
-            <h3>AI Reference to Game Character</h3>
-            <p class="meta">Game · Process</p>
-            <p>Sketch and AI reference, refined into a game-ready asset.</p>
-          </a>
-        </div>
+        <h2>Distinct visual studies.</h2>
+        <div class="work-grid cs-related-grid mt-2" data-related-cases></div>
         <div class="cs-related-cta">
           <a class="btn btn-primary" href="index.html#contact">Start a project</a>
           <a class="btn" href="index.html#work">Back to all work</a>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -276,8 +129,8 @@
       <div>3D Character Artist · Character Modeling · Game-Ready Assets · AI Workflow Support</div>
     </div>
     <div>
-      <a href="reserch/README.md">Research</a>
-      <a href="reserch/final-ai-workflow-update.md">AI workflow update</a>
+      <a href="../reserch/README.md">Research</a>
+      <a href="../reserch/final-ai-workflow-update.md">AI workflow update</a>
     </div>
   </footer>
 

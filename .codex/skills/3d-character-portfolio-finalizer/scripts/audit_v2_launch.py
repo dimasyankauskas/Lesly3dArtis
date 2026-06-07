@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit Lesly V2 launch readiness without inventing portfolio proof."""
+"""Audit Lesly final root-site launch readiness without inventing portfolio proof."""
 
 from __future__ import annotations
 
@@ -9,29 +9,29 @@ from pathlib import Path
 
 
 REPO = Path(__file__).resolve().parents[4]
-V2 = REPO / "v2"
+SITE = REPO
 
 REQUIRED_FILES = [
-    V2 / "index.html",
-    V2 / "case-study.html",
-    V2 / "styles.css",
-    V2 / "script.js",
-    V2 / "case-study.js",
-    V2 / "CONTENT_STRATEGY.md",
-    V2 / "LAUNCH_CHECKLIST.md",
-    V2 / "ASSET_INTAKE.md",
-    V2 / "assets" / "README.md",
+    SITE / "index.html",
+    SITE / "case-study.html",
+    SITE / "styles.css",
+    SITE / "script.js",
+    SITE / "case-study.js",
+    SITE / "CONTENT_STRATEGY.md",
+    SITE / "LAUNCH_CHECKLIST.md",
+    SITE / "ASSET_INTAKE.md",
+    SITE / "assets" / "README.md",
 ]
 
 REQUIRED_ASSETS = [
-    V2 / "assets" / "portfolio" / "hero-original-v2-concept.webp",
-    V2 / "assets" / "portfolio" / "work-concept-to-3d.webp",
-    V2 / "assets" / "portfolio" / "work-game-ready-character.webp",
-    V2 / "assets" / "portfolio" / "work-sculpt-retopo.webp",
-    V2 / "assets" / "portfolio" / "work-avatar-character.webp",
-    V2 / "assets" / "portfolio" / "work-mascot-character.webp",
-    V2 / "assets" / "portfolio" / "work-outfits-accessories.webp",
-    V2 / "assets" / "profile" / "studio-process-portrait.webp",
+    SITE / "assets" / "portfolio" / "hero-original-site-concept.webp",
+    SITE / "assets" / "portfolio" / "work-concept-to-3d.webp",
+    SITE / "assets" / "portfolio" / "work-game-ready-character.webp",
+    SITE / "assets" / "portfolio" / "work-sculpt-retopo.webp",
+    SITE / "assets" / "portfolio" / "work-avatar-character.webp",
+    SITE / "assets" / "portfolio" / "work-mascot-character.webp",
+    SITE / "assets" / "portfolio" / "work-outfits-accessories.webp",
+    SITE / "assets" / "profile" / "studio-process-portrait.webp",
 ]
 
 REQUIRED_CASE_ASSET_PATTERNS = [
@@ -45,11 +45,11 @@ REQUIRED_CASE_ASSET_PATTERNS = [
 ]
 
 LIVE_FILES = [
-    V2 / "index.html",
-    V2 / "case-study.html",
-    V2 / "styles.css",
-    V2 / "script.js",
-    V2 / "case-study.js",
+    SITE / "index.html",
+    SITE / "case-study.html",
+    SITE / "styles.css",
+    SITE / "script.js",
+    SITE / "case-study.js",
 ]
 
 FORBIDDEN_LIVE_PATTERNS = [
@@ -66,7 +66,7 @@ def read(path: Path) -> str:
 
 
 def has_any_case_asset_set() -> bool:
-    process_dir = V2 / "assets" / "process"
+    process_dir = SITE / "assets" / "process"
     if not process_dir.exists():
         return False
     for child in process_dir.iterdir():
@@ -89,12 +89,12 @@ def main() -> int:
     if missing_assets:
         warnings.extend(f"Missing generated homepage/profile asset: {path.relative_to(REPO)}" for path in missing_assets)
 
-    hero_assets = list((V2 / "assets" / "portfolio").glob("hero-*.webp"))
+    hero_assets = list((SITE / "assets" / "portfolio").glob("hero-*.webp"))
     if not hero_assets:
-        warnings.append("Missing hero render matching v2/assets/portfolio/hero-*.webp")
+        warnings.append("Missing hero render matching assets/portfolio/hero-*.webp")
 
     if not has_any_case_asset_set():
-        warnings.append("Missing complete case-study asset set under v2/assets/process/[project-slug]/")
+        warnings.append("Missing complete case-study asset set under assets/process/[project-slug]/")
 
     for path in LIVE_FILES:
         if not path.exists():
@@ -104,28 +104,28 @@ def main() -> int:
             if pattern.search(text):
                 failures.append(f"Forbidden live-page pattern in {path.relative_to(REPO)}: {pattern.pattern}")
 
-    if (V2 / "index.html").exists():
-        index_text = read(V2 / "index.html")
-        if "Original V2 concept visual generated for this site" not in index_text:
+    if (SITE / "index.html").exists():
+        index_text = read(SITE / "index.html")
+        if "Original site concept visual generated for this site" not in index_text:
             failures.append("Homepage generated hero lacks visible provenance language.")
         if "not a real topology screenshot or mesh proof" not in index_text:
             failures.append("Homepage process card does not clearly reject fake technical proof.")
 
-    if (V2 / "case-study.html").exists():
-        case_text = read(V2 / "case-study.html")
+    if (SITE / "case-study.html").exists():
+        case_text = read(SITE / "case-study.html")
         if "not a shipped client project" not in case_text:
             failures.append("Case study does not clearly state generated concept provenance.")
         if "Source 3D proof" not in case_text:
             failures.append("Case study does not surface the missing source 3D proof.")
 
-    if (V2 / "ASSET_INTAKE.md").exists():
-        intake_text = read(V2 / "ASSET_INTAKE.md")
+    if (SITE / "ASSET_INTAKE.md").exists():
+        intake_text = read(SITE / "ASSET_INTAKE.md")
         if "| Public project title |  |" in intake_text:
-            warnings.append("Case-study facts are still blank in v2/ASSET_INTAKE.md")
+            warnings.append("Case-study facts are still blank in ASSET_INTAKE.md")
         if "| Preferred contact email or form endpoint |  |" in intake_text:
-            warnings.append("Contact destination is still blank in v2/ASSET_INTAKE.md")
+            warnings.append("Contact destination is still blank in ASSET_INTAKE.md")
 
-    print("Lesly V2 launch audit")
+    print("Lesly final-site launch audit")
     print("=====================")
     if failures:
         print("FAIL")

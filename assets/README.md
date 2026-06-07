@@ -1,13 +1,13 @@
-# V2 Asset Folders
+# Final Site Asset Folders
 
-These folders contain original generated V2 concept assets plus the replacement structure for future approved Lesly work.
+These folders contain original generated site concept assets plus the replacement structure for future approved Lesly work.
 
 ## Folders
 
 - `portfolio/` - homepage hero and work-card thumbnails.
 - `process/` - case-study renders, starting points, process images, technical proof, and deliverables proof.
 - `profile/` - approved Lesly portrait/profile images or explicitly labeled studio/process visuals.
-- `brand/` - V2 brand SVGs used by the site.
+- `brand/` - brand SVGs used by the site.
 
 ## Rules
 
