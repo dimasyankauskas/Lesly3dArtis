@@ -47,8 +47,41 @@ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
 
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-document.querySelector('.contact-form')?.addEventListener('submit',event=>{
-  event.preventDefault();
-  const note=event.currentTarget.querySelector('.form-note');
-  if(note)note.textContent='Form destination needed before launch: add a real email, Formspree endpoint, Airtable, HubSpot, Webflow, or backend.';
-});
+const contactForm=document.querySelector('.contact-form');
+
+if(contactForm){
+  const submitButton=contactForm.querySelector('button[type="submit"]');
+  const note=contactForm.querySelector('.form-note');
+  const requiredFields=[...contactForm.querySelectorAll('[required]')];
+
+  const isBriefReady=()=>requiredFields.every(field=>{
+    if(field.type==='email')return field.value.trim()&&field.validity.valid;
+    return field.value.trim().length>0;
+  });
+
+  const updateSubmitState=()=>{
+    const ready=isBriefReady();
+    if(submitButton){
+      submitButton.disabled=!ready;
+      submitButton.setAttribute('aria-disabled',String(!ready));
+    }
+    if(note&&!ready)note.textContent='';
+  };
+
+  requiredFields.forEach(field=>{
+    field.addEventListener('input',updateSubmitState);
+    field.addEventListener('change',updateSubmitState);
+  });
+
+  updateSubmitState();
+
+  contactForm.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(!isBriefReady()){
+      if(note)note.textContent='Add your name, a valid email, and a short project message first.';
+      updateSubmitState();
+      return;
+    }
+    if(note)note.textContent='Form destination needed before launch: add a real email, Formspree endpoint, Airtable, HubSpot, Webflow, or backend.';
+  });
+}
