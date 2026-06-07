@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 12" width="240" height="12" aria-hidden="true">
+  <!-- Left line -->
+  <line x1="0" y1="6" x2="100" y2="6" stroke="currentColor" stroke-width="1"/>
+  <!-- Center diamond -->
+  <g transform="translate(120 6) rotate(45)">
+    <rect x="-4" y="-4" width="8" height="8" fill="currentColor"/>
+  </g>
+  <!-- Right line -->
+  <line x1="140" y1="6" x2="240" y2="6" stroke="currentColor" stroke-width="1"/>
+</svg>

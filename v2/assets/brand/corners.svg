@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+  <!-- 4 corner L-brackets, 8px from each edge, 18px long -->
+  <!-- top-left -->
+  <path d="M8 26 L8 8 L26 8"/>
+  <!-- top-right -->
+  <path d="M34 8 L52 8 L52 26"/>
+  <!-- bottom-left -->
+  <path d="M8 34 L8 52 L26 52"/>
+  <!-- bottom-right -->
+  <path d="M34 52 L52 52 L52 34"/>
+</svg>
