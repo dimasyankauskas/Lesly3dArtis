@@ -20,17 +20,19 @@
   <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><em>Lesly</em></a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="header-actions">
+        <div class="theme-toggle" role="group" aria-label="Theme">
+          <button type="button" data-theme-set="light" aria-label="Use light theme" aria-pressed="true">☀</button>
+          <button type="button" data-theme-set="dark" aria-label="Use dark theme" aria-pressed="false">☾</button>
+        </div>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
       <nav class="nav" aria-label="Primary">
         <a href="index.html#work">Work</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#process">Process</a>
         <a href="index.html#about">About</a>
         <a class="nav-cta" href="index.html#contact">Start a Project</a>
-        <div class="theme-toggle" role="group" aria-label="Theme">
-          <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
-          <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
-        </div>
       </nav>
     </div>
   </header>
