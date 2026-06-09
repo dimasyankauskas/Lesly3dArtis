@@ -4,7 +4,7 @@
   <rect width="1400" height="900" fill="#f8f3e9"/>
   <rect x="48" y="48" width="1304" height="804" fill="none" stroke="#d6c6ae" stroke-width="4"/>
   <text x="88" y="132" fill="#14100c" font-family="Georgia,serif" font-size="58" letter-spacing="4">3D PRINT CHARACTER STARTUP</text>
-  <text x="92" y="178" fill="#5b554c" font-family="monospace" font-size="20" letter-spacing="3">DESIGN DIRECTION / PRINTABILITY RULES / STL HANDOFF</text>
+  <text x="92" y="178" fill="#5b554c" font-family="monospace" font-size="20" letter-spacing="3">DESIGN DIRECTION / AGENT RULES / STL HANDOFF</text>
   <g transform="translate(96 260)">
     <rect width="256" height="282" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
     <circle cx="128" cy="105" r="52" fill="#9f4828"/>

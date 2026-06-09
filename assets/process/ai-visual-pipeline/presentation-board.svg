@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
   <title id="title">AI visualization workflow presentation board</title>
-  <desc id="desc">Workflow board showing brief intake, material library, ComfyUI graph, local workstation, and client review loop.</desc>
+  <desc id="desc">Workflow board showing brief intake, material library, agent instructions, local workstation, and client review loop.</desc>
   <rect width="1400" height="900" fill="#f8f3e9"/>
   <rect x="48" y="48" width="1304" height="804" fill="none" stroke="#d6c6ae" stroke-width="4"/>
   <text x="88" y="132" fill="#14100c" font-family="Georgia,serif" font-size="56" letter-spacing="4">LOCAL AI VISUALIZATION WORKFLOW</text>
@@ -20,7 +20,7 @@
   </g>
   <g transform="translate(644 250)">
     <rect width="230" height="260" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
-    <text x="26" y="52" fill="#9f4828" font-family="monospace" font-size="18" letter-spacing="2">03 COMFYUI</text>
+    <text x="26" y="52" fill="#9f4828" font-family="monospace" font-size="18" letter-spacing="2">03 AGENT RULES</text>
     <circle cx="66" cy="126" r="28" fill="#2f6a57"/>
     <circle cx="164" cy="126" r="28" fill="#9f4828"/>
     <circle cx="116" cy="198" r="28" fill="#2c5f77"/>

@@ -97,12 +97,13 @@ const CASE_STUDIES=[
     image:'assets/portfolio/work-ai-visual-pipeline.svg',
     alt:'AI visualization workflow case-study board with material library, local generation, client review, and cost metrics.',
     meta:['Consulting','AI workflow','Visual pipeline'],
-    lead:'A strategic workflow case for replacing inconsistent cloud AI experiments with local generation standards, material libraries, client review checkpoints, and cost-control planning.',
+    lead:'A strategic workflow case for replacing inconsistent cloud AI experiments with local generation standards, 3D-aware agent instructions, material libraries, client review checkpoints, and cost-control planning.',
     whatTitle:'A visual pipeline plan for a residential construction team.',
-    whatCopy:'This case positions Lesly as a visual-pipeline and art-direction partner: she defined the look, material library, local generation standards, review criteria, and developer handoff for a small construction team using AI visualization.',
+    whatCopy:'This case positions Lesly as a visual-pipeline and art-direction partner: she defined the look, material library, local generation standards, agent instructions, review criteria, and developer handoff for a small construction team using AI visualization.',
     details:[
-      ['Strategic role','Lesly was not positioned as a hands-on renderer only; her role was visual standards, workflow definition, AI tool direction, team training, and implementation guidance.'],
+      ['Strategic role','Lesly was not positioned as a hands-on renderer only; her role was visual standards, workflow definition, agent instruction design, team training, and implementation guidance.'],
       ['Local generation','The pipeline moved repeated cloud experiments toward a local Apple Silicon / ComfyUI / Stable Diffusion workflow with prompt, seed, reference, and output logging.'],
+      ['Agent instructions','Because she understands 3D constraints, Lesly wrote the system prompts, task prompts, QA rules, and review instructions that helped agents produce usable visual outputs instead of random images.'],
       ['Material library','Siding, stone, tile, wood, fixtures, paint, landscape, and lighting options were organized into reusable visual rules.'],
       ['Economics model','The project modeled a $2,000/month cloud baseline, $10.4k local setup, $300/month residual tooling, and about a 6.1-month break-even.']
     ],
@@ -113,12 +114,12 @@ const CASE_STUDIES=[
     ],
     proof:[
       ['Cost baseline','Cloud AI invoices, token/credit reports, and monthly generation spend before local workflow planning.'],
-      ['Workflow proof','ComfyUI graph screenshots, prompt templates, seed logs, reference boards, QA checklist, and local generation notes.'],
-      ['Implementation proof','Developer brief, MCP/3D tool notes, team training materials, hardware receipts, and local workstation specs.'],
+      ['Workflow proof','ComfyUI graph screenshots, prompt templates, seed logs, agent instruction sets, reference boards, QA checklist, and local generation notes.'],
+      ['Implementation proof','Developer brief, MCP/3D tool notes, agent handoff instructions, team training materials, hardware receipts, and local workstation specs.'],
       ['Review proof','Material library screenshots, client review examples, generated-output comparisons, and approved public-safe outcome metrics.']
     ],
     current:['assets/portfolio/work-ai-visual-pipeline.svg','assets/process/ai-visual-pipeline/presentation-board.svg','assets/process/ai-visual-pipeline/economics-board.svg'],
-    required:['baseline cloud AI spend report','hardware receipt and workstation specs','ComfyUI workflow screenshot','material library screenshot','developer implementation brief','training notes and approved outcome metrics']
+    required:['baseline cloud AI spend report','hardware receipt and workstation specs','ComfyUI workflow screenshot','material library screenshot','agent instruction examples','developer implementation brief','training notes and approved outcome metrics']
   },
   {
     id:'print-startup-direction',
@@ -126,12 +127,13 @@ const CASE_STUDIES=[
     image:'assets/portfolio/work-3d-print-startup.svg',
     alt:'3D printed character startup design-direction board with character families, print rules, and handoff metrics.',
     meta:['Design direction','3D printing','Character system'],
-    lead:'A design-director case for helping a small 3D printing startup turn collectible character ideas into a printable product system with style rules, printability checks, and STL/3MF handoff standards.',
+    lead:'A design-director case for helping a small 3D printing startup turn collectible character ideas into a printable product system with style rules, agent-ready instructions, printability checks, and STL/3MF handoff standards.',
     whatTitle:'A product-ready character system for small-batch 3D printing.',
-    whatCopy:'This case connects directly to Lesly’s 3D character authority: character style, printable form, collectible appeal, print QA, production handoff, and repeatable startup workflow.',
+    whatCopy:'This case connects directly to Lesly’s 3D character authority: character style, printable form, collectible appeal, print QA, agent instructions, production handoff, and repeatable startup workflow.',
     details:[
-      ['Design director role','Lesly defined the character families, style rules, product scale, pose constraints, base system, accessory logic, and production-readiness gates.'],
+      ['Design director role','Lesly defined the character families, style rules, product scale, pose constraints, base system, accessory logic, agent instructions, and production-readiness gates.'],
       ['Printability rules','The workflow brought physical constraints earlier: wall thickness, watertight geometry, supports, hollowing, drainage, fragile details, orientation, and file package checks.'],
+      ['Agent-ready workflow','Her 3D knowledge became the operating layer for agents: what to generate, what to reject, what geometry risks to flag, and what instructions developers needed to connect tools safely.'],
       ['Startup system','Instead of treating each character as a one-off, the project created a repeatable library for future collectible lines.'],
       ['Economics model','The draft models repair/rejection dropping from 28% to 9%, prep time dropping from 6h to 2.5h, and about $2,310/month in avoided prep labor.']
     ],
@@ -141,7 +143,7 @@ const CASE_STUDIES=[
       ['assets/portfolio/work-3d-print-startup.svg','Case-study overview card with character families, printability rules, and STL/3MF handoff metrics.']
     ],
     proof:[
-      ['Design system','Style guide excerpts, character family boards, pose rules, accessory rules, and base-system standards.'],
+      ['Design system','Style guide excerpts, character family boards, pose rules, accessory rules, agent instructions, and base-system standards.'],
       ['Print QA','Slicer screenshots, support/orientation tests, wall-thickness notes, hollowing/drainage checks, and failed-print logs.'],
       ['Handoff','STL/3MF/OBJ package examples, print notes, thumbnails, product metadata, naming rules, and startup restrictions.'],
       ['Outcome proof','Before/after model-prep time, repair/rejection counts, successful prototype photos, and approved labor-savings data.']
@@ -394,17 +396,19 @@ const CASE_NARRATIVES={
     problems:[
       ['Buyer problem','The construction team was using online AI tools for home visuals, but the outputs were inconsistent and the spend was hard to control.'],
       ['Presentation risk','Generated images can look impressive while failing geometry, material consistency, client approval, or real project constraints.'],
-      ['Solved direction','Lesly defined the visual standards, material library, local generation workflow, cost model, and developer brief needed to make AI visualization repeatable.']
+      ['Solved direction','Lesly defined the visual standards, material library, agent instructions, local generation workflow, cost model, and developer brief needed to make AI visualization repeatable.']
     ],
     process:[
       ['Workflow audit','Map current cloud AI spend, prompt practices, visual failures, review bottlenecks, and handoff gaps.'],
       ['Art direction system','Define the material library, style rules, acceptable variation, geometry-preservation needs, and client-ready output criteria.'],
+      ['Agent instruction layer','Write the system prompts, task prompts, negative rules, naming rules, reference requirements, and QA checks that make AI agents respect 3D and construction constraints.'],
       ['Local AI plan','Specify a local ComfyUI / Stable Diffusion workflow with prompt, seed, reference, ControlNet-style structure guidance, and output logging.'],
-      ['Implementation handoff','Coordinate with developers or an AI agency around tool setup, MCP/3D application connections, training materials, and review checkpoints.']
+      ['Implementation handoff','Coordinate with developers or an AI agency around tool setup, MCP/3D application connections, agent behavior, training materials, and review checkpoints.']
     ],
     deliverables:[
       ['Strategy package','Workflow map, visual standards, material-library taxonomy, generation rules, and client review criteria.'],
-      ['Technical brief','Local workstation assumptions, ComfyUI graph requirements, model/tool list, prompt templates, logging rules, and MCP/3D tool notes.'],
+      ['Technical brief','Local workstation assumptions, ComfyUI graph requirements, model/tool list, system prompt templates, logging rules, and MCP/3D tool notes.'],
+      ['Agent instructions','3D-aware prompts, rejection criteria, image-review rules, material naming rules, and client-ready response instructions.'],
       ['Measurement plan','Baseline cloud spend, residual tooling spend, break-even model, output consistency checks, and public-safe proof requirements.']
     ]
   },
@@ -413,16 +417,17 @@ const CASE_NARRATIVES={
     problems:[
       ['Buyer problem','The 3D printing startup wanted different collectible characters, but early assets were inconsistent and needed heavy repair before printing.'],
       ['Production risk','A model can look good on screen while failing as a physical object because of thin parts, bad supports, hollowing issues, or non-watertight geometry.'],
-      ['Solved direction','Lesly acted as design director: defining character families, printability rules, QA gates, file handoff standards, and a repeatable product library.']
+      ['Solved direction','Lesly acted as design director: defining character families, agent instructions, printability rules, QA gates, file handoff standards, and a repeatable product library.']
     ],
     process:[
       ['Product brief','Define character audience, collectible scale, print process, product family, pose rules, base system, and handoff format.'],
+      ['Agent instruction layer','Convert Lesly’s 3D judgment into prompts, rejection rules, geometry-risk checks, and task instructions that agents or developers can reuse.'],
       ['Style direction','Lock silhouette, face read, proportions, expression, accessory logic, and visual consistency across future character lines.'],
       ['Printability review','Move physical constraints earlier: wall thickness, supports, hollowing, drainage, fragile details, orientation, and slicer review.'],
       ['Production handoff','Package STL/3MF/OBJ files, thumbnails, print notes, QA checklist, naming rules, and startup-facing product metadata.']
     ],
     deliverables:[
-      ['Design package','Character family boards, style guide excerpts, scale rules, pose/base standards, and accessory constraints.'],
+      ['Design package','Character family boards, style guide excerpts, agent instructions, scale rules, pose/base standards, and accessory constraints.'],
       ['Print package','Printability checklist, slicer review notes, support/orientation guidance, file package structure, and prototype QA requirements.'],
       ['Measurement plan','Repair/rejection rate, prep time per character, successful print count, material waste, and startup approval metrics.']
     ]

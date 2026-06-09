@@ -22,10 +22,10 @@
   <g transform="translate(608 257)">
     <rect width="446" height="118" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
     <circle cx="56" cy="59" r="31" fill="#9f4828"/>
-    <text x="112" y="53" fill="#14100c" font-family="monospace" font-size="22" letter-spacing="2">COMFYUI GRAPH</text>
+    <text x="112" y="53" fill="#14100c" font-family="monospace" font-size="22" letter-spacing="2">AGENT INSTRUCTIONS</text>
     <text x="112" y="82" fill="#5b554c" font-family="monospace" font-size="14">
-      <tspan x="112" y="82">control / seed / prompt</tspan>
-      <tspan x="112" y="102">reference logs / QA notes</tspan>
+      <tspan x="112" y="82">system prompts / QA rules</tspan>
+      <tspan x="112" y="102">references / tool actions</tspan>
     </text>
   </g>
   <g transform="translate(608 409)">

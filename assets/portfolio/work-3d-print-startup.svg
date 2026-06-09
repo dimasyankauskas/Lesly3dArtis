@@ -5,7 +5,7 @@
   <rect x="52" y="52" width="1096" height="796" fill="#f8f3e9"/>
   <text x="92" y="142" fill="#14100c" font-family="Georgia,serif" font-size="58" letter-spacing="4">3D PRINT</text>
   <text x="92" y="205" fill="#14100c" font-family="Georgia,serif" font-size="58" letter-spacing="4">CHARACTER SYSTEM</text>
-  <text x="96" y="252" fill="#5b554c" font-family="monospace" font-size="21" letter-spacing="3">DESIGN DIRECTION / PRINT QA / STL HANDOFF</text>
+  <text x="96" y="252" fill="#5b554c" font-family="monospace" font-size="21" letter-spacing="3">DESIGN DIRECTION / AGENT RULES / STL HANDOFF</text>
   <g transform="translate(90 318)">
     <rect width="238" height="238" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
     <circle cx="119" cy="89" r="46" fill="#9f4828"/>
