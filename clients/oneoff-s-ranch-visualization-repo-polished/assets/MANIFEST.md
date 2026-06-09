@@ -1,0 +1,51 @@
+# Asset Manifest
+
+Note: files under `assets/client_updates/2026-06-09/` are the current client-facing visual set for the mobile presentation. Files under `assets/visuals/accepted/` are retained as previous concept/mood placeholders only; do not use them as the active client-facing image set unless a later QC log explicitly re-accepts them against the updated sketch.
+
+- `assets/source_docs/25_1022_S_Ranch_Bar_Window_Details.pdf`
+- `assets/source_docs/F3499323.pdf`
+- `assets/client_updates/2026-06-09/updated_2d_sketch_2026-06-09.png`
+- `assets/client_updates/2026-06-09/luxury_bar_closed_front.png`
+- `assets/client_updates/2026-06-09/luxury_bar_closed_angled.png`
+- `assets/client_updates/2026-06-09/luxury_bar_wide_lounge.png`
+- `assets/client_updates/2026-06-09/luxury_bar_lifestyle_with_clients.png`
+- `assets/video/s_ranch_cinematic_original.mp4`
+- `assets/video/s_ranch_cinematic_warm_contrast.mp4`
+- `assets/video/s_ranch_cinematic_poster.png`
+- `assets/client_intake/2026-06-09/s_ranch_bar_window_client_copy.pdf`
+- `assets/client_intake/2026-06-09/client_msg_bifold_example.png`
+- `assets/client_intake/2026-06-09/client_msg_bifold_pairs.png`
+- `assets/client_intake/2026-06-09/client_msg_colors_lattice.jpg`
+- `assets/client_intake/2026-06-09/client_msg_cove_wall_thickness.png`
+- `assets/client_intake/2026-06-09/client_msg_original_rendering_ask.png`
+- `assets/client_intake/2026-06-09/client_msg_top_view_open_closed.png`
+- `assets/client_intake/2026-06-09/bifold_window_reference.jpg`
+- `assets/client_intake/2026-06-09/drawing_highlighted_depth.jpg`
+- `assets/client_intake/2026-06-09/enlarged_elevation_phone.jpg`
+- `assets/client_intake/2026-06-09/pdf_section_crop.jpg`
+- `assets/client_intake/2026-06-09/rail_hardware_client_notes.jpg`
+- `assets/client_intake/2026-06-09/surfcam_2d_drawing_screen.jpg`
+- `assets/client_intake/2026-06-09/top_view_client_photo.jpg`
+- `assets/source_images/bifold_serving_window_reference.png`
+- `assets/source_images/linear_rail_and_shoulder_bolt_reference.png`
+- `assets/source_images/linear_rail_hardware_notes.png`
+- `assets/source_images/technical_sheet_highlighted_dimensions_clean.png`
+- `assets/visuals/accepted/hero_closed_bar_wall_concept.png`
+- `assets/visuals/accepted/left_pair_open_shallow_niche_concept.png`
+- `assets/visuals/accepted/right_45_closed_concept.png`
+- `assets/visuals/iterations/early_cabinet_concept_not_technical.png`
+- `assets/visuals/iterations/early_closed_cabinet_concept.png`
+- `assets/visuals/iterations/left_open_depth_too_deep_iteration.png`
+- `assets/visuals/iterations/outdoor_context_experiment.png`
+- `assets/visuals/iterations/right_45_early_cabinet_concept.png`
+- `assets/visuals/rejected_or_caution/closed_single_wall_iteration.png`
+- `assets/visuals/rejected_or_caution/left_open_wrong_too_many_folded_panels.png`
+- `assets/visuals/rejected_or_caution/open_both_early_iteration.png`
+- `assets/visuals/rejected_or_caution/open_both_wrong_four_swing_doors.png`
+- `assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_closed_hero_blueprint_aligned_studio_concept.png`
+- `assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_left_pair_open_blueprint_aligned_shallow_niche_studio_concept.png`
+- `assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_both_sides_open_two_stacks_blueprint_aligned_studio_proof.png`
+- `assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_shallow_cove_niche_detail_blueprint_aligned_studio_concept.png`
+- `assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_mechanism_board_linear_rail_two_bifold_pairs_studio_concept.png`
+- `assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_material_direction_board_concept_only_studio.png`
+- `assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_portal_mockup_private_review_page_studio_concept.png`

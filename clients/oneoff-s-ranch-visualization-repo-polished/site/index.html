@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>One Off / S-RANCH - Client Visualization Strategy</title>
+<style>
+:root{
+  --ink:#17120d;
+  --espresso:#24160f;
+  --walnut:#3a261a;
+  --walnut-2:#593721;
+  --charcoal:#11100f;
+  --steel:#1f2525;
+  --stone:#e8decd;
+  --ivory:#f8f1e6;
+  --paper:#fff8ed;
+  --paper-2:#eadcc8;
+  --muted:#bda98e;
+  --brass:#b58b4d;
+  --brass-2:#e1bd7d;
+  --bronze:#7a4e2e;
+  --copper:#a96336;
+  --green:#86d7ac;
+  --warn:#f4c777;
+  --bad:#ff9a85;
+  --glass:rgba(255,248,237,.08);
+  --line:rgba(255,248,237,.16);
+  --darkLine:rgba(36,22,15,.16);
+  --shadow:0 24px 80px rgba(0,0,0,.42);
+  --radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;background:#080604}
+body{
+  margin:0;
+  font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ivory);
+  background:
+    radial-gradient(circle at 12% -8%,rgba(181,139,77,.25),transparent 24rem),
+    radial-gradient(circle at 92% 8%,rgba(89,55,33,.34),transparent 22rem),
+    linear-gradient(180deg,#080604 0%,#17120d 42%,#0c0a08 100%);
+  min-height:100vh;
+}
+.desktop-stage{width:100%;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:0}
+.phone{width:min(100%,1024px);min-height:100vh;background:var(--ink);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+@media (min-width:740px){
+  .desktop-stage{padding:32px 0}
+  .phone{border:1px solid rgba(255,255,255,.08);border-radius:40px;min-height:calc(100vh - 64px)}
+  .phone:before{content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);width:86px;height:5px;border-radius:99px;background:rgba(255,255,255,.15);z-index:99}
+}
+.grain{pointer-events:none;position:absolute;inset:0;opacity:.15;mix-blend-mode:overlay;z-index:1;background-image:linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(0deg,rgba(255,255,255,.014) 1px,transparent 1px);background-size:7px 7px,11px 11px}
+.topbar{position:fixed;top:10px;left:50%;transform:translateX(-50%);width:min(calc(100% - 24px),1000px);z-index:50;padding:8px 10px;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,248,237,.24);border-radius:26px;background:linear-gradient(135deg,rgba(255,248,237,.18),rgba(255,248,237,.065) 36%,rgba(12,9,7,.46));box-shadow:0 18px 54px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(0,0,0,.22);backdrop-filter:blur(18px) saturate(1.35);-webkit-backdrop-filter:blur(18px) saturate(1.35);pointer-events:none;overflow:hidden;isolation:isolate}
+.topbar:before{content:"";position:absolute;inset:1px;border-radius:24px;background:radial-gradient(circle at 18% 8%,rgba(255,255,255,.34),transparent 28%),linear-gradient(90deg,rgba(255,255,255,.13),transparent 42%,rgba(181,139,77,.12));opacity:.72;pointer-events:none}
+.brandmark{position:relative;z-index:1;pointer-events:auto;display:flex;align-items:center;gap:9px;color:var(--ivory);font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;text-shadow:0 1px 10px rgba(0,0,0,.38)}.mark{width:30px;height:30px;border:1px solid rgba(255,248,237,.35);border-radius:50%;display:grid;place-items:center;color:var(--brass-2);font-family:Georgia,serif;background:rgba(255,248,237,.07);box-shadow:inset 0 1px 0 rgba(255,255,255,.24)}
+.bottomnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,1024px);z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(13,11,9,0),rgba(13,11,9,.82) 24%,rgba(13,11,9,.96))}.navinner{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;border:1px solid rgba(255,248,237,.12);border-radius:999px;padding:6px;background:rgba(24,18,13,.82);backdrop-filter:blur(16px)}.navinner a{color:rgba(248,241,230,.64);text-decoration:none;font-size:9px;text-transform:uppercase;letter-spacing:.06em;text-align:center;padding:9px 2px;border-radius:99px}.navinner a.active{color:#1b120c;background:var(--brass);font-weight:900}
+.section{position:relative;z-index:2;padding:34px 22px;scroll-margin-top:76px}.section.tight{padding-top:18px}.panel{background:linear-gradient(180deg,rgba(255,248,237,.08),rgba(255,248,237,.035));border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:0 18px 60px rgba(0,0,0,.18);backdrop-filter:blur(10px)}.panel.paper{background:var(--paper);color:var(--espresso);border-color:rgba(0,0,0,.08)}
+	.hero{min-height:820px;padding:0;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;background:#110d09}.hero-media{position:absolute;inset:0;z-index:0}.hero-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.96) contrast(1.02)}.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,7,6,.08) 0%,rgba(8,7,6,.2) 32%,rgba(8,7,6,.86) 83%,rgba(8,7,6,1) 100%),radial-gradient(circle at 52% 40%,transparent 0 10rem,rgba(0,0,0,.34) 28rem)}.hero-content{position:relative;z-index:3;padding:70px 22px 156px}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:14px}.eyebrow:before{content:"";width:32px;height:1px;background:var(--brass);display:inline-block}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.03em;margin:0}h1{font-size:40px;line-height:.98;max-width:14ch;text-wrap:balance}h2{font-size:38px;line-height:1;margin-bottom:16px}h3{font-size:24px;line-height:1.05;margin-bottom:8px}p{color:rgba(248,241,230,.78);line-height:1.55;margin:0;font-size:15px}.sub{font-size:16px;color:rgba(248,241,230,.72);line-height:1.55}.paper p,.paper li,.paper .sub{color:rgba(36,22,15,.75)}.large-copy{font-size:20px;line-height:1.35;color:var(--ivory);font-family:Georgia,"Times New Roman",serif}.mini{font-size:12px;line-height:1.45;color:rgba(248,241,230,.58)}.paper .mini{color:rgba(36,22,15,.58)}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{border:1px solid rgba(255,248,237,.22);border-radius:999px;padding:12px 15px;color:var(--ivory);text-decoration:none;font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,248,237,.07);backdrop-filter:blur(12px);display:inline-flex;align-items:center;gap:8px}.btn.primary{background:var(--brass);color:#160d08;border-color:var(--brass);font-weight:900}.btn.block{width:100%;justify-content:center}.btn.dark{background:#23180f;color:#ffe5b6;border-color:#23180f}.label{display:inline-block;font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:900;color:var(--brass-2);background:transparent;border:0;border-radius:0;padding:0;text-shadow:0 1px 10px rgba(0,0,0,.28)}.paper .label,.role-card .label{color:var(--bronze);text-shadow:none}.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.kpi{border:1px solid rgba(255,248,237,.12);background:rgba(255,248,237,.055);border-radius:18px;padding:14px}.kpi strong{display:block;font-family:Georgia,serif;font-size:28px;font-weight:400;color:var(--ivory);margin-bottom:4px}.kpi span{font-size:11px;color:rgba(248,241,230,.58);line-height:1.35;display:block}.case-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.meta{padding:12px;border-radius:16px;background:rgba(36,22,15,.06);border:1px solid rgba(36,22,15,.10)}.meta b{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);margin-bottom:4px}.meta span{display:block;font-size:13px;line-height:1.25;color:var(--espresso)}
+.image-card{overflow:hidden;border-radius:24px;border:1px solid var(--line);background:#0d0b09;position:relative;cursor:pointer}.image-card img{display:block;width:100%;height:auto}.image-card.cover img{height:360px;object-fit:cover}.caption{padding:12px 13px;font-size:11px;color:rgba(248,241,230,.66);letter-spacing:.04em;text-transform:uppercase;display:flex;justify-content:space-between;gap:10px;align-items:center}.caption em{font-style:normal;color:var(--brass)}.asset-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:18px}.asset{border-radius:22px;overflow:hidden;background:rgba(255,248,237,.055);border:1px solid var(--line);position:relative;cursor:pointer}.asset img{width:100%;height:160px;object-fit:cover;display:block}.image-card:after,.asset:after{content:"";position:absolute;z-index:4;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background-color:rgba(12,9,7,.28);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff8ed' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.1 12s3.2-6.2 9.9-6.2S21.9 12 21.9 12s-3.2 6.2-9.9 6.2S2.1 12 2.1 12Z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:20px 20px;border:1px solid rgba(255,248,237,.22);box-shadow:0 10px 28px rgba(0,0,0,.32);opacity:.72;pointer-events:none;backdrop-filter:blur(8px);transition:opacity .18s ease,background-color .18s ease,transform .18s ease}.asset:after{width:30px;height:30px;background-size:17px 17px;top:9px;right:9px}.image-card:hover:after,.asset:hover:after{opacity:.96;background-color:rgba(12,9,7,.45);transform:scale(1.04)}.asset .asset-text{padding:12px}.asset h4{margin:0 0 5px;font-size:13px;color:var(--ivory)}.asset p{font-size:11px;color:rgba(248,241,230,.62);line-height:1.4}.before-after{display:grid;grid-template-columns:1fr 1fr;gap:10px}.before-after .image-card img{height:205px;object-fit:cover}.before-after .image-card:first-child img{object-fit:contain;background:#f3f0eb}.timeline{display:grid;gap:12px;margin-top:20px}.step{position:relative;padding:18px 16px 18px 55px;border-radius:22px;background:linear-gradient(180deg,rgba(255,248,237,.08),rgba(255,248,237,.035));border:1px solid var(--line)}.num{position:absolute;left:14px;top:16px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(181,139,77,.17);border:1px solid rgba(181,139,77,.36);color:var(--brass);font-size:11px;font-weight:900}.step h3{font-size:19px;margin-bottom:6px}.step p{font-size:13px}.tabs{margin-top:20px}.tab-buttons{display:flex;overflow:auto;gap:8px;padding-bottom:10px;-webkit-overflow-scrolling:touch}.tab-buttons button{flex:0 0 auto;border:1px solid rgba(255,248,237,.16);background:rgba(255,248,237,.05);color:rgba(248,241,230,.72);border-radius:999px;padding:10px 12px;font-size:11px;letter-spacing:.06em;text-transform:uppercase}.tab-buttons button.active{background:var(--brass);color:#1b120c;border-color:var(--brass);font-weight:900}.tab-panel{display:none}.tab-panel.active{display:block}.mood{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}.mood-card{min-height:154px;border-radius:23px;overflow:hidden;position:relative;border:1px solid var(--line);background:#111;cursor:pointer}.mood-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:saturate(.9) contrast(1.05)}.mood-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.78) 100%)}.mood-card:before{content:"";position:absolute;z-index:4;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background-color:rgba(12,9,7,.26);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff8ed' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.1 12s3.2-6.2 9.9-6.2S21.9 12 21.9 12s-3.2 6.2-9.9 6.2S2.1 12 2.1 12Z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:17px 17px;border:1px solid rgba(255,248,237,.2);opacity:.74;pointer-events:none;backdrop-filter:blur(8px)}.mood-label{position:absolute;left:12px;right:12px;bottom:12px;z-index:2}.mood-label b{display:block;font-size:13px;color:var(--ivory)}.mood-label span{font-size:10px;text-transform:uppercase;letter-spacing:.10em;color:rgba(248,241,230,.64)}.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:12px}.swatch{height:58px;border-radius:15px;border:1px solid rgba(255,255,255,.13);position:relative;overflow:hidden}.swatch span{position:absolute;left:7px;bottom:6px;font-size:8px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.86);text-shadow:0 1px 4px rgba(0,0,0,.5)}.quote{margin-top:18px;padding:22px;border-radius:26px;background:linear-gradient(135deg,rgba(181,139,77,.18),rgba(255,248,237,.05));border:1px solid rgba(181,139,77,.24)}.quote p{font-family:Georgia,serif;font-size:23px;line-height:1.2;color:var(--ivory)}.quote small{display:block;margin-top:12px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.12em}.checklist{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:9px}.checklist li{display:flex;gap:10px;align-items:flex-start;padding:12px 13px;border-radius:16px;background:rgba(36,22,15,.05);border:1px solid rgba(36,22,15,.09);font-size:13px;line-height:1.35}.checklist li:before{content:"✓";color:var(--bronze);font-weight:900}.paper .checklist li{color:rgba(36,22,15,.78)}.role-card{background:linear-gradient(180deg,var(--paper),#eadcc8);color:var(--espresso);border-radius:30px;padding:24px;border:1px solid rgba(255,255,255,.2);box-shadow:0 24px 70px rgba(0,0,0,.26)}.role-card h2{color:var(--espresso);font-size:34px;line-height:.98;margin-bottom:16px}.role-card p{color:rgba(36,22,15,.74);font-size:14px;line-height:1.48}.role-title{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(36,22,15,.62);font-weight:900;margin:0 0 16px;line-height:1.25}.role-pill-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.role-pill-grid span{font-size:11px;line-height:1.15;padding:8px 10px;background:rgba(36,22,15,.06);border:1px solid rgba(36,22,15,.15);color:rgba(36,22,15,.82);border-radius:999px}.tech-grid{display:grid;gap:10px;margin-top:18px}.tech{border-left:1px solid var(--brass);padding:10px 0 10px 14px}.tech b{display:block;font-size:13px;color:var(--ivory);margin-bottom:4px}.tech span{display:block;font-size:12px;color:rgba(248,241,230,.66);line-height:1.45}.compare{display:grid;gap:10px}.compare-row{display:grid;grid-template-columns:90px 1fr;gap:10px;align-items:start;border-top:1px solid rgba(255,255,255,.09);padding-top:10px;margin-top:10px}.compare-row strong{font-size:12px;line-height:1.3;color:var(--brass-2)}.compare-row span{font-size:13px;line-height:1.42;color:#eadcc7}.video-grid{display:grid;gap:11px;margin-top:18px}.video-slot{min-height:168px;border:1px dashed rgba(181,139,77,.52);border-radius:24px;display:grid;place-items:center;background:linear-gradient(135deg,#1a120c,#302216);position:relative;overflow:hidden}.video-slot:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 45% 32%,rgba(225,189,125,.18),transparent 45%)}.video-slot div{position:relative;z-index:2;text-align:center;padding:16px}.video-slot b{display:block;color:#fff;font-family:Georgia,serif;font-size:22px}.video-slot span{font-size:12px;color:var(--muted)}.video-card{overflow:hidden;border-radius:24px;border:1px solid var(--line);background:rgba(255,248,237,.055);margin-top:18px}.video-card video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#080604;filter:saturate(1.04) contrast(1.05)}.portal{position:relative}.pin-area{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(181,139,77,.25);margin-top:14px;background:#080604}.pin-area img{display:block;width:100%}.pin{position:absolute;width:22px;height:22px;border-radius:50%;background:var(--brass-2);color:#130d08;display:grid;place-items:center;font-weight:900;border:2px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.4);transform:translate(-50%,-50%)}.comment-box{display:none;background:var(--paper);color:#1a130e;border-radius:18px;padding:13px;margin-top:12px}.comment-box p{color:rgba(36,22,15,.64);font-size:12px}.comment-box textarea{width:100%;min-height:76px;border-radius:14px;border:1px solid #baa88f;padding:10px;font:inherit;margin-top:8px}.closing{padding-bottom:112px}.signature{display:flex;gap:12px;align-items:center;margin-top:20px}.sigmark{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--brass);color:#1b120c;font-family:Georgia,serif;font-size:20px}.signature b{display:block;color:var(--ivory);font-size:14px}.signature span{display:block;color:rgba(248,241,230,.58);font-size:12px;margin-top:2px}.signature a{display:inline-block;margin-top:4px;color:var(--brass-2);font-size:12px;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid rgba(225,189,125,.45)}.signature a:hover{color:#fff2dc;border-bottom-color:#fff2dc}.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}.lightbox{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px}.lightbox.open{display:flex}.lightbox img{max-width:100%;max-height:86vh;border-radius:18px;box-shadow:0 20px 80px rgba(0,0,0,.55)}.lightbox button{position:absolute;top:18px;right:18px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:white;border-radius:999px;padding:10px 13px}.rule{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:22px 0}.source-note{font-size:11px;color:rgba(248,241,230,.56);line-height:1.45;margin-top:10px}.paper .source-note{color:rgba(36,22,15,.55)}
+			.hero-caption{margin-top:14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(248,241,230,.58)}
+			.hero-summary{margin-top:30px;padding:13px;border-radius:22px;border:1px solid rgba(225,189,125,.22);background:linear-gradient(135deg,rgba(12,8,6,.64),rgba(255,248,237,.09));box-shadow:0 16px 44px rgba(0,0,0,.28);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+			.hero-summary strong{display:block;margin-top:6px;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:17px;font-weight:800;line-height:1.28;letter-spacing:0;color:var(--ivory)}
+			.hero-summary p{font-size:12px;line-height:1.45;color:rgba(248,241,230,.68);margin-top:7px}
+			.hero-summary-grid{display:grid;gap:7px;margin-top:10px}
+			.hero-summary-item{display:grid;grid-template-columns:64px 1fr;gap:10px;align-items:start;padding-top:7px;border-top:1px solid rgba(255,248,237,.12)}
+			.hero-summary-item b{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:10px;line-height:1.25;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-2)}
+			.hero-summary-item span{font-size:12px;line-height:1.36;color:rgba(248,241,230,.76)}
+			.value-grid{display:grid;gap:10px;margin-top:18px}.value-card{border:1px solid var(--line);background:rgba(255,248,237,.055);border-radius:22px;padding:15px}.value-card h3{font-size:18px}.value-card p{font-size:13px;color:rgba(248,241,230,.68)}
+		.diagram{display:grid;gap:10px;margin-top:16px}.diagram-row{padding:14px;border-radius:18px;border:1px solid var(--line);background:rgba(255,248,237,.055)}.diagram-row b{display:block;color:var(--brass-2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:7px}.diagram-row code{display:block;white-space:normal;color:#fff2dc;font-size:13px;line-height:1.45;font-family:"SFMono-Regular",Consolas,monospace}
+		.state-card{padding:18px;background:linear-gradient(145deg,rgba(255,248,237,.095),rgba(255,248,237,.04));box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 18px 50px rgba(0,0,0,.18)}.state-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.state-note{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(248,241,230,.48)}.panel-map{display:grid;gap:7px;align-items:stretch;margin:10px 0 14px}.panel-map span{min-height:44px;border:1px solid rgba(225,189,125,.32);border-radius:13px;display:grid;place-items:center;text-align:center;background:linear-gradient(180deg,rgba(255,248,237,.10),rgba(255,248,237,.035));color:#fff2dc;font-family:Georgia,"Times New Roman",serif;font-size:20px;line-height:1;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}.panel-map .stack{background:linear-gradient(180deg,rgba(181,139,77,.28),rgba(181,139,77,.10));border-color:rgba(225,189,125,.48);color:#ffe4af}.panel-map .opening{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:9px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:rgba(248,241,230,.58);border-style:dashed;background:rgba(0,0,0,.12)}.state-closed{grid-template-columns:repeat(4,minmax(0,1fr));max-width:278px}.state-left{grid-template-columns:1.15fr .9fr .7fr .7fr}.state-both{grid-template-columns:1.05fr 1.15fr 1.05fr}.depth-map{grid-template-columns:.8fr 1.3fr .9fr}.mini-map{margin:8px 0 0;max-width:none}.mini-map span{min-height:30px;border-radius:10px;font-size:13px}.mini-map .opening{font-size:8px}
+		.slot-list{display:grid;gap:10px;margin-top:18px}.slot{border:1px solid var(--line);border-radius:22px;padding:15px;background:rgba(255,248,237,.055)}.slot-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:7px}.slot h3{font-size:18px}.slot p{font-size:13px;color:rgba(248,241,230,.66)}.status{flex:0 0 auto;font-size:9px;letter-spacing:.11em;text-transform:uppercase;padding:6px 8px;border-radius:999px;border:1px solid rgba(181,139,77,.34);color:var(--brass-2);background:rgba(181,139,77,.13)}
+		.pin-area{touch-action:none}.pin{width:26px;height:26px;cursor:grab;user-select:none;font-size:11px;z-index:4;transition:transform .16s ease,box-shadow .16s ease,background .16s ease}.pin:active{cursor:grabbing}.pin.active{background:var(--brass);box-shadow:0 0 0 6px rgba(181,139,77,.22),0 8px 18px rgba(0,0,0,.46);transform:translate(-50%,-50%) scale(1.08)}.note-popover{position:absolute;z-index:6;width:min(218px,calc(100% - 24px));padding:12px;border-radius:18px;background:rgba(255,248,237,.96);color:var(--espresso);border:1px solid rgba(36,22,15,.18);box-shadow:0 18px 48px rgba(0,0,0,.34);transform:translateY(-50%);display:none}.note-popover.open{display:block}.note-popover:before{content:"";position:absolute;top:50%;width:10px;height:10px;background:rgba(255,248,237,.96);border-left:1px solid rgba(36,22,15,.18);border-bottom:1px solid rgba(36,22,15,.18);transform:translateY(-50%) rotate(45deg)}.note-popover.align-right:before{left:-6px}.note-popover.align-left:before{right:-6px;transform:translateY(-50%) rotate(225deg)}.note-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}.note-head b{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--bronze)}.note-actions{display:flex;gap:6px}.note-actions button{border:1px solid rgba(36,22,15,.16);background:rgba(36,22,15,.06);border-radius:999px;color:var(--espresso);font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:6px 8px}.note-popover textarea{width:100%;min-height:84px;resize:vertical;border-radius:13px;border:1px solid rgba(36,22,15,.22);background:#fffaf1;color:var(--espresso);font:inherit;font-size:12px;line-height:1.35;padding:9px;outline:none}.note-popover textarea:focus{border-color:var(--bronze);box-shadow:0 0 0 3px rgba(181,139,77,.18)}.comment-box{display:none!important}
+		.paper .value-card,.paper .slot{border-color:rgba(36,22,15,.12);background:rgba(36,22,15,.045)}.paper .value-card h3,.paper .slot h3{color:var(--espresso)}.paper .value-card p,.paper .slot p{color:rgba(36,22,15,.68)}
+	@media (max-width:380px){h1{font-size:38px}h2{font-size:32px}.section{padding-left:18px;padding-right:18px}.asset img{height:140px}.hero{min-height:760px}}
+</style>
+</head>
+<body>
+<div class="desktop-stage">
+<main class="phone">
+  <div class="grain"></div>
+  <div class="topbar">
+    <a class="brandmark" href="#top" aria-label="Lesly Yankauskas, client visualization and VIP review experience"><span class="mark">LY</span><span>Client Visualization</span></a>
+  </div>
+  <nav class="bottomnav" aria-label="Primary navigation">
+    <div class="navinner">
+      <a href="#value" class="active">Value</a>
+      <a href="#role">Offer</a>
+      <a href="#proof">Example</a>
+      <a href="#portal">Room</a>
+      <a href="#path">Path</a>
+    </div>
+  </nav>
+
+  <section class="hero section" id="top" data-nav="Value">
+    <div class="hero-media"><img src="../assets/client_updates/2026-06-09/luxury_bar_closed_front.png" alt="S-RANCH updated photoreal bar-wall concept"></div>
+    <div class="hero-content">
+      <h1>A private client experience layer for One Off's one-of-one work.</h1>
+      <p class="sub" style="margin-top:18px">Using S-RANCH as the example, Lesly shows how a custom commission can become easier to see, easier to follow, and easier to feel confident about before the finished piece is delivered.</p>
+	      <div class="hero-actions">
+	        <a class="btn primary" href="#value">See Value</a>
+	        <a class="btn" href="#proof">View Example</a>
+	      </div>
+	      <div class="hero-summary" aria-label="Strategic value summary">
+	        <span class="label">Why this matters</span>
+		        <strong>The communication can feel as custom as the object.</strong>
+		        <div class="hero-summary-grid">
+		          <div class="hero-summary-item"><b>What</b><span>A private room for each commission: visuals, progress, feedback, choices, and next steps.</span></div>
+		          <div class="hero-summary-item"><b>Why</b><span>One Off's clients are not buying standard products; they are trusting a custom process.</span></div>
+		          <div class="hero-summary-item"><b>Value</b><span>Fewer scattered messages, clearer decisions, stronger satisfaction, and a more memorable commission.</span></div>
+		        </div>
+	      </div>
+	    </div>
+  </section>
+
+  <section class="section reveal" id="value" data-nav="Value">
+    <div class="eyebrow">Why This Matters</div>
+    <h2>For unique products, communication is part of the luxury experience.</h2>
+    <p class="large-copy">One Off makes one-of-one work. The client experience can feel one-of-one too: a private visual room where the client sees progress, comments on the exact image, understands what is next, and feels guided through the process.</p>
+    <div class="quote">
+      <p>"The client should not wait in silence for the next file. They should feel the piece becoming real."</p>
+      <small>Presentation thesis</small>
+    </div>
+    <div class="value-grid">
+      <div class="value-card"><h3>One personal room per commission.</h3><p>Each client gets a calm place for the product story, progress moments, feedback, choices, and decisions.</p></div>
+      <div class="value-card"><h3>Progress without chaos.</h3><p>Updates can be shared as the piece develops, so the client sees movement instead of chasing scattered messages.</p></div>
+      <div class="value-card"><h3>Easier approvals.</h3><p>The client can respond directly on the visual, reducing confusion and making the next decision clearer.</p></div>
+      <div class="value-card"><h3>Stronger client satisfaction.</h3><p>The experience feels careful, transparent, and premium before the finished object is delivered.</p></div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="role" data-nav="Offer">
+    <div class="role-card">
+      <span class="label">How Lesly fits</span>
+      <h2 style="margin-top:12px">A visual experience partner for high-value custom work.</h2>
+      <div class="role-title">Client room | progress story | feedback flow | approval moments</div>
+      <p>Lesly can design the communication layer around the object. Not just still images, and not a generic portal: a guided visual experience where a private client can see the product, follow progress, leave useful feedback, and understand what happens next.</p>
+      <div class="role-pill-grid"><span>Personal client rooms</span><span>Progress updates</span><span>Tap-to-comment feedback</span><span>Choice approvals</span><span>Material mood</span><span>Status snapshots</span><span>Designer/client handoff</span><span>Reveal assets</span></div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="system" data-nav="Offer">
+    <div class="eyebrow">Communication Pipeline</div>
+    <h2>A smoother path from first vision to final yes.</h2>
+    <p>Each commission can have its own communication flow: what the client sees first, how progress appears, where feedback goes, which choices are ready, and what One Off needs to answer next.</p>
+    <div class="timeline">
+      <div class="step"><span class="num">1</span><h3>Create the client room</h3><p>Start with the project story, key visuals, references, open choices, and the next decision the client needs to understand.</p></div>
+      <div class="step"><span class="num">2</span><h3>Show the work becoming real</h3><p>Add progress moments, material direction, detail studies, short notes, and updated views as the commission develops.</p></div>
+      <div class="step"><span class="num">3</span><h3>Collect feedback in context</h3><p>Let the client comment on the exact visual area, so feedback arrives attached to the product instead of buried in a thread.</p></div>
+      <div class="step"><span class="num">4</span><h3>Close the loop</h3><p>Keep visible what is decided, what is open, what One Off controls, and what happens next.</p></div>
+    </div>
+  </section>
+
+  <section class="section reveal tight" id="proof" data-nav="Example">
+    <div class="panel paper">
+      <span class="label">Experience example</span>
+      <h2 style="margin-top:12px">S-RANCH shows the kind of client experience One Off could offer.</h2>
+      <p>This bar-window is useful because it has beauty, movement, depth, materials, and decisions in one object. It can show how a custom product becomes a personal visual journey instead of a set of disconnected files.</p>
+      <div class="case-meta">
+        <div class="meta"><b>Project</b><span>S-RANCH custom bar-window wall</span></div>
+        <div class="meta"><b>Why it matters</b><span>The client needs to feel the product, not decode the process</span></div>
+        <div class="meta"><b>Lesly's value</b><span>Turn the commission into a visual communication experience</span></div>
+        <div class="meta"><b>One Off controls</b><span>Final making details, finish choices, and shop decisions</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="technical" data-nav="Example">
+    <div class="eyebrow">Craft Clarity</div>
+    <h2>Keep the story simple without losing what makes the piece special.</h2>
+    <p>The client does not need a shop explanation. They need to understand the experience: four lower panels become two moving pairs, one opening to the left and one opening to the right.</p>
+    <div class="image-card" style="margin-top:18px">
+      <img src="../assets/client_updates/2026-06-09/updated_2d_sketch_2026-06-09.png" alt="Updated S-RANCH client sketch">
+      <div class="caption"><span>Updated 2D sketch</span><em>New source direction</em></div>
+    </div>
+    <div class="tabs">
+      <div class="tab-buttons" role="tablist">
+        <button class="active" data-tab="state-closed">Closed</button>
+        <button data-tab="state-left">Left Open</button>
+        <button data-tab="state-both">Both Open</button>
+        <button data-tab="state-depth">Depth</button>
+      </div>
+      <div class="tab-panel active" id="state-closed">
+        <div class="panel state-card">
+          <div class="state-header"><span class="label">Closed</span><span class="state-note">Front alignment</span></div>
+          <div class="panel-map state-closed" aria-label="Closed: panels 1 through 4 aligned"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+          <p>Start with the composed view so the piece feels premium before movement is introduced.</p>
+        </div>
+      </div>
+      <div class="tab-panel" id="state-left">
+        <div class="panel state-card">
+          <div class="state-header"><span class="label">Left pair open</span><span class="state-note">Left stack</span></div>
+          <div class="panel-map state-left" aria-label="Left pair open: panels 1 and 2 folded left, panels 3 and 4 closed"><span class="stack">1+2</span><span class="opening">open</span><span>3</span><span>4</span></div>
+          <p>Show one open state so the client can quickly understand how the lower panels move.</p>
+        </div>
+      </div>
+      <div class="tab-panel" id="state-both">
+        <div class="panel state-card">
+          <div class="state-header"><span class="label">Both sides open</span><span class="state-note">Review view</span></div>
+          <div class="panel-map state-both" aria-label="Both sides open: panels 1 and 2 folded left, clear center opening, panels 3 and 4 folded right"><span class="stack">1+2</span><span class="opening">clear center</span><span class="stack">3+4</span></div>
+          <p>Show the full-use moment: both pairs open, clear center, and shallow display niche visible.</p>
+        </div>
+      </div>
+      <div class="tab-panel" id="state-depth">
+        <div class="panel state-card">
+          <div class="state-header"><span class="label">Depth cue</span><span class="state-note">Confirm depth</span></div>
+          <div class="panel-map depth-map" aria-label="Depth: wall face, approximately 12 inch niche, back panel"><span>face</span><span class="opening">~12 in niche</span><span>back</span></div>
+          <p>Keep the reveal as a shallow display niche so the image stays close to the intended object.</p>
+        </div>
+      </div>
+    </div>
+    <p class="source-note">Final hardware, finish, glass/infill, and depth choices remain with One Off; the review layer makes those choices easier to discuss.</p>
+  </section>
+
+  <section class="section reveal" id="visuals" data-nav="Example">
+    <div class="eyebrow">Experience Content</div>
+    <h2>The visuals feed the client room, not just a presentation.</h2>
+    <p>Each image has a job inside the communication flow: help the client picture the piece, respond with useful feedback, approve a direction, or feel progress between updates.</p>
+    <div class="image-card cover" style="margin-top:18px">
+      <img src="../assets/client_updates/2026-06-09/luxury_bar_closed_angled.png" alt="Updated angled photoreal bar-wall concept">
+      <div class="caption"><span>Updated concept direction</span><em>Warm wood, blackened frame, private-bar atmosphere</em></div>
+    </div>
+    <div class="asset-grid">
+      <div class="asset"><img src="../assets/client_updates/2026-06-09/luxury_bar_closed_front.png" alt="Updated closed frontal photoreal view"><div class="asset-text"><h4>First impression</h4><p>The client immediately sees the presence, symmetry, and emotional pull of the piece.</p></div></div>
+      <div class="asset"><img src="../assets/client_updates/2026-06-09/luxury_bar_wide_lounge.png" alt="Updated wide room context view"><div class="asset-text"><h4>Room context</h4><p>The commission reads as part of a complete private-room experience, not an isolated cabinet.</p></div></div>
+      <div class="asset"><img src="../assets/client_updates/2026-06-09/updated_2d_sketch_2026-06-09.png" alt="Updated client 2D sketch"><div class="asset-text"><h4>Source sketch</h4><p>The updated drawing becomes the alignment reference for future views.</p></div></div>
+      <div class="asset"><img src="../assets/client_updates/2026-06-09/luxury_bar_lifestyle_with_clients.png" alt="Updated lifestyle photoreal view with clients"><div class="asset-text"><h4>Client moment</h4><p>The visual story can show how the finished piece feels in use.</p></div></div>
+    </div>
+    <div class="slot-list">
+      <div class="slot"><div class="slot-top"><h3>Full-open product moment</h3><span class="status">Priority view</span></div><p>Show how the commission feels when it is being enjoyed: both sides open, clear center, bar/display niche visible.</p></div>
+      <div class="slot"><div class="slot-top"><h3>Material and atmosphere direction</h3><span class="status">Concept direction</span></div><p>Explore warm wood, dark metal, stone, glow, and private-residence character without claiming final finish decisions.</p></div>
+      <div class="slot"><div class="slot-top"><h3>Motion and reveal moments</h3><span class="status">Next stage</span></div><p>Add short camera moves only after the still views feel right, so movement creates desire instead of confusion.</p></div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="motion" data-nav="Example">
+    <div class="eyebrow">Motion Layer</div>
+    <h2>Add a cinematic preview once the still direction is approved.</h2>
+    <p>The supplied video is color-corrected warmer and higher-contrast so it sits with the updated stills. It can work as a progress clip, reveal teaser, or private-room motion asset.</p>
+    <div class="video-card">
+      <video controls preload="metadata" poster="../assets/video/s_ranch_cinematic_poster.png">
+        <source src="../assets/video/s_ranch_cinematic_warm_contrast.mp4" type="video/mp4">
+      </video>
+      <div class="caption"><span>Color-corrected clip</span><em>Warm contrast pass</em></div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="portal" data-nav="Room">
+    <div class="eyebrow">Private Client Room</div>
+    <h2>This is the real idea: next-level communication around a unique product.</h2>
+    <p>This is an example of the kind of personal experience each client could have: visual progress, near-real-time check-ins when needed, contextual feedback, clear approvals, and one calm place to understand the commission.</p>
+    <div class="panel paper" style="margin-top:18px">
+      <span class="label">Client communication concept</span>
+      <h3>Tap-to-comment visual feedback</h3>
+      <p>The client marks the exact visual area that needs discussion. One Off gets feedback attached to the product, and everyone can see what feels settled, what needs a reply, and what belongs in the next check-in.</p>
+      <div class="pin-area" id="pinArea">
+        <img src="../assets/client_updates/2026-06-09/luxury_bar_closed_angled.png" alt="Tap-to-comment updated visual review concept">
+        <div class="note-popover" id="notePopover" aria-live="polite">
+          <div class="note-head">
+            <b>Review note</b>
+            <div class="note-actions">
+              <button type="button" id="removePin">Remove</button>
+            </div>
+          </div>
+          <textarea id="pinNote" aria-label="Selected area review note"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="value-grid">
+      <div class="value-card"><h3>Fewer scattered messages.</h3><p>Visuals, notes, choices, and replies stay together instead of living across texts, files, and explanations.</p></div>
+      <div class="value-card"><h3>Progress clients can see.</h3><p>The room can hold update snapshots, visual changes, detail studies, and short status notes as the piece develops.</p></div>
+      <div class="value-card"><h3>Feedback in the right place.</h3><p>Comments attach to the visual, so the team knows what the client is reacting to without guessing.</p></div>
+      <div class="value-card"><h3>Approvals feel easier.</h3><p>The client can see what is current, what is open, what One Off controls, and what should happen next.</p></div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="example" data-nav="Room">
+    <div class="panel paper">
+      <span class="label">Experience sample</span>
+      <h2>Open an example client room</h2>
+      <p>This is a working sample of the personal communication layer One Off could wrap around a commission like S-RANCH: visuals, progress, comments, choices, and next steps in one place.</p>
+      <div class="hero-actions">
+        <a class="btn dark" href="client_room_example.html" target="_blank" rel="noreferrer">Open client room</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="path" data-nav="Path">
+    <div class="eyebrow">How It Could Work</div>
+    <h2>One commission becomes a reusable client-experience standard.</h2>
+    <div class="timeline">
+      <div class="step"><span class="num">1</span><h3>Give the commission a private home</h3><p>The client sees the product story, key visuals, progress timeline, open choices, and next steps in one polished place.</p></div>
+      <div class="step"><span class="num">2</span><h3>Keep communication attached to the piece</h3><p>Progress updates, material direction, and feedback stay connected to the exact visual moment being discussed.</p></div>
+      <div class="step"><span class="num">3</span><h3>Make decisions feel guided</h3><p>The client understands what is current, what is decided, and where One Off still owns the craft and fabrication judgment.</p></div>
+      <div class="step"><span class="num">4</span><h3>Turn the finished work into a lasting story</h3><p>The same room can support reveal assets, designer handoff, project memory, and a stronger story for future commissions.</p></div>
+    </div>
+    <div class="panel paper" style="margin-top:14px">
+      <span class="label">Founder-level opportunity</span>
+      <h3>Make the experience around the work feel as custom as the work itself.</h3>
+      <p>For a studio building one-of-one architectural pieces, the communication can become part of the value: calmer clients, clearer decisions, fewer scattered messages, and a stronger memory of the commission after delivery.</p>
+    </div>
+  </section>
+
+  <section class="section reveal closing" id="outcome" data-nav="Path">
+    <div class="eyebrow">Business Value</div>
+    <h2>What One Off gains from this layer.</h2>
+    <div class="panel paper">
+      <ul class="checklist">
+        <li>Clients feel guided through the custom process instead of waiting for the next file or explanation.</li>
+        <li>Designers, builders, and private clients have a cleaner way to understand the same product story.</li>
+        <li>Feedback lands on the exact image, detail, or product moment instead of getting buried in message threads.</li>
+        <li>Progress becomes visible without asking the shop to turn every update into a long presentation.</li>
+        <li>Finished visuals become useful for reveal moments, future sales conversations, and project memory.</li>
+      </ul>
+    </div>
+    <div class="quote">
+      <p>"The opportunity is not another presentation. It is a better client experience around the kind of work One Off already makes."</p>
+      <small>Strategic recommendation</small>
+    </div>
+    <div class="signature"><div class="sigmark">L</div><div><b>Lesly Yankauskas</b><span>Client visualization, premium product storytelling, and VIP review experiences</span><a href="https://leslyyankauskas.com" target="_blank" rel="noreferrer">leslyyankauskas.com</a></div></div>
+  </section>
+</main>
+</div>
+<div class="lightbox" id="lightbox"><button type="button">Close</button><img src="../assets/client_updates/2026-06-09/luxury_bar_closed_front.png" alt="Expanded visual"></div>
+<script>
+const revealEls=[...document.querySelectorAll('.reveal')];
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+revealEls.forEach(el=>io.observe(el));
+const navLinks=[...document.querySelectorAll('.navinner a')];
+const navSections=[...document.querySelectorAll('[data-nav]')];
+const navIo=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id; navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id || (entry.target.dataset.nav && a.textContent.trim()===entry.target.dataset.nav)))}})},{rootMargin:'-45% 0px -50% 0px'});
+navSections.forEach(s=>navIo.observe(s));
+document.querySelectorAll('.tab-buttons button').forEach(btn=>{btn.addEventListener('click',()=>{const wrap=btn.closest('.tabs');wrap.querySelectorAll('button').forEach(b=>b.classList.remove('active'));wrap.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');wrap.querySelector('#'+btn.dataset.tab).classList.add('active')})});
+const lb=document.getElementById('lightbox');
+document.querySelectorAll('.image-card img,.asset img,.mood-card img').forEach(img=>{img.addEventListener('click',()=>{lb.classList.add('open');lb.querySelector('img').src=img.src;lb.querySelector('img').alt=img.alt})});
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.tagName==='BUTTON')lb.classList.remove('open')});
+const pinArea=document.getElementById('pinArea');
+const notePopover=document.getElementById('notePopover');
+const pinNote=document.getElementById('pinNote');
+const removePin=document.getElementById('removePin');
+let activePin=null;
+let dragPin=null;
+let dragMoved=false;
+let noteCounter=0;
+
+const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+const pinPointFromEvent=e=>{
+  const rect=pinArea.getBoundingClientRect();
+  return {
+    x:clamp(((e.clientX-rect.left)/rect.width)*100,4,96),
+    y:clamp(((e.clientY-rect.top)/rect.height)*100,7,93)
+  };
+};
+const positionNote=pin=>{
+  if(!pin||!notePopover)return;
+  const x=parseFloat(pin.style.left);
+  const y=parseFloat(pin.style.top);
+  const rect=pinArea.getBoundingClientRect();
+  const xPx=(x/100)*rect.width;
+  const yPx=(y/100)*rect.height;
+  const popW=notePopover.offsetWidth||218;
+  const popH=notePopover.offsetHeight||146;
+  const rightSide=xPx+18+popW<=rect.width-10;
+  const leftPx=rightSide?xPx+18:xPx-popW-18;
+  const topPx=clamp(yPx,popH/2+8,rect.height-popH/2-8);
+  notePopover.classList.toggle('align-left',!rightSide);
+  notePopover.classList.toggle('align-right',rightSide);
+  notePopover.style.left=`${clamp(leftPx,10,rect.width-popW-10)}px`;
+  notePopover.style.right='auto';
+  notePopover.style.top=`${topPx}px`;
+};
+const selectPin=pin=>{
+  if(activePin)activePin.classList.remove('active');
+  activePin=pin;
+  activePin.classList.add('active');
+  pinNote.value=activePin.dataset.note||'';
+  notePopover.classList.add('open');
+  positionNote(activePin);
+  window.setTimeout(()=>pinNote.focus({preventScroll:true}),30);
+};
+const closeNote=()=>{
+  if(activePin)activePin.classList.remove('active');
+  activePin=null;
+  notePopover.classList.remove('open');
+};
+const togglePin=pin=>{
+  if(activePin===pin&&notePopover.classList.contains('open')){
+    closeNote();
+    return;
+  }
+  selectPin(pin);
+};
+const removeActivePin=()=>{
+  if(!activePin)return;
+  const next=[...pinArea.querySelectorAll('.pin')].find(pin=>pin!==activePin);
+  activePin.remove();
+  activePin=null;
+  if(next)selectPin(next);
+  else notePopover.classList.remove('open');
+};
+const createPin=(x,y,note='')=>{
+  noteCounter+=1;
+  const pin=document.createElement('button');
+  pin.type='button';
+  pin.className='pin';
+  pin.textContent=noteCounter;
+  pin.dataset.note=note;
+  pin.style.left=`${x}%`;
+  pin.style.top=`${y}%`;
+  pin.setAttribute('aria-label',`Review note ${noteCounter}`);
+  pinArea.appendChild(pin);
+  pin.addEventListener('pointerdown',e=>{
+    e.stopPropagation();
+    dragPin=pin;
+    dragMoved=false;
+    pin.setPointerCapture(e.pointerId);
+  });
+  pin.addEventListener('pointermove',e=>{
+    if(dragPin!==pin)return;
+    const pt=pinPointFromEvent(e);
+    pin.style.left=`${pt.x}%`;
+    pin.style.top=`${pt.y}%`;
+    dragMoved=true;
+    if(activePin!==pin)selectPin(pin);
+    positionNote(pin);
+  });
+  pin.addEventListener('pointerup',e=>{
+    if(dragPin===pin){
+      pin.releasePointerCapture(e.pointerId);
+      dragPin=null;
+      if(!dragMoved)togglePin(pin);
+    }
+  });
+  pin.addEventListener('click',e=>{
+    e.stopPropagation();
+  });
+  selectPin(pin);
+};
+if(pinArea&&notePopover&&pinNote&&removePin){
+  pinArea.addEventListener('click',e=>{
+    if(e.target.closest('.pin,.note-popover'))return;
+    if(activePin){
+      closeNote();
+      return;
+    }
+    const pt=pinPointFromEvent(e);
+    createPin(pt.x,pt.y);
+  });
+  document.addEventListener('pointerdown',e=>{
+    if(!activePin)return;
+    if(e.target.closest('#pinArea'))return;
+    closeNote();
+  });
+  notePopover.addEventListener('pointerleave',e=>{
+    if(e.pointerType==='mouse')closeNote();
+  });
+  pinNote.addEventListener('input',()=>{if(activePin)activePin.dataset.note=pinNote.value;});
+  removePin.addEventListener('click',removeActivePin);
+  window.addEventListener('resize',()=>positionNote(activePin));
+}
+</script>
+</body>
+</html>

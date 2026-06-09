@@ -1,0 +1,10 @@
+{
+  "name": "oneoff-s-ranch-visualization-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mobile-first strategic proposal and agent skill package for One Off / S-RANCH client visualization system.",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "validate": "python3 scripts/validate_assets.py"
+  }
+}

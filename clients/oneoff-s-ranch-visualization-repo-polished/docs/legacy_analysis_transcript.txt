@@ -1,0 +1,168 @@
+Yes — this PDF gives us a much clearer and more serious picture. The biggest correction: **this is not just a standalone cabinet. It is a custom bar-window system inside a larger built-in bar / millwork wall.** One Off appears to be responsible for the metal/glass bar-window component, but the client presentation needs to show it as part of the full architectural bar experience.
+
+The sheet is titled **“BAR WINDOW DETAILS”** for **S-RANCH / Box Elder Ranch, Hilger, MT**, and it is marked as **coordination drawings, not for construction**. It includes an **enlarged elevation, section, and plan**, all at **1" = 1'-0"**, plus a colored design reference at the bottom right. fileciteturn2file0
+
+## Key new details from the PDF
+
+The project is more premium than before. The bottom-right colored reference shows a full warm wood bar wall: central arched bar window, side bottle/display shelving, decorative wood framing, stained/lattice glass, and long lower cabinetry. This means the render should not feel like “a furniture piece placed in a room.” It should feel like **an integrated custom bar feature inside a luxury ranch/interior environment.**
+
+The technical drawings now clarify several important functional details:
+
+| Detail | Strategic meaning |
+|---|---|
+| **Concealed bifold track** | The window operation is a premium hidden mechanism, not simple cabinet doors. |
+| **Bifold window** | The lower/front panels need to read as operable folding metal/glass panels. |
+| **Stained glass panel insert** | The glass is not plain; it likely needs decorative or leaded/lattice character. |
+| **Removable shelves** | The interior is functional and serviceable, not purely decorative. |
+| **Plan + section included** | We now need depth-accurate views, not only front beauty shots. |
+| **Coordination drawing, not construction** | Good for visualization and approval, but final fabrication accuracy still needs CAD/DWG/DXF confirmation. |
+
+## Critical correction to the visual direction
+
+The previous image direction was good emotionally, but now we need a tighter scope:
+
+> **The visual should present the central custom bar-window system as part of a larger bespoke bar wall, with the One Off metal/glass element clearly highlighted as the hero component.**
+
+So the new image set should not over-focus on a full freestanding cabinet. It should show:
+
+- central arched bar window
+- decorative wood surround
+- lower bifold metal/glass windows
+- concealed track logic
+- stained/leaded/lattice glass character
+- side shelving context
+- warm ranch/luxury interior mood
+- correct relationship between wall, cabinetry, and window depth
+
+## Updated photorealistic view plan
+
+### 1. Hero front view — closed position
+
+This should be the first real image.
+
+**Purpose:** show the client the finished bar wall as an elegant architectural feature.
+
+Must include:
+
+- full built-in bar wall, not just freestanding cabinet
+- central arched bar-window unit
+- four lower closed bifold glass/metal panels
+- arched upper glass panel
+- decorative/lattice/stained glass feeling
+- side display shelving with bottles/glassware
+- warm wood millwork
+- stone or dark counter surface
+- subtle luxury ranch interior mood
+
+This becomes the client’s “yes, I understand the piece” image.
+
+### 2. Right 45° view — closed position
+
+**Purpose:** show depth and integration into the wall.
+
+This should use the section drawing as the guide. It needs to reveal:
+
+- the bar window projects from or sits within the wall/millwork
+- depth of shelves and counter
+- front metal/glass system layered in front of the interior shelving
+- realistic side thickness
+- believable floor/wall shadows
+
+### 3. Functional open-position view
+
+**Purpose:** explain the bifold mechanism.
+
+This should show the lower glass panels opened according to the plan/section logic. Not decorative fantasy doors. It should feel like:
+
+- concealed top track
+- panels folding/sliding cleanly
+- open access to the bar/display area
+- same camera/lighting as closed view for comparison
+
+### 4. Closed/open comparison
+
+**Purpose:** client approval clarity.
+
+Same view, same lighting:
+
+- left: closed
+- right: open
+
+This is one of the most valuable deliverables because it makes the movement easy for non-technical clients to understand.
+
+### 5. Side/section-inspired photoreal view
+
+**Purpose:** translate the technical section into client language.
+
+This could be a refined side-angle view showing:
+
+- interior shelving
+- bottle/glass storage
+- concealed track zone
+- front bifold window layer
+- counter and lower cabinet relationship
+
+This is not a construction drawing. It is a visual explanation.
+
+### 6. Detail close-up — metal/glass/track
+
+**Purpose:** show One Off’s craftsmanship.
+
+Must show:
+
+- blackened steel or dark bronze metal frame
+- glass reflection
+- hinge/track detail
+- clean junction between metal, wood, and stone
+- premium hand-fabricated feeling
+
+### 7. Detail close-up — stained/lattice glass and wood surround
+
+**Purpose:** show artistry.
+
+Must show:
+
+- decorative glass pattern
+- arched frame
+- carved or detailed wood surround
+- warm lighting behind bottles/glassware
+
+## What this means strategically
+
+This PDF strengthens Lesly’s positioning. It proves the company is not just asking for a render; they are dealing with a **high-value coordination problem**:
+
+- technical drawing for fabricators
+- interior design intent from Ken Fulk / S-Ranch context
+- client approval need
+- metal/glass functionality
+- luxury presentation requirement
+- likely expensive custom commission
+
+So her role is even more clearly:
+
+## **Client Visualization & Experience Director**
+
+Not just “3D artist.”
+
+Her value is translating this technical coordination package into a **premium visual approval experience** that the client, designer, and fabrication team can all understand.
+
+## Updated first image direction
+
+The first image should be:
+
+> **Photorealistic hero front view of the full built-in bar wall, closed position, based on the PDF elevation and colored reference.**
+
+Not an isolated cabinet. Not an outdoor placement. Not a generic liquor cabinet.
+
+The image should preserve:
+
+- central arched bar window
+- four lower closed bifold panels
+- upper arched glass
+- lattice/stained glass character
+- warm wood architectural millwork
+- side display shelves
+- long lower cabinetry
+- luxury ranch interior atmosphere
+
+This is now the correct foundation image.

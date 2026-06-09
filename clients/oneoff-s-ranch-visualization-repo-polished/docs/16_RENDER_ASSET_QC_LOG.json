@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Closed hero",
+    "path": "assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_closed_hero_blueprint_aligned_studio_concept.png",
+    "status": "REJECTED",
+    "checks": [
+      "non-photorealistic deterministic board/diagram output: REJECT",
+      "not a real 2D-to-3D client render: REJECT",
+      "generated without required source-reference image generation: REJECT",
+      "must not be used in the client presentation"
+    ]
+  },
+  {
+    "title": "Left-pair-open",
+    "path": "assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_left_pair_open_blueprint_aligned_shallow_niche_studio_concept.png",
+    "status": "REJECTED",
+    "checks": [
+      "non-photorealistic deterministic board/diagram output: REJECT",
+      "not a real 2D-to-3D client render: REJECT",
+      "generated without required source-reference image generation: REJECT",
+      "must not be used in the client presentation"
+    ]
+  },
+  {
+    "title": "Both-sides-open proof",
+    "path": "assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_both_sides_open_two_stacks_blueprint_aligned_studio_proof.png",
+    "status": "REJECTED",
+    "checks": [
+      "non-photorealistic deterministic board/diagram output: REJECT",
+      "not a real 2D-to-3D client render: REJECT",
+      "generated without required source-reference image generation: REJECT",
+      "must not be used in the client presentation"
+    ]
+  },
+  {
+    "title": "Shallow cove / niche detail",
+    "path": "assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_shallow_cove_niche_detail_blueprint_aligned_studio_concept.png",
+    "status": "REJECTED",
+    "checks": [
+      "non-photorealistic deterministic board/diagram output: REJECT",
+      "not a real 2D-to-3D client render: REJECT",
+      "generated without required source-reference image generation: REJECT",
+      "must not be used in the client presentation"
+    ]
+  },
+  {
+    "title": "Mechanism board",
+    "path": "assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_mechanism_board_linear_rail_two_bifold_pairs_studio_concept.png",
+    "status": "REJECTED",
+    "checks": [
+      "non-photorealistic deterministic board/diagram output: REJECT",
+      "may express mechanism logic internally",
+      "not a real client render: REJECT",
+      "must not be passed as a render"
+    ]
+  },
+  {
+    "title": "Material direction board",
+    "path": "assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_material_direction_board_concept_only_studio.png",
+    "status": "REJECTED",
+    "checks": [
+      "non-photorealistic deterministic board/diagram output: REJECT",
+      "may express concept direction internally",
+      "not a real client render: REJECT",
+      "must not be passed as a render"
+    ]
+  },
+  {
+    "title": "Portal mockup",
+    "path": "assets/visuals/rejected_or_caution/non_photoreal_boards_2026-06-09/invalid_non_photoreal_portal_mockup_private_review_page_studio_concept.png",
+    "status": "REJECTED",
+    "checks": [
+      "non-photorealistic deterministic UI-board output: REJECT",
+      "may express a review-page idea internally",
+      "not a real client render: REJECT",
+      "must not be passed as a render"
+    ]
+  }
+]

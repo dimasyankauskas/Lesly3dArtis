@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>One Off / S-RANCH - Alignment Questionnaire</title>
+<style>
+:root{
+  --ink:#17120d;
+  --espresso:#24160f;
+  --walnut:#3a261a;
+  --steel:#1f2525;
+  --ivory:#f8f1e6;
+  --paper:#fff8ed;
+  --paper2:#eadcc8;
+  --muted:#bda98e;
+  --brass:#b58b4d;
+  --brass2:#e1bd7d;
+  --green:#86d7ac;
+  --warn:#f4c777;
+  --bad:#ff9a85;
+  --line:rgba(255,248,237,.16);
+  --darkLine:rgba(36,22,15,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#080604}
+body{
+  margin:0;
+  font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ivory);
+  background:
+    radial-gradient(circle at 12% -8%,rgba(181,139,77,.25),transparent 24rem),
+    radial-gradient(circle at 92% 8%,rgba(89,55,33,.30),transparent 22rem),
+    linear-gradient(180deg,#080604 0%,#17120d 48%,#0c0a08 100%);
+}
+.stage{width:100%;min-height:100vh;display:flex;justify-content:center}
+.phone{width:min(100%,480px);min-height:100vh;background:var(--ink);position:relative;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.42)}
+@media (min-width:740px){
+  .stage{padding:32px 0}
+  .phone{border:1px solid rgba(255,255,255,.08);border-radius:40px;min-height:calc(100vh - 64px)}
+}
+.topbar{position:sticky;top:0;z-index:10;padding:12px 14px;background:linear-gradient(180deg,rgba(13,11,9,.96),rgba(13,11,9,.76));backdrop-filter:blur(14px);display:flex;justify-content:space-between;gap:10px;align-items:center}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ivory);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.mark{width:30px;height:30px;border:1px solid rgba(255,248,237,.26);border-radius:50%;display:grid;place-items:center;color:var(--brass);font-family:Georgia,serif}
+.pill{font-size:10px;color:rgba(248,241,230,.78);letter-spacing:.12em;text-transform:uppercase;padding:8px 10px;border:1px solid rgba(255,248,237,.12);border-radius:99px;background:rgba(0,0,0,.22)}
+.hero{position:relative;padding:92px 22px 26px;min-height:610px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;background:url("../assets/visuals/accepted/hero_closed_bar_wall_concept.png") center/cover no-repeat;z-index:-2;filter:saturate(.92) contrast(1.02)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,7,6,.15),rgba(8,7,6,.42) 36%,rgba(8,7,6,.96) 92%);z-index:-1}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:32px;height:1px;background:var(--brass)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.02em;margin:0}
+h1{font-size:48px;line-height:.95;max-width:10ch}
+h2{font-size:33px;line-height:1;margin-bottom:13px}
+h3{font-size:22px;line-height:1.05;margin-bottom:8px}
+p{margin:0;color:rgba(248,241,230,.76);line-height:1.55;font-size:15px}
+.section{padding:30px 22px;position:relative}
+.panel{border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,rgba(255,248,237,.08),rgba(255,248,237,.035));padding:18px;box-shadow:0 18px 60px rgba(0,0,0,.18)}
+.paper{background:var(--paper);border-color:var(--darkLine);color:var(--espresso)}
+.paper p,.paper li{color:rgba(36,22,15,.76)}
+.label{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;border-radius:99px;padding:7px 9px;font-weight:900;background:rgba(181,139,77,.18);border:1px solid rgba(181,139,77,.32);color:var(--brass2);margin-bottom:12px}
+.paper .label{background:#24160f;color:#ffe5b6;border-color:#24160f}
+.status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:18px}
+.status{border:1px solid rgba(255,248,237,.12);background:rgba(255,248,237,.055);border-radius:17px;padding:12px;min-height:92px}
+.status b{display:block;font-family:Georgia,serif;font-size:28px;font-weight:400;color:var(--ivory)}
+.status span{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:rgba(248,241,230,.62);line-height:1.3}
+.tabs{display:flex;gap:8px;overflow:auto;padding:0 22px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:54px;z-index:9;background:linear-gradient(180deg,rgba(23,18,13,.96),rgba(23,18,13,.86))}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;border:1px solid rgba(255,248,237,.16);background:rgba(255,248,237,.05);color:rgba(248,241,230,.72);border-radius:999px;padding:10px 12px;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.tabs button.active{background:var(--brass);color:#1b120c;border-color:var(--brass);font-weight:900}
+.question-list{display:grid;gap:14px}
+.card{border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,248,237,.08),rgba(255,248,237,.035));overflow:hidden}
+.card-head{padding:16px 16px 12px;border-bottom:1px solid rgba(255,248,237,.10)}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;padding:6px 8px;background:rgba(181,139,77,.16);color:var(--brass2);border:1px solid rgba(181,139,77,.24);font-weight:800}
+.tag.warn{background:rgba(244,199,119,.14);color:var(--warn);border-color:rgba(244,199,119,.28)}
+.tag.good{background:rgba(134,215,172,.12);color:var(--green);border-color:rgba(134,215,172,.24)}
+.card h3{font-size:20px}
+.answer{padding:14px 16px;background:var(--paper);color:var(--espresso)}
+.answer b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze,#7a4e2e);margin-bottom:6px}
+.answer p{color:rgba(36,22,15,.78);font-size:14px}
+.controls{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:12px 16px 0;background:var(--paper)}
+.controls button{border:1px solid rgba(36,22,15,.14);border-radius:999px;padding:10px 6px;background:#fffaf0;color:var(--espresso);font-size:10px;text-transform:uppercase;letter-spacing:.06em;font-weight:900}
+.controls button.active[data-choice="accept"]{background:var(--green);border-color:var(--green);color:#102216}
+.controls button.active[data-choice="change"]{background:var(--warn);border-color:var(--warn);color:#2a1a07}
+.controls button.active[data-choice="unsure"]{background:var(--bad);border-color:var(--bad);color:#2b0b04}
+.note-wrap{padding:10px 16px 16px;background:var(--paper)}
+textarea{width:100%;min-height:86px;resize:vertical;border:1px solid rgba(36,22,15,.18);border-radius:14px;padding:11px;font:inherit;font-size:13px;background:#fffaf0;color:var(--espresso)}
+.summary{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;line-height:1.45;color:rgba(36,22,15,.78);background:#fffaf0;border:1px solid rgba(36,22,15,.14);border-radius:16px;padding:14px;max-height:360px;overflow:auto}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+.actions .wide{grid-column:1/-1}
+.btn{border:1px solid rgba(255,248,237,.22);border-radius:999px;padding:12px 15px;color:var(--ivory);text-decoration:none;font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,248,237,.07);display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn.primary{background:var(--brass);color:#160d08;border-color:var(--brass);font-weight:900}
+.btn.dark{background:#23180f;color:#ffe5b6;border-color:#23180f}
+.save-state{margin-top:12px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:rgba(36,22,15,.54)}
+.copy-status{min-height:18px;margin-top:10px;font-size:12px;color:rgba(36,22,15,.62)}
+.copy-status.error{color:#8d2f1d}
+.audit-list{display:grid;gap:10px;margin-top:14px}
+.audit-item{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:16px;background:rgba(36,22,15,.06);border:1px solid rgba(36,22,15,.10)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--green);margin-top:5px;flex:0 0 auto}
+.dot.warn{background:var(--warn)}
+.dot.bad{background:var(--bad)}
+.mini{font-size:12px;line-height:1.45;color:rgba(248,241,230,.58)}
+.paper .mini{color:rgba(36,22,15,.58)}
+.footer-space{height:24px}
+</style>
+</head>
+<body>
+<div class="stage">
+<main class="phone">
+  <div class="topbar">
+    <a class="brand" href="index.html"><span class="mark">L</span><span>One Off Review</span></a>
+    <span class="pill">Alignment Gate</span>
+  </div>
+
+  <section class="hero">
+    <div class="eyebrow">Confirmation Surface</div>
+    <h1>Do we truly understand the assignment?</h1>
+    <p style="margin-top:16px">Review the company fit, S-RANCH mechanism, Lesly's positioning, scope, pricing, and open uncertainties before the final pitch goes out.</p>
+    <div class="status-grid">
+      <div class="status"><b id="acceptedCount">0</b><span>Accepted</span></div>
+      <div class="status"><b id="changeCount">0</b><span>Needs change</span></div>
+      <div class="status"><b id="unsureCount">0</b><span>Uncertain</span></div>
+    </div>
+  </section>
+
+  <nav class="tabs" id="tabs"></nav>
+
+  <section class="section">
+    <div class="panel paper">
+      <span class="label">Audit result</span>
+      <h2>Core story is aligned. A few details still need confirmation.</h2>
+      <p>The current package is consistent on the big strategy: One Off's technical drawings are respected as fabrication/coordination material, and Lesly adds the premium client-facing visualization layer. The remaining risk is not the positioning; it is final technical and workflow confirmation.</p>
+      <div class="audit-list">
+        <div class="audit-item"><span class="dot"></span><p><b>Company fit:</b> One Off's public work supports a craft-led custom metalwork and architectural element pitch.</p></div>
+        <div class="audit-item"><span class="dot"></span><p><b>Positioning:</b> Lesly is framed as Client Visualization & Experience Director, not a commodity 3D operator.</p></div>
+        <div class="audit-item"><span class="dot"></span><p><b>Mechanism:</b> The proposal consistently says two sliding bifold pairs, not four independent swing doors.</p></div>
+        <div class="audit-item"><span class="dot warn"></span><p><b>Unconfirmed:</b> final finish colors, lattice/infill, final fabrication dimensions, approval audience, and production portal routing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="questionHost"></section>
+
+  <section class="section">
+    <div class="panel paper">
+      <span class="label">Export</span>
+      <h2>Response summary</h2>
+      <p>Use this to capture what is accepted, what changed, and what must be confirmed with One Off.</p>
+      <div class="save-state" id="saveStatus">Answers save locally on this device.</div>
+      <div class="actions">
+        <button class="btn dark" type="button" id="copyBtn">Copy summary</button>
+        <button class="btn primary" type="button" id="resetBtn">Reset choices</button>
+        <button class="btn dark wide" type="button" id="downloadBtn">Download summary</button>
+      </div>
+      <div class="copy-status" id="copyStatus" role="status" aria-live="polite"></div>
+      <pre class="summary" id="summaryBox"></pre>
+    </div>
+  </section>
+  <div class="footer-space"></div>
+</main>
+</div>
+
+<script>
+const categories=[
+  {id:"company",label:"Company"},
+  {id:"project",label:"S-RANCH"},
+  {id:"positioning",label:"Lesly"},
+  {id:"scope",label:"Scope"},
+  {id:"pricing",label:"Pricing"},
+  {id:"portal",label:"Portal"}
+];
+
+const questions=[
+  {
+    id:"company_fit",
+    cat:"company",
+    priority:"High",
+    confidence:"Verified",
+    question:"Is the proposal speaking to One Off as a premium custom metalwork and architectural element studio?",
+    proposed:"Yes. The pitch should reference custom metalwork, designer collaboration, craft, detail, and high-value private/public projects. Avoid generic furniture render language."
+  },
+  {
+    id:"company_tone",
+    cat:"company",
+    priority:"High",
+    confidence:"Strong",
+    question:"Is the wording respectful toward One Off's existing drawings and workflow?",
+    proposed:"Yes. Use: Technical drawings are essential for fabrication, but they are not optimized for high-end client approval. Do not imply their current process is weak or old."
+  },
+  {
+    id:"audience",
+    cat:"company",
+    priority:"High",
+    confidence:"Needs confirmation",
+    question:"Who is the primary viewer for the first pitch?",
+    proposed:"Working answer: One Off leadership or project lead first, then designer/client as a possible second viewer. Confirm whether the first deliverable should persuade the shop, the designer, or the end client."
+  },
+  {
+    id:"mechanism",
+    cat:"project",
+    priority:"Critical",
+    confidence:"Strong",
+    question:"Is the bar-window mechanism correctly understood?",
+    proposed:"Working answer: four lower panels total, operating as two sliding bifold pairs. Panels 1+2 fold and slide/park left. Panels 3+4 fold and slide/park right. Do not show four independent swing doors."
+  },
+  {
+    id:"depth",
+    cat:"project",
+    priority:"Critical",
+    confidence:"Needs confirmation",
+    question:"What is behind the open window?",
+    proposed:"Working answer: a shallow cove/display condition, not a full room, kitchen, walk-in bar, sink, or visible rear floor. Client-message intake says the wall/cove is understood as about 12 inches thick; confirm whether that remains final."
+  },
+  {
+    id:"rail",
+    cat:"project",
+    priority:"High",
+    confidence:"Needs confirmation",
+    question:"Is the concealed rail and square-tube logic final?",
+    proposed:"Working answer: top and bottom linear rail with bearing/shoulder-bolt hardware, buried or concealed in square tube. Client intake supports this, but final fabrication details still need One Off confirmation."
+  },
+  {
+    id:"finish",
+    cat:"project",
+    priority:"Medium",
+    confidence:"Needs confirmation",
+    question:"What material and finish direction should visuals assume?",
+    proposed:"Working answer: use warm high-end mood direction, but do not claim final colors. Client intake says specific colors are not confirmed yet. Confirm exact wood, metal, stone, and lighting."
+  },
+  {
+    id:"infill",
+    cat:"project",
+    priority:"High",
+    confidence:"Verified boundary",
+    question:"Should the lattice or stained-glass infill be shown now?",
+    proposed:"Working answer: leave it out or keep it very subtle for the first pass. Client intake says the lattice infill has not been determined and is OK to leave out for now."
+  },
+  {
+    id:"title",
+    cat:"positioning",
+    priority:"Critical",
+    confidence:"Strong",
+    question:"Is Lesly's role framed at the right level?",
+    proposed:"Yes. Use Client Visualization & Experience Director. Alternative: Client Visualization Director for Bespoke Furniture & Architectural Metalwork. Do not reduce the offer to 2D-to-3D conversion."
+  },
+  {
+    id:"ai_language",
+    cat:"positioning",
+    priority:"High",
+    confidence:"Strong",
+    question:"How visible should AI/workflow tooling be in the pitch?",
+    proposed:"Keep tooling behind the scenes. Lead with client confidence, visual approval, material clarity, mechanism explanation, and premium project experience. Mention AI only as workflow support if asked."
+  },
+  {
+    id:"proof_boundary",
+    cat:"positioning",
+    priority:"Medium",
+    confidence:"Needs confirmation",
+    question:"How much should Lesly show as prior proof versus proposed system?",
+    proposed:"Working answer: be transparent that this is a proposed pilot/system for One Off using S-RANCH as the live example. The original ask was a 3D rendering from a 2D drawing; the larger system is a strategic proposal, not something already sold."
+  },
+  {
+    id:"first_offer",
+    cat:"scope",
+    priority:"High",
+    confidence:"Strong",
+    question:"What should Lesly ask for first?",
+    proposed:"Start with a Visual Strategy Pilot: technical review, visual logic, 1-2 concept visuals, and a focused mobile presentation. Let that prove value before larger portal or retainer scope."
+  },
+  {
+    id:"deliverables",
+    cat:"scope",
+    priority:"High",
+    confidence:"Strong",
+    question:"What deliverables best match the S-RANCH opportunity?",
+    proposed:"Closed hero view, left-pair-open view, both-sides-open or mechanism logic board, material/depth notes, and a mobile client approval page. Add video only after still visual logic is approved. First pass can omit lattice/infill."
+  },
+  {
+    id:"accuracy",
+    cat:"scope",
+    priority:"Critical",
+    confidence:"Needs confirmation",
+    question:"Should visuals be concept approval visuals or fabrication-accurate renders?",
+    proposed:"Working answer: concept/client-approval visuals tied to the drawing, not final fabrication documents. Client intake says dimensions are reference and One Off will tell the final look, so do not overclaim CAD/fabrication accuracy."
+  },
+  {
+    id:"pricing_model",
+    cat:"pricing",
+    priority:"High",
+    confidence:"Strong",
+    question:"Is the pricing structure framed correctly?",
+    proposed:"Yes. Use ranges: Visual Strategy Pilot $2,500-$5,000; Project Visualization Package $5,000-$12,000; Premium Private Commission Portal $12,000-$25,000+; Fractional Director $6,000-$15,000+/month."
+  },
+  {
+    id:"pricing_disclaimer",
+    cat:"pricing",
+    priority:"Medium",
+    confidence:"Strong",
+    question:"Should prices be presented as guarantees?",
+    proposed:"No. Present as strategic starting ranges depending on scope, deadline, revision count, accuracy requirements, ownership, and whether this is one project or a repeatable workflow."
+  },
+  {
+    id:"portal_need",
+    cat:"portal",
+    priority:"Medium",
+    confidence:"Needs confirmation",
+    question:"Does One Off actually want a private client portal, or only a pitch page/images?",
+    proposed:"Working answer: propose the portal as the premium next step, not the required first step. Confirm whether the immediate need is images/PDF, a mobile page, or a production client review workflow."
+  },
+  {
+    id:"comment_routing",
+    cat:"portal",
+    priority:"Medium",
+    confidence:"Needs confirmation",
+    question:"Where should client comments and approvals go in production?",
+    proposed:"Working answer: start with email or a shared dashboard export. Confirm whether One Off uses CRM, Slack, project management, email-only review, or a private token-link workflow."
+  }
+];
+
+const storageKey="oneoffAlignmentState";
+let state={};
+try{
+  state=JSON.parse(localStorage.getItem(storageKey)||"{}");
+}catch(error){
+  state={};
+}
+let activeCat=categories[0].id;
+
+function save(){
+  localStorage.setItem(storageKey,JSON.stringify(state));
+  setSaveStatus("Saved locally: "+new Date().toLocaleTimeString());
+}
+
+function renderTabs(){
+  const tabs=document.getElementById("tabs");
+  tabs.innerHTML=categories.map(cat=>`<button type="button" class="${cat.id===activeCat?"active":""}" data-cat="${cat.id}">${cat.label}</button>`).join("");
+  tabs.querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{
+    activeCat=btn.dataset.cat;
+    render();
+  }));
+}
+
+function renderQuestions(){
+  const host=document.getElementById("questionHost");
+  const visible=questions.filter(q=>q.cat===activeCat);
+  host.innerHTML=`<div class="question-list">${visible.map(cardTemplate).join("")}</div>`;
+  host.querySelectorAll("[data-choice]").forEach(btn=>btn.addEventListener("click",()=>{
+    const row=state[btn.dataset.id]||{};
+    row.choice=btn.dataset.choice;
+    state[btn.dataset.id]=row;
+    save();
+    render();
+  }));
+  host.querySelectorAll("textarea").forEach(area=>area.addEventListener("input",()=>{
+    const row=state[area.dataset.id]||{};
+    row.note=area.value;
+    state[area.dataset.id]=row;
+    save();
+    updateSummary();
+  }));
+}
+
+function cardTemplate(q){
+  const row=state[q.id]||{};
+  const choice=row.choice||"";
+  const note=row.note||"";
+  const confClass=q.confidence==="Needs confirmation"?"warn":"good";
+  return `<article class="card">
+    <div class="card-head">
+      <div class="meta"><span class="tag">${q.priority}</span><span class="tag ${confClass}">${q.confidence}</span></div>
+      <h3>${q.question}</h3>
+    </div>
+    <div class="answer"><b>Proposed answer</b><p>${q.proposed}</p></div>
+    <div class="controls">
+      <button type="button" data-id="${q.id}" data-choice="accept" class="${choice==="accept"?"active":""}">Accept</button>
+      <button type="button" data-id="${q.id}" data-choice="change" class="${choice==="change"?"active":""}">Change</button>
+      <button type="button" data-id="${q.id}" data-choice="unsure" class="${choice==="unsure"?"active":""}">Unsure</button>
+    </div>
+    <div class="note-wrap"><textarea data-id="${q.id}" placeholder="Notes, corrected answer, or confirmation source...">${escapeHtml(note)}</textarea></div>
+  </article>`;
+}
+
+function updateCounts(){
+  const counts={accept:0,change:0,unsure:0};
+  questions.forEach(q=>{const c=state[q.id]?.choice;if(counts[c]!==undefined)counts[c]+=1;});
+  document.getElementById("acceptedCount").textContent=counts.accept;
+  document.getElementById("changeCount").textContent=counts.change;
+  document.getElementById("unsureCount").textContent=counts.unsure;
+  return counts;
+}
+
+function updateSummary(){
+  const counts=updateCounts();
+  const answered=counts.accept+counts.change+counts.unsure;
+  const lines=[
+    "One Off / S-RANCH alignment review",
+    "Generated: "+new Date().toLocaleString(),
+    "Answered: "+answered+" of "+questions.length,
+    "Accepted: "+counts.accept+" | Needs change: "+counts.change+" | Uncertain: "+counts.unsure+" | Unanswered: "+(questions.length-answered),
+    "",
+    "Accepted:"
+  ];
+  addLines(lines,"accept");
+  lines.push("","Needs change:");
+  addLines(lines,"change");
+  lines.push("","Uncertain / confirm with One Off:");
+  addLines(lines,"unsure");
+  lines.push("","Unanswered:");
+  questions.filter(q=>!state[q.id]?.choice).forEach(q=>lines.push("- "+q.question));
+  document.getElementById("summaryBox").textContent=lines.join("\n");
+}
+
+function addLines(lines,choice){
+  const selected=questions.filter(q=>state[q.id]?.choice===choice);
+  if(!selected.length){lines.push("- None yet.");return;}
+  selected.forEach(q=>{
+    lines.push("- "+q.question);
+    lines.push("  Proposed: "+q.proposed);
+    if(state[q.id]?.note)lines.push("  Note: "+state[q.id].note);
+  });
+}
+
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[ch]));
+}
+
+function setSaveStatus(message){
+  const saveStatus=document.getElementById("saveStatus");
+  if(saveStatus)saveStatus.textContent=message;
+}
+
+function setCopyStatus(message,isError=false){
+  const status=document.getElementById("copyStatus");
+  status.textContent=message;
+  status.classList.toggle("error",isError);
+}
+
+function fallbackCopy(text){
+  const area=document.createElement("textarea");
+  area.value=text;
+  area.setAttribute("readonly","");
+  area.style.position="fixed";
+  area.style.left="-9999px";
+  document.body.appendChild(area);
+  area.select();
+  let copied=false;
+  try{copied=document.execCommand("copy");}catch(error){copied=false;}
+  document.body.removeChild(area);
+  return copied;
+}
+
+async function copySummary(){
+  const text=document.getElementById("summaryBox").textContent;
+  try{
+    if(navigator.clipboard?.writeText){
+      await navigator.clipboard.writeText(text);
+    }else if(!fallbackCopy(text)){
+      throw new Error("Clipboard unavailable");
+    }
+    document.getElementById("copyBtn").textContent="Copied";
+    setCopyStatus("Summary copied.");
+    setTimeout(()=>document.getElementById("copyBtn").textContent="Copy summary",1200);
+  }catch(error){
+    if(fallbackCopy(text)){
+      document.getElementById("copyBtn").textContent="Copied";
+      setCopyStatus("Summary copied.");
+      setTimeout(()=>document.getElementById("copyBtn").textContent="Copy summary",1200);
+    }else{
+      setCopyStatus("Copy is blocked by this browser. Use Download summary instead.",true);
+    }
+  }
+}
+
+function downloadSummary(){
+  const text=document.getElementById("summaryBox").textContent;
+  const blob=new Blob([text],{type:"text/plain;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const link=document.createElement("a");
+  link.href=url;
+  link.download="oneoff-s-ranch-alignment-summary.txt";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+  setCopyStatus("Summary download started.");
+}
+
+function render(){
+  renderTabs();
+  renderQuestions();
+  updateSummary();
+}
+
+document.getElementById("copyBtn").addEventListener("click",copySummary);
+document.getElementById("downloadBtn").addEventListener("click",downloadSummary);
+
+document.getElementById("resetBtn").addEventListener("click",()=>{
+  if(confirm("Clear all choices and notes?")){
+    Object.keys(state).forEach(k=>delete state[k]);
+    save();
+    render();
+  }
+});
+
+render();
+</script>
+</body>
+</html>

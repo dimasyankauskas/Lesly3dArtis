@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>S-RANCH Client Room Example</title>
+  <style>
+    :root {
+      --ink:#17120d;
+      --espresso:#24160f;
+      --walnut:#3a261a;
+      --walnut-2:#593721;
+      --charcoal:#141414;
+      --steel:#1e2324;
+      --stone:#e7dfd1;
+      --ivory:#f8f1e6;
+      --paper:#fff8ed;
+      --muted:#bda98e;
+      --brass:#b58b4d;
+      --bronze:#7a4e2e;
+      --copper:#a96336;
+      --glass:rgba(255,248,237,.08);
+      --line:rgba(255,248,237,.16);
+      --darkLine:rgba(36,22,15,.16);
+      --shadow:0 24px 80px rgba(0,0,0,.42);
+      --radius:28px;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; background:#0d0b09; }
+    body {
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--ivory);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(181,139,77,.22), transparent 28rem),
+        linear-gradient(180deg, #0d0b09 0%, #17120d 36%, #0c0a08 100%);
+      min-height:100vh;
+    }
+
+    .desktop-stage {
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      padding:0;
+    }
+
+    .phone {
+      width:min(100%, 480px);
+      background:var(--ink);
+      min-height:100vh;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    @media (min-width: 740px) {
+      .desktop-stage { padding:32px 0; }
+      .phone { border:1px solid rgba(255,255,255,.08); border-radius:40px; min-height:calc(100vh - 64px); overflow:hidden; }
+      .phone:before {
+        content:""; position:absolute; top:12px; left:50%; transform:translateX(-50%);
+        width:86px; height:5px; border-radius:99px; background:rgba(255,255,255,.15); z-index:99;
+      }
+    }
+
+    .grain {
+      pointer-events:none; position:absolute; inset:0; opacity:.16; mix-blend-mode:overlay; z-index:1;
+      background-image:
+        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.015) 1px, transparent 1px);
+      background-size: 7px 7px, 11px 11px;
+    }
+
+    .section { position:relative; z-index:2; padding:34px 22px; }
+    .section.tight { padding-top:18px; }
+    .panel {
+      background:linear-gradient(180deg, rgba(255,248,237,.08), rgba(255,248,237,.035));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:0 18px 60px rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+    }
+    .panel.paper { background:var(--paper); color:var(--espresso); border-color:rgba(0,0,0,.08); }
+
+    .hero {
+      min-height:780px;
+      padding:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      isolation:isolate;
+      background:#110d09;
+    }
+    .hero-media { position:absolute; inset:0; z-index:0; }
+    .hero-media img { width:100%; height:100%; object-fit:cover; filter:saturate(.96) contrast(1.02); }
+    .hero-media:after {
+      content:""; position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(8,7,6,.05) 0%, rgba(8,7,6,.28) 36%, rgba(8,7,6,.86) 83%, rgba(8,7,6,1) 100%),
+        radial-gradient(circle at 55% 45%, transparent 0 10rem, rgba(0,0,0,.35) 28rem);
+    }
+    .hero-content { position:relative; z-index:3; padding:36px 22px 96px; }
+    .eyebrow {
+      font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:700;
+      display:flex; align-items:center; gap:10px; margin-bottom:14px;
+    }
+    .eyebrow:before { content:""; width:32px; height:1px; background:var(--brass); display:inline-block; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight:400; letter-spacing:-.03em; margin:0; }
+    h1 { font-size:58px; line-height:.92; max-width:8ch; text-wrap:balance; }
+    h2 { font-size:38px; line-height:1; margin-bottom:16px; }
+    h3 { font-size:24px; line-height:1.05; margin-bottom:8px; }
+    p { color:rgba(248,241,230,.78); line-height:1.55; margin:0; font-size:15px; }
+    .paper p, .paper .sub, .paper li { color:rgba(36,22,15,.72); }
+    .sub { font-size:16px; color:rgba(248,241,230,.72); line-height:1.55; }
+    .large-copy { font-size:20px; line-height:1.35; color:var(--ivory); font-family:Georgia, "Times New Roman", serif; }
+    .mini { font-size:12px; line-height:1.45; color:rgba(248,241,230,.55); }
+    .paper .mini { color:rgba(36,22,15,.58); }
+    .hero-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
+    .btn {
+      border:1px solid rgba(255,248,237,.22); border-radius:999px; padding:12px 15px;
+      color:var(--ivory); text-decoration:none; font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+      background:rgba(255,248,237,.07); backdrop-filter:blur(12px); display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn.primary { background:var(--brass); color:#160d08; border-color:var(--brass); font-weight:800; }
+
+    .topbar {
+      position:fixed; top:0; left:50%; transform:translateX(-50%); width:min(100%, 480px);
+      z-index:50; padding:12px 14px; display:flex; justify-content:space-between; align-items:center;
+      background:linear-gradient(180deg, rgba(13,11,9,.76), rgba(13,11,9,0));
+      pointer-events:none;
+    }
+    .brandmark { pointer-events:auto; display:flex; align-items:center; gap:9px; color:var(--ivory); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+    .mark { width:30px; height:30px; border:1px solid rgba(255,248,237,.26); border-radius:50%; display:grid; place-items:center; color:var(--brass); font-family:Georgia, serif; }
+    .pill {
+      pointer-events:auto; font-size:10px; color:rgba(248,241,230,.72); letter-spacing:.12em; text-transform:uppercase;
+      padding:8px 10px; border:1px solid rgba(255,248,237,.12); border-radius:99px; background:rgba(0,0,0,.22); backdrop-filter:blur(10px);
+    }
+
+    .bottomnav {
+      position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:min(100%, 480px); z-index:60;
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+      background:linear-gradient(180deg, rgba(13,11,9,0), rgba(13,11,9,.82) 24%, rgba(13,11,9,.96));
+    }
+    .navinner {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:6px; border:1px solid rgba(255,248,237,.12); border-radius:999px; padding:6px;
+      background:rgba(24,18,13,.82); backdrop-filter:blur(16px);
+    }
+    .navinner a {
+      color:rgba(248,241,230,.62); text-decoration:none; font-size:10px; text-transform:uppercase; letter-spacing:.08em; text-align:center;
+      padding:9px 5px; border-radius:99px;
+    }
+    .navinner a.active { color:#1b120c; background:var(--brass); font-weight:800; }
+
+    .kpi-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:18px; }
+    .kpi { border:1px solid rgba(255,248,237,.12); background:rgba(255,248,237,.055); border-radius:18px; padding:14px; }
+    .kpi strong { display:block; font-family:Georgia, serif; font-size:28px; font-weight:400; color:var(--ivory); margin-bottom:4px; }
+    .kpi span { font-size:11px; color:rgba(248,241,230,.58); line-height:1.35; display:block; }
+
+    .case-card { display:grid; gap:14px; }
+    .case-meta { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
+    .meta { padding:12px; border-radius:16px; background:rgba(36,22,15,.06); border:1px solid rgba(36,22,15,.10); }
+    .meta b { display:block; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--bronze); margin-bottom:4px; }
+    .meta span { display:block; font-size:13px; line-height:1.25; color:var(--espresso); }
+
+    .image-card { overflow:hidden; border-radius:24px; border:1px solid var(--line); background:#0d0b09; position:relative; }
+    .image-card img { display:block; width:100%; height:auto; }
+    .image-card.cover img { height:360px; object-fit:cover; }
+    .caption {
+      padding:12px 13px; font-size:11px; color:rgba(248,241,230,.62); letter-spacing:.04em; text-transform:uppercase;
+      display:flex; justify-content:space-between; gap:10px; align-items:center;
+    }
+    .caption em { font-style:normal; color:var(--brass); }
+
+    .split-stack { display:grid; gap:12px; }
+    .before-after { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .before-after .image-card img { height:210px; object-fit:cover; }
+    .before-after .image-card:first-child img { object-fit:contain; background:#f3f0eb; }
+
+    .timeline { display:grid; gap:12px; margin-top:20px; }
+    .step {
+      position:relative; padding:18px 16px 18px 55px; border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,248,237,.08), rgba(255,248,237,.035)); border:1px solid var(--line);
+    }
+    .num {
+      position:absolute; left:14px; top:16px; width:28px; height:28px; border-radius:50%; display:grid; place-items:center;
+      background:rgba(181,139,77,.17); border:1px solid rgba(181,139,77,.36); color:var(--brass); font-size:11px; font-weight:800;
+    }
+    .step h3 { font-size:19px; margin-bottom:6px; }
+    .step p { font-size:13px; }
+
+    .tabs { margin-top:20px; }
+    .tab-buttons { display:flex; overflow:auto; gap:8px; padding-bottom:10px; -webkit-overflow-scrolling:touch; }
+    .tab-buttons button {
+      flex:0 0 auto; border:1px solid rgba(255,248,237,.16); background:rgba(255,248,237,.05); color:rgba(248,241,230,.72);
+      border-radius:999px; padding:10px 12px; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    }
+    .tab-buttons button.active { background:var(--brass); color:#1b120c; border-color:var(--brass); font-weight:800; }
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
+
+    .asset-grid { display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-top:18px; }
+    .asset { border-radius:22px; overflow:hidden; background:rgba(255,248,237,.055); border:1px solid var(--line); position:relative; cursor:pointer; }
+    .asset img { width:100%; height:160px; object-fit:cover; display:block; }
+    .image-card[onclick] { cursor:pointer; }
+    .image-card[onclick]:before,
+    .asset[onclick]:before {
+      content:""; position:absolute; z-index:4; top:12px; right:12px; width:36px; height:36px; border-radius:50%;
+      background-color:rgba(12,9,7,.26);
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff8ed' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.1 12s3.2-6.2 9.9-6.2S21.9 12 21.9 12s-3.2 6.2-9.9 6.2S2.1 12 2.1 12Z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+      background-repeat:no-repeat; background-position:center; background-size:20px 20px;
+      border:1px solid rgba(255,248,237,.18); box-shadow:0 10px 28px rgba(0,0,0,.32);
+      opacity:.76; pointer-events:none; backdrop-filter:blur(8px);
+      transition:opacity .18s ease, background-color .18s ease, transform .18s ease;
+    }
+    .asset[onclick]:before { width:30px; height:30px; background-size:17px 17px; top:9px; right:9px; }
+    .image-card[onclick]:hover:before,
+    .asset[onclick]:hover:before { opacity:.96; background-color:rgba(12,9,7,.44); transform:scale(1.04); }
+    .asset .asset-text { padding:12px; }
+    .asset h4 { margin:0 0 5px; font-size:13px; color:var(--ivory); }
+    .asset p { font-size:11px; color:rgba(248,241,230,.58); line-height:1.4; }
+
+    .motion-grid { display:grid; gap:12px; margin-top:18px; }
+    .motion-card {
+      overflow:hidden; border-radius:24px; border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,248,237,.08), rgba(255,248,237,.035));
+    }
+    .motion-poster { position:relative; min-height:190px; background:#0d0b09; overflow:hidden; }
+    .motion-poster img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.92) contrast(1.04); }
+    .motion-poster:after {
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(10,7,5,.08), rgba(10,7,5,.55) 72%, rgba(10,7,5,.88));
+    }
+    .play-badge {
+      position:absolute; left:16px; bottom:16px; z-index:2; width:42px; height:42px; border-radius:50%;
+      display:grid; place-items:center; background:rgba(225,189,125,.92); color:#1b120c;
+      box-shadow:0 12px 32px rgba(0,0,0,.36);
+    }
+    .play-badge:before {
+      content:""; width:0; height:0; border-top:8px solid transparent; border-bottom:8px solid transparent;
+      border-left:12px solid currentColor; margin-left:3px;
+    }
+    .motion-status {
+      position:absolute; right:14px; top:14px; z-index:2; padding:7px 9px; border-radius:999px;
+      background:rgba(24,18,13,.72); border:1px solid rgba(255,248,237,.14);
+      color:rgba(248,241,230,.78); font-size:9px; letter-spacing:.12em; text-transform:uppercase;
+      backdrop-filter:blur(10px);
+    }
+    .motion-copy { padding:14px; }
+    .motion-copy h3 { font-size:20px; margin-bottom:7px; }
+    .motion-copy p { font-size:13px; color:rgba(248,241,230,.64); line-height:1.42; }
+    .motion-video { position:relative; background:#0d0b09; overflow:hidden; }
+    .motion-video video { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:#080604; filter:saturate(1.04) contrast(1.05); }
+
+    .mood { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:18px; }
+    .mood-card { min-height:154px; border-radius:23px; overflow:hidden; position:relative; border:1px solid var(--line); background:#111; }
+    .mood-card img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; filter:saturate(.9) contrast(1.05); }
+    .mood-card:after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 20%, rgba(0,0,0,.78) 100%); }
+    .mood-label { position:absolute; left:12px; right:12px; bottom:12px; z-index:2; }
+    .mood-label b { display:block; font-size:13px; color:var(--ivory); }
+    .mood-label span { font-size:10px; text-transform:uppercase; letter-spacing:.10em; color:rgba(248,241,230,.64); }
+    .swatches { display:grid; grid-template-columns:repeat(5,1fr); gap:7px; margin-top:12px; }
+    .swatch { height:58px; border-radius:15px; border:1px solid rgba(255,255,255,.13); position:relative; overflow:hidden; }
+    .swatch span { position:absolute; left:7px; bottom:6px; font-size:8px; letter-spacing:.07em; text-transform:uppercase; color:rgba(255,255,255,.82); text-shadow:0 1px 4px rgba(0,0,0,.5); }
+
+    .quote {
+      margin-top:18px; padding:22px; border-radius:26px; background:linear-gradient(135deg, rgba(181,139,77,.18), rgba(255,248,237,.05));
+      border:1px solid rgba(181,139,77,.24);
+    }
+    .quote p { font-family:Georgia, serif; font-size:23px; line-height:1.2; color:var(--ivory); }
+    .quote small { display:block; margin-top:12px; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.12em; }
+
+    .checklist { list-style:none; padding:0; margin:18px 0 0; display:grid; gap:9px; }
+    .checklist li {
+      display:flex; gap:10px; align-items:flex-start; padding:12px 13px; border-radius:16px;
+      background:rgba(36,22,15,.05); border:1px solid rgba(36,22,15,.09); font-size:13px; line-height:1.35;
+    }
+    .checklist li:before { content:"✓"; color:var(--bronze); font-weight:900; }
+
+    .role-card {
+      background:linear-gradient(180deg, var(--paper), #eadcc8); color:var(--espresso);
+      border-radius:30px; padding:24px; border:1px solid rgba(255,255,255,.2);
+      box-shadow:0 24px 70px rgba(0,0,0,.26);
+    }
+    .role-card h2 { color:var(--espresso); }
+    .role-title { font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--bronze); font-weight:800; margin:8px 0 18px; }
+    .role-pill-grid { display:flex; flex-wrap:wrap; gap:8px; margin-top:15px; }
+    .role-pill-grid span { font-size:11px; padding:8px 10px; background:rgba(36,22,15,.06); border:1px solid rgba(36,22,15,.12); border-radius:999px; }
+
+    .tech-grid { display:grid; gap:10px; margin-top:18px; }
+    .tech { border-left:1px solid var(--brass); padding:10px 0 10px 14px; }
+    .tech b { display:block; font-size:13px; color:var(--ivory); margin-bottom:4px; }
+    .tech span { display:block; font-size:12px; color:rgba(248,241,230,.64); line-height:1.45; }
+
+    .closing { padding-bottom:112px; }
+    .signature { display:flex; gap:12px; align-items:center; margin-top:20px; }
+    .sigmark { width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background:var(--brass); color:#1b120c; font-family:Georgia,serif; font-size:20px; }
+    .signature b { display:block; color:var(--ivory); font-size:14px; }
+    .signature span { display:block; color:rgba(248,241,230,.58); font-size:12px; margin-top:2px; }
+    .signature a { color:var(--brass); font-size:12px; text-decoration:none; border-bottom:1px solid rgba(225,189,125,.45); }
+
+    .reveal { opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity:1; transform:none; }
+
+    .lightbox { position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.88); display:none; align-items:center; justify-content:center; padding:20px; }
+    .lightbox.open { display:flex; }
+    .lightbox img { max-width:100%; max-height:86vh; border-radius:18px; box-shadow:0 20px 80px rgba(0,0,0,.55); }
+    .lightbox button { position:absolute; top:18px; right:18px; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.08); color:white; border-radius:999px; padding:10px 13px; }
+
+    @media (max-width: 380px) {
+      h1 { font-size:50px; }
+      h2 { font-size:32px; }
+      .section { padding-left:18px; padding-right:18px; }
+      .asset img { height:138px; }
+      .motion-poster { min-height:168px; }
+      .hero-content { padding-left:18px; padding-right:18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="desktop-stage">
+    <main class="phone" id="phone">
+      <div class="grain"></div>
+
+      <header class="topbar">
+        <div class="brandmark"><span class="mark">L</span><span>Client Room</span></div>
+        <span class="pill">Private Experience</span>
+      </header>
+
+      <nav class="bottomnav" aria-label="Presentation sections">
+        <div class="navinner">
+          <a href="#vision" class="active">Vision</a>
+          <a href="#journey">Flow</a>
+          <a href="#assets">Assets</a>
+        </div>
+      </nav>
+
+      <section class="hero section" id="vision" data-nav="Vision">
+        <div class="hero-media"><img src="../assets/client_updates/2026-06-09/luxury_bar_closed_front.png" alt="S-RANCH updated client-room hero visual"></div>
+        <div class="hero-content">
+          <div class="eyebrow">Private Client Room</div>
+          <h1>One calm place to watch the commission come to life.</h1>
+          <p class="sub" style="margin-top:18px">This example shows the kind of personal review experience a One Off client could receive: updated visuals, progress, feedback, choices, and next steps in one polished space.</p>
+          <div class="kpi-grid">
+            <div class="kpi"><strong>01</strong><span>See the product clearly</span></div>
+            <div class="kpi"><strong>02</strong><span>Comment directly on visuals</span></div>
+            <div class="kpi"><strong>03</strong><span>Follow progress without scattered messages</span></div>
+            <div class="kpi"><strong>04</strong><span>Approve with more confidence</span></div>
+          </div>
+          <div class="swatches">
+            <div class="swatch" style="background:#24160f"><span>Walnut</span></div>
+            <div class="swatch" style="background:#1d2222"><span>Steel</span></div>
+            <div class="swatch" style="background:#b58b4d"><span>Brass</span></div>
+            <div class="swatch" style="background:#4f4b45"><span>Stone</span></div>
+            <div class="swatch" style="background:#f0c36c"><span>Glow</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="assets" data-nav="Assets">
+        <div class="eyebrow">Client Room Content</div>
+        <h2>What the client sees</h2>
+        <p>Each visual has a job: build desire, show progress, invite clear feedback, or make the next step easier.</p>
+        <div class="asset-grid">
+          <div class="asset" onclick="openLightbox(this)"><img src="../assets/client_updates/2026-06-09/luxury_bar_closed_front.png" alt="Updated frontal bar-wall concept"><div class="asset-text"><h4>Frontal view</h4><p>Symmetry, presence, and the first emotional read of the commission.</p></div></div>
+          <div class="asset" onclick="openLightbox(this)"><img src="../assets/client_updates/2026-06-09/luxury_bar_closed_angled.png" alt="Updated angled bar-wall concept"><div class="asset-text"><h4>Angled view</h4><p>Depth, material richness, lighting, and private-room atmosphere.</p></div></div>
+          <div class="asset" onclick="openLightbox(this)"><img src="../assets/client_updates/2026-06-09/luxury_bar_wide_lounge.png" alt="Updated wide lounge context"><div class="asset-text"><h4>Room context</h4><p>The product reads as part of a complete VIP environment.</p></div></div>
+          <div class="asset" onclick="openLightbox(this)"><img src="../assets/client_updates/2026-06-09/updated_2d_sketch_2026-06-09.png" alt="Updated S-RANCH 2D sketch"><div class="asset-text"><h4>Updated source sketch</h4><p>The latest drawing stays visible as the alignment anchor.</p></div></div>
+          <div class="asset" onclick="openLightbox(this)"><img src="../assets/client_updates/2026-06-09/luxury_bar_lifestyle_with_clients.png" alt="Updated lifestyle view with clients"><div class="asset-text"><h4>Client moment</h4><p>The experience can show how the finished piece feels in use.</p></div></div>
+          <div class="asset" onclick="openLightbox(this)"><img src="../assets/video/s_ranch_cinematic_poster.png" alt="Color-corrected video poster"><div class="asset-text"><h4>Motion preview</h4><p>A warm-contrast still from the supplied cinematic clip.</p></div></div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="panel">
+          <div class="eyebrow">Motion Layer</div>
+          <h2>Color-corrected cinematic preview</h2>
+          <p>The supplied clip now has a warmer, higher-contrast pass so it sits with the updated stills and can work as a private-room progress or reveal asset.</p>
+          <div class="motion-grid">
+            <article class="motion-card">
+              <div class="motion-video">
+                <video controls preload="metadata" poster="../assets/video/s_ranch_cinematic_poster.png">
+                  <source src="../assets/video/s_ranch_cinematic_warm_contrast.mp4" type="video/mp4">
+                </video>
+                <span class="motion-status">Warm Contrast</span>
+              </div>
+              <div class="motion-copy">
+                <h3>Private-room motion asset</h3>
+                <p>A short clip can show progress, atmosphere, and reveal energy without turning the presentation into a technical render package.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="tabs panel">
+          <div class="eyebrow">Client Room Language</div>
+          <h2>One page, three communication modes</h2>
+          <div class="tab-buttons" role="tablist">
+            <button class="active" data-tab="client">Client View</button>
+            <button data-tab="studio">Studio View</button>
+            <button data-tab="fabrication">Fabrication View</button>
+          </div>
+          <div class="tab-panel active" id="tab-client">
+            <h3>Client View</h3>
+            <p>“This is the mood, scale, finish direction, and intended presence of the bar cabinet in your home.”</p>
+            <ul class="checklist">
+              <li>React to the overall visual direction.</li>
+              <li>React to blackened steel, dark wood, warm glass, and stone.</li>
+              <li>Confirm whether the visual direction matches the quality and setting of the space.</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="tab-studio">
+            <h3>Studio View</h3>
+            <p>“This visual explains the project clearly enough to reduce ambiguity before final detailing.”</p>
+            <ul class="checklist">
+              <li>Identify what still needs material or hardware confirmation.</li>
+              <li>Keep visual revisions separate from fabrication revisions.</li>
+              <li>Create reusable presentation assets for future clients.</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="tab-fabrication">
+            <h3>Fabrication View</h3>
+            <p>“This is not the replacement for shop drawings. It is the client communication layer around them.”</p>
+            <ul class="checklist">
+              <li>Use final CAD/PDF dimensions before fabrication-accurate renders.</li>
+              <li>Label concept visuals separately from production visuals.</li>
+              <li>Keep exact drawings as the source of truth for build details.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="panel paper">
+          <div class="eyebrow" style="color:var(--bronze);">Client Check-In</div>
+          <h2>What the client can respond to today</h2>
+          <ul class="checklist">
+            <li>Overall mood: refined private-bar atmosphere with handcrafted materiality.</li>
+            <li>General cabinet proportions, arched opening, and four closed metal-framed windows.</li>
+            <li>Material direction: dark stained wood, blackened steel, stone top, warm interior glow.</li>
+            <li>Presentation direction for the next technical fidelity pass.</li>
+          </ul>
+          <p class="mini" style="margin-top:14px;">Important: final dimensions, lattice decisions, hardware details, and finish samples remain with One Off and can be confirmed in the next pass.</p>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="panel">
+          <div class="eyebrow">Communication Layer</div>
+          <h2>Embedded into the client experience</h2>
+          <p>The technology stays behind the curtain. The client sees a polished private room; One Off receives clearer feedback, cleaner decisions, and reusable project assets.</p>
+          <div class="tech-grid">
+            <div class="tech"><b>Fast concept layer</b><span>Image mockups, material direction, quick environment placement, and clear framing.</span></div>
+            <div class="tech"><b>3D / rendering layer</b><span>Blender, Rhino/SketchUp/CAD intake, KeyShot/V-Ray/Unreal-style rendering when fidelity is worth it.</span></div>
+            <div class="tech"><b>Client room layer</b><span>Mobile pages, private links, annotated visual notes, progress updates, and comment points.</span></div>
+            <div class="tech"><b>Motion layer</b><span>Inspection videos from approved stills: slow dolly, detail closeups, finish and reflection studies.</span></div>
+            <div class="tech"><b>Reusable library layer</b><span>Wood, steel, brass, glass, stone, hardware, lighting moods, and recurring architectural components.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal closing">
+        <div class="eyebrow">Strategic Outcome</div>
+        <h2>The strategic offer</h2>
+        <p class="large-copy">“We do not just make a 3D render. We build the client communication experience that helps high-value custom work get seen, discussed, trusted, and remembered.”</p>
+        <div class="signature">
+          <div class="sigmark">L</div>
+          <div><b>Lesly Yankauskas</b><span>Client visualization and VIP review experiences</span><a href="https://leslyyankauskas.com" target="_blank" rel="noreferrer">leslyyankauskas.com</a></div>
+        </div>
+      </section>
+
+      <div class="lightbox" id="lightbox" onclick="closeLightbox()"><button type="button">Close</button><img src="../assets/client_updates/2026-06-09/luxury_bar_closed_front.png" alt="Expanded client-room visual"></div>
+    </main>
+  </div>
+
+  <script>
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
+
+    const navLinks = Array.from(document.querySelectorAll('.navinner a'));
+    const observedSections = Array.from(document.querySelectorAll('[data-nav]'));
+    const navObs = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + visible.target.id));
+    }, { threshold: [0.2, 0.45, 0.7] });
+    observedSections.forEach(s => navObs.observe(s));
+
+    document.querySelectorAll('.tab-buttons button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-buttons button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const target = document.getElementById('tab-' + btn.dataset.tab);
+        if (target) target.classList.add('active');
+      });
+    });
+
+    function openLightbox(card) {
+      const img = card.querySelector('img');
+      if (!img) return;
+      const box = document.getElementById('lightbox');
+      box.querySelector('img').src = img.src;
+      box.classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
