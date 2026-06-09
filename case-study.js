@@ -153,7 +153,7 @@ const CASE_STUDIES=[
   {
     id:'construction-client-progress-workflow',
     title:'Construction Client Progress Workflow',
-    image:'assets/process/construction-client-progress-workflow/progress-review-board.webp',
+    image:'assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp',
     alt:'Remote review-board scene with progress-photo sets, material samples, exterior visualization options, and approval markers.',
     meta:['Client review','Progress photos','Agentic workflow'],
     lead:'A residential-construction operations case for connecting jobsite photos, client comments, AI visual options, response states, and next actions into one review workflow.',
@@ -166,7 +166,7 @@ const CASE_STUDIES=[
       ['Client clarity','The workflow is designed to reduce repeated questions, lost decisions, and disconnected AI visuals.']
     ],
     gallery:[
-      ['assets/process/construction-client-progress-workflow/progress-review-board.webp','Remote review-board scene showing progress-photo sequences, material options, approval markers, and exterior visualization direction.'],
+      ['assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp','Remote review-board scene showing progress-photo sequences, material options, approval markers, and exterior visualization direction.'],
       ['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','Related coastal visualization scene showing how material standards connect to review operations.'],
       ['assets/process/interior-props/presentation-board.webp','Presentation board used as a material and visual-standard reference for review systems.']
     ],
@@ -176,7 +176,7 @@ const CASE_STUDIES=[
       ['Public-safe evidence','Redacted portal screenshots, before/after report examples, time logs, message counts, or approved response data.'],
       ['Boundary','AI assists summaries, routing, and visual options; it does not make construction decisions or replace project managers.']
     ],
-    current:['assets/process/construction-client-progress-workflow/progress-review-board.webp'],
+    current:['assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp'],
     required:['redacted portal screenshots','before and after progress report samples','approved baseline message or time data if metrics are shown','developer implementation brief','client permission boundaries','confirmation of Lesly role wording']
   },
   {
@@ -774,7 +774,7 @@ const FINAL_CASE_STUDY_UPGRADES={
     required:['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp']
   },
   'construction-client-progress-workflow':{
-    image:'assets/process/construction-client-progress-workflow/progress-review-board.webp',
+    image:'assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp',
     alt:'Remote review-board scene with progress-photo sets, material samples, exterior visualization options, and approval markers.',
     lead:'A residential-construction review workflow case for organizing jobsite photos, client comments, visual options, response states, and next actions into a clearer evidence trail.',
     whatCopy:'This case shows Lesly applying visual production judgment to a client-review workflow: what should be captured, how updates should be grouped, where comments and responses belong, and how AI can assist summaries or routing without replacing human construction decisions.',
@@ -785,9 +785,9 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['Implementation boundary','The case documents a portal-style workflow brief and review model, not a claimed finished app or verified operational result.']
     ],
     gallery:[
-      ['assets/process/construction-client-progress-workflow/progress-review-board.webp','Remote review-board scene showing progress-photo sequences, material options, approval markers, and exterior visualization direction.'],
-      ['assets/process/construction-client-progress-workflow/agentic-summary-flow.webp','Summary-review scene showing grouped progress photos, color-coded review cards, routed updates, and material options under human review.'],
-      ['assets/process/construction-client-progress-workflow/client-handoff.webp','Handoff package scene showing approved render sets, finish selections, progress-photo sheets, and next-step review packets.'],
+      ['assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp','Remote review-board scene showing progress-photo sequences, material options, approval markers, and exterior visualization direction.'],
+      ['assets/process/construction-client-progress-workflow/summary-review-scene-20260609.webp','Summary-review scene showing grouped progress photos, color-coded review cards, routed updates, and material options under human review.'],
+      ['assets/process/construction-client-progress-workflow/handoff-package-scene-20260609.webp','Handoff package scene showing approved render sets, finish selections, progress-photo sheets, and next-step review packets.'],
       ['assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','Related material standards scene showing how visual consistency supports client review.']
     ],
     proof:[
@@ -796,7 +796,7 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['Public-safe evidence needed','Redacted portal captures, before/after report samples, time logs, message counts, or approved response data before metrics are shown.'],
       ['Boundary','AI supports visual review, summaries, and routing; it does not make construction decisions, replace project managers, or verify jobsite status.']
     ],
-    required:['assets/process/construction-client-progress-workflow/progress-review-board.webp','assets/process/construction-client-progress-workflow/agentic-summary-flow.webp','assets/process/construction-client-progress-workflow/client-handoff.webp']
+    required:['assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp','assets/process/construction-client-progress-workflow/summary-review-scene-20260609.webp','assets/process/construction-client-progress-workflow/handoff-package-scene-20260609.webp']
   },
   'print-startup-direction':{
     image:'assets/process/print-startup-direction/printability-board.webp',
