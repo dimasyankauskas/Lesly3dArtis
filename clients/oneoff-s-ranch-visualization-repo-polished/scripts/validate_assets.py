@@ -8,6 +8,13 @@ required = [
     'docs/14_CLIENT_MATERIAL_INTAKE_AUDIT.md',
     'site/alignment-questionnaire.html',
     'assets/source_docs/25_1022_S_Ranch_Bar_Window_Details.pdf',
+    'assets/client_updates/2026-06-09/updated_2d_sketch_2026-06-09.png',
+    'assets/client_updates/2026-06-09/luxury_bar_closed_front.png',
+    'assets/client_updates/2026-06-09/luxury_bar_closed_angled.png',
+    'assets/client_updates/2026-06-09/luxury_bar_wide_lounge.png',
+    'assets/client_updates/2026-06-09/luxury_bar_lifestyle_with_clients.png',
+    'assets/video/s_ranch_cinematic_warm_contrast.mp4',
+    'assets/video/s_ranch_cinematic_poster.png',
     'assets/client_intake/2026-06-09/rail_hardware_client_notes.jpg',
     'assets/client_intake/2026-06-09/client_msg_colors_lattice.jpg',
     'assets/visuals/accepted/hero_closed_bar_wall_concept.png',
@@ -22,6 +29,7 @@ if missing:
 
 site_files = [
     root / 'site/index.html',
+    root / 'site/client_room_example.html',
     root / 'site/client_proposal.html',
     root / 'site/alignment-questionnaire.html',
 ]
@@ -38,6 +46,28 @@ for path in site_files:
     for pattern in blocked_patterns:
         if pattern in text:
             violations.append(f'{path.relative_to(root)} references blocked visual asset marker: {pattern}')
+
+send_ready_files = [
+    root / 'site/index.html',
+    root / 'site/client_room_example.html',
+]
+old_active_visual_patterns = [
+    'assets/visuals/accepted/hero_closed_bar_wall_concept.png',
+    'assets/visuals/accepted/left_pair_open_shallow_niche_concept.png',
+    'assets/visuals/accepted/right_45_closed_concept.png',
+    'assets/visuals/accepted/open_door_corrected_top_from_closed_concept.png',
+    'assets/source_images/technical_sheet_highlighted_dimensions_clean.png',
+    'assets/source_images/linear_rail_hardware_notes.png',
+    'assets/client_intake/2026-06-09/client_msg_',
+    'assets/client_intake/2026-06-09/surfcam_',
+]
+for path in send_ready_files:
+    if not path.exists():
+        continue
+    text = path.read_text(encoding='utf-8')
+    for pattern in old_active_visual_patterns:
+        if pattern in text:
+            violations.append(f'{path.relative_to(root)} still uses old active visual/source reference: {pattern}')
 
 accepted_dir = root / 'assets/visuals/accepted'
 if accepted_dir.exists():
