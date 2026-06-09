@@ -39,7 +39,8 @@ Use this file to track the assets and facts behind the final portfolio surface.
 | Work card: Avatar character | `assets/portfolio/work-avatar-character.webp` | Codex-generated site image set | Created | Original generated avatar concept board |
 | Work card: Mascot character | `assets/portfolio/work-mascot-character.webp` | Codex-generated site image set | Created | Original generated mascot concept board |
 | Work card: Outfits/accessories | `assets/portfolio/work-outfits-accessories.webp` | Codex-generated site image set | Created | Original generated outfit/accessory concept board |
-| About process visual | `assets/profile/studio-process-portrait.webp` | Codex-generated site image set | Created | Studio/process image only; not Lesly's portrait |
+| About portrait | `assets/profile/lesly-about-portrait.jpg` | User-provided approved photo, 2026-06-08 | Integrated | Used in the About section as Lesly's portrait |
+| About process visual | `assets/profile/studio-process-portrait.webp` | Codex-generated site image set | Created | Retained as unused process image; not Lesly's portrait |
 
 ## First Case Study Facts
 
