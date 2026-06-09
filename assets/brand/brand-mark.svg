@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" aria-label="Lesly brand mark">
+  <path fill="currentColor" d="M11 11h78v2H13v74h74V67h2v22H11z"/>
+  <path fill="currentColor" d="M23 23h20v4H27v46h30v4H23z"/>
+  <path fill="currentColor" d="M60 29l17 9v19l-17 10-17-10V38zm0 5-10 5 10 5 10-5zm-12 9v11l10 6V49zm24 0-10 6v11l10-6z"/>
+  <path fill="currentColor" d="M15 15h16v2H17v14h-2zm54 0h16v16h-2V17H69zM15 69h2v14h14v2H15z"/>
+</svg>

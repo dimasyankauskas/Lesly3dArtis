@@ -243,18 +243,17 @@ p{margin:0 0 1rem}
 .brand{
   display:inline-flex;align-items:center;gap:.65rem;
   text-decoration:none;color:inherit;
-  font-family:var(--display);font-style:italic;font-weight:500;
-  font-size:1.35rem;letter-spacing:.005em;text-transform:none;
+  font-family:var(--display);font-style:normal;font-weight:400;
+  font-size:1.12rem;letter-spacing:.1em;text-transform:none;
 }
 .brand .mark{
-  width:34px;height:34px;border-radius:50%;
-  border:1px solid var(--text);
-  color:var(--text);
-  background:transparent;
-  display:grid;place-items:center;
-  font-family:var(--display);font-style:italic;font-size:1.05rem;
-  line-height:1;
-  transition:border-color .35s var(--ease),color .35s var(--ease),background-color .35s var(--ease);
+  display:block;
+  flex:0 0 auto;
+  width:34px;height:34px;
+  background:var(--text);
+  -webkit-mask:url("assets/brand/brand-mark.svg") no-repeat center / contain;
+  mask:url("assets/brand/brand-mark.svg") no-repeat center / contain;
+  transition:background-color .35s var(--ease);
 }
 .nav{
   order:2;
@@ -1273,8 +1272,8 @@ body.case-study .site-header{background:color-mix(in srgb,var(--bg) 88%,transpar
     gap:.5rem;
   }
   .brand .mark{
-    width:32px;
-    height:32px;
+    width:34px;
+    height:34px;
   }
   .header-actions{
     display:none;
