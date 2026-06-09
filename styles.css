@@ -1152,11 +1152,34 @@ body.case-study .site-header{background:color-mix(in srgb,var(--bg) 88%,transpar
   .cs-hero .cs-hero-copy{
     max-width:100%;
     width:100%;
+    min-width:0;
+  }
+  .cs-hero .cs-hero-copy{
+    width:min(100%,330px);
+    margin-inline:0 auto;
   }
   .cs-hero.has-board-hero .cs-hero-bg,
   .cs-hero.has-board-hero .cs-hero-copy{
     width:min(100%,340px);
     margin-inline:0 auto;
+  }
+  .cs-hero h1,
+  .cs-hero .cs-lead,
+  .cs-hero .cs-meta{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    overflow-wrap:break-word;
+  }
+  .cs-hero .cs-meta{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:.35rem;
+    font-size:.68rem;
+    line-height:1.45;
+  }
+  .cs-hero .cs-meta span{
+    white-space:normal;
   }
   .case-gallery,
   .case-detail-grid,
