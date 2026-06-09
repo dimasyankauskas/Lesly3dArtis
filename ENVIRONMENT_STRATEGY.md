@@ -51,7 +51,7 @@ Avoid:
 
 - Full dioramas that imply environment art ownership.
 - Heavy scenery that competes with the character.
-- Generated background detail presented as real modeling, lighting, level design, or engine proof.
+- Background detail used to invent unrelated modeling, lighting, level-design, or engine claims.
 - Uncredited HDRIs, kitbash props, stock set dressing, or borrowed environment assets.
 - Tool labels such as Unreal, Unity, Sketchfab, Marmoset, or Blender unless the capture/setup is real.
 
@@ -90,4 +90,4 @@ Unsafe wording unless verified:
 
 ## Current final status
 
-The current final generated visuals use studio-style presentation and simple character staging. They are approved only as generated/site-created concept visuals. They do not prove real Lesly environment art, lighting setup, render scene, engine integration, or viewer setup.
+The current final generated visuals are real portfolio website assets. They use studio-style presentation and simple character staging. Review them asset-by-asset for character dominance, material read, lighting, crop, stage clarity, and service fit before publishing.

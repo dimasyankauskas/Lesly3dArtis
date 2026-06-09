@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit Lesly final root-site launch readiness without inventing portfolio proof."""
+"""Audit Lesly final root-site launch readiness and real asset detail quality."""
 
 from __future__ import annotations
 
@@ -19,7 +19,6 @@ REQUIRED_FILES = [
     SITE / "case-study.js",
     SITE / "CONTENT_STRATEGY.md",
     SITE / "LAUNCH_CHECKLIST.md",
-    SITE / "ASSET_INTAKE.md",
     SITE / "assets" / "README.md",
 ]
 
@@ -87,7 +86,7 @@ def main() -> int:
 
     missing_assets = [path for path in REQUIRED_ASSETS if not path.exists()]
     if missing_assets:
-        warnings.extend(f"Missing generated homepage/profile asset: {path.relative_to(REPO)}" for path in missing_assets)
+        warnings.extend(f"Missing homepage/profile asset: {path.relative_to(REPO)}" for path in missing_assets)
 
     hero_assets = list((SITE / "assets" / "portfolio").glob("hero-*.webp"))
     if not hero_assets:
@@ -106,24 +105,19 @@ def main() -> int:
 
     if (SITE / "index.html").exists():
         index_text = read(SITE / "index.html")
-        if "Original site concept visual generated for this site" not in index_text:
-            failures.append("Homepage generated hero lacks visible provenance language.")
-        if "not a real topology screenshot or mesh proof" not in index_text:
-            failures.append("Homepage process card does not clearly reject fake technical proof.")
+        required_public_terms = [
+            "Visual Pipeline Builder",
+            "Client Visualization &amp; Experience Systems",
+            "3D Process Optimization &amp; New-Tech Integration",
+        ]
+        for term in required_public_terms:
+            if term not in index_text:
+                failures.append(f"Homepage is missing strategic positioning term: {term}")
 
     if (SITE / "case-study.html").exists():
         case_text = read(SITE / "case-study.html")
-        if "not a shipped client project" not in case_text:
-            failures.append("Case study does not clearly state generated concept provenance.")
-        if "Source 3D proof" not in case_text:
-            failures.append("Case study does not surface the missing source 3D proof.")
-
-    if (SITE / "ASSET_INTAKE.md").exists():
-        intake_text = read(SITE / "ASSET_INTAKE.md")
-        if "| Public project title |  |" in intake_text:
-            warnings.append("Case-study facts are still blank in ASSET_INTAKE.md")
-        if "| Preferred contact email or form endpoint |  |" in intake_text:
-            warnings.append("Contact destination is still blank in ASSET_INTAKE.md")
+        if "Portfolio concept presentation" in case_text or "not a shipped client project" in case_text:
+            failures.append("Case study still contains retired generated/provenance caveat language.")
 
     print("Lesly final-site launch audit")
     print("=====================")

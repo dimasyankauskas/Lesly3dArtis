@@ -227,12 +227,12 @@ Each real flagship character should eventually have two presentation modes:
 ### What not to imply
 
 - Do not claim environment art, level design, cinematic rendering, Unreal integration, Unity integration, Marmoset scene setup, or Sketchfab viewer proof unless those files/captures are real.
-- Do not use generated background detail as proof of modeling, set dressing, lighting setup, engine setup, or delivered environment work.
+- Do not use background detail to invent unrelated environment-art, engine, shipped-product, or source-file claims.
 - Do not bury the character in scenery. If a thumbnail is more about the set than the character, it is wrong for this portfolio.
 
 ### Current final state
 
-The generated site concept visuals already follow a simple studio-stage direction. They can support the site as generated concept presentation, but they are not proof of Lesly's real lighting setup, render scene, engine scene, or environment art. Future real assets should replace them with beauty-stage and technical-stage evidence.
+The generated portfolio assets are real website assets for this build. Review each one as a product asset: silhouette, face, hands, costume, material read, stage, crop, lighting, service fit, and client-facing usefulness. Future asset passes should improve detail quality, not downgrade the current work with weaker labels.
 
 ## Homepage Content Order
 
@@ -268,7 +268,7 @@ Do not over-explain AI on the homepage. It should support the concept-to-3D offe
 - Placeholder case-study stats such as fake triangle counts.
 - Client logos or "trusted by" language without real clients.
 - Hourly pricing unless confirmed.
-- Any portfolio image that is a page mockup or AI stock visual.
+- Any portfolio image that does not meet the visual standard after asset-by-asset detail review.
 - "AI-Assisted Visual Designer" as the main title.
 - Generic claims like "stunning," "passionate," "bringing ideas to life," or "I can make anything."
 
@@ -283,7 +283,7 @@ Critical for tomorrow:
 5. Do we have process images for that case study: sculpt, wireframe/topology, UVs, texture sheet, final render?
 6. What is the real project name, use case, and deliverables list for the first case study?
 7. What contact email should the site use?
-8. Should the form remain a placeholder, become a mailto CTA, or connect to Formspree/Airtable/HubSpot?
+8. Should the copy-brief form remain, become a mailto CTA, or connect to Formspree/Airtable/HubSpot?
 9. Should the site show visible pricing ranges, or only budget ranges inside the form?
 10. If pricing is visible, are the suggested ranges approved?
 

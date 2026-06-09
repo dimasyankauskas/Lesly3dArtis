@@ -6,6 +6,10 @@ Repository-local operating guide for Codex in this project. This file is the Cod
 
 Static portfolio website for **Lesly — 3D Character Artist**. "AI Workflow Support" is a supporting phrase, not Lesly's title. The site targets both US game-studio full-time roles and elite freelance work.
 
+This is a real product portfolio. Generated assets created for this portfolio are real site assets, not prototypes or placeholders. Review them with high craft standards: character design, anatomy, silhouette, face, hands, costume logic, material read, stage, crop, lighting, and fit with the service being sold.
+
+OneOff and other client proposal work stays under `clients/` or proposal-specific surfaces. Do not display it on the public portfolio site unless the user explicitly asks for that project to be public.
+
 The production target is GitHub Pages at:
 
 ```text
@@ -47,10 +51,10 @@ Primary docs:
 - `index.html` — one-page site.
 - `case-study.html` — reusable case study template.
 - `case-study.js` — case-study reveal-on-scroll behavior.
-- `script.js` — shared theme toggle, mobile nav, filters, reveal-on-scroll, and form placeholder behavior.
+- `script.js` — shared theme toggle, mobile nav, filters, reveal-on-scroll, and copyable project-brief behavior.
 - `styles.css` — final tokens, layout, components, and responsive styling.
 - `assets/` — final site assets.
-- `CONTENT_STRATEGY.md`, `ASSET_INTAKE.md`, `LAUNCH_CHECKLIST.md`, `ENVIRONMENT_STRATEGY.md` — final strategy, asset truth, launch blockers, and presentation standards.
+- `CONTENT_STRATEGY.md`, `LAUNCH_CHECKLIST.md`, `ENVIRONMENT_STRATEGY.md` — final strategy, launch blockers, asset detail standards, and presentation standards.
 - `.nojekyll` — required for GitHub Pages static serving.
 - `reserch/` — strategy, IA, copy, visual references, and decision log.
 
@@ -61,7 +65,12 @@ Primary docs:
 - Keep the inline theme FOUC-prevention script in both HTML pages.
 - Use design tokens from `styles.css`; avoid hardcoded colors inside component rules.
 - Match the existing vanilla JS style in `script.js`: top-level `const`, optional chaining, no modules, no build step.
-- Placeholder media is intentional until verified real portfolio assets arrive.
+- Generated portfolio media is real site media. Do not re-label it as placeholder/prototype/concept-only unless the user explicitly asks.
+- Do not create or "fix" public portfolio images with Python/PIL, canvas scripts, or procedural board generators. Public case-study and homepage imagery must come from approved source art/assets or direct image generation such as Creative Production/imagegen. Python is acceptable only for validation, local preview servers, metadata checks, format conversion, compression, or resizing/cropping of already approved assets.
+- `scripts/generate_case_study_boards.py` is a legacy procedural generator and must not be used for public portfolio image production.
+- Public website content must read as Lesly's portfolio content, not proposal copy, internal review notes, or client-meeting material.
+- Keep OneOff/proposal links out of `index.html` and public case-study flows unless explicitly requested.
+- Do not invent external client names, shipped credits, engine integrations, testimonials, metrics, or source-file facts that are not represented in the repo.
 - The site is a marketing and lead-generation surface. Keep the contact path prominent and unobstructed.
 
 ## Local Skills
@@ -70,11 +79,14 @@ Use the repo-local Codex skills in `.codex/skills/`. They were imported from `.c
 
 | Task | Skill |
 |---|---|
-| Edit hero, services, case studies, contact copy, or positioning | `3d-character-artist-portfolio` |
+| Judge 3D asset quality, craft proof, generated media, game-ready claims, or portfolio suitability | `3d-production-expert` |
+| Edit hero, services, case studies, contact copy, positioning, or public portfolio narratives | `3d-portfolio-writing-director` |
+| Finalize the public website, audit launch readiness, or enforce public/proposal boundaries | `lesly-website-finalizer` |
+| Legacy segment context for 3D character portfolio conventions | `3d-character-artist-portfolio` |
 | Humanize or de-AI new copy | `humanizer` |
 | Build or refine HTML/CSS/JS UI | `frontend-design` |
 | Add self-hosted 3D model display | `threejs-fundamentals` + `threejs-loaders` |
-| Create static poster, PDF cover, banner, or visual artifact | `canvas-design` |
+| Create static poster, PDF cover, banner, or non-portfolio visual artifact | `canvas-design` |
 | Test local web behavior with Playwright | `webapp-testing` |
 | Apply a prebuilt theme to a non-site artifact | `theme-factory` |
 

@@ -19,7 +19,7 @@ Use this skill for launch-readiness work on a senior-facing 3D Character Artist 
    - `visual-assets-checklist.md`
    - `implementation-plan.md`
 4. Current `CONTENT_STRATEGY.md`.
-5. Current root site files, especially `LAUNCH_CHECKLIST.md` and `ASSET_INTAKE.md` when they exist.
+5. Current root site files, especially `LAUNCH_CHECKLIST.md`.
 
 The folder is intentionally named `reserch/`; do not rename it.
 
@@ -31,22 +31,26 @@ The folder is intentionally named `reserch/`; do not rename it.
 - AI language is support only. Use `AI Workflow Support` or `AI references` as secondary language, not as Lesly's title.
 - Avoid broad claims such as generic 3D designer, AI artist, can do anything, cheap modeling, metaverse/NFT language, and unsupported trust claims.
 
-## Real Asset Gate
+## Real Product Portfolio Asset Rule
 
-Do not present an image, screenshot, wireframe, UV, texture sheet, render, mockup, client logo, testimonial, metric, polycount, file list, engine target, project title, or shipped result as real unless the repo or user explicitly verifies it.
+This repo treats generated assets created for Lesly's portfolio as real website assets. Do not call them prototypes, placeholders, fake, temporary, non-final, or merely generated on the public site unless the user explicitly asks for that framing.
 
-Allowed states:
+The correct quality gate is asset-specific craft review:
 
-- `real approved work`: verified by user or authoritative repo note as Lesly's actual work.
-- `non-final placeholder`: clearly labeled in visible UI and launch checklist.
-- `reference/mockup only`: allowed in research docs or internal notes, never as portfolio proof.
+- Character design and appeal.
+- Anatomy, face, hands, pose, silhouette, and costume logic.
+- Material read: skin, fabric, metal, glass, leather, hair, props, and surface detail.
+- Stage, lighting, crop, camera, scale, and thumbnail readability.
+- Fit with the service or case study it represents.
+- Client-facing usefulness: can a buyer understand the offer, process, and deliverable?
+
+Keep this separate from external proof claims. Do not invent client names, testimonials, shipped credits, engine integrations, production metrics, triangle counts, UV layouts, texture sets, deadlines, source files, or deliverable filenames that are not represented in the repo.
 
 Forbidden:
 
-- Using `reserch/visuals/image*.png` as portfolio work unless the user has verified it as real Lesly work.
-- Inventing project names, client names, production stats, triangle counts, UV layouts, texture sets, engine targets, deadlines, deliverable filenames, or outcomes.
-- Hiding fake-risk placeholders behind polished styling.
-- Letting generated images imply real portfolio work.
+- Using `reserch/visuals/image*.png` as portfolio work. Those files are design references, not the final site asset set.
+- Inventing external project facts, client names, production stats, triangle counts, UV layouts, texture sets, engine targets, deadlines, deliverable filenames, or outcomes.
+- Reintroducing public caveats that say the portfolio assets are not real.
 
 ## Case Study Anatomy
 
@@ -61,16 +65,16 @@ A launch-quality case study needs real evidence for:
 7. Deliverables: real file types and handoff notes, not invented filenames.
 8. Result or intended use.
 
-If real project facts or visuals are missing, keep the page as a template or blocked intake surface. Do not complete the narrative by guessing.
+If specific project facts are missing, write a product-style portfolio narrative around the visible asset and service outcome. Do not invent external facts.
 
 ## Visual Proof Requirements
 
 Minimum portfolio proof before launch:
 
-- Hero render or explicitly marked non-final hero placeholder.
-- Work cards that either show real approved thumbnails or visible non-final placeholders.
-- At least one real case study only if real project facts and assets exist.
-- Launch blocker list naming exact missing filenames/sections when proof is absent.
+- Hero render.
+- Work cards with strong asset-service fit.
+- At least one case study with a real product-style project narrative.
+- Launch checklist naming exact sections that need detail polish or business facts.
 
 High-value proof for senior-level review:
 
@@ -95,7 +99,7 @@ Use environment details to prove taste, scale, material response, and production
 - Include at least one beauty presentation: key/fill/rim or HDRI-based lighting, intentional camera focal length, tasteful depth of field, grounded shadow, and a backdrop that supports the character's story.
 - If a real-time viewer or engine capture is used, document the environment/HDRI/lighting mode, engine or viewer, and any limitations. Do not claim Unreal, Unity, Sketchfab, or Marmoset proof unless the capture is real.
 - Avoid large dioramas unless Lesly actually made the scene. A character on a small plinth, studio floor, simple set wall, or scale prop is safer than a full environment that implies environment-art ownership.
-- Do not use generated background details as proof of level design, environment art, material work, engine integration, or production lighting.
+- Do not use background details to invent unrelated level-design, environment-art, engine-integration, or production-lighting claims.
 
 Environment proof to request for real Lesly projects:
 
@@ -120,9 +124,8 @@ Before editing the final site:
 
 1. Read required strategy docs.
 2. Audit `index.html`, `case-study.html`, `styles.css`, `script.js`, and `CONTENT_STRATEGY.md`.
-3. Inventory local assets with `find` and verify what is real, placeholder, or reference-only.
-4. Check `ASSET_INTAKE.md` before replacing any visible placeholder.
-5. Run targeted `rg` searches for placeholder/fake-risk terms.
+3. Inventory local assets with `find` and review every visible asset for craft/detail quality.
+4. Run targeted `rg` searches for stale prototype/placeholder/provenance language and unsupported external claims.
 
 For a deterministic local audit, run:
 
@@ -134,10 +137,10 @@ Exit codes: `0` means audited gates pass, `1` means truthfully blocked by missin
 
 Before claiming launch-ready:
 
-1. Every work/case-study visual is real approved work or visibly marked non-final.
-2. Every project fact is sourced or removed.
-3. Placeholder copy resolvable from docs is replaced.
-4. Missing assets/facts are listed in a launch blocker checklist with exact section and filename needs.
+1. Every visible asset is treated as a real portfolio asset and reviewed for detail quality.
+2. Every external project fact is sourced or removed.
+3. Stale prototype/placeholder/provenance copy is removed from public pages and repo operating docs.
+4. Missing business facts are listed in the launch checklist.
 5. Desktop and mobile browser checks pass: layout, nav, filters, theme, no horizontal overflow, and no broken local assets.
 
 ## Useful Fake-Risk Searches
@@ -145,11 +148,11 @@ Before claiming launch-ready:
 Use targeted searches such as:
 
 ```bash
-rg -n "\\[|placeholder|drop image|Project Name|One paragraph|One or two|~18k|18\\.4k|2k / 1k|Unreal 5|4 weeks|client|shipped|trusted|testimonial|logo|Lorem|TBD|TODO|fake|mockup" index.html case-study.html case-study.js ASSET_INTAKE.md LAUNCH_CHECKLIST.md
+rg -n "\\[|placeholder|prototype|non-final|not real|generated/site-created|drop image|Project Name|One paragraph|One or two|~18k|18\\.4k|2k / 1k|Unreal 5|4 weeks|trusted|testimonial|logo|Lorem|TBD|TODO|fake|mockup" index.html case-study.html case-study.js LAUNCH_CHECKLIST.md
 rg -n "AI-Assisted Visual Designer|AI Artist|generative AI artist|can make anything|stunning|passionate|bringing .* to life" index.html case-study.html CONTENT_STRATEGY.md reserch
-rg -n "reserch/visuals/image[0-9]*\\.png|image[0-9]*\\.png" index.html case-study.html case-study.js ASSET_INTAKE.md LAUNCH_CHECKLIST.md reserch
+rg -n "reserch/visuals/image[0-9]*\\.png|image[0-9]*\\.png" index.html case-study.html case-study.js LAUNCH_CHECKLIST.md reserch
 ```
 
 ## Stop Rule
 
-If a section needs real art, a real project fact, or an approved business fact and none exists, stop fabrication. Replace the claim with a truthful placeholder/blocked state and add the exact intake need to the launch checklist.
+If a section needs an external business fact and none exists, do not fabricate that external fact. Write around the real visible asset and add the missing business fact to the launch checklist.

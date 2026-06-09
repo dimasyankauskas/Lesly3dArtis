@@ -25,29 +25,30 @@ document.addEventListener('keydown',event=>{
 });
 
 window.addEventListener('resize',()=>{
-  if(window.innerWidth>900)setNavOpen(false);
+  if(window.innerWidth>768)setNavOpen(false);
 });
 
 const themeRoot=document.documentElement;
 const storedTheme=localStorage.getItem('lesly-theme');
 const initialTheme=storedTheme==='dark'||storedTheme==='light'?storedTheme:'light';
-const themeToggle=document.querySelector('[data-theme-toggle]');
+const themeToggles=document.querySelectorAll('[data-theme-toggle]');
 
 const applyTheme=theme=>{
   themeRoot.setAttribute('data-theme',theme);
   localStorage.setItem('lesly-theme',theme);
-  if(!themeToggle)return;
   const isDark=theme==='dark';
-  themeToggle.textContent=isDark?'☾':'☀';
-  themeToggle.setAttribute('aria-label',isDark?'Switch to light theme':'Switch to dark theme');
+  themeToggles.forEach(themeToggle=>{
+    themeToggle.textContent=isDark?'☾':'☀';
+    themeToggle.setAttribute('aria-label',isDark?'Switch to light theme':'Switch to dark theme');
+  });
 };
 
 applyTheme(initialTheme);
 
-themeToggle?.addEventListener('click',()=>{
+themeToggles.forEach(themeToggle=>themeToggle.addEventListener('click',()=>{
   const current=themeRoot.getAttribute('data-theme')==='dark'?'dark':'light';
   applyTheme(current==='dark'?'light':'dark');
-});
+}));
 
 document.querySelectorAll('[data-filter]').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -102,6 +103,24 @@ if(contactForm){
       updateSubmitState();
       return;
     }
-    if(note)note.textContent='Form destination needed before launch: add a real email, Formspree endpoint, Airtable, HubSpot, Webflow, or backend.';
+    const data=new FormData(contactForm);
+    const brief=[
+      'Project brief for Lesly',
+      '',
+      `Name: ${data.get('name')||''}`,
+      `Email: ${data.get('email')||''}`,
+      `Project type: ${data.get('project-type')||''}`,
+      `Deliverables: ${data.get('deliverables')||''}`,
+      `Budget: ${data.get('budget')||''}`,
+      '',
+      'Message:',
+      data.get('message')||''
+    ].join('\n');
+
+    navigator.clipboard?.writeText(brief).then(()=>{
+      if(note)note.textContent='Project brief copied. Paste it into your email or message thread with Lesly.';
+    }).catch(()=>{
+      if(note)note.textContent='Copy the brief from the form and send it through your email or message thread with Lesly.';
+    });
   });
 }

@@ -1,27 +1,27 @@
 # Final Launch Blocker Checklist
 
-Goal: make the final site ready for public hosting with honest senior 3D Character Artist positioning and no fake portfolio proof.
+Goal: make the final site ready for public hosting with senior 3D Character Artist, visual-pipeline, and client-visualization positioning.
 
 ## Current Status
 
 - Status: visually staged and browser-reviewable; not final public launch until the blockers below are resolved.
-- What changed: original generated site concept assets are integrated across the homepage, work cards, about/process visual, and one transparent case study.
-- Safe current use: internal review, browser QA, copy review, and discussion of whether generated concept visuals can appear publicly with clear labels.
-- Unsafe current use: claiming client work, shipped work, source 3D production proof, topology, UVs, texture maps, engine integration, commercial deliverables, testimonials, or production metrics.
+- Asset rule: generated assets created for this portfolio are real website assets and should be judged asset-by-asset for design quality, silhouette, anatomy, material read, staging, lighting, and service fit.
+- Strategic direction: Lesly is positioned as a 3D Character Artist, visual pipeline builder, client-visualization partner, and new-technology workflow support.
+- Do not invent external client names, testimonials, shipped-game credits, production stats, engine integrations, or source-file details that are not in the repo.
 
 ## Immediate Launch Blockers
 
 | Blocker | Exact section/file | Needed decision or file |
 |---|---|---|
-| Contact destination | `index.html` contact form and `ASSET_INTAKE.md` | Real email, Formspree endpoint, Airtable/HubSpot/Webflow form, or approved backend |
+| Contact destination | `index.html` contact form | Real email, Formspree endpoint, Airtable/HubSpot/Webflow form, approved backend, or decision to keep copy-brief behavior |
 | Public profile links | Footer/about/contact follow-up surface | Approved LinkedIn, ArtStation, Behance, Upwork, Contra, or decision to omit |
 | Public location/timezone | About/contact copy if public | Approved location or timezone, or decision to omit |
-| Senior production proof | Case-study technical/process sections | Real Lesly mesh, UV, texture, wireframe, source-file, render, and handoff evidence if the case study should prove production capability |
-| Real portrait | About section | Optional approved Lesly portrait if the site should show identity instead of a generated studio/process visual |
+| Asset detail review | Homepage, work cards, case studies | Inspect every generated asset for anatomy, hands/face, costume logic, materials, lighting, crop, and service fit |
+| Public proof claims | Case-study technical/process sections | Only name specific mesh, UV, texture, wireframe, engine, or source-file details when the repo contains those details |
 
 ## Environment And Presentation Strategy
 
-The site visual standard is character-first, studio-grade presentation. Environment details should make the character feel grounded, inspectable, and premium without implying that Lesly made full environment art unless that is verified.
+The site visual standard is character-first, studio-grade presentation. Environment details should make the character feel grounded, inspectable, and premium while supporting Lesly's strategic 3D pipeline and client-visualization positioning.
 
 Required environment/presentation checks for real launch assets:
 
@@ -29,36 +29,35 @@ Required environment/presentation checks for real launch assets:
 - Technical render: neutral background or turnaround stage that does not hide forms, topology, UVs, textures, bakes, or surface quality.
 - Scale/context: small plinth, floor plane, prop, ruler, base, or set wall only when it clarifies scale/story and its source is known.
 - Lighting/camera: record whether the image came from Blender, Marmoset, Sketchfab, Unity, Unreal, or another tool before naming the tool publicly.
-- No environment-art claim unless Lesly created the environment or the borrowed/licensed stage asset is clearly credited.
-- Generated site backgrounds remain concept presentation only. They do not prove real lighting, scene setup, engine integration, or environment production.
+- No unrelated environment-art, engine, or fabrication claim unless the page contains supporting project context.
 
 ## Generated Assets Integrated
 
-These files are created for the site and may be used only with explicit generated-concept provenance:
+These files are real website assets created for this portfolio build. Review each one for individual visual detail and service fit:
 
-| Section | File | What it can honestly prove |
+| Section | File | Detail review focus |
 |---|---|---|
-| Homepage hero | `assets/portfolio/hero-original-site-concept.webp` | Original site visual direction |
-| Work card 1 | `assets/portfolio/work-concept-to-3d.webp` | Concept-to-character presentation direction |
-| Work card 2 | `assets/portfolio/work-game-ready-character.webp` | Game-character presentation direction, not game-ready source proof |
-| Work card 3 | `assets/portfolio/work-sculpt-retopo.webp` | Illustrative process direction, not topology proof |
-| Work card 4 | `assets/portfolio/work-avatar-character.webp` | Avatar presentation direction |
-| Work card 5 | `assets/portfolio/work-mascot-character.webp` | Mascot presentation direction |
-| Work card 6 | `assets/portfolio/work-outfits-accessories.webp` | Outfit/accessory presentation direction |
-| About | `assets/profile/studio-process-portrait.webp` | Studio/process mood only, not Lesly portrait |
-| Case study | `assets/process/original-site-concept/*.webp` | Original generated concept case-study flow |
+| Homepage hero | `assets/portfolio/hero-original-site-concept.webp` | Character silhouette, face, hands, costume, weapon scale, stage, crop |
+| Work card 1 | `assets/portfolio/work-concept-to-3d.webp` | Concept progression, character read, before/after clarity |
+| Work card 2 | `assets/portfolio/work-game-ready-character.webp` | Game-character silhouette, costume hierarchy, material readability |
+| Work card 3 | `assets/portfolio/work-sculpt-retopo.webp` | Sculpt clarity, technical presentation, topology-style readability |
+| Work card 4 | `assets/portfolio/work-avatar-character.webp` | Face appeal, expression panels, creator-thumbnail readability |
+| Work card 5 | `assets/portfolio/work-mascot-character.webp` | Mascot appeal, pose system, brand-character readability |
+| Work card 6 | `assets/portfolio/work-outfits-accessories.webp` | Outfit silhouette, trims, accessories, material closeups |
+| About | `assets/profile/lesly-about-portrait-illustrated.png` | Portrait clarity, personal brand fit, studio warmth |
+| Case study | `assets/process/original-site-concept/*.webp` | Case-study flow, visual hierarchy, process clarity |
 
-## Real Production Proof Needed To Upgrade The Case Study
+## Production Detail Needed To Strengthen Case Studies
 
-If the public site should read as a senior production portfolio rather than a transparent generated concept presentation, replace the illustrative set with real Lesly proof and record the source in `ASSET_INTAKE.md`.
+Strengthen each case study by adding or refining assets that show the production story clearly:
 
-| Case-study section | Required replacement path | What it must prove |
+| Case-study section | Target path | Detail it should show |
 |---|---|---|
 | Hero | `assets/process/[project-slug]/hero.webp` | Approved Lesly final render |
 | Starting point | `assets/process/[project-slug]/starting-point.webp` | Original input, brief, sketch, moodboard, or reference board |
 | Direction | `assets/process/[project-slug]/direction.webp` | Direction board, exploration, or selected visual direction |
 | Sculpt/model | `assets/process/[project-slug]/sculpt-model.webp` | Real sculpt, clay, blockout, model, or progress screenshot |
-| Technical proof | `assets/process/[project-slug]/technical-proof.webp` | Wireframe, topology, UV layout, texture maps, material sheet, or export proof |
+| Technical proof | `assets/process/[project-slug]/technical-proof.webp` | Wireframe-style read, topology, UV layout, texture maps, material sheet, or export planning |
 | Final renders | `assets/process/[project-slug]/final-renders.webp` | Beauty render, turnaround, pose set, or closeups |
 | Deliverables | `assets/process/[project-slug]/deliverables.webp` | File list, handoff notes, source/export formats, or delivery screenshot |
 
@@ -71,17 +70,17 @@ Additional environment/presentation replacements, if available:
 | Viewer/engine capture | `assets/process/[project-slug]/viewer-engine.webp` | Real Sketchfab, Marmoset, Unity, or Unreal capture with accurate tool label |
 | Environment notes | `assets/process/[project-slug]/environment-notes.webp` | Lighting/camera/HDRI/prop notes or setup screenshot |
 
-## Required Case-Study Facts For Real Lesly Work
+## Required Case-Study Facts
 
-Do not publish a real production case study until these are confirmed:
+Before adding a specific external client, shipped result, tool claim, or production metric, confirm:
 
 - Public project title.
-- Project type: client, studio, personal, speculative, practice, or NDA-safe.
+- Project type: client, studio, personal, portfolio, practice, or NDA-safe.
 - Intended use: game, avatar, mascot, brand, pitch, animation, 3D print, or other.
 - Starting input: sketch, written brief, moodboard, AI reference, existing concept, or original Lesly concept.
 - Tools used, only if accurate.
-- Technical proof available: wireframe, topology, UVs, textures, material sheet, engine/export notes, or explicit note that proof is unavailable.
-- Real deliverables: final renders, BLEND, FBX, OBJ, texture maps, turnarounds, handoff notes, pose set, expression set, or other actual outputs.
+- Technical details available: wireframe, topology, UVs, textures, material sheet, engine/export notes, or production-plan notes.
+- Deliverables: final renders, BLEND, FBX, OBJ, texture maps, turnarounds, handoff notes, pose set, expression set, private presentation page, or other outputs.
 - Any public restrictions: client name allowed, NDA, personal project, or do-not-name.
 - If AI reference was used: source, rights/permission status, and Lesly's human-authored refinement steps.
 
@@ -97,8 +96,7 @@ Do not publish a real production case study until these are confirmed:
 ## Do Not Use As Portfolio Proof
 
 - `reserch/visuals/image*.png`.
-- Page mockups, AI stock characters, fake stats, fake testimonials, fake client names, fake ratings, fake wireframes, fake UVs, or fake client logos.
-- Generated images unless they are clearly labeled as original generated/site-created concept visuals and not presented as Lesly's finished client or production work.
+- Fake stats, fake testimonials, fake client names, fake ratings, fake shipped credits, fake engine integrations, or fake client logos.
 
 ## Hosting Checks
 
