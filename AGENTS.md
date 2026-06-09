@@ -61,6 +61,7 @@ Primary docs:
 ## Implementation Rules
 
 - Prefer existing patterns and smallest complete changes.
+- Keep searches context-safe: use targeted paths and avoid broad `cat`, `sed`, `nl`, or unrestricted `rg` over `temp/`, archived proposal HTML, binary assets, or files with inline `data:image`/base64 payloads. Use `wc -c`, `rg --files`, `file`, or exact-line reads first, then open only the small source section needed.
 - Keep section IDs stable: `#work`, `#services`, `#process`, `#about`, `#contact`.
 - Keep the inline theme FOUC-prevention script in both HTML pages.
 - Use design tokens from `styles.css`; avoid hardcoded colors inside component rules.

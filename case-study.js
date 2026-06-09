@@ -154,7 +154,7 @@ const CASE_STUDIES=[
     id:'construction-client-progress-workflow',
     title:'Construction Client Progress Workflow',
     image:'assets/process/construction-client-progress-workflow/progress-review-board.webp',
-    alt:'Construction progress review workflow board with evidence tiles, material options, comments, and response states.',
+    alt:'Remote review-board scene with progress-photo sets, material samples, exterior visualization options, and approval markers.',
     meta:['Client review','Progress photos','Agentic workflow'],
     lead:'A residential-construction operations case for connecting jobsite photos, client comments, AI visual options, response states, and next actions into one review workflow.',
     whatTitle:'A review system around visual evidence and client decisions.',
@@ -166,7 +166,7 @@ const CASE_STUDIES=[
       ['Client clarity','The workflow is designed to reduce repeated questions, lost decisions, and disconnected AI visuals.']
     ],
     gallery:[
-      ['assets/process/construction-client-progress-workflow/progress-review-board.webp','Progress evidence board showing phases, photo inputs, review states, comments, and next actions.'],
+      ['assets/process/construction-client-progress-workflow/progress-review-board.webp','Remote review-board scene showing progress-photo sequences, material options, approval markers, and exterior visualization direction.'],
       ['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','Related coastal visualization scene showing how material standards connect to review operations.'],
       ['assets/process/interior-props/presentation-board.webp','Presentation board used as a material and visual-standard reference for review systems.']
     ],
@@ -775,7 +775,7 @@ const FINAL_CASE_STUDY_UPGRADES={
   },
   'construction-client-progress-workflow':{
     image:'assets/process/construction-client-progress-workflow/progress-review-board.webp',
-    alt:'Construction progress review board with abstract phase cards, evidence tiles, review states, and handoff markers.',
+    alt:'Remote review-board scene with progress-photo sets, material samples, exterior visualization options, and approval markers.',
     lead:'A residential-construction review workflow case for organizing jobsite photos, client comments, visual options, response states, and next actions into a clearer evidence trail.',
     whatCopy:'This case shows Lesly applying visual production judgment to a client-review workflow: what should be captured, how updates should be grouped, where comments and responses belong, and how AI can assist summaries or routing without replacing human construction decisions.',
     details:[
@@ -785,9 +785,9 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['Implementation boundary','The case documents a portal-style workflow brief and review model, not a claimed finished app or verified operational result.']
     ],
     gallery:[
-      ['assets/process/construction-client-progress-workflow/progress-review-board.webp','Progress evidence board showing phases, photo inputs, review states, comments, and next actions.'],
-      ['assets/process/construction-client-progress-workflow/agentic-summary-flow.webp','Agent-assisted summary flow showing how notes, visual options, and response drafts stay under human review.'],
-      ['assets/process/construction-client-progress-workflow/client-handoff.webp','Client handoff board showing approval states, follow-up rules, and what the team needs before implementation.'],
+      ['assets/process/construction-client-progress-workflow/progress-review-board.webp','Remote review-board scene showing progress-photo sequences, material options, approval markers, and exterior visualization direction.'],
+      ['assets/process/construction-client-progress-workflow/agentic-summary-flow.webp','Summary-review scene showing grouped progress photos, color-coded review cards, routed updates, and material options under human review.'],
+      ['assets/process/construction-client-progress-workflow/client-handoff.webp','Handoff package scene showing approved render sets, finish selections, progress-photo sheets, and next-step review packets.'],
       ['assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','Related material standards scene showing how visual consistency supports client review.']
     ],
     proof:[
