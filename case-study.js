@@ -125,7 +125,7 @@ const CASE_STUDIES=[
     id:'santa-cruz-ai-visual-pipeline',
     title:'Local AI Visualization Pipeline',
     image:'assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp',
-    alt:'Coastal residential visualization scene with material references, architectural drawings, tablet review, and blurred local pipeline workstation.',
+    alt:'Remote production studio desk with exterior residential visualization, material samples, drawings, and blurred local pipeline monitor.',
     meta:['AI workflow','Construction visualization','Visual standards'],
     lead:'A residential-construction workflow case for turning scattered AI experiments, material references, and review needs into a controlled local visualization pipeline.',
     whatTitle:'A visual pipeline that makes AI-assisted images usable for production decisions.',
@@ -137,9 +137,9 @@ const CASE_STUDIES=[
       ['Implementation handoff','The output is a practical brief for developers, AI tool setup, agent instructions, training material, and review checkpoints.']
     ],
     gallery:[
-      ['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','Residential visualization production scene showing the home context, material references, drawings, tablet review, and local pipeline workstation.'],
-      ['assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','Material standards scene with coastal-home siding, stone, glass, metal, wood, tile, landscape, and lighting references.'],
-      ['assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp','Developer handoff scene showing workstation review, architectural drawings, render references, and organized production materials.']
+      ['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','Remote production-studio scene showing exterior visualization options, drawings, material samples, and a blurred local pipeline monitor.'],
+      ['assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','Portable material standards scene with exterior siding, stone, glass, metal, wood, tile, landscape, and finish references.'],
+      ['assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp','Remote handoff workstation scene showing exterior renders, drawings, sample trays, export drives, and organized production materials.']
     ],
     proof:[
       ['Workflow package','Reference structure, material library, prompt rules, QA checklist, output logs, and training notes where approved.'],
@@ -750,7 +750,7 @@ const FINAL_CASE_STUDY_UPGRADES={
   },
   'santa-cruz-ai-visual-pipeline':{
     image:'assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp',
-    alt:'Coastal residential visualization scene with material references, architectural drawings, tablet review, and blurred local pipeline workstation.',
+    alt:'Remote production studio desk with exterior residential visualization, material samples, drawings, and blurred local pipeline monitor.',
     lead:'A residential visualization workflow study showing how Lesly turns references, material options, AI-assisted image outputs, and review notes into a controlled decision path for construction visuals.',
     whatTitle:'Visual standards before generation.',
     whatCopy:'This case focuses on direction and workflow structure: Lesly defines the reference inputs, material standards, review gates, and handoff notes a team needs before AI-assisted visuals are used for production review or client presentation.',
@@ -761,12 +761,12 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['Handoff direction','The workflow gives developers or operators clear requirements for reference structure, output logs, review states, training notes, and public-sharing limits.']
     ],
     gallery:[
-      ['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','Residential visualization production scene showing the home context, material references, drawings, tablet review, and local pipeline workstation.'],
-      ['assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','Material standards scene with coastal-home siding, stone, glass, metal, wood, tile, landscape, and lighting references.'],
-      ['assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp','Developer handoff scene showing workstation review, architectural drawings, render references, and organized production materials.']
+      ['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','Remote production-studio scene showing exterior visualization options, drawings, material samples, and a blurred local pipeline monitor.'],
+      ['assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','Portable material standards scene with exterior siding, stone, glass, metal, wood, tile, landscape, and finish references.'],
+      ['assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp','Remote handoff workstation scene showing exterior renders, drawings, sample trays, export drives, and organized production materials.']
     ],
     proof:[
-      ['Visible proof','Current proof is a generated residential visualization scene, material standards scene, and handoff workstation scene, not verified software screenshots or client outcome data.'],
+      ['Visible proof','Current proof is generated remote-studio visualization material: exterior render review, portable material standards, and handoff workstation scenes, not verified software screenshots or client outcome data.'],
       ['Standards package','Reference structure, material library logic, acceptable-variation rules, review criteria, and rejection rules.'],
       ['Workflow package','Prompt/reference organization, output-log expectations, review checkpoints, training notes, and handoff requirements.'],
       ['Boundary','AI supports visual exploration and review; it does not replace human art direction, construction decisions, or verified project management.']
