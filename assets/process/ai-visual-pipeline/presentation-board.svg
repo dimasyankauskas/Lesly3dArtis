@@ -41,7 +41,10 @@
   <path d="M326 380h44M600 380h44M874 380h44M1033 510l78 80" stroke="#9f4828" stroke-width="6" stroke-linecap="round"/>
   <g transform="translate(96 604)">
     <rect width="844" height="104" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
-    <text x="28" y="46" fill="#14100c" font-family="monospace" font-size="20" letter-spacing="2">OUTPUT: REPEATABLE VISUALS, SEED LOGS, STYLE RULES, CLIENT REVIEW LINKS</text>
-    <path d="M30 72h760" stroke="#d6c6ae" stroke-width="9"/>
+    <text x="28" y="42" fill="#14100c" font-family="monospace" font-size="18" letter-spacing="1">
+      <tspan x="28" y="42">OUTPUT: REPEATABLE VISUALS, SEED LOGS, STYLE RULES</tspan>
+      <tspan x="28" y="68">CLIENT REVIEW LINKS AND APPROVAL NOTES</tspan>
+    </text>
+    <path d="M30 86h760" stroke="#d6c6ae" stroke-width="9"/>
   </g>
 </svg>

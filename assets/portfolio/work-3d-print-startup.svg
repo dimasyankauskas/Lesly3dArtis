@@ -37,16 +37,16 @@
   <g transform="translate(94 650)">
     <rect width="294" height="118" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
     <text x="26" y="55" fill="#2f6a57" font-family="Georgia,serif" font-size="45">28%→9%</text>
-    <text x="28" y="88" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="2">REPAIR / REJECTION MODEL</text>
+    <text x="28" y="88" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="1">REPAIR RATE MODEL</text>
   </g>
   <g transform="translate(452 650)">
     <rect width="294" height="118" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
     <text x="26" y="55" fill="#9f4828" font-family="Georgia,serif" font-size="45">6h→2.5h</text>
-    <text x="28" y="88" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="2">PREP TIME MODEL</text>
+    <text x="28" y="88" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="1">PREP TIME MODEL</text>
   </g>
   <g transform="translate(810 650)">
     <rect width="294" height="118" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
     <text x="26" y="55" fill="#2c5f77" font-family="Georgia,serif" font-size="45">STL/3MF</text>
-    <text x="28" y="88" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="2">HANDOFF PACKAGE</text>
+    <text x="28" y="88" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="1">HANDOFF PACKAGE</text>
   </g>
 </svg>

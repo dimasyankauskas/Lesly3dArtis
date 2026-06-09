@@ -602,6 +602,7 @@ function renderStudy(study){
   if(hero){
     hero.src=study.image;
     hero.alt=study.alt;
+    hero.closest('.cs-hero')?.classList.toggle('has-board-hero',study.image.endsWith('.svg'));
   }
   setText('[data-case-title]',study.title);
   setText('[data-case-lead]',study.lead);
