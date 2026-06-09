@@ -67,7 +67,7 @@ Primary docs:
 - Match the existing vanilla JS style in `script.js`: top-level `const`, optional chaining, no modules, no build step.
 - Generated portfolio media is real site media. Do not re-label it as placeholder/prototype/concept-only unless the user explicitly asks.
 - Do not create or "fix" public portfolio images with Python/PIL, canvas scripts, or procedural board generators. Public case-study and homepage imagery must come from approved source art/assets or direct image generation such as Creative Production/imagegen. Python is acceptable only for validation, local preview servers, metadata checks, format conversion, compression, or resizing/cropping of already approved assets.
-- `scripts/generate_case_study_boards.py` is a legacy procedural generator and must not be used for public portfolio image production.
+- Do not use Python scripts to generate public portfolio images. Public case-study and homepage imagery must come from approved source art/assets or direct image generation such as Creative Production/imagegen.
 - Public website content must read as Lesly's portfolio content, not proposal copy, internal review notes, or client-meeting material.
 - Keep OneOff/proposal links out of `index.html` and public case-study flows unless explicitly requested.
 - Do not invent external client names, shipped credits, engine integrations, testimonials, metrics, or source-file facts that are not represented in the repo.
