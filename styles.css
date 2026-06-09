@@ -939,6 +939,14 @@ p{margin:0 0 1rem}
   border-bottom-color:var(--accent);
 }
 .contact-form textarea{min-height:120px;resize:vertical}
+.contact-form select option{
+  background:#f7f0e4;
+  color:#0c0c0e;
+}
+.contact-form select option:checked{
+  background:#b86448;
+  color:#fffaf0;
+}
 .contact-form .submit-row{margin-top:.5rem}
 .form-note{color:var(--accent);font-family:var(--mono);font-size:.85rem;margin:.5rem 0 0}
 @media(max-width:900px){.contact{grid-template-columns:1fr;gap:2rem}}
