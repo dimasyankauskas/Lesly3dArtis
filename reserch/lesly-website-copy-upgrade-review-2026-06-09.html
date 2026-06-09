@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesly Website Copy Upgrade Review - 2026-06-09</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#faf7f1;
+      --ink:#12100d;
+      --muted:#625b52;
+      --line:#ddd2bd;
+      --panel:#f2eadb;
+      --panel-2:#e9dfcc;
+      --paper:#fffaf1;
+      --accent:#a64b2a;
+      --teal:#1f6f68;
+      --dark:#17130f;
+      --gold:#c59a65;
+      --good:#315f3f;
+      --warn:#8a5524;
+      --risk:#8a2e2e;
+      --display:"Belleza",Tahoma,Arial,sans-serif;
+      --body:Tahoma,Arial,sans-serif;
+      --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        linear-gradient(90deg,rgba(18,16,13,.035) 1px,transparent 1px),
+        linear-gradient(rgba(18,16,13,.028) 1px,transparent 1px),
+        var(--bg);
+      background-size:48px 48px;
+      color:var(--ink);
+      font-family:var(--body);
+      line-height:1.62;
+    }
+    a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+    p{margin:0 0 16px}
+    h1,h2,h3,h4{
+      font-family:var(--display);
+      font-weight:400;
+      letter-spacing:.055em;
+      line-height:1.08;
+      margin:0 0 16px;
+    }
+    h1{font-size:clamp(2.6rem,6vw,5.35rem);max-width:1040px}
+    h2{font-size:clamp(1.9rem,3.6vw,3.1rem)}
+    h3{font-size:clamp(1.25rem,2vw,1.7rem)}
+    h4{font-size:1.08rem;letter-spacing:.035em}
+    ul,ol{margin:0;padding-left:20px}
+    li{margin:0 0 10px}
+    code{font-family:var(--mono);font-size:.92em}
+    .hero{
+      background:var(--dark);
+      color:#f8efe0;
+      padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px) clamp(38px,6vw,72px);
+      border-bottom:1px solid #2b241c;
+    }
+    .hero-inner{
+      max-width:1220px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:clamp(28px,5vw,68px);
+      align-items:end;
+    }
+    .eyebrow,.kicker,.status,.pill,.table-meta,.nav-inner{
+      font-family:var(--mono);
+      text-transform:uppercase;
+      letter-spacing:.14em;
+    }
+    .eyebrow{
+      color:var(--gold);
+      font-size:.72rem;
+      margin:0 0 18px;
+    }
+    .lead{
+      color:#d8ccba;
+      font-size:clamp(1.04rem,1.5vw,1.24rem);
+      max-width:800px;
+    }
+    .hero-card{
+      border:1px solid rgba(197,154,101,.45);
+      padding:24px;
+      background:linear-gradient(180deg,rgba(197,154,101,.12),rgba(255,255,255,.035));
+    }
+    .hero-card b{display:block;color:#f8efe0;margin-bottom:8px}
+    .hero-card p{color:#d8ccba;margin:0}
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:4;
+      background:rgba(250,247,241,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      max-width:1220px;
+      margin:0 auto;
+      padding:12px 20px;
+      display:flex;
+      gap:14px;
+      overflow:auto;
+      font-size:.72rem;
+    }
+    .nav a{text-decoration:none;white-space:nowrap;color:var(--muted)}
+    main{max-width:1220px;margin:0 auto;padding:clamp(32px,5vw,68px) 20px 84px}
+    section{margin-bottom:clamp(46px,7vw,88px)}
+    .section-head{max-width:860px;margin-bottom:24px}
+    .kicker{font-size:.72rem;color:var(--accent);margin-bottom:10px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .card,.quote,.copy-card,.source-card{
+      border:1px solid var(--line);
+      background:rgba(242,234,219,.84);
+      padding:22px;
+    }
+    .card.dark{
+      background:var(--dark);
+      color:#f8efe0;
+      border-color:#2d261f;
+    }
+    .card.dark p,.card.dark li{color:#d8ccba}
+    .card p:last-child,.copy-card p:last-child,.source-card p:last-child{margin-bottom:0}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 8px;
+      border:1px solid var(--line);
+      background:#fff8ed;
+      color:var(--muted);
+      font-size:.68rem;
+      margin:0 6px 6px 0;
+    }
+    .status{font-size:.68rem;margin-bottom:8px}
+    .good{color:var(--good)}
+    .warn{color:var(--warn)}
+    .risk{color:var(--risk)}
+    .score{
+      display:grid;
+      grid-template-columns:190px 1fr;
+      border:1px solid var(--line);
+      background:var(--panel);
+    }
+    .score div{padding:14px 16px;border-bottom:1px solid var(--line)}
+    .score div:nth-child(odd){
+      font-family:var(--mono);
+      font-size:.72rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      background:var(--panel-2);
+    }
+    .score div:nth-last-child(-n+2){border-bottom:0}
+    .quote{
+      background:#fff9ef;
+      border-left:3px solid var(--accent);
+      margin-top:16px;
+    }
+    .copy-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .copy-card.current{border-color:#d0b8a4}
+    .copy-card.recommended{border-color:#93b0a7;background:#f4fbf5}
+    .copy-card b{
+      display:block;
+      font-family:var(--mono);
+      font-size:.7rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+    .upgrade{
+      border:1px solid var(--line);
+      background:var(--paper);
+      margin-bottom:18px;
+    }
+    .upgrade-head{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+      background:var(--panel);
+    }
+    .upgrade-head h3{margin:0}
+    .table-meta{font-size:.68rem;color:var(--muted)}
+    .upgrade-body{padding:16px}
+    .why{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    .why div{
+      border:1px solid var(--line);
+      background:#fffaf1;
+      padding:14px;
+    }
+    .matrix{
+      width:100%;
+      border-collapse:collapse;
+      background:var(--paper);
+      border:1px solid var(--line);
+      overflow:hidden;
+    }
+    .matrix th,.matrix td{
+      border:1px solid var(--line);
+      padding:13px 14px;
+      text-align:left;
+      vertical-align:top;
+    }
+    .matrix th{
+      background:var(--panel-2);
+      font-family:var(--mono);
+      font-size:.7rem;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .copy-set{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+    .source-list{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      padding:0;
+      list-style:none;
+    }
+    .source-card{min-height:100%}
+    .source-card a{font-weight:700}
+    .source-card span{
+      display:block;
+      margin-top:8px;
+      color:var(--muted);
+    }
+    .note{
+      border:1px solid #d8c5ab;
+      background:#fff5e4;
+      padding:18px;
+      color:#4d4238;
+    }
+    @media (max-width:900px){
+      .hero-inner,.grid,.grid.two,.copy-grid,.why,.copy-set,.source-list{grid-template-columns:1fr}
+      .score{grid-template-columns:1fr}
+      .score div:nth-child(odd){border-bottom:0}
+      .matrix{display:block;overflow-x:auto}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">Website copy upgrade review</p>
+        <h1>Keep Lesly grounded as a 3D Character Artist, then make her direction judgment visible.</h1>
+        <p class="lead">This review compares the live homepage copy with a stronger, field-native version. The goal is sharper public copy: character-first, production-aware, human-written, and careful about AI or director-level claims.</p>
+      </div>
+      <aside class="hero-card">
+        <b>Primary recommendation</b>
+        <p>Do not rename Lesly as Creative Director. Position her as a 3D Character Artist who helps define character visual direction, asset scope, pipeline, and handoff before the build gets expensive.</p>
+      </aside>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="Report sections">
+    <div class="nav-inner">
+      <a href="#verdict">Verdict</a>
+      <a href="#research">Research</a>
+      <a href="#audit">Audit</a>
+      <a href="#upgrades">Side By Side</a>
+      <a href="#humanizer">Humanizer</a>
+      <a href="#risk">Risk Matrix</a>
+      <a href="#copy-set">Copy Set</a>
+      <a href="#sources">Sources</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="verdict">
+      <div class="section-head">
+        <p class="kicker">Executive verdict</p>
+        <h2>The site is close. The copy now needs clearer hierarchy.</h2>
+        <p>The current homepage already names character assets, production planning, and handoff. The next upgrade should make the first screen less like a list of asset categories and more like a buyer promise: Lesly turns rough character inputs into usable 3D character assets with a defined production path.</p>
+      </div>
+      <div class="grid">
+        <article class="card dark">
+          <p class="status good">Keep</p>
+          <h3>3D Character Artist</h3>
+          <p>This is the safest title for recruiters, game teams, and freelance buyers. It matches current character-art hiring language and avoids senior leadership overclaiming.</p>
+        </article>
+        <article class="card">
+          <p class="status warn">Elevate</p>
+          <h3>Direction as the second visible lane</h3>
+          <p>Put Character Direction &amp; Pipeline Strategy directly after character production. This shows Lesly defines the character set, identifies the production path, improves the workflow, and plans the handoff instead of only making requested 3D assets.</p>
+        </article>
+        <article class="card">
+          <p class="status risk">Demote</p>
+          <h3>AI as identity</h3>
+          <p>AI can be mentioned as reference exploration or workflow support. It should not lead the page, and it should not replace the craft language: sculpting, modeling, retopo, UVs, textures, and final asset delivery.</p>
+        </article>
+      </div>
+      <div class="quote">
+        <b>Best public positioning:</b>
+        <p>Lesly is a 3D Character Artist who creates game-ready characters, mascots, and avatar assets, then helps define the character direction, asset set, production pipeline, and handoff path around them.</p>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-head">
+        <p class="kicker">Internet research findings</p>
+        <h2>Current professional wording supports a craft-first, proof-backed direction.</h2>
+        <p>Recent job descriptions and portfolio guidance repeat the same signal: a character artist is judged by craft, pipeline awareness, real-time constraints, and proof materials. Director words are valid only when they describe standards, guidance, reviews, or pipeline ownership that can be shown.</p>
+      </div>
+      <div class="score">
+        <div>Use often</div>
+        <div>3D Character Artist, Character Artist, game-ready characters, real-time character assets, character modeling, sculpting, retopology, clean topology, UVs, PBR textures, texture maps, final renders, source files, export notes, Unreal, Unity, Marmoset, Blender, ZBrush, Substance Painter.</div>
+        <div>Use as second lane</div>
+        <div>Character Direction &amp; Pipeline Strategy, character visual direction, asset set planning, asset brief, visual quality bar, style rules, review checkpoints, pipeline planning, optimization notes, handoff package, production notes.</div>
+        <div>Use only with proof</div>
+        <div>Creative Director, Art Director, Character Art Director, shipped, vendor direction, team leadership, engine-ready, optimization, implementation in engine, training, external development.</div>
+        <div>AI wording</div>
+        <div>AI references and AI-assisted reference exploration are safer than AI Artist, AI-Assisted Visual Designer, or AI-first consulting. The final deliverable should stay human-directed and 3D-production focused.</div>
+      </div>
+      <div class="grid two" style="margin-top:16px">
+        <article class="card">
+          <h3>Studio-facing takeaway</h3>
+          <p>Studios want proof that a character can move from concept into a real production pipeline. The copy should name topology, UVs, textures, export notes, and real-time requirements only where Lesly can show supporting material.</p>
+        </article>
+        <article class="card">
+          <h3>Client-facing takeaway</h3>
+          <p>Founders and creators need help turning a loose character idea into a brief, style direction, scoped package, and handoff plan. This is the premium lane for the site.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="audit">
+      <div class="section-head">
+        <p class="kicker">Current homepage audit</p>
+        <h2>The strongest upgrade is not more language. It is cleaner sequencing.</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <p class="status warn">Hero</p>
+          <h3>Asset list first</h3>
+          <p>The H1 names characters, avatars, mascots, outfits, and accessories. That is clear, but it does not yet explain the higher-value problem Lesly solves: translating rough input into a scoped production path.</p>
+        </article>
+        <article class="card">
+          <p class="status good">Opportunity</p>
+          <h3>Already useful</h3>
+          <p>The current section about scope, pipeline, materials, and handoff is strong. It should be pulled closer to the hero message and made more specific to client pains.</p>
+        </article>
+        <article class="card">
+          <p class="status warn">Services</p>
+          <h3>Strategy needs the second slot</h3>
+          <p>The list should lead with character production, then immediately show Character Direction &amp; Pipeline Strategy. That is the bridge between "routine 3D artist" and the more valuable person who defines the asset set and production path.</p>
+        </article>
+        <article class="card">
+          <p class="status risk">Case studies</p>
+          <h3>Proof must stay honest</h3>
+          <p>Presentation assets can show taste and structure, but game-ready or director-level claims need actual wireframes, UVs, texture sheets, export notes, review material, or client-approved facts.</p>
+        </article>
+        <article class="card">
+          <p class="status warn">About</p>
+          <h3>Needs more judgment</h3>
+          <p>The painting foundation is useful. Add the way she makes character decisions: silhouette, material read, proportions, use case, and handoff requirements.</p>
+        </article>
+        <article class="card">
+          <p class="status warn">Contact</p>
+          <h3>Brief needs sharper inputs</h3>
+          <p>The form should ask about use case, platform, references, variants, technical constraints, deliverables, and whether the client needs direction, production, or both.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="upgrades">
+      <div class="section-head">
+        <p class="kicker">Side-by-side copy upgrade table</p>
+        <h2>Recommended replacements for the current website copy.</h2>
+        <p>These are review recommendations only. They do not edit the live homepage until approved.</p>
+      </div>
+
+      <article class="upgrade" id="meta-description">
+        <div class="upgrade-head">
+          <h3>Meta Description</h3>
+          <span class="table-meta">Priority: must change | Risk: low</span>
+        </div>
+        <div class="upgrade-body">
+          <div class="copy-grid">
+            <div class="copy-card current">
+              <b>Current</b>
+              <p>Lesly is a 3D Character Artist creating game-ready characters, avatars, mascots, outfits, skins, accessories, and production-ready 3D assets.</p>
+            </div>
+            <div class="copy-card recommended">
+              <b>Recommended</b>
+              <p>Lesly is a 3D Character Artist creating game-ready characters, mascots, avatars, and character asset sets from sketches, moodboards, written briefs, and AI references.</p>
+            </div>
+          </div>
+          <div class="why">
+            <div><b>Why upgrade:</b> The current version stacks too many asset nouns. The new version keeps search-friendly terms while explaining the input-to-asset workflow.</div>
+            <div><b>Proof needed:</b> No extra proof beyond visible character, mascot, avatar, and asset examples.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="upgrade" id="hero-copy">
+        <div class="upgrade-head">
+          <h3>Hero Eyebrow, H1, Lead, and CTA Context</h3>
+          <span class="table-meta">Priority: must change | Risk: medium</span>
+        </div>
+        <div class="upgrade-body">
+          <div class="copy-grid">
+            <div class="copy-card current">
+              <b>Current</b>
+              <p><code>3D Character Artist</code></p>
+              <p>Game-Ready Characters, Avatars, Mascots, Outfits &amp; Accessories.</p>
+              <p>I help founders, game teams, and creators turn character ideas into defined 3D products: visual direction, asset scope, production pipeline, and handoff-ready character files for games, avatars, mascots, brands, and real-time worlds.</p>
+            </div>
+            <div class="copy-card recommended">
+              <b>Recommended</b>
+              <p><code>3D Character Artist</code></p>
+              <p>Character ideas turned into game-ready 3D assets.</p>
+              <p>Lesly helps game teams, founders, and creators turn sketches, moodboards, written briefs, and AI references into a clear character direction, asset set, production pipeline, optimized 3D workflow, and clean handoff plan.</p>
+            </div>
+          </div>
+          <div class="why">
+            <div><b>Why upgrade:</b> The H1 becomes a promise instead of a category list. It still sells characters, avatars, and mascots through the lead and services, but the first read is sharper.</div>
+            <div><b>Proof needed:</b> Show at least one case study with input references, direction decisions, final renders, and handoff notes.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="upgrade" id="opportunity-copy">
+        <div class="upgrade-head">
+          <h3>Problem / Opportunity Section</h3>
+          <span class="table-meta">Priority: should change | Risk: low</span>
+        </div>
+        <div class="upgrade-body">
+          <div class="copy-grid">
+            <div class="copy-card current">
+              <b>Current</b>
+              <p>A character idea has to become a production plan.</p>
+              <p>Founders, studios, and creators often arrive with references, mood, and a rough character direction. I turn that into a clear asset scope, production path, material direction, and handoff package before time is spent in the wrong place.</p>
+            </div>
+            <div class="copy-card recommended">
+              <b>Recommended</b>
+              <p>A strong character brief saves production time.</p>
+              <p>Clients often arrive with a sketch, moodboard, AI reference, or loose idea. Lesly helps define what the character needs to be, where it will be used, what files are required, and what the production path should look like before modeling begins.</p>
+            </div>
+          </div>
+          <div class="why">
+            <div><b>Why upgrade:</b> This sounds more human and buyer-aware. It explains why planning matters without sounding like internal process language.</div>
+            <div><b>Proof needed:</b> Brief template, reference board, or example handoff checklist.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="upgrade" id="services-copy">
+        <div class="upgrade-head">
+          <h3>Services Section and Order</h3>
+          <span class="table-meta">Priority: must change | Risk: medium</span>
+        </div>
+        <div class="upgrade-body">
+          <div class="copy-grid">
+            <div class="copy-card current">
+              <b>Current</b>
+              <p>Nine services are presented as equal: concept/reference to character, game-ready asset, avatar, mascot, outfits, interior props, sculpt/retopo/texturing, character art direction, and AI workflow consulting.</p>
+            </div>
+            <div class="copy-card recommended">
+              <b>Recommended</b>
+              <p>Group the services into a clearer ladder: Concept / Reference to 3D Character, Character Direction &amp; Pipeline Strategy, Game-Ready Character Asset, Avatar or Mascot Character, Outfits / Skins / Accessories, and Sculpting / Retopology / UVs / Texturing.</p>
+            </div>
+          </div>
+          <div class="why">
+            <div><b>Why upgrade:</b> The order should show that Lesly is not only a production vendor. She can define the character set, choose the production path, identify pipeline needs, and reduce wasted production work before modeling or handoff.</div>
+            <div><b>Proof needed:</b> Strategic case studies, asset-set plans, pipeline maps, optimization notes, brief examples, and character examples. Only keep game-ready wording where topology, UVs, texture maps, or export proof exists.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="upgrade" id="work-copy">
+        <div class="upgrade-head">
+          <h3>Work / Case Study Intro</h3>
+          <span class="table-meta">Priority: should change | Risk: medium</span>
+        </div>
+        <div class="upgrade-body">
+          <div class="copy-grid">
+            <div class="copy-card current">
+              <b>Current</b>
+              <p>Projects are grouped by buyer use case: concept-to-3D characters, game-ready assets, character staging, interior props, material studies, avatars, mascots, outfits, technical process, and strategic workflow consulting.</p>
+            </div>
+            <div class="copy-card recommended">
+              <b>Recommended</b>
+              <p>Selected work should lead with production characters, then strategic case studies that show how Lesly defines a character set, identifies the right pipeline, improves the workflow, and turns direction into usable 3D deliverables.</p>
+            </div>
+          </div>
+          <div class="why">
+            <div><b>Why upgrade:</b> This gives the strategic case studies visibility without using the weaker label "consulting." It makes the premium layer concrete: direction, pipeline choice, optimization, and handoff.</div>
+            <div><b>Proof needed:</b> Put the strategic case studies second in the work order and show real artifacts: pipeline diagrams, review notes, asset-set tables, before/after workflow changes, or approved project facts.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="upgrade" id="process-copy">
+        <div class="upgrade-head">
+          <h3>Case Study Preview / Process Copy</h3>
+          <span class="table-meta">Priority: keep with edits | Risk: low</span>
+        </div>
+        <div class="upgrade-body">
+          <div class="copy-grid">
+            <div class="copy-card current">
+              <b>Current</b>
+              <p>Each project page shows the brief, visual decisions, material reads, technical checks, final renders, and handoff notes a client or studio needs before production continues.</p>
+            </div>
+            <div class="copy-card recommended">
+              <b>Recommended</b>
+              <p>Each project page should show the brief, visual direction, 3D creation process, review notes, final renders, and delivery material a client or studio needs before using the asset.</p>
+            </div>
+          </div>
+          <div class="why">
+            <div><b>Why upgrade:</b> The sequence now matches a simpler five-step pattern: Brief, Visual Direction, 3D Creation, Review and Polish, Delivery.</div>
+            <div><b>Proof needed:</b> Process screenshots, turnarounds, wireframes, UVs, texture maps, or file notes when claims require them.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="upgrade" id="about-copy">
+        <div class="upgrade-head">
+          <h3>About Section</h3>
+          <span class="table-meta">Priority: must change | Risk: low</span>
+        </div>
+        <div class="upgrade-body">
+          <div class="copy-grid">
+            <div class="copy-card current">
+              <b>Current</b>
+              <p>Painter and 3D Character Artist.</p>
+              <p>Her painting background gives the work a strong sense of color, form, anatomy, silhouette, costume language, and material separation.</p>
+            </div>
+            <div class="copy-card recommended">
+              <b>Recommended</b>
+              <p>Painter and 3D Character Artist.</p>
+              <p>Lesly brings a painter's eye to character production: silhouette, color, anatomy, costume language, material separation, and the small decisions that make a character readable in a game, avatar, mascot, or brand setting.</p>
+              <p>Her 3D workflow covers character design support, sculpting, modeling, retopology, UVs, texturing, renders, source files, exports, and handoff notes when the project calls for them.</p>
+            </div>
+          </div>
+          <div class="why">
+            <div><b>Why upgrade:</b> It adds judgment and use-case awareness without claiming a senior title. It reads like a real artist, not a generic portfolio biography.</div>
+            <div><b>Proof needed:</b> Portfolio examples that show color, shape, material, and technical decisions.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="upgrade" id="contact-copy">
+        <div class="upgrade-head">
+          <h3>Contact Section and Form Wording</h3>
+          <span class="table-meta">Priority: should change | Risk: low</span>
+        </div>
+        <div class="upgrade-body">
+          <div class="copy-grid">
+            <div class="copy-card current">
+              <b>Current</b>
+              <p>Tell Lesly about your character, avatar, mascot, outfit, prop set, or 3D asset. Share the character idea, references, use case, timeline, and required deliverables.</p>
+            </div>
+            <div class="copy-card recommended">
+              <b>Recommended</b>
+              <p>Tell Lesly what the character is for. Share the sketch, moodboard, AI reference, written brief, platform, target use, timeline, and files you think you need. If the brief is not clear yet, ask for direction and scope before production.</p>
+            </div>
+          </div>
+          <div class="why">
+            <div><b>Why upgrade:</b> The form becomes a better filter for clients who need help defining the project, not only clients who already have a polished asset spec.</div>
+            <div><b>Proof needed:</b> None for copy. Form fields should later add platform/use case, file receiver, variants, constraints, and direction-vs-production need.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="upgrade" id="footer-copy">
+        <div class="upgrade-head">
+          <h3>Footer Positioning Line</h3>
+          <span class="table-meta">Priority: should change | Risk: low</span>
+        </div>
+        <div class="upgrade-body">
+          <div class="copy-grid">
+            <div class="copy-card current">
+              <b>Current</b>
+              <p>3D Character Artist - Characters - Props - Game-Ready Assets - Workflow Consulting</p>
+            </div>
+            <div class="copy-card recommended">
+              <b>Recommended</b>
+              <p>3D Character Artist - Character direction - Pipeline strategy - Game-ready assets</p>
+            </div>
+          </div>
+          <div class="why">
+            <div><b>Why upgrade:</b> The footer should keep the character lane visible while repeating the strategic layer in plain language.</div>
+            <div><b>Proof needed:</b> Same as services: keep claims proportional to visible work.</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="humanizer">
+      <div class="section-head">
+        <p class="kicker">Humanizer pass notes</p>
+        <h2>The replacement copy should sound direct, not inflated.</h2>
+        <p>The humanizer pass removes formulaic AI writing patterns and portfolio cliches while preserving the core offer.</p>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <h3>Remove or reduce</h3>
+          <ul>
+            <li>Vague vision claims without proof.</li>
+            <li>Promotional adjectives such as stunning, captivating, premium, and world-class.</li>
+            <li>Rule-of-three rhythm that turns every sentence into a slogan.</li>
+            <li>AI-first phrasing that makes the workflow sound automated.</li>
+            <li>Director titles when the evidence only supports direction support.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Use instead</h3>
+          <ul>
+            <li>Plain craft nouns: sculpting, modeling, retopo, UVs, textures, renders.</li>
+            <li>Buyer nouns: sketch, moodboard, AI reference, brief, platform, file package.</li>
+            <li>Planning nouns: visual direction, asset scope, review checkpoint, handoff note.</li>
+            <li>Specific CTAs: Start a Project, View Work, Ask for Direction and Scope.</li>
+            <li>First-person or Lesly-centered sentences that state the work cleanly.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="quote">
+        <b>Humanized line:</b>
+        <p>If your character idea is still rough, Lesly can help define the look, use case, files, and production path before modeling begins.</p>
+      </div>
+    </section>
+
+    <section id="risk">
+      <div class="section-head">
+        <p class="kicker">Risk and proof matrix</p>
+        <h2>Use stronger copy only where the site can prove it.</h2>
+      </div>
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th>Claim</th>
+            <th>Public use</th>
+            <th>Proof required</th>
+            <th>Safer wording</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Creative Director / Art Director</td>
+            <td><span class="risk">Avoid as title</span></td>
+            <td>Leadership of visual standards, team or vendor feedback, shipped or client-approved direction ownership.</td>
+            <td>Character visual direction, art-direction support, direction and scope planning.</td>
+          </tr>
+          <tr>
+            <td>Game-ready</td>
+            <td><span class="warn">Use with evidence</span></td>
+            <td>Clean topology, UVs, texture maps, export notes, rig or animation constraints if relevant.</td>
+            <td>Production-aware 3D character assets until proof is visible.</td>
+          </tr>
+          <tr>
+            <td>Engine-ready / Unreal-ready / Unity-ready</td>
+            <td><span class="risk">Use only when tested</span></td>
+            <td>Engine import, material preview, scale check, file formats, naming, performance constraints.</td>
+            <td>Export-ready files with handoff notes.</td>
+          </tr>
+          <tr>
+            <td>Production-ready</td>
+            <td><span class="warn">Pair with specifics</span></td>
+            <td>Retopo, UVs, PBR textures, optimized mesh, final renders, source files, delivery checklist.</td>
+            <td>Production-aware, handoff-ready, or scoped for production.</td>
+          </tr>
+          <tr>
+            <td>AI Artist / AI-Assisted Visual Designer</td>
+            <td><span class="risk">Avoid as identity</span></td>
+            <td>Not recommended for this site positioning.</td>
+            <td>AI references, AI-assisted reference exploration, AI workflow support.</td>
+          </tr>
+          <tr>
+            <td>Character Direction &amp; Pipeline Strategy</td>
+            <td><span class="good">Use as second lane</span></td>
+            <td>Strategic case studies, asset-set plans, pipeline maps, optimization notes, review checklists, before/after workflow improvements.</td>
+            <td>Use this instead of Workflow Consulting.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note" style="margin-top:16px">
+        Keep this proof matrix inside review docs. Do not push proof caveats into the public homepage unless a claim would otherwise mislead the buyer.
+      </div>
+    </section>
+
+    <section id="copy-set">
+      <div class="section-head">
+        <p class="kicker">Recommended public copy set</p>
+        <h2>A cleaner copy direction ready for the next homepage edit.</h2>
+      </div>
+      <div class="copy-set">
+        <article class="card dark">
+          <h3>Hero</h3>
+          <p class="pill">Eyebrow</p>
+          <p>3D Character Artist</p>
+          <p class="pill">H1</p>
+          <p>Character ideas turned into game-ready 3D assets.</p>
+          <p class="pill">Lead</p>
+          <p>Lesly helps game teams, founders, and creators turn sketches, moodboards, written briefs, and AI references into a clear character direction, asset set, production pipeline, optimized 3D workflow, and clean handoff plan.</p>
+        </article>
+        <article class="card">
+          <h3>Second Visible Offer</h3>
+          <p>Character Direction &amp; Pipeline Strategy: define the character set, visual rules, production path, technical needs, optimization priorities, review checkpoints, and handoff package before the build gets expensive.</p>
+        </article>
+        <article class="card">
+          <h3>About</h3>
+          <p>Lesly brings a painter's eye to character production: silhouette, color, anatomy, costume language, material separation, and the small decisions that make a character readable in a game, avatar, mascot, or brand setting.</p>
+        </article>
+        <article class="card">
+          <h3>Contact</h3>
+          <p>Tell Lesly what the character is for. Share the sketch, moodboard, AI reference, written brief, platform, target use, timeline, and files you think you need. If the brief is not clear yet, ask for direction and scope before production.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <p class="kicker">Source links</p>
+        <h2>External and repo-local references used for this review.</h2>
+      </div>
+      <ul class="source-list">
+        <li class="source-card"><a href="https://www.riotgames.com/ro/work-with-us/job/7345371/senior-3d-character-artist-league-of-legends-los-angeles-usa">Riot Games - Senior 3D Character Artist</a><span>Used for character craft, technical constraints, PBR, pipeline, and feedback language.</span></li>
+        <li class="source-card"><a href="https://jobs.lever.co/crytek/ee722b60-9c7a-4972-82f4-539ea7384629">Crytek - Senior Character Artist</a><span>Used for game-ready assets, clean topology, UV layouts, and real-time constraints.</span></li>
+        <li class="source-card"><a href="https://jobs.lever.co/blackbirdinteractive/7eb62bc1-40ae-4f9b-83a3-2e5bb70ea188">Blackbird Interactive - Character Artist</a><span>Used for end-to-end workflow language: modeling, sculpting, retopo, baking, texturing, skinning, export, and implementation.</span></li>
+        <li class="source-card"><a href="https://magazine.artstation.com/2021/07/9-portfolio-tips-for-game-artists-2021/">ArtStation - 9 Portfolio Tips for Game Artists</a><span>Used for portfolio proof expectations around fundamentals, pipeline, turnarounds, and animation-friendly presentation.</span></li>
+        <li class="source-card"><a href="https://magazine.artstation.com/2020/11/unreal-journey-character-art/">ArtStation - Unreal Journey: Character Art</a><span>Used for the role definition: character artists bridge art, technology, real-time workflows, and technical limitations.</span></li>
+        <li class="source-card"><a href="https://en.help.roblox.com/hc/en-us/articles/203313180-Creating-and-Selling-Avatar-Items">Roblox - Creating and Selling Avatar Items</a><span>Used for avatar item, accessory, clothing, Marketplace, Blender/Maya, and Studio upload terminology.</span></li>
+        <li class="source-card"><a href="https://creators.vrchat.com/avatars/avatar-optimizing-tips/">VRChat - Avatar Optimization Tips</a><span>Used for optimized avatar, skinned mesh, triangle limits, normal maps, and retopology terminology.</span></li>
+        <li class="source-card"><a href="https://montreal.ubisoft.com/en/jobs/visual-design-art-director-march-of-giants/">Ubisoft Montreal - Visual Design Art Director</a><span>Used to separate true art-director scope from safer character visual-direction support.</span></li>
+        <li class="source-card"><a href="https://www.riotgames.com/cs/work-with-us/job/7272512/senior-art-director-valorant-los-angeles-usa">Riot Games - Senior Art Director</a><span>Used to define the risk of claiming ownership of broad game art direction, teams, style, and quality.</span></li>
+        <li class="source-card"><a href="upgrade-jd-aligned-website-copy.md">Repo source - upgrade JD-aligned website copy</a><span>Used for title safety and JD-aligned character-art terms.</span></li>
+        <li class="source-card"><a href="final-ai-workflow-update.md">Repo source - final AI workflow update</a><span>Used for AI-as-support positioning.</span></li>
+        <li class="source-card"><a href="lesly-positioning-director-proposal-2026-06-08.html">Repo source - June 8 positioning proposal</a><span>Used for the direction-backed artist recommendation and title-inflation guardrail.</span></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

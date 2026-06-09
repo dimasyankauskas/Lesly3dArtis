@@ -13,8 +13,8 @@ required = [
     'assets/client_updates/2026-06-09/luxury_bar_closed_angled.png',
     'assets/client_updates/2026-06-09/luxury_bar_wide_lounge.png',
     'assets/client_updates/2026-06-09/luxury_bar_lifestyle_with_clients.png',
-    'assets/video/s_ranch_cinematic_warm_contrast.mp4',
-    'assets/video/s_ranch_cinematic_poster.png',
+    'assets/video/s_ranch_cinematic_cropped_balanced.mp4',
+    'assets/video/s_ranch_cinematic_cropped_balanced_poster.png',
     'assets/client_intake/2026-06-09/rail_hardware_client_notes.jpg',
     'assets/client_intake/2026-06-09/client_msg_colors_lattice.jpg',
     'assets/visuals/accepted/hero_closed_bar_wall_concept.png',
@@ -47,10 +47,6 @@ for path in site_files:
         if pattern in text:
             violations.append(f'{path.relative_to(root)} references blocked visual asset marker: {pattern}')
 
-send_ready_files = [
-    root / 'site/index.html',
-    root / 'site/client_room_example.html',
-]
 old_active_visual_patterns = [
     'assets/visuals/accepted/hero_closed_bar_wall_concept.png',
     'assets/visuals/accepted/left_pair_open_shallow_niche_concept.png',
@@ -60,8 +56,10 @@ old_active_visual_patterns = [
     'assets/source_images/linear_rail_hardware_notes.png',
     'assets/client_intake/2026-06-09/client_msg_',
     'assets/client_intake/2026-06-09/surfcam_',
+    'assets/video/s_ranch_cinematic_warm_contrast.mp4',
+    'assets/video/s_ranch_cinematic_poster.png',
 ]
-for path in send_ready_files:
+for path in site_files:
     if not path.exists():
         continue
     text = path.read_text(encoding='utf-8')

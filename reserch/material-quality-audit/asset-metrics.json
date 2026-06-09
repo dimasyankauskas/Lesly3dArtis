@@ -1,0 +1,749 @@
+{
+  "sheets": [
+    "reserch/material-quality-audit/portfolio.jpg",
+    "reserch/material-quality-audit/case_boards_1.jpg",
+    "reserch/material-quality-audit/case_boards_2.jpg",
+    "reserch/material-quality-audit/case_boards_3.jpg",
+    "reserch/material-quality-audit/case_boards_4.jpg",
+    "reserch/material-quality-audit/case_boards_5.jpg",
+    "reserch/material-quality-audit/case_boards_6.jpg",
+    "reserch/material-quality-audit/director_generated_focus.jpg"
+  ],
+  "assets": [
+    {
+      "path": "assets/portfolio/hero-original-site-concept.webp",
+      "width": 1599,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 75628
+    },
+    {
+      "path": "assets/portfolio/work-avatar-character.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 119810
+    },
+    {
+      "path": "assets/portfolio/work-character-environment.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 45088
+    },
+    {
+      "path": "assets/portfolio/work-concept-to-3d.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 151562
+    },
+    {
+      "path": "assets/portfolio/work-game-ready-character.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 68780
+    },
+    {
+      "path": "assets/portfolio/work-interior-props.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 311190
+    },
+    {
+      "path": "assets/portfolio/work-mascot-character.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 148716
+    },
+    {
+      "path": "assets/portfolio/work-outfits-accessories.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 206100
+    },
+    {
+      "path": "assets/portfolio/work-sculpt-retopo.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 126076
+    },
+    {
+      "path": "assets/process/ai-visual-pipeline/handoff-system.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 104040
+    },
+    {
+      "path": "assets/process/ai-visual-pipeline/material-library.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 104646
+    },
+    {
+      "path": "assets/process/ai-visual-pipeline/review-criteria.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 112648
+    },
+    {
+      "path": "assets/process/ai-visual-pipeline/workflow-board.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 104578
+    },
+    {
+      "path": "assets/process/avatar-character/deliverables.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 92860
+    },
+    {
+      "path": "assets/process/avatar-character/expression-panels.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 37228
+    },
+    {
+      "path": "assets/process/avatar-character/expression-sheet.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 145790
+    },
+    {
+      "path": "assets/process/avatar-character/hair-costume.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 50196
+    },
+    {
+      "path": "assets/process/avatar-character/hero.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 93628
+    },
+    {
+      "path": "assets/process/avatar-character/portrait-read.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 51420
+    },
+    {
+      "path": "assets/process/avatar-character/presentation-board.webp",
+      "width": 1400,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 132194
+    },
+    {
+      "path": "assets/process/avatar-character/presentation-overview.webp",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "bytes": 96508
+    },
+    {
+      "path": "assets/process/avatar-character/technical-proof.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 93286
+    },
+    {
+      "path": "assets/process/character-environment/blockout.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 97194
+    },
+    {
+      "path": "assets/process/character-environment/final-renders.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 68780
+    },
+    {
+      "path": "assets/process/character-environment/hero-stage.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 49976
+    },
+    {
+      "path": "assets/process/character-environment/lighting-breakdown.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 113884
+    },
+    {
+      "path": "assets/process/character-environment/presentation-board.webp",
+      "width": 1400,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 109514
+    },
+    {
+      "path": "assets/process/character-environment/prop-assets.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 106460
+    },
+    {
+      "path": "assets/process/character-environment/scene-handoff.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 70014
+    },
+    {
+      "path": "assets/process/character-environment/stage-grounding.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 45088
+    },
+    {
+      "path": "assets/process/concept-to-character/deliverables.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 96238
+    },
+    {
+      "path": "assets/process/concept-to-character/final-renders.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 152532
+    },
+    {
+      "path": "assets/process/concept-to-character/sculpt-model.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 115810
+    },
+    {
+      "path": "assets/process/concept-to-character/starting-point.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 116726
+    },
+    {
+      "path": "assets/process/concept-to-character/technical-proof.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 97354
+    },
+    {
+      "path": "assets/process/construction-client-progress-workflow/agentic-summary-flow.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 45292
+    },
+    {
+      "path": "assets/process/construction-client-progress-workflow/client-handoff.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 45890
+    },
+    {
+      "path": "assets/process/construction-client-progress-workflow/progress-review-board.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 44890
+    },
+    {
+      "path": "assets/process/game-hero/costume-material.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 46160
+    },
+    {
+      "path": "assets/process/game-hero/deliverables.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 69430
+    },
+    {
+      "path": "assets/process/game-hero/face-read.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 37434
+    },
+    {
+      "path": "assets/process/game-hero/final-renders.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 117862
+    },
+    {
+      "path": "assets/process/game-hero/hero.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 70646
+    },
+    {
+      "path": "assets/process/game-hero/presentation-board.webp",
+      "width": 1400,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 103704
+    },
+    {
+      "path": "assets/process/game-hero/presentation-overview.webp",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "bytes": 50772
+    },
+    {
+      "path": "assets/process/game-hero/technical-proof.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 70614
+    },
+    {
+      "path": "assets/process/game-hero/weapon-silhouette.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 20852
+    },
+    {
+      "path": "assets/process/interior-props/asset-handoff.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 202826
+    },
+    {
+      "path": "assets/process/interior-props/glass-metal.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 308966
+    },
+    {
+      "path": "assets/process/interior-props/material-closeups.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 279884
+    },
+    {
+      "path": "assets/process/interior-props/material-study.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 267268
+    },
+    {
+      "path": "assets/process/interior-props/presentation-board.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 251724
+    },
+    {
+      "path": "assets/process/interior-props/prop-breakdown.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 186026
+    },
+    {
+      "path": "assets/process/interior-props/shelf-hero.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 208462
+    },
+    {
+      "path": "assets/process/interior-props/technical-proof.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 133610
+    },
+    {
+      "path": "assets/process/interior-props/two-d-to-three-d.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 287708
+    },
+    {
+      "path": "assets/process/mascot-character/appeal-read.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 74878
+    },
+    {
+      "path": "assets/process/mascot-character/deliverables.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 100228
+    },
+    {
+      "path": "assets/process/mascot-character/hero.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 100412
+    },
+    {
+      "path": "assets/process/mascot-character/material-palette.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 22496
+    },
+    {
+      "path": "assets/process/mascot-character/pose-expression-set.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 150858
+    },
+    {
+      "path": "assets/process/mascot-character/pose-panels.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 35138
+    },
+    {
+      "path": "assets/process/mascot-character/presentation-board.webp",
+      "width": 1400,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 145730
+    },
+    {
+      "path": "assets/process/mascot-character/presentation-overview.webp",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "bytes": 125228
+    },
+    {
+      "path": "assets/process/mascot-character/technical-proof.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 100440
+    },
+    {
+      "path": "assets/process/original-site-concept/deliverables.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 206100
+    },
+    {
+      "path": "assets/process/original-site-concept/direction.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 151562
+    },
+    {
+      "path": "assets/process/original-site-concept/face-costume.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 42242
+    },
+    {
+      "path": "assets/process/original-site-concept/final-renders.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 68780
+    },
+    {
+      "path": "assets/process/original-site-concept/hero-stage.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 49976
+    },
+    {
+      "path": "assets/process/original-site-concept/hero.webp",
+      "width": 1400,
+      "height": 788,
+      "mode": "RGB",
+      "bytes": 63360
+    },
+    {
+      "path": "assets/process/original-site-concept/presentation-board.webp",
+      "width": 1400,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 109514
+    },
+    {
+      "path": "assets/process/original-site-concept/presentation-overview.webp",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "bytes": 53304
+    },
+    {
+      "path": "assets/process/original-site-concept/sculpt-model.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 126076
+    },
+    {
+      "path": "assets/process/original-site-concept/stage-grounding.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 45088
+    },
+    {
+      "path": "assets/process/original-site-concept/starting-point.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 151562
+    },
+    {
+      "path": "assets/process/original-site-concept/technical-proof.webp",
+      "width": 1200,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 126076
+    },
+    {
+      "path": "assets/process/outfits-accessories/deliverables.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 118582
+    },
+    {
+      "path": "assets/process/outfits-accessories/front-back-silhouette.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 88454
+    },
+    {
+      "path": "assets/process/outfits-accessories/hero.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 119476
+    },
+    {
+      "path": "assets/process/outfits-accessories/material-closeups.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 188534
+    },
+    {
+      "path": "assets/process/outfits-accessories/presentation-board.webp",
+      "width": 1400,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 202632
+    },
+    {
+      "path": "assets/process/outfits-accessories/presentation-overview.webp",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "bytes": 171676
+    },
+    {
+      "path": "assets/process/outfits-accessories/prop-accessories.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 84078
+    },
+    {
+      "path": "assets/process/outfits-accessories/technical-proof.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 119788
+    },
+    {
+      "path": "assets/process/outfits-accessories/trim-materials.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 65406
+    },
+    {
+      "path": "assets/process/pbr-texturing/design-progression.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 49054
+    },
+    {
+      "path": "assets/process/pbr-texturing/final-character-read.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 61564
+    },
+    {
+      "path": "assets/process/pbr-texturing/presentation-board.webp",
+      "width": 1400,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 168164
+    },
+    {
+      "path": "assets/process/pbr-texturing/presentation-overview.webp",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "bytes": 128368
+    },
+    {
+      "path": "assets/process/pbr-texturing/starting-sketch.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 51782
+    },
+    {
+      "path": "assets/process/print-startup-direction/character-family-system.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 137474
+    },
+    {
+      "path": "assets/process/print-startup-direction/handoff-package.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 99992
+    },
+    {
+      "path": "assets/process/print-startup-direction/printability-board.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 129504
+    },
+    {
+      "path": "assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 45232
+    },
+    {
+      "path": "assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 45206
+    },
+    {
+      "path": "assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 45622
+    },
+    {
+      "path": "assets/process/sculpt-to-retopo/final-renders.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 143800
+    },
+    {
+      "path": "assets/process/sculpt-to-retopo/presentation-board.webp",
+      "width": 1400,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 127946
+    },
+    {
+      "path": "assets/process/sculpt-to-retopo/presentation-overview.webp",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "bytes": 109194
+    },
+    {
+      "path": "assets/process/sculpt-to-retopo/retopo-panel.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 35906
+    },
+    {
+      "path": "assets/process/sculpt-to-retopo/sculpt-face.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 48112
+    },
+    {
+      "path": "assets/process/sculpt-to-retopo/sculpt-model.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 117140
+    },
+    {
+      "path": "assets/process/sculpt-to-retopo/technical-proof.webp",
+      "width": 1600,
+      "height": 900,
+      "mode": "RGB",
+      "bytes": 92126
+    },
+    {
+      "path": "assets/process/sculpt-to-retopo/turnaround-strip.webp",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB",
+      "bytes": 38956
+    }
+  ]
+}

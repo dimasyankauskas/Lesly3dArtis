@@ -12,6 +12,8 @@ Note: files under `assets/client_updates/2026-06-09/` are the current client-fac
 - `assets/video/s_ranch_cinematic_original.mp4`
 - `assets/video/s_ranch_cinematic_warm_contrast.mp4`
 - `assets/video/s_ranch_cinematic_poster.png`
+- `assets/video/s_ranch_cinematic_cropped_balanced.mp4`
+- `assets/video/s_ranch_cinematic_cropped_balanced_poster.png`
 - `assets/client_intake/2026-06-09/s_ranch_bar_window_client_copy.pdf`
 - `assets/client_intake/2026-06-09/client_msg_bifold_example.png`
 - `assets/client_intake/2026-06-09/client_msg_bifold_pairs.png`
