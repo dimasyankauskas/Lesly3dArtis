@@ -247,13 +247,19 @@ p{margin:0 0 1rem}
   font-size:1.12rem;letter-spacing:.1em;text-transform:none;
 }
 .brand .mark{
-  display:block;
+  display:grid;
+  place-items:center;
   flex:0 0 auto;
   width:34px;height:34px;
-  background:var(--text);
-  -webkit-mask:url("assets/brand/brand-mark.svg") no-repeat center / contain;
-  mask:url("assets/brand/brand-mark.svg") no-repeat center / contain;
-  transition:background-color .35s var(--ease);
+  border:1px solid var(--text);
+  color:var(--text);
+  background:transparent;
+  font-family:var(--display);
+  font-size:1.05rem;
+  font-style:italic;
+  font-weight:500;
+  line-height:1;
+  transition:border-color .35s var(--ease),color .35s var(--ease);
 }
 .nav{
   order:2;
