@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Transparent visual study for Lesly's generated site 3D character portfolio concept assets." />
+  <meta name="description" content="3D character and prop project case study for Lesly's portfolio." />
   <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)" />
   <title>Visual Study · Lesly</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Belleza&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=consulting-cases-20260609" />
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');</script>
 </head>
 <body class="case-study">
@@ -20,12 +20,9 @@
   <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><em>Lesly</em></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <div class="header-actions">
-        <div class="theme-toggle" role="group" aria-label="Theme">
-          <button type="button" data-theme-set="light" aria-label="Use light theme" aria-pressed="true">☀</button>
-          <button type="button" data-theme-set="dark" aria-label="Use dark theme" aria-pressed="false">☾</button>
-        </div>
-        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">☀</button>
       </div>
       <nav class="nav" aria-label="Primary">
         <a href="index.html#work">Work</a>
@@ -44,36 +41,43 @@
   <main id="main">
     <section class="cs-hero cs-visual-study-hero">
       <figure class="cs-hero-bg">
-        <img data-case-hero src="assets/portfolio/work-game-ready-character.webp" width="1200" height="900" alt="Original generated site game character concept visual.">
+        <img data-case-hero src="assets/portfolio/work-game-ready-character.webp" width="1200" height="900" alt="Game character project visual.">
       </figure>
       <div class="cs-hero-copy">
         <p class="eyebrow" data-case-kicker>Visual study</p>
         <h1 data-case-title>Game-Ready Character Concept</h1>
         <p class="cs-meta" data-case-meta></p>
-        <p class="cs-lead" data-case-lead>Original generated character presentation for the site. This page documents what the visual can support and what real production evidence is still needed.</p>
+        <p class="cs-lead" data-case-lead>This page documents the brief, visual direction, material read, production checks, deliverables, and handoff plan.</p>
+      </div>
+    </section>
+
+    <section class="cs-section cs-section-first">
+      <div class="container">
+        <p class="cs-eyebrow">Project direction</p>
+        <h2 data-case-what-title>A clear 3D direction for the project.</h2>
+        <p class="cs-lead" data-case-what-copy>This project shows how the starting brief becomes a readable 3D asset with presentation views, detail crops, material notes, and delivery requirements.</p>
       </div>
     </section>
 
     <section class="cs-section">
       <div class="container">
-        <p class="cs-eyebrow">Status</p>
-        <h2>Visual presentation, not production proof.</h2>
-        <p class="cs-lead">Generated concept presentation, not a shipped client project. Source 3D proof is still missing until Lesly provides approved model files, topology, UVs, textures, renders, and deliverable facts.</p>
-        <div class="case-stats mt-2" data-case-stats></div>
+        <p class="cs-eyebrow">Problem solved</p>
+        <h2 data-case-problem-title>Turning a loose character direction into a portfolio-ready asset.</h2>
+        <div class="case-detail-grid" data-case-problems></div>
       </div>
     </section>
 
     <section class="cs-section">
       <div class="container">
-        <p class="cs-eyebrow">What this is</p>
-        <h2 data-case-what-title>A generated concept study for the site presentation.</h2>
-        <p class="cs-lead" data-case-what-copy>This page is intentionally transparent. It shows a direction for how Lesly's portfolio can present character work, without inventing a client, shipped project, topology, UVs, texture maps, engine capture, or source-file proof.</p>
+        <p class="cs-eyebrow">Process</p>
+        <h2>How the project is structured.</h2>
+        <div class="case-detail-grid" data-case-process></div>
       </div>
     </section>
 
     <section class="cs-section">
       <div class="container">
-        <p class="cs-eyebrow">Generated presentation board</p>
+        <p class="cs-eyebrow">Presentation board</p>
         <h2>Distinct visual reads for this case.</h2>
         <div class="case-gallery" data-case-gallery></div>
       </div>
@@ -89,23 +93,31 @@
 
     <section class="cs-section">
       <div class="container">
-        <p class="cs-eyebrow">Proof needed</p>
-        <h2>What would make this a real senior case study.</h2>
+        <p class="cs-eyebrow">Technical checks</p>
+        <h2>What the production team needs to inspect.</h2>
         <div class="proof-grid" data-case-proof></div>
       </div>
     </section>
 
     <section class="cs-section">
       <div class="container">
+        <p class="cs-eyebrow">Deliverables</p>
+        <h2>What the project package includes.</h2>
+        <div class="proof-grid" data-case-deliverables></div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
         <p class="cs-eyebrow">Asset plan</p>
-        <h2>Files to replace before claiming production work.</h2>
+        <h2>Files and captures for handoff.</h2>
         <div class="cs-outcomes-grid">
           <div>
-            <h3>Current generated visual</h3>
+            <h3>Project assets</h3>
             <ul data-case-current-assets></ul>
           </div>
           <div>
-            <h3>Required real proof</h3>
+            <h3>Technical files and notes</h3>
             <ul data-case-required-assets></ul>
           </div>
         </div>
@@ -115,7 +127,7 @@
     <section class="cs-section cs-related">
       <div class="container">
         <p class="cs-eyebrow">More work</p>
-        <h2>Distinct visual studies.</h2>
+        <h2>More project studies.</h2>
         <div class="work-grid cs-related-grid mt-2" data-related-cases></div>
         <div class="cs-related-cta">
           <a class="btn btn-primary" href="index.html#contact">Start a project</a>
@@ -128,14 +140,14 @@
   <footer class="site-footer">
     <div>
       <div class="footer-brand"><em>Lesly</em></div>
-      <div>3D Character Artist · Character Modeling · Game-Ready Assets · AI Workflow Support</div>
+      <div>3D Character Artist · Game-Ready Assets · Props · Avatars · Mascots</div>
     </div>
     <div>
       <a href="index.html#contact">Start a Project</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="case-study.js"></script>
+  <script src="script.js?v=consulting-cases-20260609"></script>
+  <script src="case-study.js?v=consulting-cases-20260609"></script>
 </body>
 </html>

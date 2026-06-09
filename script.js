@@ -1,32 +1,52 @@
 const toggle=document.querySelector('.nav-toggle');
 const nav=document.querySelector('.nav');
 
+const setNavOpen=(open)=>{
+  nav?.classList.toggle('open',open);
+  document.body.classList.toggle('nav-open',open);
+  toggle?.setAttribute('aria-expanded',String(open));
+  toggle?.setAttribute('aria-label',open?'Close menu':'Open menu');
+};
+
 toggle?.addEventListener('click',()=>{
-  const isOpen=nav?.classList.toggle('open')||false;
-  toggle.setAttribute('aria-expanded',String(isOpen));
+  setNavOpen(!nav?.classList.contains('open'));
 });
 
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{
-  nav?.classList.remove('open');
-  toggle?.setAttribute('aria-expanded','false');
+  setNavOpen(false);
 }));
+
+nav?.addEventListener('click',event=>{
+  if(event.target===nav)setNavOpen(false);
+});
+
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape')setNavOpen(false);
+});
+
+window.addEventListener('resize',()=>{
+  if(window.innerWidth>900)setNavOpen(false);
+});
 
 const themeRoot=document.documentElement;
 const storedTheme=localStorage.getItem('lesly-theme');
 const initialTheme=storedTheme==='dark'||storedTheme==='light'?storedTheme:'light';
-themeRoot.setAttribute('data-theme',initialTheme);
+const themeToggle=document.querySelector('[data-theme-toggle]');
 
-const themeButtons=document.querySelectorAll('[data-theme-set]');
-themeButtons.forEach(btn=>{
-  const t=btn.getAttribute('data-theme-set');
-  btn.setAttribute('aria-pressed',String(t===initialTheme));
-  btn.addEventListener('click',()=>{
-    const next=btn.getAttribute('data-theme-set');
-    if(!next)return;
-    themeRoot.setAttribute('data-theme',next);
-    localStorage.setItem('lesly-theme',next);
-    themeButtons.forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
-  });
+const applyTheme=theme=>{
+  themeRoot.setAttribute('data-theme',theme);
+  localStorage.setItem('lesly-theme',theme);
+  if(!themeToggle)return;
+  const isDark=theme==='dark';
+  themeToggle.textContent=isDark?'☾':'☀';
+  themeToggle.setAttribute('aria-label',isDark?'Switch to light theme':'Switch to dark theme');
+};
+
+applyTheme(initialTheme);
+
+themeToggle?.addEventListener('click',()=>{
+  const current=themeRoot.getAttribute('data-theme')==='dark'?'dark':'light';
+  applyTheme(current==='dark'?'light':'dark');
 });
 
 document.querySelectorAll('[data-filter]').forEach(btn=>{

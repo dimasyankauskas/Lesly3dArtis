@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Local AI visualization pipeline case-study board</title>
+  <desc id="desc">A warm editorial board showing construction references, local AI workflow nodes, material library, and cost control metrics.</desc>
+  <rect width="1200" height="900" fill="#14100c"/>
+  <rect x="52" y="52" width="1096" height="796" fill="#f8f3e9"/>
+  <rect x="92" y="96" width="430" height="308" fill="#e9dcc8" stroke="#d6c6ae" stroke-width="3"/>
+  <path d="M132 340h350M132 295h350M132 250h350M132 205h350M132 160h350" stroke="#cdb99f" stroke-width="2"/>
+  <path d="M150 331l76-94 65 56 92-124 81 162z" fill="#9f4828" opacity=".78"/>
+  <path d="M150 331l76-94 65 56 92-124 81 162z" fill="none" stroke="#14100c" stroke-width="4"/>
+  <text x="92" y="452" fill="#14100c" font-family="Georgia,serif" font-size="46" letter-spacing="4">LOCAL AI</text>
+  <text x="92" y="504" fill="#14100c" font-family="Georgia,serif" font-size="46" letter-spacing="4">VISUAL PIPELINE</text>
+  <text x="94" y="552" fill="#5b554c" font-family="monospace" font-size="22" letter-spacing="3">CONSTRUCTION VISUALIZATION</text>
+  <g transform="translate(608 105)">
+    <rect width="446" height="118" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <circle cx="56" cy="59" r="31" fill="#2f6a57"/>
+    <text x="112" y="53" fill="#14100c" font-family="monospace" font-size="22" letter-spacing="2">MATERIAL LIBRARY</text>
+    <text x="112" y="84" fill="#5b554c" font-family="monospace" font-size="16">siding / stone / tile / wood / fixtures</text>
+  </g>
+  <g transform="translate(608 257)">
+    <rect width="446" height="118" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <circle cx="56" cy="59" r="31" fill="#9f4828"/>
+    <text x="112" y="53" fill="#14100c" font-family="monospace" font-size="22" letter-spacing="2">COMFYUI GRAPH</text>
+    <text x="112" y="84" fill="#5b554c" font-family="monospace" font-size="16">control / seed / prompt / reference logs</text>
+  </g>
+  <g transform="translate(608 409)">
+    <rect width="446" height="118" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <circle cx="56" cy="59" r="31" fill="#2c5f77"/>
+    <text x="112" y="53" fill="#14100c" font-family="monospace" font-size="22" letter-spacing="2">CLIENT REVIEW</text>
+    <text x="112" y="84" fill="#5b554c" font-family="monospace" font-size="16">photos / comments / approvals / response</text>
+  </g>
+  <g transform="translate(94 646)">
+    <rect width="286" height="126" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <text x="28" y="58" fill="#9f4828" font-family="Georgia,serif" font-size="48">42%</text>
+    <text x="30" y="92" fill="#5b554c" font-family="monospace" font-size="15" letter-spacing="2">MODELED COST REDUCTION</text>
+  </g>
+  <g transform="translate(422 646)">
+    <rect width="286" height="126" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <text x="28" y="58" fill="#2f6a57" font-family="Georgia,serif" font-size="48">6.1</text>
+    <text x="30" y="92" fill="#5b554c" font-family="monospace" font-size="15" letter-spacing="2">MONTH BREAK-EVEN MODEL</text>
+  </g>
+  <g transform="translate(750 646)">
+    <rect width="286" height="126" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <text x="28" y="58" fill="#2c5f77" font-family="Georgia,serif" font-size="48">$2k</text>
+    <text x="30" y="92" fill="#5b554c" font-family="monospace" font-size="15" letter-spacing="2">MONTHLY CLOUD BASELINE</text>
+  </g>
+</svg>

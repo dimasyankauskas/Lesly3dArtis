@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesly AI Workflow Consulting Case Study Proposal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fbf7ef;
+      --ink:#11100e;
+      --muted:#5e584f;
+      --panel:#f1e7d7;
+      --panel-2:#e9dcc8;
+      --line:#dacdb9;
+      --dark:#15110d;
+      --cream:#f8ecdc;
+      --accent:#a64b2a;
+      --green:#2e6658;
+      --amber:#8a5a22;
+      --red:#8a2e2e;
+      --display:"Belleza",Tahoma,Arial,sans-serif;
+      --body:Tahoma,Arial,sans-serif;
+      --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.62}
+    a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+    h1,h2,h3,h4{font-family:var(--display);font-weight:400;letter-spacing:.055em;line-height:1.08;margin:0 0 16px}
+    h1{font-size:clamp(2.55rem,6vw,5.1rem)}
+    h2{font-size:clamp(1.85rem,3.8vw,3.05rem)}
+    h3{font-size:clamp(1.25rem,2.2vw,1.72rem)}
+    p{margin:0 0 14px}
+    ul,ol{margin:0;padding-left:20px}
+    li{margin:0 0 10px}
+    .hero{background:var(--dark);color:var(--cream);padding:clamp(52px,8vw,94px) clamp(20px,5vw,64px)}
+    .hero-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:end}
+    .eyebrow,.kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+    .hero .eyebrow{color:#c89c65}
+    .lead{font-size:clamp(1.05rem,1.5vw,1.24rem);color:var(--muted);max-width:780px}
+    .hero .lead{color:#dccfbd}
+    .hero-card{border:1px solid rgba(200,156,101,.44);padding:22px;background:rgba(200,156,101,.09)}
+    .hero-card b{display:block;margin-bottom:8px}
+    .nav{position:sticky;top:0;background:rgba(251,247,239,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:2}
+    .nav-inner{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;gap:14px;overflow:auto;font-family:var(--mono);font-size:.76rem;text-transform:uppercase;letter-spacing:.11em}
+    .nav a{text-decoration:none;white-space:nowrap;color:var(--muted)}
+    main{max-width:1180px;margin:0 auto;padding:clamp(30px,5vw,64px) 20px 80px}
+    section{margin-bottom:clamp(44px,7vw,84px)}
+    .section-head{max-width:850px;margin-bottom:24px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .card{border:1px solid var(--line);background:rgba(241,231,215,.85);padding:22px;min-height:100%}
+    .card.dark{background:var(--dark);border-color:#2e251e;color:var(--cream)}
+    .card.dark p,.card.dark li{color:#dccfbd}
+    .status{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+    .status.good{color:var(--green)}
+    .status.warn{color:var(--amber)}
+    .status.risk{color:var(--red)}
+    .label{display:inline-block;border:1px solid var(--line);background:#fffaf1;padding:4px 8px;margin:0 6px 6px 0;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .matrix{display:grid;grid-template-columns:210px 1fr;border:1px solid var(--line);background:var(--panel)}
+    .matrix div{padding:14px 16px;border-bottom:1px solid var(--line)}
+    .matrix div:nth-child(odd){background:var(--panel-2);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .matrix div:nth-last-child(-n+2){border-bottom:0}
+    .case{border:1px solid var(--line);background:#fffaf1;padding:26px;margin-top:18px}
+    .case-head{display:grid;grid-template-columns:1fr 260px;gap:22px;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:20px}
+    .metric{border:1px solid var(--line);padding:14px;background:#f4eadb}
+    .metric b{display:block;font-family:var(--display);font-size:2rem;line-height:1;color:var(--accent);font-weight:400}
+    .note{border:1px solid #d6bf9d;background:#fff4df;padding:18px;color:#4c4138}
+    .evidence{border-left:3px solid var(--green);padding-left:16px}
+    .warning{border-left:3px solid var(--amber);padding-left:16px}
+    @media (max-width:860px){
+      .hero-inner,.grid,.grid.two,.case-head,.matrix{grid-template-columns:1fr}
+      .matrix div:nth-child(odd){border-bottom:0}
+      .matrix div:nth-last-child(2){border-bottom:0}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">Case-study expansion proposal</p>
+        <h1>Add an AI workflow consulting lane without weakening her 3D identity.</h1>
+        <p class="lead">The current portfolio proves character and prop production categories. The missing category is strategic consulting: art-direction systems, local AI visualization workflows, construction/client communication tooling, and team handoff.</p>
+      </div>
+      <aside class="hero-card">
+        <b>Recommended new category</b>
+        <p><strong>AI Workflow &amp; Visual Pipeline Consulting</strong>. This should be a separate lane from hands-on rendering, with case studies focused on workflow design, standards, tools, cost control, and implementation leadership.</p>
+      </aside>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="Proposal sections">
+    <div class="nav-inner">
+      <a href="#review">Current Review</a>
+      <a href="#categories">New Categories</a>
+      <a href="#research">Research</a>
+      <a href="#case-one">Case 1</a>
+      <a href="#case-two">Case 2</a>
+      <a href="#publish">Publish Rules</a>
+      <a href="#sources">Sources</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="review">
+      <div class="section-head">
+        <p class="kicker">Current case-study review</p>
+        <h2>The portfolio is currently execution-heavy, which is good, but incomplete for the new positioning.</h2>
+        <p class="lead">The Work section at <code>index.html#work</code> contains nine case-study directions. They mainly show character/prop deliverables and technical presentation. That supports the base identity, but it does not yet prove workflow strategy or agentic AI consulting.</p>
+      </div>
+      <div class="matrix">
+        <div>Current strengths</div>
+        <div>Concept-to-character, game-ready character, staging, interior props, sculpt-to-retopo, avatar, mascot, and outfit/accessory categories. These are concrete and field-readable.</div>
+        <div>Current gap</div>
+        <div>No case study shows Lesly as the person who diagnoses a broken workflow, selects tools, coordinates developers or agencies, defines standards, reduces AI spend, or improves client communication.</div>
+        <div>Positioning risk</div>
+        <div>If the site adds consulting copy without consulting case studies, it will sound like a claim. If it adds two evidence-backed workflow studies, the positioning becomes believable.</div>
+        <div>Recommended structure</div>
+        <div>Keep the current work grid as "Character &amp; 3D Production." Add one separate category called "AI Workflow &amp; Visual Pipeline Consulting" with two carefully written case studies.</div>
+      </div>
+    </section>
+
+    <section id="categories">
+      <div class="section-head">
+        <p class="kicker">New category recommendation</p>
+        <h2>Add one new top-level consulting category, with two subtypes.</h2>
+      </div>
+      <div class="grid">
+        <article class="card dark">
+          <h3>AI Workflow &amp; Visual Pipeline Consulting</h3>
+          <p>The public category. It covers workflow diagnosis, AI tool selection, local generation setup, design libraries, client review systems, and production handoff.</p>
+        </article>
+        <article class="card">
+          <h3>Local AI Visualization Pipeline</h3>
+          <p>For construction, interiors, product concepts, mascots, or pitch visuals where cloud tools are too costly, inconsistent, or hard to control.</p>
+        </article>
+        <article class="card">
+          <h3>Client Review &amp; Progress Workflow</h3>
+          <p>For teams that need photos, comments, voice notes, client approvals, progress summaries, and agency/team responses in one process.</p>
+        </article>
+      </div>
+      <div class="note" style="margin-top:16px">
+        <b>Website placement:</b> Add this as a second work filter or section after the production work, not mixed into character cards. Suggested filter label: <strong>Consulting</strong>. Suggested service label: <strong>AI Workflow &amp; Visual Pipeline Consulting</strong>.
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-head">
+        <p class="kicker">Recent market research</p>
+        <h2>The story is realistic because the market is already moving in this direction.</h2>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <h3>Construction clients want progress visibility</h3>
+          <p>Recent construction tools emphasize jobsite photos, checklists, reports, owner portals, selections, approvals, and fewer calls/texts. This supports a case study around client communication and progress reporting.</p>
+          <span class="label">Progress photos</span><span class="label">Owner portal</span><span class="label">Reports</span><span class="label">Selections</span>
+        </article>
+        <article class="card">
+          <h3>Local creative AI workflows are field-real</h3>
+          <p>ComfyUI and Stable Diffusion workflows are used for repeatable local image pipelines, ControlNet geometry guidance, inpainting, layered images, 3D object generation, and PBR/material workflows.</p>
+          <span class="label">ComfyUI</span><span class="label">ControlNet</span><span class="label">LoRA</span><span class="label">Local generation</span>
+        </article>
+      </div>
+      <div class="note" style="margin-top:16px">
+        <b>Important technical correction:</b> Do not publicly claim "two Mac Studios combined into one GPU" unless the developers can prove that exact architecture. Field-safe wording is: "local Apple Silicon workstations for private generation and review," or "Mac Studio / Apple Silicon local AI setup." Apple does verify M3 Ultra's unified memory and on-device AI capability, but two separate Mac Studios are not automatically one GPU.
+      </div>
+    </section>
+
+    <section id="case-one">
+      <div class="section-head">
+        <p class="kicker">Consulting case study draft 1</p>
+        <h2>Local AI Visualization Pipeline for a Santa Cruz Area Residential Builder</h2>
+        <p class="lead">Use this as an NDA-safe draft if the underlying facts are real and approved. Replace bracketed items before publishing.</p>
+      </div>
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="status good">Recommended public category: AI Workflow &amp; Visual Pipeline Consulting</p>
+            <h3>Turning inconsistent AI render experiments into a controlled local visualization workflow.</h3>
+            <p>A small residential construction company serving the Santa Cruz and Monterey area needed faster, more consistent client-facing visuals for home builds, remodels, and material decisions. The team had tested online AI image tools, but the results drifted between runs, costs were hard to control, and the outputs did not respect the company's design language or material standards.</p>
+          </div>
+          <div class="metric">
+            <b>~40%</b>
+            <span>reported reduction in AI visualization expense. Verify invoices and baseline before publishing.</span>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <div>
+            <h4>Problem</h4>
+            <ul>
+              <li>Cloud AI tools were producing attractive but inconsistent visuals.</li>
+              <li>Prompts alone did not preserve building geometry, material choices, or client-approved direction.</li>
+              <li>The team lacked a shared material/design library, so every new image request started from scratch.</li>
+              <li>AI spend was rising without a repeatable workflow or clear acceptance criteria.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Lesly's role</h4>
+            <ul>
+              <li>Defined the art-direction and material consistency requirements.</li>
+              <li>Mapped the workflow from reference photos, drawings, and material boards into controlled image generation.</li>
+              <li>Worked with an agentic AI consulting/development partner to design the internal tool path.</li>
+              <li>Specified the visual library: materials, lighting moods, exterior/interior references, prompt templates, and review standards.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid two" style="margin-top:18px">
+          <div>
+            <h4>Workflow direction</h4>
+            <ul>
+              <li>Local ComfyUI / Stable Diffusion setup for private, repeatable generation.</li>
+              <li>ControlNet-style structure guidance from plans, sketches, depth/edge passes, or site photos.</li>
+              <li>LoRA or style-reference strategy for company-specific material language, if training data and rights are approved.</li>
+              <li>Material library for siding, stone, tile, wood, fixtures, paint, landscape, and lighting options.</li>
+              <li>Seed, prompt, reference, and output logging so approved looks could be reproduced.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Deliverables</h4>
+            <ul>
+              <li>Workflow map and tool recommendations.</li>
+              <li>Prompt and style guide for construction visualization.</li>
+              <li>Material/design library taxonomy.</li>
+              <li>Review checklist for geometry, material consistency, and client-ready output.</li>
+              <li>Implementation brief for developers or the AI consulting agency.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="evidence" style="margin-top:20px">
+          <h4>Proof to collect before publishing</h4>
+          <p>Baseline cloud AI spend, post-implementation AI spend, workflow screenshots, material library screenshots, local hardware specs, model/tool list, sample before/after outputs, developer handoff notes, and approval to name or anonymize the builder.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="case-two">
+      <div class="section-head">
+        <p class="kicker">Consulting case study draft 2</p>
+        <h2>Client Progress Portal and Agentic Review Workflow for Residential Construction</h2>
+        <p class="lead">This second case study makes Lesly's role broader than rendering: she helps the team design the client communication and feedback workflow around visual evidence.</p>
+      </div>
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="status good">Recommended public category: AI Workflow &amp; Visual Pipeline Consulting</p>
+            <h3>Designing a visual progress workflow where contractors, clients, and the agency could respond in one place.</h3>
+            <p>The construction team needed a clearer way to document jobsite progress and communicate with homeowners. Photos, notes, and client feedback were scattered across texts, calls, emails, and ad hoc image-generation requests. Lesly helped define the visual workflow, review experience, and handoff requirements for an internal tool and client-facing portal.</p>
+          </div>
+          <div class="metric">
+            <b>1 place</b>
+            <span>for progress photos, client comments, agency response, and visual review decisions.</span>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <div>
+            <h4>Problem</h4>
+            <ul>
+              <li>Homeowners wanted visibility into progress without constant calls or texts.</li>
+              <li>Contractors captured jobsite photos, but the photos were not consistently structured for client review.</li>
+              <li>Client comments came through multiple channels, making it hard for the team or agency to respond cleanly.</li>
+              <li>AI-generated visuals were disconnected from real construction progress and material decisions.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Lesly's role</h4>
+            <ul>
+              <li>Defined the client review journey: progress photos, comments, approvals, and response loops.</li>
+              <li>Specified what contractors should capture on site: angles, milestones, materials, issues, and before/after states.</li>
+              <li>Outlined the comment model for text, audio, and video notes, plus agency responses.</li>
+              <li>Helped translate visual workflow requirements into an implementation brief for developers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid two" style="margin-top:18px">
+          <div>
+            <h4>Workflow direction</h4>
+            <ul>
+              <li>Contractor captures site photos and optional voice/video notes by project phase.</li>
+              <li>AI assists with summaries, progress report drafts, and photo organization where safe.</li>
+              <li>Client reviews a personalized portal with progress photos, selections, comments, and status.</li>
+              <li>Agency or project team responds to comments with text/audio follow-up and visual clarification.</li>
+              <li>Approved materials and generated visuals are linked back to the design/material library.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Deliverables</h4>
+            <ul>
+              <li>Client portal experience map.</li>
+              <li>Photo capture and progress-report checklist.</li>
+              <li>Comment/response workflow for client and agency communication.</li>
+              <li>Visual standards for client-facing progress images.</li>
+              <li>Developer brief for internal tools and AI-assisted reporting.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="evidence" style="margin-top:20px">
+          <h4>Proof to collect before publishing</h4>
+          <p>Portal screenshots, workflow diagram, sample progress report, sample client comment thread, capture checklist, developer tickets or implementation brief, before/after communication baseline, and approved client outcome metrics.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="publish">
+      <div class="section-head">
+        <p class="kicker">Publication rules</p>
+        <h2>How to make these feel real without making unsupported claims.</h2>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <p class="status good">Use this public wording</p>
+          <ul>
+            <li>AI Workflow &amp; Visual Pipeline Consulting</li>
+            <li>Local AI visualization workflow</li>
+            <li>Art-direction and material consistency system</li>
+            <li>Client progress portal workflow</li>
+            <li>Implementation brief for developers</li>
+            <li>Reported reduction in AI visualization expense, if verified</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="status risk">Do not publish until verified</p>
+          <ul>
+            <li>Exact 40% savings number without invoices or before/after spend.</li>
+            <li>"Two Mac Studios combined into one GPU" without developer proof.</li>
+            <li>Client name, agency name, screenshots, or tool architecture without permission.</li>
+            <li>Claims that Lesly built the software herself if her role was strategy, art direction, workflow definition, and implementation coordination.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <p class="kicker">Sources used</p>
+        <h2>Recent sources grounding the category and workflows.</h2>
+      </div>
+      <ul>
+        <li><a href="https://developer.nvidia.com/blog/how-to-build-run-and-scale-high-quality-creator-workflows-in-comfyui/">NVIDIA Technical Blog, Apr 30 2026</a>: ComfyUI as local node-based creator workflows, including image layering, inpainting, photo-to-3D, prompt enhancement, HDRI, playblast-to-video, and PBR material pipelines.</li>
+        <li><a href="https://archgyan.com/stable-diffusion-architectural-rendering-open-source/">Archgyan, Apr 8 2026</a>: Stable Diffusion for architectural rendering, ControlNet for preserving geometry, custom models/material language, ComfyUI/Automatic1111 comparison, local vs cloud tradeoffs.</li>
+        <li><a href="https://www.plinth.build/">Plinth</a>: construction progress reports with photos, notes, checklists, owner links, offline capture, and PDF reports.</li>
+        <li><a href="https://construlog.com/">ConstruLog</a>: construction photo documentation, AI report generation, voice notes/transcription, client sharing, and progress tracking.</li>
+        <li><a href="https://projul.com/features/client-portal/">Projul Client Portal</a>: construction client portal for estimates, approvals, schedules, progress photos, selections, and reducing back-and-forth.</li>
+        <li><a href="https://www.apple.com/newsroom/2025/03/apple-reveals-m3-ultra-taking-apple-silicon-to-a-new-extreme/">Apple M3 Ultra Newsroom</a>: local AI capability, unified memory, high memory bandwidth, and Mac Studio suitability for AI, 3D, and visual effects workloads.</li>
+        <li><a href="https://comfyui-wiki.com/en/install/install-comfyui/install-comfyui-on-mac">ComfyUI Wiki, Jan 29 2026</a>: Mac users are directed toward ComfyUI Desktop or Comfy CLI for installation.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

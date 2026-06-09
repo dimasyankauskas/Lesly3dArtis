@@ -1,0 +1,50 @@
+{
+  "title": "Interior Props & Set Dressing Mesh Package",
+  "source_visuals": [
+    "assets/process/interior-props/presentation-board.webp",
+    "assets/process/interior-props/glass-metal.webp",
+    "assets/process/interior-props/material-study.webp",
+    "assets/process/interior-props/shelf-hero.webp"
+  ],
+  "files": {
+    "obj": "assets/3d/interior-props/interior-props-set.obj",
+    "mtl": "assets/3d/interior-props/interior-props-materials.mtl",
+    "technical_sheet": "assets/3d/interior-props/interior-props-mesh-sheet.svg"
+  },
+  "mesh_summary": {
+    "objects": 266,
+    "vertices": 29860,
+    "uvs": 29860,
+    "faces": 8246,
+    "materials": 14
+  },
+  "modeled_asset_groups": [
+    "carved shelf architecture",
+    "leather and wood storage boxes with latches, labels, hinges, and corner plates",
+    "clear and smoky glass bottles with necks, lips, stoppers, and fluted ribs",
+    "ceramic vases with glaze bands",
+    "aged brass candle holders, keys, hinges, and hardware",
+    "book rows, paper pages, leather covers, and gold spine bands",
+    "woven textile rolls, draped fabric, fringe, and plant leaves"
+  ],
+  "material_usage": {
+    "carved_dark_wood": 34,
+    "red_leather": 9,
+    "aged_brass": 105,
+    "aged_paper": 28,
+    "green_glaze": 10,
+    "dark_leather": 7,
+    "cream_ceramic": 4,
+    "clear_glass": 26,
+    "smoky_glass": 22,
+    "candle_wax": 2,
+    "woven_fabric": 2,
+    "green_fabric": 1,
+    "plant_green": 16
+  },
+  "pipeline_notes": [
+    "OBJ uses named objects and material assignments so the asset set can be inspected in Blender, Maya, Marmoset, Unity, or Unreal.",
+    "UV coordinates are included per face for technical visibility; production UV packing can be refined by object group.",
+    "Materials include PBR review values for base color, roughness, metallic, specular, and transparent glass alpha."
+  ]
+}

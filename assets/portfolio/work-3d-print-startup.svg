@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">3D printed character startup design direction board</title>
+  <desc id="desc">A warm editorial board showing collectible character families, printability rules, file handoff, and production metrics.</desc>
+  <rect width="1200" height="900" fill="#14100c"/>
+  <rect x="52" y="52" width="1096" height="796" fill="#f8f3e9"/>
+  <text x="92" y="142" fill="#14100c" font-family="Georgia,serif" font-size="58" letter-spacing="4">3D PRINT</text>
+  <text x="92" y="205" fill="#14100c" font-family="Georgia,serif" font-size="58" letter-spacing="4">CHARACTER SYSTEM</text>
+  <text x="96" y="252" fill="#5b554c" font-family="monospace" font-size="21" letter-spacing="3">DESIGN DIRECTION / PRINT QA / STL HANDOFF</text>
+  <g transform="translate(90 318)">
+    <rect width="238" height="238" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <circle cx="119" cy="89" r="46" fill="#9f4828"/>
+    <rect x="72" y="145" width="94" height="66" rx="28" fill="#2f6a57"/>
+    <path d="M73 195h92l32 28H41z" fill="#14100c" opacity=".86"/>
+    <text x="32" y="42" fill="#5b554c" font-family="monospace" font-size="15" letter-spacing="2">FAMILY 01</text>
+  </g>
+  <g transform="translate(362 318)">
+    <rect width="238" height="238" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <circle cx="119" cy="102" r="52" fill="#2c5f77"/>
+    <path d="M76 67l43-42 43 42" fill="none" stroke="#14100c" stroke-width="12" stroke-linecap="round"/>
+    <rect x="67" y="164" width="104" height="52" rx="8" fill="#9f4828"/>
+    <text x="32" y="42" fill="#5b554c" font-family="monospace" font-size="15" letter-spacing="2">FAMILY 02</text>
+  </g>
+  <g transform="translate(634 318)">
+    <rect width="238" height="238" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <circle cx="119" cy="94" r="42" fill="#2f6a57"/>
+    <path d="M83 145h72l38 68H45z" fill="#2c5f77"/>
+    <path d="M75 73h88" stroke="#14100c" stroke-width="11" stroke-linecap="round"/>
+    <text x="32" y="42" fill="#5b554c" font-family="monospace" font-size="15" letter-spacing="2">FAMILY 03</text>
+  </g>
+  <g transform="translate(916 312)">
+    <rect width="168" height="250" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <text x="24" y="48" fill="#9f4828" font-family="Georgia,serif" font-size="54">18</text>
+    <text x="26" y="86" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="2">PRINTABILITY</text>
+    <text x="26" y="109" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="2">RULES</text>
+    <path d="M28 142h112M28 172h112M28 202h112" stroke="#d6c6ae" stroke-width="5"/>
+  </g>
+  <g transform="translate(94 650)">
+    <rect width="294" height="118" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <text x="26" y="55" fill="#2f6a57" font-family="Georgia,serif" font-size="45">28%→9%</text>
+    <text x="28" y="88" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="2">REPAIR / REJECTION MODEL</text>
+  </g>
+  <g transform="translate(452 650)">
+    <rect width="294" height="118" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <text x="26" y="55" fill="#9f4828" font-family="Georgia,serif" font-size="45">6h→2.5h</text>
+    <text x="28" y="88" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="2">PREP TIME MODEL</text>
+  </g>
+  <g transform="translate(810 650)">
+    <rect width="294" height="118" fill="#fff8ee" stroke="#d6c6ae" stroke-width="3"/>
+    <text x="26" y="55" fill="#2c5f77" font-family="Georgia,serif" font-size="45">STL/3MF</text>
+    <text x="28" y="88" fill="#5b554c" font-family="monospace" font-size="14" letter-spacing="2">HANDOFF PACKAGE</text>
+  </g>
+</svg>

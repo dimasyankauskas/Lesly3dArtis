@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Study Draft - Local AI Visualization Pipeline for Residential Construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f8f3e9;
+      --ink:#12110f;
+      --muted:#5b554c;
+      --soft:#eee2d0;
+      --soft-2:#e5d6bf;
+      --line:#d6c6ae;
+      --dark:#14100c;
+      --cream:#f7ebd9;
+      --accent:#9f4828;
+      --green:#2f6a57;
+      --blue:#2c5f77;
+      --amber:#8b5e20;
+      --red:#8a2e2e;
+      --display:"Belleza",Tahoma,Arial,sans-serif;
+      --body:Tahoma,Arial,sans-serif;
+      --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-width:320px;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--body);
+      line-height:1.62;
+      background-image:
+        linear-gradient(90deg,rgba(18,17,15,.04) 1px,transparent 1px),
+        linear-gradient(rgba(18,17,15,.025) 1px,transparent 1px);
+      background-size:44px 44px;
+    }
+    a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+    h1,h2,h3,h4{
+      font-family:var(--display);
+      font-weight:400;
+      letter-spacing:.055em;
+      line-height:1.08;
+      margin:0 0 16px;
+      text-wrap:balance;
+    }
+    h1{font-size:clamp(2.6rem,6.4vw,5.5rem)}
+    h2{font-size:clamp(1.9rem,4vw,3.15rem)}
+    h3{font-size:clamp(1.28rem,2.3vw,1.8rem)}
+    h4{font-size:1.08rem;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    p{margin:0 0 14px}
+    ul,ol{margin:0;padding-left:20px}
+    li{margin:0 0 10px}
+    code{font-family:var(--mono);font-size:.9em}
+    .hero{
+      background:var(--dark);
+      color:var(--cream);
+      padding:clamp(52px,7vw,92px) clamp(20px,5vw,64px) 36px;
+      border-bottom:1px solid #2b231b;
+    }
+    .hero-grid{
+      max-width:1220px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:clamp(30px,5vw,76px);
+      align-items:end;
+    }
+    .eyebrow,.kicker{
+      font-family:var(--mono);
+      font-size:.72rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--accent);
+      margin:0 0 12px;
+    }
+    .hero .eyebrow{color:#c89a63}
+    .lead{font-size:clamp(1.05rem,1.55vw,1.25rem);color:var(--muted);max-width:820px}
+    .hero .lead{color:#dacdba}
+    .hero-panel{
+      border:1px solid rgba(200,154,99,.45);
+      background:linear-gradient(180deg,rgba(200,154,99,.13),rgba(255,255,255,.035));
+      padding:22px;
+    }
+    .hero-panel b{display:block;color:var(--cream);margin-bottom:7px}
+    .hero-panel p{color:#dacdba}
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:2;
+      background:rgba(248,243,233,.95);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(12px);
+    }
+    .nav-inner{
+      max-width:1220px;
+      margin:0 auto;
+      padding:12px 20px;
+      display:flex;
+      gap:14px;
+      overflow:auto;
+      font-family:var(--mono);
+      font-size:.75rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+    .nav a{white-space:nowrap;text-decoration:none;color:var(--muted)}
+    main{max-width:1220px;margin:0 auto;padding:clamp(32px,5vw,64px) 20px 80px}
+    section{margin-bottom:clamp(48px,7vw,92px)}
+    .section-head{max-width:880px;margin-bottom:24px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .grid.four{grid-template-columns:repeat(4,1fr)}
+    .card{
+      border:1px solid var(--line);
+      background:rgba(238,226,208,.88);
+      padding:22px;
+      min-height:100%;
+    }
+    .card.dark{background:var(--dark);border-color:#2d251d;color:var(--cream)}
+    .card.dark p,.card.dark li{color:#dacdba}
+    .metric{
+      border:1px solid var(--line);
+      background:#fff8ee;
+      padding:20px;
+    }
+    .metric b{
+      display:block;
+      font-family:var(--display);
+      font-size:clamp(2rem,4vw,3.4rem);
+      line-height:1;
+      color:var(--accent);
+      font-weight:400;
+      letter-spacing:.03em;
+    }
+    .metric span{display:block;color:var(--muted);font-size:.92rem}
+    .status{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+    .status.good{color:var(--green)}
+    .status.warn{color:var(--amber)}
+    .status.risk{color:var(--red)}
+    .tag{
+      display:inline-flex;
+      border:1px solid var(--line);
+      background:#fff8ee;
+      padding:4px 8px;
+      margin:0 6px 6px 0;
+      font-family:var(--mono);
+      font-size:.68rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .note{border:1px solid #d6bd97;background:#fff2dc;padding:18px;color:#4f4237}
+    .warning{border-left:3px solid var(--amber);padding-left:16px}
+    .evidence{border-left:3px solid var(--green);padding-left:16px}
+    .bars{display:grid;gap:14px}
+    .bar-row{display:grid;grid-template-columns:170px 1fr 90px;gap:12px;align-items:center}
+    .bar-label{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .bar-track{height:18px;background:#ded0bb;border:1px solid var(--line);position:relative}
+    .bar-fill{height:100%;background:var(--accent);width:var(--w)}
+    .bar-fill.green{background:var(--green)}
+    .bar-fill.blue{background:var(--blue)}
+    .bar-value{font-family:var(--mono);font-size:.78rem;text-align:right}
+    .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;counter-reset:step}
+    .step{border:1px solid var(--line);background:#fff8ee;padding:16px;position:relative;padding-top:42px}
+    .step::before{
+      counter-increment:step;
+      content:counter(step,decimal-leading-zero);
+      position:absolute;
+      top:14px;
+      left:16px;
+      font-family:var(--mono);
+      font-size:.7rem;
+      color:var(--accent);
+    }
+    table{width:100%;border-collapse:collapse;background:#fff8ee;border:1px solid var(--line);font-size:.95rem}
+    th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
+    th{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);background:var(--soft)}
+    tr:last-child td{border-bottom:0}
+    .calc{font-family:var(--mono);font-size:.86rem;color:#3d3832}
+    .visual-board{
+      border:1px solid var(--line);
+      background:
+        linear-gradient(135deg,rgba(47,106,87,.16),transparent 35%),
+        linear-gradient(315deg,rgba(159,72,40,.16),transparent 38%),
+        #fff8ee;
+      padding:22px;
+      min-height:320px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .mock{
+      border:1px solid rgba(18,17,15,.18);
+      background:rgba(255,255,255,.68);
+      padding:14px;
+      min-height:130px;
+      position:relative;
+      overflow:hidden;
+    }
+    .mock::after{
+      content:"";
+      position:absolute;
+      inset:auto 12px 12px auto;
+      width:52px;
+      height:52px;
+      border:1px solid rgba(18,17,15,.18);
+      transform:rotate(8deg);
+    }
+    .mock b{display:block;font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px}
+    .mini-line{height:8px;background:#d7c7b0;margin:8px 0;width:var(--w)}
+    .sources li{font-size:.95rem}
+    @media (max-width:920px){
+      .hero-grid,.grid,.grid.two,.grid.four,.timeline,.visual-board{grid-template-columns:1fr}
+      .bar-row{grid-template-columns:1fr}
+      .bar-value{text-align:left}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Case study draft / verify before public launch</p>
+        <h1>Local AI visualization pipeline for a residential construction team.</h1>
+        <p class="lead">Lesly helped a Santa Cruz area residential builder move from expensive, inconsistent cloud AI experiments to a controlled local visualization workflow, client review process, and developer-ready agentic tool plan.</p>
+      </div>
+      <aside class="hero-panel">
+        <b>Portfolio category</b>
+        <p>AI Workflow &amp; Visual Pipeline Consulting</p>
+        <span class="tag">Art direction</span><span class="tag">ComfyUI</span><span class="tag">Stable Diffusion</span><span class="tag">MCP / 3D tools</span><span class="tag">Construction workflow</span>
+      </aside>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="Case study sections">
+    <div class="nav-inner">
+      <a href="#summary">Summary</a>
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#economics">Economics</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#metrics">Metrics</a>
+      <a href="#proof">Proof</a>
+      <a href="#sources">Sources</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="summary">
+      <div class="section-head">
+        <p class="kicker">Executive summary</p>
+        <h2>From AI spending problem to a repeatable visual pipeline.</h2>
+        <p class="lead">The client was spending roughly $2,000 per month on cloud AI image generation and still could not get consistent home visuals, material options, or client-ready progress presentations. Lesly's role was not hands-on rendering only. She defined the visual standards, workflow requirements, local generation strategy, developer brief, and training path.</p>
+      </div>
+      <div class="grid four">
+        <article class="metric">
+          <b>$2k/mo</b>
+          <span>modeled baseline cloud AI spend before the local workflow.</span>
+        </article>
+        <article class="metric">
+          <b>$10.4k</b>
+          <span>modeled workstation and setup investment for local generation.</span>
+        </article>
+        <article class="metric">
+          <b>5.9 mo</b>
+          <span>modeled break-even against cloud spend after residual costs.</span>
+        </article>
+        <article class="metric">
+          <b>43%</b>
+          <span>modeled first-year reduction in visualization platform spend.</span>
+        </article>
+      </div>
+      <div class="note" style="margin-top:18px">
+        <b>Data status:</b> These numbers are a publication model based on the user's stated project facts: approximately $2,000/month cloud AI spend, roughly $10k local Apple Silicon investment, and a reported expense reduction near 40%. Replace with invoices, receipts, and logs before publishing as verified results.
+      </div>
+    </section>
+
+    <section id="problem">
+      <div class="section-head">
+        <p class="kicker">The problem</p>
+        <h2>The team had AI outputs, but not a production workflow.</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <p class="status risk">Cost drift</p>
+          <h3>Cloud credits kept burning.</h3>
+          <p>Online AI tools were being used repeatedly to chase acceptable images. Monthly spend reached an estimated $2,000, but the team still lacked a stable path from reference to client-ready visuals.</p>
+        </article>
+        <article class="card">
+          <p class="status risk">Consistency failure</p>
+          <h3>Materials and geometry changed between runs.</h3>
+          <p>Prompts alone did not preserve house shape, site context, finish selections, siding, tile, fixtures, or the builder's preferred presentation style.</p>
+        </article>
+        <article class="card">
+          <p class="status risk">Communication gap</p>
+          <h3>Client review lived in scattered channels.</h3>
+          <p>Photos, client comments, voice notes, agency replies, and design options were split across texts, calls, emails, folders, and disconnected AI outputs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="solution">
+      <div class="section-head">
+        <p class="kicker">Lesly's role</p>
+        <h2>She defined the visual pipeline, then helped the technical team implement it.</h2>
+      </div>
+      <div class="grid two">
+        <article class="card dark">
+          <h3>What Lesly owned</h3>
+          <ul>
+            <li>Art-direction standards for construction visualization.</li>
+            <li>Material and design-library structure for repeatable output.</li>
+            <li>Prompt, reference, seed, and review discipline for local generation.</li>
+            <li>Workflow requirements for client portal comments, photo review, and agency response.</li>
+            <li>Training plan for a work-in-progress agentic AI and 3D workflow.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>What developers / agency implemented</h3>
+          <ul>
+            <li>Local Stable Diffusion / ComfyUI generation environment.</li>
+            <li>Apple Silicon workstation setup for private visual iteration.</li>
+            <li>MCP-style agent connections to 3D tools where feasible.</li>
+            <li>Internal workflow surfaces for photos, comments, summaries, and client status.</li>
+            <li>Tooling glue, automation, security, permissions, and deployment.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="visual-board" style="margin-top:18px" aria-label="Workflow visual board">
+        <div class="mock">
+          <b>Material library</b>
+          <div class="mini-line" style="--w:72%"></div>
+          <div class="mini-line" style="--w:56%"></div>
+          <div class="mini-line" style="--w:84%"></div>
+          <p>Siding, stone, tile, wood, paint, fixtures, landscape, lighting mood.</p>
+        </div>
+        <div class="mock">
+          <b>Local generation</b>
+          <div class="mini-line" style="--w:88%"></div>
+          <div class="mini-line" style="--w:66%"></div>
+          <div class="mini-line" style="--w:74%"></div>
+          <p>ComfyUI graph, ControlNet guidance, seed logs, reusable prompt blocks.</p>
+        </div>
+        <div class="mock">
+          <b>3D / MCP agents</b>
+          <div class="mini-line" style="--w:70%"></div>
+          <div class="mini-line" style="--w:62%"></div>
+          <div class="mini-line" style="--w:80%"></div>
+          <p>Blender/3D tool connection for scene checks, asset notes, and guided setup.</p>
+        </div>
+        <div class="mock">
+          <b>Client portal</b>
+          <div class="mini-line" style="--w:78%"></div>
+          <div class="mini-line" style="--w:48%"></div>
+          <div class="mini-line" style="--w:92%"></div>
+          <p>Progress photos, comments, audio/text notes, agency replies, approvals.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="economics">
+      <div class="section-head">
+        <p class="kicker">Economics model</p>
+        <h2>The local setup pays back when cloud generation is a monthly habit.</h2>
+        <p class="lead">The modeled economics assume the team was spending $2,000/month on cloud AI generation, then moved to a hybrid local workflow with lower residual cloud/tool costs.</p>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <h3>Assumptions</h3>
+          <table>
+            <tr><th>Line item</th><th>Modeled value</th></tr>
+            <tr><td>Baseline cloud AI spend</td><td>$2,000/month</td></tr>
+            <tr><td>Local workstation investment</td><td>$10,400 total</td></tr>
+            <tr><td>Residual cloud/tools after local setup</td><td>$300/month</td></tr>
+            <tr><td>Cloud spend avoided</td><td>$1,700/month</td></tr>
+            <tr><td>Break-even</td><td>$10,400 / $1,700 = 6.1 months</td></tr>
+          </table>
+        </article>
+        <article class="card">
+          <h3>Cost curve</h3>
+          <div class="bars">
+            <div class="bar-row">
+              <span class="bar-label">6 mo cloud</span>
+              <span class="bar-track"><span class="bar-fill" style="--w:50%"></span></span>
+              <span class="bar-value">$12.0k</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">6 mo local</span>
+              <span class="bar-track"><span class="bar-fill green" style="--w:49%"></span></span>
+              <span class="bar-value">$11.8k</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">12 mo cloud</span>
+              <span class="bar-track"><span class="bar-fill" style="--w:100%"></span></span>
+              <span class="bar-value">$24.0k</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">12 mo local</span>
+              <span class="bar-track"><span class="bar-fill green" style="--w:57%"></span></span>
+              <span class="bar-value">$14.0k</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">18 mo cloud</span>
+              <span class="bar-track"><span class="bar-fill" style="--w:100%"></span></span>
+              <span class="bar-value">$36.0k</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">18 mo local</span>
+              <span class="bar-track"><span class="bar-fill green" style="--w:43%"></span></span>
+              <span class="bar-value">$15.8k</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="note" style="margin-top:18px">
+        <b>Result model:</b> At 12 months, the baseline cloud path is $24,000. The local hybrid path is modeled at $14,000, for $10,000 in avoided spend, or about 42%. This is close to the reported "near 40%" reduction, but it must be checked against actual invoices.
+      </div>
+    </section>
+
+    <section id="workflow">
+      <div class="section-head">
+        <p class="kicker">Workflow architecture</p>
+        <h2>The final workflow made visual decisions traceable.</h2>
+      </div>
+      <div class="timeline">
+        <article class="step">
+          <h3>Brief intake</h3>
+          <p>Collect site photos, client notes, plans, material selections, and desired visual outcome.</p>
+        </article>
+        <article class="step">
+          <h3>Direction board</h3>
+          <p>Lesly defines visual target, finish options, prompt blocks, and consistency rules.</p>
+        </article>
+        <article class="step">
+          <h3>Local generation</h3>
+          <p>Generate controlled variants using local Stable Diffusion/ComfyUI workflows and structure guidance.</p>
+        </article>
+        <article class="step">
+          <h3>3D/MCP review</h3>
+          <p>Use agentic tooling where useful to connect notes, references, and 3D application checks.</p>
+        </article>
+        <article class="step">
+          <h3>Client portal</h3>
+          <p>Publish progress visuals, accept comments, route responses, and record decisions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="metrics">
+      <div class="section-head">
+        <p class="kicker">Success metrics</p>
+        <h2>How success should be measured.</h2>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <h3>Measured outcomes</h3>
+          <table>
+            <tr><th>Metric</th><th>Before</th><th>After model</th></tr>
+            <tr><td>Monthly AI generation spend</td><td>$2,000</td><td>$300 residual tools/cloud</td></tr>
+            <tr><td>First-year AI platform cost</td><td>$24,000</td><td>$14,000 including setup</td></tr>
+            <tr><td>Approved visual reproducibility</td><td>Prompt-dependent</td><td>Seed/reference/workflow logged</td></tr>
+            <tr><td>Material consistency</td><td>Manual prompt memory</td><td>Shared library and style rules</td></tr>
+            <tr><td>Client feedback channel</td><td>Texts/calls/email/folders</td><td>One portal workflow</td></tr>
+          </table>
+        </article>
+        <article class="card">
+          <h3>Quality metrics</h3>
+          <div class="bars">
+            <div class="bar-row">
+              <span class="bar-label">Cost control</span>
+              <span class="bar-track"><span class="bar-fill green" style="--w:82%"></span></span>
+              <span class="bar-value">high</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Visual consistency</span>
+              <span class="bar-track"><span class="bar-fill green" style="--w:76%"></span></span>
+              <span class="bar-value">improved</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Client clarity</span>
+              <span class="bar-track"><span class="bar-fill blue" style="--w:70%"></span></span>
+              <span class="bar-value">improved</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Tech maturity</span>
+              <span class="bar-track"><span class="bar-fill" style="--w:52%"></span></span>
+              <span class="bar-value">WIP</span>
+            </div>
+          </div>
+          <p class="calc" style="margin-top:16px">Quality bars are a presentation model. Replace with real QA pass rates, rework counts, and client approval metrics when available.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="section-head">
+        <p class="kicker">Proof package</p>
+        <h2>What must be attached before this becomes a public case study.</h2>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <p class="status good">Use as proof</p>
+          <ul>
+            <li>Invoices or billing reports showing baseline $2,000/month cloud AI spend.</li>
+            <li>Hardware receipts and workstation specs.</li>
+            <li>ComfyUI graph screenshots and local generation logs.</li>
+            <li>Material/design library screenshots.</li>
+            <li>Prompt templates, seed logs, reference boards, and QA checklist.</li>
+            <li>Client portal screenshots with names redacted.</li>
+            <li>Developer brief, MCP setup notes, and training materials.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="status risk">Do not claim without proof</p>
+          <ul>
+            <li>Do not say two separate Mac Studios became "one GPU" unless the implementation team proves distributed GPU orchestration.</li>
+            <li>Do not say Lesly personally built the software if her role was strategy, workflow definition, art direction, training, and implementation coordination.</li>
+            <li>Do not publish exact savings, client name, agency name, or screenshots without permission.</li>
+            <li>Do not imply AI fully automated design decisions. Lesly's value is the human-directed workflow and quality bar.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="warning" style="margin-top:20px">
+        <h3>Public-safe hardware wording</h3>
+        <p>Use: "local Apple Silicon workstations for private generation and 3D review." Use only after verification: "Mac Studio with M3 Ultra, 96GB to 256GB unified memory, 819GB/s memory bandwidth." Avoid: "two Mac Studios combined into one GPU."</p>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <p class="kicker">Research sources</p>
+        <h2>Current sources used for field-real terminology and technical grounding.</h2>
+      </div>
+      <ul class="sources">
+        <li><a href="https://www.apple.com/newsroom/2025/03/apple-unveils-new-mac-studio-the-most-powerful-mac-ever/">Apple Mac Studio announcement</a>: M3 Ultra, up to 80-core GPU, up to 512GB unified memory at launch, local storage, AI and 3D workflow positioning.</li>
+        <li><a href="https://support.apple.com/en-us/122211">Apple Mac Studio 2025 tech specs</a>: current M3 Ultra specs, 819GB/s memory bandwidth, 96GB base memory, current 256GB configure-to-order option in Apple Support specs.</li>
+        <li><a href="https://www.apple.com/newsroom/2025/03/apple-reveals-m3-ultra-taking-apple-silicon-to-a-new-extreme/">Apple M3 Ultra announcement</a>: UltraFusion architecture, unified memory, Thunderbolt 5, and Apple wording around multiple Mac Studio systems for advanced workflows.</li>
+        <li><a href="https://developer.nvidia.com/blog/how-to-build-run-and-scale-high-quality-creator-workflows-in-comfyui/">NVIDIA ComfyUI creator workflows, Apr 30 2026</a>: ComfyUI workflow patterns for layered images, inpainting, 3D object generation, HDRI, playblast-to-video, and PBR material generation.</li>
+        <li><a href="https://archgyan.com/stable-diffusion-architectural-rendering-open-source/">Archgyan Stable Diffusion architectural rendering, Apr 8 2026</a>: ControlNet for preserving geometry, ComfyUI/Automatic1111 comparison, local vs cloud tradeoffs.</li>
+        <li><a href="https://blendermcp.org/">Blender MCP</a>: public MCP/Blender pattern for connecting AI assistants to Blender through the Model Context Protocol.</li>
+        <li><a href="https://www.plinth.build/">Plinth</a>, <a href="https://construlog.com/">ConstruLog</a>, and <a href="https://projul.com/features/client-portal/">Projul Client Portal</a>: field examples of progress photos, reports, owner/client portals, comments, selections, and construction communication workflows.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
