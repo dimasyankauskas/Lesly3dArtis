@@ -94,7 +94,7 @@ const CASE_STUDIES=[
   {
     id:'ai-visual-pipeline',
     title:'Local AI Visualization Pipeline Case Study',
-    image:'assets/portfolio/work-ai-visual-pipeline.svg',
+    image:'assets/portfolio/work-ai-visual-pipeline.png',
     alt:'AI visualization workflow case-study board with material library, local generation, client review, and cost metrics.',
     meta:['Consulting','AI workflow','Visual pipeline'],
     lead:'A strategic workflow case for replacing inconsistent cloud AI experiments with local generation standards, 3D-aware agent instructions, material libraries, client review checkpoints, and cost-control planning.',
@@ -108,9 +108,9 @@ const CASE_STUDIES=[
       ['Economics model','The project modeled a $2,000/month cloud baseline, $10.4k local setup, $300/month residual tooling, and about a 6.1-month break-even.']
     ],
     gallery:[
-      ['assets/process/ai-visual-pipeline/presentation-board.svg','Workflow board showing brief intake, material library, ComfyUI graph, local workstation, and client review loop.'],
-      ['assets/process/ai-visual-pipeline/economics-board.svg','Economics board comparing modeled cloud generation spend against a local hybrid workflow.'],
-      ['assets/portfolio/work-ai-visual-pipeline.svg','Case-study overview card with material library, local AI workflow, client review, and cost-control metrics.']
+      ['assets/process/ai-visual-pipeline/presentation-board.png','Workflow board showing brief intake, material library, agent instructions, local workstation, and client review loop.'],
+      ['assets/process/ai-visual-pipeline/economics-board.png','Economics board comparing modeled cloud generation spend against a local hybrid workflow.'],
+      ['assets/portfolio/work-ai-visual-pipeline.png','Case-study overview card with material library, local AI workflow, client review, and cost-control metrics.']
     ],
     proof:[
       ['Cost baseline','Cloud AI invoices, token/credit reports, and monthly generation spend before local workflow planning.'],
@@ -118,13 +118,13 @@ const CASE_STUDIES=[
       ['Implementation proof','Developer brief, MCP/3D tool notes, agent handoff instructions, team training materials, hardware receipts, and local workstation specs.'],
       ['Review proof','Material library screenshots, client review examples, generated-output comparisons, and approved public-safe outcome metrics.']
     ],
-    current:['assets/portfolio/work-ai-visual-pipeline.svg','assets/process/ai-visual-pipeline/presentation-board.svg','assets/process/ai-visual-pipeline/economics-board.svg'],
+    current:['assets/portfolio/work-ai-visual-pipeline.png','assets/process/ai-visual-pipeline/presentation-board.png','assets/process/ai-visual-pipeline/economics-board.png'],
     required:['baseline cloud AI spend report','hardware receipt and workstation specs','ComfyUI workflow screenshot','material library screenshot','agent instruction examples','developer implementation brief','training notes and approved outcome metrics']
   },
   {
     id:'print-startup-direction',
     title:'3D Printing Character Startup Design Direction',
-    image:'assets/portfolio/work-3d-print-startup.svg',
+    image:'assets/portfolio/work-3d-print-startup.png',
     alt:'3D printed character startup design-direction board with character families, print rules, and handoff metrics.',
     meta:['Design direction','3D printing','Character system'],
     lead:'A design-director case for helping a small 3D printing startup turn collectible character ideas into a printable product system with style rules, agent-ready instructions, printability checks, and STL/3MF handoff standards.',
@@ -138,9 +138,9 @@ const CASE_STUDIES=[
       ['Economics model','The draft models repair/rejection dropping from 28% to 9%, prep time dropping from 6h to 2.5h, and about $2,310/month in avoided prep labor.']
     ],
     gallery:[
-      ['assets/process/3d-print-startup/presentation-board.svg','Presentation board showing character families, print rules, slicer QA, handoff package, and modeled production metrics.'],
-      ['assets/process/3d-print-startup/printability-board.svg','Printability board showing wall thickness, supports, drainage, orientation, watertight geometry, and file package checks.'],
-      ['assets/portfolio/work-3d-print-startup.svg','Case-study overview card with character families, printability rules, and STL/3MF handoff metrics.']
+      ['assets/process/3d-print-startup/presentation-board.png','Presentation board showing character families, print rules, slicer QA, handoff package, and modeled production metrics.'],
+      ['assets/process/3d-print-startup/printability-board.png','Printability board showing wall thickness, supports, drainage, orientation, watertight geometry, and file package checks.'],
+      ['assets/portfolio/work-3d-print-startup.png','Case-study overview card with character families, printability rules, and STL/3MF handoff metrics.']
     ],
     proof:[
       ['Design system','Style guide excerpts, character family boards, pose rules, accessory rules, agent instructions, and base-system standards.'],
@@ -148,7 +148,7 @@ const CASE_STUDIES=[
       ['Handoff','STL/3MF/OBJ package examples, print notes, thumbnails, product metadata, naming rules, and startup restrictions.'],
       ['Outcome proof','Before/after model-prep time, repair/rejection counts, successful prototype photos, and approved labor-savings data.']
     ],
-    current:['assets/portfolio/work-3d-print-startup.svg','assets/process/3d-print-startup/presentation-board.svg','assets/process/3d-print-startup/printability-board.svg'],
+    current:['assets/portfolio/work-3d-print-startup.png','assets/process/3d-print-startup/presentation-board.png','assets/process/3d-print-startup/printability-board.png'],
     required:['style guide excerpt','slicer screenshots','failed-print or repair log','STL/3MF/OBJ handoff package','successful prototype photos','approved startup outcome metrics']
   },
   {
@@ -607,7 +607,7 @@ function renderStudy(study){
   if(hero){
     hero.src=study.image;
     hero.alt=study.alt;
-    hero.closest('.cs-hero')?.classList.toggle('has-board-hero',study.image.endsWith('.svg'));
+    hero.closest('.cs-hero')?.classList.toggle('has-board-hero',/ai-visual-pipeline|3d-print-startup/.test(study.image));
   }
   setText('[data-case-title]',study.title);
   setText('[data-case-lead]',study.lead);
