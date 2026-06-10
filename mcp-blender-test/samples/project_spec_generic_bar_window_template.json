@@ -1,0 +1,115 @@
+{
+  "project_name": "Generic Bar Window MCP Test",
+  "units": "inches",
+  "drawing_status": "test_template_only",
+  "model_use": "mcp_blender_workflow_test",
+  "components": [
+    {
+      "id": "context.wall",
+      "type": "wall_context",
+      "width_in": 144,
+      "height_in": 108,
+      "depth_in": 12,
+      "count": 1,
+      "material": "warm_wood_placeholder",
+      "movement": null,
+      "source": "generic_template",
+      "confidence": "template_only",
+      "fabrication_status": "not_for_building",
+      "notes": "Generic test wall context."
+    },
+    {
+      "id": "bar_window.arch_frame",
+      "type": "arched_frame",
+      "width_in": 60,
+      "height_in": 72,
+      "depth_in": 3,
+      "count": 1,
+      "material": "dark_metal_placeholder",
+      "movement": null,
+      "source": "generic_template",
+      "confidence": "template_only",
+      "fabrication_status": "not_for_building",
+      "notes": "Generic arched frame test component."
+    },
+    {
+      "id": "bar_window.lower_panels",
+      "type": "bifold_panel_set",
+      "width_in": 60,
+      "height_in": 32,
+      "depth_in": 1.5,
+      "count": 4,
+      "material": "dark_metal_and_glass_placeholder",
+      "movement": "open_close_proxy",
+      "source": "generic_template",
+      "confidence": "template_only",
+      "fabrication_status": "not_for_building",
+      "notes": "Generic four-panel bifold proxy for testing."
+    },
+    {
+      "id": "bar_window.shelves",
+      "type": "shelf_array",
+      "width_in": 52,
+      "height_in": null,
+      "depth_in": 10,
+      "count": 3,
+      "material": "warm_wood_placeholder",
+      "movement": null,
+      "source": "generic_template",
+      "confidence": "template_only",
+      "fabrication_status": "not_for_building",
+      "notes": "Generic shelf array for testing."
+    }
+  ],
+  "materials": [
+    {
+      "id": "warm_wood_placeholder",
+      "type": "wood",
+      "description": "Generic warm wood placeholder material.",
+      "confidence": "template_only",
+      "notes": "Replace with approved material reference in real project."
+    },
+    {
+      "id": "dark_metal_placeholder",
+      "type": "metal",
+      "description": "Generic dark metal placeholder material.",
+      "confidence": "template_only",
+      "notes": "Replace with approved material reference in real project."
+    },
+    {
+      "id": "glass_placeholder",
+      "type": "glass",
+      "description": "Generic glass placeholder material.",
+      "confidence": "template_only",
+      "notes": "Replace with approved glass specification in real project."
+    }
+  ],
+  "mechanisms": [
+    {
+      "id": "lower_panels_open_close",
+      "type": "bifold_proxy",
+      "description": "Generic open/close proxy for lower panels.",
+      "moving_components": ["bar_window.lower_panels"],
+      "confidence": "template_only",
+      "notes": "Not a hardware specification."
+    }
+  ],
+  "required_outputs": [
+    "front_closed_gray_render",
+    "right_45_gray_render",
+    "open_closed_proxy_gray_render",
+    "review_model_glb",
+    "dimension_report_csv",
+    "assumptions_md"
+  ],
+  "assumptions": [
+    "Generic public template only.",
+    "No fabrication or construction use.",
+    "Real project dimensions and materials must be verified separately."
+  ],
+  "rfi_questions": [
+    "What are the verified final dimensions?",
+    "What material and hardware specifications are approved?",
+    "What output package is required for review?"
+  ]
+}
