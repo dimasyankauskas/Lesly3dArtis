@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/lesly-mcp-blender/project_spec.schema.json",
+  "title": "Lesly Blender MCP Project Spec",
+  "type": "object",
+  "required": [
+    "project_name",
+    "units",
+    "drawing_status",
+    "model_use",
+    "components",
+    "materials",
+    "required_outputs",
+    "assumptions"
+  ],
+  "properties": {
+    "project_name": {
+      "type": "string"
+    },
+    "units": {
+      "type": "string",
+      "enum": ["inches", "feet", "millimeters", "centimeters", "meters"]
+    },
+    "drawing_status": {
+      "type": "string",
+      "description": "Example: coordination_not_for_construction, construction, shop_drawing, concept"
+    },
+    "model_use": {
+      "type": "string",
+      "description": "Example: visualization_and_builder_coordination"
+    },
+    "source_files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "status"],
+        "properties": {
+          "type": { "type": "string" },
+          "path": { "type": "string" },
+          "status": { "type": "string", "enum": ["not_committed_private", "sanitized", "public", "missing"] },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "confidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "width_in": { "type": ["number", "null"] },
+          "height_in": { "type": ["number", "null"] },
+          "depth_in": { "type": ["number", "null"] },
+          "count": { "type": ["integer", "null"] },
+          "material": { "type": ["string", "null"] },
+          "movement": { "type": ["string", "null"] },
+          "source": { "type": ["string", "null"] },
+          "confidence": { "type": "string" },
+          "fabrication_status": { "type": ["string", "null"] },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "confidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "description": { "type": "string" },
+          "confidence": { "type": "string" },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "mechanisms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "confidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "description": { "type": "string" },
+          "moving_components": { "type": "array", "items": { "type": "string" } },
+          "confidence": { "type": "string" },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "required_outputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "rfi_questions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
