@@ -1,0 +1,11 @@
+# Keep repo searches fast and prevent huge inline media/archive files from
+# being dumped into Codex context. Read these paths only by explicit filename.
+temp/
+reserch/visuals/visual-gallery.html
+reserch/visuals/*.png
+clients/oneoff-s-ranch-visualization-repo-polished/docs/archive_*.html
+clients/oneoff-s-ranch-visualization-repo-polished/assets/**/*.mp4
+clients/oneoff-s-ranch-visualization-repo-polished/assets/**/*.pdf
+clients/oneoff-s-ranch-visualization-repo-polished/assets/**/*.png
+clients/oneoff-s-ranch-visualization-repo-polished/assets/**/*.jpg
+clients/oneoff-s-ranch-visualization-repo-polished/assets/**/*.jpeg
