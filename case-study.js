@@ -129,7 +129,7 @@ const CASE_STUDIES=[
     meta:['AI workflow','Construction visualization','Visual standards'],
     lead:'A residential-construction workflow case for turning scattered AI experiments, material references, and review needs into a controlled local visualization pipeline.',
     whatTitle:'A visual pipeline that makes AI-assisted images usable for production decisions.',
-    whatCopy:'This case positions Lesly as a visual pipeline builder: she defines art-direction standards, material consistency rules, review criteria, training needs, and developer-ready workflow requirements so generated images stay connected to real construction constraints.',
+    whatCopy:'This case positions Lesly as a visual pipeline builder: she defines art-direction standards, material consistency rules, review criteria, training needs, and developer-ready workflow requirements so visual exploration stays connected to real construction constraints.',
     details:[
       ['Visual standards','Material direction, finish options, acceptable variation, and client-ready image criteria are defined before more visuals are generated.'],
       ['Local workflow','The case maps how references, site context, prompts, logged outputs, and review states can become a repeatable local generation workflow.'],
@@ -310,7 +310,7 @@ const CASE_STUDIES=[
     whatCopy:'This project supports a smaller-scope service category with clear slots for modeled garments, UVs, texture maps, material bakes, and platform-ready accessory files.',
     details:[
       ['Costume read','Full-body views keep silhouette and outfit layers readable.'],
-      ['Detail crops','Closeups suggest the kind of accessory, boot, fabric, trim, and prop proof needed.'],
+      ['Detail crops','Closeups isolate the accessory, boot, fabric, trim, and prop decisions that must survive the 3D build.'],
       ['Scope fit','Good category for skins, props, accessories, outfit variants, and avatar add-ons.'],
       ['Technical checks','Garment mesh, material graph, UV layout, texture sheet, and export captures support the handoff.']
     ],
@@ -384,7 +384,7 @@ const CASE_STUDIES=[
       ['Hero render','Approved Lesly render for homepage.'],
       ['Source proof','Model, topology, UVs, materials, and final presentation captures.'],
       ['Project facts','Project type, use case, tools, deliverables, and restrictions.'],
-      ['Contact path','Real contact email or form endpoint before public launch.']
+      ['Portfolio role','Homepage hero, case-study opener, and presentation crops built from one consistent character direction.']
     ],
     current:['assets/portfolio/hero-original-site-concept.webp'],
     required:['assets/process/original-site-concept/hero.webp','assets/process/original-site-concept/technical-proof.webp','assets/process/original-site-concept/final-renders.webp','assets/process/original-site-concept/deliverables.webp']
@@ -453,7 +453,7 @@ const CASE_NARRATIVES={
     problemTitle:'The team had visual outputs, but not a repeatable 3D workflow system.',
     problems:[
       ['Buyer problem','The construction team was using online AI tools for home visuals, but the outputs were inconsistent and the spend was hard to control.'],
-      ['Presentation risk','Generated images can look impressive while failing geometry, material consistency, client approval, or real project constraints.'],
+      ['Presentation risk','Exploration images can look impressive while failing geometry, material consistency, client approval, or real project constraints.'],
       ['Solved direction','Lesly defined the visual standards, material library, review criteria, local generation workflow, cost model, and developer brief needed to make the 2D/AI-to-3D process repeatable.']
     ],
     process:[
@@ -461,32 +461,32 @@ const CASE_NARRATIVES={
       ['Art direction system','Define the material library, style rules, acceptable variation, geometry-preservation needs, and client-ready output criteria.'],
       ['Agent instruction layer','Write the system prompts, task prompts, negative rules, naming rules, reference requirements, and QA checks that make AI agents respect 3D and construction constraints.'],
       ['Workflow plan','Specify how references, prompts, review states, structure guidance, and output logs should be organized before visuals are used for review.'],
-      ['Implementation handoff','Coordinate handoff requirements around setup notes, agent behavior, training materials, and review checkpoints without naming unverified tools publicly.']
+      ['Implementation handoff','Coordinate setup notes, agent behavior, training materials, and review checkpoints around the approved production environment.']
     ],
     deliverables:[
       ['Strategy package','Workflow map, visual standards, material-library taxonomy, generation rules, and client review criteria.'],
       ['Technical brief','Workflow assumptions, tool requirements where approved, prompt templates, logging rules, and 3D-aware review notes.'],
       ['Agent instructions','3D-aware prompts, rejection criteria, image-review rules, material naming rules, and client-ready response instructions.'],
-      ['Measurement plan','Baseline cloud spend, residual tooling spend, break-even model, output consistency checks, and public-safe proof requirements.']
+      ['Measurement plan','Baseline tool spend, residual workflow cost, break-even model, and output-consistency checks for an implementation pilot.']
     ]
   },
   'santa-cruz-ai-visual-pipeline':{
     problemTitle:'The team had AI image experiments, but not a controlled visualization pipeline.',
     problems:[
       ['Buyer problem','A residential construction team needed better home visuals, material options, and progress presentations without chasing disconnected AI outputs.'],
-      ['Workflow risk','Generated images can look useful while drifting away from real geometry, materials, site conditions, client comments, and implementation constraints.'],
+      ['Workflow risk','Visualization outputs can look useful while drifting away from geometry, materials, site conditions, client comments, and implementation constraints.'],
       ['Solved direction','Lesly defined visual standards, local workflow requirements, review criteria, training needs, and developer-ready instructions so AI-assisted visualization could support real decisions.']
     ],
     process:[
       ['Workflow audit','Map the existing image-generation habits, reference sources, review bottlenecks, client feedback channels, and handoff gaps.'],
       ['Art direction system','Define material library, finish rules, structure-preservation needs, acceptable variation, and client-ready quality standards.'],
       ['Local pipeline plan','Translate references, prompts, seeds, structure guidance, output logs, and review notes into a repeatable local workflow plan.'],
-      ['Implementation handoff','Prepare developer requirements, agent instructions, training notes, review checkpoints, and public-safe proof requirements.']
+      ['Implementation handoff','Prepare developer requirements, agent instructions, training notes, review checkpoints, and measurement criteria.']
     ],
     deliverables:[
       ['Strategy package','Workflow map, visual standards, material-library taxonomy, review criteria, and controlled generation rules.'],
       ['Technical brief','Local workflow requirements, logging rules, and 3D-aware review notes where approved.'],
-      ['Training and review','Prompt templates, rejection criteria, image-review standards, handoff instructions, and proof needed before public metrics are shown.']
+      ['Training and review','Prompt templates, rejection criteria, image-review standards, handoff instructions, and a measurement plan for the implementation pilot.']
     ]
   },
   'construction-client-progress-workflow':{
@@ -500,7 +500,7 @@ const CASE_NARRATIVES={
       ['Capture rules','Define which site photos, material references, client notes, and AI visuals belong in the review flow.'],
       ['Review model','Map each item to a clear state so the team knows what is captured, reviewed, approved, blocked, or waiting for response.'],
       ['Agent-assisted layer','Use AI where it helps: summaries, routing, decision extraction, response drafts, and connection between photos, comments, and visual options.'],
-      ['Implementation brief','Prepare a portal-style workflow brief with redaction rules, reporting needs, client-facing language, and metrics that must be verified before publication.']
+      ['Implementation brief','Prepare a portal-style workflow brief with redaction rules, reporting needs, client-facing language, and pilot measurement criteria.']
     ],
     deliverables:[
       ['Workflow package','Capture checklist, phase model, comment/response model, review states, and next-action rules.'],
@@ -509,7 +509,7 @@ const CASE_NARRATIVES={
     ]
   },
   'print-startup-direction':{
-    problemTitle:'The startup needed printable character products, not just attractive digital models.',
+    problemTitle:'The startup needed attractive characters that could also survive physical production.',
     problems:[
       ['Buyer problem','The 3D printing startup wanted different collectible characters, but early assets were inconsistent and needed heavy repair before printing.'],
       ['Production risk','A model can look good on screen while failing as a physical object because of thin parts, bad supports, hollowing issues, or non-watertight geometry.'],
@@ -529,7 +529,7 @@ const CASE_NARRATIVES={
     ]
   },
   'sculpt-to-retopo':{
-    problemTitle:'Technical character work needs visible proof, not only a polished render.',
+    problemTitle:'Technical character work needs clear inspection views alongside the polished render.',
     problems:[
       ['Buyer problem','Art directors and recruiters need to see whether the forms, edge flow, UVs, and texture prep can survive real production review.'],
       ['Presentation risk','A portfolio can look finished while hiding missing topology, unclear turns, or weak sculpt structure.'],
@@ -548,7 +548,7 @@ const CASE_NARRATIVES={
     ]
   },
   'avatar-character':{
-    problemTitle:'An avatar has to work as a character identity, not just a pretty portrait.',
+    problemTitle:'An avatar needs a recognizable identity and enough range to work beyond one portrait.',
     problems:[
       ['Buyer problem','Creators need a character that reads clearly in thumbnails, profiles, streams, and expression sets.'],
       ['Presentation risk','A single face render does not show personality range, outfit logic, expression planning, or future rig needs.'],
@@ -647,15 +647,16 @@ const CASE_NARRATIVES={
 const FINAL_CASE_STUDY_UPGRADES={
   'game-hero':{
     lead:'A game-facing fantasy warrior presentation built around fast silhouette read, costume hierarchy, material contrast, weapon scale, and clear handoff planning.',
-    whatCopy:'This case shows the character as a portfolio-ready game-facing asset: a full-body hero render, focused crops for face, costume, materials, and weapon read, plus the inspection categories needed before stronger production claims are made.',
+    whatCopy:'This case develops the character as a game-facing asset: a full-body hero render, focused crops for face, costume, materials, and weapon read, plus a build specification for the next 3D production pass.',
     details:[
       ['Silhouette read','The stance, high ponytail, red scarf, cape shape, curved sword, and plinth stage give the character a fast full-body read.'],
       ['Costume hierarchy','Bronze armor, red cloth, leather straps, belt hardware, hair, skin, and sword materials are separated clearly enough for an art-director scan.'],
       ['Presentation stage','The dark studio background and restrained stone base support scale and grounding without turning the case into environment art.'],
-      ['Handoff planning','The case identifies the next proof slots: neutral views, topology-style inspection, material organization, final render set, and delivery notes.']
+      ['Production specification','Neutral views, deformation-aware topology, material organization, final render coverage, and handoff notes define the next build pass.']
     ],
     gallery:[
       ['assets/process/game-hero/presentation-board.webp','Presentation board with the full warrior read plus face, costume, material, and weapon crops.'],
+      ['assets/process/game-hero/reconstruction-reference-v2.webp','3D reconstruction reference with consistent turnaround views, clay form study, face and hand checks, costume construction, and material targets.'],
       ['assets/process/game-hero/technical-proof.webp','Technical inspection and handoff planning board with topology-style, UV-inspired, material, and delivery panels.'],
       ['assets/process/game-hero/final-renders.webp','Final render board showing beauty, closeup, silhouette, material, and neutral inspection reads.'],
       ['assets/process/game-hero/deliverables.webp','Deliverables planning board for review views, material categories, render set, and handoff notes.'],
@@ -664,12 +665,12 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['assets/process/game-hero/weapon-silhouette.webp','Weapon and lower-silhouette crop for prop scale and pose read.']
     ],
     proof:[
-      ['Visible presentation proof','Hero render, presentation board, face crop, costume/material crop, and weapon crop show the current public asset clearly.'],
-      ['Inspection planning','Generated inspection boards show the review categories a team should check: neutral views, topology-style planning, materials, and handoff categories.'],
-      ['Technical boundary','Unity, Unreal, Marmoset, polycounts, texture sizes, actual UV layouts, rig-ready topology, and source-file claims stay out until repo evidence exists.'],
-      ['Production next step','The case is ready for stronger technical proof when actual mesh, UV, texture, and export captures are available.']
+      ['Presentation decisions','Hero render, face crop, costume hierarchy, weapon silhouette, and grounded stage define the approved character read.'],
+      ['Build specification','The reconstruction board sets neutral turnarounds, form checkpoints, hand and foot details, separated material groups, and inspection lighting for the 3D rebuild.'],
+      ['Technical scope','The public case focuses on visible character direction; engine targets, polycounts, texture sizes, and export formats are set during production scoping.'],
+      ['Next 3D pass','Rebuild the approved silhouette and costume layers, then document mesh, UV, texture, and export decisions from the production file.']
     ],
-    required:['assets/process/game-hero/technical-proof.webp','assets/process/game-hero/final-renders.webp','assets/process/game-hero/deliverables.webp']
+    required:['assets/process/game-hero/reconstruction-reference-v2.webp','assets/process/game-hero/technical-proof.webp','assets/process/game-hero/final-renders.webp','assets/process/game-hero/deliverables.webp']
   },
   'character-environment':{
     lead:'A character-first staging case that uses a restrained plinth, support props, warm lighting, and close camera crops to make the warrior feel grounded without turning the project into an environment-art showcase.',
@@ -690,9 +691,9 @@ const FINAL_CASE_STUDY_UPGRADES={
     ],
     proof:[
       ['Visible staging proof','Full staged render, presentation board, hero-stage crop, and grounding crop are present in the repo.'],
-      ['Generated process boards','Blockout, lighting, support-prop, and handoff boards clarify the staging logic without claiming source-scene files.'],
+      ['Staging development','Blockout, lighting, support-prop, and handoff boards explain the composition and scene-support decisions.'],
       ['Scale and support cues','Plinth, rocks, vessel, ground plane, cloth contact, and warm studio lighting are visible in the current images.'],
-      ['Claim boundary','This case supports character presentation, pitch renders, and portfolio staging. It does not claim full environment production or engine handoff.']
+      ['Project scope','This case owns character presentation, pitch rendering, and restrained stage direction while keeping full environment production outside the brief.']
     ],
     required:['assets/process/character-environment/blockout.webp','assets/process/character-environment/lighting-breakdown.webp','assets/process/character-environment/prop-assets.webp','assets/process/character-environment/scene-handoff.webp']
   },
@@ -708,9 +709,9 @@ const FINAL_CASE_STUDY_UPGRADES={
     gallery:[
       ['assets/process/interior-props/presentation-board.webp','Interior prop board showing shelf composition, process, materials, and closeups.'],
       ['assets/3d/interior-props/interior-props-mesh-sheet.svg','Technical mesh sheet with object-level wireframe, material reads, UV planning, and source-file package.'],
-      ['assets/process/interior-props/asset-handoff.webp','Generated asset handoff board for object groups, material families, wire-style checks, and package icons.'],
-      ['assets/process/interior-props/prop-breakdown.webp','Generated prop breakdown board separating reusable shelf, vessel, book, textile, plant, and hardware groups.'],
-      ['assets/process/interior-props/technical-proof.webp','Generated technical planning board connected to the OBJ/MTL/manifest package.'],
+      ['assets/process/interior-props/asset-handoff.webp','Asset handoff board for object groups, material families, wire-style checks, and package organization.'],
+      ['assets/process/interior-props/prop-breakdown.webp','Prop breakdown board separating reusable shelf, vessel, book, textile, plant, and hardware groups.'],
+      ['assets/process/interior-props/technical-proof.webp','Technical planning board connected to the OBJ, MTL, and manifest package.'],
       ['assets/process/interior-props/material-study.webp','Material study for brass, glass, ceramic, wood, leather, fabric, paper, labels, and finish values.'],
       ['assets/process/interior-props/material-closeups.webp','Closeup material grid for hardware, ceramics, wood carving, fabric weave, leather, paper, and metal wear.']
     ],
@@ -724,7 +725,7 @@ const FINAL_CASE_STUDY_UPGRADES={
   },
   'ai-visual-pipeline':{
     image:'assets/process/ai-visual-pipeline/workflow-board-generated.png',
-    alt:'Generated 3D visual pipeline board with cinematic reference cards, material review, and handoff packets.',
+    alt:'3D visual pipeline board with cinematic reference cards, material review, and handoff packets.',
     lead:'A 3D visual pipeline case built around turning rough references, AI-assisted exploration, material studies, and production notes into a repeatable review and handoff system.',
     whatTitle:'A reusable visual standards system for 3D production.',
     whatCopy:'This case uses the interior-props package as the visual anchor: reference control, material-library thinking, output review criteria, and organized handoff rules. The goal is not to present AI as the product, but to show how Lesly connects visual exploration to real 3D craft, material consistency, and production-ready decisions.',
@@ -743,8 +744,8 @@ const FINAL_CASE_STUDY_UPGRADES={
     proof:[
       ['3D asset anchor','The interior-props package includes source OBJ, MTL materials, a manifest, a mesh sheet, named objects, UV coordinates, and material assignments.'],
       ['Material evidence','The visible boards show carved wood, aged brass, glass, ceramics, leather, fabric, books, paper, labels, and closeup finish studies.'],
-      ['Workflow evidence','The case safely shows reference organization, material-library structure, review gates, and handoff planning without naming unverified clients, tools, or metrics.'],
-      ['Boundary','AI supports reference exploration and workflow organization; the public claim remains Lesly art direction, 3D judgment, material review, and production handoff.']
+      ['Workflow structure','The case shows reference organization, material-library structure, review gates, and production handoff planning.'],
+      ['Creative ownership','AI supports exploration and organization; Lesly owns the art direction, 3D judgment, material review, and final production decisions.']
     ],
     required:['assets/process/ai-visual-pipeline/workflow-board-generated.png','assets/process/ai-visual-pipeline/review-criteria-generated.png','assets/process/ai-visual-pipeline/material-library-generated.png','assets/process/ai-visual-pipeline/handoff-system-generated.png']
   },
@@ -766,10 +767,10 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp','Remote handoff workstation scene showing exterior renders, drawings, sample trays, export drives, and organized production materials.']
     ],
     proof:[
-      ['Visible proof','Current proof is generated remote-studio visualization material: exterior render review, portable material standards, and handoff workstation scenes, not verified software screenshots or client outcome data.'],
+      ['Direction materials','Exterior review boards, portable material standards, and the handoff workstation scene show how visual decisions are organized.'],
       ['Standards package','Reference structure, material library logic, acceptable-variation rules, review criteria, and rejection rules.'],
       ['Workflow package','Prompt/reference organization, output-log expectations, review checkpoints, training notes, and handoff requirements.'],
-      ['Boundary','AI supports visual exploration and review; it does not replace human art direction, construction decisions, or verified project management.']
+      ['Human decision point','AI supports visual exploration and review while art direction, construction choices, and project decisions remain human responsibilities.']
     ],
     required:['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp']
   },
@@ -782,7 +783,7 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['Visual evidence model','Progress photos, material references, AI visual options, comments, and status notes are organized around the client question each update needs to answer.'],
       ['Review states','Each item has a clear review role: captured, needs response, approved, blocked, ready for follow-up, or returned to the material/design library.'],
       ['Agent-assisted support','AI is framed as support for summaries, routing, missing-context flags, and response drafts while decisions stay with the team.'],
-      ['Implementation boundary','The case documents a portal-style workflow brief and review model, not a claimed finished app or verified operational result.']
+      ['Designed scope','The project delivers the portal workflow, review states, capture standards, and implementation brief that a product team can build from.']
     ],
     gallery:[
       ['assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp','Remote review-board scene showing progress-photo sequences, material options, approval markers, and exterior visualization direction.'],
@@ -793,8 +794,8 @@ const FINAL_CASE_STUDY_UPGRADES={
     proof:[
       ['Review model','Phase list, evidence tiles, client comments, response states, approval status, and next-action rules.'],
       ['Workflow brief','Capture checklist, comment model, summary requirements, redaction rules, and implementation notes.'],
-      ['Public-safe evidence needed','Redacted portal captures, before/after report samples, time logs, message counts, or approved response data before metrics are shown.'],
-      ['Boundary','AI supports visual review, summaries, and routing; it does not make construction decisions, replace project managers, or verify jobsite status.']
+      ['Measurement plan','Update completeness, response time, repeated questions, approval clarity, and rework are the signals defined for a future operational pilot.'],
+      ['Human control','AI supports visual review, summaries, and routing; construction decisions and jobsite verification stay with the responsible team.']
     ],
     required:['assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp','assets/process/construction-client-progress-workflow/summary-review-scene-20260609.webp','assets/process/construction-client-progress-workflow/handoff-package-scene-20260609.webp']
   },
@@ -802,12 +803,12 @@ const FINAL_CASE_STUDY_UPGRADES={
     image:'assets/process/print-startup-direction/printability-board.webp',
     alt:'3D print character system board with mascot, printability inspection, family variations, and handoff icons.',
     lead:'A 3D print character system case showing how mascot appeal, collectible shape language, printability review, and handoff planning become a repeatable product direction.',
-    whatCopy:'This case uses the fox mascot as the visual anchor for a small-batch character product system: consistent proportions, pose and accessory rules, base options, printability risk review, and source-package expectations before production proof is claimed.',
+    whatCopy:'This case uses the fox mascot as the visual anchor for a small-batch character product system: consistent proportions, pose and accessory rules, base options, printability risk review, and a clear production brief for Lesly’s next 3D pass.',
     details:[
       ['Product family','The mascot board establishes a repeatable head shape, ears, scarf, staff, base style, and rounded collectible proportions.'],
-      ['Printability planning','The generated board calls out broad support-risk zones, fragile details, base stability, and inspection views without pretending to be a real slicer screenshot.'],
+      ['Printability planning','The board identifies support-risk zones, fragile details, base stability, and the inspection views required before a test print.'],
       ['System direction','Character-family, pose, base, accessory, and colorway decisions are organized so future figures can follow the same rules.'],
-      ['Proof boundary','Real wall thickness, watertight checks, slicer settings, support tests, and test-print photos still need actual production evidence before public result claims.']
+      ['Production checkpoint','Wall thickness, watertight geometry, slicer settings, support tests, and test-print photos become the acceptance evidence during physical production.']
     ],
     gallery:[
       ['assets/process/print-startup-direction/printability-board.webp','Printability planning board for mascot proportions, inspection views, support-risk zones, and base logic.'],
@@ -817,10 +818,10 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['assets/process/mascot-character/pose-panels.webp','Pose and expression panels used to explain repeatable character-family direction.']
     ],
     proof:[
-      ['Visible direction proof','Mascot presentation, pose panels, generated printability board, family board, and handoff board are available.'],
-      ['Print planning proof','The case shows support-risk planning, base logic, accessory constraints, and inspection categories as direction material.'],
-      ['Production proof needed','Real slicer captures, wall-thickness checks, hollowing/drainage notes, support tests, repair logs, and test-print photos are not claimed.'],
-      ['Boundary','This is character product direction and printability planning, not verified manufactured output.']
+      ['Character system','Mascot presentation, pose panels, printability board, family board, and handoff board establish a consistent collectible direction.'],
+      ['Print planning','Support-risk review, base logic, accessory constraints, and inspection categories turn the design into a practical build brief.'],
+      ['Production acceptance','Slicer captures, wall-thickness checks, hollowing and drainage notes, support tests, repair logs, and test-print photos define the next acceptance gate.'],
+      ['Project scope','This phase delivers character product direction and printability planning through a production-ready specification.']
     ],
     required:['assets/process/print-startup-direction/printability-board.webp','assets/process/print-startup-direction/character-family-system.webp','assets/process/print-startup-direction/handoff-package.webp']
   },
@@ -836,15 +837,15 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['assets/process/sculpt-to-retopo/retopo-panel.webp','Retopology-style crop for mesh structure, edge-flow review, and technical notes.']
     ],
     proof:[
-      ['Visible process proof','Presentation board, sculpt face crop, retopo-style panel, turnaround strip, and generated process boards are available.'],
-      ['Inspection planning','The generated boards show sculpt, turnaround, topology-style, UV-inspired, and bake/material review categories.'],
-      ['Claim boundary','Actual polycounts, source topology, production UVs, bake maps, and tool screenshots are not claimed without source evidence.'],
-      ['Review value','The case demonstrates how Lesly structures technical review material for art-director inspection.']
+      ['Form development','The presentation board, sculpt face crop, retopo study, turnaround strip, and process boards trace the character from primary forms to inspection.'],
+      ['Retopology brief','The boards define deformation zones, silhouette retention, density transitions, UV groups, and bake/material review categories.'],
+      ['Production checkpoint','Polycount, final edge flow, packed UVs, bake maps, and tool captures are recorded during the production rebuild.'],
+      ['Art-director read','Neutral views and focused closeups make form, topology intent, and material planning easy to inspect.']
     ],
     required:['assets/process/sculpt-to-retopo/sculpt-model.webp','assets/process/sculpt-to-retopo/technical-proof.webp','assets/process/sculpt-to-retopo/final-renders.webp']
   },
   'avatar-character':{
-    lead:'A creator-facing avatar case focused on thumbnail face read, expression range, outfit personality, and rig-readiness planning without claiming a finished rig.',
+    lead:'A creator-facing avatar case focused on thumbnail face read, expression range, outfit personality, and a clear rig-readiness specification.',
     whatCopy:'This page frames the avatar as a character identity system: portrait appeal, expression planning, hair and costume detail, material accents, mouth-shape direction, and delivery notes for creator or profile use.',
     gallery:[
       ['assets/process/avatar-character/hero.webp','Avatar hero board for portrait read, expression charm, material accents, and handoff planning.'],
@@ -855,16 +856,16 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['assets/process/avatar-character/expression-panels.webp','Expression panel crop for direction and future rig or blendshape notes.']
     ],
     proof:[
-      ['Visible avatar proof','Portrait board, expression panels, hair/costume crop, and generated expression and deliverable boards are available.'],
-      ['Rig-readiness planning','Face control dots, mouth-shape thumbnails, turnarounds, and expression grids are planning visuals, not proof of a working rig.'],
-      ['Creator use','The case supports profile, social, streamer, and avatar identity direction where scoped.'],
-      ['Claim boundary','VRM, live rigging, blendshape lists, visemes, platform exports, and tracking tests need real proof before public claims.']
+      ['Identity system','Portrait board, expression panels, hair and costume crop, and delivery boards establish a recognizable creator-facing character.'],
+      ['Rig-readiness brief','Face-control zones, mouth shapes, turnarounds, and expression grids define what the production rig must support.'],
+      ['Creator use','The visual system is designed for profile, social, streamer, and avatar identity applications.'],
+      ['Production acceptance','Blendshapes, visemes, platform exports, and tracking tests are validated during rigging and integration.']
     ],
     required:['assets/process/avatar-character/hero.webp','assets/process/avatar-character/expression-sheet.webp','assets/process/avatar-character/technical-proof.webp','assets/process/avatar-character/deliverables.webp']
   },
   'mascot-character':{
     lead:'A mascot system case for product, startup, creator, or brand use, centered on recognizable shape language, pose range, palette, and reusable handoff planning.',
-    whatCopy:'This project treats the mascot as a repeatable character system: hero appeal, expression and pose set, color and material rules, front/side/back planning, and delivery boards without inventing a brand or client.',
+    whatCopy:'This project treats the mascot as a repeatable character system: hero appeal, expression and pose set, color and material rules, front/side/back planning, and a flexible delivery system that can adapt to different brand contexts.',
     gallery:[
       ['assets/process/mascot-character/hero.webp','Mascot hero board for appeal read, color/material swatches, pose thumbnails, and handoff planning.'],
       ['assets/process/mascot-character/pose-expression-set.webp','Pose and expression system board showing mascot variations, palette, and repeatable character reads.'],
@@ -874,10 +875,10 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['assets/process/mascot-character/pose-panels.webp','Pose panel crop for gesture direction and future pose-pack detail.']
     ],
     proof:[
-      ['Visible mascot proof','Presentation board, appeal crop, pose panels, material palette crop, and generated system boards are available.'],
+      ['Character system','Presentation board, appeal crop, pose panels, material palette, and delivery boards establish the mascot family.'],
       ['System planning','The case shows pose range, expression direction, palette, shape language, and handoff categories.'],
-      ['Brand boundary','No invented brand names, logos, campaign metrics, testimonials, or client claims are used.'],
-      ['Production proof needed','Actual source model, UVs, topology, rig, and export files need repo evidence before technical claims are added.']
+      ['Brand flexibility','The neutral system can be adapted to a startup, product, creator, or education brand without forcing an invented identity.'],
+      ['Production acceptance','The source model, UVs, topology, rig, exports, and usage mockups are checked during the 3D build and brand application phase.']
     ],
     required:['assets/process/mascot-character/hero.webp','assets/process/mascot-character/pose-expression-set.webp','assets/process/mascot-character/technical-proof.webp','assets/process/mascot-character/deliverables.webp']
   },
@@ -893,10 +894,10 @@ const FINAL_CASE_STUDY_UPGRADES={
       ['assets/process/outfits-accessories/trim-materials.webp','Trim and material crop for fabric, belt, metal, and embroidery direction.']
     ],
     proof:[
-      ['Visible outfit proof','Presentation board, front/back silhouette, trim/material crop, prop/accessory crop, and generated proof boards are available.'],
-      ['Material proof planning','Fabric, leather, metal, trim, staff, pouch, boot, and hardware categories are visually separated for review.'],
-      ['Variation planning','The case supports colorway, skin, prop, and accessory variation discussions where scoped.'],
-      ['Claim boundary','Platform constraints, exported files, actual UVs, texture maps, and mesh proof are not claimed without repo evidence.']
+      ['Costume system','Presentation board, front/back silhouette, trim and material crops, and accessory boards establish the outfit hierarchy.'],
+      ['Material specification','Fabric, leather, metal, trim, staff, pouch, boot, and hardware categories are visually separated for production review.'],
+      ['Variation planning','Colorway, skin, prop, and accessory variants can be scoped from the same approved base design.'],
+      ['Production acceptance','Platform constraints, exports, UVs, texture maps, and garment mesh checks are resolved during the 3D build.']
     ],
     required:['assets/process/outfits-accessories/hero.webp','assets/process/outfits-accessories/material-closeups.webp','assets/process/outfits-accessories/technical-proof.webp','assets/process/outfits-accessories/deliverables.webp']
   },
@@ -906,16 +907,16 @@ const FINAL_CASE_STUDY_UPGRADES={
     whatCopy:'This project supports the core concept-to-3D offer: starting input, design progression, sculpt/model planning, final character read, technical inspection categories, and deliverables that make the transformation understandable to a buyer or recruiter.',
     gallery:[
       ['assets/process/pbr-texturing/presentation-board.webp','Board for the concept-to-character presentation flow.'],
-      ['assets/process/concept-to-character/starting-point.webp','Generated starting-point board for rough sketch, visual direction, and early 3D planning.'],
-      ['assets/process/concept-to-character/sculpt-model.webp','Generated sculpt/model planning board for broad forms, refined character read, and inspection panels.'],
-      ['assets/process/concept-to-character/technical-proof.webp','Generated technical planning board for topology-style, UV-inspired, material, and handoff categories.'],
-      ['assets/process/concept-to-character/final-renders.webp','Generated final render board for sketch-to-final transformation, crops, materials, and delivery planning.'],
-      ['assets/process/concept-to-character/deliverables.webp','Generated deliverables board for final renders, review views, material notes, and handoff icons.']
+      ['assets/process/concept-to-character/starting-point.webp','Starting-point board for rough sketch, visual direction, and early 3D planning.'],
+      ['assets/process/concept-to-character/sculpt-model.webp','Sculpt and model board for broad forms, refined character read, and inspection panels.'],
+      ['assets/process/concept-to-character/technical-proof.webp','Technical planning board for topology, UV, material, and handoff categories.'],
+      ['assets/process/concept-to-character/final-renders.webp','Final render board for sketch-to-character transformation, crops, materials, and delivery planning.'],
+      ['assets/process/concept-to-character/deliverables.webp','Deliverables board for final renders, review views, material notes, and handoff organization.']
     ],
     proof:[
-      ['Visible transformation proof','Starting sketch crop, design progression, final character read, presentation board, and generated concept-to-character boards are available.'],
+      ['Transformation story','Starting sketch, design progression, final character read, and presentation boards make the evolution easy to follow.'],
       ['Production planning','The case shows the steps a buyer expects: input review, silhouette, sculpt/model planning, material categories, technical inspection, and final presentation.'],
-      ['Claim boundary','Actual source files, UVs, bake maps, texture maps, engine integration, and export formats are only named when scoped or backed by repo evidence.'],
+      ['Production specification','Source-file structure, UVs, bake maps, textures, engine needs, and export formats are resolved against the final use case.'],
       ['Buyer value','The project makes the path from rough idea to polished 3D character clear enough to support project inquiries.']
     ],
     required:['assets/process/concept-to-character/starting-point.webp','assets/process/concept-to-character/sculpt-model.webp','assets/process/concept-to-character/technical-proof.webp','assets/process/concept-to-character/final-renders.webp','assets/process/concept-to-character/deliverables.webp']
@@ -929,8 +930,8 @@ const FINAL_NARRATIVE_UPGRADES={
   'game-hero':{
     deliverables:[
       ['Presentation set','Hero render, presentation board, face read, costume/material crop, weapon silhouette crop, and short project summary.'],
-      ['Case-study proof set','Technical planning board, final render board, and deliverables board in assets/process/game-hero/.'],
-      ['Handoff notes','Intended use, required views, material categories, public-sharing restrictions, and confirmed technical requirements without inventing file formats or engine targets.']
+      ['Build specification','Technical planning board, final render board, and delivery structure for the next 3D production pass.'],
+      ['Handoff notes','Intended use, required views, material categories, sharing restrictions, and technical requirements agreed during scoping.']
     ]
   },
   'character-environment':{
@@ -951,7 +952,7 @@ const FINAL_NARRATIVE_UPGRADES={
     problemTitle:'A team needs repeatable visual standards before AI-assisted outputs can guide 3D production.',
     problems:[
       ['Buyer problem','References, AI-assisted exploration, material studies, and production notes can scatter quickly unless the team has review rules.'],
-      ['Workflow risk','A generated image can look useful while failing material consistency, geometry, scale, lighting, or real production handoff.'],
+      ['Workflow risk','A visual exploration can look persuasive while failing material consistency, geometry, scale, lighting, or production handoff.'],
       ['Solved direction','The case organizes references, material standards, review criteria, rejection rules, and handoff categories around real 3D judgment.']
     ],
     process:[
@@ -970,7 +971,7 @@ const FINAL_NARRATIVE_UPGRADES={
     deliverables:[
       ['Direction package','Workflow map, visual standards, material-library taxonomy, review criteria, and controlled-generation rules.'],
       ['Review package','Geometry, material, lighting, and client-readiness checks for judging AI-assisted construction visuals before they are shared.'],
-      ['Handoff package','Developer-ready requirements, output-log rules, training notes, redaction boundaries, and proof needed before naming tools, metrics, or client facts publicly.']
+      ['Handoff package','Developer-ready requirements, output-log rules, training notes, redaction boundaries, and measurement criteria for a controlled implementation.']
     ]
   },
   'construction-client-progress-workflow':{
@@ -982,44 +983,44 @@ const FINAL_NARRATIVE_UPGRADES={
   },
   'print-startup-direction':{
     deliverables:[
-      ['Design package','Character family boards, style rules, pose/base standards, accessory constraints, and agent/review instructions where scoped.'],
-      ['Print planning package','Printability board, support-risk review, base logic, handoff package board, and QA checklist for future production evidence.'],
-      ['Proof needed','Slicer captures, wall-thickness notes, repair logs, successful test-print photos, and approved startup outcome data before result claims are shown.']
+      ['Design package','Character family boards, style rules, pose and base standards, accessory constraints, and review instructions.'],
+      ['Print planning package','Printability board, support-risk review, base logic, handoff package board, and QA checklist for the production pass.'],
+      ['Production acceptance','Slicer captures, wall-thickness notes, repair logs, and test-print photos document the move from direction into physical output.']
     ]
   },
   'sculpt-to-retopo':{
     deliverables:[
       ['Presentation assets','Sculpt board, face crop, retopo-style panel, turnaround strip, final render board, and process summary.'],
-      ['Inspection package','Generated sculpt/model board, topology-style board, UV-inspired planning, bake/material tiles, and review categories.'],
-      ['Proof needed','Actual source topology, polycount, UV layout, bake maps, texture maps, and tool screenshots before precise technical claims are added.']
+      ['Inspection package','Sculpt and model board, topology study, UV planning, bake and material tiles, and review categories.'],
+      ['Production acceptance','Source topology, polycount, UV layout, bake maps, texture maps, and tool captures document the finished rebuild.']
     ]
   },
   'avatar-character':{
     deliverables:[
       ['Presentation assets','Avatar hero board, expression sheet board, portrait crop, expression panels, hair/costume crop, and creator-facing summary.'],
       ['Readiness package','Expression planning, mouth-shape direction, face-control planning, outfit/material notes, and turnaround needs.'],
-      ['Proof needed','Working rig, blendshapes, visemes, VRM/FBX/BLEND files, and platform tests before live avatar claims are made.']
+      ['Production acceptance','Working rig, blendshapes, visemes, export files, and platform tests complete the live-avatar package.']
     ]
   },
   'mascot-character':{
     deliverables:[
       ['Presentation assets','Mascot hero board, pose/expression board, appeal crop, pose panels, material palette crop, and brand-character summary.'],
       ['System package','Pose range, expression direction, colorway/material rules, turnaround planning, render-pack expectations, and handoff icons.'],
-      ['Proof needed','Source model, UVs, topology, rig, exports, usage mockups, and client/brand facts before technical or brand claims are added.']
+      ['Production acceptance','Source model, UVs, topology, rig, exports, and usage mockups complete the 3D and brand application phase.']
     ]
   },
   'outfits-accessories':{
     deliverables:[
       ['Presentation assets','Outfit hero board, material closeup board, front/back silhouette crop, trim/material crop, prop/accessory crop, and variation notes.'],
       ['Production planning','Garment and accessory categories, UV-inspired tiles, material groups, prop details, colorway planning, and export categories.'],
-      ['Proof needed','Actual garment mesh, accessory mesh, UV layout, texture maps, material sheets, and platform exports before precise technical claims are added.']
+      ['Production acceptance','Garment and accessory meshes, UV layout, texture maps, material sheets, and platform exports complete the asset package.']
     ]
   },
   'pbr-texturing':{
     deliverables:[
-      ['Presentation assets','Starting sketch crop, design progression crop, final character read, presentation board, generated render boards, and project summary.'],
+      ['Presentation assets','Starting sketch, design progression, final character read, presentation board, render boards, and project summary.'],
       ['Production planning','Sculpt/model board, technical planning board, material categories, review views, final render board, and handoff board.'],
-      ['Client notes','Use case, reference rights, style decisions, scope assumptions, and confirmed deliverables without inventing source-file or engine claims.']
+      ['Client notes','Use case, reference rights, style decisions, scope assumptions, and confirmed deliverables for the approved production path.']
     ]
   }
 };
@@ -1052,12 +1053,15 @@ function renderCards(selector,items){
 function renderGallery(study){
   const node=document.querySelector('[data-case-gallery]');
   if(!node)return;
-  node.innerHTML=study.gallery.map(([src,caption],index)=>`
-    <figure class="${index===0?'is-wide':''}">
-      <img src="${src}" width="${index===0?'1400':'900'}" height="${index===0?'900':'675'}" alt="${caption}">
+  node.innerHTML=study.gallery.map(([src,caption],index)=>{
+    const isReconstruction=src.includes('reconstruction-reference');
+    const isWide=index===0||isReconstruction;
+    return `
+    <figure class="${isWide?'is-wide':''}${isReconstruction?' is-reconstruction':''}">
+      <img src="${src}" width="${isReconstruction?'1672':isWide?'1400':'900'}" height="${isReconstruction?'941':isWide?'900':'675'}" alt="${caption}">
       <figcaption>${caption}</figcaption>
-    </figure>
-  `).join('');
+    </figure>`;
+  }).join('');
 }
 
 function renderRelated(study){
@@ -1077,8 +1081,8 @@ function renderRelated(study){
 }
 
 function renderStudy(study){
+  document.title=`${study.title} | Lesly`;
   const narrative=CASE_NARRATIVES[study.id]||CASE_NARRATIVES['game-hero'];
-  document.title=`${study.title} · Lesly`;
   const hero=document.querySelector('[data-case-hero]');
   if(hero){
     hero.src=study.image;

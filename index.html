@@ -6,14 +6,14 @@
   <meta name="description" content="Lesly is a 3D Character Artist and visual pipeline builder creating production-ready characters, client approval visuals, and 3D workflow systems from sketches, AI references, briefs, and technical inputs." />
   <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)" />
-  <title>Lesly — 3D Character Artist</title>
+  <title>Lesly | 3D Character Artist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/brand/lesly-luxury-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/brand/lesly-luxury-icon.png">
   <link rel="stylesheet" href="styles.css?v=section-title-fit-2-20260609" />
-  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');</script>
+  <script>document.documentElement.classList.add('js');document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');</script>
 </head>
 <body>
 
@@ -22,11 +22,11 @@
   <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="#top"><span class="mark" aria-hidden="true"><img src="assets/brand/lesly-luxury-icon.png?v=luxury-png-20260609" width="72" height="72" alt=""></span><em>Lesly</em></a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
       <div class="header-actions">
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">☀</button>
       </div>
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" id="primary-nav" aria-label="Primary">
         <a href="#work">Case Studies</a>
         <a href="#services">Services</a>
         <a href="#process">Process</a>
@@ -135,25 +135,26 @@
         <p class="eyebrow">Case Studies</p>
         <h2>3D character and production pipeline case studies.</h2>
         <div class="ornament" aria-hidden="true"><span class="o-dot"></span><span class="o-dia"></span><span class="o-dot"></span></div>
-        <p class="lead">Each board represents a real public portfolio path: concept to 3D, game-ready character, avatar, mascot, outfit, staging, technical process, or visual workflow. Open a project to see the story, production path, craft checks, and deliverables.</p>
+        <p class="lead">Start with six character-focused projects, then open the wider collection for staging, props, print planning, and visual workflow systems. Every case study connects the finished presentation to the decisions that shaped it.</p>
 
-        <div class="filters" role="tablist" aria-label="Work filters">
-          <button data-filter="all" class="active">All</button>
-          <button data-filter="game">Game</button>
-          <button data-filter="staging">Staging</button>
-          <button data-filter="props">Props</button>
-          <button data-filter="avatar">Avatar</button>
-          <button data-filter="mascot">Mascot</button>
-          <button data-filter="outfit">Outfits</button>
-          <button data-filter="print">Print</button>
-          <button data-filter="process">Process</button>
-          <button data-filter="workflow">Workflow</button>
+        <div class="filters" aria-label="Filter case studies">
+          <button type="button" data-filter="all" class="active" aria-pressed="true">Selected</button>
+          <button type="button" data-filter="game" aria-pressed="false">Game</button>
+          <button type="button" data-filter="staging" aria-pressed="false">Staging</button>
+          <button type="button" data-filter="props" aria-pressed="false">Props</button>
+          <button type="button" data-filter="avatar" aria-pressed="false">Avatar</button>
+          <button type="button" data-filter="mascot" aria-pressed="false">Mascot</button>
+          <button type="button" data-filter="outfit" aria-pressed="false">Outfits</button>
+          <button type="button" data-filter="print" aria-pressed="false">Print</button>
+          <button type="button" data-filter="process" aria-pressed="false">Process</button>
+          <button type="button" data-filter="workflow" aria-pressed="false">Workflow</button>
         </div>
+        <p class="work-status" data-work-status aria-live="polite">Showing six selected character projects.</p>
 
-        <div class="work-grid">
-          <a class="work-card reveal" data-category="game process" href="case-study.html?id=pbr-texturing">
+        <div class="work-grid" id="case-study-grid">
+          <a class="work-card reveal" data-priority="featured" data-category="game process" href="case-study.html?id=pbr-texturing">
             <div class="thumb">
-              <img src="assets/portfolio/work-concept-to-3d.webp" width="1200" height="900" alt="Concept-to-character project board showing sketch, refinement, and final render." loading="lazy">
+              <img src="assets/portfolio/work-concept-to-3d.webp" width="1200" height="900" alt="Concept-to-character project board showing sketch, refinement, and final render." loading="eager">
               <span class="work-tag" aria-hidden="true">Concept</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -164,9 +165,9 @@
             <p class="meta">Concept to 3D · Character direction</p>
             <p>Turns an early sketch, reference image, or moodboard into a polished character direction.</p>
           </a>
-          <a class="work-card reveal" data-category="game process" href="case-study.html?id=game-hero">
+          <a class="work-card reveal" data-priority="featured" data-category="game process" href="case-study.html?id=game-hero">
             <div class="thumb">
-              <img src="assets/portfolio/work-game-ready-character.webp" width="1200" height="900" alt="Stylized game character project render on a dark studio pedestal." loading="lazy">
+              <img src="assets/portfolio/work-game-ready-character.webp" width="1200" height="900" alt="Stylized game character project render on a dark studio pedestal." loading="eager">
               <span class="work-tag" aria-hidden="true">Gaming Character</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -177,7 +178,7 @@
             <p class="meta">Game · Character asset</p>
             <p>A full-body game-character presentation focused on silhouette, costume hierarchy, material read, and delivery planning.</p>
           </a>
-          <a class="work-card reveal" data-category="staging game process" href="case-study.html?id=character-environment">
+          <a class="work-card reveal" data-priority="extended" data-category="staging game process" href="case-study.html?id=character-environment">
             <div class="thumb">
               <img src="assets/portfolio/work-character-environment.webp?v=staging-thumb-20260608" width="900" height="675" alt="Character staging crop showing plinth, ground contact, supporting prop, cloth, and scale context." loading="lazy">
               <span class="work-tag" aria-hidden="true">Staging</span>
@@ -190,7 +191,7 @@
             <p class="meta">Staging · Character context</p>
             <p>A focused presentation for grounding the character with a plinth, scale cues, restrained props, lighting, and camera context.</p>
           </a>
-          <a class="work-card reveal" data-category="props process" href="case-study.html?id=interior-props">
+          <a class="work-card reveal" data-priority="extended" data-category="props process" href="case-study.html?id=interior-props">
             <div class="thumb">
               <img src="assets/portfolio/work-interior-props.webp" width="1448" height="1086" alt="Interior prop set with carved shelves, ceramics, glass, brass, books, textiles, and warm lighting." loading="lazy">
               <span class="work-tag" aria-hidden="true">Props</span>
@@ -203,9 +204,9 @@
             <p class="meta">Props · Material study</p>
             <p>An ornate prop-art package with reusable object groups, material studies, source mesh evidence, and handoff notes.</p>
           </a>
-          <a class="work-card reveal" data-category="process" href="case-study.html?id=sculpt-to-retopo">
+          <a class="work-card reveal" data-priority="featured" data-category="process" href="case-study.html?id=sculpt-to-retopo">
             <div class="thumb">
-              <img src="assets/portfolio/work-sculpt-retopo.webp" width="1200" height="900" alt="Sculpting and retopology project board with character studies and mesh-style panels." loading="lazy">
+              <img src="assets/portfolio/work-sculpt-retopo.webp" width="1200" height="900" alt="Sculpting and retopology project board with character studies and mesh-style panels." loading="eager">
               <span class="work-tag" aria-hidden="true">Process</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -216,7 +217,7 @@
             <p class="meta">Process · Sculpt/retopo</p>
             <p>A technical presentation format for showing sculpt forms, retopology direction, turnaround views, and inspection material.</p>
           </a>
-          <a class="work-card reveal" data-category="workflow process" href="case-study.html?id=santa-cruz-ai-visual-pipeline">
+          <a class="work-card reveal" data-priority="extended" data-category="workflow process" href="case-study.html?id=santa-cruz-ai-visual-pipeline">
             <div class="thumb">
               <img src="assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp" width="1672" height="941" alt="Remote production studio desk with exterior residential visualization, material samples, drawings, and blurred local pipeline monitor." loading="lazy">
               <span class="work-tag" aria-hidden="true">Workflow</span>
@@ -229,9 +230,9 @@
             <p class="meta">Visual workflow · Construction</p>
             <p>A controlled local visualization workflow for turning references, material direction, AI images, and review needs into usable production decisions.</p>
           </a>
-          <a class="work-card reveal" data-category="workflow process props" href="case-study.html?id=ai-visual-pipeline">
+          <a class="work-card reveal" data-priority="extended" data-category="workflow process props" href="case-study.html?id=ai-visual-pipeline">
             <div class="thumb">
-              <img src="assets/process/ai-visual-pipeline/workflow-board-generated.png" width="1672" height="941" alt="Generated 3D visual pipeline board with reference cards, material review, and handoff packets." loading="lazy">
+              <img src="assets/process/ai-visual-pipeline/workflow-board-generated.png" width="1672" height="941" alt="3D visual pipeline board with reference cards, material review, and handoff packets." loading="lazy">
               <span class="work-tag" aria-hidden="true">Pipeline</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -242,7 +243,7 @@
             <p class="meta">Workflow · Material standards</p>
             <p>A reusable visual standards system for references, material review, AI-assisted exploration, and production handoff.</p>
           </a>
-          <a class="work-card reveal" data-category="workflow process" href="case-study.html?id=construction-client-progress-workflow">
+          <a class="work-card reveal" data-priority="extended" data-category="workflow process" href="case-study.html?id=construction-client-progress-workflow">
             <div class="thumb">
               <img src="assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp" width="1600" height="900" alt="Remote review-board scene with progress-photo sets, material samples, exterior visualization options, and approval markers." loading="lazy">
               <span class="work-tag" aria-hidden="true">Workflow</span>
@@ -255,9 +256,9 @@
             <p class="meta">Client review · Agentic workflow</p>
             <p>A progress-review system that connects site photos, homeowner comments, AI visual options, response states, and next actions.</p>
           </a>
-          <a class="work-card reveal" data-category="avatar" href="case-study.html?id=avatar-character">
+          <a class="work-card reveal" data-priority="featured" data-category="avatar" href="case-study.html?id=avatar-character">
             <div class="thumb">
-              <img src="assets/portfolio/work-avatar-character.webp" width="1200" height="900" alt="Avatar character project board with expression variations." loading="lazy">
+              <img src="assets/portfolio/work-avatar-character.webp" width="1200" height="900" alt="Avatar character project board with expression variations." loading="eager">
               <span class="work-tag" aria-hidden="true">Avatar</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -268,9 +269,9 @@
             <p class="meta">Avatar · Expression set</p>
             <p>An avatar character presentation with face read, expression range, costume detail, and creator-facing thumbnails.</p>
           </a>
-          <a class="work-card reveal" data-category="mascot" href="case-study.html?id=mascot-character">
+          <a class="work-card reveal" data-priority="featured" data-category="mascot" href="case-study.html?id=mascot-character">
             <div class="thumb">
-              <img src="assets/portfolio/work-mascot-character.webp" width="1200" height="900" alt="Mascot character project board with pose and expression variations." loading="lazy">
+              <img src="assets/portfolio/work-mascot-character.webp" width="1200" height="900" alt="Mascot character project board with pose and expression variations." loading="eager">
               <span class="work-tag" aria-hidden="true">Brand Mascot</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -281,7 +282,7 @@
             <p class="meta">Mascot · Brand character</p>
             <p>A brand mascot presentation for product, startup, creator, education, and campaign character use.</p>
           </a>
-          <a class="work-card reveal" data-category="mascot print process" href="case-study.html?id=print-startup-direction">
+          <a class="work-card reveal" data-priority="extended" data-category="mascot print process" href="case-study.html?id=print-startup-direction">
             <div class="thumb">
               <img src="assets/process/print-startup-direction/printability-board.webp" width="1600" height="900" alt="3D print mascot planning board with printability inspection, family direction, and handoff icons." loading="lazy">
               <span class="work-tag" aria-hidden="true">3D Print</span>
@@ -294,9 +295,9 @@
             <p class="meta">Product direction · Print planning</p>
             <p>A collectible mascot direction case for shape language, print-readiness planning, base logic, and handoff requirements.</p>
           </a>
-          <a class="work-card reveal" data-category="outfit" href="case-study.html?id=outfits-accessories">
+          <a class="work-card reveal" data-priority="featured" data-category="outfit" href="case-study.html?id=outfits-accessories">
             <div class="thumb">
-              <img src="assets/portfolio/work-outfits-accessories.webp" width="1200" height="900" alt="Outfit and accessory project board with material closeups." loading="lazy">
+              <img src="assets/portfolio/work-outfits-accessories.webp" width="1200" height="900" alt="Outfit and accessory project board with material closeups." loading="eager">
               <span class="work-tag" aria-hidden="true">Outfit</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -307,6 +308,9 @@
             <p class="meta">Outfits · Accessories</p>
             <p>A costume and accessory presentation built around outfit silhouette, material closeups, prop details, and variation options.</p>
           </a>
+        </div>
+        <div class="work-more">
+          <button class="btn" type="button" data-work-more aria-expanded="false" aria-controls="case-study-grid">View all 12 projects</button>
         </div>
       </div>
     </section>
@@ -342,8 +346,8 @@
           <div class="about-bio">
             <p>Her painting background gives the work a strong sense of color, form, anatomy, silhouette, costume language, and material separation.</p>
             <p>The 3D pipeline covers character design, sculpting, modeling, retopology, UVs, texturing, materials, final renders, source files, exports, and handoff notes.</p>
-            <div class="about-tools">
-              <span>Blender</span><span>ZBrush</span><span>Substance Painter</span><span>Marmoset</span><span>Maya</span><span>Photoshop</span><span>Procreate</span><span>Unity / Unreal</span>
+            <div class="about-tools" aria-label="Creative tools">
+              <span>Blender</span><span>ZBrush</span><span>Substance Painter</span><span>Marmoset</span><span>Maya</span><span>Photoshop</span><span>Procreate</span>
             </div>
           </div>
         </div>
@@ -374,7 +378,7 @@
       <div class="container">
         <p class="eyebrow">Start a project</p>
         <h2>Tell Lesly about your character, avatar, mascot, outfit, prop set, or 3D asset.</h2>
-        <p class="lead">Share the character idea, references, use case, timeline, and required deliverables. Include sketches, moodboards, AI references, written briefs, or existing character concepts if available.</p>
+        <p class="lead">Share the character idea, references, use case, timeline, and required deliverables. The form turns those details into a concise inquiry brief you can copy without sending or storing your information.</p>
         <form class="contact-form" novalidate>
           <div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
@@ -407,15 +411,15 @@
             <select id="budget" name="budget">
               <option>Not sure yet</option>
               <option>Under $500</option>
-              <option>$500–$1,500</option>
-              <option>$1,500–$3,000</option>
-              <option>$3,000–$7,500</option>
+              <option>$500-$1,500</option>
+              <option>$1,500-$3,000</option>
+              <option>$3,000-$7,500</option>
               <option>$7,500+</option>
             </select>
           </div>
           <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-          <div class="submit-row"><button class="btn btn-primary" type="submit" disabled>Copy Project Brief</button></div>
-          <p class="form-note" aria-live="polite">Fill the brief and copy it into your email or message thread with Lesly.</p>
+          <div class="submit-row"><button class="btn btn-primary" type="submit" disabled>Copy Inquiry Brief</button></div>
+          <p class="form-note" aria-live="polite">Nothing is submitted or stored. Complete the required fields to copy your inquiry.</p>
         </form>
       </div>
     </section>

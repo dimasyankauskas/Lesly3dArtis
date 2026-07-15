@@ -1,11 +1,13 @@
 const toggle=document.querySelector('.nav-toggle');
 const nav=document.querySelector('.nav');
 
-const setNavOpen=(open)=>{
+const setNavOpen=(open,restoreFocus=false)=>{
   nav?.classList.toggle('open',open);
   document.body.classList.toggle('nav-open',open);
   toggle?.setAttribute('aria-expanded',String(open));
   toggle?.setAttribute('aria-label',open?'Close menu':'Open menu');
+  if(open)nav?.querySelector('a')?.focus();
+  if(!open&&restoreFocus)toggle?.focus();
 };
 
 toggle?.addEventListener('click',()=>{
@@ -16,12 +18,58 @@ document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{
   setNavOpen(false);
 }));
 
+const brand=document.querySelector('.brand');
+
+brand?.addEventListener('click',event=>{
+  setNavOpen(false);
+  if(brand.getAttribute('href')!=='#top')return;
+  event.preventDefault();
+  window.history.replaceState(null,'','#top');
+  resetTopFragmentPosition();
+});
+
+let topResetTimer;
+
+const resetTopFragmentPosition=()=>{
+  if(window.location.hash!=='#top')return;
+  const applyTopPosition=()=>{
+    document.documentElement.style.scrollBehavior='auto';
+    window.scrollTo({top:0,left:0,behavior:'instant'});
+    document.documentElement.scrollTop=0;
+    document.body.scrollTop=0;
+  };
+  applyTopPosition();
+  window.clearTimeout(topResetTimer);
+  topResetTimer=window.setTimeout(()=>{
+    applyTopPosition();
+    window.requestAnimationFrame(()=>{
+      document.documentElement.style.removeProperty('scroll-behavior');
+    });
+  },80);
+};
+
+resetTopFragmentPosition();
+window.addEventListener('pageshow',resetTopFragmentPosition);
+window.addEventListener('hashchange',resetTopFragmentPosition);
+
 nav?.addEventListener('click',event=>{
   if(event.target===nav)setNavOpen(false);
 });
 
 document.addEventListener('keydown',event=>{
-  if(event.key==='Escape')setNavOpen(false);
+  if(event.key==='Escape'&&nav?.classList.contains('open'))setNavOpen(false,true);
+  if(event.key==='Tab'&&nav?.classList.contains('open')){
+    const focusable=[toggle,...nav.querySelectorAll('a,button')].filter(Boolean);
+    const first=focusable[0];
+    const last=focusable[focusable.length-1];
+    if(event.shiftKey&&document.activeElement===first){
+      event.preventDefault();
+      last?.focus();
+    }else if(!event.shiftKey&&document.activeElement===last){
+      event.preventDefault();
+      first?.focus();
+    }
+  }
 });
 
 window.addEventListener('resize',()=>{
@@ -50,23 +98,66 @@ themeToggles.forEach(themeToggle=>themeToggle.addEventListener('click',()=>{
   applyTheme(current==='dark'?'light':'dark');
 }));
 
-document.querySelectorAll('[data-filter]').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const filter=btn.dataset.filter;
-    document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('[data-category]').forEach(card=>{
-      const categories=(card.dataset.category||'').split(' ');
-      card.classList.toggle('is-hidden',filter!=='all'&&!categories.includes(filter));
-    });
+const filterButtons=[...document.querySelectorAll('[data-filter]')];
+const workCards=[...document.querySelectorAll('[data-category]')];
+const workMoreButton=document.querySelector('[data-work-more]');
+const workStatus=document.querySelector('[data-work-status]');
+let showAllWork=false;
+
+const updateWorkGrid=filter=>{
+  let visibleCount=0;
+  workCards.forEach(card=>{
+    const categories=(card.dataset.category||'').split(' ');
+    const matchesFilter=filter==='all'||categories.includes(filter);
+    const matchesPriority=filter!=='all'||showAllWork||card.dataset.priority==='featured';
+    const visible=matchesFilter&&matchesPriority;
+    card.classList.toggle('is-hidden',!visible);
+    if(visible)visibleCount+=1;
   });
+
+  filterButtons.forEach(button=>{
+    const active=button.dataset.filter===filter;
+    button.classList.toggle('active',active);
+    button.setAttribute('aria-pressed',String(active));
+  });
+
+  if(workMoreButton){
+    workMoreButton.hidden=filter!=='all';
+    workMoreButton.setAttribute('aria-expanded',String(showAllWork));
+    workMoreButton.textContent=showAllWork?'Show selected projects':'View all 12 projects';
+  }
+
+  if(workStatus){
+    workStatus.textContent=filter==='all'
+      ?showAllWork?'Showing all 12 projects.':'Showing six selected character projects.'
+      :`Showing ${visibleCount} ${filter} ${visibleCount===1?'project':'projects'}.`;
+  }
+};
+
+filterButtons.forEach(button=>button.addEventListener('click',()=>{
+  updateWorkGrid(button.dataset.filter||'all');
+}));
+
+workMoreButton?.addEventListener('click',()=>{
+  showAllWork=!showAllWork;
+  updateWorkGrid('all');
+  if(!showAllWork)document.querySelector('#work')?.scrollIntoView({block:'start'});
 });
 
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-  if(entry.isIntersecting)entry.target.classList.add('in-view');
-}),{threshold:.14});
+if(workCards.length)updateWorkGrid('all');
 
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const revealElements=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in-view');
+      observer.unobserve(entry.target);
+    }
+  }),{threshold:.08,rootMargin:'0px 0px 8%'});
+  revealElements.forEach(element=>observer.observe(element));
+}else{
+  revealElements.forEach(element=>element.classList.add('in-view'));
+}
 
 const contactForm=document.querySelector('.contact-form');
 
@@ -86,7 +177,7 @@ if(contactForm){
       submitButton.disabled=!ready;
       submitButton.setAttribute('aria-disabled',String(!ready));
     }
-    if(note&&!ready)note.textContent='';
+    if(note&&!ready)note.textContent='Nothing is submitted or stored. Complete the required fields to copy your inquiry.';
   };
 
   requiredFields.forEach(field=>{
@@ -118,9 +209,9 @@ if(contactForm){
     ].join('\n');
 
     navigator.clipboard?.writeText(brief).then(()=>{
-      if(note)note.textContent='Project brief copied. Paste it into your email or message thread with Lesly.';
+      if(note)note.textContent='Inquiry copied. Send it to Lesly through the contact channel where you found this portfolio.';
     }).catch(()=>{
-      if(note)note.textContent='Copy the brief from the form and send it through your email or message thread with Lesly.';
+      if(note)note.textContent='Your browser blocked automatic copying. Select the form details and copy them into your message to Lesly.';
     });
   });
 }

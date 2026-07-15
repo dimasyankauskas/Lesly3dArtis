@@ -9,11 +9,11 @@
   <title>Visual Study · Lesly</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/brand/lesly-luxury-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/brand/lesly-luxury-icon.png">
   <link rel="stylesheet" href="styles.css?v=section-title-fit-2-20260609" />
-  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');</script>
+  <script>document.documentElement.classList.add('js');document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');</script>
 </head>
 <body class="case-study">
 
@@ -22,11 +22,11 @@
   <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><img src="assets/brand/lesly-luxury-icon.png?v=luxury-png-20260609" width="72" height="72" alt=""></span><em>Lesly</em></a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
       <div class="header-actions">
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">☀</button>
       </div>
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" id="primary-nav" aria-label="Primary">
         <a href="index.html#work">Case Studies</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#process">Process</a>
@@ -96,8 +96,8 @@
 
     <section class="cs-section">
       <div class="container">
-        <p class="cs-eyebrow">Production checks</p>
-        <h2>Production inspection.</h2>
+        <p class="cs-eyebrow">Build specification</p>
+        <h2>Production direction.</h2>
         <div class="proof-grid" data-case-proof></div>
       </div>
     </section>

@@ -46,6 +46,7 @@ These files are real website assets created for this portfolio build. Review eac
 | Work card 6 | `assets/portfolio/work-outfits-accessories.webp` | Outfit silhouette, trims, accessories, material closeups |
 | About | `assets/profile/lesly-about-portrait-illustrated.png` | Portrait clarity, personal brand fit, studio warmth |
 | Case study | `assets/process/original-site-concept/*.webp` | Case-study flow, visual hierarchy, process clarity |
+| Game character rebuild brief | `assets/process/game-hero/reconstruction-reference-v2.webp` | Identity consistency, front/side/back construction, sculpt forms, face/hands/feet, costume layers, weapon, and material targets |
 
 ## Production Detail Needed To Strengthen Case Studies
 

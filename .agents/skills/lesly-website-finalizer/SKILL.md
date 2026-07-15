@@ -39,8 +39,8 @@ This is Lesly's public portfolio website, not a client proposal.
 
 Enforce:
 
-- Skills stay repo-local under `.codex/skills/`.
-- Keep strategic Codex-facing skill mirrors under `.agents/skills/` as real copied directories, not symlinks, so future sessions can discover `3d-production-expert`, `3d-portfolio-writing-director`, and `lesly-website-finalizer`.
+- Repository skills stay under `.agents/skills/`, Codex's repository discovery path.
+- Do not create or synchronize duplicate skill mirrors unless the user explicitly requests that separate maintenance task.
 - Generated portfolio media is real site media and must be judged by craft quality.
 - Do not re-label public assets as placeholder, prototype, fake, not real, or concept-only unless the user explicitly asks.
 - OneOff/proposal work stays under `clients/` or proposal-specific surfaces and must not appear in `index.html` or public case-study navigation unless explicitly requested.
@@ -52,7 +52,7 @@ Enforce:
 Run the deterministic audit when finalizing:
 
 ```bash
-python3 .codex/skills/lesly-website-finalizer/scripts/audit_v2_launch.py
+python3 .agents/skills/lesly-website-finalizer/scripts/audit_v2_launch.py
 ```
 
 Exit codes:
