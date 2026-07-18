@@ -11,6 +11,16 @@ Use this skill before accepting, rewriting around, or publishing any 3D characte
 
 Generated portfolio assets made for this repo are real website assets. Do not call them prototypes, placeholders, fake, not real, concept-only, or non-final on the public site unless the user explicitly asks for that framing.
 
+## Portfolio Corpus Integrity
+
+Treat duplicate-image reports as a repair request, not permission to shrink the portfolio.
+
+- Preserve every case ID listed in `registry/portfolio-cases.json`.
+- Do not remove, merge, hide, or turn a case study into a text-only route to eliminate duplication.
+- Repair one case at a time. Give it a distinct hero, truthful supporting media, a professional narrative, and an explicit evidence boundary before moving to the next case.
+- Reuse an asset across cases only when the user explicitly approves a shared project series and the registry records that exception.
+- Run `python3 scripts/validate_skill_portfolio.py` after changing case-study media or routes.
+
 Judge them like real portfolio work:
 
 - Character design and appeal.
@@ -81,4 +91,4 @@ Before approving an asset, answer:
 4. Are technical claims visible or backed by repo evidence?
 5. Is the public copy free of proposal/internal/provenance language?
 
-If any answer is no, revise the asset, revise the copy, or move the gap to `LAUNCH_CHECKLIST.md`.
+If any answer is no, keep the case present, revise its asset or copy, and record any remaining evidence gap in `LAUNCH_CHECKLIST.md`.

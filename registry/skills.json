@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "authoritativeRoot": ".agents/skills",
+  "skills": [
+    {
+      "name": "build-lesly-case-study",
+      "path": ".agents/skills/build-lesly-case-study/SKILL.md",
+      "job": "Orchestrate one case-study lifecycle from preserved route through expert and browser approval.",
+      "owner": "case-study-lifecycle",
+      "invocation": "auto",
+      "certification": "v1-candidate"
+    },
+    {
+      "name": "3d-production-expert",
+      "path": ".agents/skills/3d-production-expert/SKILL.md",
+      "job": "Judge portfolio media, 3D craft, technical proof, and case-study asset suitability.",
+      "owner": "portfolio-media-and-proof",
+      "invocation": "auto",
+      "certification": "v1-candidate"
+    },
+    {
+      "name": "3d-portfolio-writing-director",
+      "path": ".agents/skills/3d-portfolio-writing-director/SKILL.md",
+      "job": "Write evidence-bounded public portfolio positioning and case-study narratives.",
+      "owner": "public-portfolio-copy",
+      "invocation": "auto",
+      "certification": "v1-candidate"
+    },
+    {
+      "name": "frontend-design",
+      "path": ".agents/skills/frontend-design/SKILL.md",
+      "job": "Implement distinctive static-site HTML, CSS, and JavaScript presentation.",
+      "owner": "frontend-implementation",
+      "invocation": "auto",
+      "certification": "supporting"
+    },
+    {
+      "name": "humanizer",
+      "path": ".agents/skills/humanizer/SKILL.md",
+      "job": "Polish approved public copy without changing facts, meaning, or evidence boundaries.",
+      "owner": "final-language-polish",
+      "invocation": "supporting",
+      "certification": "supporting"
+    },
+    {
+      "name": "lesly-website-finalizer",
+      "path": ".agents/skills/lesly-website-finalizer/SKILL.md",
+      "job": "Integrate and launch-check the public portfolio against deterministic and rendered evidence.",
+      "owner": "release-integration",
+      "invocation": "auto",
+      "certification": "v1-candidate"
+    },
+    {
+      "name": "threejs-fundamentals",
+      "path": ".agents/skills/threejs-fundamentals/SKILL.md",
+      "job": "Build a self-hosted Three.js scene, camera, renderer, and object hierarchy.",
+      "owner": "threejs-scene-runtime",
+      "invocation": "auto",
+      "certification": "dormant"
+    },
+    {
+      "name": "threejs-loaders",
+      "path": ".agents/skills/threejs-loaders/SKILL.md",
+      "job": "Load self-hosted 3D models, textures, and environments into Three.js.",
+      "owner": "threejs-asset-loading",
+      "invocation": "supporting",
+      "certification": "dormant"
+    }
+  ]
+}

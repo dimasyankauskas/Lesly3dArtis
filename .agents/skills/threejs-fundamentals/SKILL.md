@@ -422,7 +422,4 @@ scene.add(lod);
 
 ## See Also
 
-- `threejs-geometry` - Geometry creation and manipulation
-- `threejs-materials` - Material types and properties
-- `threejs-lighting` - Light types and shadows
 - `threejs-loaders` - GLTF/texture/model loaders

@@ -1,24 +1,22 @@
 const CASE_STUDIES=[
   {
     id:'game-hero',
-    title:'Game-Ready Character Project',
-    image:'assets/portfolio/work-game-ready-character.webp',
-    alt:'Full-body game character project presentation.',
-    meta:['Game character','Character asset','Handoff plan'],
-    lead:'A full-body game-character case built around silhouette, costume hierarchy, material read, and production handoff.',
-    whatTitle:'A character-first presentation for game work.',
-    whatCopy:'This project presents the visual direction, pose, costume mood, and inspection categories a game-facing character portfolio needs.',
+    title:'Forge Warden Character Direction',
+    image:'assets/rebuild/game-forge-warden/hero-4x3-v1.webp',
+    alt:'Stocky silver-haired Forge Warden holding a square-headed hammer in a neutral studio character render.',
+    meta:['Game character','Character direction','Production plan'],
+    lead:'A stocky Forge Warden direction built around playable silhouette, asymmetrical armor, readable materials, a complete two-handed hammer, and production-minded inspection views.',
+    whatTitle:'A game-facing character target with a distinct role, shape language, and inspection path.',
+    whatCopy:'The case establishes one older Forge Warden identity across a hero render, coordinated front/profile/back construction views, and focused weapon-grip and articulation studies.',
     details:[
-      ['Silhouette','Clear full-body read, weapon shape, cape flow, and stance for a quick recruiter scan.'],
-      ['Material read','Armor, cloth, leather, hair, and skin are lit to suggest surface contrast and costume hierarchy.'],
-      ['Stage','Simple grounded studio stage keeps attention on the character instead of environment decoration.'],
-      ['Technical checks','Mesh density, UVs, bakes, texture sheets, engine setup, and deliverables are documented for handoff.']
+      ['Silhouette','Broad shoulders, compact proportions, heavy boots, and the square-headed hammer communicate a durable frontline role at thumbnail size.'],
+      ['Construction','Quilted indigo cloth, fur collar, asymmetrical plate armor, belts, skirt panels, guards, and boots form a coherent wearable system.'],
+      ['Weapon interaction','The complete hammer stays consistent while the grip study checks hand spacing, wrist alignment, elbow clearance, and shoulder load.'],
+      ['Evidence boundary','Topology, UV, bake, texture-set, rig, engine, and export proof remain future captures from the matching production asset.']
     ],
     gallery:[
-      ['assets/process/game-hero/presentation-board.webp','Presentation board with full character plus detail crops.'],
-      ['assets/process/game-hero/face-read.webp','Face and upper-body read for expression, hair, armor, and silhouette.'],
-      ['assets/process/game-hero/costume-material.webp','Costume hierarchy crop showing cloth, leather, metal, and belts.'],
-      ['assets/process/game-hero/weapon-silhouette.webp','Weapon and lower-silhouette crop for prop scale and pose read.']
+      ['assets/rebuild/game-forge-warden/turnaround-16x9-v1.webp','Coordinated front, true profile, and back character direction with the complete hammer shown separately.'],
+      ['assets/rebuild/game-forge-warden/grip-articulation-16x9-v1.webp','Weapon-grip and articulation study for face, hands, shoulder, elbow, belt, hip, knee, and boot construction.']
     ],
     proof:[
       ['Topology','Wireframe, low-poly mesh, edge flow, and any optimization notes.'],
@@ -26,28 +24,27 @@ const CASE_STUDIES=[
       ['Engine/export','FBX/OBJ/BLEND handoff plus Unity, Unreal, or Marmoset notes where the scope requires them.'],
       ['Turnaround','Front, side, back, three-quarter, closeups, and neutral lighting views.']
     ],
-    current:['assets/portfolio/work-game-ready-character.webp'],
-    required:['assets/process/game-hero/hero.webp','assets/process/game-hero/technical-proof.webp','assets/process/game-hero/final-renders.webp','assets/process/game-hero/deliverables.webp']
+    current:['assets/rebuild/game-forge-warden/hero-4x3-v1.webp','assets/rebuild/game-forge-warden/turnaround-16x9-v1.webp','assets/rebuild/game-forge-warden/grip-articulation-16x9-v1.webp'],
+    required:['assets/rebuild/game-forge-warden/hero-4x3-v1.webp','assets/rebuild/game-forge-warden/turnaround-16x9-v1.webp','assets/rebuild/game-forge-warden/grip-articulation-16x9-v1.webp']
   },
   {
     id:'character-environment',
-    title:'Character Staging Project',
-    image:'assets/portfolio/work-character-environment.webp?v=staging-thumb-20260608',
-    alt:'Character staging crop showing plinth, ground contact, supporting prop, cloth, and scale context.',
+    title:'Frostline Ranger Staging',
+    image:'assets/rebuild/character-staging-frostline/hero-4x3-v1.webp',
+    alt:'Older Frostline Ranger archer on a restrained black-stone stage with one milestone and cool studio lighting.',
     meta:['Staging','Character context','Scene support'],
-    lead:'A character-staging presentation built around grounding, scale cues, restrained props, lighting, and camera-ready context.',
-    whatTitle:'A focused staging pass that supports the character.',
-    whatCopy:'This project shows how stage design can frame a character without turning the case into environment art: ground plane, plinth, support props, lighting, camera angle, and final presentation context.',
+    lead:'A character-first staging case built around grounding, silhouette clearance, scale cues, restrained props, camera coverage, and a deliberate neutral-to-beauty lighting progression.',
+    whatTitle:'A focused stage that gives the Frostline Ranger weight, scale, and atmosphere.',
+    whatCopy:'The stage is intentionally small: one black-stone plinth, one milestone, a few frost stones, contact shadow, cool key light, and a restrained warm rim. Every choice supports the character rather than claiming a full environment.',
     details:[
-      ['Stage read','The plinth, floor contact, and prop placement make the character feel grounded instead of floating in a neutral render.'],
-      ['Scale cues','Rocks, base details, and simple stage forms give the viewer size and world context.'],
-      ['Lighting direction','Warm studio light separates face, costume, weapon, and silhouette while keeping the background restrained.'],
-      ['Technical checks','Blockout, prop mesh, lighting setup, camera notes, and engine or render-scene captures clarify the staging work.']
+      ['Character dominance','The compact archer silhouette, complete bow, face, hands, boots, and coat remain readable before the viewer notices the stage.'],
+      ['Grounding and scale','Both boots plant on the irregular stone base; the milestone and frost stones provide scale without competing with the figure.'],
+      ['Lighting direction','A cool key shapes the slate-blue wool and face while a restrained warm rim separates silver hair, pale leather, bow, and quiver.'],
+      ['Evidence boundary','The images are character-staging direction, not captured Blender, Marmoset, Unity, Unreal, lighting-scene, or environment-art proof.']
     ],
     gallery:[
-      ['assets/process/character-environment/presentation-board.webp','Stage presentation board showing character, base, lighting, and context.'],
-      ['assets/process/character-environment/hero-stage.webp','Hero-stage crop for character scale, pose, and surrounding context.'],
-      ['assets/process/character-environment/stage-grounding.webp','Grounding crop for plinth, rocks, contact shadow, and prop restraint.']
+      ['assets/rebuild/character-staging-frostline/stage-progression-16x9-v1.webp','Coordinated progression from neutral plinth to scale-prop placement and final character-first lighting.'],
+      ['assets/rebuild/character-staging-frostline/camera-grounding-16x9-v1.webp','Coordinated eye-level, near-profile, and low grounding views for silhouette clearance, contact, and crop decisions.']
     ],
     proof:[
       ['Stage blockout','Blockout views, prop placement, scale notes, and camera framing.'],
@@ -55,270 +52,253 @@ const CASE_STUDIES=[
       ['Lighting/render setup','Key/fill/rim light notes, render settings, shadows, and color mood.'],
       ['Engine/export context','Marmoset, Blender, Unity, Unreal, or viewer captures when the scene needs real-time review.']
     ],
-    current:['assets/portfolio/work-character-environment.webp'],
-    required:['assets/process/character-environment/blockout.webp','assets/process/character-environment/lighting-breakdown.webp','assets/process/character-environment/prop-assets.webp','assets/process/character-environment/scene-handoff.webp']
+    current:['assets/rebuild/character-staging-frostline/hero-4x3-v1.webp','assets/rebuild/character-staging-frostline/stage-progression-16x9-v1.webp','assets/rebuild/character-staging-frostline/camera-grounding-16x9-v1.webp'],
+    required:['assets/rebuild/character-staging-frostline/hero-4x3-v1.webp','assets/rebuild/character-staging-frostline/stage-progression-16x9-v1.webp','assets/rebuild/character-staging-frostline/camera-grounding-16x9-v1.webp']
   },
   {
     id:'interior-props',
-    title:'Interior Props & Set Dressing Project',
-    image:'assets/portfolio/work-interior-props.webp',
-    alt:'Interior prop set with carved shelves, boxes, ceramics, glass, brass, fabric, books, and warm lighting.',
-    meta:['Interior props','Material study','Set dressing'],
-    lead:'A shelf-and-object prop case focused on mood, scale, material variety, and reusable interior assets.',
-    whatTitle:'A prop-art pass for interiors, product worlds, and mood-driven scenes.',
-    whatCopy:'This project turns a 2D mood direction into a precise 3D prop set: shelves, boxes, glass bottles, brass hardware, ceramics, carved wood, textiles, books, labels, and staged lighting.',
+    title:'Ornate Interior Props & Set Dressing',
+    image:'assets/rebuild/interior-direction/shelf-hero-4x3-v1.webp',
+    alt:'Ornate carved-wood shelf direction with storage chests, ceramic vessels, aged brass, books, folded textiles, and warm window light.',
+    meta:['Interior props','Asset-family direction','Set dressing'],
+    lead:'A reconstructed interior-prop direction study exploring a coordinated asset family, carved furniture language, material separation, set-dressing rhythm, and warm presentation lighting.',
+    whatTitle:'A coherent object family before matching scene production.',
+    whatCopy:'The hero, prop lineup, and coordinated neutral-volume, material, and lighting direction renders define what the future shelf scene should preserve without presenting generated direction as captured production evidence.',
     details:[
-      ['Set dressing','The shelf, boxes, books, ceramics, glass, candle holders, and plants build a specific interior mood instead of a generic prop dump.'],
-      ['Material range','Aged brass, dark steel, clear and smoky glass, glazed ceramic, carved wood, leather, fabric, and paper each get their own surface read.'],
-      ['Scale and precision','Small hinges, latches, keys, labels, carved trim, fabric folds, bottle ribs, and book spines make the scene feel manufactured and usable.'],
-      ['Technical checks','The source package includes 266 named mesh objects, 8,246 faces, UV coordinates, 14 materials, closeup renders, and delivery files.']
+      ['Prop family','Three chest scales, ceramic vessels, candlesticks, an incense vessel, books, textiles, and carved furniture details share one ornament and wear language.'],
+      ['Set-dressing rhythm','Large chest and shelf masses anchor the composition while medium vessels, books, textiles, and small brass accents create a readable hierarchy and negative space.'],
+      ['Material direction','Dark carved wood, worn leather, aged brass, glazed ceramic, paper, and woven cloth remain visibly distinct under neutral inspection light and warm beauty light.'],
+      ['Evidence boundary','Matching models, functional hinges, topology, UVs, texture maps, shaders, source-scene organization, engine setup, and exports remain future production evidence.']
     ],
     gallery:[
-      ['assets/process/interior-props/presentation-board.webp','Interior prop board showing shelf composition, mood references, blockout, wire-style read, assets, materials, and closeups.'],
-      ['assets/3d/interior-props/interior-props-mesh-sheet.svg','Technical mesh sheet with object-level wireframe, material reads, UV planning, and source-file package.'],
-      ['assets/process/interior-props/glass-metal.webp','Glass and metal scene focused on transparency, reflections, aged brass, dark steel, carved wood, and hardware detail.'],
-      ['assets/process/interior-props/material-study.webp','Material board for brass, steel, glass, ceramic, wood, leather, fabric, paper, labels, and PBR property previews.'],
-      ['assets/process/interior-props/shelf-hero.webp','Shelf hero render with carved wood, ceramic vessels, boxes, books, textile accents, and warm interior light.'],
-      ['assets/process/interior-props/two-d-to-three-d.webp','2D-to-3D workflow board from mood references and blockout into final staged props.'],
-      ['assets/process/interior-props/material-closeups.webp','Closeup material grid for latch hardware, ceramics, wood carving, fabric weave, leather, paper, and metal wear.']
+      ['assets/rebuild/interior-props-system/prop-family-16x9-v1.webp','Coordinated chest, ceramic, brass, book, textile, incense-vessel, and carved-wood asset-family direction.'],
+      ['assets/rebuild/interior-props-system/staging-development-16x9-v1.webp','Neutral-volume, material, and lighting direction renders for one consistent ornate shelf composition.']
     ],
     proof:[
-      ['Mesh package','OBJ source with named shelf, box, bottle, vase, book, textile, candle, key, latch, trim, and plant objects.'],
-      ['Materials','MTL library with PBR-style base color, roughness, metallic, specular, and transparent glass alpha values.'],
-      ['Set dressing','Scale, grouping, negative space, focal hierarchy, camera framing, lighting, and mood direction for the interior.'],
-      ['Handoff','Source mesh, material library, manifest, technical sheet, render outputs, naming notes, and usage restrictions.']
+      ['Direction shown','Hero, isolated prop family, and coordinated shelf views establish one carved-furniture and object language.'],
+      ['Visual decisions','Scale rhythm, focal hierarchy, negative space, material contrast, camera framing, and warm side light remain inspectable.'],
+      ['Capture required','Matching source-scene beauty and neutral renders, real wireframe, UVs, texture maps, material setup, object organization, and export checks.'],
+      ['Claim boundary','No completed models, functional hardware, topology, UV, map, shader, source-file, engine, performance, or export claim is made.']
     ],
-    current:['assets/portfolio/work-interior-props.webp'],
-    required:['assets/3d/interior-props/interior-props-set.obj','assets/3d/interior-props/interior-props-materials.mtl','assets/3d/interior-props/interior-props-manifest.json','assets/3d/interior-props/interior-props-mesh-sheet.svg']
+    current:['assets/rebuild/interior-direction/shelf-hero-4x3-v1.webp','assets/rebuild/interior-props-system/prop-family-16x9-v1.webp','assets/rebuild/interior-props-system/staging-development-16x9-v1.webp'],
+    required:['matching source-scene beauty and neutral renders','real model and wireframe inspection','packed UVs, texture maps, and material setup','object organization, engine, performance, and export evidence where scoped']
   },
   {
     id:'ai-visual-pipeline',
-    title:'3D Visual Pipeline Case Study',
-    image:'assets/portfolio/work-interior-props.webp',
-    alt:'Interior prop and material study used as the visual reference for a visual workflow system case.',
-    meta:['Direction','Visual pipeline','3D handoff'],
-    lead:'A direction case for turning references, AI concepts, technical constraints, material decisions, and review needs into a repeatable visual production plan.',
-    whatTitle:'A character and 3D visual workflow plan for production teams.',
-    whatCopy:'This case positions Lesly as a character direction and visual workflow partner: she defines the look, material library, production standards, review criteria, new-technology workflow, and developer or team handoff needed to make 3D visualization repeatable.',
+    title:'Tideglass Courier — Visual Direction Pipeline',
+    image:'assets/rebuild/tideglass-workflow/hero-4x3-v1.webp',
+    alt:'Physical Tideglass Courier art-direction table with a resolved character target, coordinated sketches, neutral maquette, and material swatches.',
+    meta:['Visual pipeline','Character direction','Review and handoff'],
+    lead:'An original character workflow study showing how one visual idea is held together from sketch and neutral-form direction through materials, risk review, and a production brief.',
+    whatTitle:'The value is the decisions that survive the handoff.',
+    whatCopy:'The Tideglass Courier package keeps identity, silhouette, costume construction, prop logic, and material priorities consistent while separating visual direction from the technical evidence a matching production model must supply.',
     details:[
-      ['Direction role','Lesly defines visual standards, material direction, review logic, and implementation guidance so image work stays connected to real 3D and product constraints.'],
-      ['Reference control','References, prompts, output notes, and review decisions are organized so the team can repeat good results instead of starting from scratch each time.'],
-      ['Agent instructions','3D-aware prompts, rejection rules, and review notes help AI-assisted outputs stay useful for client decisions.'],
-      ['Material library','Materials, finishes, lighting moods, and context references are organized into reusable visual rules.'],
-      ['Decision model','The project format helps a client compare quality, cost, consistency, and setup options before committing to a production workflow.']
+      ['Direction lock','Short dark hair, ivory-and-sea-green coat, copper shoulder guard, satchel, boots, and navigation staff form the non-negotiable identity system.'],
+      ['Form review','Sketch and neutral-maquette direction expose proportion, coat silhouette, staff length, grip, ground contact, and the relationship between armor, straps, and satchel.'],
+      ['Material review','Ivory textile, sea-green lining, charcoal leather, oxidized copper, warm brass, and smoky glass stay distinct from full figure to close inspection.'],
+      ['Human review','Face, hand-and-staff grip, costume construction, rear silhouette, and material family become explicit approval questions instead of vague taste feedback.'],
+      ['Evidence boundary','The package is reconstruction direction; matching model, topology, UVs, maps, rig, source files, engine checks, approvals, and exports remain future evidence.']
     ],
     gallery:[
-      ['assets/process/interior-props/presentation-board.webp','Material and interior-prop board used as a visual reference for the controlled visualization workflow.'],
-      ['assets/process/interior-props/material-study.webp','Material study showing why reusable surface libraries matter for repeatable AI-assisted visualization.'],
-      ['assets/process/interior-props/material-closeups.webp','Closeup material references used to explain consistency, review criteria, and output quality standards.']
+      ['assets/rebuild/tideglass-workflow/direction-sequence-16x9-v1.webp','Coordinated sketch, neutral-form, and resolved material direction for one Tideglass Courier identity.'],
+      ['assets/rebuild/tideglass-workflow/review-handoff-16x9-v1.webp','Face, grip, construction, rear-silhouette, material-family, and handoff-direction review set.']
     ],
     proof:[
-      ['Cost baseline','Approved spend notes, tooling choices, and setup assumptions if the client wants a workflow economics review.'],
-      ['Workflow package','Prompt templates, reference boards, QA checklist, output logs, and generation notes where scoped.'],
-      ['Implementation notes','Developer brief, tool notes, handoff instructions, training materials, and workstation assumptions where scoped.'],
-      ['Review material','Material-library screenshots, client review examples, output comparisons, and approved public-safe outcomes where available.']
+      ['Direction shown','One courier identity remains coherent across resolved target, sketches, neutral form, material direction, close inspections, and rear silhouette.'],
+      ['Decision structure','Identity locks, form risks, material family, review questions, and the next technical captures are explicit.'],
+      ['Human ownership','Lesly frames the brief, selects the direction, rejects drift, defines review questions, and prepares the next production step.'],
+      ['Claim boundary','No completed production model, automated system, client approval, topology, UV, map, rig, source-file, engine, performance, or export claim is made.']
     ],
-    current:['assets/portfolio/work-interior-props.webp','assets/process/interior-props/presentation-board.webp','assets/process/interior-props/material-study.webp','assets/process/interior-props/material-closeups.webp'],
-    required:['assets/process/ai-visual-pipeline/workflow-board-generated.png','assets/process/ai-visual-pipeline/review-criteria-generated.png','assets/process/ai-visual-pipeline/material-library-generated.png','assets/process/ai-visual-pipeline/handoff-system-generated.png']
+    current:['assets/rebuild/tideglass-workflow/hero-4x3-v1.webp','assets/rebuild/tideglass-workflow/direction-sequence-16x9-v1.webp','assets/rebuild/tideglass-workflow/review-handoff-16x9-v1.webp'],
+    required:['matching production model and neutral turns','real topology, UV, bake, texture, and material captures','grip, coat, strap, satchel, and deformation validation','source-file, rig, engine, performance, approval, and export evidence where scoped']
   },
   {
     id:'santa-cruz-ai-visual-pipeline',
-    title:'Local AI Visualization Pipeline',
-    image:'assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp',
-    alt:'Remote production studio desk with exterior residential visualization, material samples, drawings, and blurred local pipeline monitor.',
-    meta:['AI workflow','Construction visualization','Visual standards'],
-    lead:'A residential-construction workflow case for turning scattered AI experiments, material references, and review needs into a controlled local visualization pipeline.',
-    whatTitle:'A visual pipeline that makes AI-assisted images usable for production decisions.',
-    whatCopy:'This case positions Lesly as a visual pipeline builder: she defines art-direction standards, material consistency rules, review criteria, training needs, and developer-ready workflow requirements so visual exploration stays connected to real construction constraints.',
+    title:'Coastal Residence — Visualization Direction',
+    image:'assets/rebuild/coastal-residential-workflow/hero-4x3-v1.webp',
+    alt:'Physical coastal-residence visualization presentation with a resolved dusk exterior, elevation, site context, daylight views, and material samples.',
+    meta:['Residential visualization','Material options','Context and lighting'],
+    lead:'A coordinated residential visualization study carrying one fictional coastal-home direction through a resolved exterior, controlled finish comparisons, site context, daylight inspection, and blue-hour presentation.',
+    whatTitle:'Consistency across form, finish, context, light, and camera.',
+    whatCopy:'Roofline, glazing, stone piers, stepped approach, boulder landscape, planting, and finish boundaries remain recognizable while each view answers a different visual-review question.',
     details:[
-      ['Visual standards','Material direction, finish options, acceptable variation, and client-ready image criteria are defined before more visuals are generated.'],
-      ['Local workflow','The case maps how references, site context, prompts, logged outputs, and review states can become a repeatable local generation workflow.'],
-      ['3D-aware review','Lesly keeps the workflow connected to geometry, materials, lighting, and client decisions instead of treating AI images as finished design truth.'],
-      ['Implementation handoff','The output is a practical brief for developers, AI tool setup, agent instructions, training material, and review checkpoints.']
+      ['Residence lock','Two-story low-slope massing, broad glazing, stone piers, warm wood, charcoal metal, stepped entry, boulders, and restrained coastal planting define one identity.'],
+      ['Finish comparison','One neutral camera compares pale limestone and cedar, warmer stone and oak, and cool gray stone and pale oak without changing the intended building hierarchy.'],
+      ['Context and light','A distant coastal approach, neutral daylight inspection, and blue-hour presentation test scale, silhouette, path lighting, interior glow, and landscape balance.'],
+      ['Human review','Lesly defines what must remain stable, rejects geometry and finish drift, and separates visual preference from questions requiring qualified project review.'],
+      ['Evidence boundary','The images do not document a verified site, client, drawings, constructed project, matching source scene, local-AI system, approval, cost, schedule, or measured outcome.']
     ],
     gallery:[
-      ['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','Remote production-studio scene showing exterior visualization options, drawings, material samples, and a blurred local pipeline monitor.'],
-      ['assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','Portable material standards scene with exterior siding, stone, glass, metal, wood, tile, landscape, and finish references.'],
-      ['assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp','Remote handoff workstation scene showing exterior renders, drawings, sample trays, export drives, and organized production materials.']
+      ['assets/rebuild/coastal-residential-workflow/material-options-16x9-v1.webp','Coordinated finish comparison using one front three-quarter camera and one coastal-residence identity.'],
+      ['assets/rebuild/coastal-residential-workflow/context-lighting-16x9-v1.webp','Site-context, neutral-daylight, and blue-hour lighting direction for the same residence family.']
     ],
     proof:[
-      ['Workflow package','Reference structure, material library, prompt rules, QA checklist, output logs, and training notes where approved.'],
-      ['Implementation brief','Developer-ready requirements for local generation, review states, handoff rules, tool setup, and agent behavior.'],
-      ['Public-safe evidence','Redacted screenshots, approved process captures, and confirmed business facts before naming exact client, savings, or agency details.'],
-      ['Boundary','AI supports visualization and review; it does not replace human art direction, construction decisions, or project management.']
+      ['Direction shown','Hero, finish comparison, context view, daylight inspection, and blue-hour presentation preserve one coastal-residence language.'],
+      ['Review value','Massing, openings, finish families, building-to-ground contact, planting scale, camera, and light remain inspectable.'],
+      ['Human boundary','Visual exploration supports comparison; architecture, engineering, code, feasibility, procurement, construction, and project decisions remain with qualified people.'],
+      ['Claim boundary','No verified Santa Cruz site, client, real drawings, built work, matching model, implemented system, approval, cost, schedule, savings, or outcome is claimed.']
     ],
-    current:['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp'],
-    required:['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp']
+    current:['assets/rebuild/coastal-residential-workflow/hero-4x3-v1.webp','assets/rebuild/coastal-residential-workflow/material-options-16x9-v1.webp','assets/rebuild/coastal-residential-workflow/context-lighting-16x9-v1.webp'],
+    required:['verified and permissioned project inputs where available','matching scene and camera captures before source-scene claims','qualified review for architecture, engineering, code, feasibility, procurement, and construction','real approval, cost, schedule, and outcome evidence before publishing those claims']
   },
   {
     id:'construction-client-progress-workflow',
-    title:'Construction Client Progress Workflow',
-    image:'assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp',
-    alt:'Remote review-board scene with progress-photo sets, material samples, exterior visualization options, and approval markers.',
-    meta:['Client review','Progress photos','Agentic workflow'],
-    lead:'A residential-construction operations case for connecting jobsite photos, client comments, AI visual options, response states, and next actions into one review workflow.',
-    whatTitle:'A review system around visual evidence and client decisions.',
-    whatCopy:'This case shows Lesly translating visual production judgment into an operational workflow: what to capture, how to review it, how to route comments, where AI can summarize or assist, and how approved visual decisions return to the material and design library.',
+    title:'Northlight Workshop — Progress Review Direction',
+    image:'assets/rebuild/northlight-workshop-progress/hero-4x3-v1.webp',
+    alt:'Fictional red-brick workshop at the enclosure-and-rough-in stage with timber roof joists, clerestory glazing, exposed services, and a black-steel courtyard portal.',
+    meta:['Progress review direction','Evidence hierarchy','Human-owned decisions'],
+    lead:'A fictional adaptive-reuse study showing how construction imagery can move from broad phase context to one clearly located review condition without pretending to be a real inspection record.',
+    whatTitle:'Progress evidence should answer a question, not simply fill a gallery.',
+    whatCopy:'Northlight Workshop turns one fictional brick-shell reconstruction into a practical visual-review model: establish the phase, locate the condition, frame the question, assign qualified review, record the state, and name the next action.',
     details:[
-      ['Capture standards','Photos, notes, materials, and progress evidence are organized so each update answers a real client or team question.'],
-      ['Review states','Each visual item can move through clear states: captured, reviewed, needs response, approved, blocked, or ready for follow-up.'],
-      ['Agent support','Agentic summaries and routing can reduce scattered communication while keeping human review responsible for actual decisions.'],
-      ['Client clarity','The workflow is designed to reduce repeated questions, lost decisions, and disconnected AI visuals.']
+      ['Capture standard','Every record needs a phase, capture date, location, review question, capture owner, responsible reviewer, state, and next action.'],
+      ['Evidence hierarchy','Wide context locates the condition, a medium view explains the assembly, and a close view exposes the junction that needs qualified review.'],
+      ['State model','Captured, needs context, needs qualified review, decision recorded, follow-up required, and closed keep evidence separate from decisions.'],
+      ['Human control','AI assistance may group images, organize captions, or flag missing fields. It cannot verify workmanship, safety, code, quality, completion, or approval.']
     ],
     gallery:[
-      ['assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp','Remote review-board scene showing progress-photo sequences, material options, approval markers, and exterior visualization direction.'],
-      ['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','Related coastal visualization scene showing how material standards connect to review operations.'],
-      ['assets/process/interior-props/presentation-board.webp','Presentation board used as a material and visual-standard reference for review systems.']
+      ['assets/rebuild/northlight-workshop-progress/phase-sequence-16x9-v1.webp','Coordinated reconstruction of the same brick workshop across shell, structure, enclosure and rough-in, and finish-ready stages.'],
+      ['assets/rebuild/northlight-workshop-progress/evidence-hierarchy-16x9-v1.webp','Wide, medium, and close reconstruction views locating one courtyard-opening condition.']
     ],
     proof:[
-      ['Review model','Phase list, progress evidence, client comments, agency/team response, next action, and approval states.'],
-      ['Workflow brief','Capture rules, comment model, response model, summary requirements, and implementation notes.'],
-      ['Public-safe evidence','Redacted portal screenshots, before/after report examples, time logs, message counts, or approved response data.'],
-      ['Boundary','AI assists summaries, routing, and visual options; it does not make construction decisions or replace project managers.']
+      ['Direction shown','One workshop identity, four coordinated phase reconstructions, and a wide-to-detail evidence hierarchy.'],
+      ['Review model','Phase, location, question, evidence owner, qualified reviewer, state, and next action stay explicit.'],
+      ['Human boundary','Capture owners supply evidence; qualified project and trade reviewers assess it; authorized people record decisions.'],
+      ['Claim boundary','No real site, client, inspection, approval, completed work, implemented portal, AI system, cost, schedule, or measured result is claimed.']
     ],
-    current:['assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp'],
-    required:['redacted portal screenshots','before and after progress report samples','approved baseline message or time data if metrics are shown','developer implementation brief','client permission boundaries','confirmation of Lesly role wording']
+    current:['assets/rebuild/northlight-workshop-progress/hero-4x3-v1.webp','assets/rebuild/northlight-workshop-progress/phase-sequence-16x9-v1.webp','assets/rebuild/northlight-workshop-progress/evidence-hierarchy-16x9-v1.webp'],
+    required:['permissioned site and report captures before any real-project claim','verified phase dates and locations','qualified reviewer and decision records','client and contractor permission boundaries','implemented-system evidence before portal or AI claims','approved baseline and outcome data before metrics']
   },
   {
     id:'print-startup-direction',
-    title:'3D Print Character System',
-    image:'assets/portfolio/work-mascot-character.webp',
-    alt:'Stylized mascot character presentation used as the visual reference for a 3D printing startup direction case.',
-    meta:['Direction','3D printing','Workflow system'],
-    lead:'A product-direction case for helping a small 3D printing startup turn collectible character ideas into printable assets with style rules, printability checks, and clear handoff standards.',
-    whatTitle:'A product-ready character system for small-batch 3D printing.',
-    whatCopy:'This case connects directly to Lesly’s 3D character authority: character style, printable form, collectible appeal, print QA, agent instructions, production handoff, and repeatable startup workflow.',
+    title:'Sol Collectible Build Direction',
+    image:'assets/rebuild/sol-print/sol-collectible-4x3-v2.webp',
+    alt:'Paired color and neutral-clay Sol collectible direction with a complete staff, holder, patterned tail, and two-tier carved-stone base.',
+    meta:['Collectible direction','Component planning','Print evidence plan'],
+    lead:'Collectible reconstruction direction for Sol, exploring a clay presentation, proposed component separation, and front, profile, and rear contact views before production modeling and print engineering.',
+    whatTitle:'Character appeal translated into form, component planning, and physical proof gates.',
+    whatCopy:'The three-image package preserves Sol’s identity while separating what can be decided visually from what must be verified on a matching production model, in a slicer, and through a physical test print.',
     details:[
-      ['Direction role','Lesly defines character families, style rules, product scale, pose constraints, base systems, accessory logic, and production-readiness gates.'],
-      ['Printability rules','The workflow brought physical constraints earlier: wall thickness, watertight geometry, supports, hollowing, drainage, fragile details, orientation, and file package checks.'],
-      ['Workflow support','Her 3D knowledge becomes the operating layer for review: what to generate, what to reject, what geometry risks to flag, and what handoff instructions the team needs.'],
-      ['Startup system','Instead of treating each character as a one-off, the project created a repeatable library for future collectible lines.'],
-      ['Production model','The project format helps a startup track repair time, failed prints, prep labor, material waste, and successful test-print count after real production data is available.']
+      ['Collectible form','The color and clay hero preserve Sol’s fennec silhouette, markings, costume, staff, tail, paws, and two-tier base as one maquette target.'],
+      ['Proposed groups','Head, scarf and cape, tail, body, paws, staff, holder, and base are explored as visual component groups without claiming final joints or parting.'],
+      ['Contact review','Front, profile, and rear views expose ear height, cape thickness, tail relationship, foot contact, staff-holder placement, and base footprint.'],
+      ['Evidence boundary','Printable files, final parts, joints, dimensions, watertightness, wall thickness, supports, slicing, assembly, and physical manufacture remain unverified.']
     ],
     gallery:[
-      ['assets/process/mascot-character/presentation-board.webp','Character presentation board used to show style-system thinking for repeatable product families.'],
-      ['assets/process/mascot-character/pose-panels.webp','Pose and variation panels used to explain how character decisions become a reusable startup product system.'],
-      ['assets/process/sculpt-to-retopo/turnaround-strip.webp','Turnaround-style production reference used to discuss printability, geometry review, and handoff standards.']
+      ['assets/rebuild/sol-print-system/assembly-direction-16x9-v2.webp','Assembled neutral maquette and proposed head, scarf/cape, tail, body, paw, staff, holder, and base groups.'],
+      ['assets/rebuild/sol-print-system/contact-views-16x9-v1.webp','Coordinated front-three-quarter, profile, and rear-three-quarter maquettes for silhouette, contact, cape, tail, staff-holder, and base review.']
     ],
     proof:[
-      ['Design system','Style guide excerpts, character family boards, pose rules, accessory rules, agent instructions, and base-system standards.'],
-      ['Print QA','Slicer screenshots, support/orientation tests, wall-thickness notes, hollowing/drainage checks, and failed-print logs.'],
-      ['Handoff','STL/3MF/OBJ package examples, print notes, thumbnails, product metadata, naming rules, and startup restrictions.'],
-      ['Outcome material','Before/after model-prep time, repair/rejection counts, successful test-print photos, and approved labor-savings data.']
+      ['Direction shown','Color and neutral hero, proposed component separation, and full contact views preserve one Sol collectible target.'],
+      ['Risk planning','Ears, staff, tail, cape, paws, small details, holder, and base footprint remain explicit review areas.'],
+      ['Capture required','Matching production model, final parting, joints, dimensions, repair checks, slicer setup, support strategy, assembly, and test-print photographs.'],
+      ['Claim boundary','No printable file, final joint, measurement, watertight mesh, slicer result, physical print, source package, or manufacture is claimed.']
     ],
-    current:['assets/portfolio/work-mascot-character.webp','assets/process/mascot-character/presentation-board.webp','assets/process/mascot-character/pose-panels.webp','assets/process/sculpt-to-retopo/turnaround-strip.webp'],
-    required:['style guide excerpt','slicer screenshots','failed-print or repair log','STL/3MF/OBJ handoff package','successful test-print photos','approved startup outcome metrics']
+    current:['assets/rebuild/sol-print/sol-collectible-4x3-v2.webp','assets/rebuild/sol-print-system/assembly-direction-16x9-v2.webp','assets/rebuild/sol-print-system/contact-views-16x9-v1.webp'],
+    required:['matching production-model and final part-separation captures','dimensions, joints, keys, tolerances, and watertightness checks','slicer, wall-thickness, hollowing, drainage, and support evidence where relevant','successful physical test-print and assembly photographs']
   },
   {
     id:'sculpt-to-retopo',
-    title:'Sculpting To Retopology Project',
-    image:'assets/portfolio/work-sculpt-retopo.webp',
-    alt:'Sculpting and retopology project presentation board.',
-    meta:['Process study','Sculpt/retopo','Technical checks'],
-    lead:'A process-style project board for presenting sculpt forms, topology direction, turnaround views, and production inspection material.',
-    whatTitle:'A technical case-study structure for sculpt and retopo work.',
-    whatCopy:'This project gives the portfolio a clear technical category: sculpt forms, head studies, topology visibility, and source captures.',
+    title:'Lyra Sculpt & Retopology Direction',
+    image:'assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1.webp',
+    alt:'Resolved warm-gray clay bust of Lyra with layered braided hair, diamond ornament, high collar, and neutral inspection lighting.',
+    meta:['Sculpt development','Form inspection','Retopology plan'],
+    lead:'A stylized character bust developed around clear facial planes, a stable profile, layered braided hair, and controlled expression targets for a later deformation-aware topology pass.',
+    whatTitle:'Readable form first; verified topology when the production mesh exists.',
+    whatCopy:'The hero, broad-to-fine study, profile, and expression views establish what the reconstruction must preserve without presenting generated direction as source-tool or retopology proof.',
     details:[
-      ['Sculpt read','Bust forms and facial planes suggest what a sculpt breakdown could show.'],
-      ['Topology cue','The mesh-style panel shows where low-poly structure, edge flow, and optimization notes are inspected.'],
-      ['Breakdown format','A multi-view board is useful for showing form decisions and inspection views.'],
-      ['Technical checks','ZBrush, Blender, Maya, Marmoset, UV, and engine captures belong in the inspection package.']
+      ['Form hierarchy','The development study separates primary cranial and bust masses, secondary facial and hair construction, and a restrained polished pass.'],
+      ['Identity control','Neutral, true-profile, smile, and jaw-open views preserve one skull, eye spacing, nose, lips, jaw, ears, braids, ornaments, collar, and chest emblem.'],
+      ['Retopology target','The profile and expression shapes identify the eyelid, mouth, cheek, jaw-hinge, ear, hairline, and neck areas a later mesh must support.'],
+      ['Evidence boundary','The faceted blockout is form visualization, not a low-poly mesh; topology, loops, UVs, bakes, rigging, and source files require matching production captures.']
     ],
     gallery:[
-      ['assets/process/sculpt-to-retopo/presentation-board.webp','Presentation board assembled for the sculpt-to-retopo project.'],
-      ['assets/process/sculpt-to-retopo/sculpt-face.webp','Sculpt-focused face crop for planes, hair mass, and clay presentation.'],
-      ['assets/process/sculpt-to-retopo/retopo-panel.webp','Retopology-style crop for mesh structure, edge-flow review, and technical notes.'],
-      ['assets/process/sculpt-to-retopo/turnaround-strip.webp','Turnaround strip crop showing the kind of inspection view to request.']
+      ['assets/rebuild/sculpt-retopo-lyra/sculpt-development-16x9-v1.webp','Broad-to-fine Lyra bust study moving from primary blockout through secondary refinement to the resolved sculpt target.'],
+      ['assets/rebuild/sculpt-retopo-lyra/form-deformation-study-16x9-v1.webp','Neutral, true-profile, smile, and jaw-open form targets for identity and future deformation planning.']
     ],
     proof:[
-      ['High-poly sculpt','Clay screenshots, subdivision forms, detail passes, and sculpt closeups.'],
-      ['Retopology','Low-poly mesh, wireframe overlay, clean edge flow, and triangle/poly notes if approved.'],
-      ['Bake/material handoff','Normal/AO/curvature bakes, texture maps, and material sheet.'],
-      ['Source context','Tool screenshots or file captures that can be publicly shown.']
+      ['Direction shown','Resolved sculpt target, broad-to-fine form hierarchy, true profile, and controlled expression-shape direction.'],
+      ['Retopology requirements','A later topology pass must preserve silhouette and support eyelid, mouth, cheek, jaw, ear, hairline, and neck behavior.'],
+      ['Capture required','Matching high-poly, low-poly wireframe, edge-loop inspection, UVs, bakes, and source-tool views.'],
+      ['Claim boundary','No production-ready mesh, verified loops, blendshapes, rig, textures, engine integration, source file, or export is claimed.']
     ],
-    current:['assets/portfolio/work-sculpt-retopo.webp'],
-    required:['assets/process/sculpt-to-retopo/sculpt-model.webp','assets/process/sculpt-to-retopo/technical-proof.webp','assets/process/sculpt-to-retopo/final-renders.webp']
+    current:['assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1.webp','assets/rebuild/sculpt-retopo-lyra/sculpt-development-16x9-v1.webp','assets/rebuild/sculpt-retopo-lyra/form-deformation-study-16x9-v1.webp'],
+    required:['matching high-poly source-tool captures','matching low-poly wireframe and deformation-loop inspection','packed UVs and bake maps','source-file and export validation']
   },
   {
     id:'avatar-character',
-    title:'Avatar Character Project',
-    image:'assets/portfolio/work-avatar-character.webp',
-    alt:'Avatar character project board.',
-    meta:['Avatar','Expression set','Creator character'],
-    lead:'A creator-facing avatar project focused on face read, charm, expression range, outfit personality, and presentation thumbnails.',
-    whatTitle:'A visual target for avatar personality and expression.',
-    whatCopy:'This page shows avatar positioning, expression planning, pose direction, rig-readiness notes, and delivery needs for creator use.',
+    title:'Mira Avatar Identity Direction',
+    image:'assets/rebuild/avatar-mira/hero-4x3-v1.webp',
+    alt:'Stylized young-adult Mira avatar with a high black ponytail, rust hooded layer, black foundation garment, and geometric gold jewelry.',
+    meta:['Creator avatar','Identity system','Expression direction'],
+    lead:'A stylized young-adult avatar developed through a polished portrait, coordinated identity views, and five controlled expression targets.',
+    whatTitle:'One recognizable identity across a thumbnail, a profile, a rear view, and an expression change.',
+    whatCopy:'The hero, coordinated front/three-quarter/profile/rear study, and expression set preserve Mira’s face, hair, costume, jewelry, palette, and material language without presenting the direction as a working rig.',
     details:[
-      ['Face read','Large portrait framing makes expression, eyes, hair, and charm readable at thumbnail size.'],
-      ['Expression range','Side panels suggest alternate expressions or presentation crops.'],
-      ['Creator use','The board is aimed at streamer, VTuber, creator, or social identity work.'],
-      ['Technical checks','Rig, facial blendshapes, visemes, outfit variants, and export formats define the avatar handoff.']
+      ['Identity lock','Face shape, dark-brown eyes, nose, lips, jaw, warm skin, bangs, high ponytail, and terracotta wrap remain consistent across views.'],
+      ['Costume system','Rust hooded outer layer, matte black foundation garment, high neck, belt, diamond earrings, pendant, and restrained gold accents form one readable design.'],
+      ['Expression range','Neutral, warm smile, delighted, surprised, and focused reads change brows, eyelids, cheeks, mouth corners, and jaw while preserving Mira’s identity.'],
+      ['Production boundary','These images define avatar direction; matching model, hair construction, topology, textures, facial deformation, rig, tracking, visemes, platform tests, and exports remain future evidence.']
     ],
     gallery:[
-      ['assets/process/avatar-character/presentation-board.webp','Presentation board for avatar personality, expression crops, and presentation scale.'],
-      ['assets/process/avatar-character/portrait-read.webp','Portrait crop for charm, eyes, hair shape, and identity read.'],
-      ['assets/process/avatar-character/expression-panels.webp','Expression panel crop for direction and future rig or blendshape notes.'],
-      ['assets/process/avatar-character/hair-costume.webp','Hair and outfit crop for style, silhouette, and accessory direction.']
+      ['assets/rebuild/avatar-mira/identity-views-16x9-v1.webp','Coordinated front, three-quarter, true-profile, and rear views for avatar identity, hair, hood, costume, and jewelry direction.'],
+      ['assets/rebuild/avatar-mira/expression-direction-16x9-v1.webp','Five Mira expression targets: neutral, warm smile, delighted, surprised, and focused.']
     ],
     proof:[
-      ['Expression sheet','Real expressions, pose set, closeups, and turnaround views.'],
-      ['Rig/readiness','Rig-ready prep, blendshape list, viseme notes, or explicit no-rig scope.'],
-      ['Files','VRM/FBX/BLEND/source files and delivery notes where the project scope requires them.'],
-      ['Use case','Creator, VTuber, game avatar, or brand identity facts confirmed by Lesly.']
+      ['Direction shown','Polished portrait, coordinated identity views, and five expression targets with one face, costume, and material family.'],
+      ['Expression specification','Visible neutral, warm, joyful, surprised, and focused reads define the future facial-deformation target.'],
+      ['Capture required','Matching production model, neutral turns, facial topology, inner-mouth construction, blendshape/viseme, rig-control, tracking, and platform tests.'],
+      ['Claim boundary','No completed avatar, orthographic turnaround, rig, blendshapes, tracking, game/engine integration, source file, or export package is claimed.']
     ],
-    current:['assets/portfolio/work-avatar-character.webp'],
-    required:['assets/process/avatar-character/hero.webp','assets/process/avatar-character/expression-sheet.webp','assets/process/avatar-character/technical-proof.webp','assets/process/avatar-character/deliverables.webp']
+    current:['assets/rebuild/avatar-mira/hero-4x3-v1.webp','assets/rebuild/avatar-mira/identity-views-16x9-v1.webp','assets/rebuild/avatar-mira/expression-direction-16x9-v1.webp'],
+    required:['matching production-model neutral turns','facial topology and inner-mouth inspection','blendshape, viseme, and rig-control tests','tracking, platform, and export validation']
   },
   {
     id:'mascot-character',
-    title:'Mascot Character Project',
-    image:'assets/portfolio/work-mascot-character.webp',
-    alt:'Mascot character project board.',
-    meta:['Mascot','Brand character','Pose system'],
-    lead:'A mascot project for startup, creator, product, or brand use, centered on appeal, pose range, and recognizable shape.',
-    whatTitle:'A brand-character presentation target.',
-    whatCopy:'This project supports mascot service positioning with a brand-character presentation format: brief, brand system, pose pack, expression pack, source model, and campaign delivery details.',
+    title:'Sol Mascot Identity System',
+    image:'assets/rebuild/sol-mascot/sol-hero-4x5-v1.webp',
+    alt:'Sol the fennec fox mascot with oversized ears, three forehead markings, a terracotta cape, one patterned tail, animal paws, and a leaf-topped staff.',
+    meta:['Mascot direction','Identity system','Pose and expression study'],
+    lead:'A fennec mascot visual-direction study establishing Sol’s canonical silhouette, markings, costume, prop language, coordinated identity views, and pose and expression range.',
+    whatTitle:'One recognizable mascot across a hero, four views, and four character moments.',
+    whatCopy:'The package preserves Sol’s fennec anatomy, three forehead markings, one patterned tail, compact animal paws, costume, staff, palette, and surface language as direction for a future matching 3D build.',
     details:[
-      ['Appeal','Large eyes, simple shapes, and friendly proportions make the character readable fast.'],
-      ['Pose direction','Side panels suggest how a mascot system could include gestures and expression variants.'],
-      ['Brand use','The image fits startup, app, education, creator, or product-character positioning.'],
-      ['Technical checks','Brand palette, use case, model file, rig plan, and render pack define the mascot system.']
+      ['Identity lock','Oversized ears, short fox muzzle, amber eyes, cream fur, three forehead marks, and one geometric tail band remain fixed.'],
+      ['Costume and prop','Ivory tunic, terracotta scarf and cape, leather belt and pouch, aged-bronze protection, wrapped boots, and leaf-topped staff form one coherent family.'],
+      ['Pose range','Greeting, guide, delighted, and thoughtful poses extend the character while preserving proportion, markings, paws, costume, and silhouette.'],
+      ['Evidence boundary','The images are coordinated visual direction, not a measured orthographic turnaround, matching production model, rig, deformation, export, or finished brand application.']
     ],
     gallery:[
-      ['assets/process/mascot-character/presentation-board.webp','Mascot board with main appeal read and pose crops.'],
-      ['assets/process/mascot-character/appeal-read.webp','Face and body crop focused on proportions, expression, and recognizability.'],
-      ['assets/process/mascot-character/pose-panels.webp','Pose panel crop for gesture direction and future pose-pack detail.'],
-      ['assets/process/mascot-character/material-palette.webp','Palette/material crop for brand-character color and surface direction.']
+      ['assets/rebuild/sol-mascot-system/identity-views-16x9-v1.webp','Coordinated front, three-quarter, profile, and rear presentation views preserving Sol’s identity and costume.'],
+      ['assets/rebuild/sol-mascot-system/pose-expression-16x9-v1.webp','Greeting, guide, delighted, and thoughtful pose-and-expression targets for the same Sol identity.']
     ],
     proof:[
-      ['Mascot system','Expression set, pose set, colorways, and usage examples.'],
-      ['3D proof','Model views, topology, UVs, material sheet, and render closeups.'],
-      ['Brand facts','Client/personal/speculative status and intended use confirmed.'],
-      ['Deliverables','Render pack, source/export files, handoff notes, or licensing limits.']
+      ['Direction shown','Hero, coordinated identity views, and four pose-and-expression targets preserve one Sol identity.'],
+      ['System rule','Fennec anatomy, markings, tail, paws, costume, staff, palette, and material hierarchy stay consistent.'],
+      ['Capture required','Matching production-model turns, topology, UVs, textures, rig, deformation, prop interaction, and usage tests.'],
+      ['Claim boundary','No completed model, orthographic turnaround, rig, export package, or deployed brand application is claimed.']
     ],
-    current:['assets/portfolio/work-mascot-character.webp'],
-    required:['assets/process/mascot-character/hero.webp','assets/process/mascot-character/pose-expression-set.webp','assets/process/mascot-character/technical-proof.webp','assets/process/mascot-character/deliverables.webp']
+    current:['assets/rebuild/sol-mascot/sol-hero-4x5-v1.webp','assets/rebuild/sol-mascot-system/identity-views-16x9-v1.webp','assets/rebuild/sol-mascot-system/pose-expression-16x9-v1.webp'],
+    required:['matching production-model neutral turns','topology, UV, texture, and material evidence','rig, deformation, and prop-interaction tests','verified exports or usage tests for the agreed context']
   },
   {
     id:'outfits-accessories',
-    title:'Outfits, Skins And Accessories Project',
-    image:'assets/portfolio/work-outfits-accessories.webp',
-    alt:'Outfit and accessory project board.',
-    meta:['Outfit','Accessories','Material direction'],
-    lead:'A costume and accessory project focused on outfit silhouette, material closeups, prop details, and variation-friendly presentation.',
-    whatTitle:'A presentation target for clothing, props, and material detail.',
-    whatCopy:'This project supports a smaller-scope service category with clear slots for modeled garments, UVs, texture maps, material bakes, and platform-ready accessory files.',
+    title:'Ember Duelist Costume Direction',
+    image:'assets/rebuild/outfit-ember-duelist/hero-4x3-v1.webp',
+    alt:'Young Ember Court Duelist wearing layered ivory, plum, black leather, and aged-gold costume pieces with a complete rapier.',
+    meta:['Outfit direction','Accessories','Layer system'],
+    lead:'A coordinated outfit and accessory study built around layered ivory tailoring, a plum wrap coat, asymmetrical protection, leather structure, and one complete rapier.',
+    whatTitle:'A costume hierarchy that can be read, separated, and recreated piece by piece.',
+    whatCopy:'The hero, front-and-back inspection, accessory set, and three-stage dressing sequence define the visible garment order, material family, silhouette, and reconstruction target.',
     details:[
-      ['Costume read','Full-body views keep silhouette and outfit layers readable.'],
-      ['Detail crops','Closeups isolate the accessory, boot, fabric, trim, and prop decisions that must survive the 3D build.'],
-      ['Scope fit','Good category for skins, props, accessories, outfit variants, and avatar add-ons.'],
-      ['Technical checks','Garment mesh, material graph, UV layout, texture sheet, and export captures support the handoff.']
+      ['Layer hierarchy','Ivory shirt and charcoal trousers form the foundation; plum tailoring and leather structure create the silhouette; metal protection and rapier complete the final read.'],
+      ['Front and back','Coordinated neutral views clarify coat-tail split, harness routing, shoulder asymmetry, belt construction, boot height, and back closure.'],
+      ['Accessory inspection','Rapier, shoulder guard, forearm protection, harness, waist structure, medallion option, and boot are shown as separate direction pieces.'],
+      ['Evidence boundary','The images do not prove garment meshes, engineered attachments, deformation, topology, UVs, textures, rigging, engine setup, or exports.']
     ],
     gallery:[
-      ['assets/process/outfits-accessories/presentation-board.webp','Outfit board showing the full costume and detail crop structure.'],
-      ['assets/process/outfits-accessories/front-back-silhouette.webp','Front/back costume silhouette crop for outfit layer read.'],
-      ['assets/process/outfits-accessories/trim-materials.webp','Trim and material crop for fabric, belt, metal, and embroidery direction.'],
-      ['assets/process/outfits-accessories/prop-accessories.webp','Prop and accessory crop for smaller deliverable opportunities.']
+      ['assets/rebuild/outfit-ember-duelist/front-back-accessories-16x9-v1.webp','Coordinated front/back costume views with rapier, armor, harness, belt, medallion option, and boot inspection.'],
+      ['assets/rebuild/outfit-ember-duelist/layer-progression-16x9-v1.webp','Foundation, tailored mid-layer, and complete outfit sequence on one consistent character.']
     ],
     proof:[
       ['Modeled pieces','Outfit/accessory mesh views and detail screenshots.'],
@@ -326,708 +306,1288 @@ const CASE_STUDIES=[
       ['Variants','Colorways, skins, prop options, or outfit swaps if real.'],
       ['Platform fit','Roblox/avatar/game constraints only if known and approved.']
     ],
-    current:['assets/portfolio/work-outfits-accessories.webp'],
-    required:['assets/process/outfits-accessories/hero.webp','assets/process/outfits-accessories/material-closeups.webp','assets/process/outfits-accessories/technical-proof.webp','assets/process/outfits-accessories/deliverables.webp']
+    current:['assets/rebuild/outfit-ember-duelist/hero-4x3-v1.webp','assets/rebuild/outfit-ember-duelist/front-back-accessories-16x9-v1.webp','assets/rebuild/outfit-ember-duelist/layer-progression-16x9-v1.webp'],
+    required:['assets/rebuild/outfit-ember-duelist/hero-4x3-v1.webp','assets/rebuild/outfit-ember-duelist/front-back-accessories-16x9-v1.webp','assets/rebuild/outfit-ember-duelist/layer-progression-16x9-v1.webp']
   },
   {
     id:'pbr-texturing',
-    title:'Concept To Character Project',
-    image:'assets/portfolio/work-concept-to-3d.webp',
-    alt:'Concept-to-character project board.',
-    meta:['Concept to 3D','Direction study','3D build plan'],
-    lead:'A concept-to-character project showing how early visual direction can become a polished character presentation.',
-    whatTitle:'A direction page for the flagship concept-to-3D offer.',
-    whatCopy:'This project supports the flagship offer: turning sketches, briefs, moodboards, or reference images into character direction, presentation assets, and production handoff.',
+    title:'Marsh Warden Material Study',
+    image:'assets/rebuild/pbr-marsh-warden/hero-4x3-v1.webp',
+    alt:'Marsh Warden material-study character with teal cloth, ivory linen, leather, oxidized bronze, and a lantern staff.',
+    meta:['PBR material direction','Material hierarchy','Reconstruction direction'],
+    lead:'A character material study focused on clear separation between skin, hair, linen, dyed cloth, leather, oxidized bronze, wood, glass, and stone.',
+    whatTitle:'Surface response supports the character before it calls attention to itself.',
+    whatCopy:'The Marsh Warden uses a limited teal, ivory, brown, and aged-bronze palette so value, roughness, edge treatment, and wear can clarify construction and focal hierarchy.',
     details:[
-      ['Starting input','The board suggests rough sketch or early reference moving toward a finished character.'],
-      ['Design progression','Intermediate and final panels make the transformation easy to understand.'],
-      ['Buyer fit','Useful for clients who have an idea but need character-art direction and 3D execution.'],
-      ['Technical checks','Brief, sculpt, retopo, UV, material, and handoff captures make the build path inspectable.']
+      ['Skin and hair','Controlled specular response keeps facial planes readable while tightly curled hair remains a distinct mass.'],
+      ['Cloth and leather','Ivory linen, teal woven cloth, and worn leather separate through weave scale, edge softness, value, and roughness.'],
+      ['Metal and props','Oxidized bronze, wood, glass, and stone use restrained wear and material-specific highlights.'],
+      ['Evidence chain','Matching UVs, bakes, texture sets, shader captures, neutral checks, and final renders complete the technical proof.']
     ],
     gallery:[
-      ['assets/process/pbr-texturing/presentation-board.webp','Board for the concept-to-character presentation flow.'],
-      ['assets/process/pbr-texturing/starting-sketch.webp','Starting-sketch crop to show the kind of source input a real case would document.'],
-      ['assets/process/pbr-texturing/design-progression.webp','Mid-direction crop for shape, costume, and art-direction progression.'],
-      ['assets/process/pbr-texturing/final-character-read.webp','Final character crop for the intended finished presentation read.']
+      ['assets/rebuild/pbr-marsh-warden/material-inspection-16x9-v1.webp','Material inspection direction for surface separation, value hierarchy, restrained wear, and close-range readability.']
     ],
     proof:[
-      ['Input proof','Sketch, brief, moodboard, reference image, or existing concept with rights status.'],
-      ['3D creation','Sculpt/model screenshots and iteration notes.'],
-      ['Technical proof','Wireframe, UVs, texture maps, material sheets, and final renders.'],
-      ['Result','Confirmed intended use, deliverables, and public restrictions.']
+      ['Direction shown','The hero and inspection sheet establish one Marsh Warden identity and coherent material hierarchy.'],
+      ['Material decisions','Skin, hair, linen, cloth, leather, bronze, wood, glass, and stone remain visibly distinct.'],
+      ['Evidence boundary','Generated UV tiles, maps, shaders, or software chrome are not presented as proof.'],
+      ['Acceptance path','Matching model, UV, bake, texture-set, shader, and render captures complete the case.']
     ],
-    current:['assets/portfolio/work-concept-to-3d.webp'],
-    required:['assets/process/concept-to-character/starting-point.webp','assets/process/concept-to-character/sculpt-model.webp','assets/process/concept-to-character/technical-proof.webp','assets/process/concept-to-character/final-renders.webp']
+    current:['assets/rebuild/pbr-marsh-warden/hero-4x3-v1.webp','assets/rebuild/pbr-marsh-warden/material-inspection-16x9-v1.webp'],
+    required:['assets/rebuild/pbr-marsh-warden/hero-4x3-v1.webp','assets/rebuild/pbr-marsh-warden/material-inspection-16x9-v1.webp']
   },
   {
     id:'original-site-concept',
-    title:'Hero Character Presentation Project',
-    image:'assets/portfolio/hero-original-site-concept.webp',
-    alt:'Hero character project visual.',
-    meta:['Hero character','Portfolio asset','Presentation system'],
-    lead:'A hero character case used to establish the portfolio direction, character-first presentation style, and handoff structure.',
-    whatTitle:'A character-first direction for the portfolio.',
-    whatCopy:'This page shows the visual identity, staging logic, case-study structure, and technical categories used across the portfolio.',
+    title:'Concept To Character',
+    image:'assets/portfolio/work-concept-to-3d.webp',
+    alt:'Concept-to-character presentation showing an early fantasy warrior direction progressing into a resolved 3D character target.',
+    meta:['Concept to 3D','Character development','Reconstruction direction'],
+    lead:'A fantasy-character direction developed from an early visual idea into a sculpt target, coherent costume construction, and readable material system.',
+    whatTitle:'A professional development sequence without decorative process filler.',
+    whatCopy:'The case moves through three distinct decisions: what the character should become, how the forms and layers should be built, and how the materials should separate.',
     details:[
-      ['Hero signal','Large character-first render gives the site immediate 3D character identity.'],
-      ['Stage direction','Simple studio stage, grounded shadow, and warm lighting support the character.'],
-      ['Site use','Used for homepage, work cards, and case-study staging.'],
-      ['Technical checks','Source 3D files, topology, UVs, textures, and render setup notes complete the inspection package.']
+      ['Starting direction','The original opener preserves the project’s early-to-resolved progression.'],
+      ['Sculpt target','Facial planes, ponytail and hair mass, body proportion, silhouette, and costume layers are evaluated in neutral clay.'],
+      ['Construction and materials','Close views clarify cloth layering, belt assembly, metal placement, embroidery, footwear, and surface hierarchy.'],
+      ['Production boundary','Matching source-tool, topology, UV, texture, and export captures remain required.']
     ],
     gallery:[
-      ['assets/process/original-site-concept/presentation-board.webp','Site board built from the hero direction asset.'],
-      ['assets/process/original-site-concept/hero-stage.webp','Hero-stage crop for character scale, pose, and environment restraint.'],
-      ['assets/process/original-site-concept/face-costume.webp','Face and upper-costume crop for expression, hair, fabric, and armor read.'],
-      ['assets/process/original-site-concept/stage-grounding.webp','Stage-grounding crop for plinth, contact shadow, and prop restraint.']
+      ['assets/rebuild/concept-to-character/sculpt-development-16x9-v1.webp','Sculpt-development direction for identity, silhouette, costume layers, and front-to-back construction.'],
+      ['assets/rebuild/concept-to-character/material-construction-16x9-v1.webp','Material and construction direction for skin, hair, cloth, leather, bronze, embroidery, and footwear.']
     ],
     proof:[
-      ['Hero render','Approved Lesly render for homepage.'],
-      ['Source proof','Model, topology, UVs, materials, and final presentation captures.'],
-      ['Project facts','Project type, use case, tools, deliverables, and restrictions.'],
-      ['Portfolio role','Homepage hero, case-study opener, and presentation crops built from one consistent character direction.']
+      ['Starting direction','The opener establishes the early fantasy-character idea and selected direction.'],
+      ['Form development','The clay study defines facial planes, hair mass, silhouette, costume layers, and front-to-back construction.'],
+      ['Material development','The inspection study separates skin, hair, cloth, leather, bronze, embroidery, and footwear.'],
+      ['Evidence boundary','Source-tool, topology, UV, texture, and export claims wait for matching production captures.']
     ],
-    current:['assets/portfolio/hero-original-site-concept.webp'],
-    required:['assets/process/original-site-concept/hero.webp','assets/process/original-site-concept/technical-proof.webp','assets/process/original-site-concept/final-renders.webp','assets/process/original-site-concept/deliverables.webp']
+    current:['assets/portfolio/work-concept-to-3d.webp','assets/rebuild/concept-to-character/sculpt-development-16x9-v1.webp','assets/rebuild/concept-to-character/material-construction-16x9-v1.webp'],
+    required:['assets/portfolio/work-concept-to-3d.webp','assets/rebuild/concept-to-character/sculpt-development-16x9-v1.webp','assets/rebuild/concept-to-character/material-construction-16x9-v1.webp']
   }
 ];
 
 const CASE_NARRATIVES={
   'game-hero':{
-    problemTitle:'A game-facing character needs to read fast and still hold up under inspection.',
+    problemTitle:'A game-facing character needs a memorable role silhouette and construction that survives neutral inspection.',
     problems:[
-      ['Buyer problem','A team may have a strong character idea, but the portfolio presentation must show silhouette, material hierarchy, pose, and handoff planning before anyone trusts it for a game pipeline.'],
-      ['Presentation risk','A beauty render alone can hide weak production thinking. This project separates the hero read from the inspection materials a recruiter or art director expects.'],
-      ['Solved direction','The page gives the character a full-body hero, closeup crops, costume hierarchy, weapon read, and a checklist for topology, UVs, textures, and exports.']
+      ['Buyer problem','A team needs to recognize the character role quickly, then inspect anatomy, costume construction, prop scale, and movement risks before committing to a production build.'],
+      ['Presentation risk','A dramatic beauty pose can conceal profile drift, unclear back construction, broken weapon interaction, or armor that cannot move with the body.'],
+      ['Solved direction','The Forge Warden package pairs one grounded hero with coordinated front, profile, and back views plus targeted face, grip, shoulder, elbow, hip, knee, and boot inspection.']
     ],
     process:[
-      ['Brief','Define the character role, genre, use case, target engine or viewer, required views, and whether the asset needs rig-ready topology.'],
-      ['Visual direction','Lock the silhouette, stance, costume layers, surface contrast, face read, and prop scale before moving into production detail.'],
-      ['3D production','Build the high-level sculpt/model pass, then prepare retopo, UVs, texture maps, materials, turnarounds, and export notes for the final package.'],
-      ['Presentation','Show the hero render first, then face, costume, weapon, neutral views, and technical proof so the project can be scanned quickly.']
+      ['Role and silhouette','Define an older, stocky Forge Warden whose broad shoulder line, heavy boots, asymmetrical armor, and square-headed hammer read as one playable archetype.'],
+      ['Construction direction','Resolve the indigo quilted gambeson, fur collar, plate overlaps, copper rivets, straps, belt layers, skirt panels, guards, boots, and hammer proportions.'],
+      ['Movement-risk review','Check the two-hand grip, wrist alignment, elbow clearance, shoulder load, belt and hip range, knee protection, and grounded boot shapes before a rig-ready build is claimed.'],
+      ['Production handoff','Use the selected visual target to create matching source-model, topology, UV, bake, material, rig, engine, and export evidence during production.']
     ],
     deliverables:[
-      ['Presentation assets','Hero render, presentation board, face crop, costume/material crop, weapon silhouette crop, and project summary.'],
-      ['Production package','Wireframe, UV layout, texture sheets, turnarounds, FBX/OBJ/BLEND files, and engine/viewer notes where scoped.'],
-      ['Decision notes','Character role, intended use, scope assumptions, file-format needs, and any restrictions on public sharing.']
+      ['Direction package','Hero character render, front/profile/back construction sheet, grip and articulation study, and character-role notes.'],
+      ['Production package','Matching source-model, topology, UV, bake, texture, material, rig, engine, and export captures when those steps are completed.'],
+      ['Decision notes','Intended use, platform constraints, required views, movement priorities, handoff format, and any restrictions on public sharing.']
     ]
   },
   'character-environment':{
-    problemTitle:'A strong character still needs scale, grounding, and presentation context.',
+    problemTitle:'A finished character can still feel weightless when the stage, camera, and light do not support the pose.',
     problems:[
-      ['Buyer problem','Founders and game teams need to understand how the character feels inside a world, pitch deck, store page, or gameplay-facing presentation.'],
-      ['Presentation risk','A character on a blank background can look unfinished, while an overbuilt scene can distract from the character work.'],
-      ['Solved direction','The project uses controlled staging: plinth, ground contact, supporting props, warm lighting, and camera framing that make the character feel placed without becoming a full environment-art case.']
+      ['Buyer problem','Art directors and clients need a presentation that communicates character scale, weight, atmosphere, and focal hierarchy without funding or implying a full environment.'],
+      ['Presentation risk','A blank floor can make the figure float, while too much scenery can hide anatomy, weaken the silhouette, and confuse ownership of the work.'],
+      ['Solved direction','The Frostline Ranger uses a compact stone stage, one milestone, a few frost stones, controlled mist, clear negative space, and a restrained cool-and-warm light relationship.']
     ],
     process:[
-      ['Context brief','Define where the character will be shown: pitch render, game presentation, avatar preview, product mascot, store page, or portfolio case.'],
-      ['Stage blockout','Place the character on a base with simple props, ground plane, scale cues, silhouette clearance, and camera angle.'],
-      ['Lighting and mood','Tune key light, fill, rim, shadows, background value, and warm/cool contrast so face, costume, weapon, and pose remain readable.'],
-      ['Presentation package','Deliver the staged hero render, stage closeups, prop notes, scene breakdown slots, and final handoff requirements.']
+      ['Character priority','Start with the compact archer silhouette, face, bow, quiver, coat hem, hands, and boots that must remain readable from the chosen camera.'],
+      ['Stage progression','Move from a neutral floor and plain plinth to the irregular stone base, then place the milestone and frost stones only where they add scale and silhouette clearance.'],
+      ['Light and camera','Use a cool key, restrained warm rim, controlled fill, and soft contact shadow; test eye-level, near-profile, and low grounding views for face read, silhouette, foot contact, and bow clearance.'],
+      ['Production handoff','Recreate the selected stage in the production scene, then capture the real camera, light, prop, material, render, and viewer settings where scoped.']
     ],
     deliverables:[
-      ['Presentation assets','Staged thumbnail, hero-stage crop, grounding crop, presentation board, and project summary.'],
-      ['Scene package','Stage blockout, prop list, camera notes, lighting notes, material direction, and source/render scene captures where scoped.'],
-      ['Use-case notes','Pitch, game, creator, mascot, store-page, or portfolio context plus any restrictions on public scene or source-file sharing.']
+      ['Direction package','Frostline Ranger hero stage, neutral-to-final progression, camera and grounding study, and concise staging rationale.'],
+      ['Scene package','Matching stage blockout, camera and light captures, prop placement, material setup, render settings, and source-scene evidence where completed.'],
+      ['Use-case notes','Intended presentation context, crop requirements, viewer target, stage ownership, source permissions, and any restrictions on public sharing.']
     ]
   },
   'interior-props':{
-    problemTitle:'Interior props have to carry mood, scale, and material quality without becoming clutter.',
+    problemTitle:'A prop collection needs hierarchy and material logic before it becomes a believable set.',
     problems:[
-      ['Buyer problem','Founders, game teams, and brand teams often need a believable interior corner, shelf, store set, or product-world scene before a full environment is funded.'],
-      ['Presentation risk','A shelf full of objects can look busy but still feel generic if the materials, scale, silhouettes, and focal hierarchy are not planned.'],
-      ['Solved direction','The project organizes the prop set around a controlled mood, reusable objects, precise small details, metal/glass/ceramic/wood studies, and clear handoff files.']
+      ['Buyer need','A game, animation, or visualization team may need a believable interior corner before committing to a full environment build.'],
+      ['Presentation risk','A shelf can contain many attractive objects and still feel generic when scale, repetition, silhouette, negative space, and materials are not coordinated.'],
+      ['Solved direction','The hero, isolated asset family, and neutral-volume, material, and lighting views establish one ornate shelf language and an actionable target for future production.']
     ],
     process:[
-      ['Mood and reference','Define the interior style, lighting mood, object categories, material palette, and intended use: game scene, brand render, pitch image, or product world.'],
-      ['Asset breakdown','List the objects before modeling: shelves, boxes, bottles, jars, books, candles, labels, hardware, textiles, plants, ceramic pieces, and trim.'],
-      ['3D prop production','Block scale and composition, then model high-detail objects, prepare UVs, build material reads, texture surfaces, and set camera lighting.'],
-      ['Set dressing','Arrange the props by focal point, silhouette, negative space, contact shadows, repetition, material contrast, and story detail.']
+      ['Visual brief','Define the carved-furniture language, intended mood, object categories, material palette, viewing distance, and use case.'],
+      ['Asset family','Build a clear list of large, medium, and small prop types with shared ornament, wear, hardware, and construction cues.'],
+      ['Set dressing','Arrange the shelf around one focal chest, varied object heights, controlled repetition, breathing room, contact, and story detail.'],
+      ['Material and lighting direction','Check the same composition in neutral-volume, neutral-material, and warm-presentation conditions so form and finish remain legible.'],
+      ['Production validation','When the matching scene exists, verify models, hardware behavior, topology, UVs, maps, materials, object organization, performance, and exports from that source.']
     ],
     deliverables:[
-      ['Presentation assets','Shelf hero render, 2D-to-3D process board, material board, glass/metal render, closeup detail grid, and project summary.'],
-      ['Production package','Modeled prop set with OBJ source, material library, UV coordinates, material notes, manifest, and render-scene notes for the agreed platform.'],
-      ['Decision notes','Object list, scale assumptions, material references, lighting mood, file-format needs, naming rules, and public sharing limits.']
+      ['Direction package','Warm shelf hero, isolated prop-family presentation, and coordinated neutral-volume, material, and lighting direction renders.'],
+      ['Build brief','Shelf architecture, prop list, scale hierarchy, material targets, set-dressing logic, camera, and lighting priorities.'],
+      ['Evidence plan','Matching model, wireframe, UV, map, material, source-scene, object-organization, engine, performance, and export captures where scoped.']
     ]
   },
   'ai-visual-pipeline':{
-    problemTitle:'The team had visual outputs, but not a repeatable 3D workflow system.',
+    problemTitle:'A promising character direction can still drift between concept, form, materials, review, and handoff.',
     problems:[
-      ['Buyer problem','The construction team was using online AI tools for home visuals, but the outputs were inconsistent and the spend was hard to control.'],
-      ['Presentation risk','Exploration images can look impressive while failing geometry, material consistency, client approval, or real project constraints.'],
-      ['Solved direction','Lesly defined the visual standards, material library, review criteria, local generation workflow, cost model, and developer brief needed to make the 2D/AI-to-3D process repeatable.']
+      ['Buyer need','A character team needs to know which identity, silhouette, costume, prop, and material decisions must survive the next 3D pass.'],
+      ['Workflow risk','Sketches and attractive exploration can multiply without clarifying what is approved, what is risky, and what evidence the next stage must provide.'],
+      ['Solved direction','Tideglass turns one courier concept into a controlled sequence of identity locks, neutral-form questions, material targets, close inspections, and a bounded production brief.']
     ],
     process:[
-      ['Workflow audit','Map current cloud AI spend, prompt practices, visual failures, review bottlenecks, and handoff gaps.'],
-      ['Art direction system','Define the material library, style rules, acceptable variation, geometry-preservation needs, and client-ready output criteria.'],
-      ['Agent instruction layer','Write the system prompts, task prompts, negative rules, naming rules, reference requirements, and QA checks that make AI agents respect 3D and construction constraints.'],
-      ['Workflow plan','Specify how references, prompts, review states, structure guidance, and output logs should be organized before visuals are used for review.'],
-      ['Implementation handoff','Coordinate setup notes, agent behavior, training materials, and review checkpoints around the approved production environment.']
+      ['Frame the brief','Define the character role, audience, intended presentation, fixed identity cues, open questions, and evidence boundaries.'],
+      ['Lock the direction','Select one silhouette, coat construction, shoulder-guard side, satchel relationship, staff family, and restrained palette.'],
+      ['Review form','Compare sketch and neutral-form direction for proportion, stance, grip, ground contact, garment layering, prop scale, and obstruction risks.'],
+      ['Review materials','Check textile, leather, oxidized copper, brass, and glass reads at full figure and close range.'],
+      ['Prepare the handoff','Record the approved direction, unresolved risks, required matching captures, ownership, and next production action without overstating what is complete.']
     ],
     deliverables:[
-      ['Strategy package','Workflow map, visual standards, material-library taxonomy, generation rules, and client review criteria.'],
-      ['Technical brief','Workflow assumptions, tool requirements where approved, prompt templates, logging rules, and 3D-aware review notes.'],
-      ['Agent instructions','3D-aware prompts, rejection criteria, image-review rules, material naming rules, and client-ready response instructions.'],
-      ['Measurement plan','Baseline tool spend, residual workflow cost, break-even model, and output-consistency checks for an implementation pilot.']
+      ['Direction package','Resolved Tideglass target, coordinated concept sketches, neutral-maquette direction, material target, and concise identity locks.'],
+      ['Review brief','Form, grip, costume-construction, rear-silhouette, material, consistency, and evidence questions for the next pass.'],
+      ['Handoff plan','Approved direction, unresolved risks, responsible reviewer, required production captures, and acceptance path.']
     ]
   },
   'santa-cruz-ai-visual-pipeline':{
-    problemTitle:'The team had AI image experiments, but not a controlled visualization pipeline.',
+    problemTitle:'A residential direction loses value when form, finish, landscape, camera, and light drift between reviews.',
     problems:[
-      ['Buyer problem','A residential construction team needed better home visuals, material options, and progress presentations without chasing disconnected AI outputs.'],
-      ['Workflow risk','Visualization outputs can look useful while drifting away from geometry, materials, site conditions, client comments, and implementation constraints.'],
-      ['Solved direction','Lesly defined visual standards, local workflow requirements, review criteria, training needs, and developer-ready instructions so AI-assisted visualization could support real decisions.']
+      ['Buyer need','A design team may need to compare a proposed home, finish families, context, and light before a matching production scene or approved project record exists.'],
+      ['Workflow risk','Attractive views stop being comparable when the building, camera, planting, finish boundaries, or time-of-day logic changes between images.'],
+      ['Solved direction','The package holds one coastal-residence identity through a resolved hero, one-camera finish options, and coordinated context, daylight, and dusk review.']
     ],
     process:[
-      ['Workflow audit','Map the existing image-generation habits, reference sources, review bottlenecks, client feedback channels, and handoff gaps.'],
-      ['Art direction system','Define material library, finish rules, structure-preservation needs, acceptable variation, and client-ready quality standards.'],
-      ['Local pipeline plan','Translate references, prompts, seeds, structure guidance, output logs, and review notes into a repeatable local workflow plan.'],
-      ['Implementation handoff','Prepare developer requirements, agent instructions, training notes, review checkpoints, and measurement criteria.']
+      ['Frame the study','Define the fictional residence identity, finish questions, intended cameras, context, daylight, dusk, and evidence boundary.'],
+      ['Lock the residence','Hold roofline, glazing rhythm, stone piers, terraces, stepped approach, rocky grade, and planting language stable.'],
+      ['Compare finishes','Use one neutral camera and light family to compare pale, warm, and cool material directions without implying product specification.'],
+      ['Review context and light','Test distant landscape fit, daylight readability, blue-hour silhouette, interior glow, and path-light hierarchy.'],
+      ['Record the boundary','Separate visual preference from architecture, engineering, code, feasibility, procurement, construction, approval, cost, and schedule questions.']
     ],
     deliverables:[
-      ['Strategy package','Workflow map, visual standards, material-library taxonomy, review criteria, and controlled generation rules.'],
-      ['Technical brief','Local workflow requirements, logging rules, and 3D-aware review notes where approved.'],
-      ['Training and review','Prompt templates, rejection criteria, image-review standards, handoff instructions, and a measurement plan for the implementation pilot.']
+      ['Direction package','Resolved exterior, finish-option study, context view, daylight inspection, blue-hour presentation, and residence identity locks.'],
+      ['Review brief','Form, opening, material, landscape, camera, lighting, accessibility-risk, and evidence questions.'],
+      ['Evidence plan','Permissioned project inputs, matching scene captures, qualified project review, and real approval or outcome evidence where available.']
     ]
   },
   'construction-client-progress-workflow':{
-    problemTitle:'The team had progress evidence, but not one review system.',
+    problemTitle:'A progress image is useful only when its location, question, and owner are clear.',
     problems:[
-      ['Buyer problem','Jobsite photos, homeowner comments, AI visual options, and team responses were easy to scatter across calls, texts, folders, and emails.'],
-      ['Workflow risk','A progress photo does not automatically answer the client question, and an AI visual does not automatically connect to actual construction status.'],
-      ['Solved direction','Lesly organized the review surface around visual evidence: phase, photo, status, comment, response, next action, and approved visual decision.']
+      ['Communication problem','A folder of isolated site images can hide where a condition sits, what the image is meant to answer, and who is responsible for review.'],
+      ['Evidence risk','A convincing image can be mistaken for verification even when the date, location, capture owner, reviewer, and decision record are missing.'],
+      ['Solved direction','Lesly structures each fictional update around phase, location, review question, evidence hierarchy, responsibility, state, and next action.']
     ],
     process:[
-      ['Capture rules','Define which site photos, material references, client notes, and AI visuals belong in the review flow.'],
-      ['Review model','Map each item to a clear state so the team knows what is captured, reviewed, approved, blocked, or waiting for response.'],
-      ['Agent-assisted layer','Use AI where it helps: summaries, routing, decision extraction, response drafts, and connection between photos, comments, and visual options.'],
-      ['Implementation brief','Prepare a portal-style workflow brief with redaction rules, reporting needs, client-facing language, and pilot measurement criteria.']
+      ['Lock the subject','Keep the brick shell, arched openings, steel portal, clerestory, timber roof, concrete floor, and camera coherent across the reconstruction.'],
+      ['Build phase context','Compare shell, structure, enclosure and rough-in, and finish-ready states without presenting them as dated site history.'],
+      ['Locate the question','Use wide, medium, and detail views to connect one courtyard-opening condition to its architectural context.'],
+      ['Define responsibility','Separate capture ownership, qualified assessment, authorized decision recording, and follow-up action from optional AI organization support.']
     ],
     deliverables:[
-      ['Workflow package','Capture checklist, phase model, comment/response model, review states, and next-action rules.'],
-      ['Client review material','Progress evidence board, redacted portal examples, before/after report format, and approval-state examples where approved.'],
-      ['Measurement plan','Message count, admin time, response loop, repeated question rate, approval clarity, and rework signals to confirm before making public result claims.']
+      ['Visual direction package','One active-stage hero, a coordinated four-stage reconstruction, and one wide-to-detail evidence hierarchy.'],
+      ['Review specification','Required fields, state language, responsibility boundaries, missing-context checks, and next-action rules.'],
+      ['Evidence plan','Permissioned captures, verified dates and locations, reviewer records, decisions, system evidence, and approved measurements for any future operational case.']
     ]
   },
   'print-startup-direction':{
-    problemTitle:'The startup needed attractive characters that could also survive physical production.',
+    problemTitle:'A collectible render is not proof that a character can be manufactured.',
     problems:[
-      ['Buyer problem','The 3D printing startup wanted different collectible characters, but early assets were inconsistent and needed heavy repair before printing.'],
-      ['Production risk','A model can look good on screen while failing as a physical object because of thin parts, bad supports, hollowing issues, or non-watertight geometry.'],
-      ['Solved direction','Lesly acted as design director: defining character families, agent instructions, printability rules, QA gates, file handoff standards, and a repeatable product library.']
+      ['Buyer problem','A collectible project needs a recognizable character, stable base, clear prop relationship, and a practical route from approved form to physical output.'],
+      ['Production risk','One polished render can hide fragile ears, an unsupported staff, ambiguous parting, weak foot contact, unstable bases, thin details, and geometry that has never entered a slicer.'],
+      ['Solved direction','Sol pairs a color-and-clay maquette target with proposed component groups and full contact views, while reserving all print-readiness claims for real engineering and test evidence.']
     ],
     process:[
-      ['Product brief','Define character audience, collectible scale, print process, product family, pose rules, base system, and handoff format.'],
-      ['Agent instruction layer','Convert Lesly’s 3D judgment into prompts, rejection rules, geometry-risk checks, and task instructions that agents or developers can reuse.'],
-      ['Style direction','Lock silhouette, face read, proportions, expression, accessory logic, and visual consistency across future character lines.'],
-      ['Printability review','Move physical constraints earlier: wall thickness, supports, hollowing, drainage, fragile details, orientation, and slicer review.'],
-      ['Production handoff','Package STL/3MF/OBJ files, thumbnails, print notes, QA checklist, naming rules, and startup-facing product metadata.']
+      ['Identity lock','Preserve Sol’s fennec anatomy, exactly three forehead marks, one patterned tail, compact animal paws, costume, staff, and base language.'],
+      ['Maquette direction','Resolve the collectible silhouette, neutral surface read, cape and tail relationship, staff holder, feet, and base footprint.'],
+      ['Component proposal','Explore head, scarf/cape, tail, body, paws, staff, holder, and base as planning groups without treating them as final production parts.'],
+      ['Engineering validation','Build the matching model, choose the real scale and process, then verify parting, joints, dimensions, wall thickness, watertightness, hollowing, drainage, and supports where relevant.'],
+      ['Physical acceptance','Record slicer settings, repairs, assembly behavior, and photographs of a successful test print before making a print-ready claim.']
     ],
     deliverables:[
-      ['Design package','Character family boards, style guide excerpts, agent instructions, scale rules, pose/base standards, and accessory constraints.'],
-      ['Print package','Printability checklist, slicer review notes, support/orientation guidance, file package structure, and test-print QA requirements.'],
-      ['Measurement plan','Repair/rejection rate, prep time per character, successful print count, material waste, and startup approval metrics.']
+      ['Collectible direction','Color-and-clay hero, proposed component-separation study, and coordinated contact views.'],
+      ['Engineering brief','Character locks, risk zones, parting questions, process inputs, scale decisions, and required validation captures.'],
+      ['Acceptance evidence','Matching model inspection, final parting and joint captures, slicer and repair evidence, assembly notes, and test-print photographs.']
     ]
   },
   'sculpt-to-retopo':{
-    problemTitle:'Technical character work needs clear inspection views alongside the polished render.',
+    problemTitle:'A polished bust is useful only when the underlying form decisions stay inspectable.',
     problems:[
-      ['Buyer problem','Art directors and recruiters need to see whether the forms, edge flow, UVs, and texture prep can survive real production review.'],
-      ['Presentation risk','A portfolio can look finished while hiding missing topology, unclear turns, or weak sculpt structure.'],
-      ['Solved direction','The project creates a dedicated process page for sculpt reads, retopo panels, turnaround strips, and technical capture slots.']
+      ['Buyer problem','Art directors and recruiters need to see the form hierarchy, profile, identity consistency, and deformation targets behind the beauty image.'],
+      ['Presentation risk','One dramatic portrait can hide a weak profile, changing facial proportions, unresolved hair mass, or unsupported topology claims.'],
+      ['Solved direction','Lyra pairs a resolved clay hero with broad-to-fine sculpt stages and coordinated neutral, profile, smile, and jaw-open views.']
     ],
     process:[
-      ['Sculpt read','Start with head, body, silhouette, facial planes, hair mass, costume forms, and clay-style inspection views.'],
-      ['Retopo pass','Translate the sculpt into cleaner low-poly structure with visible edge flow, loop decisions, and optimization notes.'],
-      ['UV and bake prep','Prepare UV layout, bake maps, normal/AO/curvature outputs, and texture-sheet presentation.'],
-      ['Review format','Group sculpt, mesh, turnaround, and material evidence so a reviewer can inspect the pipeline without guessing.']
+      ['Primary blockout','Set cranial mass, jaw, neck, shoulders, bust silhouette, hair volume, and ornament placement before polish.'],
+      ['Secondary refinement','Resolve eyelids, nose, lips, ears, cheek transitions, braid groups, collar, and jewelry while preserving the main planes.'],
+      ['Form inspection','Check the same identity in neutral, true profile, controlled smile, and jaw-open targets under neutral clay lighting.'],
+      ['Topology handoff','Translate those visible requirements into a future low-poly plan, then record genuine loop, UV, bake, and source-file evidence from the matching asset.']
     ],
     deliverables:[
-      ['Presentation assets','Sculpt board, face crop, retopo panel, turnaround strip, and process summary.'],
-      ['Production package','Clay renders, low-poly wireframe, UV layout, bake maps, texture sheets, and source screenshots for review.'],
-      ['Review notes','Topology decisions, optimization constraints, tool context, and public-safe technical notes.']
+      ['Sculpt direction','Resolved Lyra bust plus a broad-to-fine form study that makes the intended hierarchy inspectable.'],
+      ['Form requirements','Neutral, profile, smile, and jaw-open targets for silhouette, identity, and later facial deformation planning.'],
+      ['Evidence plan','A precise list of the high-poly, low-poly, loop, UV, bake, source-tool, and export captures still required.']
     ]
   },
   'avatar-character':{
     problemTitle:'An avatar needs a recognizable identity and enough range to work beyond one portrait.',
     problems:[
-      ['Buyer problem','Creators need a character that reads clearly in thumbnails, profiles, streams, and expression sets.'],
-      ['Presentation risk','A single face render does not show personality range, outfit logic, expression planning, or future rig needs.'],
-      ['Solved direction','The project frames the avatar around portrait read, expression panels, hair/costume detail, and delivery notes for creator use.']
+      ['Buyer problem','A creator-facing character must read clearly in a small profile image and stay recognizable when the camera or expression changes.'],
+      ['Presentation risk','One polished portrait can hide profile drift, an unresolved rear silhouette, changing costume details, or expressions that no longer look like the same person.'],
+      ['Solved direction','Mira pairs a polished hero with coordinated identity views and five controlled emotional reads before any rig or platform claim is made.']
     ],
     process:[
-      ['Identity brief','Define the creator persona, expression range, outfit attitude, face read, and platform use.'],
-      ['Character direction','Refine hair shape, eye focus, costume silhouette, color accents, and thumbnail readability.'],
-      ['Expression planning','Build expression panels, pose directions, and optional rig or blendshape requirements.'],
-      ['Presentation','Package portrait, expression, costume, and file-format notes for a creator-facing handoff.']
+      ['Identity brief','Set the young-adult face, thumbnail read, warm graphic palette, high ponytail, hooded silhouette, black foundation layer, and geometric jewelry.'],
+      ['View consistency','Carry the same skull, eyes, profile, hair root, ponytail volume, hood construction, costume seams, and accessories through front, three-quarter, profile, and rear views.'],
+      ['Expression direction','Define neutral, warm, joyful, surprised, and focused targets while preserving facial proportions and costume continuity.'],
+      ['Production handoff','Translate the approved direction into a matching model and record real topology, mouth, blendshape, rig, tracking, platform, and export evidence as those stages are completed.']
     ],
     deliverables:[
-      ['Presentation assets','Portrait board, expression panel, hair/costume crop, avatar summary, and use-case notes.'],
-      ['Production package','Expression sheet, pose set, rig-ready notes, blendshape/viseme list, and VRM/FBX/BLEND files where scoped.'],
-      ['Creator notes','Profile use, stream use, outfit variants, public naming, and licensing or platform limits.']
+      ['Identity direction','Mira hero plus coordinated front, three-quarter, true-profile, and rear views.'],
+      ['Expression direction','Five readable emotional targets with one face, hair system, costume, jewelry set, and material family.'],
+      ['Evidence plan','A precise checklist for the matching model, topology, inner mouth, blendshapes, visemes, rig controls, tracking, platform, and export tests still required.']
     ]
   },
   'mascot-character':{
     problemTitle:'A mascot must stay recognizable across poses, sizes, and brand uses.',
     problems:[
       ['Buyer problem','Startups, products, and creator brands need a character that can carry identity without becoming too complex or hard to reuse.'],
-      ['Presentation risk','One mascot render leaves pose range, expression system, color consistency, and practical usage underdeveloped.'],
-      ['Solved direction','The project organizes the mascot around appeal read, pose panels, material palette, and brand-use deliverables.']
+      ['Presentation risk','One mascot render leaves side and rear identity, pose range, expression behavior, prop handling, and consistency underdeveloped.'],
+      ['Solved direction','Sol pairs a polished hero with coordinated identity views and four readable character moments while preserving one locked visual language.']
     ],
     process:[
-      ['Brand brief','Define audience, tone, product category, personality traits, color direction, and where the mascot will appear.'],
-      ['Shape language','Refine proportions, face read, silhouette, accessory logic, and simple forms that work at small sizes.'],
-      ['System planning','Build pose, expression, colorway, render, and usage slots so the mascot can become a repeatable brand asset.'],
-      ['Presentation','Package the hero read with pose crops, palette notes, and asset handoff guidance.']
+      ['Identity brief','Set the fennec species, friendly-guide personality, compact proportions, terracotta palette, and small-scale silhouette read.'],
+      ['Character lock','Preserve the muzzle, ears, three forehead marks, one patterned tail, four-digit animal paws, costume layers, and staff family.'],
+      ['View and pose direction','Carry the same identity through coordinated front, three-quarter, profile, rear, greeting, guide, delighted, and thoughtful views.'],
+      ['Production handoff','Rebuild the approved direction as a matching 3D asset, then record real model, topology, surface, rig, deformation, prop, and usage evidence.']
     ],
     deliverables:[
-      ['Presentation assets','Mascot board, appeal crop, pose panels, material palette crop, and brand-character summary.'],
-      ['Production package','Expression set, pose set, colorways, model views, render pack, source/export files, and usage examples where scoped.'],
-      ['Brand notes','Intended use, naming restrictions, color rules, licensing notes, and public sharing limits.']
+      ['Identity direction','Sol hero plus coordinated front, three-quarter, profile, and rear presentation views.'],
+      ['Pose and expression direction','Greeting, guide, delighted, and thoughtful targets with stable anatomy, costume, markings, tail, paws, and staff language.'],
+      ['Evidence plan','A checklist for the matching model, topology, UVs, textures, rig, deformation, prop handling, exports, and usage tests still required.']
     ]
   },
   'outfits-accessories':{
-    problemTitle:'Character add-ons need to match the base character and still show material detail.',
+    problemTitle:'A costume can look elegant in one pose and still fail when its layer order, back construction, and accessory logic are unclear.',
     problems:[
-      ['Buyer problem','Outfits, skins, props, and accessories often fail when they do not match silhouette, scale, surface style, or platform constraints.'],
-      ['Presentation risk','A costume concept can look good at a distance while hiding unclear trims, weak material separation, or missing export planning.'],
-      ['Solved direction','The project presents front/back silhouette, trim/material crops, prop closeups, variation slots, and delivery planning.']
+      ['Buyer problem','Art directors need to understand which pieces define the silhouette, how they overlap, and which accessories belong to the same costume family before a production build begins.'],
+      ['Presentation risk','A single hero can hide the back closure, coat-tail split, strap routing, attachment uncertainty, material repetition, and an incomplete weapon.'],
+      ['Solved direction','The Ember Duelist package pairs a full hero with coordinated front/back views, isolated accessories, and a foundation-to-final dressing sequence.']
     ],
     process:[
-      ['Scope definition','Confirm the base character, platform, outfit category, prop list, style rules, and file-format needs.'],
-      ['Silhouette pass','Block front/back costume read, garment layers, accessory scale, and major color/material zones.'],
-      ['Material pass','Refine fabric, trim, metal, leather, embroidery, props, and closeup readability.'],
-      ['Handoff','Prepare outfit renders, material sheets, variation notes, and source/export capture slots.']
+      ['Foundation','Establish the ivory high-collar shirt, charcoal trousers, boot base, body proportion, and neutral stance before adding silhouette pieces.'],
+      ['Tailored structure','Add the plum wrap doublet, split coat tails, shoulder harness, waist structure, closures, and finished boots in a readable order.'],
+      ['Protection and props','Complete the design with the left shoulder guard, forearm protection, brooch, aged-gold fasteners, and one full swept-hilt rapier.'],
+      ['Production handoff','Recreate the selected direction, then capture matching garment construction, attachment, topology, UV, texture, deformation, and export evidence as those steps are completed.']
     ],
     deliverables:[
-      ['Presentation assets','Outfit board, front/back silhouette crop, trim/material crop, prop/accessory crop, and variation notes.'],
-      ['Production package','Garment mesh, accessory mesh, UV layout, texture maps, material sheets, platform notes, and export files where scoped.'],
-      ['Style notes','Base-character fit, colorway rules, material references, naming, and platform constraints.']
+      ['Direction package','Ember Duelist hero, coordinated front/back costume study, accessory inspection, garment-layer progression, and concise costume rationale.'],
+      ['Production package','Matching garment and accessory models, attachment checks, topology, UVs, textures, deformation tests, and exports where scoped.'],
+      ['Style notes','Layer order, material families, accessory options, rapier scale, naming, target use, and any public-sharing restrictions.']
     ]
   },
   'pbr-texturing':{
-    problemTitle:'A flat idea needs a clear path into a finished character presentation.',
+    problemTitle:'A character can be well designed and still fail when every surface responds the same way.',
     problems:[
-      ['Buyer problem','Clients often bring a sketch, reference image, moodboard, or short written idea but do not know what is needed to make it production-ready.'],
-      ['Presentation risk','Before/after work can feel vague unless the starting input, direction decisions, final read, and handoff expectations are visible.'],
-      ['Solved direction','The project shows starting input, design progression, final character read, and the technical checks needed for a complete concept-to-3D case.']
+      ['Buyer problem','Studios need materials that communicate construction, hierarchy, and focal areas under both beauty and inspection lighting.'],
+      ['Presentation risk','Uniform roughness, exaggerated edge wear, noisy detail, or one generic shader can flatten skin, cloth, leather, metal, wood, glass, and stone into the same surface.'],
+      ['Solved direction','The Marsh Warden uses controlled value, roughness, weave scale, patina, and highlight behavior to keep every material family readable.']
     ],
     process:[
-      ['Input review','Review sketch, prompt image, written brief, moodboard, or existing concept and identify what must change for 3D.'],
-      ['Direction pass','Clarify proportions, silhouette, costume, color, material intent, expression, and intended use.'],
-      ['3D build path','Plan sculpt/model, retopo, UVs, texture maps, materials, final renders, and delivery formats around scope.'],
-      ['Presentation','Show the transformation from starting point to final-read board with detail crops and production checks.']
+      ['Material brief','Define the surface families, story, age, construction, focal hierarchy, target lighting, and delivery constraints.'],
+      ['Separation pass','Set base values and roughness ranges so skin, hair, linen, dyed cloth, leather, metal, wood, glass, and stone remain distinct.'],
+      ['Wear and detail','Add weave, edge response, patina, stitching, grain, and wear only where construction and use justify them.'],
+      ['Inspection','Compare the full character and close details under consistent light, then capture real UV, bake, texture, and shader evidence from the matching production asset.']
     ],
     deliverables:[
-      ['Presentation assets','Starting sketch crop, design progression crop, final character read, presentation board, and project summary.'],
-      ['Production package','Sculpt/model captures, wireframe, UVs, textures, material sheets, final renders, and handoff files where scoped.'],
-      ['Client notes','Use case, reference rights, style decisions, scope assumptions, and final deliverable list.']
+      ['Presentation assets','Material-study hero, full-character inspection sheet, surface closeups, and material decision summary.'],
+      ['Production package','Matching UV layouts, bake maps, texture sets, material graphs, neutral checks, and beauty renders where scoped.'],
+      ['Handoff notes','Material naming, texture packing, resolution, color-space, shader, and export requirements for the agreed target.']
     ]
   },
   'original-site-concept':{
-    problemTitle:'A hero character needs to communicate quality before the viewer reads the details.',
+    problemTitle:'An early character idea needs a disciplined path into buildable 3D direction.',
     problems:[
-      ['Buyer problem','Studios and clients need to see the character type, surface quality, pose, costume detail, and delivery thinking immediately.'],
-      ['Presentation risk','A hero render can look decorative if it is not connected to process, material reads, technical checks, and deliverables.'],
-      ['Solved direction','The project creates a reusable structure for hero art, process boards, detail crops, technical checks, case-study flow, and handoff planning.']
+      ['Buyer problem','A sketch, reference, moodboard, or rough concept may communicate mood without resolving anatomy, silhouette, costume construction, material hierarchy, or the views a 3D artist needs.'],
+      ['Presentation risk','Decorative process boards can imply progress while hiding whether the face, forms, layers, and materials are actually coherent.'],
+      ['Solved direction','The rebuilt case uses three purposeful stages: selected character direction, neutral sculpt development, and material and construction inspection.']
     ],
     process:[
-      ['Brief','Define the offer: 3D character work for games, creators, brands, mascots, avatars, outfits, props, and production-ready assets.'],
-      ['Visual system','Build a cinematic, character-first asset set with warm studio staging, readable silhouettes, and reusable board layouts.'],
-      ['Content system','Map each visual category to a service, case-study page, process section, deliverable list, and contact path.'],
-      ['Handoff plan','Keep the project organized so technical captures, source files, and final renders can be reviewed without hunting through a folder.']
+      ['Input review','Clarify the character role, intended use, source rights, silhouette, anatomy, costume cues, prop needs, and material direction.'],
+      ['Form development','Resolve facial planes, ponytail and hair mass, body proportion, stance, costume layers, front-to-back construction, and negative space in neutral clay.'],
+      ['Material direction','Separate skin, hair, woven cloth, leather, bronze, embroidery, and footwear while preserving the selected identity and construction.'],
+      ['Production handoff','Translate the approved target into matching model views, topology, UV, bake, texture, material, render, and export captures as the 3D build is completed.']
     ],
     deliverables:[
-      ['Presentation assets','Homepage hero, work-card thumbnails, case-study hero, presentation board, detail crops, and about/process visual.'],
-      ['Case-study package','Hero render, project boards, detail crops, technical checklists, deliverable lists, and contact path.'],
-      ['Handoff package','Source mesh, UV, texture, render, profile links, project notes, and contact details for the public launch version.']
+      ['Direction package','Selected concept presentation, sculpt-development sheet, material and construction inspection, and decision notes.'],
+      ['Production package','Matching high-poly and low-poly views, topology, UVs, bakes, texture sets, material setup, and final renders where scoped.'],
+      ['Handoff notes','Approved use, naming, formats, scale, review states, open risks, and the final evidence required for delivery.']
     ]
   }
 };
 
 const FINAL_CASE_STUDY_UPGRADES={
   'game-hero':{
-    lead:'A game-facing fantasy warrior presentation built around fast silhouette read, costume hierarchy, material contrast, weapon scale, and clear handoff planning.',
-    whatCopy:'This case develops the character as a game-facing asset: a full-body hero render, focused crops for face, costume, materials, and weapon read, plus a build specification for the next 3D production pass.',
+    lead:'A stocky Forge Warden direction built around playable silhouette, coherent armor construction, readable surface contrast, a complete two-handed hammer, and an honest production evidence plan.',
+    whatCopy:'The character is shown as one consistent target: a grounded hero render, coordinated front/profile/back construction views, and focused checks for grip, face, armor clearance, hips, knees, and boots.',
     details:[
-      ['Silhouette read','The stance, high ponytail, red scarf, cape shape, curved sword, and plinth stage give the character a fast full-body read.'],
-      ['Costume hierarchy','Bronze armor, red cloth, leather straps, belt hardware, hair, skin, and sword materials are separated clearly enough for an art-director scan.'],
-      ['Presentation stage','The dark studio background and restrained stone base support scale and grounding without turning the case into environment art.'],
-      ['Production specification','Neutral views, deformation-aware topology, material organization, final render coverage, and handoff notes define the next build pass.']
+      ['Role silhouette','Broad shoulders, compact proportions, heavy boots, and a large square-headed hammer establish the Forge Warden at a glance.'],
+      ['Costume hierarchy','Indigo quilted cloth, gray fur, dark steel, copper rivets, leather straps, wood, skin, and silver hair remain distinct under neutral studio lighting.'],
+      ['Construction review','The front/profile/back sheet reveals armor overlap, strap routing, back construction, boot volume, and complete prop scale.'],
+      ['Movement review','The grip study identifies hand, wrist, elbow, shoulder, belt, hip, knee, and boot areas that need matching deformation proof during production.']
     ],
     gallery:[
-      ['assets/process/game-hero/presentation-board.webp','Presentation board with the full warrior read plus face, costume, material, and weapon crops.'],
-      ['assets/process/game-hero/reconstruction-reference-v2.webp','3D reconstruction reference with consistent turnaround views, clay form study, face and hand checks, costume construction, and material targets.'],
-      ['assets/process/game-hero/technical-proof.webp','Technical inspection and handoff planning board with topology-style, UV-inspired, material, and delivery panels.'],
-      ['assets/process/game-hero/final-renders.webp','Final render board showing beauty, closeup, silhouette, material, and neutral inspection reads.'],
-      ['assets/process/game-hero/deliverables.webp','Deliverables planning board for review views, material categories, render set, and handoff notes.'],
-      ['assets/process/game-hero/face-read.webp','Face and upper-body read for expression, hair, armor, and silhouette.'],
-      ['assets/process/game-hero/costume-material.webp','Costume hierarchy crop showing cloth, leather, metal, and belts.'],
-      ['assets/process/game-hero/weapon-silhouette.webp','Weapon and lower-silhouette crop for prop scale and pose read.']
+      ['assets/rebuild/game-forge-warden/turnaround-16x9-v1.webp','Coordinated front, true profile, and back character direction with the full hammer shown separately.'],
+      ['assets/rebuild/game-forge-warden/grip-articulation-16x9-v1.webp','Grip and articulation study covering face, hands, shoulder, elbow, belt, hip, knee, and boot construction.']
     ],
     proof:[
-      ['Presentation decisions','Hero render, face crop, costume hierarchy, weapon silhouette, and grounded stage define the approved character read.'],
-      ['Build specification','The reconstruction board sets neutral turnarounds, form checkpoints, hand and foot details, separated material groups, and inspection lighting for the 3D rebuild.'],
-      ['Technical scope','The public case focuses on visible character direction; engine targets, polycounts, texture sizes, and export formats are set during production scoping.'],
-      ['Next 3D pass','Rebuild the approved silhouette and costume layers, then document mesh, UV, texture, and export decisions from the production file.']
+      ['Direction shown','Hero, coordinated neutral views, and focused inspections preserve one older face, stocky anatomy, armor system, material family, and hammer design.'],
+      ['Movement targets','Grip, wrist, elbow, shoulder, belt, hip, knee, and boot checks define the areas that need deformation validation.'],
+      ['Evidence boundary','No topology, UV, bake, texture-set, rig, engine, polycount, or export claim is made without a genuine matching capture.'],
+      ['Next production pass','Recreate the selected target, then add technical evidence only when it can be traced to the same source asset.']
     ],
-    required:['assets/process/game-hero/reconstruction-reference-v2.webp','assets/process/game-hero/technical-proof.webp','assets/process/game-hero/final-renders.webp','assets/process/game-hero/deliverables.webp']
+    required:['assets/rebuild/game-forge-warden/hero-4x3-v1.webp','assets/rebuild/game-forge-warden/turnaround-16x9-v1.webp','assets/rebuild/game-forge-warden/grip-articulation-16x9-v1.webp']
   },
   'character-environment':{
-    lead:'A character-first staging case that uses a restrained plinth, support props, warm lighting, and close camera crops to make the warrior feel grounded without turning the project into an environment-art showcase.',
-    whatCopy:'This project focuses on presentation support for a finished character: base placement, contact shadows, scale cues, prop restraint, lighting mood, and crop selection. The stage exists to clarify the character silhouette, costume, weapon, boots, cloth, and material read.',
+    lead:'A character-first Frostline Ranger stage using a compact stone plinth, one milestone, restrained frost detail, cool key light, warm rim, and deliberate camera coverage to establish weight and scale.',
+    whatCopy:'The case separates three staging decisions: how the figure reads on a neutral plinth, which scale and story cues earn a place, and how the final camera and light preserve the face, bow, coat, boots, and ground contact.',
     details:[
-      ['Character-first stage','The circular plinth, small rocks, vessel, and dark studio backdrop give the warrior scale and grounding while keeping the character dominant.'],
-      ['Ground contact','Boot placement, cloth fall, plinth edge, and contact shadow make the pose feel physically placed instead of floating in a neutral render.'],
-      ['Lighting direction','Warm key light and restrained background values separate the face, armor, fabric, weapon, and silhouette without competing with the character.'],
-      ['Presentation crops','The gallery moves from full staged render to board view and detail crops so the viewer can read both the character and the staging choices.']
+      ['Character-first stage','The older archer, complete horn bow, short silver hair, coat silhouette, hands, and boots stay dominant at every camera height.'],
+      ['Ground contact','Boot placement, coat fall, frost stones, plinth edge, and soft contact shadow make the pose feel physically placed.'],
+      ['Scale and silhouette','One milestone gives height and story context while its offset placement preserves negative space around the head, bow, and quiver.'],
+      ['Lighting direction','Cool key, controlled fill, warm rim, and a dark blue-gray backdrop separate skin, wool, leather, metal, horn, stone, and hair.']
     ],
     gallery:[
-      ['assets/process/character-environment/final-renders.webp','Final staged character render with plinth, rocks, contact shadow, sword silhouette, and restrained scale cues.'],
-      ['assets/process/character-environment/blockout.webp','Stage blockout board for plinth placement, camera framing, prop restraint, and character-dominant composition.'],
-      ['assets/process/character-environment/lighting-breakdown.webp','Lighting breakdown board for key, fill, rim, shadow direction, and warm studio mood.'],
-      ['assets/process/character-environment/prop-assets.webp','Support-prop board showing the restrained stage assets and scale cues around the character.'],
-      ['assets/process/character-environment/scene-handoff.webp','Scene handoff board for camera, lighting, base, support props, crops, and review notes.'],
-      ['assets/process/character-environment/stage-grounding.webp','Grounding crop for boots, cloth fall, plinth contact, and restrained prop context.']
+      ['assets/rebuild/character-staging-frostline/stage-progression-16x9-v1.webp','Coordinated neutral, prop-placement, and final-lighting stages for the Frostline Ranger.'],
+      ['assets/rebuild/character-staging-frostline/camera-grounding-16x9-v1.webp','Eye-level, near-profile, and low grounding views for camera, silhouette, contact, and crop review.']
     ],
     proof:[
-      ['Visible staging proof','Full staged render, presentation board, hero-stage crop, and grounding crop are present in the repo.'],
-      ['Staging development','Blockout, lighting, support-prop, and handoff boards explain the composition and scene-support decisions.'],
-      ['Scale and support cues','Plinth, rocks, vessel, ground plane, cloth contact, and warm studio lighting are visible in the current images.'],
-      ['Project scope','This case owns character presentation, pitch rendering, and restrained stage direction while keeping full environment production outside the brief.']
+      ['Direction shown','Hero, stage progression, and camera study preserve one Frostline Ranger identity, bow, costume, plinth, milestone, frost stones, and lighting family.'],
+      ['Stage priorities','Ground contact, scale cues, silhouette clearance, camera height, background value, and material separation remain subordinate to the character.'],
+      ['Evidence boundary','The images are not captured Blender, Marmoset, Unity, Unreal, render-scene, or environment-art evidence.'],
+      ['Next production pass','A matching scene file plus neutral blockout, camera, light, prop, material, shadow, and render-setting captures completes the technical stage case.']
     ],
-    required:['assets/process/character-environment/blockout.webp','assets/process/character-environment/lighting-breakdown.webp','assets/process/character-environment/prop-assets.webp','assets/process/character-environment/scene-handoff.webp']
+    required:['assets/rebuild/character-staging-frostline/hero-4x3-v1.webp','assets/rebuild/character-staging-frostline/stage-progression-16x9-v1.webp','assets/rebuild/character-staging-frostline/camera-grounding-16x9-v1.webp']
   },
   'interior-props':{
-    lead:'A prop-art and set-dressing case showing how an ornate interior shelf becomes an inspectable asset package: final render, process board, material studies, object-level wireframe, OBJ/MTL files, and manifest-backed handoff notes.',
-    whatCopy:'This project organizes a carved shelf, storage boxes, glass bottles, brass hardware, ceramics, books, textiles, plants, candles, labels, and trim into a reusable interior prop set with warm lighting, clear material separation, named mesh objects, UV coordinates, and PBR-style material review values.',
+    image:'assets/rebuild/interior-direction/shelf-hero-4x3-v1.webp',
+    alt:'Ornate carved-wood shelf direction with storage chests, ceramic vessels, aged brass, books, folded textiles, and warm window light.',
+    meta:['Interior props','Asset-family direction','Set dressing'],
+    lead:'A reconstructed interior-prop direction study exploring a coordinated asset family, carved furniture language, material separation, set-dressing rhythm, and warm presentation lighting.',
+    whatTitle:'A coherent object family before matching scene production.',
+    whatCopy:'The hero, prop lineup, and coordinated neutral-volume, material, and lighting direction renders define what the future shelf scene should preserve without presenting generated direction as captured production evidence.',
     details:[
-      ['Set dressing','The shelf, boxes, books, ceramics, glass, candle holders, textiles, hardware, and plants are arranged around focal hierarchy, negative space, scale, and warm interior mood.'],
-      ['Modeled asset groups','The package documents carved shelf architecture, leather and wood boxes, glass bottles, ceramic vases, brass hardware, books, paper, textiles, fringe, and plant leaves.'],
-      ['Material range','Aged brass, dark steel, clear and smoky glass, ceramic glaze, carved wood, leather, fabric, aged paper, candle wax, and plant materials each have a separate surface read.'],
-      ['Technical checks','The source package includes 266 named objects, 29,860 vertices, 29,860 UV coordinates, 8,246 faces, 14 materials, OBJ/MTL files, a manifest, and a technical mesh sheet.']
+      ['Prop family','Three chest scales, ceramic vessels, candlesticks, an incense vessel, books, textiles, and carved furniture details share one ornament and wear language.'],
+      ['Set-dressing rhythm','Large chest and shelf masses anchor the composition while medium vessels, books, textiles, and small brass accents create a readable hierarchy and negative space.'],
+      ['Material direction','Dark carved wood, worn leather, aged brass, glazed ceramic, paper, and woven cloth remain visibly distinct under neutral inspection light and warm beauty light.'],
+      ['Evidence boundary','Matching models, functional hinges, topology, UVs, texture maps, shaders, source-scene organization, engine setup, and exports remain future production evidence.']
     ],
     gallery:[
-      ['assets/process/interior-props/presentation-board.webp','Interior prop board showing shelf composition, process, materials, and closeups.'],
-      ['assets/3d/interior-props/interior-props-mesh-sheet.svg','Technical mesh sheet with object-level wireframe, material reads, UV planning, and source-file package.'],
-      ['assets/process/interior-props/asset-handoff.webp','Asset handoff board for object groups, material families, wire-style checks, and package organization.'],
-      ['assets/process/interior-props/prop-breakdown.webp','Prop breakdown board separating reusable shelf, vessel, book, textile, plant, and hardware groups.'],
-      ['assets/process/interior-props/technical-proof.webp','Technical planning board connected to the OBJ, MTL, and manifest package.'],
-      ['assets/process/interior-props/material-study.webp','Material study for brass, glass, ceramic, wood, leather, fabric, paper, labels, and finish values.'],
-      ['assets/process/interior-props/material-closeups.webp','Closeup material grid for hardware, ceramics, wood carving, fabric weave, leather, paper, and metal wear.']
+      ['assets/rebuild/interior-props-system/prop-family-16x9-v1.webp','Coordinated chest, ceramic, brass, book, textile, incense-vessel, and carved-wood asset-family direction.'],
+      ['assets/rebuild/interior-props-system/staging-development-16x9-v1.webp','Neutral-volume, material, and lighting direction renders for one consistent ornate shelf composition.']
     ],
     proof:[
-      ['Source package','OBJ source mesh with named objects and material assignments, supported by an MTL material library and manifest.'],
-      ['Mesh and UV evidence','The manifest records 266 named objects, 29,860 vertices, 29,860 UV coordinates, and 8,246 faces; UV packing is documented as refinable by object group.'],
-      ['Material evidence','The MTL and manifest support PBR-style review values for base color, roughness, metallic, specular response, and transparent glass alpha.'],
-      ['Presentation evidence','The gallery shows the shelf hero render, process board, object-level mesh sheet, material board, glass/metal render, and closeup detail grid.']
+      ['Direction shown','Hero, isolated prop family, and coordinated shelf views establish one carved-furniture and object language.'],
+      ['Visual decisions','Scale rhythm, focal hierarchy, negative space, material contrast, camera framing, and warm side light remain inspectable.'],
+      ['Capture required','Matching source-scene beauty and neutral renders, real wireframe, UVs, texture maps, material setup, object organization, and export checks.'],
+      ['Claim boundary','No completed models, functional hardware, topology, UV, map, shader, source-file, engine, performance, or export claim is made.']
     ],
-    required:['assets/3d/interior-props/interior-props-set.obj','assets/3d/interior-props/interior-props-materials.mtl','assets/3d/interior-props/interior-props-manifest.json','assets/3d/interior-props/interior-props-mesh-sheet.svg','assets/process/interior-props/asset-handoff.webp','assets/process/interior-props/prop-breakdown.webp','assets/process/interior-props/technical-proof.webp']
+    current:['assets/rebuild/interior-direction/shelf-hero-4x3-v1.webp','assets/rebuild/interior-props-system/prop-family-16x9-v1.webp','assets/rebuild/interior-props-system/staging-development-16x9-v1.webp'],
+    required:['matching source-scene beauty and neutral renders','real model and wireframe inspection','packed UVs, texture maps, and material setup','object organization, engine, performance, and export evidence where scoped']
   },
   'ai-visual-pipeline':{
-    image:'assets/process/ai-visual-pipeline/workflow-board-generated.png',
-    alt:'3D visual pipeline board with cinematic reference cards, material review, and handoff packets.',
-    lead:'A 3D visual pipeline case built around turning rough references, AI-assisted exploration, material studies, and production notes into a repeatable review and handoff system.',
-    whatTitle:'A reusable visual standards system for 3D production.',
-    whatCopy:'This case uses the interior-props package as the visual anchor: reference control, material-library thinking, output review criteria, and organized handoff rules. The goal is not to present AI as the product, but to show how Lesly connects visual exploration to real 3D craft, material consistency, and production-ready decisions.',
+    image:'assets/rebuild/tideglass-workflow/hero-4x3-v1.webp',
+    alt:'Physical Tideglass Courier art-direction table with a resolved character target, coordinated sketches, neutral maquette, and material swatches.',
+    meta:['Visual pipeline','Character direction','Review and handoff'],
+    lead:'An original character workflow study showing how one visual idea is held together from sketch and neutral-form direction through materials, risk review, and a production brief.',
+    whatTitle:'The value is the decisions that survive the handoff.',
+    whatCopy:'The Tideglass Courier package keeps identity, silhouette, costume construction, prop logic, and material priorities consistent while separating visual direction from the technical evidence a matching production model must supply.',
     details:[
-      ['Visual direction','References, mood cues, and selected materials are organized before new outputs are treated as usable production direction.'],
-      ['Material standards','Wood, brass, glass, ceramic, leather, fabric, paper, and plant surfaces are grouped into reusable finish rules instead of one-off image decisions.'],
-      ['3D-aware review','Each visual output is checked against geometry, scale, lighting, material behavior, and whether it can guide real 3D production.'],
-      ['Handoff logic','The case defines what a team needs to receive: reference boards, material notes, rejection criteria, selected visual direction, and production-ready follow-up tasks.']
+      ['Direction lock','Short dark hair, ivory-and-sea-green coat, copper shoulder guard, satchel, boots, and navigation staff form the non-negotiable identity system.'],
+      ['Form review','Sketch and neutral-maquette direction expose proportion, coat silhouette, staff length, grip, ground contact, and the relationship between armor, straps, and satchel.'],
+      ['Material review','Ivory textile, sea-green lining, charcoal leather, oxidized copper, warm brass, and smoky glass stay distinct from full figure to close inspection.'],
+      ['Evidence boundary','The package is reconstruction direction; matching model, topology, UVs, maps, rig, source files, engine checks, approvals, and exports remain future evidence.']
     ],
     gallery:[
-      ['assets/process/ai-visual-pipeline/workflow-board-generated.png','Workflow board showing references, selected direction, material review, and handoff logic.'],
-      ['assets/process/ai-visual-pipeline/material-library-generated.png','Material-library board built from ornate prop surfaces, finish groups, and reusable review standards.'],
-      ['assets/process/ai-visual-pipeline/review-criteria-generated.png','Review-criteria board showing material consistency, geometry respect, lighting, and client-ready clarity.'],
-      ['assets/process/ai-visual-pipeline/handoff-system-generated.png','Handoff-system board showing organized reference packs, material rules, review notes, and delivery packets.']
+      ['assets/rebuild/tideglass-workflow/direction-sequence-16x9-v1.webp','Coordinated sketch, neutral-form, and resolved material direction for one Tideglass Courier identity.'],
+      ['assets/rebuild/tideglass-workflow/review-handoff-16x9-v1.webp','Face, grip, construction, rear-silhouette, material-family, and handoff-direction review set.']
     ],
     proof:[
-      ['3D asset anchor','The interior-props package includes source OBJ, MTL materials, a manifest, a mesh sheet, named objects, UV coordinates, and material assignments.'],
-      ['Material evidence','The visible boards show carved wood, aged brass, glass, ceramics, leather, fabric, books, paper, labels, and closeup finish studies.'],
-      ['Workflow structure','The case shows reference organization, material-library structure, review gates, and production handoff planning.'],
-      ['Creative ownership','AI supports exploration and organization; Lesly owns the art direction, 3D judgment, material review, and final production decisions.']
+      ['Direction shown','One courier identity remains coherent across resolved target, sketches, neutral form, material direction, close inspections, and rear silhouette.'],
+      ['Decision structure','Identity locks, form risks, material family, review questions, and the next technical captures are explicit.'],
+      ['Human ownership','Lesly frames the brief, selects the direction, rejects drift, defines review questions, and prepares the next production step.'],
+      ['Claim boundary','No completed production model, automated system, client approval, topology, UV, map, rig, source-file, engine, performance, or export claim is made.']
     ],
-    required:['assets/process/ai-visual-pipeline/workflow-board-generated.png','assets/process/ai-visual-pipeline/review-criteria-generated.png','assets/process/ai-visual-pipeline/material-library-generated.png','assets/process/ai-visual-pipeline/handoff-system-generated.png']
+    current:['assets/rebuild/tideglass-workflow/hero-4x3-v1.webp','assets/rebuild/tideglass-workflow/direction-sequence-16x9-v1.webp','assets/rebuild/tideglass-workflow/review-handoff-16x9-v1.webp'],
+    required:['matching production model and neutral turns','real topology, UV, bake, texture, and material captures','grip, coat, strap, satchel, and deformation validation','source-file, rig, engine, performance, approval, and export evidence where scoped']
   },
   'santa-cruz-ai-visual-pipeline':{
-    image:'assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp',
-    alt:'Remote production studio desk with exterior residential visualization, material samples, drawings, and blurred local pipeline monitor.',
-    lead:'A residential visualization workflow study showing how Lesly turns references, material options, AI-assisted image outputs, and review notes into a controlled decision path for construction visuals.',
-    whatTitle:'Visual standards before generation.',
-    whatCopy:'This case focuses on direction and workflow structure: Lesly defines the reference inputs, material standards, review gates, and handoff notes a team needs before AI-assisted visuals are used for production review or client presentation.',
+    image:'assets/rebuild/coastal-residential-workflow/hero-4x3-v1.webp',
+    alt:'Physical coastal-residence visualization presentation with a resolved dusk exterior, elevation, site context, daylight views, and material samples.',
+    meta:['Residential visualization','Material options','Context and lighting'],
+    lead:'A coordinated residential visualization study carrying one fictional coastal-home direction through a resolved exterior, controlled finish comparisons, site context, daylight inspection, and blue-hour presentation.',
+    whatTitle:'Consistency across form, finish, context, light, and camera.',
+    whatCopy:'This fictional package explores coordinated form, finish alternatives, landscape context, and daylight-to-dusk presentation. It does not document a Santa Cruz site, client commission, constructed project, approved materials, local-AI implementation, matching 3D scene, construction decisions, costs, schedule, approvals, or measured outcomes.',
     details:[
-      ['Visual inputs','Site-photo references, material swatches, finish options, rough image outputs, and review notes are organized as inputs, not treated as final design truth.'],
-      ['Material consistency','Roof, siding, window, paint, tile, wood, fixture, and lighting references are grouped into reusable standards so each image can be judged across iterations.'],
-      ['Review gates','Each visual pass is checked for geometry preservation, material match, lighting logic, construction plausibility, and client-readiness.'],
-      ['Handoff direction','The workflow gives developers or operators clear requirements for reference structure, output logs, review states, training notes, and public-sharing limits.']
+      ['Residence lock','Two-story low-slope massing, broad glazing, stone piers, warm wood, charcoal metal, stepped entry, boulders, and restrained coastal planting define one identity.'],
+      ['Finish comparison','One neutral camera compares pale, warm, and cool finish families without presenting them as specified, approved, or procured products.'],
+      ['Context and light','A distant coastal approach, neutral daylight inspection, and blue-hour presentation test scale, silhouette, path lighting, interior glow, and landscape balance.'],
+      ['Evidence boundary','Small details vary between reconstructed views; they are not exact geometry, site, drawing, matching-scene, code, feasibility, procurement, or construction proof.']
     ],
     gallery:[
-      ['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','Remote production-studio scene showing exterior visualization options, drawings, material samples, and a blurred local pipeline monitor.'],
-      ['assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','Portable material standards scene with exterior siding, stone, glass, metal, wood, tile, landscape, and finish references.'],
-      ['assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp','Remote handoff workstation scene showing exterior renders, drawings, sample trays, export drives, and organized production materials.']
+      ['assets/rebuild/coastal-residential-workflow/material-options-16x9-v1.webp','Coordinated pale, warm, and cool finish-direction options for one residence identity.'],
+      ['assets/rebuild/coastal-residential-workflow/context-lighting-16x9-v1.webp','Coordinated distant-context, daylight, and dusk presentation direction.']
     ],
     proof:[
-      ['Direction materials','Exterior review boards, portable material standards, and the handoff workstation scene show how visual decisions are organized.'],
-      ['Standards package','Reference structure, material library logic, acceptable-variation rules, review criteria, and rejection rules.'],
-      ['Workflow package','Prompt/reference organization, output-log expectations, review checkpoints, training notes, and handoff requirements.'],
-      ['Human decision point','AI supports visual exploration and review while art direction, construction choices, and project decisions remain human responsibilities.']
+      ['Direction shown','Hero, finish comparison, context view, daylight inspection, and blue-hour presentation preserve one coastal-residence language.'],
+      ['Review value','Massing, openings, finish families, building-to-ground contact, planting scale, camera, and light remain inspectable.'],
+      ['Human boundary','Visual exploration supports comparison; architecture, engineering, code, feasibility, procurement, construction, and project decisions remain with qualified people.'],
+      ['Claim boundary','No verified site, client, drawings, built work, approved products, matching model, implemented system, approval, cost, schedule, savings, or outcome is claimed.']
     ],
-    required:['assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp','assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','assets/process/santa-cruz-ai-visual-pipeline/developer-handoff.webp']
+    current:['assets/rebuild/coastal-residential-workflow/hero-4x3-v1.webp','assets/rebuild/coastal-residential-workflow/material-options-16x9-v1.webp','assets/rebuild/coastal-residential-workflow/context-lighting-16x9-v1.webp'],
+    required:['verified and permissioned project inputs where available','matching scene and camera captures before source-scene claims','qualified project review where scoped','real approval, cost, schedule, and outcome evidence before publishing those claims']
   },
   'construction-client-progress-workflow':{
-    image:'assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp',
-    alt:'Remote review-board scene with progress-photo sets, material samples, exterior visualization options, and approval markers.',
-    lead:'A residential-construction review workflow case for organizing jobsite photos, client comments, visual options, response states, and next actions into a clearer evidence trail.',
-    whatCopy:'This case shows Lesly applying visual production judgment to a client-review workflow: what should be captured, how updates should be grouped, where comments and responses belong, and how AI can assist summaries or routing without replacing human construction decisions.',
+    title:'Northlight Workshop — Progress Review Direction',
+    image:'assets/rebuild/northlight-workshop-progress/hero-4x3-v1.webp',
+    alt:'Fictional red-brick workshop at the enclosure-and-rough-in stage with timber roof joists, clerestory glazing, exposed services, and a black-steel courtyard portal.',
+    meta:['Progress review direction','Evidence hierarchy','Human-owned decisions'],
+    lead:'A fictional adaptive-reuse study showing how construction imagery can move from broad phase context to one clearly located review condition without pretending to be a real inspection record.',
+    whatTitle:'Progress evidence should answer a question, not simply fill a gallery.',
+    whatCopy:'Northlight Workshop turns one fictional brick-shell reconstruction into a practical visual-review model: establish the phase, locate the condition, frame the question, assign qualified review, record the state, and name the next action.',
     details:[
-      ['Visual evidence model','Progress photos, material references, AI visual options, comments, and status notes are organized around the client question each update needs to answer.'],
-      ['Review states','Each item has a clear review role: captured, needs response, approved, blocked, ready for follow-up, or returned to the material/design library.'],
-      ['Agent-assisted support','AI is framed as support for summaries, routing, missing-context flags, and response drafts while decisions stay with the team.'],
-      ['Designed scope','The project delivers the portal workflow, review states, capture standards, and implementation brief that a product team can build from.']
+      ['Capture standard','Every record needs a phase, capture date, location, review question, capture owner, responsible reviewer, state, and next action.'],
+      ['Evidence hierarchy','Wide context locates the condition, a medium view explains the assembly, and a close view exposes the junction that needs qualified review.'],
+      ['State model','Captured, needs context, needs qualified review, decision recorded, follow-up required, and closed keep evidence separate from decisions.'],
+      ['Human control','AI assistance may group images, organize captions, or flag missing fields. It cannot verify workmanship, safety, code, quality, completion, or approval.']
     ],
     gallery:[
-      ['assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp','Remote review-board scene showing progress-photo sequences, material options, approval markers, and exterior visualization direction.'],
-      ['assets/process/construction-client-progress-workflow/summary-review-scene-20260609.webp','Summary-review scene showing grouped progress photos, color-coded review cards, routed updates, and material options under human review.'],
-      ['assets/process/construction-client-progress-workflow/handoff-package-scene-20260609.webp','Handoff package scene showing approved render sets, finish selections, progress-photo sheets, and next-step review packets.'],
-      ['assets/process/santa-cruz-ai-visual-pipeline/material-standards.webp','Related material standards scene showing how visual consistency supports client review.']
+      ['assets/rebuild/northlight-workshop-progress/phase-sequence-16x9-v1.webp','Coordinated reconstruction of the same brick workshop across shell, structure, enclosure and rough-in, and finish-ready stages.'],
+      ['assets/rebuild/northlight-workshop-progress/evidence-hierarchy-16x9-v1.webp','Wide, medium, and close reconstruction views locating one courtyard-opening condition.']
     ],
     proof:[
-      ['Review model','Phase list, evidence tiles, client comments, response states, approval status, and next-action rules.'],
-      ['Workflow brief','Capture checklist, comment model, summary requirements, redaction rules, and implementation notes.'],
-      ['Measurement plan','Update completeness, response time, repeated questions, approval clarity, and rework are the signals defined for a future operational pilot.'],
-      ['Human control','AI supports visual review, summaries, and routing; construction decisions and jobsite verification stay with the responsible team.']
+      ['Direction shown','One workshop identity, four coordinated phase reconstructions, and a wide-to-detail evidence hierarchy.'],
+      ['Review model','Phase, location, question, evidence owner, qualified reviewer, state, and next action stay explicit.'],
+      ['Human boundary','Capture owners supply evidence; qualified project and trade reviewers assess it; authorized people record decisions.'],
+      ['Claim boundary','No real site, client, inspection, approval, completed work, implemented portal, AI system, cost, schedule, or measured result is claimed.']
     ],
-    required:['assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp','assets/process/construction-client-progress-workflow/summary-review-scene-20260609.webp','assets/process/construction-client-progress-workflow/handoff-package-scene-20260609.webp']
+    current:['assets/rebuild/northlight-workshop-progress/hero-4x3-v1.webp','assets/rebuild/northlight-workshop-progress/phase-sequence-16x9-v1.webp','assets/rebuild/northlight-workshop-progress/evidence-hierarchy-16x9-v1.webp'],
+    required:['permissioned site and report captures before any real-project claim','verified phase dates and locations','qualified reviewer and decision records','client and contractor permission boundaries','implemented-system evidence before portal or AI claims','approved baseline and outcome data before metrics']
   },
   'print-startup-direction':{
-    image:'assets/process/print-startup-direction/printability-board.webp',
-    alt:'3D print character system board with mascot, printability inspection, family variations, and handoff icons.',
-    lead:'A 3D print character system case showing how mascot appeal, collectible shape language, printability review, and handoff planning become a repeatable product direction.',
-    whatCopy:'This case uses the fox mascot as the visual anchor for a small-batch character product system: consistent proportions, pose and accessory rules, base options, printability risk review, and a clear production brief for Lesly’s next 3D pass.',
+    title:'Sol Collectible Build Direction',
+    image:'assets/rebuild/sol-print/sol-collectible-4x3-v2.webp',
+    alt:'Paired color and neutral-clay Sol collectible direction with a complete staff, holder, patterned tail, and two-tier carved-stone base.',
+    meta:['Collectible direction','Component planning','Print evidence plan'],
+    lead:'A collectible reconstruction study exploring Sol’s clay presentation, proposed component separation, and full contact views before production modeling and print engineering.',
+    whatCopy:'The package locks the intended collectible form while keeping parting, joints, dimensions, wall thickness, supports, slicing, assembly, and manufacture inside the future evidence gate.',
     details:[
-      ['Product family','The mascot board establishes a repeatable head shape, ears, scarf, staff, base style, and rounded collectible proportions.'],
-      ['Printability planning','The board identifies support-risk zones, fragile details, base stability, and the inspection views required before a test print.'],
-      ['System direction','Character-family, pose, base, accessory, and colorway decisions are organized so future figures can follow the same rules.'],
-      ['Production checkpoint','Wall thickness, watertight geometry, slicer settings, support tests, and test-print photos become the acceptance evidence during physical production.']
+      ['Maquette target','Paired color and neutral-clay views establish character, costume, staff, tail, paws, material hierarchy, and base language.'],
+      ['Component direction','The assembly study explores major visual groups while keeping the grounded body paired with the base and both paw parts visible.'],
+      ['Contact inspection','Complete front, profile, and rear maquettes clarify cape thickness, tail placement, foot contact, staff-holder location, and base footprint.'],
+      ['Production checkpoint','Matching model, final parting, dimensions, wall thickness, watertightness, slicer evidence, and a successful physical output complete the print case.']
     ],
     gallery:[
-      ['assets/process/print-startup-direction/printability-board.webp','Printability planning board for mascot proportions, inspection views, support-risk zones, and base logic.'],
-      ['assets/process/print-startup-direction/character-family-system.webp','Character family board showing mascot variations, pose logic, material palette, and repeatable shape rules.'],
-      ['assets/process/print-startup-direction/handoff-package.webp','Handoff package board for render thumbnails, part groups, base options, review cards, and delivery icons.'],
-      ['assets/process/mascot-character/presentation-board.webp','Mascot presentation board used as the style anchor for the product system.'],
-      ['assets/process/mascot-character/pose-panels.webp','Pose and expression panels used to explain repeatable character-family direction.']
+      ['assets/rebuild/sol-print-system/assembly-direction-16x9-v2.webp','Assembled neutral maquette and proposed head, scarf/cape, tail, body, paw, staff, holder, and base groups.'],
+      ['assets/rebuild/sol-print-system/contact-views-16x9-v1.webp','Coordinated front-three-quarter, profile, and rear-three-quarter maquettes for silhouette, contact, cape, tail, staff-holder, and base review.']
     ],
     proof:[
-      ['Character system','Mascot presentation, pose panels, printability board, family board, and handoff board establish a consistent collectible direction.'],
-      ['Print planning','Support-risk review, base logic, accessory constraints, and inspection categories turn the design into a practical build brief.'],
-      ['Production acceptance','Slicer captures, wall-thickness checks, hollowing and drainage notes, support tests, repair logs, and test-print photos define the next acceptance gate.'],
-      ['Project scope','This phase delivers character product direction and printability planning through a production-ready specification.']
+      ['Direction shown','Color and clay hero, proposed component groups, and complete contact views preserve one Sol collectible target.'],
+      ['Planning value','The package makes the character lock, contact strategy, prop relationship, base footprint, and engineering questions visible before a production build.'],
+      ['Evidence boundary','The proposed groups are not final parts or joints, and no printable mesh, dimension, watertightness, support, slicer, assembly, or physical-print claim is made.'],
+      ['Production acceptance','Matching model, final parting, engineering, slicer, repair, assembly, and test-print evidence complete the physical-output case.']
     ],
-    required:['assets/process/print-startup-direction/printability-board.webp','assets/process/print-startup-direction/character-family-system.webp','assets/process/print-startup-direction/handoff-package.webp']
+    current:['assets/rebuild/sol-print/sol-collectible-4x3-v2.webp','assets/rebuild/sol-print-system/assembly-direction-16x9-v2.webp','assets/rebuild/sol-print-system/contact-views-16x9-v1.webp'],
+    required:['matching production-model and final part-separation captures','dimensions, joints, keys, tolerances, and watertightness checks','slicer, wall-thickness, hollowing, drainage, and support evidence where relevant','successful physical test-print and assembly photographs']
   },
   'sculpt-to-retopo':{
-    lead:'A technical character-process case showing sculpt form, facial planes, turnaround thinking, topology-style inspection, and bake/material handoff planning.',
-    whatCopy:'This project gives the portfolio a dedicated production-process story: rough sculpt structure, refined bust forms, inspection views, topology-style overlay, and material/bake planning boards that show how a polished character should be reviewed.',
+    title:'Lyra Sculpt & Retopology Direction',
+    image:'assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1.webp',
+    alt:'Resolved warm-gray clay bust of Lyra with layered braided hair, diamond ornament, high collar, and neutral inspection lighting.',
+    meta:['Sculpt development','Form inspection','Retopology plan'],
+    lead:'A stylized character bust developed around clear facial planes, a stable profile, layered braided hair, and controlled expression targets for a later deformation-aware topology pass.',
+    whatTitle:'Readable form first; verified topology when the production mesh exists.',
+    whatCopy:'The hero, broad-to-fine study, profile, and expression views establish what the reconstruction must preserve without presenting generated direction as source-tool or retopology proof.',
     gallery:[
-      ['assets/process/sculpt-to-retopo/presentation-board.webp','Presentation board assembled for the sculpt-to-retopo project.'],
-      ['assets/process/sculpt-to-retopo/sculpt-model.webp','Broad-to-fine sculpt process board for primary forms, refined bust, and neutral inspection views.'],
-      ['assets/process/sculpt-to-retopo/technical-proof.webp','Technical inspection board for topology-style overlay, UV-inspired planning, material tiles, and handoff icons.'],
-      ['assets/process/sculpt-to-retopo/final-renders.webp','Final render board combining sculpt face, retopo-style panel, turnaround strip, and material planning reads.'],
-      ['assets/process/sculpt-to-retopo/sculpt-face.webp','Sculpt-focused face crop for planes, hair mass, and clay presentation.'],
-      ['assets/process/sculpt-to-retopo/retopo-panel.webp','Retopology-style crop for mesh structure, edge-flow review, and technical notes.']
+      ['assets/rebuild/sculpt-retopo-lyra/sculpt-development-16x9-v1.webp','Broad-to-fine Lyra bust study moving from primary blockout through secondary refinement to the resolved sculpt target.'],
+      ['assets/rebuild/sculpt-retopo-lyra/form-deformation-study-16x9-v1.webp','Neutral, true-profile, smile, and jaw-open form targets for identity and future deformation planning.']
     ],
     proof:[
-      ['Form development','The presentation board, sculpt face crop, retopo study, turnaround strip, and process boards trace the character from primary forms to inspection.'],
-      ['Retopology brief','The boards define deformation zones, silhouette retention, density transitions, UV groups, and bake/material review categories.'],
-      ['Production checkpoint','Polycount, final edge flow, packed UVs, bake maps, and tool captures are recorded during the production rebuild.'],
-      ['Art-director read','Neutral views and focused closeups make form, topology intent, and material planning easy to inspect.']
+      ['Form development','Hero and broad-to-fine views establish the cranial mass, facial planes, bust silhouette, braid grouping, ornament, collar, and restrained polish target.'],
+      ['Identity inspection','Neutral, true-profile, smile, and jaw-open views keep one skull, features, hair system, and costume detail.'],
+      ['Retopology brief','The visible profile and expression targets define what later eyelid, mouth, cheek, jaw, ear, hairline, and neck topology must preserve.'],
+      ['Evidence boundary','The images are reconstruction direction; matching wireframe, loops, UVs, bakes, rig, source-tool, and export captures remain future evidence.']
     ],
-    required:['assets/process/sculpt-to-retopo/sculpt-model.webp','assets/process/sculpt-to-retopo/technical-proof.webp','assets/process/sculpt-to-retopo/final-renders.webp']
+    current:['assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1.webp','assets/rebuild/sculpt-retopo-lyra/sculpt-development-16x9-v1.webp','assets/rebuild/sculpt-retopo-lyra/form-deformation-study-16x9-v1.webp'],
+    required:['matching high-poly source-tool captures','matching low-poly wireframe and deformation-loop inspection','packed UVs and bake maps','source-file and export validation']
   },
   'avatar-character':{
-    lead:'A creator-facing avatar case focused on thumbnail face read, expression range, outfit personality, and a clear rig-readiness specification.',
-    whatCopy:'This page frames the avatar as a character identity system: portrait appeal, expression planning, hair and costume detail, material accents, mouth-shape direction, and delivery notes for creator or profile use.',
+    title:'Mira Avatar Identity Direction',
+    image:'assets/rebuild/avatar-mira/hero-4x3-v1.webp',
+    alt:'Stylized young-adult Mira avatar with a high black ponytail, rust hooded layer, black foundation garment, and geometric gold jewelry.',
+    meta:['Creator avatar','Identity system','Expression direction'],
+    lead:'A stylized young-adult avatar developed through a polished portrait, coordinated identity views, and five controlled expression targets.',
+    whatTitle:'One recognizable identity across a thumbnail, a profile, a rear view, and an expression change.',
+    whatCopy:'The hero, coordinated front/three-quarter/profile/rear study, and expression set preserve Mira’s face, hair, costume, jewelry, palette, and material language without presenting the direction as a working rig.',
     gallery:[
-      ['assets/process/avatar-character/hero.webp','Avatar hero board for portrait read, expression charm, material accents, and handoff planning.'],
-      ['assets/process/avatar-character/expression-sheet.webp','Expression sheet board with portrait, expression panels, hair/costume crop, and readiness planning.'],
-      ['assets/process/avatar-character/technical-proof.webp','Technical planning board for face controls, mouth-shape direction, material swatches, and turnaround needs.'],
-      ['assets/process/avatar-character/deliverables.webp','Deliverables board for render set, expression planning, outfit notes, and creator handoff icons.'],
-      ['assets/process/avatar-character/portrait-read.webp','Portrait crop for charm, eyes, hair shape, and identity read.'],
-      ['assets/process/avatar-character/expression-panels.webp','Expression panel crop for direction and future rig or blendshape notes.']
+      ['assets/rebuild/avatar-mira/identity-views-16x9-v1.webp','Coordinated front, three-quarter, true-profile, and rear views for avatar identity, hair, hood, costume, and jewelry direction.'],
+      ['assets/rebuild/avatar-mira/expression-direction-16x9-v1.webp','Five Mira expression targets: neutral, warm smile, delighted, surprised, and focused.']
     ],
     proof:[
-      ['Identity system','Portrait board, expression panels, hair and costume crop, and delivery boards establish a recognizable creator-facing character.'],
-      ['Rig-readiness brief','Face-control zones, mouth shapes, turnarounds, and expression grids define what the production rig must support.'],
-      ['Creator use','The visual system is designed for profile, social, streamer, and avatar identity applications.'],
-      ['Production acceptance','Blendshapes, visemes, platform exports, and tracking tests are validated during rigging and integration.']
+      ['Identity system','Hero and coordinated views preserve one young-adult face, high ponytail, rust hooded layer, black foundation garment, jewelry set, and material palette.'],
+      ['Expression direction','Neutral, warm, joyful, surprised, and focused targets define future brow, eyelid, cheek, mouth-corner, lip, jaw, and eye behavior.'],
+      ['Production boundary','The images do not prove a measured orthographic turnaround, matching production model, topology, inner mouth, blendshapes, rig, tracking, platform integration, or exports.'],
+      ['Acceptance path','Matching model, hair, surface, facial-deformation, rig-control, tracking, platform, and export evidence complete the live-avatar case.']
     ],
-    required:['assets/process/avatar-character/hero.webp','assets/process/avatar-character/expression-sheet.webp','assets/process/avatar-character/technical-proof.webp','assets/process/avatar-character/deliverables.webp']
+    current:['assets/rebuild/avatar-mira/hero-4x3-v1.webp','assets/rebuild/avatar-mira/identity-views-16x9-v1.webp','assets/rebuild/avatar-mira/expression-direction-16x9-v1.webp'],
+    required:['matching production-model neutral turns','facial topology and inner-mouth inspection','blendshape, viseme, and rig-control tests','tracking, platform, and export validation']
   },
   'mascot-character':{
-    lead:'A mascot system case for product, startup, creator, or brand use, centered on recognizable shape language, pose range, palette, and reusable handoff planning.',
-    whatCopy:'This project treats the mascot as a repeatable character system: hero appeal, expression and pose set, color and material rules, front/side/back planning, and a flexible delivery system that can adapt to different brand contexts.',
+    lead:'A fennec mascot visual-direction study centered on a recognizable silhouette, locked identity details, coordinated views, and a clear pose-and-expression range.',
+    whatCopy:'The hero, front/three-quarter/profile/rear study, and four character moments establish what a future matching 3D build must preserve without presenting the direction as a completed model or brand deployment.',
     gallery:[
-      ['assets/process/mascot-character/hero.webp','Mascot hero board for appeal read, color/material swatches, pose thumbnails, and handoff planning.'],
-      ['assets/process/mascot-character/pose-expression-set.webp','Pose and expression system board showing mascot variations, palette, and repeatable character reads.'],
-      ['assets/process/mascot-character/technical-proof.webp','Technical planning board for turnaround, material, silhouette, and source-package review needs.'],
-      ['assets/process/mascot-character/deliverables.webp','Deliverables board for render pack, pose set, colorway set, and handoff icons.'],
-      ['assets/process/mascot-character/appeal-read.webp','Face and body crop focused on proportions, expression, and recognizability.'],
-      ['assets/process/mascot-character/pose-panels.webp','Pose panel crop for gesture direction and future pose-pack detail.']
+      ['assets/rebuild/sol-mascot-system/identity-views-16x9-v1.webp','Coordinated front, three-quarter, profile, and rear presentation views preserving Sol’s identity and costume.'],
+      ['assets/rebuild/sol-mascot-system/pose-expression-16x9-v1.webp','Greeting, guide, delighted, and thoughtful pose-and-expression targets for the same Sol identity.']
     ],
     proof:[
-      ['Character system','Presentation board, appeal crop, pose panels, material palette, and delivery boards establish the mascot family.'],
-      ['System planning','The case shows pose range, expression direction, palette, shape language, and handoff categories.'],
-      ['Brand flexibility','The neutral system can be adapted to a startup, product, creator, or education brand without forcing an invented identity.'],
-      ['Production acceptance','The source model, UVs, topology, rig, exports, and usage mockups are checked during the 3D build and brand application phase.']
+      ['Direction shown','Hero, coordinated identity views, and four character moments preserve one recognizable Sol identity.'],
+      ['System specification','Species, markings, one tail band, compact animal paws, costume, staff family, palette, and surface hierarchy remain consistent.'],
+      ['Evidence boundary','The coordinated perspective views are not a measured orthographic turnaround or proof of a matching production asset.'],
+      ['Production acceptance','Matching model, topology, UV, texture, rig, deformation, prop-interaction, export, and usage tests complete the technical case.']
     ],
-    required:['assets/process/mascot-character/hero.webp','assets/process/mascot-character/pose-expression-set.webp','assets/process/mascot-character/technical-proof.webp','assets/process/mascot-character/deliverables.webp']
+    current:['assets/rebuild/sol-mascot/sol-hero-4x5-v1.webp','assets/rebuild/sol-mascot-system/identity-views-16x9-v1.webp','assets/rebuild/sol-mascot-system/pose-expression-16x9-v1.webp'],
+    required:['matching production-model neutral turns','topology, UV, texture, and material evidence','rig, deformation, and prop-interaction tests','verified exports or usage tests for the agreed context']
   },
   'outfits-accessories':{
-    lead:'An outfit and accessory production case focused on front/back silhouette, material closeups, trim logic, prop detail, and variation-ready handoff planning.',
-    whatCopy:'This project supports smaller paid character scopes: costumes, skins, props, and accessory packs that need to match the base character while showing fabric, leather, metal, trim, staff, pouch, boot, and hardware decisions clearly.',
+    lead:'An Ember Court Duelist costume direction focused on layer order, front/back consistency, asymmetric protection, material separation, accessory inspection, and a complete rapier.',
+    whatCopy:'The case shows how the outfit builds from an ivory-and-charcoal foundation through plum tailoring and leather structure to the final aged-gold protection, fasteners, brooch, and weapon.',
     gallery:[
-      ['assets/process/outfits-accessories/hero.webp','Outfit hero board for full-body costume read, material categories, and handoff planning.'],
-      ['assets/process/outfits-accessories/material-closeups.webp','Material closeup board showing outfit views, trim, accessories, prop details, and texture planning.'],
-      ['assets/process/outfits-accessories/technical-proof.webp','Technical planning board for garment silhouette, UV-inspired tiles, material groups, and export categories.'],
-      ['assets/process/outfits-accessories/deliverables.webp','Deliverables board for outfit render set, accessory package, material notes, and review icons.'],
-      ['assets/process/outfits-accessories/front-back-silhouette.webp','Front/back costume silhouette crop for outfit layer read.'],
-      ['assets/process/outfits-accessories/trim-materials.webp','Trim and material crop for fabric, belt, metal, and embroidery direction.']
+      ['assets/rebuild/outfit-ember-duelist/front-back-accessories-16x9-v1.webp','Coordinated front/back costume views plus separate rapier, protection, leather structure, medallion option, and boot direction.'],
+      ['assets/rebuild/outfit-ember-duelist/layer-progression-16x9-v1.webp','Foundation, tailored mid-layer, and complete final costume shown on one consistent character.']
     ],
     proof:[
-      ['Costume system','Presentation board, front/back silhouette, trim and material crops, and accessory boards establish the outfit hierarchy.'],
-      ['Material specification','Fabric, leather, metal, trim, staff, pouch, boot, and hardware categories are visually separated for production review.'],
-      ['Variation planning','Colorway, skin, prop, and accessory variants can be scoped from the same approved base design.'],
-      ['Production acceptance','Platform constraints, exports, UVs, texture maps, and garment mesh checks are resolved during the 3D build.']
+      ['Direction shown','Hero, front/back study, accessory inspection, and layer progression preserve one face, hairstyle, body, palette, costume system, and rapier family.'],
+      ['Layer specification','Foundation clothing, tailored silhouette pieces, leather structure, metal protection, fasteners, brooch, boots, and weapon remain visibly separable.'],
+      ['Evidence boundary','The package is not garment-mesh, engineered-attachment, deformation, topology, UV, texture-map, rig, engine, or export proof.'],
+      ['Next production pass','Matching model and garment captures must establish real attachment, back construction, deformation, surface setup, and delivery evidence.']
     ],
-    required:['assets/process/outfits-accessories/hero.webp','assets/process/outfits-accessories/material-closeups.webp','assets/process/outfits-accessories/technical-proof.webp','assets/process/outfits-accessories/deliverables.webp']
-  },
-  'pbr-texturing':{
-    lead:'A flagship concept-to-character case showing how an early sketch or rough visual direction can become a polished fantasy warrior presentation with process, material, inspection, and handoff boards.',
-    whatTitle:'A complete direction path from early idea to polished 3D character.',
-    whatCopy:'This project supports the core concept-to-3D offer: starting input, design progression, sculpt/model planning, final character read, technical inspection categories, and deliverables that make the transformation understandable to a buyer or recruiter.',
-    gallery:[
-      ['assets/process/pbr-texturing/presentation-board.webp','Board for the concept-to-character presentation flow.'],
-      ['assets/process/concept-to-character/starting-point.webp','Starting-point board for rough sketch, visual direction, and early 3D planning.'],
-      ['assets/process/concept-to-character/sculpt-model.webp','Sculpt and model board for broad forms, refined character read, and inspection panels.'],
-      ['assets/process/concept-to-character/technical-proof.webp','Technical planning board for topology, UV, material, and handoff categories.'],
-      ['assets/process/concept-to-character/final-renders.webp','Final render board for sketch-to-character transformation, crops, materials, and delivery planning.'],
-      ['assets/process/concept-to-character/deliverables.webp','Deliverables board for final renders, review views, material notes, and handoff organization.']
-    ],
-    proof:[
-      ['Transformation story','Starting sketch, design progression, final character read, and presentation boards make the evolution easy to follow.'],
-      ['Production planning','The case shows the steps a buyer expects: input review, silhouette, sculpt/model planning, material categories, technical inspection, and final presentation.'],
-      ['Production specification','Source-file structure, UVs, bake maps, textures, engine needs, and export formats are resolved against the final use case.'],
-      ['Buyer value','The project makes the path from rough idea to polished 3D character clear enough to support project inquiries.']
-    ],
-    required:['assets/process/concept-to-character/starting-point.webp','assets/process/concept-to-character/sculpt-model.webp','assets/process/concept-to-character/technical-proof.webp','assets/process/concept-to-character/final-renders.webp','assets/process/concept-to-character/deliverables.webp']
-  },
-  'original-site-concept':{
-    required:['assets/process/original-site-concept/hero.webp','assets/process/original-site-concept/technical-proof.webp','assets/process/original-site-concept/final-renders.webp','assets/process/original-site-concept/deliverables.webp']
+    required:['assets/rebuild/outfit-ember-duelist/hero-4x3-v1.webp','assets/rebuild/outfit-ember-duelist/front-back-accessories-16x9-v1.webp','assets/rebuild/outfit-ember-duelist/layer-progression-16x9-v1.webp']
   }
 };
 
 const FINAL_NARRATIVE_UPGRADES={
   'game-hero':{
     deliverables:[
-      ['Presentation set','Hero render, presentation board, face read, costume/material crop, weapon silhouette crop, and short project summary.'],
-      ['Build specification','Technical planning board, final render board, and delivery structure for the next 3D production pass.'],
-      ['Handoff notes','Intended use, required views, material categories, sharing restrictions, and technical requirements agreed during scoping.']
+      ['Direction package','Forge Warden hero render, coordinated front/profile/back construction sheet, grip and articulation study, and concise project summary.'],
+      ['Build specification','Identity, silhouette, costume layers, material families, hammer construction, movement-risk areas, and matching evidence requirements for the next 3D pass.'],
+      ['Handoff notes','Intended use, target platform, required views, deformation priorities, material categories, file needs, and sharing restrictions agreed during scoping.']
     ]
   },
   'character-environment':{
     deliverables:[
-      ['Presentation assets','Final staged render, presentation board, mid-body stage crop, grounding crop, and short project summary.'],
-      ['Staging notes','Character placement, plinth/base choice, restrained support props, lighting mood, camera crop, and scale-cue rationale.'],
-      ['Process boards','Blockout board, lighting breakdown, support-prop board, and scene handoff board for stronger staging evidence.']
+      ['Direction package','Frostline Ranger hero stage, neutral-to-final staging progression, camera and grounding study, and concise project summary.'],
+      ['Staging brief','Character priority, plinth and milestone placement, silhouette clearance, lighting mood, camera coverage, ground contact, and scale-cue rationale.'],
+      ['Evidence plan','Matching neutral blockout, camera, light, prop, material, contact-shadow, render-setting, and source-scene captures when production is completed.']
     ]
   },
   'interior-props':{
     deliverables:[
-      ['Presentation set','Shelf hero render, presentation board, 2D-to-3D process board, material study, glass/metal render, and closeup detail grid.'],
-      ['Source package','OBJ mesh, MTL material library, manifest, technical mesh sheet, named object groups, material assignments, and UV coordinates.'],
-      ['Handoff notes','Object groups, material usage, source visuals, file paths, inspection notes, and the documented limitation that production UV packing can be refined by object group.']
+      ['Direction package','Warm hero, coordinated prop-family presentation, and neutral-volume, material, and lighting direction renders.'],
+      ['Build brief','Shelf architecture, prop list, scale hierarchy, material targets, composition, camera, and lighting priorities.'],
+      ['Evidence plan','Matching model, wireframe, UV, map, material, source-scene, object-organization, engine, performance, and export captures where scoped.']
     ]
   },
   'ai-visual-pipeline':{
-    problemTitle:'A team needs repeatable visual standards before AI-assisted outputs can guide 3D production.',
+    problemTitle:'A character direction needs stable decisions before it can guide a matching 3D production pass.',
     problems:[
-      ['Buyer problem','References, AI-assisted exploration, material studies, and production notes can scatter quickly unless the team has review rules.'],
-      ['Workflow risk','A visual exploration can look persuasive while failing material consistency, geometry, scale, lighting, or production handoff.'],
-      ['Solved direction','The case organizes references, material standards, review criteria, rejection rules, and handoff categories around real 3D judgment.']
+      ['Buyer need','A team needs to know what must remain consistent, what still needs technical proof, and who approves the next step.'],
+      ['Workflow risk','A persuasive image can hide identity drift, incomplete construction, weak prop interaction, or material decisions that cannot survive the next pass.'],
+      ['Solved direction','Tideglass organizes one identity through concept, neutral form, materials, close inspection, and a bounded handoff plan.']
     ],
     process:[
-      ['Reference control','Organize input references, mood cues, material groups, and selected visual direction before expanding output volume.'],
-      ['Material library','Group surfaces into reusable standards for wood, brass, glass, ceramic, leather, fabric, paper, and plant materials.'],
-      ['3D-aware review','Check each visual output against geometry respect, scale, lighting, finish consistency, and client-ready clarity.'],
-      ['Handoff system','Package reference boards, material notes, prompt/review guidance where appropriate, rejection rules, and production follow-up tasks.']
+      ['Brief and identity locks','Define the courier role, silhouette, face, coat, shoulder guard, satchel, staff, palette, and open questions.'],
+      ['Form review','Inspect proportion, stance, coat mass, staff length, grip, ground contact, straps, and rear silhouette in sketch and neutral direction.'],
+      ['Material review','Check textile, leather, oxidized copper, brass, and glass separation at full figure and close range.'],
+      ['Handoff plan','Package the approved direction, unresolved risks, required matching captures, responsible review, and next action.']
     ],
     deliverables:[
-      ['Visual standards package','Reference board, selected direction board, material-library taxonomy, and quality-review criteria.'],
-      ['Production review package','Geometry/material checks, finish consistency rules, lighting and scale review notes, and rejection criteria for unusable outputs.'],
-      ['Handoff package','Organized visual references, material notes, prompt/review guidance where appropriate, and clear next steps for 3D production or implementation teams.']
+      ['Direction package','Resolved character target, coordinated sketches, neutral-maquette direction, material target, and identity locks.'],
+      ['Review brief','Face, grip, costume construction, rear silhouette, material family, consistency, and evidence questions.'],
+      ['Handoff plan','Approved direction, unresolved risks, reviewer ownership, required production captures, and acceptance path.']
     ]
   },
   'santa-cruz-ai-visual-pipeline':{
     deliverables:[
-      ['Direction package','Workflow map, visual standards, material-library taxonomy, review criteria, and controlled-generation rules.'],
-      ['Review package','Geometry, material, lighting, and client-readiness checks for judging AI-assisted construction visuals before they are shared.'],
-      ['Handoff package','Developer-ready requirements, output-log rules, training notes, redaction boundaries, and measurement criteria for a controlled implementation.']
+      ['Direction package','Resolved exterior, finish-option study, context view, daylight inspection, blue-hour presentation, and residence identity locks.'],
+      ['Review brief','Form, opening, finish, landscape, camera, lighting, accessibility-risk, and evidence questions.'],
+      ['Evidence plan','Permissioned project inputs, matching scene captures, qualified project review, and real approval or outcome evidence where available.']
     ]
   },
   'construction-client-progress-workflow':{
     deliverables:[
-      ['Workflow package','Capture standards, phase model, comment/response model, review states, next-action rules, and handoff notes.'],
-      ['Review materials','Progress evidence board, client review-state examples, summary-flow board, and public-safe handoff visuals.'],
-      ['Measurement plan','Admin time, response loop, repeated questions, update completeness, approval clarity, and rework signals to verify before publishing result claims.']
+      ['Visual direction package','One active-stage hero, a coordinated four-stage reconstruction, and one wide-to-detail evidence hierarchy.'],
+      ['Review specification','Required fields, state language, responsibility boundaries, missing-context checks, and next-action rules.'],
+      ['Evidence plan','Permissioned captures, verified dates and locations, reviewer records, decisions, system evidence, and approved measurements for any future operational case.']
     ]
   },
   'print-startup-direction':{
     deliverables:[
-      ['Design package','Character family boards, style rules, pose and base standards, accessory constraints, and review instructions.'],
-      ['Print planning package','Printability board, support-risk review, base logic, handoff package board, and QA checklist for the production pass.'],
-      ['Production acceptance','Slicer captures, wall-thickness notes, repair logs, and test-print photos document the move from direction into physical output.']
+      ['Collectible direction','Paired color-and-clay hero, proposed component-separation study, and coordinated contact views.'],
+      ['Engineering brief','Character locks, risk zones, parting questions, process inputs, scale decisions, and required validation captures.'],
+      ['Production acceptance','Matching model, final parts and joints, dimensions, slicer and repair evidence, assembly notes, and test-print photographs complete the physical proof.']
     ]
   },
   'sculpt-to-retopo':{
     deliverables:[
-      ['Presentation assets','Sculpt board, face crop, retopo-style panel, turnaround strip, final render board, and process summary.'],
-      ['Inspection package','Sculpt and model board, topology study, UV planning, bake and material tiles, and review categories.'],
-      ['Production acceptance','Source topology, polycount, UV layout, bake maps, texture maps, and tool captures document the finished rebuild.']
+      ['Sculpt direction','Resolved Lyra hero plus broad-to-fine form development for primary, secondary, and polished reads.'],
+      ['Form requirements','Neutral, true-profile, smile, and jaw-open targets for identity preservation and later deformation planning.'],
+      ['Production acceptance','Matching high-poly, low-poly wireframe, deformation loops, UV layout, bake maps, source-tool captures, and export checks complete the technical case.']
     ]
   },
   'avatar-character':{
     deliverables:[
-      ['Presentation assets','Avatar hero board, expression sheet board, portrait crop, expression panels, hair/costume crop, and creator-facing summary.'],
-      ['Readiness package','Expression planning, mouth-shape direction, face-control planning, outfit/material notes, and turnaround needs.'],
-      ['Production acceptance','Working rig, blendshapes, visemes, export files, and platform tests complete the live-avatar package.']
+      ['Identity direction','Mira hero plus coordinated front, three-quarter, true-profile, and rear presentation views.'],
+      ['Expression direction','Five emotional targets with stable facial proportions, hair, costume, jewelry, and material language.'],
+      ['Production acceptance','Matching model, facial topology, inner mouth, blendshapes, visemes, rig controls, tracking, platform checks, and exports complete the live-avatar proof.']
     ]
   },
   'mascot-character':{
     deliverables:[
-      ['Presentation assets','Mascot hero board, pose/expression board, appeal crop, pose panels, material palette crop, and brand-character summary.'],
-      ['System package','Pose range, expression direction, colorway/material rules, turnaround planning, render-pack expectations, and handoff icons.'],
-      ['Production acceptance','Source model, UVs, topology, rig, exports, and usage mockups complete the 3D and brand application phase.']
+      ['Identity direction','Sol hero plus coordinated front, three-quarter, profile, and rear presentation views.'],
+      ['Pose and expression direction','Greeting, guide, delighted, and thoughtful targets with one species, marking, costume, tail, paw, and prop language.'],
+      ['Production acceptance','Matching model, topology, UVs, textures, rig, deformation, prop interaction, exports, and agreed usage tests complete the technical proof.']
     ]
   },
   'outfits-accessories':{
     deliverables:[
-      ['Presentation assets','Outfit hero board, material closeup board, front/back silhouette crop, trim/material crop, prop/accessory crop, and variation notes.'],
-      ['Production planning','Garment and accessory categories, UV-inspired tiles, material groups, prop details, colorway planning, and export categories.'],
-      ['Production acceptance','Garment and accessory meshes, UV layout, texture maps, material sheets, and platform exports complete the asset package.']
+      ['Direction package','Ember Duelist hero, coordinated front/back costume views, accessory inspection, garment-layer progression, and concise project summary.'],
+      ['Costume brief','Layer order, wrap closure, coat-tail split, harness routing, waist structure, asymmetric protection, materials, accessory options, and rapier scale.'],
+      ['Evidence plan','Matching garment models, attachment checks, topology, UV, texture, deformation, rig, target-platform, and export captures when production is completed.']
     ]
   },
   'pbr-texturing':{
     deliverables:[
-      ['Presentation assets','Starting sketch, design progression, final character read, presentation board, render boards, and project summary.'],
-      ['Production planning','Sculpt/model board, technical planning board, material categories, review views, final render board, and handoff board.'],
-      ['Client notes','Use case, reference rights, style decisions, scope assumptions, and confirmed deliverables for the approved production path.']
+      ['Presentation assets','Marsh Warden material-study hero, full-character inspection sheet, surface closeups, and material decision summary.'],
+      ['Production package','Matching UV layouts, bake maps, texture sets, material graphs, neutral checks, and beauty renders where scoped.'],
+      ['Handoff notes','Material naming, texture packing, resolution, color-space, shader, and export requirements for the agreed target.']
     ]
+  },
+  'original-site-concept':{
+    deliverables:[
+      ['Direction package','Selected concept presentation, sculpt-development sheet, material and construction inspection, and decision notes.'],
+      ['Production package','Matching high-poly and low-poly views, topology, UVs, bakes, texture sets, material setup, and final renders where scoped.'],
+      ['Handoff notes','Approved use, naming, formats, scale, review states, open risks, and final evidence required for delivery.']
+    ]
+  }
+};
+
+const APPROVED_MEDIA={
+  forgeWardenHero:{
+    src:'assets/rebuild/game-forge-warden/hero-4x3-v1.webp',
+    alt:'Stocky silver-haired Forge Warden holding a square-headed two-handed hammer on a restrained studio plinth.',
+    caption:'Forge Warden hero direction establishing the older identity, stocky playable silhouette, asymmetrical armor, material hierarchy, grounded stance, and complete hammer.',
+    role:'reconstruction-direction',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  forgeWardenTurnaround:{
+    src:'assets/rebuild/game-forge-warden/turnaround-16x9-v1.webp',
+    alt:'Forge Warden front, true right profile, and back character-direction renders with the complete hammer shown beside the neutral views.',
+    caption:'Neutral construction direction for proportion, silhouette, armor overlap, strap routing, back detail, boot volume, and complete prop scale. It is not topology, rig, UV, engine, or export evidence.',
+    role:'reconstruction-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  forgeWardenGrip:{
+    src:'assets/rebuild/game-forge-warden/grip-articulation-16x9-v1.webp',
+    alt:'Forge Warden weapon-grip and articulation study with close views of face, hands, shoulder, elbow, belt, hip, knee, and boots.',
+    caption:'Focused movement-risk direction for natural two-hand grip, wrist alignment, shoulder and elbow clearance, belt and hip construction, knee protection, and grounded boots.',
+    role:'reconstruction-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  frostlineStageHero:{
+    src:'assets/rebuild/character-staging-frostline/hero-4x3-v1.webp',
+    alt:'Older Frostline Ranger archer on a restrained black-stone stage with one milestone, frost stones, and cool studio lighting.',
+    caption:'Character-first stage direction establishing the Frostline Ranger, full horn bow, grounded boots, compact stone base, one scale prop, clear negative space, and restrained cool-and-warm lighting.',
+    role:'reconstruction-direction',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  frostlineStageProgression:{
+    src:'assets/rebuild/character-staging-frostline/stage-progression-16x9-v1.webp',
+    alt:'Frostline Ranger staging progression from a neutral gray plinth to scale-prop placement and final cool-and-warm beauty lighting.',
+    caption:'Coordinated staging progression: neutral inspection base, selected plinth and milestone placement, then final atmosphere and light. It is art direction, not a captured scene-file breakdown.',
+    role:'reconstruction-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  frostlineCameraGrounding:{
+    src:'assets/rebuild/character-staging-frostline/camera-grounding-16x9-v1.webp',
+    alt:'Frostline Ranger eye-level, near-profile, and low grounding views showing silhouette clearance, boots, stone contact, and bow placement.',
+    caption:'Coordinated camera and grounding direction for character dominance, side silhouette, milestone spacing, planted boots, stone edge, bow clearance, and contact shadow.',
+    role:'reconstruction-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  emberDuelistHero:{
+    src:'assets/rebuild/outfit-ember-duelist/hero-4x3-v1.webp',
+    alt:'Young Ember Court Duelist wearing layered ivory, plum, black leather, and aged-gold costume pieces while holding a complete swept-hilt rapier.',
+    caption:'Costume hero direction establishing the duelist identity, tailored silhouette, asymmetric protection, material hierarchy, complete weapon, and restrained studio presentation.',
+    role:'reconstruction-direction',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  emberDuelistFrontBack:{
+    src:'assets/rebuild/outfit-ember-duelist/front-back-accessories-16x9-v1.webp',
+    alt:'Ember Duelist coordinated front and back costume views with separate rapier, shoulder armor, forearm guards, harness, belt, medallion option, and boot.',
+    caption:'Front/back and accessory direction for coat-tail split, strap routing, waist structure, asymmetric protection, material separation, and the complete rapier. It is not engineered attachment or deformation proof.',
+    role:'reconstruction-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  emberDuelistLayers:{
+    src:'assets/rebuild/outfit-ember-duelist/layer-progression-16x9-v1.webp',
+    alt:'Ember Duelist garment progression from ivory foundation clothing through plum tailoring and leather structure to the complete armored costume and rapier.',
+    caption:'Coordinated layer progression showing the visible dressing order and silhouette contribution of foundation clothing, tailoring, leather structure, protection, fasteners, and weapon.',
+    role:'reconstruction-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  lyraSculptHero:{
+    src:'assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1.webp',
+    alt:'Resolved warm-gray clay bust of Lyra with layered braided hair, diamond ornament, high collar, and neutral inspection lighting.',
+    caption:'Lyra sculpt reconstruction target for facial planes, profile, braid grouping, ornament, collar, and neutral-light inspection. It is not a source-tool or completed-retopology capture.',
+    role:'reconstruction-direction',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  lyraSculptDevelopment:{
+    src:'assets/rebuild/sculpt-retopo-lyra/sculpt-development-16x9-v1.webp',
+    alt:'Three Lyra clay busts showing primary blockout, secondary refinement, and resolved sculpt stages with one consistent identity.',
+    caption:'Broad-to-fine form direction from primary blockout through secondary refinement to the resolved bust. The faceted first stage visualizes form hierarchy; it is not a low-poly production mesh.',
+    role:'sculpt-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  lyraFormStudy:{
+    src:'assets/rebuild/sculpt-retopo-lyra/form-deformation-study-16x9-v1.webp',
+    alt:'Lyra clay bust study with neutral front, true profile, controlled smile, and jaw-open expression views.',
+    caption:'Coordinated neutral, true-profile, smile, and jaw-open form targets for identity and future deformation planning. They do not prove blendshapes, rigging, or topology.',
+    role:'form-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  miraAvatarHero:{
+    src:'assets/rebuild/avatar-mira/hero-4x3-v1.webp',
+    alt:'Stylized young-adult Mira avatar with a high black ponytail, rust hooded layer, black foundation garment, and geometric gold jewelry.',
+    caption:'Mira avatar hero for thumbnail appeal, face read, hair silhouette, costume hierarchy, jewelry, and material direction. It is not a captured production model or rig.',
+    role:'reconstruction-direction',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  miraIdentityViews:{
+    src:'assets/rebuild/avatar-mira/identity-views-16x9-v1.webp',
+    alt:'Mira avatar shown in coordinated front, three-quarter, true-profile, and rear views with consistent face, ponytail, hood, costume, and jewelry.',
+    caption:'Coordinated identity direction for face, profile, ponytail root and volume, hood construction, costume silhouette, and jewelry continuity. It is not a measured orthographic turnaround.',
+    role:'identity-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  miraExpressions:{
+    src:'assets/rebuild/avatar-mira/expression-direction-16x9-v1.webp',
+    alt:'Five coordinated Mira avatar expressions: calm neutral, warm smile, delighted, surprised, and focused.',
+    caption:'Expression-shape direction for neutral, warm, joyful, surprised, and focused reads. The sheet does not prove blendshapes, visemes, facial topology, rigging, tracking, or animation.',
+    role:'expression-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  solPortrait:{
+    src:'assets/rebuild/sol-mascot/sol-hero-4x5-v1.webp',
+    alt:'Sol the fennec fox mascot reconstruction direction with three forehead markings, one patterned tail, terracotta cape, and a staff in a presentation holder.',
+    caption:'Approved Sol reconstruction target with locked fennec anatomy, markings, costume, paw construction, tail band, staff, and display-base language.',
+    role:'reconstruction-direction',
+    aspect:'4/5',
+    evidenceStatus:'reconstruction-direction',
+    width:1120,
+    height:1400
+  },
+  solIdentityViews:{
+    src:'assets/rebuild/sol-mascot-system/identity-views-16x9-v1.webp',
+    alt:'Four coordinated Sol mascot presentation views: front, three-quarter, profile, and rear.',
+    caption:'Coordinated identity views preserving Sol’s fennec anatomy, three forehead markings, one patterned tail, animal paws, costume, and staff family. These are perspective direction views, not an orthographic turnaround.',
+    role:'identity-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  solPoseExpressions:{
+    src:'assets/rebuild/sol-mascot-system/pose-expression-16x9-v1.webp',
+    alt:'Four coordinated Sol mascot poses: greeting, confident guide, delighted seated, and thoughtful.',
+    caption:'Pose-and-expression direction for greeting, guide, delighted, and thoughtful character moments while preserving one Sol identity.',
+    role:'pose-expression-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  solPrint:{
+    src:'assets/rebuild/sol-print/sol-collectible-4x3-v2.webp',
+    alt:'Paired color and neutral form studies for a future Sol collectible, preserving the same identity, costume, staff, tail, and carved-stone base.',
+    caption:'Generated collectible reconstruction direction. The paired color and neutral studies establish identity, proportions, costume, staff, tail, base, and material hierarchy. They are not captures from a printable production model and do not verify topology, part separation, joints, dimensions, wall thickness, supports, slicer settings, or a successful print.',
+    role:'reconstruction-direction',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  solPrintAssembly:{
+    src:'assets/rebuild/sol-print-system/assembly-direction-16x9-v2.webp',
+    alt:'Neutral-clay Sol collectible shown assembled beside proposed separated head, scarf and cape, tail, body, paw, staff, holder, and base groups.',
+    caption:'Collectible component-separation direction. The grounded body remains paired with the base and both paw parts are visible; the image does not establish final parts, joints, keys, tolerances, or printable geometry.',
+    role:'component-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  solPrintContacts:{
+    src:'assets/rebuild/sol-print-system/contact-views-16x9-v1.webp',
+    alt:'Three complete neutral-clay Sol collectible views: front three-quarter, profile, and rear three-quarter, each on a full base with the staff and holder.',
+    caption:'Coordinated maquette views for silhouette, cape thickness, tail relationship, foot contact, staff-holder placement, and base-footprint direction. These are not orthographic production-model captures.',
+    role:'contact-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  interiorShelf:{
+    src:'assets/rebuild/interior-direction/shelf-hero-4x3-v1.webp',
+    alt:'Ornate interior shelf direction with carved dark wood, leather boxes, ceramics, books, glass, brass hardware, textiles, and warm window light.',
+    caption:'Set-dressing and material reconstruction target. A matching source scene, wireframe, UVs, maps, and neutral render are still required for technical proof.',
+    role:'reconstruction-direction',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  interiorPropFamily:{
+    src:'assets/rebuild/interior-props-system/prop-family-16x9-v1.webp',
+    alt:'Clean studio lineup of coordinated carved chests, ceramic vessels, brass accents, books, folded textiles, and carved-wood details.',
+    caption:'Asset-family reconstruction direction for scale, ornament, construction cues, and material separation. It is not evidence of completed production models, functional hardware, topology, UVs, or texture maps.',
+    role:'asset-family-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  interiorStagingDevelopment:{
+    src:'assets/rebuild/interior-props-system/staging-development-16x9-v1.webp',
+    alt:'The same ornate shelf composition shown as neutral volume, neutral material, and warm presentation-lighting direction.',
+    caption:'Neutral volume, material, and lighting direction renders for one consistent shelf composition. They are visual reconstruction targets, not captures from a completed source scene.',
+    role:'staging-material-lighting-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  conceptHero:{
+    src:'assets/portfolio/work-concept-to-3d.webp',
+    alt:'Concept-to-character presentation showing an early fantasy warrior direction progressing into a resolved 3D character target.',
+    caption:'The original concept-to-character project opener. It establishes the source idea and the resolved direction that the sculpt and material studies develop further.',
+    role:'project-hero',
+    aspect:'4/3',
+    evidenceStatus:'portfolio-direction',
+    width:1200,
+    height:900
+  },
+  conceptSculpt:{
+    src:'assets/rebuild/concept-to-character/sculpt-development-16x9-v1.webp',
+    alt:'Clay-form development sheet for a ponytailed desert warrior with a facial bust and front, three-quarter, and back character views.',
+    caption:'Sculpt-development direction for the face, ponytail and hair mass, silhouette, costume layers, and front-to-back construction. It is a reconstruction target, not a source-tool screenshot.',
+    role:'sculpt-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  conceptMaterials:{
+    src:'assets/rebuild/concept-to-character/material-construction-16x9-v1.webp',
+    alt:'Character material and construction sheet with a full-body desert warrior plus face, cloth, belt, metal, and boot closeups.',
+    caption:'Material and construction direction separating skin, hair, woven cloth, leather, bronze, embroidery, and footwear. Matching maps and shader captures remain future production evidence.',
+    role:'material-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  marshWardenHero:{
+    src:'assets/rebuild/pbr-marsh-warden/hero-4x3-v1.webp',
+    alt:'Full-body Marsh Warden material-study character with dark skin, a teal cloak, ivory linen, leather, oxidized bronze, and a lantern staff.',
+    caption:'Marsh Warden material-study hero. The design separates skin, hair, linen, dyed cloth, leather, aged bronze, wood, glass, and stone under controlled studio lighting.',
+    role:'project-hero',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  marshWardenMaterials:{
+    src:'assets/rebuild/pbr-marsh-warden/material-inspection-16x9-v1.webp',
+    alt:'Marsh Warden material inspection sheet with color and neutral full-body views plus skin, fabric, leather, bronze, boot, and lantern details.',
+    caption:'Material inspection direction for surface separation, value hierarchy, wear restraint, and close-range readability. Real UVs, bake maps, texture sets, and shader captures must come from the matching production model.',
+    role:'material-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  visualPipeline:{
+    src:'assets/rebuild/tideglass-workflow/hero-4x3-v1.webp',
+    alt:'Physical Tideglass Courier art-direction table with a resolved character target, coordinated sketches, neutral maquette, and material swatches.',
+    caption:'Tideglass Courier visual-workflow direction. The physical presentation establishes one identity, sketch family, neutral form target, and material palette; it is not a captured production model or delivered client package.',
+    role:'workflow-direction',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  visualPipelineSequence:{
+    src:'assets/rebuild/tideglass-workflow/direction-sequence-16x9-v1.webp',
+    alt:'The same Tideglass Courier shown as a full-figure design sketch, neutral-form maquette direction, and resolved color-and-material target.',
+    caption:'Reconstructed direction sequence: drawn reference, neutral volume target, and final material-and-lighting target. These are not chronological captures of matching geometry from a completed source file.',
+    role:'direction-sequence',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  visualPipelineReview:{
+    src:'assets/rebuild/tideglass-workflow/review-handoff-16x9-v1.webp',
+    alt:'Tideglass Courier face, staff grip, costume construction, rear silhouette, material samples, and blank handoff-folder review direction.',
+    caption:'Review direction for face, staff, costume construction, rear silhouette, and material palette. It does not claim real approvals, model inspection, or a completed handoff package.',
+    role:'review-handoff-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  residentialWorkflow:{
+    src:'assets/rebuild/coastal-residential-workflow/hero-4x3-v1.webp',
+    alt:'Physical coastal-residence visualization presentation with a resolved dusk exterior, illustrative elevation, context views, and material references.',
+    caption:'Fictional coastal-residence reconstruction direction presented with illustrative drawings and material references; not a verified site, client package, construction set, or matching source scene.',
+    role:'residential-direction',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  residentialMaterialOptions:{
+    src:'assets/rebuild/coastal-residential-workflow/material-options-16x9-v1.webp',
+    alt:'Three coordinated front three-quarter views comparing pale, warm, and cool exterior finish directions for one coastal residence.',
+    caption:'Coordinated pale, warm, and cool finish-direction options for one residence identity; these are visual targets, not approved, specified, or procured materials.',
+    role:'finish-option-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  residentialContextLighting:{
+    src:'assets/rebuild/coastal-residential-workflow/context-lighting-16x9-v1.webp',
+    alt:'Coastal residence shown in distant site context, neutral daylight, and blue-hour dusk presentation direction.',
+    caption:'Coordinated distant-context, daylight, and dusk presentation views; not site verification, construction evidence, or lighting captures from a matching production model.',
+    role:'context-lighting-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  constructionReview:{
+    src:'assets/rebuild/northlight-workshop-progress/hero-4x3-v1.webp',
+    alt:'Fictional red-brick workshop at the enclosure-and-rough-in stage with timber roof joists, clerestory glazing, exposed services, and a black-steel courtyard portal.',
+    caption:'Fictional brick-workshop progress-review reconstruction at the enclosure-and-rough-in stage; not a site photograph, client project, or inspection record.',
+    role:'progress-review-direction',
+    aspect:'4/3',
+    evidenceStatus:'reconstruction-direction',
+    width:1448,
+    height:1086
+  },
+  constructionPhaseSequence:{
+    src:'assets/rebuild/northlight-workshop-progress/phase-sequence-16x9-v1.webp',
+    alt:'Four coordinated views of the Northlight Workshop across shell, structure, enclosure and rough-in, and finish-ready stages.',
+    caption:'Coordinated reconstruction of shell, structure, enclosure/rough-in, and finish-ready stages; not a verified chronology, time-lapse, or construction-completion record.',
+    role:'phase-reconstruction-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  },
+  constructionEvidenceHierarchy:{
+    src:'assets/rebuild/northlight-workshop-progress/evidence-hierarchy-16x9-v1.webp',
+    alt:'Wide, medium, and detail views locating the same brick, steel portal, glazed frame, and threshold condition at the workshop courtyard opening.',
+    caption:'Wide, medium, and detail reconstruction views showing how one review question should be documented; not a technical inspection, approval, or proof of correct installation.',
+    role:'evidence-hierarchy-direction',
+    aspect:'16/9',
+    evidenceStatus:'reconstruction-direction',
+    width:1672,
+    height:941
+  }
+};
+
+const caseMedia=(src,alt,caption,width,height)=>({
+  src,
+  alt,
+  caption,
+  role:'case-specific-detail',
+  aspect:`${width}/${height}`,
+  evidenceStatus:'generated-direction',
+  width,
+  height
+});
+
+const PUBLIC_PRESENTATION={
+  'game-hero':{
+    hero:APPROVED_MEDIA.forgeWardenHero,
+    gallery:[{...APPROVED_MEDIA.forgeWardenTurnaround},{...APPROVED_MEDIA.forgeWardenGrip}],
+    evidenceSummary:{
+      label:'Game character direction',
+      title:'One distinct Forge Warden from hero read to movement-risk inspection.',
+      copy:'The three-image package establishes one older identity, stocky silhouette, indigo-and-steel costume system, complete hammer, neutral construction, and articulation priorities. It is a production direction package, not captured technical proof from a finished game asset.'
+    },
+    captureRequired:['Matching neutral and posed captures from the production model.','Real topology and deformation-loop inspection for the face, shoulders, elbows, wrists, fingers, hips, knees, and boots.','Packed UVs, bake maps, texture sets, and material setup.','Rig, engine or viewer setup, and export validation for the agreed target.'],
+    proof:[['Direction shown','Hero, front, profile, back, and close inspections preserve one older face, stocky anatomy, asymmetrical armor system, material family, and square-headed hammer.'],['Movement specification','Hand spacing, wrist alignment, elbow clearance, shoulder load, belt and hip range, knee protection, and boot construction define the highest-risk checks.'],['Evidence boundary','No polycount, texture size, topology, UV, bake, rig, engine, or export claim is made without a genuine matching capture.'],['Acceptance path','Technical proof is added only after it can be traced to the same Forge Warden source asset.']]
+  },
+  'character-environment':{
+    hero:APPROVED_MEDIA.frostlineStageHero,
+    gallery:[{...APPROVED_MEDIA.frostlineStageProgression},{...APPROVED_MEDIA.frostlineCameraGrounding}],
+    evidenceSummary:{label:'Character staging direction',title:'From a neutral plinth to a restrained character-first beauty stage.',copy:'Three coordinated visuals develop the Frostline Ranger through base selection, scale-prop placement, camera coverage, ground contact, and cool-and-warm lighting. They establish presentation direction rather than captured source-scene evidence.'},
+    captureRequired:['Matching neutral stage blockout and prop placement from the production scene.','Camera and light captures tied to the final presentation.','Material, contact-shadow, mist, and render-setting captures.','Source-scene or viewer evidence for any software-specific delivery claim.'],
+    proof:[['Direction shown','Hero, staging progression, and camera study preserve one older ranger identity, horn bow, costume, plinth, milestone, frost detail, and lighting family.'],['Stage priority','Support elements clarify scale, contact, and atmosphere while the character remains dominant.'],['Evidence boundary','These images are not captured Blender, Marmoset, Unity, Unreal, lighting-rig, environment-art, topology, or export proof.'],['Acceptance path','A matching production scene plus neutral blockout, camera, light, prop, material, shadow, and render-setting captures completes the technical case.']]
+  },
+  'interior-props':{
+    hero:APPROVED_MEDIA.interiorShelf,
+    gallery:[{...APPROVED_MEDIA.interiorPropFamily},{...APPROVED_MEDIA.interiorStagingDevelopment}],
+    evidenceSummary:{label:'Interior-prop direction',title:'One ornate object family from isolated assets to a dressed shelf.',copy:'The three-image package establishes a coordinated prop family, scale hierarchy, set-dressing rhythm, material separation, and neutral-to-warm presentation direction without presenting generated reconstruction as captured 3D production evidence.'},
+    captureRequired:['A source scene that visually matches the approved shelf direction.','Beauty and neutral renders from that same scene.','True model and wireframe inspection plus packed UVs, texture maps, and material setup.','Named-object, engine, performance, and export checks derived from the matching production file where scoped.'],
+    proof:[['Direction shown','Hero, isolated prop family, and coordinated shelf views establish one carved-furniture, ornament, object, material, and lighting language.'],['Planning value','Scale rhythm, focal hierarchy, negative space, material contrast, camera framing, and warm side light remain inspectable.'],['Evidence boundary','No completed models, functional hardware, topology, UV, map, shader, source-file, engine, performance, or export claim is made.'],['Acceptance path','Technical claims return only after matching model, beauty, neutral, wireframe, UV, map, material, source-scene, and export captures exist.']]
+  },
+  'ai-visual-pipeline':{
+    hero:APPROVED_MEDIA.visualPipeline,
+    gallery:[{...APPROVED_MEDIA.visualPipelineSequence},{...APPROVED_MEDIA.visualPipelineReview}],
+    evidenceSummary:{label:'Character visual pipeline',title:'One identity carried from selection to a focused production question set.',copy:'The three-image package establishes Tideglass identity locks, a sketch-to-neutral-to-material sequence, close review priorities, and a bounded handoff direction while reserving every completed-model and delivery claim for matching evidence.'},
+    captureRequired:['Matching neutral and material turns from the production model.','Real topology, deformation-loop, UV, bake, texture, and material captures.','Grip, coat, strap, shoulder-guard, satchel, rear-silhouette, and prop-interaction validation.','Source-file, rig, engine, performance, approval, and export evidence where scoped.'],
+    proof:[['Direction shown','Resolved target, sketches, neutral form, material direction, face, grip, construction, rear silhouette, and swatches preserve one Tideglass identity.'],['Decision structure','Identity locks, form risks, material family, review questions, evidence needs, and next action remain explicit.'],['Human ownership','Lesly frames the brief, selects the direction, rejects drift, defines the review, and prepares the next production step.'],['Evidence boundary','No completed model, automated system, client approval, topology, UV, map, rig, source-file, engine, performance, or export claim is made.']]
+  },
+  'santa-cruz-ai-visual-pipeline':{
+    hero:APPROVED_MEDIA.residentialWorkflow,
+    gallery:[{...APPROVED_MEDIA.residentialMaterialOptions},{...APPROVED_MEDIA.residentialContextLighting}],
+    evidenceSummary:{label:'Residential visualization direction',title:'One coastal-home identity across finish, context, daylight, and dusk review.',copy:'The three-image package keeps the residence, landscape language, finish boundaries, and presentation priorities recognizable while explicitly remaining a fictional reconstruction study.'},
+    captureRequired:['Verified and permissioned project inputs if this direction is ever tied to a real site or client.','Matching source-scene, camera, and material captures before any exact-geometry or production-scene claim.','Qualified architecture, engineering, code, grading, access, drainage, feasibility, procurement, and construction review where scoped.','Real approval, specified-product, cost, schedule, and outcome evidence before publishing those claims.'],
+    proof:[['Direction shown','Resolved exterior, pale/warm/cool finish comparison, distant context, neutral daylight, and blue-hour views preserve one residential language.'],['Review value','Massing, glazing, stone piers, terraces, stepped approach, rocky grade, planting scale, finish families, camera, and light remain inspectable.'],['Human boundary','Visual exploration supports comparison; qualified people own project, construction, and approval decisions.'],['Evidence boundary','No Santa Cruz site, client commission, built work, approved materials, matching scene, implemented system, costs, schedule, approvals, or outcomes are claimed.']]
+  },
+  'construction-client-progress-workflow':{
+    hero:APPROVED_MEDIA.constructionReview,
+    gallery:[{...APPROVED_MEDIA.constructionPhaseSequence},{...APPROVED_MEDIA.constructionEvidenceHierarchy}],
+    evidenceSummary:{label:'Progress review direction',title:'One fictional workshop from phase context to a clearly located review condition.',copy:'The three-image package demonstrates how progress imagery can preserve subject identity, distinguish reconstruction stages, and move from wide context to a close junction while keeping qualified review and decisions human-owned.'},
+    captureRequired:['Permissioned site and report captures before any real-project claim.','Verified phase dates, locations, capture owners, and review questions.','Qualified reviewer and authorized decision records plus follow-up evidence.','Client and contractor permission boundaries, implemented-system proof, and approved measurements before portal, AI, or outcome claims.'],
+    proof:[['Direction shown','One brick-workshop identity, four coordinated reconstruction stages, and one wide-to-detail courtyard-opening evidence hierarchy.'],['Review structure','Phase, capture date, location, question, capture owner, responsible reviewer, state, and next action define a complete record.'],['Human control','Capture owners supply evidence; qualified people assess the work; authorized people record decisions. AI may organize but cannot verify.'],['Evidence boundary','No real site, client, capture date, contractor, owner, portal, approval, safety or quality finding, cost, schedule, completion, implemented AI system, or measured outcome is claimed.']]
+  },
+  'print-startup-direction':{
+    hero:APPROVED_MEDIA.solPrint,
+    gallery:[{...APPROVED_MEDIA.solPrintAssembly},{...APPROVED_MEDIA.solPrintContacts}],
+    evidenceSummary:{label:'Collectible build direction',title:'A stable Sol maquette target before print engineering.',copy:'The three-image package establishes the collectible form, proposed component groups, complete contact views, staff-holder relationship, and base footprint while reserving every printable and manufacturing claim for real production evidence.'},
+    captureRequired:['Matching production model with final parting, joints, keys, dimensions, and tolerances.','Watertightness, repair, wall-thickness, hollowing, and drainage checks where relevant.','Slicer captures with orientation, support strategy, settings, and target scale.','Photographs of a successful physical test print, cleanup, assembly, and final output.'],
+    proof:[['Direction shown','Paired color and clay hero, proposed component separation, and complete front/profile/rear maquette views preserve one Sol collectible target.'],['Planning value','Character locks, risk zones, contact strategy, prop-holder relationship, base footprint, and future engineering questions remain visible.'],['Evidence boundary','No production mesh, final parts or joints, measurement, watertightness, wall thickness, slicer result, assembly, printable file, source package, or physical manufacture is claimed.'],['Acceptance path','Matching model, final engineering, slicer, repair, assembly, and physical test evidence complete the print case.']]
+  },
+  'sculpt-to-retopo':{
+    hero:APPROVED_MEDIA.lyraSculptHero,
+    gallery:[{...APPROVED_MEDIA.lyraSculptDevelopment},{...APPROVED_MEDIA.lyraFormStudy}],
+    evidenceSummary:{label:'Sculpt and retopology direction',title:'One bust developed from primary form to expression-ready reconstruction targets.',copy:'The three-image package establishes Lyra’s facial planes, profile, bust silhouette, braided hair system, ornament, collar, broad-to-fine form hierarchy, and controlled expression shapes. A matching production mesh remains the evidence gate for retopology.'},
+    captureRequired:['Matching high-poly sculpt views from the production file.','Low-poly wireframe, edge-loop, density-transition, and deformation inspection.','Packed UVs, bake maps, and neutral surface checks from the same asset.','Matching source-tool captures, polygon notes, and export validation.'],
+    proof:[['Direction shown','Resolved hero, broad-to-fine form study, neutral front, true profile, smile, and jaw-open targets preserve one Lyra identity.'],['Form specification','Cranial mass, cheek and jaw planes, nose, lips, eyelids, ears, neck, braids, ornament, collar, and chest emblem remain readable under neutral clay lighting.'],['Evidence boundary','The faceted blockout is form visualization, not low-poly proof; the images do not claim verified loops, blendshapes, rigging, UVs, bakes, textures, source files, or exports.'],['Acceptance path','Matching high-poly, low-poly, deformation-loop, UV, bake, source-tool, and export captures complete the technical case.']]
+  },
+  'avatar-character':{
+    hero:APPROVED_MEDIA.miraAvatarHero,
+    gallery:[{...APPROVED_MEDIA.miraIdentityViews},{...APPROVED_MEDIA.miraExpressions}],
+    evidenceSummary:{label:'Avatar identity direction',title:'One creator-avatar identity carried through view and expression changes.',copy:'The three-image package establishes Mira’s young-adult face, high ponytail, rust hooded layer, black foundation garment, geometric gold accents, coordinated view system, and five emotional targets. Matching model and rig evidence remain a later production gate.'},
+    captureRequired:['Consistent neutral turns from the matching production model.','Facial topology, deformation loops, inner-mouth, and jaw-mechanics inspection.','Blendshape, phoneme/viseme, rig-control, and animation tests.','Tracking, target-platform, material, source-file, and export validation for the agreed use.'],
+    proof:[['Direction shown','Hero, front, three-quarter, true-profile, rear, neutral, warm, delighted, surprised, and focused views preserve one Mira identity and costume family.'],['Avatar specification','Face, ponytail, hood, black foundation garment, belt, earrings, pendant, warm graphic palette, and material separation remain readable.'],['Evidence boundary','The package is coordinated direction, not a measured orthographic turnaround, matching production model, deformation proof, rig, blendshape/viseme set, tracking test, platform integration, or export package.'],['Acceptance path','Matching model, hair, surface, facial topology, mouth, deformation, rig-control, tracking, platform, and export captures complete the live-avatar case.']]
+  },
+  'mascot-character':{
+    hero:APPROVED_MEDIA.solPortrait,
+    gallery:[{...APPROVED_MEDIA.solIdentityViews},{...APPROVED_MEDIA.solPoseExpressions}],
+    evidenceSummary:{label:'Mascot identity direction',title:'One Sol identity across a hero, four views, and four character moments.',copy:'The three-image package locks Sol as a fennec fox and carries the same muzzle, ears, three forehead markings, one patterned tail, four-digit paw logic, costume, staff family, palette, and surface language through view and pose changes.'},
+    captureRequired:['Neutral turns from the matching production model.','Topology, UV, texture, and material captures from that asset.','Rig, deformation, expression, and prop-interaction tests.','Verified exports or usage tests for the agreed context.'],
+    proof:[['Direction shown','Hero, coordinated front, three-quarter, profile, rear, greeting, guide, delighted, and thoughtful views preserve one Sol identity.'],['System specification','Fennec anatomy, three forehead marks, one patterned tail, animal paws, costume, staff family, palette, and material hierarchy remain readable.'],['Evidence boundary','The package is coordinated perspective direction, not a measured orthographic turnaround, matching production model, rig, deformation proof, export package, or deployed brand application.'],['Acceptance path','Matching model, surface, topology, rig, deformation, prop, export, and agreed usage captures complete the production case.']]
+  },
+  'outfits-accessories':{
+    hero:APPROVED_MEDIA.emberDuelistHero,
+    gallery:[{...APPROVED_MEDIA.emberDuelistFrontBack},{...APPROVED_MEDIA.emberDuelistLayers}],
+    evidenceSummary:{label:'Costume reconstruction direction',title:'One duelist costume developed from foundation layers to a complete accessory system.',copy:'The three-image package establishes the Ember Duelist identity, front/back silhouette, visible dressing order, material family, asymmetric protection, leather structure, boot design, accessory options, and complete rapier.'},
+    captureRequired:['Matching neutral, back, and garment-isolation captures from the production model.','Real garment construction, attachment, and deformation inspection.','Packed UVs, texture maps, and material setup for the matching pieces.','Rig, target-platform, and export checks for the agreed use.'],
+    proof:[['Direction shown','Hero, front/back study, accessory inspection, and layer progression preserve one character, palette, costume system, and rapier family.'],['Costume specification','Foundation clothing, plum tailoring, leather harness and waist structure, asymmetric armor, fasteners, boots, medallion option, and weapon remain visually separable.'],['Evidence boundary','The hero hand is not definitive finger-deformation proof, and the package does not claim a full turnaround, engineered attachments, garment meshes, topology, UVs, textures, rigging, engine setup, or exports.'],['Acceptance path','Matching model, garment, attachment, deformation, surface, and delivery captures complete the technical outfit case.']]
+  },
+  'pbr-texturing':{
+    hero:APPROVED_MEDIA.marshWardenHero,
+    gallery:[{...APPROVED_MEDIA.marshWardenMaterials}],
+    evidenceSummary:{label:'PBR and stylized material direction',title:'A distinct character study built around readable surface families.',copy:'The Marsh Warden uses a restrained teal, ivory, leather, and oxidized-bronze palette to demonstrate how surface response supports character hierarchy. The images are approved material direction; genuine UV, bake, texture, and shader captures remain a separate evidence gate.'},
+    captureRequired:['Neutral color and roughness checks from the matching production model.','Real packed UVs, bake maps, texture sets, and material graph captures.','Consistent lighting comparisons showing skin, cloth, leather, metal, wood, glass, and stone response.','Final beauty and inspection renders traced to the same source file.'],
+    proof:[['Direction shown','The hero and inspection sheet establish one Marsh Warden identity and a coherent material hierarchy.'],['Material decisions','Skin, hair, linen, dyed cloth, leather, oxidized bronze, wood, glass, and stone remain visibly distinct.'],['Evidence boundary','The page does not present generated UV tiles, maps, shaders, or application chrome as production proof.'],['Acceptance path','Matching model, UV, bake, texture-set, shader, and render captures complete the texturing case.']]
+  },
+  'original-site-concept':{
+    hero:APPROVED_MEDIA.conceptHero,
+    gallery:[{...APPROVED_MEDIA.conceptSculpt},{...APPROVED_MEDIA.conceptMaterials}],
+    evidenceSummary:{label:'Concept-to-character direction',title:'One idea developed through form, construction, and materials.',copy:'This rebuilt case preserves the original concept project while replacing ornamental process boards with a clear sequence: source direction, sculpt-development target, and material-construction target.'},
+    captureRequired:['Approved starting sketch, brief, or reference package with usage rights.','Matching high-poly and neutral model views from the production file.','Real topology, UV, bake, texture, and material captures.','Final beauty and inspection renders traced to the same source model.'],
+    proof:[['Starting direction','The original project opener establishes the early fantasy-character idea and selected visual direction.'],['Form development','The clay study defines facial planes, ponytail and hair mass, silhouette, costume layers, and front-to-back construction.'],['Material development','The inspection study separates skin, hair, cloth, leather, bronze, embroidery, and footwear without decorative pseudo-interface elements.'],['Evidence boundary','Source-tool, topology, UV, texture, and export claims wait for matching production captures.']]
+  }
+};
+
+const PUBLIC_COPY={
+  'game-hero':{
+    title:'Forge Warden Character Direction',
+    meta:['Game character','Character direction','Production plan'],
+    lead:'A production-minded Forge Warden built for immediate role read, coherent armor construction, material separation, believable two-hand weapon interaction, and a verifiable next 3D pass.',
+    whatTitle:'A distinct game-character target that reads in one glance and remains coherent from every side.',
+    whatCopy:'The case holds one older, stocky identity across a hero render, coordinated front/profile/back construction views, and focused inspections for grip, armor clearance, lower-body articulation, and grounded footwear.',
+    details:[['Identity consistency','Squared face, silver hair and beard, stocky proportions, expression, and skin tone remain stable across hero, neutral, and close views.'],['Costume logic','Indigo quilted cloth, fur collar, asymmetrical plate armor, copper rivets, straps, belt layers, skirt panels, guards, and boots form one constructible system.'],['Weapon interaction','One square-headed two-handed hammer keeps consistent head, shaft, scale, and grip direction, with the complete prop visible in the hero and neutral sheet.'],['Recruiter value','The page shows the art-direction and movement-risk decisions clearly while reserving topology, UV, texture, rig, engine, and export claims for matching production captures.']]
+  },
+  'character-environment':{
+    title:'Frostline Ranger — Character Staging Direction',
+    meta:['Character presentation','Staging direction','Camera and light study'],
+    lead:'A compact character stage that uses one stone base, one milestone, controlled frost detail, cool key light, and warm rim light to give the Frostline Ranger weight, scale, and atmosphere.',
+    whatTitle:'A restrained stage that strengthens the character instead of competing with her.',
+    whatCopy:'Three coordinated visuals move from a neutral plinth to scale-prop placement and final beauty lighting, then test eye-level, near-profile, and low grounding views for silhouette clearance, bow placement, and foot contact.',
+    details:[['Character priority','The older ranger’s face, short silver hair, complete horn bow, hands, coat silhouette, quiver, and boots remain the first read.'],['Grounding','Both boots, coat fall, bow tip, stone edge, frost detail, and soft contact shadow make the figure feel physically placed.'],['Scale and lighting','One milestone establishes height while cool key, controlled fill, and warm rim separate wool, leather, metal, horn, stone, skin, and hair.'],['Evidence boundary','The visuals establish character-staging direction; they do not claim a captured source scene, lighting rig, software setup, environment-art package, topology, or export.']]
+  },
+  'interior-props':{
+    title:'Ornate Interior Props & Set Dressing',
+    meta:['Interior props','Asset-family direction','Set dressing'],
+    lead:'A reconstructed interior-prop direction study exploring a coordinated asset family, carved furniture language, material separation, set-dressing rhythm, and warm presentation lighting.',
+    whatTitle:'A coherent object family before matching scene production.',
+    whatCopy:'The hero, prop lineup, and coordinated neutral-volume, material, and lighting direction renders define what the future shelf scene should preserve without presenting generated direction as captured production evidence.',
+    details:[['Prop family','Three chest scales, ceramic vessels, candlesticks, an incense vessel, books, textiles, and carved furniture details share one ornament and wear language.'],['Set-dressing rhythm','Large chest and shelf masses anchor the composition while medium vessels, books, textiles, and small brass accents create a readable hierarchy and negative space.'],['Material direction','Dark carved wood, worn leather, aged brass, glazed ceramic, paper, and woven cloth remain visibly distinct under neutral inspection light and warm beauty light.'],['Evidence boundary','Matching models, functional hinges, topology, UVs, texture maps, shaders, source-scene organization, engine setup, and exports remain future production evidence.']]
+  },
+  'ai-visual-pipeline':{
+    title:'Tideglass Courier — Visual Direction Pipeline',
+    meta:['Visual pipeline','Character direction','Review and handoff'],
+    lead:'An original character workflow study showing how one visual idea is held together from sketch and neutral-form direction through materials, risk review, and a production brief.',
+    whatTitle:'The value is the decisions that survive the handoff.',
+    whatCopy:'The Tideglass Courier package keeps identity, silhouette, costume construction, prop logic, and material priorities consistent while separating visual direction from the technical evidence a matching production model must supply.',
+    details:[['Direction lock','Short dark hair, ivory-and-sea-green coat, copper shoulder guard, satchel, boots, and navigation staff form the non-negotiable identity system.'],['Form review','Sketch and neutral-maquette direction expose proportion, coat silhouette, staff length, grip, ground contact, and the relationship between armor, straps, and satchel.'],['Material review','Ivory textile, sea-green lining, charcoal leather, oxidized copper, warm brass, and smoky glass stay distinct from full figure to close inspection.'],['Evidence boundary','The package is reconstruction direction; matching model, topology, UVs, maps, rig, source files, engine checks, approvals, and exports remain future evidence.']]
+  },
+  'santa-cruz-ai-visual-pipeline':{
+    title:'Coastal Residence — Visualization Direction',
+    meta:['Residential visualization','Material options','Context and lighting'],
+    lead:'A coordinated residential visualization study carrying one fictional coastal-home direction through a resolved exterior, controlled finish comparisons, site context, daylight inspection, and blue-hour presentation.',
+    whatTitle:'Consistency across form, finish, context, light, and camera.',
+    whatCopy:'This fictional coastal-residence package explores coordinated form, finish alternatives, landscape context, and daylight-to-dusk presentation. It does not document a Santa Cruz site, client commission, constructed project, approved materials, local-AI implementation, matching 3D source scene, construction decisions, costs, schedule, approvals, or measured outcomes.',
+    details:[['Residence lock','Two-story low-slope massing, broad glazing, stone piers, warm wood, charcoal metal, stepped entry, boulders, and restrained coastal planting define one identity.'],['Finish comparison','One neutral camera compares pale, warm, and cool finish families without presenting them as specified, approved, or procured products.'],['Context and light','A distant coastal approach, neutral daylight inspection, and blue-hour presentation test scale, silhouette, path lighting, interior glow, and landscape balance.'],['Evidence boundary','Small details vary between reconstructed views; they are not exact geometry, site, drawing, matching-scene, code, feasibility, procurement, or construction proof.']]
+  },
+  'construction-client-progress-workflow':{
+    title:'Northlight Workshop — Progress Review Direction',
+    meta:['Progress review direction','Evidence hierarchy','Human-owned decisions'],
+    lead:'A fictional adaptive-reuse study showing how construction imagery can move from broad phase context to one clearly located review condition without pretending to be a real inspection record.',
+    whatTitle:'Progress evidence should answer a question, not simply fill a gallery.',
+    whatCopy:'This fictional workflow demonstrates visual-evidence organization. It does not document a real site, client, capture date, contractor, owner, portal, approval, safety or quality finding, cost, schedule, completion, implemented AI system, or measured outcome.',
+    details:[['Capture standard','Every record needs a phase, capture date, location, review question, capture owner, responsible reviewer, state, and next action.'],['Evidence hierarchy','Wide context locates the condition, a medium view explains the assembly, and a close view exposes the junction that needs qualified review.'],['State model','Captured, needs context, needs qualified review, decision recorded, follow-up required, and closed keep evidence separate from decisions.'],['Human control','AI assistance may organize captions, group related images, or flag missing fields. It cannot verify workmanship, safety, code compliance, construction quality, completion, or approval.']]
+  },
+  'print-startup-direction':{
+    title:'Sol Collectible Build Direction',
+    meta:['Collectible direction','Component planning','Print evidence plan'],
+    lead:'Collectible reconstruction direction for Sol, exploring a clay presentation, proposed component separation, and front, profile, and rear contact views before production modeling and print engineering.',
+    whatTitle:'Character appeal translated into form, component planning, and physical proof gates.',
+    whatCopy:'The hero, assembly study, and contact views preserve Sol’s identity and make the next engineering questions visible without presenting the direction as a printable production asset.',
+    details:[['Collectible lock','Fennec muzzle, oversized ears, three forehead marks, one patterned tail, compact animal paws, costume, staff, holder, and two-tier base remain consistent.'],['Component direction','Head, scarf and cape, tail, body, paws, staff, holder, and base are explored as proposed visual groups, not final parts or joints.'],['Contact and risk','Complete front, profile, and rear maquettes expose ear height, cape thickness, tail relationship, foot contact, staff-holder placement, small forms, and base footprint.'],['Print boundary','Matching model, final parting, dimensions, wall thickness, watertightness, hollowing, drainage, supports, slicer settings, assembly, exports, and physical output remain future evidence.']]
+  },
+  'sculpt-to-retopo':{
+    title:'Lyra Sculpt & Retopology Direction',
+    meta:['Sculpt development','Form inspection','Retopology plan'],
+    lead:'A stylized character bust developed around clear facial planes, a stable profile, layered braided hair, and controlled expression targets for a later deformation-aware topology pass.',
+    whatTitle:'Readable form first; verified topology when the production mesh exists.',
+    whatCopy:'The hero, broad-to-fine study, profile, and expression views establish what the reconstruction must preserve without presenting generated direction as source-tool or retopology proof.',
+    details:[['Form hierarchy','The development study separates primary cranial and bust masses, secondary facial and hair construction, and a restrained polished pass.'],['Identity control','Neutral, true-profile, smile, and jaw-open views preserve one skull, eye spacing, nose, lips, jaw, ears, braids, ornaments, collar, and chest emblem.'],['Retopology target','The profile and expression shapes identify the eyelid, mouth, cheek, jaw-hinge, ear, hairline, and neck areas a later mesh must support.'],['Production boundary','The faceted blockout is form visualization, not a low-poly mesh; topology, loops, UVs, bakes, rigging, source tools, and exports require matching production captures.']]
+  },
+  'avatar-character':{
+    title:'Mira Avatar Identity Direction',
+    meta:['Creator avatar','Identity system','Expression direction'],
+    lead:'A stylized young-adult avatar developed through a polished portrait, coordinated identity views, and five controlled expression targets.',
+    whatTitle:'One recognizable identity across a thumbnail, a profile, a rear view, and an expression change.',
+    whatCopy:'The hero, coordinated front/three-quarter/profile/rear study, and expression set preserve Mira’s face, hair, costume, jewelry, palette, and material language without presenting the direction as a working rig.',
+    details:[['Identity lock','Face shape, dark-brown eyes, nose, lips, jaw, warm skin, bangs, high ponytail, and terracotta wrap remain consistent across views.'],['Costume system','Rust hooded outer layer, matte black foundation garment, high neck, belt, diamond earrings, pendant, and restrained gold accents form one readable design.'],['Expression range','Neutral, warm smile, delighted, surprised, and focused reads change brows, eyelids, cheeks, mouth corners, and jaw while preserving Mira’s identity.'],['Production boundary','These images define avatar direction; matching model, hair construction, topology, textures, facial deformation, rig, tracking, visemes, platform tests, and exports remain future evidence.']]
+  },
+  'mascot-character':{
+    title:'Sol Mascot Identity System',
+    meta:['Mascot direction','Identity system','Pose and expression study'],
+    lead:'A fennec mascot visual-direction study establishing Sol’s canonical silhouette, markings, costume, prop language, coordinated identity views, and pose and expression range.',
+    whatTitle:'One recognizable mascot across a hero, four views, and four character moments.',
+    whatCopy:'The hero, coordinated identity views, and pose-and-expression study preserve Sol’s species, proportions, markings, paws, costume, tail, staff, palette, and material language without presenting the direction as a finished production model.',
+    details:[['Species and silhouette','Oversized ears, a short fox muzzle, cream fur, amber eyes, compact proportions, and one full tail create an unmistakable fennec read.'],['Identifier lock','Exactly three terracotta forehead marks, one geometric tail band, ivory tunic, terracotta scarf and cape, leather structure, aged bronze, boots, and leaf-topped staff remain consistent.'],['Pose and expression range','Greeting, guide, delighted, and thoughtful moments change gesture and facial read while preserving one Sol identity.'],['Production boundary','These are coordinated perspective views and visual targets; matching model, orthographic turns, topology, UVs, textures, rig, deformation, prop tests, exports, and brand applications remain future evidence.']]
+  },
+  'outfits-accessories':{
+    title:'Ember Duelist Costume Direction',
+    meta:['Outfit direction','Layer system','Accessory study'],
+    lead:'A coordinated costume study built around ivory foundation layers, plum tailoring, black leather structure, asymmetric aged-gold protection, and one complete swept-hilt rapier.',
+    whatTitle:'A readable garment hierarchy from foundation clothing to the final accessory system.',
+    whatCopy:'The hero, coordinated front and back views, isolated accessories, and three-stage dressing sequence define what each piece contributes to silhouette, construction, material contrast, and character role.',
+    details:[['Layer order','Ivory shirt, charcoal trousers, and boots form the foundation; plum tailoring and split coat tails add silhouette; harness, waist structure, protection, fasteners, and rapier complete the final read.'],['Front and back','The neutral study clarifies the coat-tail split, hair tie, harness routing, back closure, belt construction, boot height, and left-side armor asymmetry.'],['Material separation','Woven linen, dense plum wool, matte black leather, charcoal cloth, aged gold, dark steel, skin, and hair remain distinct under neutral light.'],['Production boundary','These images define costume direction; matching garment models, attachment checks, topology, UVs, textures, deformation tests, rig, target-platform, and export captures remain future evidence.']]
+  },
+  'pbr-texturing':{
+    title:'Marsh Warden Material Study',
+    meta:['PBR material direction','Material hierarchy','Reconstruction direction'],
+    lead:'A character material study focused on clear separation between skin, hair, linen, dyed cloth, leather, oxidized bronze, wood, glass, and stone.',
+    whatTitle:'Surface response supports the character before it calls attention to itself.',
+    whatCopy:'The Marsh Warden uses a limited teal, ivory, brown, and aged-bronze palette so value, roughness, edge treatment, and wear can clarify construction and focal hierarchy.',
+    details:[['Skin and hair','Controlled specular response keeps facial planes readable while tightly curled hair remains a distinct mass.'],['Cloth and leather','Ivory linen, teal woven cloth, and worn leather separate through weave scale, edge softness, value, and roughness.'],['Metal and props','Oxidized bronze, wood, glass, and stone use restrained wear and material-specific highlights instead of uniform grime.'],['Evidence chain','Matching UVs, bakes, texture sets, shader captures, neutral checks, and final renders are required before this becomes technical proof.']]
+  },
+  'original-site-concept':{
+    title:'Concept To Character',
+    meta:['Concept to 3D','Character development','Reconstruction direction'],
+    lead:'A fantasy-character direction developed from an early visual idea into a sculpt target, a coherent costume construction, and a readable material system.',
+    whatTitle:'A professional development sequence without decorative process filler.',
+    whatCopy:'The case moves through three distinct decisions: what the character should become, how the forms and layers should be built, and how the materials should separate in the final presentation.',
+    details:[['Starting direction','The original opener preserves the project’s early-to-resolved character progression.'],['Sculpt target','Facial planes, ponytail and hair mass, body proportion, silhouette, and costume layers are evaluated in neutral clay.'],['Construction and materials','Close views clarify cloth layering, belt assembly, metal placement, embroidery, footwear, and surface hierarchy.'],['Production boundary','The visual package guides a future 3D recreation; matching source-tool, topology, UV, texture, and export captures remain required.']]
   }
 };
 
 CASE_STUDIES.forEach(study=>{
   const upgrade=FINAL_CASE_STUDY_UPGRADES[study.id];
   if(upgrade)Object.assign(study,upgrade);
+  const presentation=PUBLIC_PRESENTATION[study.id];
+  if(!presentation)return;
+  study.hero=presentation.hero;
+  study.image=presentation.hero?.src||'';
+  study.alt=presentation.hero?.alt||`${study.title} workflow specification.`;
+  study.gallery=presentation.gallery.filter(media=>media.src!==presentation.hero?.src);
+  study.evidenceSummary=presentation.evidenceSummary;
+  study.captureRequired=presentation.captureRequired;
+  study.proof=presentation.proof;
+  const publicCopy=PUBLIC_COPY[study.id];
+  if(publicCopy)Object.assign(study,publicCopy);
 });
 
 Object.keys(FINAL_NARRATIVE_UPGRADES).forEach(id=>{
@@ -1050,34 +1610,116 @@ function renderCards(selector,items){
   node.innerHTML=items.map(([title,copy])=>`<article><h3>${title}</h3><p>${copy}</p></article>`).join('');
 }
 
+const CASE_STATUS_LABELS={
+  'reconstruction-direction':'3D reconstruction direction',
+  'generated-direction':'Generated visual direction',
+  'project-evidence':'Project evidence',
+  'verified-capture':'Verified capture',
+  'context-illustration':'Context illustration'
+};
+
 function renderGallery(study){
   const node=document.querySelector('[data-case-gallery]');
   if(!node)return;
-  node.innerHTML=study.gallery.map(([src,caption],index)=>{
-    const isReconstruction=src.includes('reconstruction-reference');
-    const isWide=index===0||isReconstruction;
+  const mediaSection=document.querySelector('[data-case-media-section]');
+  mediaSection?.toggleAttribute('hidden',study.gallery.length===0);
+  node.classList.toggle('is-single',study.gallery.length===1);
+  node.innerHTML=study.gallery.map(media=>{
+    const aspectClass=`case-media--${media.aspect.replace('/','x')}`;
+    const isWide=media.aspect==='16/9'||media.role==='hero';
     return `
-    <figure class="${isWide?'is-wide':''}${isReconstruction?' is-reconstruction':''}">
-      <img src="${src}" width="${isReconstruction?'1672':isWide?'1400':'900'}" height="${isReconstruction?'941':isWide?'900':'675'}" alt="${caption}">
-      <figcaption>${caption}</figcaption>
+    <figure class="case-media ${isWide?'is-wide ':''}${aspectClass}">
+      <img src="${media.src}" width="${media.width}" height="${media.height}" alt="${media.alt}" loading="lazy" decoding="async">
+      <figcaption><span class="case-media-status">${CASE_STATUS_LABELS[media.evidenceStatus]||'Project media'}</span><span>${media.caption}</span></figcaption>
     </figure>`;
   }).join('');
+}
+
+function renderEvidence(study){
+  const evidence=study.evidenceSummary;
+  const section=document.querySelector('[data-case-evidence-section]');
+  section?.toggleAttribute('hidden',!evidence);
+  if(!evidence)return;
+  setText('[data-case-evidence-label]',evidence.label);
+  setText('[data-case-evidence-title]',evidence.title);
+  setText('[data-case-evidence-copy]',evidence.copy);
+  const list=document.querySelector('[data-case-capture-required]');
+  if(list)list.innerHTML=study.captureRequired.map(item=>`<li>${item}</li>`).join('');
+}
+
+function getPublicDeliverables(study){
+  if(study.gallery.length===0)return [
+    ['Workflow specification','Inputs, decision states, human responsibilities, review criteria, publication boundaries, and next actions.'],
+    ['Implementation brief','A concise structure a product, creative, or operations team can evaluate before tooling or build work begins.'],
+    ['Evidence plan',`The public case can add verified artifacts after these needs are met: ${study.captureRequired.join(' ')}`]
+  ];
+  return [
+    ['Character direction','Hero and inspection media that establish the identity, asset family, construction priorities, and intended visual role.'],
+    ['Production brief','Character rules, construction logic, material targets, responsive presentation, and priorities for the next 3D build.'],
+    ['Evidence plan',`Production proof is added only after these needs are met: ${study.captureRequired.join(' ')}`]
+  ];
+}
+
+const CASE_VISUAL_FAMILY={
+  'game-hero':'game-character',
+  'pbr-texturing':'marsh-warden-texturing',
+  'character-environment':'character-staging',
+  'outfits-accessories':'outfit-system',
+  'original-site-concept':'concept-to-character',
+  'interior-props':'interior-props',
+  'ai-visual-pipeline':'visual-pipeline',
+  'santa-cruz-ai-visual-pipeline':'residential-workflow',
+  'construction-client-progress-workflow':'construction-workflow',
+  'print-startup-direction':'sol',
+  'mascot-character':'sol',
+  'sculpt-to-retopo':'sculpt-direction',
+  'avatar-character':'ember-avatar'
+};
+
+const CURATED_RELATED_CASES={
+  'game-hero':['original-site-concept','sculpt-to-retopo','pbr-texturing'],
+  'original-site-concept':['game-hero','sculpt-to-retopo','pbr-texturing'],
+  'pbr-texturing':['outfits-accessories','interior-props','game-hero']
+};
+
+function getRelatedCases(study){
+  const preferredIds=CURATED_RELATED_CASES[study.id]||[];
+  const preferred=preferredIds
+    .map(id=>CASE_STUDIES.find(item=>item.id===id))
+    .filter(Boolean);
+  const ordered=[...preferred,...CASE_STUDIES];
+  const seenIds=new Set([study.id]);
+  const seenFamilies=new Set([CASE_VISUAL_FAMILY[study.id]||study.id]);
+  const seenMedia=new Set(study.hero?.src?[study.hero.src]:[]);
+  const related=[];
+
+  ordered.forEach(item=>{
+    const family=CASE_VISUAL_FAMILY[item.id]||item.id;
+    const media=item.hero?.src||item.image||'';
+    if(related.length>=3||seenIds.has(item.id)||seenFamilies.has(family)||seenMedia.has(media))return;
+    seenIds.add(item.id);
+    seenFamilies.add(family);
+    if(media)seenMedia.add(media);
+    related.push(item);
+  });
+
+  return related;
 }
 
 function renderRelated(study){
   const node=document.querySelector('[data-related-cases]');
   if(!node)return;
-  node.innerHTML=CASE_STUDIES
-    .filter(item=>item.id!==study.id)
-    .slice(0,3)
-    .map(item=>`
-      <a class="work-card" href="case-study.html?id=${item.id}">
-        <div class="thumb"><img src="${item.image}" width="1200" height="900" alt="${item.alt}"></div>
+  node.innerHTML=getRelatedCases(study)
+    .map(item=>{
+      const thumb=item.hero?`<img src="${item.hero.src}" width="${item.hero.width}" height="${item.hero.height}" alt="${item.hero.alt}" loading="lazy" decoding="async">`:`<span class="thumb-label">${item.meta[0]}<small>Workflow specification</small></span>`;
+      return `
+      <a class="work-card" data-related-case="${item.id}" data-visual-family="${CASE_VISUAL_FAMILY[item.id]||item.id}" href="case-study.html?id=${item.id}">
+        <div class="thumb${item.hero?'':' thumb--text'}">${thumb}</div>
         <h3>${item.title}</h3>
         <p class="meta">${item.meta[0]} · Case study</p>
         <p>${item.lead}</p>
       </a>
-    `).join('');
+    `}).join('');
 }
 
 function renderStudy(study){
@@ -1085,11 +1727,28 @@ function renderStudy(study){
   const narrative=CASE_NARRATIVES[study.id]||CASE_NARRATIVES['game-hero'];
   const hero=document.querySelector('[data-case-hero]');
   if(hero){
-    hero.src=study.image;
-    hero.alt=study.alt;
-    hero.closest('.cs-hero')?.classList.remove('has-board-hero');
+    const heroSection=hero.closest('.cs-hero');
+    const heroFigure=hero.closest('.cs-hero-bg');
+    heroSection?.classList.remove('has-board-hero','has-portrait-hero','has-four-three-hero','is-text-only');
+    if(study.hero){
+      heroFigure?.removeAttribute('hidden');
+      hero.removeAttribute('hidden');
+      hero.src=study.hero.src;
+      hero.alt=study.hero.alt;
+      hero.width=study.hero.width;
+      hero.height=study.hero.height;
+      if(study.hero.aspect==='4/5')heroSection?.classList.add('has-portrait-hero');
+      if(study.hero.aspect==='4/3')heroSection?.classList.add('has-four-three-hero');
+    }else{
+      heroFigure?.setAttribute('hidden','');
+      heroSection?.classList.add('is-text-only');
+      hero.remove();
+    }
   }
   setText('[data-case-title]',study.title);
+  setText('[data-case-kicker]',study.hero
+    ? CASE_STATUS_LABELS[study.hero.evidenceStatus]||'Project media'
+    : study.evidenceSummary.label);
   setText('[data-case-lead]',study.lead);
   setText('[data-case-what-title]','Project direction.');
   setText('[data-case-what-copy]',study.whatCopy);
@@ -1097,11 +1756,12 @@ function renderStudy(study){
   const meta=document.querySelector('[data-case-meta]');
   if(meta)meta.innerHTML=study.meta.map(item=>`<span>${item}</span>`).join('');
   renderGallery(study);
+  renderEvidence(study);
   renderCards('[data-case-problems]',narrative.problems);
   renderCards('[data-case-process]',narrative.process);
   renderCards('[data-case-details]',study.details);
   renderCards('[data-case-proof]',study.proof);
-  renderCards('[data-case-deliverables]',narrative.deliverables);
+  renderCards('[data-case-deliverables]',getPublicDeliverables(study));
   renderRelated(study);
 }
 

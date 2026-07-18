@@ -23,7 +23,7 @@ The folder is intentionally named `reserch/`; do not rename it.
 - Hero, services, case-study, contact, or public portfolio wording: use `3d-portfolio-writing-director`.
 - Human polish/de-AI pass: use `humanizer`.
 - HTML/CSS/JS UI implementation: use `frontend-design`.
-- Browser validation: use `webapp-testing`.
+- Browser validation: use the browser surface requested by the user; otherwise use an available rendered-browser tool and state which surface supplied the evidence.
 
 ## Site Contract
 
@@ -32,6 +32,7 @@ The folder is intentionally named `reserch/`; do not rename it.
 - Keep the inline theme FOUC-prevention script in `index.html` and `case-study.html`.
 - Use `styles.css` tokens and existing vanilla JS patterns.
 - Keep contact/start-project path visible and unobstructed.
+- Preserve every case ID in `registry/portfolio-cases.json` and keep each route image-led. Duplicate repair must not remove, merge, hide, or convert a case to text-only.
 
 ## Public Boundary
 
@@ -52,6 +53,7 @@ Enforce:
 Run the deterministic audit when finalizing:
 
 ```bash
+python3 scripts/validate_skill_portfolio.py
 python3 .agents/skills/lesly-website-finalizer/scripts/audit_v2_launch.py
 ```
 

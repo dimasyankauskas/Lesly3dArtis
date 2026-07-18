@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -24,12 +25,12 @@ REQUIRED_FILES = [
 ]
 
 REQUIRED_SKILLS = [
-    SITE / ".codex" / "skills" / "3d-production-expert" / "SKILL.md",
-    SITE / ".codex" / "skills" / "3d-portfolio-writing-director" / "SKILL.md",
-    SITE / ".codex" / "skills" / "lesly-website-finalizer" / "SKILL.md",
     SITE / ".agents" / "skills" / "3d-production-expert" / "SKILL.md",
     SITE / ".agents" / "skills" / "3d-portfolio-writing-director" / "SKILL.md",
     SITE / ".agents" / "skills" / "lesly-website-finalizer" / "SKILL.md",
+    SITE / "registry" / "skills.json",
+    SITE / "registry" / "portfolio-cases.json",
+    SITE / "scripts" / "validate_skill_portfolio.py",
 ]
 
 REQUIRED_ASSETS = [
@@ -41,16 +42,6 @@ REQUIRED_ASSETS = [
     SITE / "assets" / "portfolio" / "work-mascot-character.webp",
     SITE / "assets" / "portfolio" / "work-outfits-accessories.webp",
     SITE / "assets" / "profile" / "studio-process-portrait.webp",
-]
-
-REQUIRED_CASE_ASSET_PATTERNS = [
-    "hero.webp",
-    "starting-point.webp",
-    "direction.webp",
-    "sculpt-model.webp",
-    "technical-proof.webp",
-    "final-renders.webp",
-    "deliverables.webp",
 ]
 
 LIVE_FILES = [
@@ -96,16 +87,6 @@ def read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def has_any_case_asset_set() -> bool:
-    process_dir = SITE / "assets" / "process"
-    if not process_dir.exists():
-        return False
-    for child in process_dir.iterdir():
-        if child.is_dir() and all((child / name).exists() for name in REQUIRED_CASE_ASSET_PATTERNS):
-            return True
-    return False
-
-
 def main() -> int:
     failures: list[str] = []
     warnings: list[str] = []
@@ -122,8 +103,17 @@ def main() -> int:
     if not hero_assets:
         warnings.append("Missing hero render matching assets/portfolio/hero-*.webp")
 
-    if not has_any_case_asset_set():
-        warnings.append("Missing complete case-study asset set under assets/process/[project-slug]/")
+    registry_validator = SITE / "scripts" / "validate_skill_portfolio.py"
+    if registry_validator.exists():
+        result = subprocess.run(
+            [sys.executable, str(registry_validator)],
+            cwd=SITE,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0:
+            detail = result.stdout.strip() or result.stderr.strip() or "unknown registry failure"
+            failures.append(f"Skill/case registry validation failed:\n{detail}")
 
     for path in LIVE_FILES:
         if not path.exists():

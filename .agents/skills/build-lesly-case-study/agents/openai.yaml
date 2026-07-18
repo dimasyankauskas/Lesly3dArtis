@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Lesly Case Study"
+  short_description: "Build and approve one portfolio case at a time"
+  default_prompt: "Use $build-lesly-case-study to add or rebuild one Lesly portfolio case through expert and browser approval."

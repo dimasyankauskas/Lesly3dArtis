@@ -53,14 +53,16 @@ Before changing copy, layout, positioning, or visual direction, read only the re
 
 Codex-discoverable repository skills live under `.agents/skills/`. Do not install, copy, synchronize, or modify skills outside this repository unless the user explicitly requests that separate action. Read the relevant `SKILL.md` before using a skill and load only directly needed references.
 
+- `registry/skills.json` is the machine-readable inventory. Every active skill must have one distinct user job and one owner there.
 - `3d-production-expert` — 3D craft, proof, generated media, game-ready claims, and portfolio suitability.
 - `3d-portfolio-writing-director` — public hero, services, case-study, contact, and positioning copy.
+- `build-lesly-case-study` — one-case-at-a-time orchestration from preserved route through expert and browser approval.
 - `lesly-website-finalizer` — launch readiness and public/proposal boundaries.
 - `humanizer` — natural-language polish after substantive copy decisions.
 - `frontend-design` — HTML/CSS/JS interface work.
 - `threejs-fundamentals` and `threejs-loaders` — self-hosted 3D display.
-- `webapp-testing` — browser validation.
-- Use the remaining repository skills only when their descriptions match the task.
+
+Do not remove, merge, hide, or convert a public case study to text-only merely to resolve duplicate imagery. Preserve every case ID in `registry/portfolio-cases.json`; repair one case at a time with a distinct hero, truthful supporting media, and evidence-bounded copy. The registry validator owns this invariant.
 
 ## Preview And Verification
 
@@ -74,5 +76,6 @@ Then open `http://127.0.0.1:8000/`.
 
 - For HTML/CSS/JS changes, inspect the changed page at relevant desktop and mobile widths where practical; check behavior, local assets, overflow, and public/proposal boundaries.
 - When finalizing or launch-checking the site, follow `.agents/skills/lesly-website-finalizer/SKILL.md`, including its deterministic audit and targeted checks.
+- For skill or case-registry changes, run `python3 scripts/validate_skill_portfolio.py` before the launch audit.
 - For static documentation edits, use the smallest relevant file, link/path, and diff checks.
 - Report exactly what was checked and any remaining unverified surface. Do not claim launch readiness from static checks alone.

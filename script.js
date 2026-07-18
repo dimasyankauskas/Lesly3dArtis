@@ -102,6 +102,8 @@ const filterButtons=[...document.querySelectorAll('[data-filter]')];
 const workCards=[...document.querySelectorAll('[data-category]')];
 const workMoreButton=document.querySelector('[data-work-more]');
 const workStatus=document.querySelector('[data-work-status]');
+const totalWorkCount=workCards.length;
+const featuredWorkCount=workCards.filter(card=>card.dataset.priority==='featured').length;
 let showAllWork=false;
 
 const updateWorkGrid=filter=>{
@@ -124,12 +126,12 @@ const updateWorkGrid=filter=>{
   if(workMoreButton){
     workMoreButton.hidden=filter!=='all';
     workMoreButton.setAttribute('aria-expanded',String(showAllWork));
-    workMoreButton.textContent=showAllWork?'Show selected projects':'View all 12 projects';
+    workMoreButton.textContent=showAllWork?'Show selected projects':`View all ${totalWorkCount} projects`;
   }
 
   if(workStatus){
     workStatus.textContent=filter==='all'
-      ?showAllWork?'Showing all 12 projects.':'Showing six selected character projects.'
+      ?showAllWork?`Showing all ${totalWorkCount} projects.`:`Showing ${featuredWorkCount} selected character projects.`
       :`Showing ${visibleCount} ${filter} ${visibleCount===1?'project':'projects'}.`;
   }
 };
@@ -166,6 +168,12 @@ if(contactForm){
   const note=contactForm.querySelector('.form-note');
   const requiredFields=[...contactForm.querySelectorAll('[required]')];
 
+  const setFormNote=message=>{
+    if(!note)return;
+    note.textContent=message;
+    note.hidden=!message;
+  };
+
   const isBriefReady=()=>requiredFields.every(field=>{
     if(field.type==='email')return field.value.trim()&&field.validity.valid;
     return field.value.trim().length>0;
@@ -177,7 +185,6 @@ if(contactForm){
       submitButton.disabled=!ready;
       submitButton.setAttribute('aria-disabled',String(!ready));
     }
-    if(note&&!ready)note.textContent='Nothing is submitted or stored. Complete the required fields to copy your inquiry.';
   };
 
   requiredFields.forEach(field=>{
@@ -190,7 +197,7 @@ if(contactForm){
   contactForm.addEventListener('submit',event=>{
     event.preventDefault();
     if(!isBriefReady()){
-      if(note)note.textContent='Add your name, a valid email, and a short project message first.';
+      setFormNote('Add your name, a valid email, and a short project message first.');
       updateSubmitState();
       return;
     }
@@ -209,9 +216,9 @@ if(contactForm){
     ].join('\n');
 
     navigator.clipboard?.writeText(brief).then(()=>{
-      if(note)note.textContent='Inquiry copied. Send it to Lesly through the contact channel where you found this portfolio.';
+      setFormNote('Inquiry copied. Send it to Lesly through the contact channel where you found this portfolio.');
     }).catch(()=>{
-      if(note)note.textContent='Your browser blocked automatic copying. Select the form details and copy them into your message to Lesly.';
+      setFormNote('Your browser blocked automatic copying. Select the form details and copy them into your message to Lesly.');
     });
   });
 }

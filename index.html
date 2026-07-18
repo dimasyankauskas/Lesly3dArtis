@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/brand/lesly-luxury-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/brand/lesly-luxury-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20260715-5953c21" />
+  <link rel="stylesheet" href="styles.css?v=20260717-visual-rc3" />
   <script>document.documentElement.classList.add('js');document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');</script>
 </head>
 <body>
@@ -52,7 +52,11 @@
         </div>
       </div>
       <figure class="hero-visual">
-        <img class="hero-image" src="assets/portfolio/hero-original-site-concept.webp" width="1599" height="900" alt="Stylized character render with costume, prop, and staging detail." fetchpriority="high">
+        <picture>
+          <source media="(max-width: 767px)" srcset="assets/rebuild/desert-guardian/hero-portrait-4x5-v1.webp" width="1000" height="1250">
+          <img class="hero-image" src="assets/rebuild/desert-guardian/hero-wide-v2.webp" width="1672" height="941" alt="Desert Guardian 3D reconstruction direction with a crescent polearm, layered cloth, bronze armor, and a grounded stone stage." fetchpriority="high">
+        </picture>
+        <figcaption class="hero-media-note">Desert Guardian · 3D reconstruction direction</figcaption>
       </figure>
     </section>
 
@@ -135,7 +139,7 @@
         <p class="eyebrow">Case Studies</p>
         <h2>3D character and production pipeline case studies.</h2>
         <div class="ornament" aria-hidden="true"><span class="o-dot"></span><span class="o-dia"></span><span class="o-dot"></span></div>
-        <p class="lead">Start with six character-focused projects, then open the wider collection for staging, props, print planning, and visual workflow systems. Every case study connects the finished presentation to the decisions that shaped it.</p>
+        <p class="lead">Start with seven character-focused projects, then open the wider collection for staging, props, print planning, and visual workflow systems. Every case study keeps its own project identity and connects the finished presentation to the decisions that shaped it.</p>
 
         <div class="filters" aria-label="Filter case studies">
           <button type="button" data-filter="all" class="active" aria-pressed="true">Selected</button>
@@ -145,14 +149,15 @@
           <button type="button" data-filter="avatar" aria-pressed="false">Avatar</button>
           <button type="button" data-filter="mascot" aria-pressed="false">Mascot</button>
           <button type="button" data-filter="outfit" aria-pressed="false">Outfits</button>
+          <button type="button" data-filter="texturing" aria-pressed="false">Texturing</button>
           <button type="button" data-filter="print" aria-pressed="false">Print</button>
           <button type="button" data-filter="process" aria-pressed="false">Process</button>
           <button type="button" data-filter="workflow" aria-pressed="false">Workflow</button>
         </div>
-        <p class="work-status" data-work-status aria-live="polite">Showing six selected character projects.</p>
+        <p class="work-status" data-work-status aria-live="polite">Showing seven selected character projects.</p>
 
         <div class="work-grid" id="case-study-grid">
-          <a class="work-card reveal" data-priority="featured" data-category="game process" href="case-study.html?id=pbr-texturing">
+          <a class="work-card reveal" data-priority="featured" data-category="game process" href="case-study.html?id=original-site-concept">
             <div class="thumb">
               <img src="assets/portfolio/work-concept-to-3d.webp" width="1200" height="900" alt="Concept-to-character project board showing sketch, refinement, and final render." loading="eager">
               <span class="work-tag" aria-hidden="true">Concept</span>
@@ -165,152 +170,165 @@
             <p class="meta">Concept to 3D · Character direction</p>
             <p>Turns an early sketch, reference image, or moodboard into a polished character direction.</p>
           </a>
-          <a class="work-card reveal" data-priority="featured" data-category="game process" href="case-study.html?id=game-hero">
+          <a class="work-card reveal" data-priority="featured" data-category="game process texturing" href="case-study.html?id=pbr-texturing">
             <div class="thumb">
-              <img src="assets/portfolio/work-game-ready-character.webp" width="1200" height="900" alt="Stylized game character project render on a dark studio pedestal." loading="eager">
-              <span class="work-tag" aria-hidden="true">Gaming Character</span>
+              <img src="assets/rebuild/pbr-marsh-warden/hero-4x3-v1.webp" width="1448" height="1086" alt="Marsh Warden material-study character with teal cloth, ivory linen, leather, oxidized bronze, and a lantern staff." loading="eager">
+              <span class="work-tag" aria-hidden="true">Texturing</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>Game-Ready Character</h3>
-            <p class="meta">Game · Character asset</p>
-            <p>A full-body game-character presentation focused on silhouette, costume hierarchy, material read, and delivery planning.</p>
+            <h3>PBR &amp; Stylized Texturing</h3>
+            <p class="meta">Texturing · Material study</p>
+            <p>A distinct Marsh Warden study for skin, cloth, leather, metal, wood, glass, and stone material separation.</p>
+          </a>
+          <a class="work-card reveal" data-priority="featured" data-category="game process" href="case-study.html?id=game-hero">
+            <div class="thumb">
+              <img src="assets/rebuild/game-forge-warden/hero-4x3-v1.webp" width="1448" height="1086" alt="Stocky silver-haired Forge Warden holding a square-headed two-handed hammer on a dark studio plinth." loading="eager">
+              <span class="work-tag" aria-hidden="true">Game Character</span>
+              <span class="card-corner card-corner-tl" aria-hidden="true"></span>
+              <span class="card-corner card-corner-tr" aria-hidden="true"></span>
+              <span class="card-corner card-corner-bl" aria-hidden="true"></span>
+              <span class="card-corner card-corner-br" aria-hidden="true"></span>
+            </div>
+            <h3>Forge Warden</h3>
+            <p class="meta">Game · Character direction</p>
+            <p>A distinct older warrior built around stocky role read, asymmetrical armor, a two-handed hammer, and movement-risk inspection.</p>
           </a>
           <a class="work-card reveal" data-priority="extended" data-category="staging game process" href="case-study.html?id=character-environment">
             <div class="thumb">
-              <img src="assets/portfolio/work-character-environment.webp?v=staging-thumb-20260608" width="900" height="675" alt="Character staging crop showing plinth, ground contact, supporting prop, cloth, and scale context." loading="lazy">
+              <img src="assets/rebuild/character-staging-frostline/hero-4x3-v1.webp" width="1448" height="1086" alt="Older Frostline Ranger archer on a restrained black-stone stage with one milestone and cool studio lighting." loading="lazy">
               <span class="work-tag" aria-hidden="true">Staging</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>Character Staging</h3>
-            <p class="meta">Staging · Character context</p>
-            <p>A focused presentation for grounding the character with a plinth, scale cues, restrained props, lighting, and camera context.</p>
+            <h3>Frostline Ranger Staging</h3>
+            <p class="meta">Staging · Camera and light study</p>
+            <p>A neutral-to-beauty stage progression focused on character dominance, ground contact, scale cues, bow clearance, and restrained atmosphere.</p>
           </a>
           <a class="work-card reveal" data-priority="extended" data-category="props process" href="case-study.html?id=interior-props">
             <div class="thumb">
-              <img src="assets/portfolio/work-interior-props.webp" width="1448" height="1086" alt="Interior prop set with carved shelves, ceramics, glass, brass, books, textiles, and warm lighting." loading="lazy">
+              <img src="assets/rebuild/interior-direction/shelf-hero-4x3-v1.webp" width="1448" height="1086" alt="Ornate carved-wood shelf direction with storage chests, ceramic vessels, aged brass, books, folded textiles, and warm window light." loading="lazy">
               <span class="work-tag" aria-hidden="true">Props</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>Interior Props &amp; Set Dressing</h3>
-            <p class="meta">Props · Material study</p>
-            <p>An ornate prop-art package with reusable object groups, material studies, source mesh evidence, and handoff notes.</p>
+            <h3>Ornate Interior Props &amp; Set Dressing</h3>
+            <p class="meta">Props · Asset family and staging study</p>
+            <p>A coordinated prop family, set-dressing rhythm, material separation, and neutral-to-warm presentation direction.</p>
           </a>
           <a class="work-card reveal" data-priority="featured" data-category="process" href="case-study.html?id=sculpt-to-retopo">
             <div class="thumb">
-              <img src="assets/portfolio/work-sculpt-retopo.webp" width="1200" height="900" alt="Sculpting and retopology project board with character studies and mesh-style panels." loading="eager">
+              <img src="assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1.webp" width="1448" height="1086" alt="Resolved warm-gray clay bust of Lyra with layered braided hair, diamond ornament, high collar, and neutral inspection lighting." loading="eager">
               <span class="work-tag" aria-hidden="true">Process</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>Sculpting to Retopology</h3>
-            <p class="meta">Process · Sculpt/retopo</p>
-            <p>A technical presentation format for showing sculpt forms, retopology direction, turnaround views, and inspection material.</p>
+            <h3>Lyra Sculpt &amp; Retopology Direction</h3>
+            <p class="meta">Sculpt · Form and topology plan</p>
+            <p>A resolved clay bust, broad-to-fine form study, and profile/expression targets for a later deformation-aware topology pass.</p>
           </a>
           <a class="work-card reveal" data-priority="extended" data-category="workflow process" href="case-study.html?id=santa-cruz-ai-visual-pipeline">
             <div class="thumb">
-              <img src="assets/process/santa-cruz-ai-visual-pipeline/workflow-board.webp" width="1672" height="941" alt="Remote production studio desk with exterior residential visualization, material samples, drawings, and blurred local pipeline monitor." loading="lazy">
+              <img src="assets/rebuild/coastal-residential-workflow/hero-4x3-v1.webp" width="1448" height="1086" alt="Physical coastal-residence visualization presentation with a resolved dusk exterior, illustrative elevation, context views, and material references." loading="lazy">
               <span class="work-tag" aria-hidden="true">Workflow</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>AI Visualization Pipeline</h3>
-            <p class="meta">Visual workflow · Construction</p>
-            <p>A controlled local visualization workflow for turning references, material direction, AI images, and review needs into usable production decisions.</p>
+            <h3>Coastal Residence — Visualization Direction</h3>
+            <p class="meta">Residential visualization · Finish and lighting study</p>
+            <p>One fictional coastal-home identity reviewed through a resolved exterior, comparable finish families, context, daylight, and dusk.</p>
           </a>
-          <a class="work-card reveal" data-priority="extended" data-category="workflow process props" href="case-study.html?id=ai-visual-pipeline">
+          <a class="work-card reveal" data-priority="extended" data-category="workflow process" href="case-study.html?id=ai-visual-pipeline">
             <div class="thumb">
-              <img src="assets/process/ai-visual-pipeline/workflow-board-generated.png" width="1672" height="941" alt="3D visual pipeline board with reference cards, material review, and handoff packets." loading="lazy">
+              <img src="assets/rebuild/tideglass-workflow/hero-4x3-v1.webp" width="1448" height="1086" alt="Physical Tideglass Courier art-direction table with a resolved character target, sketches, neutral maquette, and material swatches." loading="lazy">
               <span class="work-tag" aria-hidden="true">Pipeline</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>3D Visual Pipeline</h3>
-            <p class="meta">Workflow · Material standards</p>
-            <p>A reusable visual standards system for references, material review, AI-assisted exploration, and production handoff.</p>
+            <h3>Tideglass Courier — Visual Direction Pipeline</h3>
+            <p class="meta">Workflow · Character direction and handoff</p>
+            <p>One character identity carried from sketch and neutral form through materials, close review, and a bounded production brief.</p>
           </a>
           <a class="work-card reveal" data-priority="extended" data-category="workflow process" href="case-study.html?id=construction-client-progress-workflow">
             <div class="thumb">
-              <img src="assets/process/construction-client-progress-workflow/remote-review-board-20260609.webp" width="1600" height="900" alt="Remote review-board scene with progress-photo sets, material samples, exterior visualization options, and approval markers." loading="lazy">
+              <img src="assets/rebuild/northlight-workshop-progress/hero-4x3-v1.webp" width="1448" height="1086" alt="Fictional red-brick workshop at the enclosure-and-rough-in stage with timber roof joists, clerestory glazing, exposed services, and a black-steel courtyard portal." loading="lazy">
               <span class="work-tag" aria-hidden="true">Workflow</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>Construction Progress Workflow</h3>
-            <p class="meta">Client review · Agentic workflow</p>
-            <p>A progress-review system that connects site photos, homeowner comments, AI visual options, response states, and next actions.</p>
+            <h3>Northlight Workshop — Progress Review Direction</h3>
+            <p class="meta">Workflow · Evidence hierarchy and review states</p>
+            <p>One fictional brick workshop carried from phase context to a clearly located wide, medium, and detail review condition.</p>
           </a>
           <a class="work-card reveal" data-priority="featured" data-category="avatar" href="case-study.html?id=avatar-character">
             <div class="thumb">
-              <img src="assets/portfolio/work-avatar-character.webp" width="1200" height="900" alt="Avatar character project board with expression variations." loading="eager">
+              <img src="assets/rebuild/avatar-mira/hero-4x3-v1.webp" width="1448" height="1086" alt="Stylized young-adult Mira avatar with a high black ponytail, rust hooded layer, black foundation garment, and geometric gold jewelry." loading="eager">
               <span class="work-tag" aria-hidden="true">Avatar</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>Avatar Character</h3>
-            <p class="meta">Avatar · Expression set</p>
-            <p>An avatar character presentation with face read, expression range, costume detail, and creator-facing thumbnails.</p>
+            <h3>Mira Avatar Identity Direction</h3>
+            <p class="meta">Creator avatar · Identity and expression study</p>
+            <p>A polished hero, coordinated identity views, and five expression targets for a future matching model and rig pass.</p>
           </a>
           <a class="work-card reveal" data-priority="featured" data-category="mascot" href="case-study.html?id=mascot-character">
             <div class="thumb">
-              <img src="assets/portfolio/work-mascot-character.webp" width="1200" height="900" alt="Mascot character project board with pose and expression variations." loading="eager">
+              <img src="assets/rebuild/sol-mascot/sol-hero-4x5-v1.webp" width="1120" height="1400" alt="Sol the fennec fox mascot with oversized ears, three forehead markings, one patterned tail, animal paws, and a leaf-topped staff." loading="eager">
               <span class="work-tag" aria-hidden="true">Brand Mascot</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>Mascot Character</h3>
-            <p class="meta">Mascot · Brand character</p>
-            <p>A brand mascot presentation for product, startup, creator, education, and campaign character use.</p>
+            <h3>Sol Mascot Identity System</h3>
+            <p class="meta">Mascot direction · Identity and expression study</p>
+            <p>A polished hero, coordinated identity views, and four character moments for a future matching 3D build.</p>
           </a>
-          <a class="work-card reveal" data-priority="extended" data-category="mascot print process" href="case-study.html?id=print-startup-direction">
+          <a class="work-card reveal" data-priority="extended" data-category="print process" href="case-study.html?id=print-startup-direction">
             <div class="thumb">
-              <img src="assets/process/print-startup-direction/printability-board.webp" width="1600" height="900" alt="3D print mascot planning board with printability inspection, family direction, and handoff icons." loading="lazy">
+              <img src="assets/rebuild/sol-print/sol-collectible-4x3-v2.webp" width="1448" height="1086" alt="Paired color and neutral-clay Sol collectible direction with a complete staff, holder, patterned tail, and two-tier carved-stone base." loading="lazy">
               <span class="work-tag" aria-hidden="true">3D Print</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>3D Print Character System</h3>
-            <p class="meta">Product direction · Print planning</p>
-            <p>A collectible mascot direction case for shape language, print-readiness planning, base logic, and handoff requirements.</p>
+            <h3>Sol Collectible Build Direction</h3>
+            <p class="meta">Collectible direction · Component and evidence plan</p>
+            <p>A color-and-clay maquette, proposed component study, and complete contact views before print engineering and physical testing.</p>
           </a>
           <a class="work-card reveal" data-priority="featured" data-category="outfit" href="case-study.html?id=outfits-accessories">
             <div class="thumb">
-              <img src="assets/portfolio/work-outfits-accessories.webp" width="1200" height="900" alt="Outfit and accessory project board with material closeups." loading="eager">
+              <img src="assets/rebuild/outfit-ember-duelist/hero-4x3-v1.webp" width="1448" height="1086" alt="Ember Duelist in layered plum and ivory tailoring with asymmetric bronze protection and a swept-hilt rapier." loading="eager">
               <span class="work-tag" aria-hidden="true">Outfit</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
               <span class="card-corner card-corner-bl" aria-hidden="true"></span>
               <span class="card-corner card-corner-br" aria-hidden="true"></span>
             </div>
-            <h3>Outfits, Skins &amp; Accessories</h3>
-            <p class="meta">Outfits · Accessories</p>
-            <p>A costume and accessory presentation built around outfit silhouette, material closeups, prop details, and variation options.</p>
+            <h3>Ember Duelist Costume Direction</h3>
+            <p class="meta">Outfit · Layer and accessory study</p>
+            <p>A coordinated costume system that moves from foundation clothing to plum tailoring, leather structure, asymmetric protection, and a complete rapier.</p>
           </a>
         </div>
         <div class="work-more">
-          <button class="btn" type="button" data-work-more aria-expanded="false" aria-controls="case-study-grid">View all 12 projects</button>
+          <button class="btn" type="button" data-work-more aria-expanded="false" aria-controls="case-study-grid">View all 13 projects</button>
         </div>
       </div>
     </section>
@@ -419,7 +437,7 @@
           </div>
           <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
           <div class="submit-row"><button class="btn btn-primary" type="submit" disabled>Copy Inquiry Brief</button></div>
-          <p class="form-note" aria-live="polite">Nothing is submitted or stored. Complete the required fields to copy your inquiry.</p>
+          <p class="form-note" aria-live="polite" hidden></p>
         </form>
       </div>
     </section>
@@ -436,6 +454,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260715-5953c21"></script>
+  <script src="script.js?v=20260717-visual-rc3"></script>
 </body>
 </html>

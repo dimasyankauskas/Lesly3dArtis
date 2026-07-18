@@ -1,4 +1,6 @@
 .DS_Store
+__pycache__/
+*.py[cod]
 .claude/
 .codex/settings.local.json
 deploy/deploy-contract.sh

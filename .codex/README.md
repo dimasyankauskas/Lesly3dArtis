@@ -1,9 +1,9 @@
-# Repo-Local Codex Setup
+# Legacy Repository Configuration
 
-This directory is the Codex-local mirror of the existing `.claude/` project setup.
+This directory records legacy repository settings only.
 
-- Skills live in `.codex/skills/`.
+- Active repository skills live only in `.agents/skills/`.
 - Imported local settings are recorded in `.codex/settings.local.json`.
 - Repo instructions for Codex live in `AGENTS.md`.
 
-Do not install these skills globally for this project unless explicitly requested.
+Do not create a `.codex/skills/` mirror. The machine-readable active inventory is `registry/skills.json`.

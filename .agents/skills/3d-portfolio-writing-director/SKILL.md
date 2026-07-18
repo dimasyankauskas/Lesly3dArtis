@@ -7,6 +7,8 @@ description: Use when writing or revising Lesly's public portfolio copy, hero/se
 
 Use this skill for Lesly's public website voice. The job is to make the site sound like a serious 3D character portfolio and production partner, not a proposal, audit memo, or generic AI portfolio.
 
+Own public narrative and positioning only. Let `3d-production-expert` judge asset quality and technical proof, and let `lesly-website-finalizer` own integration and release checks.
+
 ## Positioning
 
 Lead with:
@@ -51,6 +53,8 @@ Do not write like a proposal. Avoid `this proposal includes`, `scope of work`, `
 ## Case Study Pattern
 
 Case studies should read like completed portfolio narratives around visible work, not internal proof arguments.
+
+Preserve every registered case study. If imagery is duplicated or incomplete, keep the route and write only what its visible media supports while the production owner repairs that case. Never solve a media problem by deleting the story or inventing technical proof.
 
 Use this order:
 

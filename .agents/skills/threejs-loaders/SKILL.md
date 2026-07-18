@@ -259,11 +259,9 @@ async function loadWithFallback(primaryUrl, fallbackUrl) {
 1. **Use compressed formats**: DRACO for geometry, KTX2/Basis for textures
 2. **Load progressively**: Show placeholders while loading
 3. **Lazy load**: Only load what's needed
-4. **Use CDN**: Faster asset delivery
+4. **Self-host runtime assets**: Keep the portfolio's no-external-JavaScript contract
 5. **Enable cache**: `THREE.Cache.enabled = true`
 
 ## See Also
 
-- `threejs-textures` - Texture configuration
-- `threejs-animation` - Playing loaded animations
-- `threejs-materials` - Material from loaded models
+- `threejs-fundamentals` - Scene, camera, renderer, hierarchy, and transforms

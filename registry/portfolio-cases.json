@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {"id": "game-hero", "homepage": true, "minimumMedia": 2},
+    {"id": "character-environment", "homepage": true, "minimumMedia": 2},
+    {"id": "interior-props", "homepage": true, "minimumMedia": 1},
+    {"id": "ai-visual-pipeline", "homepage": true, "minimumMedia": 1},
+    {"id": "santa-cruz-ai-visual-pipeline", "homepage": true, "minimumMedia": 1},
+    {"id": "construction-client-progress-workflow", "homepage": true, "minimumMedia": 1},
+    {"id": "print-startup-direction", "homepage": true, "minimumMedia": 1},
+    {"id": "sculpt-to-retopo", "homepage": true, "minimumMedia": 1},
+    {"id": "avatar-character", "homepage": true, "minimumMedia": 1},
+    {"id": "mascot-character", "homepage": true, "minimumMedia": 1},
+    {"id": "outfits-accessories", "homepage": true, "minimumMedia": 2},
+    {"id": "pbr-texturing", "homepage": true, "minimumMedia": 2},
+    {"id": "original-site-concept", "homepage": true, "minimumMedia": 2}
+  ]
+}
