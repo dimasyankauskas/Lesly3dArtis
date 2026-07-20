@@ -2,10 +2,12 @@
 
 This visual package is a reconstruction brief for a future matching 3D production asset. It is not evidence of an existing source sculpt, low-poly mesh, topology, UVs, bakes, rig, or export.
 
+Attribution source truth recorded 2026-07-19: Lesly authored the Lyra website case and portfolio presentation from zero to one. Public copy may identify her as the portfolio case author and credit the form-hierarchy story, profile and expression study, public narrative, and website presentation. That attribution does not establish authorship of the inherited Lyra reference, a matching sculpt or mesh, sculpt chronology, low-poly or retopology work, topology, blendshapes, rigging, UVs, bakes, DCC or source files, exports, or outcomes.
+
 ## Asset Set
 
 - `hero-4x3-v1.webp` — resolved clay-bust target for facial planes, profile, braid grouping, ornament, collar, bust silhouette, and neutral inspection lighting.
-- `sculpt-development-16x9-v1.webp` — broad-to-fine direction: primary blockout, secondary refinement, and resolved form. The faceted first stage communicates form hierarchy; it is not a low-poly production mesh.
+- `sculpt-development-16x9-v1.webp` — three generated direction states arranged broad-to-fine to visualize primary, secondary, and resolved form priorities. They are not captured sculpt chronology, a low-poly production mesh, or topology evidence.
 - `form-deformation-study-16x9-v1.webp` — neutral front, true profile, controlled smile, and jaw-open targets. These views define identity and deformation requirements; they do not prove blendshapes or facial rigging.
 - `source/` — retained PNG generation masters.
 

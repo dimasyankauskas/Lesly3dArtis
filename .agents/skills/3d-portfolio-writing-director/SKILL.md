@@ -7,7 +7,11 @@ description: Use when writing or revising Lesly's public portfolio copy, hero/se
 
 Use this skill for Lesly's public website voice. The job is to make the site sound like a serious 3D character portfolio and production partner, not a proposal, audit memo, or generic AI portfolio.
 
-Own public narrative and positioning only. Let `3d-production-expert` judge asset quality and technical proof, and let `lesly-website-finalizer` own integration and release checks.
+Own public narrative and positioning only. Let `3d-production-expert` judge asset quality and technical proof, `frontend-design` implement approved copy and media, `lesly-website-finalizer` verify the rendered/release state, and the invoking lifecycle owner certify the whole case.
+
+Never change a frozen case fact, source/permission boundary, evidence category, claim blocker, or outcome state to improve the prose. Return an unsupported or ambiguous field to the lifecycle owner.
+
+For a case build, write only from the lifecycle owner's `PUBLIC_STORY_PACKET`. The internal truth guard exists only to remove or narrow claims. Never quote, paraphrase, summarize, or expose its claim states, missing proof, capture backlog, lineage, rejection history, approval state, or audit language.
 
 ## Positioning
 
@@ -58,15 +62,17 @@ Preserve every registered case study. If imagery is duplicated or incomplete, ke
 
 Use this order:
 
-1. Project goal.
-2. Starting input.
-3. Visual direction and constraints.
-4. Production process.
-5. Technical proof shown or missing.
-6. Final presentation.
-7. Deliverables or intended handoff.
+1. Project brief and positive scope.
+2. Lesly's supportable contribution.
+3. Starting point and creative challenge.
+4. One or more concrete decisions and their consequences.
+5. The strongest visible process or design development the approved media supports.
+6. Finished presentation or supportable result.
+7. Credits when they are documented.
 
-If a fact is missing, write around the visible asset and service outcome. Do not invent external facts.
+If a fact is missing, omit it. Do not describe it as unknown, undocumented, unverified, pending, required next, or future proof. Unsupported technical or outcome claims disappear from the public story rather than becoming warnings about what the project lacks.
+
+A short, unobtrusive media credit such as `Portfolio presentation image created from approved source art` is allowed when needed. It must not become the case headline, project argument, or a dedicated evidence section.
 
 ## Service Naming
 
@@ -93,6 +99,7 @@ Remove or rewrite:
 - `trusted by clients worldwide` without proof.
 - `seamless end-to-end solution` and broad AI hype.
 - Public caveats that call assets fake, placeholder, prototype, not real, generated-only, or concept-only.
+- Internal-review language such as `Evidence status`, `not verified`, `not documented`, `proof pending`, `Required next`, `one capture that changes the claim`, `if the model exists`, `Acceptance path`, claim-state labels, capture requests, or future evidence instructions.
 - Proposal language in public pages.
 - Invented clients, shipped credits, testimonials, metrics, engine integrations, source-file facts, polycounts, UV layouts, deadlines, or filenames.
 
@@ -106,5 +113,6 @@ Before shipping copy:
 4. Are AI and new technology framed as workflow support?
 5. Are missing facts absent from the public claim?
 6. Would this sentence still sound credible if read aloud by a recruiter or client deciding whether to hire her?
+7. Does the first screen present a finished project story rather than an evidence audit, caveat, or maintenance request?
 
 Use `humanizer` after drafting when the text feels AI-shaped or promotional.

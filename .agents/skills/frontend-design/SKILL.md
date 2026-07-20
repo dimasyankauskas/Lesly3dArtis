@@ -7,6 +7,16 @@ This skill guides creation of distinctive, production-grade frontend interfaces 
 
 The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
 
+## Lesly Portfolio Ownership
+
+For Lesly case-study work, own HTML, CSS, JavaScript, media-object, caption, responsive, and accessibility implementation only. Receive only the approved `PUBLIC_STORY_PACKET`, public media roles, and first-10/30-second targets from `build-lesly-case-study`.
+
+Do not change case status, authorship, source/permission boundaries, evidence categories, technical claims, or outcome state to make the layout easier. Return those conflicts to the lifecycle owner. Let `lesly-website-finalizer` supply rendered and release verification.
+
+Never accept or render the internal truth guard. Public templates and runtime objects must not contain dedicated evidence-status, proof-ledger, capture-required, missing-proof, claim-state, approval, or audit sections. Unsupported facts are omitted upstream. A concise media credit may disclose generated or reconstructed presentation imagery, but it cannot dominate the project story.
+
+Fail implementation review if the visible page contains `Evidence status`, `not verified`, `not documented`, `Required next`, `one capture that changes the claim`, `if the model exists`, `Acceptance path`, proof-pending language, or a semantic equivalent addressed to a future reviewer or evidence collector.
+
 ## Design Thinking
 
 Before coding, understand the context and commit to a BOLD aesthetic direction:

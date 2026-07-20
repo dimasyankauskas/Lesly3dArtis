@@ -21,6 +21,7 @@ Polish approved portfolio copy without changing its meaning, evidence, or commer
 4. Vary sentence rhythm naturally. Keep useful quirks and specific details.
 5. Match an available Lesly voice sample; otherwise use calm, direct professional English.
 6. Read the result aloud mentally and remove phrases that sound like a proposal, audit, or internal agent note.
+7. Reject rather than polish any public sentence that exposes missing proof, capture requests, claim states, hypothetical production instructions, approval/gate state, or other internal truth-guard content.
 
 Common problems include:
 

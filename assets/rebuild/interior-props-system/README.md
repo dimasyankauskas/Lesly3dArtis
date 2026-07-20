@@ -2,6 +2,12 @@
 
 This folder contains visual direction for rebuilding an ornate interior shelf and its reusable prop family. The images are public portfolio assets and recreation targets, not captures from a matching production scene.
 
+## Attribution boundary
+
+- On 2026-07-19, the user directly confirmed that Lesly created and authored the website project material from zero to one.
+- Supported public contribution: Lesly authored the Ornate Interior website case from zero to one, using the approved shelf direction to build the prop-family story, visual sequence, and final portfolio presentation.
+- The approved shelf direction remains the inherited starting point. This authorship does not establish modeled props, a matching source scene, exact scale, functional hardware, topology, UVs, textures or shaders, engine integration, export, delivery, or a production outcome.
+
 ## Presentation set
 
 - `../interior-direction/shelf-hero-4x3-v1.webp` — warm shelf hero and final mood target.
@@ -22,4 +28,11 @@ The package defines prop-family direction, set-dressing rhythm, material targets
 
 ## Source masters
 
-Lossless generation masters are retained under `source/`. Public pages use the compressed WebP assets in this directory.
+Lossless generation masters for `prop-family-16x9-v1` and `staging-development-16x9-v1` are retained under `source/`. Public pages use the compressed WebP derivatives in this directory. The earlier shelf hero is retained only as the approved 1448 × 1086 sRGB WebP derivative at `../interior-direction/shelf-hero-4x3-v1.webp`; a lossless hero master is not present in the current repository package.
+
+The support masters trace to direct portfolio generation commissioned by the repository owner. Their SHA-256 records are:
+
+- `source/prop-family-16x9-v1.png` — `7ed44aeb35c829bda563d7b9e032178c502aaa092a8c556dccb68ed30554f83d`
+- `source/staging-development-16x9-v1.png` — `8d2002279cd7a9810927c166a26d05e621292eaf4a8954d44d36ce76ce481e8a`
+
+The public hero derivative is SHA-256 `d4c758fb5c3fb6da7c645c75d1c6d6d42c89b81cbbfad4c203be92f30f52a15a`. This lineage supports authorized portfolio presentation; it does not establish matching model or source-scene authorship.

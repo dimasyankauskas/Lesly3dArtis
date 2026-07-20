@@ -1,11 +1,13 @@
 ---
 name: lesly-website-finalizer
-description: Use when finalizing, auditing, or launch-checking Lesly's public static portfolio website, including HTML/CSS/JS integration, public/private boundaries, local skill routing, launch checks, GitHub Pages readiness, and browser smoke tests.
+description: Verify, audit, finalize, or launch-check Lesly's public static portfolio website, including implemented HTML/CSS/JS, public/private boundaries, local skill routing, deterministic launch checks, GitHub Pages readiness, and browser smoke tests. Use after implementation or for a site-wide audit. Do not use as the case lifecycle, media-quality, copy, or frontend implementation owner.
 ---
 
 # Lesly Website Finalizer
 
 Use this skill for final public-site work on Lesly's static portfolio.
+
+Own deterministic and rendered verification of the implemented site. Report evidence and blockers to the invoking owner. Do not create case media, judge 3D craft, rewrite the narrative, implement frontend changes as the primary owner, or convert rendered success into case-level technical or outcome certification.
 
 ## Source Order
 
@@ -46,6 +48,7 @@ Enforce:
 - Do not re-label public assets as placeholder, prototype, fake, not real, or concept-only unless the user explicitly asks.
 - OneOff/proposal work stays under `clients/` or proposal-specific surfaces and must not appear in `index.html` or public case-study navigation unless explicitly requested.
 - Public copy must not include proposal, intake, audit, provenance, or internal agent comments.
+- Public copy must not include internal truth-guard content: evidence/claim states, proof ledgers, missing-proof narration, capture requests, hypothetical production instructions, rejection history, approval/gate state, provenance mechanics, or future evidence work. The public renderer must not expose dedicated evidence-status or capture-required sections.
 - Do not invent external clients, shipped credits, testimonials, production metrics, engine integrations, polycounts, UV layouts, deadlines, source files, or deliverable filenames.
 
 ## Launch Audit
@@ -53,9 +56,11 @@ Enforce:
 Run the deterministic audit when finalizing:
 
 ```bash
-python3 scripts/validate_skill_portfolio.py
-python3 .agents/skills/lesly-website-finalizer/scripts/audit_v2_launch.py
+python3 scripts/validate_skill_portfolio.py --case <active-case-id>
+python3 .agents/skills/lesly-website-finalizer/scripts/audit_v2_launch.py --case <active-case-id>
 ```
+
+Use the targeted validator while one case is active. After the final case, run both commands without `--case` so the audience gate covers the complete registered corpus.
 
 Exit codes:
 
@@ -68,6 +73,7 @@ Also run targeted checks:
 ```bash
 rg -n "placeholder|prototype|not real|concept-only|ASSET_INTAKE|proposal|OneOff|One Off|S-RANCH" index.html case-study.html case-study.js CONTENT_STRATEGY.md LAUNCH_CHECKLIST.md AGENTS.md
 rg -n "cool characters|awesome art|fun designs|cute stuff|amazing things|dreams come true|make ideas real|beautiful 3D|bringing imagination to life|creative visionary|unlock your vision" index.html case-study.html case-study.js
+rg -n -i "Evidence status|not (yet )?verified|not documented|Required next|one capture that changes the claim|if the .* exists|What the current package makes inspectable|proof[- ]pending|Acceptance path|real capture required" index.html case-study.html case-study.js
 node --check script.js
 node --check case-study.js
 ```
@@ -81,5 +87,6 @@ Before claiming launch-ready, preview locally and inspect:
 - Nav, filters, theme toggle, reveal-on-scroll, and contact brief copy behavior work.
 - Desktop and mobile have no horizontal overflow or incoherent overlap.
 - OneOff/proposal links are absent from public homepage/case-study flows unless explicitly requested.
+- The first 10 seconds communicate project, positive scope, supportable contribution, and strongest finished visual; the first short scroll communicates the challenge, decision, consequence, and professional value without audit or proof-debt copy.
 
 If a check cannot run, report the exact gap.

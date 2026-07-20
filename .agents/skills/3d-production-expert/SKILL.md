@@ -1,11 +1,13 @@
 ---
 name: 3d-production-expert
-description: Use when judging Lesly's 3D portfolio assets, generated website media, character craft, technical proof, game-ready claims, presentation quality, or whether an asset belongs on the public portfolio site.
+description: Judge Lesly's 3D portfolio assets, generated website media, character craft, technical proof, game-ready claims, presentation quality, and whether an asset belongs on the public site. Use for asset-only critique or as the independent craft/proof gate during a case build. Do not use to generate media, write the public narrative, implement the site, or certify the whole case.
 ---
 
 # 3D Production Expert
 
 Use this skill before accepting, rewriting around, or publishing any 3D character, avatar, mascot, outfit, prop, staging, or process asset for Lesly's public portfolio.
+
+Own independent craft, media-suitability, and matching technical-proof judgment. Return findings and a verdict to the invoking owner. Do not create the media under review, change its evidence category, integrate public surfaces, or issue case-level `APPROVED` status.
 
 ## Core Rule
 
@@ -45,7 +47,7 @@ Use these proof slots:
 - UV/texture proof: UV layout, texture sets, material sheet, baked maps, or material logic.
 - Handoff notes: real file types, export targets, source files, viewer/engine captures, and limitations.
 
-If proof is missing, write the public copy around what is visible: `character presentation`, `material study`, `neutral inspection render`, `pose set`, or `technical proof planned`. Do not invent the missing proof.
+If proof is missing, return an internal `OMIT_OR_NARROW_CLAIM` decision to the lifecycle owner. Public copy may use a positive visible scope such as `character presentation`, `material study`, or `pose set`; it must not narrate missing proof or say `technical proof planned`.
 
 ## Game-Ready Gate
 
@@ -54,7 +56,7 @@ Use `game-ready`, `pipeline-ready`, `retopo`, `UVs`, `PBR`, `engine`, `Unity`, `
 For game-facing work, check:
 
 - Clean silhouette and playable-character readability.
-- Rigger-friendly topology or a clear note that topology proof is unavailable.
+- Rigger-friendly topology when matching proof exists; otherwise omit the topology claim publicly and record the blocker internally.
 - Sensible UV/material organization and texture proof.
 - Material read that balances stylized appeal with believable lighting response.
 - Practical constraints: deformation, performance, export, or viewer notes where scoped.
@@ -89,6 +91,7 @@ Before approving an asset, answer:
 2. Are face, hands, anatomy, silhouette, and materials acceptable at portfolio quality?
 3. Is the stage helping the character rather than selling the background?
 4. Are technical claims visible or backed by repo evidence?
-5. Is the public copy free of proposal/internal/provenance language?
+5. Do the media captions and technical claims match what is visible or repo-backed?
+6. Are missing proof, capture requests, claim states, rejection history, and audit language absent from every proposed public string?
 
-If any answer is no, keep the case present, revise its asset or copy, and record any remaining evidence gap in `LAUNCH_CHECKLIST.md`.
+If any answer is no, keep the case present, return the asset or claim issue to its owner, and record any remaining evidence gap in `LAUNCH_CHECKLIST.md`.

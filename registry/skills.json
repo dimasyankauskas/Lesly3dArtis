@@ -5,7 +5,7 @@
     {
       "name": "build-lesly-case-study",
       "path": ".agents/skills/build-lesly-case-study/SKILL.md",
-      "job": "Orchestrate one case-study lifecycle from preserved route through expert and browser approval.",
+      "job": "Orchestrate and certify one case-study lifecycle from preserved route through specialist and browser approval.",
       "owner": "case-study-lifecycle",
       "invocation": "auto",
       "certification": "v1-candidate"
@@ -21,7 +21,7 @@
     {
       "name": "3d-portfolio-writing-director",
       "path": ".agents/skills/3d-portfolio-writing-director/SKILL.md",
-      "job": "Write evidence-bounded public portfolio positioning and case-study narratives.",
+      "job": "Write truthful, finished recruiter-facing portfolio positioning and case-study narratives from the approved public story packet.",
       "owner": "public-portfolio-copy",
       "invocation": "auto",
       "certification": "v1-candidate"
@@ -37,7 +37,7 @@
     {
       "name": "humanizer",
       "path": ".agents/skills/humanizer/SKILL.md",
-      "job": "Polish approved public copy without changing facts, meaning, or evidence boundaries.",
+      "job": "Polish approved public copy without changing facts, meaning, or the internal/public truth boundary.",
       "owner": "final-language-polish",
       "invocation": "supporting",
       "certification": "supporting"
@@ -45,7 +45,7 @@
     {
       "name": "lesly-website-finalizer",
       "path": ".agents/skills/lesly-website-finalizer/SKILL.md",
-      "job": "Integrate and launch-check the public portfolio against deterministic and rendered evidence.",
+      "job": "Verify and launch-check the implemented public portfolio against deterministic and rendered evidence.",
       "owner": "release-integration",
       "invocation": "auto",
       "certification": "v1-candidate"

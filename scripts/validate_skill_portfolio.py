@@ -3,11 +3,13 @@
 
 from __future__ import annotations
 
-import json
+import argparse
 import hashlib
+import json
 import re
 import subprocess
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
 
 
@@ -16,6 +18,19 @@ SKILL_REGISTRY = ROOT / "registry" / "skills.json"
 CASE_REGISTRY = ROOT / "registry" / "portfolio-cases.json"
 ALLOWED_INVOCATIONS = {"auto", "supporting", "explicit"}
 ALLOWED_FRONTMATTER = {"name", "description"}
+LOCKED_SKILL_OWNERS = {
+    "build-lesly-case-study": "case-study-lifecycle",
+    "3d-production-expert": "portfolio-media-and-proof",
+    "3d-portfolio-writing-director": "public-portfolio-copy",
+    "frontend-design": "frontend-implementation",
+    "lesly-website-finalizer": "release-integration",
+}
+REQUIRED_CASE_STUDY_REFERENCES = (
+    "case-outline-template.md",
+    "category-proof-modules.md",
+    "image-model-media-protocol.md",
+    "evaluation-scenarios.md",
+)
 LOCKED_CASE_CONTRACT = {
     "game-hero": (True, 2),
     "character-environment": (True, 2),
@@ -30,6 +45,288 @@ LOCKED_CASE_CONTRACT = {
     "outfits-accessories": (True, 2),
     "pbr-texturing": (True, 2),
     "original-site-concept": (True, 2),
+}
+
+AUDIENCE_RULES = (
+    ("EXACT_EVIDENCE_STATUS", re.compile(r"\bevidence status\b", re.IGNORECASE)),
+    (
+        "EXACT_PRODUCTION_NOT_VERIFIED",
+        re.compile(r"\bproduction is not(?: yet)? verified\b", re.IGNORECASE),
+    ),
+    ("EXACT_REQUIRED_NEXT", re.compile(r"\brequired next\b", re.IGNORECASE)),
+    (
+        "EXACT_CAPTURE_CHANGES_CLAIM",
+        re.compile(r"\bone capture that changes the claim\b", re.IGNORECASE),
+    ),
+    (
+        "EXACT_HYPOTHETICAL_FORGE_MODEL",
+        re.compile(r"\bif the Forge Warden model exists\b", re.IGNORECASE),
+    ),
+    (
+        "EXACT_CURRENT_PACKAGE_INSPECTABLE",
+        re.compile(r"\bwhat the current package makes inspectable\b", re.IGNORECASE),
+    ),
+    (
+        "INTERNAL_VISIBILITY_STATE",
+        re.compile(
+            r"\b(?:visible|verified) now\b|\b(?:project evidence|verified capture|supporting evidence)\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "INTERNAL_LEDGER_LANGUAGE",
+        re.compile(
+            r"\b(?:evidence|proof)\s+(?:ledger|map|slot|status|state|pending|category)\b"
+            r"|\bpending\s+(?:evidence|proof|capture)\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "INTERNAL_CLAIM_STATE",
+        re.compile(
+            r"\b(?:claim|evidence|proof)\s+"
+            r"(?:boundary|gate|state|status|plan|path|requirement|requirements|question|questions|blocker)\b"
+            r"|\b(?:review|human) boundary\b|\bacceptance path\b|\bproduction acceptance\b"
+            r"|^(?:direction|proof|evidence) shown(?:$|[:.—-])"
+            r"|\bunsupported claim\b|\bmatching-asset status\b|\bpermission status\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "MISSING_OR_UNVERIFIED_FRAMING",
+        re.compile(
+            r"\b(?:not yet|is not|are not|was not|were not|remains? not|remains? un|none)\s*"
+            r"(?:verified|documented|captured|evidenced)\b"
+            r"|\b(?:is|are|was|were|remains?)\s+(?:unverified|undocumented)\b"
+            r"|\b(?:unverified|undocumented)\s+"
+            r"(?:role|team|authorship|contribution|production|model|scene|asset|record|claim|evidence|proof|capture|result|outcome|approval|client|site)\b"
+            r"|^(?:unverified|undocumented)$",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "NEGATIVE_CLAIM_DISCLAIMER",
+        re.compile(
+            r"\bno\s+(?:matching|verified|production|technical|source|project|client|site|model|scene|asset|record|capture|evidence|proof|polycount|topology|UV|bake|texture|rig)\b"
+            r"[^.!?]{0,240}\b(?:is|are)\s+(?:shown|claimed|verified|documented|presented)\b"
+            r"|\bno\b[^.!?]{0,240}\bclaim is made\b"
+            r"|\bno\s+(?:option|selection|approval|outcome)\b[^.!?]{0,120}\b"
+            r"(?:is|are)\s+(?:selected|recorded|verified|documented|shown|presented)\b"
+            r"|\b(?:this|the|these|those)?\s*(?:current|public|existing|generated|final)?\s*"
+            r"(?:page|case|study|package|image|images|media|render|renders|work|project|asset|assets|result|results|direction)\b"
+            r"[^.!?]{0,80}\b(?:cannot|can't)\s+(?:document|verify|prove|confirm)\b"
+            r"|\b(?:this|the|these|those)?\s*(?:current|public|existing|generated|final)?\s*"
+            r"(?:page|case|study|package|image|images|media|render|renders|work|project|asset|assets|result|results|direction)\b"
+            r"[^.!?]{0,80}\b(?:does not|do not)\s+(?:document|verify|claim)\b"
+            r"|\b(?:this|the|these|those)?\s*(?:current|public|existing|generated|final)?\s*"
+            r"(?:page|case|study|package|image|images|media|render|renders|work|project|asset|assets|result|results|direction)\b"
+            r"[^.!?]{0,80}\b(?:does not|do not)\s+(?:present|imply)\b[^.!?]{0,100}\b"
+            r"(?:evidence|proof|model|scene|asset|client|commission|approval|outcome|authorship|ownership|technical|production|verified|captured|rig|topology|UV|physical|site|source)\b"
+            r"|\b(?:work|project|case|study|page|package|image|images|media|render|renders|asset|assets|result|results|direction|client|commission|approval|outcome|authorship)\b"
+            r"\s+(?:is|are)\s+not\s+(?:claimed|presented as)\b"
+            r"|\bno\s+(?:client|commission)\s+(?:is|was)\s+(?:named|involved|claimed)\b"
+            r"|\bthere\s+(?:is|are)\s+no\s+(?:matching\s+)?"
+            r"(?:model|scene|asset|source (?:models?|files?|scenes?|assets?)|evidence|proof|capture|record)\b"
+            r"|\bmodel\s+is\s+not\s+presented\s+as\s+"
+            r"(?:finished|production|game-ready|verified|captured|technical)\b"
+            r"|\bwithout\s+(?:presenting|claiming|implying)\b[^.!?]{0,100}\b"
+            r"(?:finished|production|technical|verified|captured|matching|client|project|model|scene|asset|proof|evidence|outcome|approval|authorship|delivery)\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "PROOF_NEGATION_DISCLAIMER",
+        re.compile(
+            r"\b(?:is|are|was|were)\s+not\b[^.!?]{0,180}\b(?:evidence|proof)\b"
+            r"|\bnot\s+(?:a|an|one|the)\b[^.!?]{0,180}\b"
+            r"(?:matching (?:model|scene|asset)|project record|production result|technical delivery)\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "FUTURE_EVIDENCE_REQUEST",
+        re.compile(
+            r"\b(?:next|future|later)\s+(?:capture|captures|evidence|proof|record|records)\b"
+            r"|\b(?:missing|requested|pending)\s+(?:capture|captures|evidence|proof|record|records)\b"
+            r"|\b(?:capture|captures|evidence|proof|record|records)\s+"
+            r"(?:(?:is|are|would be|will be)\s+)?(?:required|needed|must|should)\b"
+            r"|(?:^|[.!?;:]\s+)(?:needs?|requires?)\s+(?:a|an|one|the)?\s*"
+            r"(?:future|next|matching|real|technical)?\s*(?:capture|record|evidence|proof)\b"
+            r"|^(?:need|needs|required|request|requested):\s+[^.!?]{0,80}\b"
+            r"(?:capture|record|evidence|proof|DCC|wireframes?|topology|UVs?|bakes?|texture maps?|rig|source (?:models?|files?|scenes?|assets?))\b"
+            r"|\b(?:page|case|claim|package|study|copy|section)\s+(?:needs?|requires?)\s+"
+            r"(?:a|an|one|the)?\s*(?:future|next|matching|real|technical)?\s*"
+            r"(?:capture|record|evidence|proof)\b"
+            r"|\b(?:first|next)\s+(?:technical\s+)?evidence\s+(?:needed|required)\b"
+            r"|\b(?:matching|traceable|permissioned)\b[^.!?]{0,120}\b(?:capture|record|evidence)\b"
+            r"|\buntil\s+(?:captured|verified|documented)\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "INTERNAL_PROOF_PENDING",
+        re.compile(
+            r"\b(?:evidence|proof|verification|capture|record)\b\s*"
+            r"(?:(?:is|are|remains?|would be|will be|still)\s+)*"
+            r"(?::|—|-)?\s*(?:TBD|TODO|pending|missing|outstanding|unavailable|forthcoming|needed|required|to come)\b"
+            r"|\b(?:wireframes?|topology|UVs?|bakes?|texture maps?|rig|(?:matching\s+)?model|source (?:files?|scenes?|assets?)|DCC (?:file|record|capture))\b\s*"
+            r"(?:(?:is|are|remains?|still)\s+)*(?::|—|-)?\s*"
+            r"(?:TBD|TODO|pending|missing|outstanding|unavailable|to come)\b"
+            r"|\b(?:wireframes?|topology|UVs?|bakes?|texture maps?|rig|(?:matching\s+)?model|source (?:models?|files?|scenes?|assets?)|DCC (?:file|record|capture))\b\s*"
+            r"(?:(?:is|are)\s+not\s+available|(?:does not|doesn't)\s+exist)\b"
+            r"|\b(?:wireframes?|topology|UVs?|bakes?|texture maps?|rig|(?:matching\s+)?model|source (?:models?|files?|scenes?|assets?)|DCC (?:file|record|capture))\b"
+            r"[^.!?]{0,60}\b(?:will|would|can|could)\s+(?:be\s+)?"
+            r"(?:added|provided|documented|verified|captured|come|follow)\b[^.!?]{0,40}\b"
+            r"(?:later|next|future update)\b"
+            r"|\b(?:wireframes?|topology|UVs?|bakes?|texture maps?|rig|(?:matching\s+)?model|source (?:models?|files?|scenes?|assets?)|DCC (?:file|record|capture)|evidence|proof|verification|capture|record)\b"
+            r"[^.!?]{0,30}\b(?:coming soon|future work|to be added|to follow)\b"
+            r"|\bpending\s+(?:DCC|wireframes?|topology|UVs?|bakes?|texture maps?|rig|source (?:models?|files?|scenes?|assets?)|model|capture|evidence|proof|record)\b"
+            r"|\bfuture update\b[^.!?]{0,80}\b(?:add|provide|document|verify|capture)\b"
+            r"[^.!?]{0,60}\b(?:DCC|wireframes?|topology|UVs?|bakes?|texture maps?|rig|source (?:models?|files?|scenes?|assets?)|model|capture|evidence|proof|record)\b"
+            r"|\b(?:awaits?|waiting for|waiting on)\b[^.!?]{0,80}\b"
+            r"(?:DCC|wireframes?|topology|UVs?|bakes?|texture maps?|rig|source (?:models?|files?|scenes?|assets?)|model|capture|evidence|proof|record)\b"
+            r"|\bno\s+(?:matching\s+)?(?:DCC|wireframes?|topology|UVs?|bakes?|texture maps?|rig|source (?:models?|files?|scenes?|assets?)|model|capture|evidence|proof|record)\b"
+            r"[^.!?]{0,40}\b(?:yet|available|exists?)\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "HYPOTHETICAL_PRODUCTION_INSTRUCTION",
+        re.compile(
+            r"\bif\s+(?:the|a|an)?\s*(?:model|source|file|scene|asset|record)\b[^.!?]{0,100}\bexists?\b"
+            r"|\bwhen\s+(?:the\s+)?matching\b[^.!?]{0,120}\b(?:exists?|available|completed)\b"
+            r"|\b(?:if|when|once|after)\b[^.!?]{0,100}\b(?:is|becomes)\s+"
+            r"(?:modeled|built|available|captured|verified|documented)\b"
+            r"|\b(?:if|when|once)\s+(?:(?:it|this|that|the [a-z-]+)\s+)?"
+            r"(?:is\s+)?(?:available|verified|captured|documented)\b"
+            r"|\buntil\b[^.!?]{0,80}\b(?:have|receive|obtain)\b[^.!?]{0,80}\b"
+            r"(?:model|source|file|scene|capture|evidence|proof|record)\b"
+            r"|\bwhere (?:scoped|completed|the scope requires)\b|\bfuture matching\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "MAINTAINER_FACING_INSTRUCTION",
+        re.compile(
+            r"(?:^|[.!?;:,]\s+)(?:please\s+)?"
+            r"(?:capture|provide|supply)\b[^.!?]{0,160}\b"
+            r"(?:DCC|wireframes?|UVs?|bakes?|texture maps?|source (?:files?|scenes?|assets?)|evidence|proof)\b"
+            r"|(?:^|[.!?;:,]\s+)(?:please\s+)?add\b[^.!?]{0,160}\b"
+            r"(?:capture|record|evidence|proof)\b"
+            r"|\b(?:capture|document|verify)\b[^.!?]{0,80}\b(?:later|next|when available)\b"
+            r"|\b(?:evidence|proof|capture|record)\b[^.!?]{0,80}\b"
+            r"(?:will|would|can|could)\s+be\s+(?:added|provided|captured|documented|verified)\s+"
+            r"(?:later|next|when available)\b"
+            r"|\b(?:DCC|wireframes?|UVs?|bakes?|texture maps?|source (?:files?|scenes?|assets?))\b"
+            r"[^.!?]{0,80}\b(?:would|will)\s+(?:change|upgrade|verify|support)\b"
+            r"[^.!?]{0,40}\b(?:claim|proof|case)\b"
+            r"|\bbefore\b[^.!?]{0,160}\bcan be claimed\b"
+            r"|\bonly after\b[^.!?]{0,160}\b(?:exists?|captured|verified|documented)\b"
+            r"|\bwhat (?:this page shows|completes (?:production|technical) proof)\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "INTERNAL_PROVENANCE_NOTE",
+        re.compile(
+            r"\b(?:source[- ]lineage|presentation provenance|rejection history|audit commentary)\b"
+            r"|\b(?:role|team|authorship|contribution)(?:\s+(?:is|was))?\s*"
+            r"(?:[:·—-]\s*)?(?:not documented|unverified|unknown)\b"
+            r"|\bpublic-use rights\b|\bapproval state\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "INTERNAL_GATE_TOKEN",
+        re.compile(r"\bCASE_ADVANCE_GATE\b|\b(?:APPROVED|BLOCKED|FAIL)\b|\bP[012]\b"),
+    ),
+)
+
+NON_PUBLIC_FACT_VALUE = re.compile(
+    r"^(?:TBD|TODO|N/?A|none|unknown|unconfirmed|pending|"
+    r"not (?:documented|confirmed|available|provided|known))(?:\b|$)",
+    re.IGNORECASE,
+)
+
+FORBIDDEN_PUBLIC_STRUCTURE_PATTERNS = (
+    (
+        "FORBIDDEN_EVIDENCE_CAPTURE_SELECTOR",
+        re.compile(
+            r"\bdata-[a-z0-9-]*(?:evidence|capture)[a-z0-9-]*\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "FORBIDDEN_EVIDENCE_CAPTURE_CLASS_OR_ID",
+        re.compile(
+            r"\b(?:class|id)=[\"'][^\"']*\b"
+            r"[a-z0-9_-]*(?:evidence|capture)[a-z0-9_-]*\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "FORBIDDEN_EVIDENCE_CAPTURE_CSS_SELECTOR",
+        re.compile(
+            r"[.#][a-z0-9_-]*(?:evidence|capture)[a-z0-9_-]*(?=\s*[{,>:~+])",
+            re.IGNORECASE,
+        ),
+    ),
+)
+
+VOID_HTML_ELEMENTS = {
+    "area",
+    "base",
+    "br",
+    "col",
+    "embed",
+    "hr",
+    "img",
+    "input",
+    "link",
+    "meta",
+    "param",
+    "source",
+    "track",
+    "wbr",
+}
+
+BLOCK_HTML_ELEMENTS = {
+    "address",
+    "article",
+    "aside",
+    "blockquote",
+    "dd",
+    "div",
+    "dl",
+    "dt",
+    "fieldset",
+    "figcaption",
+    "figure",
+    "footer",
+    "form",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "header",
+    "hr",
+    "li",
+    "main",
+    "nav",
+    "ol",
+    "p",
+    "pre",
+    "section",
+    "table",
+    "tbody",
+    "td",
+    "tfoot",
+    "th",
+    "thead",
+    "tr",
+    "ul",
 }
 
 
@@ -53,22 +350,186 @@ def parse_frontmatter(path: Path) -> dict[str, str]:
     return values
 
 
-def load_rendered_cases() -> list[dict]:
+class VisibleTextParser(HTMLParser):
+    """Extract browser-visible static text without scripts, styles, or hidden nodes."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+        self.stream: list[str] = []
+        self._skip_stack: list[bool] = []
+        self._skip_depth = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        tag = tag.lower()
+        attributes = {name.lower(): value for name, value in attrs}
+        own_skip = (
+            tag in {"script", "style", "template", "noscript"}
+            or "hidden" in attributes
+            or (attributes.get("aria-hidden") or "").lower() == "true"
+        )
+        inherited_skip = self._skip_depth > 0
+        skip = own_skip or inherited_skip
+        if tag in BLOCK_HTML_ELEMENTS and not skip:
+            self.stream.append("\n")
+        if tag not in VOID_HTML_ELEMENTS:
+            self._skip_stack.append(skip)
+            if skip:
+                self._skip_depth += 1
+        if tag == "img" and not skip:
+            alt = attributes.get("alt")
+            if alt:
+                self.parts.append(alt)
+                self.stream.append(alt)
+
+    def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        self.handle_starttag(tag, attrs)
+        if tag.lower() not in VOID_HTML_ELEMENTS:
+            self.handle_endtag(tag)
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = tag.lower()
+        if tag in VOID_HTML_ELEMENTS or not self._skip_stack:
+            return
+        skipped = self._skip_stack.pop()
+        if skipped:
+            self._skip_depth -= 1
+        elif tag in BLOCK_HTML_ELEMENTS:
+            self.stream.append("\n")
+
+    def handle_data(self, data: str) -> None:
+        if self._skip_depth == 0:
+            self.stream.append(data)
+            if data.strip():
+                self.parts.append(data)
+
+
+def visible_html_text(source: str) -> str:
+    parser = VisibleTextParser()
+    parser.feed(source)
+    parser.close()
+    return " ".join(part.strip() for part in parser.parts if part.strip())
+
+
+def visible_html_parts(source: str) -> list[str]:
+    parser = VisibleTextParser()
+    parser.feed(source)
+    parser.close()
+    return [re.sub(r"\s+", " ", part).strip() for part in parser.parts if part.strip()]
+
+
+def visible_html_blocks(source: str) -> list[str]:
+    parser = VisibleTextParser()
+    parser.feed(source)
+    parser.close()
+    return [
+        re.sub(r"\s+", " ", block).strip()
+        for block in "".join(parser.stream).splitlines()
+        if block.strip()
+    ]
+
+
+def load_runtime_cases() -> list[dict]:
+    """Evaluate the complete JS and export the final merged, renderer-facing case data."""
+
     node_program = r"""
 const fs=require('fs');
 const vm=require('vm');
 const source=fs.readFileSync('case-study.js','utf8');
-const boundary=source.indexOf('const fallbackStudy=');
-if(boundary<0)throw new Error('case-study data boundary not found');
-const sandbox={};
-vm.runInNewContext(source.slice(0,boundary)+'\nglobalThis.__cases=CASE_STUDIES;',sandbox,{filename:'case-study.js'});
-const output=sandbox.__cases.map(item=>({
-  id:item.id,
-  title:item.title,
-  hero:item.hero?.src||null,
-  gallery:(item.gallery||[]).map(media=>media.src||media[0]).filter(Boolean)
-}));
-process.stdout.write(JSON.stringify(output));
+const sandbox={
+  URLSearchParams,
+  window:{location:{search:''}},
+  document:{
+    title:'',
+    body:{dataset:{},classList:{toggle(){}}},
+    querySelector(){return null;}
+  },
+  console:{log(){},warn(){},error(){}}
+};
+const exportProgram=String.raw`
+function __publicView(study){
+  const narrative=CASE_NARRATIVES[study.id]||CASE_NARRATIVES['game-hero']||{};
+  const visibility={direction:true,problem:true,process:true,media:true,result:Boolean(study.resultSummary),details:true,proof:true,deliverables:true,...(study.visibleSections||{})};
+  const gallery=(study.gallery||[]).map(media=>Array.isArray(media)
+    ? {alt:media[1]||'',caption:media[1]||'',status:''}
+    : {
+        alt:media.alt||'',
+        caption:media.caption||'',
+        status:CASE_STATUS_LABELS[media.mediaStatus]||'Project media'
+      });
+  const related=Object.fromEntries(getRelatedCases(study).map(item=>[
+    item.id,
+    {
+      thumbnailAlt:item.hero?.alt||'',
+      thumbnailLabel:item.hero?'':item.kicker||'Selected work',
+      thumbnailSublabel:item.hero?'':'Project story',
+      title:item.title||'',
+      meta:item.kicker||'Selected work',
+      lead:item.relatedLead||'Explore the project story and final presentation.'
+    }
+  ]));
+  return {
+    title:study.title||'',
+    kicker:study.kicker||'Selected work',
+    meta:study.meta||[],
+    lead:study.lead||'',
+    hero:{
+      alt:study.hero?.alt||study.alt||'',
+      caption:study.heroCaption||''
+    },
+    facts:study.facts||[],
+    direction:visibility.direction?{
+      label:study.directionLabel||'Project direction',
+      title:study.whatTitle||study.directionTitle||'Project direction.',
+      copy:study.whatCopy||study.directionCopy||''
+    }:null,
+    problem:visibility.problem?{
+      label:study.problemLabel||'Problem solved',
+      title:study.problemTitle||narrative.problemTitle||'Problem solved.',
+      items:study.problems||narrative.problems||[]
+    }:null,
+    process:visibility.process?{
+      label:study.processLabel||'Process',
+      title:study.processTitle||'Process structure.',
+      items:study.process||narrative.process||[]
+    }:null,
+    media:visibility.media?{
+      label:study.mediaLabel||'Selected project media',
+      title:study.mediaTitle||'Visual direction.',
+      gallery
+    }:null,
+    result:visibility.result&&study.resultSummary?{
+      label:study.resultSummary.label||'Final presentation',
+      title:study.resultSummary.title||'Project result.',
+      copy:study.resultSummary.copy||''
+    }:null,
+    details:visibility.details?{
+      label:study.detailsLabel||'Visual read',
+      title:study.detailsTitle||'Visual read.',
+      items:study.details||[]
+    }:null,
+    proof:visibility.proof?{
+      label:study.proofLabel||'Build specification',
+      title:study.proofTitle||'Production direction.',
+      items:study.proof||[]
+    }:null,
+    deliverables:visibility.deliverables?{
+      label:study.deliverablesLabel||'Deliverables',
+      title:study.deliverablesTitle||'Project package.',
+      items:getPublicDeliverables(study)
+    }:null,
+    related
+  };
+}
+globalThis.__cases=CASE_STUDIES.map(study=>({
+  id:study.id,
+  runtime:study,
+  public:__publicView(study),
+  hero:study.hero?.src||study.image||null,
+  gallery:(study.gallery||[]).map(media=>media.src||media[0]).filter(Boolean)
+}));`;
+vm.runInNewContext(source+'\n'+exportProgram,sandbox,{filename:'case-study.js'});
+process.stdout.write(JSON.stringify(sandbox.__cases));
 """
     result = subprocess.run(
         ["node", "-e", node_program],
@@ -92,21 +553,308 @@ def file_digest(path: Path) -> str:
     return digest.hexdigest()
 
 
-def homepage_cards() -> list[tuple[str, str | None]]:
+def homepage_cards() -> list[dict[str, str | None]]:
     text = (ROOT / "index.html").read_text(encoding="utf-8")
-    pattern = re.compile(
-        r'<a\b(?=[^>]*class="[^"]*\bwork-card\b)[^>]*'
-        r'href="case-study\.html\?id=([^"]+)"[^>]*>(.*?)</a>',
-        re.DOTALL,
-    )
-    cards: list[tuple[str, str | None]] = []
-    for case_id, body in pattern.findall(text):
+    anchor_pattern = re.compile(r"<a\b([^>]*)>(.*?)</a>", re.DOTALL | re.IGNORECASE)
+    cards: list[dict[str, str | None]] = []
+    for attributes, body in anchor_pattern.findall(text):
+        class_match = re.search(r'\bclass=["\']([^"\']*)["\']', attributes, re.IGNORECASE)
+        href_match = re.search(r'\bhref=["\']([^"\']*)["\']', attributes, re.IGNORECASE)
+        classes = (class_match.group(1) if class_match else "").split()
+        href = href_match.group(1) if href_match else ""
+        case_match = re.fullmatch(r"case-study\.html\?id=([^&#]+)", href)
+        if "work-card" not in classes or not case_match:
+            continue
+        case_id = case_match.group(1)
         image_match = re.search(r'<img\b[^>]*src="([^"]+)"', body)
-        cards.append((case_id, image_match.group(1) if image_match else None))
+        alt_match = re.search(r'<img\b[^>]*alt="([^"]*)"', body)
+        cards.append(
+            {
+                "id": case_id,
+                "image": image_match.group(1) if image_match else None,
+                "alt": alt_match.group(1) if alt_match else "",
+                "text": visible_html_text(body),
+            }
+        )
     return cards
 
 
-def validate() -> list[str]:
+def iter_public_strings(value: object, path: str) -> list[tuple[str, str]]:
+    strings: list[tuple[str, str]] = []
+    if isinstance(value, str):
+        if value.strip():
+            strings.append((path, value))
+        return strings
+    if isinstance(value, list):
+        for index, item in enumerate(value):
+            strings.extend(iter_public_strings(item, f"{path}[{index}]"))
+        return strings
+    if isinstance(value, dict):
+        for key, item in value.items():
+            strings.extend(iter_public_strings(item, f"{path}.{key}"))
+    return strings
+
+
+def has_public_words(value: object, minimum: int = 1) -> bool:
+    if not isinstance(value, str):
+        return False
+    normalized = re.sub(r"\s+", " ", value).strip()
+    return len(re.findall(r"\b[\w’'-]+\b", normalized)) >= minimum
+
+
+def public_cards_complete(value: object, minimum: int = 2) -> bool:
+    if not isinstance(value, list) or len(value) < minimum:
+        return False
+    return all(
+        isinstance(item, list)
+        and len(item) >= 2
+        and has_public_words(item[0])
+        and has_public_words(item[1], 6)
+        for item in value
+    )
+
+
+def completeness_failure(case_id: str, path: str, rule: str, value: object) -> str:
+    if isinstance(value, str) and value.strip():
+        failure_excerpt = re.sub(r"\s+", " ", value).strip()
+    elif isinstance(value, (list, dict)) and value:
+        failure_excerpt = json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+        if len(failure_excerpt) > 180:
+            failure_excerpt = f"{failure_excerpt[:179]}…"
+    else:
+        failure_excerpt = "<missing or incomplete>"
+    return (
+        f"{case_id}: audience completeness path={path} rule={rule} "
+        f"excerpt={json.dumps(failure_excerpt, ensure_ascii=False)}"
+    )
+
+
+def public_completeness_failures(case_id: str, public: object) -> list[str]:
+    """Enforce a deterministic first-10/first-30-second recruiter read."""
+
+    if not isinstance(public, dict):
+        return [
+            completeness_failure(
+                case_id,
+                f"CASE_STUDIES[{case_id}].public",
+                "FIRST_10_PUBLIC_STORY",
+                public,
+            )
+        ]
+
+    root = f"CASE_STUDIES[{case_id}].public"
+    failures: list[str] = []
+    for field, minimum, rule in (
+        ("title", 2, "FIRST_10_TITLE"),
+        ("kicker", 2, "FIRST_10_SCOPE_LABEL"),
+        ("lead", 8, "FIRST_10_PROJECT_LEAD"),
+    ):
+        value = public.get(field)
+        if not has_public_words(value, minimum):
+            failures.append(completeness_failure(case_id, f"{root}.{field}", rule, value))
+
+    hero = public.get("hero")
+    if not isinstance(hero, dict) or not has_public_words(hero.get("alt"), 4):
+        failures.append(
+            completeness_failure(
+                case_id,
+                f"{root}.hero.alt",
+                "FIRST_10_HERO_ALT",
+                hero.get("alt") if isinstance(hero, dict) else hero,
+            )
+        )
+    if not isinstance(hero, dict) or not has_public_words(hero.get("caption"), 3):
+        failures.append(
+            completeness_failure(
+                case_id,
+                f"{root}.hero.caption",
+                "FIRST_10_HERO_CAPTION",
+                hero.get("caption") if isinstance(hero, dict) else hero,
+            )
+        )
+
+    facts = public.get("facts")
+    fact_pairs = (
+        [item for item in facts if isinstance(item, list) and len(item) >= 2]
+        if isinstance(facts, list)
+        else []
+    )
+    scope_fact = next(
+        (
+            item
+            for item in fact_pairs
+            if re.search(
+                r"\b(?:brief|assignment|scope|use case|project(?: type)?|overview|type|discipline)\b",
+                str(item[0]),
+                re.I,
+            )
+            and has_public_words(item[1], 3)
+        ),
+        None,
+    )
+    if not scope_fact:
+        failures.append(
+            completeness_failure(case_id, f"{root}.facts", "FIRST_10_PROJECT_SCOPE_FACT", facts)
+        )
+
+    attribution_fact = next(
+        (
+            item
+            for item in fact_pairs
+            if re.search(
+                r"\b(?:role|contribution|what I did|responsibilit(?:y|ies)|credits?)\b",
+                str(item[0]),
+                re.I,
+            )
+            and has_public_words(item[1], 2)
+            and not NON_PUBLIC_FACT_VALUE.match(re.sub(r"\s+", " ", str(item[1])).strip())
+        ),
+        None,
+    )
+    if not attribution_fact:
+        failures.append(
+            completeness_failure(
+                case_id,
+                f"{root}.facts",
+                "FIRST_10_ROLE_OR_CONTRIBUTION_FACT",
+                facts,
+            )
+        )
+
+    direction = public.get("direction")
+    if not (
+        isinstance(direction, dict)
+        and has_public_words(direction.get("label"))
+        and has_public_words(direction.get("title"), 4)
+        and has_public_words(direction.get("copy"), 8)
+    ):
+        failures.append(
+            completeness_failure(
+                case_id, f"{root}.direction", "FIRST_30_PROJECT_DIRECTION", direction
+            )
+        )
+
+    for field, rule in (
+        ("problem", "FIRST_30_CHALLENGE_AND_DECISIONS"),
+        ("process", "FIRST_30_PROCESS"),
+        ("details", "FIRST_30_DESIGN_DECISIONS"),
+    ):
+        section = public.get(field)
+        if not (
+            isinstance(section, dict)
+            and has_public_words(section.get("label"))
+            and has_public_words(section.get("title"), 4)
+            and public_cards_complete(section.get("items"))
+        ):
+            failures.append(
+                completeness_failure(case_id, f"{root}.{field}", rule, section)
+            )
+
+    result = public.get("result")
+    if not (
+        isinstance(result, dict)
+        and has_public_words(result.get("label"))
+        and has_public_words(result.get("title"), 4)
+        and has_public_words(result.get("copy"), 8)
+    ):
+        failures.append(
+            completeness_failure(case_id, f"{root}.result", "FIRST_30_FINISHED_RESULT", result)
+        )
+
+    media = public.get("media")
+    gallery = media.get("gallery") if isinstance(media, dict) else None
+    gallery_complete = (
+        isinstance(gallery, list)
+        and len(gallery) >= 1
+        and all(
+            isinstance(item, dict)
+            and has_public_words(item.get("alt"), 3)
+            and has_public_words(item.get("caption"), 5)
+            for item in gallery
+        )
+    )
+    if not (
+        isinstance(media, dict)
+        and has_public_words(media.get("label"))
+        and has_public_words(media.get("title"), 3)
+        and gallery_complete
+    ):
+        failures.append(
+            completeness_failure(case_id, f"{root}.media", "FIRST_30_SUPPORTING_MEDIA", media)
+        )
+
+    return failures
+
+
+def excerpt(value: str, start: int, end: int, limit: int = 180) -> str:
+    normalized = re.sub(r"\s+", " ", value).strip()
+    if len(normalized) <= limit:
+        return normalized
+    center = (start + end) // 2
+    left = max(0, center - limit // 2)
+    right = min(len(normalized), left + limit)
+    left = max(0, right - limit)
+    prefix = "…" if left else ""
+    suffix = "…" if right < len(normalized) else ""
+    return f"{prefix}{normalized[left:right].strip()}{suffix}"
+
+
+def audience_failures(case_id: str, path: str, value: str) -> list[str]:
+    normalized = re.sub(r"\s+", " ", value).strip()
+    failures: list[str] = []
+    for rule_name, pattern in AUDIENCE_RULES:
+        match = pattern.search(normalized)
+        if not match:
+            continue
+        matched_excerpt = json.dumps(
+            excerpt(normalized, match.start(), match.end()), ensure_ascii=False
+        )
+        failures.append(
+            f'{case_id}: audience copy path={path} rule={rule_name} '
+            f"excerpt={matched_excerpt}"
+        )
+    return failures
+
+
+def structural_runtime_failures(case_id: str, value: object, path: str) -> list[str]:
+    failures: list[str] = []
+    if isinstance(value, list):
+        for index, item in enumerate(value):
+            failures.extend(structural_runtime_failures(case_id, item, f"{path}[{index}]"))
+        return failures
+    if not isinstance(value, dict):
+        return failures
+    for key, item in value.items():
+        key_path = f"{path}.{key}"
+        if re.search(r"evidence|capture", key, re.IGNORECASE):
+            matched_excerpt = json.dumps(key, ensure_ascii=False)
+            failures.append(
+                f'{case_id}: public structure path={key_path} '
+                f"rule=FORBIDDEN_EVIDENCE_CAPTURE_KEY excerpt={matched_excerpt}"
+            )
+        failures.extend(structural_runtime_failures(case_id, item, key_path))
+    return failures
+
+
+def structural_source_failures(path: Path) -> list[str]:
+    if not path.exists():
+        return []
+    source = re.sub(r"\s+", " ", path.read_text(encoding="utf-8")).strip()
+    failures: list[str] = []
+    for rule_name, pattern in FORBIDDEN_PUBLIC_STRUCTURE_PATTERNS:
+        match = pattern.search(source)
+        if match:
+            matched_excerpt = json.dumps(
+                excerpt(source, match.start(), match.end()), ensure_ascii=False
+            )
+            failures.append(
+                f'shared: public structure path={path.relative_to(ROOT)} '
+                f"rule={rule_name} excerpt={matched_excerpt}"
+            )
+    return failures
+
+
+def validate(case_filter: str | None = None) -> list[str]:
     failures: list[str] = []
 
     skill_data = load_json(SKILL_REGISTRY)
@@ -119,6 +867,13 @@ def validate() -> list[str]:
     for label, values in (("skill name", names), ("skill path", paths), ("job", jobs), ("owner", owners)):
         if len(values) != len(set(values)):
             failures.append(f"Duplicate {label} in registry")
+
+    registered_owners = {entry.get("name"): entry.get("owner") for entry in entries}
+    for name, expected_owner in LOCKED_SKILL_OWNERS.items():
+        if registered_owners.get(name) != expected_owner:
+            failures.append(
+                f"{name}: owner must remain {expected_owner}, found {registered_owners.get(name)}"
+            )
 
     active_dirs = {
         path.parent.name
@@ -165,6 +920,15 @@ def validate() -> list[str]:
         if len(body.split()) > 5000:
             failures.append(f"{name}: body exceeds 5,000 words")
 
+    case_builder_path = ROOT / ".agents" / "skills" / "build-lesly-case-study"
+    case_builder_body = (case_builder_path / "SKILL.md").read_text(encoding="utf-8")
+    for filename in REQUIRED_CASE_STUDY_REFERENCES:
+        reference = case_builder_path / "references" / filename
+        if not reference.is_file():
+            failures.append(f"build-lesly-case-study: missing references/{filename}")
+        if f"references/{filename}" not in case_builder_body:
+            failures.append(f"build-lesly-case-study: SKILL.md does not route to references/{filename}")
+
     case_data = load_json(CASE_REGISTRY)
     expected_entries = case_data.get("cases", [])
     expected_by_id = {entry["id"]: entry for entry in expected_entries}
@@ -179,12 +943,16 @@ def validate() -> list[str]:
             "Protected case corpus changed: every locked ID, homepage state, and media floor must remain"
         )
 
-    rendered = load_rendered_cases()
+    rendered = load_runtime_cases()
     rendered_by_id = {entry["id"]: entry for entry in rendered}
     if set(rendered_by_id) != set(expected_by_id):
         failures.append(
             "Case registry does not match case-study.js: "
             f"registry={sorted(expected_by_id)} source={sorted(rendered_by_id)}"
+        )
+    if case_filter and case_filter not in expected_by_id:
+        failures.append(
+            f"Unknown --case {case_filter!r}; expected one of {sorted(expected_by_id)}"
         )
 
     media_path_owners: dict[str, str] = {}
@@ -232,7 +1000,7 @@ def validate() -> list[str]:
                 media_digest_owners[digest] = (case_id, asset)
 
     cards = homepage_cards()
-    card_ids = [case_id for case_id, _ in cards]
+    card_ids = [card["id"] for card in cards]
     expected_homepage = {
         case_id for case_id, entry in expected_by_id.items() if entry.get("homepage")
     }
@@ -241,13 +1009,15 @@ def validate() -> list[str]:
             "Homepage case cards do not match registry: "
             f"expected={sorted(expected_homepage)} found={sorted(card_ids)}"
         )
-    card_sources = [clean_asset_path(src) for _, src in cards if src]
+    card_sources = [clean_asset_path(card["image"]) for card in cards if card["image"]]
     if len(card_sources) != len(cards):
         failures.append("Every homepage case card must contain an image")
     if len(card_sources) != len(set(card_sources)):
         failures.append("Homepage case cards contain duplicate image sources")
     card_digests: dict[str, tuple[str, str]] = {}
-    for case_id, source in cards:
+    for card in cards:
+        case_id = card["id"]
+        source = card["image"]
         if not source:
             continue
         asset = clean_asset_path(source)
@@ -265,25 +1035,99 @@ def validate() -> list[str]:
         else:
             card_digests[digest] = (case_id, asset)
 
+    selected_ids = (
+        [case_filter]
+        if case_filter in expected_by_id
+        else ([] if case_filter else list(expected_by_id))
+    )
+    cards_by_id = {card["id"]: card for card in cards}
+    for case_id in selected_ids:
+        item = rendered_by_id.get(case_id)
+        if not item:
+            continue
+        failures.extend(
+            structural_runtime_failures(case_id, item.get("runtime", {}), f"CASE_STUDIES[{case_id}]")
+        )
+        failures.extend(public_completeness_failures(case_id, item.get("public", {})))
+        for path, value in iter_public_strings(
+            item.get("public", {}), f"CASE_STUDIES[{case_id}].public"
+        ):
+            failures.extend(audience_failures(case_id, path, value))
+        card = cards_by_id.get(case_id)
+        if card:
+            failures.extend(
+                audience_failures(
+                    case_id,
+                    f"index.html.work-card[{case_id}].text",
+                    card.get("text") or "",
+                )
+            )
+            failures.extend(
+                audience_failures(
+                    case_id,
+                    f"index.html.work-card[{case_id}].alt",
+                    card.get("alt") or "",
+                )
+            )
+
+    for public_path in (ROOT / "index.html", ROOT / "case-study.html"):
+        if public_path.exists():
+            for index, visible_text in enumerate(
+                visible_html_blocks(public_path.read_text(encoding="utf-8"))
+            ):
+                failures.extend(
+                    audience_failures(
+                        "shared",
+                        f"{public_path.relative_to(ROOT)}.visible-text[{index}]",
+                        visible_text,
+                    )
+                )
+
+    for public_path in (
+        ROOT / "index.html",
+        ROOT / "case-study.html",
+        ROOT / "case-study.js",
+        ROOT / "styles.css",
+    ):
+        failures.extend(structural_source_failures(public_path))
+
     return failures
 
 
-def main() -> int:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Validate skill ownership, portfolio preservation, and public audience safety."
+    )
+    parser.add_argument(
+        "--case",
+        dest="case_id",
+        metavar="CASE_ID",
+        help="Run the audience gate for one active case while retaining global invariants.",
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
     try:
-        failures = validate()
+        failures = validate(args.case_id)
     except (json.JSONDecodeError, OSError, subprocess.CalledProcessError) as error:
         print(f"FAIL: validator could not run: {error}")
         return 2
 
     print("Lesly skill and portfolio registry validation")
     print("=============================================")
+    print(f"Audience scope: {args.case_id or 'all registered cases'}")
     if failures:
         print("FAIL")
         for failure in failures:
             print(f"- {failure}")
         return 2
     print("PASS")
-    print("Skill ownership is singular and the locked case corpus remains image-led and content-distinct.")
+    print(
+        "Skill ownership, locked corpus, media, and public audience gates passed for "
+        f"{args.case_id or 'all registered cases'}."
+    )
     return 0
 
 

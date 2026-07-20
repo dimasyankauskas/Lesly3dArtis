@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import re
 import subprocess
 import sys
@@ -87,7 +88,18 @@ def read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def main() -> int:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Audit Lesly public portfolio launch readiness.")
+    parser.add_argument(
+        "--case",
+        dest="case_id",
+        metavar="CASE_ID",
+        help="Use the audience validator for one active case; omit for the final all-case audit.",
+    )
+    return parser.parse_args(argv)
+
+
+def main(case_id: str | None = None) -> int:
     failures: list[str] = []
     warnings: list[str] = []
 
@@ -105,8 +117,11 @@ def main() -> int:
 
     registry_validator = SITE / "scripts" / "validate_skill_portfolio.py"
     if registry_validator.exists():
+        validator_command = [sys.executable, str(registry_validator)]
+        if case_id:
+            validator_command.extend(["--case", case_id])
         result = subprocess.run(
-            [sys.executable, str(registry_validator)],
+            validator_command,
             cwd=SITE,
             capture_output=True,
             text=True,
@@ -137,9 +152,8 @@ def main() -> int:
     if (SITE / "index.html").exists():
         index_text = read(SITE / "index.html")
         required_public_terms = [
-            "Visual Pipeline Builder",
-            "Visual Pipeline &amp; Approval Systems",
-            "3D Process Optimization &amp; New-Tech Integration",
+            "3D Character Artist",
+            "Start a Project",
         ]
         for term in required_public_terms:
             if term not in index_text:
@@ -152,6 +166,7 @@ def main() -> int:
 
     print("Lesly public-site launch audit")
     print("==============================")
+    print(f"Audience scope: {case_id or 'all registered cases'}")
     if failures:
         print("FAIL")
         for item in failures:
@@ -171,4 +186,5 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    arguments = parse_args()
+    sys.exit(main(arguments.case_id))

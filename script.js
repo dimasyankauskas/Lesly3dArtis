@@ -130,9 +130,10 @@ const updateWorkGrid=filter=>{
   }
 
   if(workStatus){
+    const filterLabel=filter==='texturing'?'material':filter==='game'?'game character':filter;
     workStatus.textContent=filter==='all'
       ?showAllWork?`Showing all ${totalWorkCount} projects.`:`Showing ${featuredWorkCount} selected character projects.`
-      :`Showing ${visibleCount} ${filter} ${visibleCount===1?'project':'projects'}.`;
+      :`Showing ${visibleCount} ${filterLabel} ${visibleCount===1?'project':'projects'}.`;
   }
 };
 
