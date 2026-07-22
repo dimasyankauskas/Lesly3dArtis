@@ -9,9 +9,209 @@
 
 The prior cycle's 13 `APPROVED` states are invalid under the corrected hiring-manager gate. That cycle published internal evidence state, missing-proof narration, capture requests, hypothetical instructions, and audit language as public story content. Its receipts remain below as failure history, not current approval.
 
-The correction cycle followed the frozen registry order exactly. All 13 registered cases, from `game-hero` through `original-site-concept`, now have fresh corrected approvals. No case remains active, and the final 13-case whole-site audit has passed.
+The superseded 2026-07-19 correction cycle followed the frozen registry order and recorded 13 approvals. Those approvals no longer satisfy the artist-narrative gate and must not be treated as current.
 
-The systemic source-truth blocker was resolved by a direct user statement on 2026-07-19: Lesly created and authored all of the website case material from zero to one. Each active public story may therefore identify Lesly as the portfolio case author and state her zero-to-one website contribution. This does not establish authorship of inherited starting briefs or directions, and it does not expand into unproven client, DCC, model, topology, UV, texture, rig, engine, review, approval, export, delivery, or production-outcome claims.
+The direct user statement from 2026-07-19 supports Lesly’s authorship of the website and its character-direction presentations. It does not make website authorship the artistic story of each case, establish authorship of inherited briefs, or expand into unproven client, DCC, model, topology, UV, texture, rig, engine, review, approval, export, delivery, or production-outcome claims.
+
+> **Superseded public-copy interpretation — 2026-07-21:** Website authorship remains supported internal/resume context, but it is not the artistic story of each project. Do not publish `Portfolio case author`, `Zero-to-one website presentation`, case-structure, media-order, or public-narrative authorship as repeated case roles. The 13 approvals recorded below predate the first-person artist-narrative gate and are invalid until each route is rebuilt and re-reviewed under that gate.
+
+## Artist-Narrative Rebuild Cycle — 2026-07-21
+
+This cycle applies the repaired semantic `CASE_ADVANCE_GATE`. Each case must show several developed first-person paragraphs, at least three media-grounded artistic decisions, a grounded result/reflection, no internal review language, and rendered desktop/mobile evidence before approval.
+
+| Registry order | Case ID | Current state |
+|---:|---|---|
+| 1 | `game-hero` | `APPROVED` |
+| 2 | `character-environment` | `APPROVED` |
+| 3 | `interior-props` | `APPROVED` |
+| 4 | `ai-visual-pipeline` | `APPROVED` |
+| 5 | `santa-cruz-ai-visual-pipeline` | `APPROVED` |
+| 6 | `construction-client-progress-workflow` | `APPROVED` |
+| 7 | `print-startup-direction` | `APPROVED` |
+| 8 | `sculpt-to-retopo` | `APPROVED` |
+| 9 | `avatar-character` | `APPROVED` |
+| 10 | `mascot-character` | `APPROVED` |
+| 11 | `outfits-accessories` | `APPROVED` |
+| 12 | `pbr-texturing` | `APPROVED` |
+| 13 | `original-site-concept` | `APPROVED` |
+
+### Corpus Finalization — 2026-07-21
+
+- All 13 routes render four distinct story sections and eight developed first-person paragraphs; legacy evidence/provenance objects, gallery status labels, hidden proof/deliverable surfaces, and proof-negation caveats were removed from public HTML/CSS/JavaScript.
+- Supported scope stays with visual direction and presentation judgment. Unverified DCC, model, topology, UV, rig, engine, fabrication, client, delivery, and outcome claims remain omitted; each route has one concise AI-workflow credit.
+- Website authorship appears once in About: zero-to-one structure, writing, build, Git/GitHub management, and cloud deployment.
+- Full validator, full finalizer audit, five skill validations, JavaScript syntax, Python AST, and diff checks pass. The validator now assembles an allowlisted public artifact and rejects private top-level paths.
+- Desktop matrix at 1309 × 909 and mobile matrix at 354 × 767 pass on every route: 4 sections, 8 paragraphs, 13 heroes plus 25 gallery images loaded, complete alt/captions, three related routes, contact available, no status/internal/negation matches, no visible legacy sections, no title clipping, no overflow, and no console logs.
+- Homepage pass: 13 cards, default seven-card view, all filters, View All, theme switch, mobile menu, lazy images, website credit, and Copy Project Brief interaction.
+- `scripts/package_public_site.py` and the manual-only Pages workflow publish an allowlisted artifact instead of the repository root. No commit, push, workflow dispatch, Pages-setting change, DNS change, or deployment occurred; live private-path 404 verification remains a separately authorized release action.
+
+### Fresh Approval Receipt — `game-hero`
+
+- Public identity: `Forge Warden — Character Direction`; first-person character-direction study from a written brief.
+- Supported role: Lesly’s character direction and presentation; no DCC modeling, topology, rigging, engine, game-ready, or production-outcome claim.
+- Media: hero, weapon-free rear construction view, and detail study independently `PASS` at original resolution for presentation-level use.
+- Artist narrative: eight developed paragraphs covering role silhouette, hammer relationship, armor asymmetry, costume hierarchy, material separation, rear construction, close-read restraint, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; no evidence state, proof request, hypothetical capture instruction, audit language, or hidden proof/deliverable copy in the rendered DOM.
+- Deterministic gates: targeted registry/audience validator `PASS`; targeted finalizer audit `PASS`; JavaScript syntax, Python AST parse, and `git diff --check` `PASS`.
+- Rendered gates: desktop content viewport 1309 × 909, mobile 357 × 774, and reported-title viewport 736 × 668 `PASS`; zero horizontal overflow and zero console warnings/errors. The desktop title uses two lines, the narrow desktop title one line, and the mobile title three natural lines without clipping.
+- Media runtime: all three active images load at declared native dimensions; related work and contact actions remain visible.
+- Final state: `APPROVED` for truthful public presentation. Technical production claims remain omitted.
+
+
+### Fresh Approval Receipt — `character-environment`
+
+- Public identity: `Frostline Ranger — Staging Direction`; first-person character-staging study from a written brief.
+- Supported role: Lesly’s staging direction and presentation; no matching character model, stage scene, captured camera/light setup, environment-production, or outcome claim.
+- Media: hero, three-state staging comparison, and camera/grounding study `PASS` for presentation-level use and load at 1448 × 1086 plus two 1672 × 941 derivatives.
+- Artist narrative: eight developed paragraphs covering character dominance, prop restraint, scale, bow-side negative space, camera choice, boot contact, cool-warm light, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; gallery captions describe visible decisions rather than provenance or missing proof.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; title reduced to two desktop lines, three natural mobile lines, zero horizontal overflow, zero console warnings/errors, substantive story mounts visible, related work/contact present, and active gallery media loaded at native dimensions.
+- Final state: `APPROVED` for truthful public presentation. Scene-production and technical claims remain omitted.
+
+
+### Fresh Approval Receipt — `interior-props`
+
+- Public identity: `Ornate Interior — Prop Study`; first-person prop-family and set-dressing study.
+- Supported role: Lesly’s visual direction and portfolio presentation; no matching scene, modeled prop, functional-hardware, topology, UV, texture/shader, engine, export, delivery, or production-outcome claim.
+- Media: the 1448 × 1086 shelf hero and two 1672 × 941 support images independently `PASS` for presentation use. The treatment sheet is described as three coordinated explorations, not production chronology or identical geometry.
+- Artist narrative: eight developed paragraphs covering shelf hierarchy, density, large/medium/small rhythm, repeated ornament with variation, visible material separation, coordinated treatments, asymmetric set dressing, negative space, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; no evidence state, proof request, approval language, asset-provenance narration, or hidden proof/deliverable copy in the rendered page.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; the title holds to two lines at both widths, the four narrative sections and eight paragraphs mount, no legacy sections render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: all three active images load at declared native dimensions; supporting captions explain the artistic read and contact remains available.
+- Final state: `APPROVED` for truthful public presentation. `ai-visual-pipeline` is now the only unlocked active case.
+
+
+### Fresh Approval Receipt — `ai-visual-pipeline`
+
+- Public identity: `Tideglass Courier — Visual Direction`; first-person character visual-direction study from a written brief.
+- Supported role: Lesly’s character direction and presentation; no physical project materials, exact matching model, operated pipeline, chronology, review, approval, handoff, DCC production, or outcome claim.
+- Media: the 1448 × 1086 hero and two 1672 × 941 support images independently `PASS` for identity, cross-format continuity, and close inspection. Visible face, hair, staff, straps, seams, and hardware drift is treated as a consistency question rather than hidden behind a same-geometry claim.
+- Artist narrative: eight developed paragraphs covering silhouette, costume asymmetry, coat tradeoffs, rear read, staff-to-hand relationship, material hierarchy, continuity priorities, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; gallery captions describe presentation formats and visible detail without implying sketches, maquettes, samples, feedback, approval, or delivery are physical records.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909, reported-width 736 × 668, and mobile 357 × 774 `PASS`; the title uses two desktop lines, one line at the reported browser width, and three natural mobile lines. Four narrative sections and eight paragraphs mount, legacy sections do not render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: all three active images load at declared native dimensions; contact remains available.
+- Final state: `APPROVED` for truthful public presentation. `santa-cruz-ai-visual-pipeline` is now the only unlocked active case.
+
+
+### Fresh Approval Receipt — `santa-cruz-ai-visual-pipeline`
+
+- Public identity: `Coastal Residence — Visual Direction`; first-person fictional residential-visualization study.
+- Supported role: Lesly’s visualization direction and presentation; no real site/client, architectural or engineering authorship, matching CAD/DCC scene, saved camera, exact product, sun study, approval, constructibility, construction, delivery, or outcome claim.
+- Media: the 1448 × 1086 editorial hero and two 1672 × 941 comparisons independently `PASS` for residential identity, finish tendencies, context, camera distance, and lighting mood. Minor geometry, perspective, and landscape drift is not represented as one exact scene.
+- Artist narrative: eight developed paragraphs covering horizontal massing, front three-quarter composition, pale/warm/cool finish tradeoffs, material hierarchy, landscape scale, camera-distance tradeoffs, daylight readability, blue-hour focus, result, and reflection.
+- Public boundary: fictional context is immediate; one unobtrusive AI-workflow credit; no physical-board, real-drawing, project-review, product-selection, or approval implication.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; the shortened title uses two desktop lines and three natural mobile lines. Four narrative sections and eight paragraphs mount, legacy sections do not render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: all three images load at declared native dimensions; captions explain visual comparison rather than production chronology; contact remains available.
+- Final state: `APPROVED` for truthful public presentation. `construction-client-progress-workflow` is now the only unlocked active case.
+
+
+### Fresh Approval Receipt — `construction-client-progress-workflow`
+
+- Public identity: `Northlight Workshop — Spatial Study`; first-person fictional environment-visualization case.
+- Supported role: Lesly’s environment direction and presentation; no real site/client, construction history, inspection, matching DCC scene, modeling/render setup, technical correctness, approval, delivery, or outcome claim.
+- Media: the 1448 × 1086 hero and two 1672 × 941 comparisons independently `PASS` for adaptive-reuse identity, alternate spatial treatments, and room-to-detail framing. They are not presented as chronology, exact matching geometry, or installation proof.
+- Artist narrative: eight developed paragraphs covering old-versus-new material contrast, hero-camera composition, brick/timber/steel hierarchy, four spatial treatments, continuity anchors, camera-distance tradeoffs, object restraint, daylight rhythm, result, and reflection.
+- Public boundary: the route is now an environment study rather than a progress/review/evidence workflow; one unobtrusive AI-workflow credit; no audit, qualified-review, capture, site-state, or approval language renders.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; the title was shortened again after visual review and now uses two desktop lines and three natural mobile lines. Four narrative sections and eight paragraphs mount, legacy sections do not render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: all three images load at declared native dimensions; captions explain environment and camera decisions; contact remains available.
+- Final state: `APPROVED` for truthful public presentation. `print-startup-direction` is now the only unlocked active case.
+
+
+### Fresh Approval Receipt — `print-startup-direction`
+
+- Public identity: `Sol — Collectible Direction`; first-person character-collectible visual-direction case built from the existing Sol mascot identity.
+- Supported role: Lesly’s collectible direction and presentation; no character-origin, matching sculpt/model, engineered parts, cut lines, joints, print preparation, slicing, printing, assembly, manufacture, painting, delivery, or product-outcome claim.
+- Media: the 1448 × 1086 color-and-gray hero and two 1672 × 941 support images independently `PASS` for identity, form, around-view silhouette/contact, and conceptual visual grouping. The spaced forms are not labeled as actual parts or engineering.
+- Artist narrative: eight developed paragraphs covering fennec identity locks, costume hierarchy, color-versus-gray comparison, base-and-staff composition, around-form contact, charm-versus-stability tradeoffs in the visual read, conceptual groups, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; the page states collectible direction rather than print production and naturally distinguishes visual groups from joints, keys, tolerances, or printable geometry.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; the title uses two lines at both widths. Four narrative sections and eight paragraphs mount, legacy sections do not render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: all three images load at declared native dimensions; captions explain form and contact decisions; contact remains available.
+- Final state: `APPROVED` for truthful public presentation. `sculpt-to-retopo` is now the only unlocked active case.
+
+
+### Fresh Approval Receipt — `sculpt-to-retopo`
+
+- Public identity: `Lyra — Facial Form Study`; first-person stylized portrait and facial-form direction case.
+- Supported role: Lesly’s facial-form direction and presentation; no source-sculpt authorship, captured sculpt chronology, low-poly/retopology, topology, blendshapes, rigging, UVs, bakes, DCC files, export, or production outcome claim.
+- Media: the 1448 × 1086 hero and two 1672 × 941 studies independently `PASS` for portrait identity, broad-to-fine form priorities, true profile, and restrained expression targets. Identity drift and the unresolved mouth interior are not represented as one mesh or working deformation system.
+- Artist narrative: eight developed paragraphs covering facial planes, three-quarter lighting, profile integrity, restrained expressions, grouped braid masses, diamond-ornament rhythm, broad-to-fine analysis, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; “retopology” is absent from the visible title, role, story, and captions; the faceted/refined/resolved images are identified as independent ways to study form rather than production stages.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; the title uses two lines at both widths. Four narrative sections and eight paragraphs mount, legacy sections do not render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: all three images load at declared native dimensions; captions explain facial-form and expression decisions; contact remains available.
+- Final state: `APPROVED` for truthful public presentation. `avatar-character` is now the only unlocked active case.
+
+
+### Fresh Approval Receipt — `avatar-character`
+
+- Public identity: `Mira — Avatar Identity Study`; first-person avatar identity and expression-direction case developed from an earlier Mira portrait.
+- Supported role: Lesly’s avatar identity and expression direction; no source-identity authorship, matching model, geometry, topology, textures, facial rig, blendshapes, tracking, animation, platform integration, or outcome claim.
+- Media: the 1448 × 1086 hero and two 1672 × 941 studies independently `PASS` for portrait identity, front-to-rear silhouette and costume comparison, and five character-read targets. The supporting frames are not represented as measured rotations or one working asset.
+- Artist narrative: eight developed paragraphs covering facial anchors, high-ponytail silhouette, rust-and-black costume framing, geometric accessory rhythm, expression escalation, continuity tradeoffs, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; website authorship and internal evidence language are absent from the artistic story; expression targets are naturally distinguished from facial-rig proof.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; the title uses two lines at both widths. Four narrative sections and eight paragraphs mount, legacy sections do not render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: all three active images load at declared native dimensions; contact remains available.
+- Final state: `APPROVED` for truthful public presentation. `mascot-character` is now the only unlocked active case.
+
+
+### Fresh Approval Receipt — `mascot-character`
+
+- Public identity: `Sol — Mascot Range Study`; first-person mascot identity and character-range case developed from the existing Sol identity.
+- Supported role: Lesly’s mascot identity and character-range direction; no origin authorship, matching model, exact geometry, topology, textures, rig, deformation, animation, verified prop interaction, deployed brand application, delivery, or outcome claim.
+- Media: the 1120 × 1400 hero and two 1672 × 941 studies independently `PASS` for species and identifier read, front-to-rear silhouette and costume comparison, and four gesture/expression targets. The supporting frames are not represented as a measured turnaround or one working asset.
+- Artist narrative: eight developed paragraphs covering fennec proportion, three-mark identity, terracotta costume rhythm, material hierarchy, staff relationship, cape-and-tail separation, view logic, gesture, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; website authorship and internal evidence language are absent; perspective and performance images are naturally described as direction targets rather than model or rig proof.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; the shortened title uses two lines at both widths. Four narrative sections and eight body paragraphs mount, legacy sections do not render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: all three active images load at declared native dimensions; contact remains available.
+- Final state: `APPROVED` for truthful public presentation. `outfits-accessories` is now the only unlocked active case.
+
+
+### Fresh Approval Receipt — `outfits-accessories`
+
+- Public identity: `Ember Duelist — Costume Study`; first-person costume and accessory-direction case developed from a written brief.
+- Supported role: Lesly’s costume and accessory direction; no matching character or garment model, captured turnaround, detached production assets, engineered attachments, cloth simulation, deformation, topology, UVs, textures, rigging, engine fit, export, delivery, or outcome claim.
+- Media: the 1448 × 1086 hero and two 1672 × 941 studies independently `PASS` for role silhouette, front-to-rear costume logic, accessory language, and three independent hierarchy states. The states are not represented as production chronology or shared geometry.
+- Artist narrative: eight developed paragraphs covering lean duelist silhouette, elegance-versus-protection tradeoff, quiet foundation, diagonal plum tailoring, leather organization, rear hierarchy, accessory motifs, material weight, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; website authorship and internal evidence language are absent; the sword grip, isolated accessories, and layer comparison do not imply implemented assets or deformation proof.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; the shortened title uses two lines at both widths. Four narrative sections and eight body paragraphs mount, legacy sections do not render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: all three active images load at declared native dimensions; contact remains available.
+- Final state: `APPROVED` for truthful public presentation. `pbr-texturing` is now the only unlocked active case.
+
+
+### Fresh Approval Receipt — `pbr-texturing`
+
+- Public identity: `Marsh Warden — Material Study`; first-person character material-direction case developed from a written brief.
+- Supported role: Lesly’s character material direction and presentation; no matching source model, PBR implementation, UVs, bakes, channel maps, texture set, shader graph, texel density, DCC or engine setup, export, delivery, or outcome claim.
+- Media: the 1448 × 1086 hero and 1672 × 941 inspection study independently `PASS` for full-figure hierarchy, coordinated neutral form, and close-detail surface priorities. The neutral figure and close views are not represented as traceable outputs from one production asset.
+- Artist narrative: eight developed paragraphs covering face-first hierarchy, material roles, skin and hair, linen and teal weave scale, leather wear, bronze patina, wood grain, amber glass, stone, full-to-close inspection, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; website authorship and internal evidence language are absent; the public story stays on visible material judgment without technical PBR claims.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; the shortened title uses two lines at both widths. Four narrative sections and eight body paragraphs mount, legacy sections do not render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: both active images load at declared native dimensions; contact remains available.
+- Final state: `APPROVED` for truthful public presentation. `original-site-concept` is now the only unlocked active case.
+
+
+### Fresh Approval Receipt — `original-site-concept`
+
+- Public identity: `Fantasy Warrior Study`; first-person character identity and costume-direction case developed from an existing montage.
+- Supported role: Lesly’s character identity and costume direction; no source-sketch or brief authorship, chronological stage history, matching sculpt or model, topology, UVs, textures, shaders, rig, engine setup, export, delivery, or outcome claim.
+- Media: the retained 1200 × 900 montage and two 1672 × 941 studies independently `PASS` for identity, neutral-form orientation, costume hierarchy, and close material direction. The three visual lenses are not represented as a production timeline or matching geometry.
+- Artist narrative: eight developed paragraphs covering facial anchors, ponytail/scarf/trailing-cloth tradeoff, warm-gray form, front-to-rear costume logic, terracotta-and-charcoal hierarchy, bronze rhythm, material separation, continuity, result, and reflection.
+- Public boundary: one unobtrusive AI-workflow credit; website authorship and internal evidence language are absent; line, neutral, and color presentations are framed as artistic lenses rather than source or technical proof.
+- Deterministic gates: targeted registry/audience validator, targeted finalizer audit, JavaScript syntax, and `git diff --check` `PASS`.
+- Rendered gates: desktop 1309 × 909 and mobile 357 × 774 `PASS`; after a final responsive correction, the title uses two lines at both widths. Four narrative sections and eight body paragraphs mount, legacy sections do not render, horizontal overflow is zero, and console warnings/errors are empty.
+- Media runtime: all three active images load at declared native dimensions; contact remains available.
+- Final state: `APPROVED` for truthful public presentation. All 13 registered cases have now passed the per-case artist-narrative gate; corpus-wide cleanup and verification remain.
+
 
 ## Protected Dirty Baseline
 

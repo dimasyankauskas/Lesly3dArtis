@@ -9,6 +9,7 @@ import json
 import re
 import subprocess
 import sys
+import tempfile
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -16,6 +17,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILL_REGISTRY = ROOT / "registry" / "skills.json"
 CASE_REGISTRY = ROOT / "registry" / "portfolio-cases.json"
+PUBLIC_PACKAGER = ROOT / "scripts" / "package_public_site.py"
+PUBLIC_DEPLOY_WORKFLOW = ROOT / ".github" / "workflows" / "deploy-public-site.yml"
 ALLOWED_INVOCATIONS = {"auto", "supporting", "explicit"}
 ALLOWED_FRONTMATTER = {"name", "description"}
 LOCKED_SKILL_OWNERS = {
@@ -65,6 +68,18 @@ AUDIENCE_RULES = (
     (
         "EXACT_CURRENT_PACKAGE_INSPECTABLE",
         re.compile(r"\bwhat the current package makes inspectable\b", re.IGNORECASE),
+    ),
+    (
+        "SELF_REFERENTIAL_PORTFOLIO_PROVENANCE",
+        re.compile(
+            r"\bportfolio case author\b"
+            r"|\bzero[- ]to[- ]one website\s+(?:case|presentation|contribution|story|narrative)\b"
+            r"|\b(?:authored|built|created|completed)\s+(?:this|the|a)?\s*"
+            r"(?:[a-z0-9&'’-]+\s+){0,5}website case\b"
+            r"|\bauthored\s+(?:the\s+)?(?:case structure|media sequence|public narrative)\b"
+            r"|\bwebsite case and (?:costume|material|character|visual|portfolio|presentation)\b",
+            re.IGNORECASE,
+        ),
     ),
     (
         "INTERNAL_VISIBILITY_STATE",
@@ -242,9 +257,24 @@ AUDIENCE_RULES = (
     ),
 )
 
-NON_PUBLIC_FACT_VALUE = re.compile(
-    r"^(?:TBD|TODO|N/?A|none|unknown|unconfirmed|pending|"
-    r"not (?:documented|confirmed|available|provided|known))(?:\b|$)",
+FIRST_PERSON_ARTIST_RATIONALE = re.compile(
+    r"\bI\s+(?:[a-z]{3,}ed|aimed|built|chose|focused|kept|made|set|started|used|wanted|worked)\b"
+    r"|\bmy\s+(?:approach|decision|focus|goal|intent|priority|solution)\b",
+    re.IGNORECASE,
+)
+
+PUBLIC_PRESENTATION_DISCLOSURE = re.compile(
+    r"\b(?:AI-assisted(?: portfolio)? presentation|portfolio presentation image|"
+    r"generated presentation media|presentation image created from approved source art)\b",
+    re.IGNORECASE,
+)
+
+PUBLIC_PROOF_NEGATION = re.compile(
+    r"\bwithout pretending\b"
+    r"|\bnot\s+(?:a|an|one|the)\s+"
+    r"(?:exact model|production sequence|documented build history|captured sculpt timeline)\b"
+    r"|\brather than\s+(?:proof\b|a rig\b|a measured\b|a production\b|a captured\b|a documented\b)"
+    r"|\bnot claims?\s+about\b",
     re.IGNORECASE,
 )
 
@@ -268,6 +298,31 @@ FORBIDDEN_PUBLIC_STRUCTURE_PATTERNS = (
         "FORBIDDEN_EVIDENCE_CAPTURE_CSS_SELECTOR",
         re.compile(
             r"[.#][a-z0-9_-]*(?:evidence|capture)[a-z0-9_-]*(?=\s*[{,>:~+])",
+            re.IGNORECASE,
+        ),
+    ),
+)
+
+FORBIDDEN_PUBLIC_DATA_PATTERNS = (
+    (
+        "FORBIDDEN_INTERNAL_PUBLIC_DATA_KEY",
+        re.compile(
+            r"\b(?:evidenceSummary|captureRequired|captureLabel|captureTitle)\s*:",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "FORBIDDEN_INTERNAL_PUBLIC_DATA_LABEL",
+        re.compile(
+            r"[\"'](?:Evidence status|Evidence boundary|Claim boundary|Capture required|"
+            r"Acceptance path|Direction shown)[\"']\s*,",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "FORBIDDEN_PUBLIC_MEDIA_STATUS_SCHEMA",
+        re.compile(
+            r"\bmediaStatus\s*:|\bCASE_STATUS_LABELS\b|\bcase-media-status\b",
             re.IGNORECASE,
         ),
     ),
@@ -448,14 +503,12 @@ const sandbox={
 };
 const exportProgram=String.raw`
 function __publicView(study){
-  const narrative=CASE_NARRATIVES[study.id]||CASE_NARRATIVES['game-hero']||{};
-  const visibility={direction:true,problem:true,process:true,media:true,result:Boolean(study.resultSummary),details:true,proof:true,deliverables:true,...(study.visibleSections||{})};
+  const visibility={direction:true,problem:true,process:true,media:true,result:Boolean(study.resultSummary),details:true,...(study.visibleSections||{})};
   const gallery=(study.gallery||[]).map(media=>Array.isArray(media)
-    ? {alt:media[1]||'',caption:media[1]||'',status:''}
+    ? {alt:media[1]||'',caption:media[1]||''}
     : {
         alt:media.alt||'',
-        caption:media.caption||'',
-        status:CASE_STATUS_LABELS[media.mediaStatus]||'Project media'
+        caption:media.caption||''
       });
   const related=Object.fromEntries(getRelatedCases(study).map(item=>[
     item.id,
@@ -473,6 +526,7 @@ function __publicView(study){
     kicker:study.kicker||'Selected work',
     meta:study.meta||[],
     lead:study.lead||'',
+    narrative:study.narrative||study.storySections||study.story||[],
     hero:{
       alt:study.hero?.alt||study.alt||'',
       caption:study.heroCaption||''
@@ -485,8 +539,8 @@ function __publicView(study){
     }:null,
     problem:visibility.problem?{
       label:study.problemLabel||'Problem solved',
-      title:study.problemTitle||narrative.problemTitle||'Problem solved.',
-      items:study.problems||narrative.problems||[]
+      title:study.problemTitle||'Problem solved.',
+      items:study.problems||[]
     }:null,
     process:visibility.process?{
       label:study.processLabel||'Process',
@@ -507,16 +561,6 @@ function __publicView(study){
       label:study.detailsLabel||'Visual read',
       title:study.detailsTitle||'Visual read.',
       items:study.details||[]
-    }:null,
-    proof:visibility.proof?{
-      label:study.proofLabel||'Build specification',
-      title:study.proofTitle||'Production direction.',
-      items:study.proof||[]
-    }:null,
-    deliverables:visibility.deliverables?{
-      label:study.deliverablesLabel||'Deliverables',
-      title:study.deliverablesTitle||'Project package.',
-      items:getPublicDeliverables(study)
     }:null,
     related
   };
@@ -602,17 +646,46 @@ def has_public_words(value: object, minimum: int = 1) -> bool:
     return len(re.findall(r"\b[\w’'-]+\b", normalized)) >= minimum
 
 
-def public_cards_complete(value: object, minimum: int = 2) -> bool:
-    if not isinstance(value, list) or len(value) < minimum:
-        return False
-    return all(
-        isinstance(item, list)
-        and len(item) >= 2
-        and has_public_words(item[0])
-        and has_public_words(item[1], 6)
-        for item in value
-    )
+def public_narrative_fragments(public: dict) -> list[str]:
+    """Collect developed prose without requiring one renderer schema."""
 
+    fragments: list[str] = []
+
+    def add(value: object) -> None:
+        if isinstance(value, str):
+            if has_public_words(value, 8):
+                fragments.append(re.sub(r"\s+", " ", value).strip())
+            return
+        for _, text in iter_public_strings(value, "narrative"):
+            if has_public_words(text, 8):
+                fragments.append(re.sub(r"\s+", " ", text).strip())
+
+    add(public.get("lead"))
+    add(public.get("narrative"))
+
+    direction = public.get("direction")
+    if isinstance(direction, dict):
+        add(direction.get("copy"))
+
+    for field in ("problem", "process", "details"):
+        section = public.get(field)
+        if not isinstance(section, dict):
+            continue
+        items = section.get("items")
+        if isinstance(items, list):
+            for item in items:
+                if isinstance(item, list) and len(item) >= 2:
+                    add(item[1])
+                elif isinstance(item, dict):
+                    add(item.get("copy") or item.get("body") or item.get("paragraphs"))
+                else:
+                    add(item)
+
+    result = public.get("result")
+    if isinstance(result, dict):
+        add(result.get("copy"))
+
+    return fragments
 
 def completeness_failure(case_id: str, path: str, rule: str, value: object) -> str:
     if isinstance(value, str) and value.strip():
@@ -673,92 +746,72 @@ def public_completeness_failures(case_id: str, public: object) -> list[str]:
             )
         )
 
-    facts = public.get("facts")
-    fact_pairs = (
-        [item for item in facts if isinstance(item, list) and len(item) >= 2]
-        if isinstance(facts, list)
-        else []
-    )
-    scope_fact = next(
-        (
-            item
-            for item in fact_pairs
-            if re.search(
-                r"\b(?:brief|assignment|scope|use case|project(?: type)?|overview|type|discipline)\b",
-                str(item[0]),
-                re.I,
-            )
-            and has_public_words(item[1], 3)
-        ),
-        None,
-    )
-    if not scope_fact:
-        failures.append(
-            completeness_failure(case_id, f"{root}.facts", "FIRST_10_PROJECT_SCOPE_FACT", facts)
-        )
+    narrative_fragments = public_narrative_fragments(public)
+    narrative_text = " ".join(narrative_fragments)
+    narrative_word_count = len(re.findall(r"\b[\w’'-]+\b", narrative_text))
 
-    attribution_fact = next(
-        (
-            item
-            for item in fact_pairs
-            if re.search(
-                r"\b(?:role|contribution|what I did|responsibilit(?:y|ies)|credits?)\b",
-                str(item[0]),
-                re.I,
-            )
-            and has_public_words(item[1], 2)
-            and not NON_PUBLIC_FACT_VALUE.match(re.sub(r"\s+", " ", str(item[1])).strip())
-        ),
-        None,
-    )
-    if not attribution_fact:
+    if len(narrative_fragments) < 4 or narrative_word_count < 180:
         failures.append(
             completeness_failure(
                 case_id,
-                f"{root}.facts",
-                "FIRST_10_ROLE_OR_CONTRIBUTION_FACT",
-                facts,
+                f"{root}.narrative",
+                "SUBSTANTIVE_ARTIST_CASE_NARRATIVE",
+                {
+                    "developedFragments": len(narrative_fragments),
+                    "wordCount": narrative_word_count,
+                },
             )
         )
 
-    direction = public.get("direction")
-    if not (
-        isinstance(direction, dict)
-        and has_public_words(direction.get("label"))
-        and has_public_words(direction.get("title"), 4)
-        and has_public_words(direction.get("copy"), 8)
-    ):
+    if not re.search(r"\b(?:I|my|me)\b", narrative_text, re.IGNORECASE):
         failures.append(
             completeness_failure(
-                case_id, f"{root}.direction", "FIRST_30_PROJECT_DIRECTION", direction
+                case_id,
+                f"{root}.narrative",
+                "FIRST_PERSON_ARTIST_VOICE",
+                narrative_fragments,
             )
         )
 
-    for field, rule in (
-        ("problem", "FIRST_30_CHALLENGE_AND_DECISIONS"),
-        ("process", "FIRST_30_PROCESS"),
-        ("details", "FIRST_30_DESIGN_DECISIONS"),
-    ):
-        section = public.get(field)
-        if not (
-            isinstance(section, dict)
-            and has_public_words(section.get("label"))
-            and has_public_words(section.get("title"), 4)
-            and public_cards_complete(section.get("items"))
-        ):
-            failures.append(
-                completeness_failure(case_id, f"{root}.{field}", rule, section)
-            )
-
-    result = public.get("result")
-    if not (
-        isinstance(result, dict)
-        and has_public_words(result.get("label"))
-        and has_public_words(result.get("title"), 4)
-        and has_public_words(result.get("copy"), 8)
-    ):
+    if not FIRST_PERSON_ARTIST_RATIONALE.search(narrative_text):
         failures.append(
-            completeness_failure(case_id, f"{root}.result", "FIRST_30_FINISHED_RESULT", result)
+            completeness_failure(
+                case_id,
+                f"{root}.narrative",
+                "FIRST_PERSON_ARTISTIC_RATIONALE",
+                narrative_fragments,
+            )
+        )
+
+    public_strings = iter_public_strings(public, root)
+    proof_negations = [
+        (path, text)
+        for path, text in public_strings
+        if PUBLIC_PROOF_NEGATION.search(text)
+    ]
+    if proof_negations:
+        failures.append(
+            completeness_failure(
+                case_id,
+                f"{root}.narrative",
+                "PUBLIC_PROOF_NEGATION",
+                proof_negations,
+            )
+        )
+
+    disclosures = [
+        (path, text)
+        for path, text in public_strings
+        if PUBLIC_PRESENTATION_DISCLOSURE.search(text)
+    ]
+    if len(disclosures) > 1:
+        failures.append(
+            completeness_failure(
+                case_id,
+                f"{root}.media-credit",
+                "REPEATED_PRESENTATION_DISCLOSURE",
+                disclosures,
+            )
         )
 
     media = public.get("media")
@@ -816,6 +869,55 @@ def audience_failures(case_id: str, path: str, value: str) -> list[str]:
     return failures
 
 
+def corpus_repetition_failures(
+    rendered_by_id: dict[str, dict], selected_ids: list[str]
+) -> list[str]:
+    """Reject copied narrative units and highly repeated long phrases."""
+
+    selected = set(selected_ids)
+    exact_units: dict[str, set[str]] = {}
+    phrase_owners: dict[tuple[str, ...], set[str]] = {}
+
+    for case_id, item in rendered_by_id.items():
+        public = item.get("public", {})
+        if not isinstance(public, dict):
+            continue
+        for fragment in public_narrative_fragments(public):
+            normalized = re.sub(r"\s+", " ", fragment).strip().lower()
+            if len(re.findall(r"\b[\w’'-]+\b", normalized)) >= 12:
+                exact_units.setdefault(normalized, set()).add(case_id)
+
+            tokens = re.findall(r"[a-z0-9’'-]+", normalized)
+            for index in range(max(0, len(tokens) - 6)):
+                phrase = tuple(tokens[index : index + 7])
+                phrase_owners.setdefault(phrase, set()).add(case_id)
+
+    failures: list[str] = []
+    for text, owners in sorted(exact_units.items()):
+        if len(owners) < 2 or not owners.intersection(selected):
+            continue
+        failures.append(
+            "shared: narrative repetition rule=EXACT_PARAGRAPH_REUSE "
+            f"cases={sorted(owners)} excerpt={json.dumps(text[:180], ensure_ascii=False)}"
+        )
+        if len(failures) >= 6:
+            break
+
+    repeated_phrases = [
+        (phrase, owners)
+        for phrase, owners in phrase_owners.items()
+        if len(owners) >= 4 and owners.intersection(selected)
+    ]
+    repeated_phrases.sort(key=lambda item: (-len(item[1]), item[0]))
+    for phrase, owners in repeated_phrases[:6]:
+        failures.append(
+            "shared: narrative repetition rule=CORPUS_TEMPLATE_PHRASE "
+            f"cases={sorted(owners)} excerpt={json.dumps(' '.join(phrase), ensure_ascii=False)}"
+        )
+
+    return failures
+
+
 def structural_runtime_failures(case_id: str, value: object, path: str) -> list[str]:
     failures: list[str] = []
     if isinstance(value, list):
@@ -826,7 +928,7 @@ def structural_runtime_failures(case_id: str, value: object, path: str) -> list[
         return failures
     for key, item in value.items():
         key_path = f"{path}.{key}"
-        if re.search(r"evidence|capture", key, re.IGNORECASE):
+        if re.search(r"evidence|capture|mediaStatus", key, re.IGNORECASE):
             matched_excerpt = json.dumps(key, ensure_ascii=False)
             failures.append(
                 f'{case_id}: public structure path={key_path} '
@@ -854,8 +956,89 @@ def structural_source_failures(path: Path) -> list[str]:
     return failures
 
 
+def internal_public_data_failures(path: Path) -> list[str]:
+    if not path.exists():
+        return []
+    source = re.sub(r"\s+", " ", path.read_text(encoding="utf-8")).strip()
+    failures: list[str] = []
+    for rule_name, pattern in FORBIDDEN_PUBLIC_DATA_PATTERNS:
+        match = pattern.search(source)
+        if not match:
+            continue
+        failures.append(
+            f'shared: public source path={path.relative_to(ROOT)} '
+            f"rule={rule_name} excerpt="
+            f"{json.dumps(excerpt(source, match.start(), match.end()), ensure_ascii=False)}"
+        )
+    return failures
+
+
+def public_package_failures() -> list[str]:
+    failures: list[str] = []
+    if not PUBLIC_PACKAGER.is_file():
+        return ["shared: missing allowlisted public-site packager"]
+    if not PUBLIC_DEPLOY_WORKFLOW.is_file():
+        return ["shared: missing manual allowlisted Pages workflow"]
+
+    workflow = PUBLIC_DEPLOY_WORKFLOW.read_text(encoding="utf-8")
+    if "workflow_dispatch:" not in workflow:
+        failures.append("shared: Pages workflow must remain explicitly dispatched")
+    if re.search(r"(?m)^\s{2}(?:push|pull_request)\s*:", workflow):
+        failures.append("shared: Pages workflow must not auto-publish on push or pull request")
+    if "scripts/package_public_site.py --output _site" not in workflow:
+        failures.append("shared: Pages workflow bypasses the public-site allowlist packager")
+
+    with tempfile.TemporaryDirectory(prefix="lesly-public-package-") as temp_root:
+        output = Path(temp_root) / "site"
+        result = subprocess.run(
+            [sys.executable, str(PUBLIC_PACKAGER), "--output", str(output)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode:
+            failures.append(
+                "shared: public package gate failed: "
+                f"{(result.stderr or result.stdout).strip()}"
+            )
+            return failures
+
+        required = {
+            ".nojekyll",
+            "index.html",
+            "case-study.html",
+            "styles.css",
+            "script.js",
+            "case-study.js",
+            "assets",
+        }
+        top_level = {path.name for path in output.iterdir()}
+        missing = sorted(required - top_level)
+        if missing:
+            failures.append(f"shared: public package misses required paths {missing}")
+        private = sorted(
+            top_level
+            & {
+                ".agents",
+                ".codex",
+                ".git",
+                ".github",
+                "clients",
+                "docs",
+                "registry",
+                "reserch",
+                "scripts",
+                "temp",
+            }
+        )
+        if private:
+            failures.append(f"shared: public package leaks private paths {private}")
+    return failures
+
+
 def validate(case_filter: str | None = None) -> list[str]:
     failures: list[str] = []
+    failures.extend(public_package_failures())
 
     skill_data = load_json(SKILL_REGISTRY)
     entries = skill_data.get("skills", [])
@@ -1070,7 +1253,32 @@ def validate(case_filter: str | None = None) -> list[str]:
                 )
             )
 
-    for public_path in (ROOT / "index.html", ROOT / "case-study.html"):
+    selected_public_views = [
+        rendered_by_id[case_id].get("public", {})
+        for case_id in selected_ids
+        if case_id in rendered_by_id
+    ]
+    if any(public.get("narrative") for public in selected_public_views):
+        story_html = (ROOT / "case-study.html").read_text(encoding="utf-8")
+        story_js = (ROOT / "case-study.js").read_text(encoding="utf-8")
+        runtime_requirements = (
+            ("case-study.html", story_html, "data-case-story-before"),
+            ("case-study.html", story_html, "data-case-story-after"),
+            ("case-study.js", story_js, "function renderStorySections"),
+            ("case-study.js", story_js, "renderStorySections(study)"),
+        )
+        for source_name, source, token in runtime_requirements:
+            if token not in source:
+                failures.append(
+                    "shared: artist narrative runtime "
+                    f"path={source_name} rule=VISIBLE_NARRATIVE_MOUNT missing={token!r}"
+                )
+    failures.extend(corpus_repetition_failures(rendered_by_id, selected_ids))
+
+    shared_visible_paths = [ROOT / "case-study.html"]
+    if not case_filter:
+        shared_visible_paths.insert(0, ROOT / "index.html")
+    for public_path in shared_visible_paths:
         if public_path.exists():
             for index, visible_text in enumerate(
                 visible_html_blocks(public_path.read_text(encoding="utf-8"))
@@ -1090,6 +1298,9 @@ def validate(case_filter: str | None = None) -> list[str]:
         ROOT / "styles.css",
     ):
         failures.extend(structural_source_failures(public_path))
+
+    if not case_filter:
+        failures.extend(internal_public_data_failures(ROOT / "case-study.js"))
 
     return failures
 

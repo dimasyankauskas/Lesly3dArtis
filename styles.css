@@ -1038,7 +1038,7 @@ body.case-study .site-header{background:color-mix(in srgb,var(--bg) 94%,transpar
 
 body.case-study.is-polished-case .cs-hero{
   display:grid;
-  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
   grid-template-areas:
     "copy media"
     "facts facts";
@@ -1065,8 +1065,8 @@ body.case-study.is-polished-case .cs-hero .cs-hero-copy{
   justify-content:flex-start;
 }
 body.case-study.is-polished-case .cs-hero h1{
-  max-width:14ch;
-  font-size:clamp(2.7rem,4.1vw,4rem);
+  max-width:100%;
+  font-size:clamp(2.55rem,3.7vw,3.65rem);
   line-height:1.01;
   margin-bottom:1.15rem;
 }
@@ -1155,6 +1155,31 @@ body.case-study.is-polished-case .case-facts{
 }
 .cs-section p{max-width:62ch}
 .cs-section .cs-lead{font-family:var(--display);font-style:normal;font-weight:400;font-size:1.15rem;line-height:1.5;color:var(--text);max-width:60ch}
+.case-story-group[hidden]{display:none}
+.case-story-section{border-top:1px solid var(--border)}
+.case-story-layout{
+  display:grid;
+  grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+  gap:clamp(2rem,6vw,6rem);
+  align-items:start;
+}
+.case-story-heading{min-width:0}
+.case-story-heading h2{
+  max-width:18ch;
+  margin-bottom:0;
+}
+.case-story-copy{
+  max-width:68ch;
+}
+.case-story-copy p{
+  max-width:none;
+  margin:0;
+  color:var(--text);
+  font-size:clamp(1.02rem,1.3vw,1.12rem);
+  line-height:1.78;
+}
+.case-story-copy p + p{margin-top:1.15rem}
+
 .cs-goals{list-style:none;padding:0;margin:1.5rem 0 0;counter-reset:goals;max-width:60ch}
 .cs-goals li{
   counter-increment:goals;
@@ -1169,8 +1194,7 @@ body.case-study.is-polished-case .case-facts{
   letter-spacing:.1em;color:var(--accent);padding-top:.2rem;
 }
 
-.case-detail-grid,
-.proof-grid{
+.case-detail-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:1.25rem;
@@ -1240,10 +1264,6 @@ body.case-study.is-polished-case .case-facts{
   flex-direction:column;
   gap:.35rem;
 }
-.case-media-status{
-  color:var(--accent);
-  font-weight:600;
-}
 .case-result-layout{
   display:grid;
   grid-template-columns:minmax(0,56rem);
@@ -1255,22 +1275,19 @@ body.case-study.is-polished-case .case-facts{
   border-top:1px solid var(--border);
   padding-top:1.25rem;
 }
-.case-detail-grid article,
-.proof-grid article{
+.case-detail-grid article{
   border-top:1px solid var(--border);
   padding-top:1rem;
   min-width:0;
 }
-.case-detail-grid h3,
-.proof-grid h3{
+.case-detail-grid h3{
   font-family:var(--display);
   font-weight:400;
   font-size:1.25rem;
   letter-spacing:.04em;
   margin:0 0 .45rem;
 }
-.case-detail-grid p,
-.proof-grid p{
+.case-detail-grid p{
   margin:0;
   color:var(--muted);
   font-size:.95rem;
@@ -1390,9 +1407,13 @@ body.case-study.is-polished-case .case-facts{
     letter-spacing:.025em;
     text-wrap:wrap;
   }
+  .case-story-layout{
+    grid-template-columns:1fr;
+    gap:1.25rem;
+  }
+  .case-story-heading h2{max-width:100%}
   .case-gallery,
-  .case-detail-grid,
-  .proof-grid{grid-template-columns:1fr}
+  .case-detail-grid{grid-template-columns:1fr}
   .case-gallery:not(.is-single) .case-media--4x5{
     grid-column:1;
     display:block;

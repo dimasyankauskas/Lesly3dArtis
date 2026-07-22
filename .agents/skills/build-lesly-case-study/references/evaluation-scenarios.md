@@ -17,7 +17,7 @@ Forward-test each prompt with only the named skill path, raw task-local artifact
 
 ## Frozen-Handoff Scenarios
 
-Confirm these fields survive every handoff unchanged unless the test introduces new evidence:
+Confirm these fields survive internal lifecycle and truth/craft handoffs unchanged unless the test introduces new evidence:
 
 - case ID;
 - professional question;
@@ -27,18 +27,19 @@ Confirm these fields survive every handoff unchanged unless the test introduces 
 - claim blockers;
 - approved media role.
 
-Test the corridor:
+The public writer and frontend receive the positive facts and approved media that result from these fields, not the internal field names, blockers, or proof ledger. Test the corridor:
 
 ```text
 builder contract
 → production expert verdict
-→ writing facts/claims
+→ positive facts plus approved media
+→ first-person artist narrative
 → frontend implementation packet
 → finalizer rendered receipt
 → builder certification
 ```
 
-Fail when a specialist silently changes authorship, permission, evidence category, project status, technical claim, or public outcome.
+Fail when a specialist silently changes authorship, permission, evidence category, project status, technical claim, or public outcome. Also fail when the writer treats the frozen contract as a required public schema or paraphrases its internal labels.
 
 Also fail when generated or reconstruction media receives `MATCHING_EVIDENCE_VERIFIED`; it may receive only `PRESENTATION_SUPPORTED` for a bounded visible claim.
 
@@ -78,6 +79,30 @@ Across all registered cases, compare:
 - category and related-case rationale.
 
 Preserve every ID. Equal prominence and equal page length are not required.
+
+## Artist-Narrative Scenarios
+
+Forward-test the writer and lifecycle gate with raw approved media plus positive supported facts. Do not expose the expected result to the test agent.
+
+The following must fail:
+
+- a complete facts grid plus problem/process/detail cards but no developed first-person prose;
+- `Portfolio case author`, `Zero-to-one website presentation`, or website-building narration used as the role for an artwork case;
+- one template reused across cases with only the project name and art nouns changed;
+- internal evidence, capture, approval, or provenance language in captions, metadata, hidden public data, or shipped JavaScript;
+- repeated AI/presentation status labels on every image;
+- a fabricated sculpting, modeling, topology, texturing, rigging, engine, client, or outcome history.
+
+The following must pass:
+
+- a sparse-evidence visual-direction case with several first-person paragraphs grounded in approved media;
+- at least three specific observations about form, silhouette, costume, materials, composition, lighting, or staging;
+- a visible artistic rationale where no production decision record exists;
+- a grounded result and reflection that does not invent technical work or chronology;
+- at most one unobtrusive presentation-image credit;
+- case-specific headings and prose that differ materially from the rest of the portfolio.
+
+Test both a character case and a non-character case. A valid narrative must remain possible when technical proof is absent and the affected technical claim is omitted.
 
 ## Keep Split Retire Criteria
 

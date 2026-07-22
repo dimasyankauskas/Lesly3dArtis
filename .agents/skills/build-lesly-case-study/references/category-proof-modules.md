@@ -1,6 +1,6 @@
 # Category Proof Modules
 
-Load only the module selected in the case contract. These modules own proof routing and hard blockers; `3d-production-expert` owns the quality judgment of visible media and technical evidence.
+Load only the module selected in the case contract. These modules own internal claim routing and hard blockers; `3d-production-expert` owns the quality judgment of visible media and technical evidence. They are not public outlines, required page sections, or prerequisites for writing a truthful artist narrative.
 
 ## Contents
 
@@ -14,13 +14,15 @@ Load only the module selected in the case contract. These modules own proof rout
 ## Universal Rules
 
 - Make one case answer one main professional question.
-- Lead with project status, role, authored scope, source, and strongest representative result.
+- Lead the public story with the artwork, artistic premise, supported role, and strongest representative result. Keep status, source, and evidence classification internal unless they are naturally relevant public facts.
 - Include only proof that supports the title and comes from the matching asset or record.
-- Require a constraint, decision, and consequence when a real decision record exists. Never invent a decision to make the case feel senior.
+- Use a documented constraint, decision, and consequence when a real decision record exists. Otherwise discuss a visible artistic rationale tied to approved media. Never invent chronology or a production decision to make the case feel senior.
 - Separate authored work, inherited inputs, collaborators, reviewers, vendors, and downstream owners.
 - Close the public story with a supportable finished presentation or documented outcome. Keep unresolved states and missing-proof notes in the internal truth guard.
 - Use generated images as direction or presentation evidence only.
-- Hard blockers remove or narrow public claims. They never become public warnings, evidence-status labels, or capture requests.
+- Hard blockers remove or narrow only the affected public claims. They do not block discussion of supported artistic decisions, and they never become public warnings, evidence-status labels, or capture requests.
+
+Every proof sequence below is an internal guide for evaluating a matching technical or outcome claim. A case may pass without completing the sequence when its title and narrative stay within the visible artistic scope.
 
 ## Character And Game
 
@@ -108,7 +110,7 @@ Can Lesly turn ambiguous input and accountable human feedback into a clear decis
 3. Constraint, reviewer, feedback, or reconstructed selection criteria.
 4. Selected direction and rationale.
 5. Handoff artifact and downstream state.
-6. Approved, paused, revised, implemented, or proof-pending outcome.
+6. A documented downstream state when one exists; otherwise close on the supportable visual result without inventing an outcome.
 
 **Capture real**
 

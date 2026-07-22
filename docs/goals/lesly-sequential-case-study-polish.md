@@ -6,6 +6,8 @@ Polish, structure, complete, and verify every public Lesly portfolio case study,
 
 Use one primary executing agent for the full queue. Do not begin, inspect for implementation, generate media for, or modify the next case until the active case passes the complete `CASE_ADVANCE_GATE` and is recorded `APPROVED` for truthful public presentation.
 
+> **Narrative-gate revision — 2026-07-21:** Apply the current repository skills when this brief conflicts with them. `CASE_ADVANCE_GATE` now requires developed first-person artist prose, case-specific visual decisions, and reflection; it must not require a public facts grid, fixed card sections, website-authorship metadata, or completion of irrelevant technical proof slots. The numbered public-story beats below are information goals, not a page schema.
+
 Temporary reviewer agents may review only the currently active case when required for independent evidence. Never run parallel case builds.
 
 ## Source Truth
@@ -197,16 +199,16 @@ Search again for stale case data and retired media paths. Confirm no stale overr
 
 Do not begin the next case until every item below passes for the active case:
 
-- case contract frozen and complete;
+- relevant authorship, permission, identity, and public-claim boundaries recorded; irrelevant empty template fields are not blockers;
 - source and permission boundary resolved;
 - every proposed visual classified as capture, generate, or omit;
 - hero and all required supporting media accepted at original resolution;
 - independent 3D craft/proof verdict is `PASS`;
-- public story is truthful, substantive, and complete;
+- public story contains developed first-person artist prose, at least three media-grounded decisions, and a grounded result/reflection;
 - no public string contains internal-review language, missing-proof narration, evidence requests, hypothetical production instructions, future capture work, claim-state jargon, rejection history, or audit/gate commentary;
-- deletion alone has not produced a thin page: the brief, supportable contribution, challenge, decision, consequence, visible result, and professional value are present;
+- deletion alone has not produced a thin page: the artistic premise, supported contribution, visible rationale, result, and professional value are present;
 - all active public surfaces are implemented;
-- claim states are recorded as `PRESENTATION_SUPPORTED`, `MATCHING_EVIDENCE_VERIFIED`, `HOLD_FOR_REAL_CAPTURE`, or `OMIT`;
+- claim states are recorded only for technical or outcome claims that require them;
 - first-10-second gate passes;
 - first-30-second gate passes;
 - deterministic checks pass;

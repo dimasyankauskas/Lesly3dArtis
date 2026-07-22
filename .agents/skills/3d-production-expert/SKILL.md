@@ -49,6 +49,8 @@ Use these proof slots:
 
 If proof is missing, return an internal `OMIT_OR_NARROW_CLAIM` decision to the lifecycle owner. Public copy may use a positive visible scope such as `character presentation`, `material study`, or `pose set`; it must not narrate missing proof or say `technical proof planned`.
 
+Do not block an artist narrative merely because technical proof is absent. Visible form, silhouette, costume, material, composition, lighting, pose, and presentation may support specific artistic analysis without proving a production history. Judge the claim being made, not whether every technical proof slot is filled.
+
 ## Game-Ready Gate
 
 Use `game-ready`, `pipeline-ready`, `retopo`, `UVs`, `PBR`, `engine`, `Unity`, `Unreal`, `Marmoset`, `Sketchfab`, `FBX`, `OBJ`, `BLEND`, `UDIM`, texture sizes, triangle counts, or polycounts only when the repo contains support for that exact claim.
@@ -94,4 +96,4 @@ Before approving an asset, answer:
 5. Do the media captions and technical claims match what is visible or repo-backed?
 6. Are missing proof, capture requests, claim states, rejection history, and audit language absent from every proposed public string?
 
-If any answer is no, keep the case present, return the asset or claim issue to its owner, and record any remaining evidence gap in `LAUNCH_CHECKLIST.md`.
+If any answer is no, keep the case present and return the specific asset or claim issue to its owner. Record an evidence gap internally only when a requested technical or outcome claim depends on it; do not make optional proof completion a prerequisite for a narrower truthful case study.
