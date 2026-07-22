@@ -1,6 +1,6 @@
 ---
 name: 3d-portfolio-writing-director
-description: Use when writing or revising Lesly's public portfolio copy, hero/services/about/contact text, work cards, case-study narratives, recruiter-facing copy, or premium 3D character service framing.
+description: Use when writing or revising Lesly's public portfolio copy, including first-person artist case narratives, hero/services/about/contact text, work cards, recruiter-facing copy, or premium 3D character service framing.
 ---
 
 # 3D Portfolio Writing Director
@@ -9,9 +9,9 @@ Use this skill for Lesly's public website voice. The job is to make the site sou
 
 Own public narrative and positioning only. Let `3d-production-expert` judge asset quality and technical proof, `frontend-design` implement approved copy and media, `lesly-website-finalizer` verify the rendered/release state, and the invoking lifecycle owner certify the whole case.
 
-Never change a frozen case fact, source/permission boundary, evidence category, claim blocker, or outcome state to improve the prose. Return an unsupported or ambiguous field to the lifecycle owner.
+Never change a frozen case fact, source/permission boundary, evidence category, claim blocker, or outcome state to improve the prose. Return an unsupported or ambiguous historical, technical, ownership, or outcome claim to the lifecycle owner.
 
-For a case build, write only from the lifecycle owner's `PUBLIC_STORY_PACKET`. The internal truth guard exists only to remove or narrow claims. Never quote, paraphrase, summarize, or expose its claim states, missing proof, capture backlog, lineage, rejection history, approval state, or audit language.
+For a case build, use the lifecycle owner's `PUBLIC_STORY_PACKET` as the factual boundary and inspect the approved public media directly for visible artistic relationships. The packet is not a sentence inventory. You may describe visible silhouette, anatomy, shape language, costume, props, materials, color, composition, lighting, or staging without claiming an undocumented production history. The internal truth guard exists only to remove or narrow claims. Never quote, paraphrase, summarize, or expose its claim states, missing proof, capture backlog, lineage, rejection history, approval state, or audit language.
 
 ## Positioning
 
@@ -40,7 +40,7 @@ Write with calm specificity:
 
 - Name the asset and buyer use case.
 - Name the starting input.
-- Name the production work.
+- Name the supportable artistic, design, presentation, or production work.
 - Name the visible deliverable.
 - Keep claims grounded in repo evidence.
 
@@ -54,25 +54,31 @@ Turn a sketch, reference image, moodboard, written brief, or rough idea into a p
 
 Do not write like a proposal. Avoid `this proposal includes`, `scope of work`, `phase one`, `client will receive`, or language that speaks to tomorrow's client meeting inside the public portfolio.
 
-## Case Study Pattern
+## Artist Case Narrative
 
 Case studies should read like completed portfolio narratives around visible work, not internal proof arguments.
 
 Preserve every registered case study. If imagery is duplicated or incomplete, keep the route and write only what its visible media supports while the production owner repairs that case. Never solve a media problem by deleting the story or inventing technical proof.
 
-Use this order:
+Write case narratives in Lesly's natural first-person singular voice. Use the judgment and vocabulary of an experienced 3D character artist/generalist without converting editorial expertise into invented hands-on history.
 
-1. Project brief and positive scope.
-2. Lesly's supportable contribution.
-3. Starting point and creative challenge.
-4. One or more concrete decisions and their consequences.
-5. The strongest visible process or design development the approved media supports.
-6. Finished presentation or supportable result.
-7. Credits when they are documented.
+Every finished case must communicate these functions, but the headings and order should follow the project rather than a fixed template:
+
+1. Artistic premise, positive scope, and supported first-person role.
+2. Starting point and visual problem.
+3. At least three case-specific artistic decisions tied to approved media.
+4. A documented production decision or an honestly framed visible rationale, without invented chronology.
+5. The strongest supportable form, design-development, presentation, or production discussion.
+6. Grounded result and personal reflection on what the work demonstrates.
+7. Credits when documented and a clear next-case or contact action.
+
+Write several developed paragraphs. Metadata, facts grids, card fragments, captions, and lists may support the narrative but do not count as the narrative itself. Use case-specific section headings and vary structure where the work calls for it.
+
+Website authorship is not the default role for an artwork case. Do not use `Portfolio case author`, `Zero-to-one website presentation`, `website case`, media ordering, case structure, or public-narrative authorship as repeated portfolio copy. Reserve end-to-end website, Git, GitHub, and cloud-delivery authorship for About/resume material or a case whose actual subject is the website.
 
 If a fact is missing, omit it. Do not describe it as unknown, undocumented, unverified, pending, required next, or future proof. Unsupported technical or outcome claims disappear from the public story rather than becoming warnings about what the project lacks.
 
-A short, unobtrusive media credit such as `Portfolio presentation image created from approved source art` is allowed when needed. It must not become the case headline, project argument, or a dedicated evidence section.
+A short, unobtrusive media credit such as `Portfolio presentation image created from approved source art` is allowed when needed. Use at most one such disclosure per case, separate from artistic captions. Do not repeat an AI/presentation status label on every image. It must not become the case headline, project argument, or a dedicated evidence section.
 
 ## Service Naming
 
@@ -100,6 +106,7 @@ Remove or rewrite:
 - `seamless end-to-end solution` and broad AI hype.
 - Public caveats that call assets fake, placeholder, prototype, not real, generated-only, or concept-only.
 - Internal-review language such as `Evidence status`, `not verified`, `not documented`, `proof pending`, `Required next`, `one capture that changes the claim`, `if the model exists`, `Acceptance path`, claim-state labels, capture requests, or future evidence instructions.
+- Self-referential portfolio-production language such as `Portfolio case author`, `Zero-to-one website presentation`, `website case`, `authored the case structure`, `media sequence`, or `public narrative` when the artwork—not the website—is the project.
 - Proposal language in public pages.
 - Invented clients, shipped credits, testimonials, metrics, engine integrations, source-file facts, polycounts, UV layouts, deadlines, or filenames.
 
@@ -114,5 +121,7 @@ Before shipping copy:
 5. Are missing facts absent from the public claim?
 6. Would this sentence still sound credible if read aloud by a recruiter or client deciding whether to hire her?
 7. Does the first screen present a finished project story rather than an evidence audit, caveat, or maintenance request?
+8. Does the case contain developed first-person prose, at least three media-grounded artistic decisions, and a genuine reflection?
+9. Is its opening, rhythm, and conclusion meaningfully different from the other registered cases?
 
-Use `humanizer` after drafting when the text feels AI-shaped or promotional.
+Use `humanizer` after every substantive case narrative, then run one corpus-wide repetition pass after the final case.

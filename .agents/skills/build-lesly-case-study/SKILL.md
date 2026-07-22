@@ -7,6 +7,8 @@ description: Build, rebuild, materially repair, or certify one Lesly portfolio c
 
 Coordinate one case from protected route to recorded public-presentation approval. Preserve creative judgment while making ownership, evidence, and verification fail closed.
 
+The public deliverable is an artist-authored case narrative, not a proof packet or a fixed collection of metadata cards. Use evidence to bound claims, never to dictate public page structure or prevent truthful discussion of visible artistic decisions.
+
 ## Ownership And Routing
 
 Own the case lifecycle, contract, sequencing, media-creation execution, specialist handoffs, integration completeness, and final case-level certification. Do not duplicate specialist judgment.
@@ -39,6 +41,8 @@ Load only the reference needed for the active branch:
 - Do not publish invented clients, credits, testimonials, metrics, dates, approvals, software captures, topology, UVs, maps, source files, engine integration, exports, construction findings, or outcomes.
 - Keep external publishing, deployment, and destructive cleanup outside this skill unless the user explicitly requests that action.
 - Keep two strictly separate handoffs: a public story packet and an internal truth guard. Claim states, proof ledgers, capture requests, rejection history, provenance/lineage records, approval receipts, and audit commentary are internal records. They must never become public sections, labels, captions, alt text, metadata, or related-card copy.
+- Treat `CASE_ADVANCE_GATE` as a semantic audience gate, not a schema gate. Do not require a public facts grid, fixed section names, card counts, a proof section, a deliverables section, or one prescribed order when a stronger case-specific narrative communicates the same information.
+- Missing technical or outcome evidence narrows technical or outcome claims. It does not block a first-person case study about the artistic premise, visible form, silhouette, costume, materials, composition, staging, or presentation that the approved media genuinely supports.
 
 ## Case Loop
 
@@ -54,17 +58,17 @@ For a new case, choose one stable lowercase-hyphenated ID, add it to the registr
 
 ### 2. Freeze The Case Contract
 
-Use `references/case-outline-template.md` to record before media or copy work:
+Use `references/case-outline-template.md` to record the relevant truth boundaries before public copy work:
 
-- case status, role, authored scope, inherited inputs, team, output, and evidenced date;
-- one professional question and one distinct recruiter or buyer value;
-- strongest currently supportable claim, its claim state, and the highest-risk unsupported claim;
+- supported role and authored scope, inherited inputs, output, and any documented team, status, or date that affects a public claim;
+- one artistic premise and one distinct recruiter or buyer value;
+- positive visible scope, plus a claim state and highest-risk unsupported claim only when an intended technical or outcome claim needs them;
 - source, permission, privacy, and public-use boundary;
 - identity locks and category;
-- proof slots, reject criteria, and ranked next real capture;
+- only the proof slots, reject criteria, and next real capture that matter to an intended technical or outcome claim;
 - one evidence category per media item: `SOURCE_ART`, `GENERATED_PRESENTATION_MEDIA`, `RECONSTRUCTION_DIRECTION`, or `VERIFIED_PRODUCTION_EVIDENCE`.
 
-Freeze case ID, professional question, evidence categories, source/permission boundary, identity locks, and claim blockers across handoffs. Revise them only from new evidence or an explicit public-story decision, and record the reason.
+Freeze case ID, supported authorship, source/permission boundary, identity locks, and any claim blocker that affects public wording. Revise them only from new evidence or an explicit public-story decision, and record the reason. Unknown or irrelevant internal fields may remain unset; completing a template is not an approval requirement.
 
 ### 3. Select Proof And Triage Missing Visuals
 
@@ -78,11 +82,13 @@ For a new category or unfamiliar production domain, run a prebuild `3d-productio
 
 Require one memorable hero and only the minimum supporting visuals needed to answer the professional question. Admit each supporting visual only when it proves something the hero and existing supports do not.
 
-Treat claim-specific blockers as absolute. A quality score cannot compensate for missing source, ambiguous role, unsupported title, absent permission, or missing production/outcome evidence.
+Treat claim-specific blockers as absolute for the affected claim. A quality score cannot compensate for missing source, ambiguous role, unsupported title, absent permission, or missing production/outcome evidence. Do not let one blocked technical claim suppress a supportable artistic narrative.
 
 ### 4. Build And Review The Media Package
 
 If triage selects `GENERATE_PRESENTATION`, read and follow `references/image-model-media-protocol.md`. Generate the hero first, approve its identity, then create one supporting image at a time.
+
+Do not postpone the public narrative until every desired proof slot exists. Once the supported role, artistic premise, and displayed-media subset are stable, write from that approved subset. Omit an unsupported technical claim or unnecessary support image instead of blocking the whole case.
 
 For every media item:
 
@@ -93,23 +99,37 @@ For every media item:
 5. Require `PASS`, no unresolved high-severity craft issue, and no hard truth blocker. Treat any rubric score as supporting evidence, not a compensating gate.
 6. Repair and repeat on `REJECT`. Never crop, relabel, hide, or delete a defect merely to obtain a pass.
 
-### 5. Write And Implement The Approved Package
+### 5. Write And Implement The Artist Case Narrative
 
 Create two handoffs and keep them separate:
 
-- `PUBLIC_STORY_PACKET`: positive project scope, supportable contribution, brief, challenge, decisions, visible process/result, finished presentation, credits, approved media roles, and at most one concise generated/reconstruction credit where needed.
+- `PUBLIC_STORY_PACKET`: positive project scope, supported contribution, artistic premise, approved factual inputs, visible decisions and rationale, finished presentation, credits, approved media roles, and at most one concise generated/reconstruction credit where needed.
 - `INTERNAL_TRUTH_GUARD`: evidence categories, claim blockers, missing proof, capture backlog, lineage, rejected work, approval state, and audit notes.
 
 The internal guard may cause a public claim to be narrowed or omitted. The writer must never quote, paraphrase, summarize, or turn it into public caveat copy. A missing fact is not a public story beat.
 
-Give frontend implementation only the approved `PUBLIC_STORY_PACKET`:
+The public writer may inspect the approved public media directly and describe visible artistic relationships. The packet bounds historical, technical, ownership, and outcome claims; it is not a sentence inventory. Visible analysis such as silhouette balance, shape language, costume hierarchy, material contrast, pose, composition, or lighting does not require a separate production-history record.
 
-- case title, positive scope label, lead, brief, supportable contribution, challenge, decision, visible result, credits, and approved public captions;
+Require the writer to return an `ARTIST_CASE_NARRATIVE` that:
+
+- uses Lesly's natural first-person singular voice;
+- contains several developed paragraphs, not only labels, facts, or card fragments;
+- establishes the artistic premise, supported role, and intended visual read;
+- explains at least three case-specific decisions tied to approved media;
+- uses either a documented production decision or an honestly framed visible artistic rationale, without inventing chronology;
+- closes with a grounded result and personal reflection on what the work demonstrates;
+- uses case-specific headings and structure rather than a corpus-wide fill-in template.
+
+Website authorship, Git, GitHub, and cloud delivery are valid only where the website itself is the project or resume subject. Never use `Portfolio case author`, `Zero-to-one website presentation`, media ordering, case structure, or public-narrative authorship as the repeated role or story for an artwork case.
+
+Give frontend implementation only the approved public narrative and media:
+
+- case title, positive scope label, lead, developed narrative paragraphs, supported contribution, artistic decisions and rationale, visible result, reflection, credits, and approved public captions;
 - hero and gallery objects with paths, dimensions, alt text, captions, and public roles;
 - homepage card, route, related-case mapping, and visual-family requirements;
 - first-10-second and first-30-second information targets.
 
-The frontend must not accept or render internal truth-guard keys. Dedicated evidence-status, proof-debt, capture-required, or future-evidence UI is forbidden.
+The frontend must support developed prose and must not force the narrative back into facts grids or repeated two-column cards. Cards are optional summaries, not the body of the case study. The frontend must not accept or render internal truth-guard keys. Dedicated evidence-status, proof-debt, capture-required, or future-evidence UI is forbidden; proof and deliverables sections default to hidden unless verified public content explicitly enables them.
 
 Update the smallest complete set of active surfaces. Extend registry/validator protection for a new case rather than weakening existing invariants. Search again for the case ID and retired paths; confirm stale layers cannot override the approved package at runtime.
 
@@ -127,8 +147,8 @@ python3 .agents/skills/lesly-website-finalizer/scripts/audit_v2_launch.py
 
 Then obtain rendered verification through local HTTP at approximately `1440 × 1000` and `393 × 852`:
 
-1. In the first 10 seconds, confirm the result, title, status, Lesly's role, and assignment are accurate and visible.
-2. By 30 seconds or one short scroll, confirm the problem, key constraint, decision, and strongest proof are clear.
+1. In the first 10 seconds, confirm the artwork, title, positive scope, Lesly's supported role, and artistic premise are accurate and visible.
+2. By 30 seconds or one short scroll, confirm the visual problem, case-specific decision or rationale, and finished result are clear.
 3. Inspect the hero, every gallery image, public captions/credits, related work, and contact path.
 4. Confirm native dimensions, distinct sources, no broken images, no horizontal overflow, and no console warning or error.
 5. Inspect the homepage card and category filter; for a new case also verify project count and route uniqueness.
@@ -147,14 +167,14 @@ Update the case-review record with:
 - completed remediation and remaining evidence boundary;
 - first-10/30-second results and desktop/mobile browser evidence;
 - homepage, related-work, contact, duplicate, broken-image, overflow, and console results;
-- the single ranked next real capture;
+- the single ranked next real capture when an intended claim remains held for matching evidence;
 - set-level differentiation by professional question, hero family, evidence type, and recruiter value.
 
-Use `APPROVED` only after every public-presentation gate passes. `READY_FOR_REVIEW` is not approval. Never convert a presentation approval into technical or outcome certification without the matching evidence record.
+Use `APPROVED` only after every public-presentation gate passes. `READY_FOR_REVIEW` is not approval. Never convert a presentation approval into technical or outcome certification without the matching evidence record. Approval does not require every internal proof slot to be filled when the public narrative omits the affected claim.
 
 The public-story gate fails when any visible string contains internal-review language, missing-proof narration, evidence requests, hypothetical production instructions, future capture work, claim-state jargon, rejection history, or audit/gate commentary. Seed failures include `Evidence status`, `not verified`, `not documented`, `Required next`, `one capture that changes the claim`, `if the model exists`, `proof pending`, `Acceptance path`, and `What the current package makes inspectable`.
 
-Deletion is not a pass. In the first 10 seconds, a hiring manager must understand the project, positive scope, supportable contribution, and strongest finished visual. Within 30 seconds or one short scroll, the brief/problem, a meaningful constraint, the decision and consequence, and the professional value must be clear. Any failure keeps the case below `APPROVED`.
+Deletion is not a pass. Metadata and cards are not a case study. In the first 10 seconds, a hiring manager must understand the project, positive scope, supported contribution, and strongest finished visual. Within 30 seconds or one short scroll, developed first-person prose must communicate the artistic problem, at least one meaningful decision or visible rationale, the result, and the professional value. Across the complete page, the narrative must explain at least three case-specific artistic decisions and end with a grounded reflection. Any failure keeps the case below `APPROVED`.
 
 For a multi-case request, repeat the complete loop sequentially. After the final case, run corpus-wide route, homepage-card, active-media uniqueness, category, question, evidence-type, responsive, public-boundary, and contact checks.
 

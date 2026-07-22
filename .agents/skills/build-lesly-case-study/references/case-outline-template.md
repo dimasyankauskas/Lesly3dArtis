@@ -9,7 +9,7 @@ Use this internal template before media generation, public copy, or implementati
 3. [Proof map](#proof-map)
 4. [Media lineage record](#media-lineage-record)
 5. [Frozen handoff fields](#frozen-handoff-fields)
-6. [Public outline](#public-outline)
+6. [Artist case narrative](#artist-case-narrative)
 7. [Approval receipt](#approval-receipt)
 
 ## Case Contract
@@ -47,7 +47,7 @@ Reject criteria:
 Single ranked next real capture:
 ```
 
-Unknown facts remain internal and are omitted publicly. Never infer authorship, permission, production status, or outcome from polish, and never turn a missing fact into a public caveat.
+Unknown facts remain internal and are omitted publicly. Never infer authorship, permission, production status, or outcome from polish, and never turn a missing fact into a public caveat. Complete only fields that affect the intended public claims; an empty internal template field is not a case-level blocker.
 
 ## Evidence Categories
 
@@ -91,7 +91,7 @@ Record one row per master and connect every public derivative to it.
 
 ## Frozen Handoff Fields
 
-Freeze and pass these fields unchanged to every specialist:
+Freeze these fields for the lifecycle owner and truth/craft reviewers:
 
 - case ID;
 - professional question;
@@ -103,18 +103,24 @@ Freeze and pass these fields unchanged to every specialist:
 
 Revise a frozen field only when new evidence or an explicit public-story decision requires it. Record the source and reason.
 
-## Public Story Packet
+Do not pass claim-state vocabulary, blockers, missing-proof notes, or lineage mechanics to the public writer or frontend. Give them the resulting positive facts, approved media roles, and omitted-claim boundary without internal labels.
 
-This is the only packet the public writer and frontend may receive. Translate internal truth by omitting unsupported claims, never by publishing the omission reason.
+## Artist Case Narrative
 
-1. Hero, title, positive scope label, supportable contribution, and one-line assignment.
-2. Project brief and starting point using documented facts only.
-3. Creative or production challenge.
-4. Constraint, decision, rationale, and consequence when genuinely supported.
-5. Minimum visible process or design-development sequence supported by approved media.
-6. Finished presentation or supportable result in context.
-7. Documented credits and one concise presentation-image credit when needed.
+The public writer and frontend receive positive facts, approved public media, and this narrative brief. Translate internal truth by omitting unsupported claims, never by publishing the omission reason. The writer may inspect approved media and make visible artistic observations; this does not authorize invented production history.
+
+Return an `ARTIST_CASE_NARRATIVE`, not a facts-and-cards packet:
+
+1. First-person opening that establishes the artwork, artistic premise, supported role, and intended visual read.
+2. Several developed paragraphs that make the case understandable without relying on metadata.
+3. At least three case-specific artistic decisions tied to approved media.
+4. A documented constraint or an honestly framed visible rationale; never invent chronology to fill this beat.
+5. Supported discussion of form, silhouette, anatomy, costume, props, materials, color, composition, lighting, or staging as relevant.
+6. Grounded result and personal reflection on what the work demonstrates.
+7. Descriptive captions and at most one unobtrusive presentation-image credit when needed.
 8. Distinct related case and contact path.
+
+Use case-specific headings and order. A facts grid or summary cards may support the story, but they are never required and never substitute for developed prose. Website authorship belongs only in an About/resume context or a case whose subject is the website itself; do not use it as the repeated role for artwork cases.
 
 Never include evidence status, claim state, missing proof, capture requests, hypothetical instructions, lineage mechanics, rejection history, approval state, or audit commentary in this packet.
 

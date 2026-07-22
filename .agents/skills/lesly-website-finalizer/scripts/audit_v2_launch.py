@@ -32,6 +32,8 @@ REQUIRED_SKILLS = [
     SITE / "registry" / "skills.json",
     SITE / "registry" / "portfolio-cases.json",
     SITE / "scripts" / "validate_skill_portfolio.py",
+    SITE / "scripts" / "package_public_site.py",
+    SITE / ".github" / "workflows" / "deploy-public-site.yml",
 ]
 
 REQUIRED_ASSETS = [

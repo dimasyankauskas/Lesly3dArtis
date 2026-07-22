@@ -21,7 +21,7 @@
     {
       "name": "3d-portfolio-writing-director",
       "path": ".agents/skills/3d-portfolio-writing-director/SKILL.md",
-      "job": "Write truthful, finished recruiter-facing portfolio positioning and case-study narratives from the approved public story packet.",
+      "job": "Write truthful first-person artist narratives and recruiter-facing portfolio copy from approved facts and media.",
       "owner": "public-portfolio-copy",
       "invocation": "auto",
       "certification": "v1-candidate"
@@ -37,7 +37,7 @@
     {
       "name": "humanizer",
       "path": ".agents/skills/humanizer/SKILL.md",
-      "job": "Polish approved public copy without changing facts, meaning, or the internal/public truth boundary.",
+      "job": "Polish first-person public copy, remove repeated scaffolding, and preserve facts and truth boundaries.",
       "owner": "final-language-polish",
       "invocation": "supporting",
       "certification": "supporting"
