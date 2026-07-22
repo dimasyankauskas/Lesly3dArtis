@@ -14,7 +14,7 @@ This is the append-only tracking record for meaningful public-site changes. It s
 
 | Surface | Current evidence | Status |
 | --- | --- | --- |
-| Repository `main` and `origin/main` | Merge commit `9fc8ae1`, containing reviewed release commit `16afb6b` from pull request `#2` | Current published baseline |
+| Public-site source baseline | Merge commit `9fc8ae1`, containing reviewed release commit `16afb6b` from pull request `#2`; later documentation-only commits do not change the packaged site | Current deployed source |
 | GitHub Pages | Workflow run `29902789577` deployed merged `main` on 2026-07-22 | Deployed |
 | Custom-domain cloud host | Immutable release `seo-20260722-1` was activated through the validated Caddy site route on 2026-07-22 | Deployed |
 | SEO foundation | Canonical, social, structured-data, robots, and sitemap changes are live on both public targets | Deployed |
