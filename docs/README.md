@@ -4,7 +4,7 @@
 
 **Owner:** Website maintainers
 
-**Last updated:** 2026-07-21
+**Last updated:** 2026-07-22
 
 Use this page to find the current operational record without treating goal reports as current release truth.
 
