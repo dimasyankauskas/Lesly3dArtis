@@ -1097,11 +1097,28 @@ const PUBLIC_COPY={
   }
 };
 
+const SEO_DESCRIPTIONS={
+  'game-hero':'Forge Warden character direction by Lesly, focused on a compact silhouette, asymmetrical armor, readable costume construction, and a long smithing hammer.',
+  'character-environment':'Frostline Ranger staging direction by Lesly, using a restrained stone base, scale cues, camera coverage, and cool studio lighting to keep the character dominant.',
+  'interior-props':'Ornate interior prop study by Lesly, organizing carved wood, chests, ceramics, books, textiles, and brass through scale, material contrast, and set-dressing rhythm.',
+  'ai-visual-pipeline':'Tideglass Courier character direction by Lesly, developing a lean silhouette, asymmetric outerwear, navigation staff, maritime palette, and focused review views.',
+  'santa-cruz-ai-visual-pipeline':'A fictional coastal-residence visual study by Lesly, comparing massing, material hierarchy, rocky context, daylight, and blue-hour presentation.',
+  'construction-client-progress-workflow':'A fictional Northlight Workshop spatial study by Lesly, balancing weathered brick with pale timber, black steel, clerestory glazing, and exposed services.',
+  'print-startup-direction':'Sol collectible direction by Lesly, adapting an existing mascot identity through silhouette, base footprint, staff placement, cape, tail, and contact views.',
+  'sculpt-to-retopo':'Lyra facial-form study by Lesly, exploring a tapered jaw, straight nose, braided hair mass, profile consistency, expression, and restrained ornament.',
+  'avatar-character':'Mira avatar identity direction by Lesly, developing a consistent stylized face, high ponytail, terracotta wrap, dark costume foundation, jewelry, and expressions.',
+  'mascot-character':'Sol mascot range direction by Lesly, preserving the fennec silhouette, forehead marks, patterned tail, costume, staff, gestures, and expressive character moments.',
+  'outfits-accessories':'Ember Duelist costume direction by Lesly, balancing courtly tailoring, agile movement, layered plum and ivory cloth, asymmetric protection, and a swept-hilt rapier.',
+  'pbr-texturing':'Marsh Warden material direction by Lesly, separating skin, hair, linen, teal cloth, leather, oxidized bronze, carved wood, amber glass, and dry stone.',
+  'original-site-concept':'Fantasy Warrior character direction by Lesly, developing an angular face, high ponytail, terracotta scarf, layered charcoal costume, bronze ornament, and grounded stance.'
+};
+
 CASE_STUDIES.forEach(study=>{
   const presentation=PUBLIC_PRESENTATION[study.id];
   const publicCopy=PUBLIC_COPY[study.id];
   if(!presentation||!publicCopy)return;
   Object.assign(study,publicCopy,{
+    seoDescription:SEO_DESCRIPTIONS[study.id],
     hero:presentation.hero,
     image:presentation.hero?.src||'',
     alt:presentation.hero?.alt||'',
@@ -1112,7 +1129,79 @@ CASE_STUDIES.forEach(study=>{
 const fallbackStudy=CASE_STUDIES[0];
 const params=new URLSearchParams(window.location.search);
 const selectedId=params.get('id')||'game-hero';
-const currentStudy=CASE_STUDIES.find(item=>item.id===selectedId)||fallbackStudy;
+const selectedStudy=CASE_STUDIES.find(item=>item.id===selectedId);
+const currentStudy=selectedStudy||fallbackStudy;
+const SEO_SITE_ORIGIN='https://leslyyankauskas.com';
+
+function setMetaContent(selector,value){
+  const node=document.querySelector(selector);
+  if(node)node.setAttribute('content',value);
+}
+
+function conciseSeoDescription(value,maxLength=180){
+  const normalized=(value||'').replace(/\s+/g,' ').trim();
+  if(normalized.length<=maxLength)return normalized;
+  const shortened=normalized.slice(0,maxLength-1);
+  const lastSpace=shortened.lastIndexOf(' ');
+  return `${shortened.slice(0,lastSpace>120?lastSpace:maxLength-1).replace(/[,:;\s]+$/,'')}…`;
+}
+
+function renderSeo(study,isValidStudy){
+  const pageTitle=`${study.title} | Lesly`;
+  const description=conciseSeoDescription(study.seoDescription||study.lead);
+  const canonicalUrl=`${SEO_SITE_ORIGIN}/case-study.html?id=${encodeURIComponent(study.id)}`;
+  const imageUrl=new URL(study.hero?.src||study.image||'',`${SEO_SITE_ORIGIN}/`).href;
+
+  document.title=pageTitle;
+  setMetaContent('[data-seo-description]',description);
+  setMetaContent('[data-seo-robots]',isValidStudy
+    ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+    : 'noindex, follow');
+  setMetaContent('[data-seo-og-title]',pageTitle);
+  setMetaContent('[data-seo-og-description]',description);
+  setMetaContent('[data-seo-og-url]',canonicalUrl);
+  setMetaContent('[data-seo-og-image]',imageUrl);
+  setMetaContent('[data-seo-og-image-width]',String(study.hero?.width||''));
+  setMetaContent('[data-seo-og-image-height]',String(study.hero?.height||''));
+  setMetaContent('[data-seo-og-image-alt]',study.hero?.alt||study.alt||'');
+  setMetaContent('[data-seo-twitter-title]',pageTitle);
+  setMetaContent('[data-seo-twitter-description]',description);
+  setMetaContent('[data-seo-twitter-image]',imageUrl);
+  setMetaContent('[data-seo-twitter-image-alt]',study.hero?.alt||study.alt||'');
+
+  let canonical=document.querySelector('link[rel="canonical"]');
+  if(!canonical){
+    canonical=document.createElement('link');
+    canonical.setAttribute('rel','canonical');
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute('href',canonicalUrl);
+
+  let structuredData=document.querySelector('#case-structured-data');
+  if(!structuredData){
+    structuredData=document.createElement('script');
+    structuredData.id='case-structured-data';
+    structuredData.type='application/ld+json';
+    document.head.appendChild(structuredData);
+  }
+  structuredData.textContent=JSON.stringify({
+    '@context':'https://schema.org',
+    '@type':'CreativeWork',
+    '@id':`${canonicalUrl}#creativework`,
+    name:study.title,
+    description,
+    url:canonicalUrl,
+    image:imageUrl,
+    genre:study.kicker||'3D character art',
+    inLanguage:'en-US',
+    creator:{
+      '@type':'Person',
+      '@id':`${SEO_SITE_ORIGIN}/#lesly`,
+      name:'Lesly',
+      jobTitle:'3D Character Artist'
+    }
+  });
+}
 
 function setText(selector,value){
   const node=document.querySelector(selector);
@@ -1268,7 +1357,7 @@ function renderRelated(study){
 }
 
 function renderStudy(study){
-  document.title=`${study.title} | Lesly`;
+  renderSeo(study,Boolean(selectedStudy));
   document.body.dataset.caseId=study.id;
   document.body.classList.toggle('is-polished-case',Boolean(study.facts));
   const hero=document.querySelector('[data-case-hero]');
