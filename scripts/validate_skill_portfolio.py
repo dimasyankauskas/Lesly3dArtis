@@ -492,11 +492,21 @@ const fs=require('fs');
 const vm=require('vm');
 const source=fs.readFileSync('case-study.js','utf8');
 const sandbox={
+  URL,
   URLSearchParams,
   window:{location:{search:''}},
   document:{
     title:'',
+    head:{appendChild(){}},
     body:{dataset:{},classList:{toggle(){}}},
+    createElement(){
+      return {
+        id:'',
+        type:'',
+        textContent:'',
+        setAttribute(){}
+      };
+    },
     querySelector(){return null;}
   },
   console:{log(){},warn(){},error(){}}
@@ -1010,6 +1020,8 @@ def public_package_failures() -> list[str]:
             "styles.css",
             "script.js",
             "case-study.js",
+            "robots.txt",
+            "sitemap.xml",
             "assets",
         }
         top_level = {path.name for path in output.iterdir()}

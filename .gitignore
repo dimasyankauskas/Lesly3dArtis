@@ -4,3 +4,4 @@ __pycache__/
 .claude/
 .codex/settings.local.json
 deploy/deploy-contract.sh
+deploy/artifacts/

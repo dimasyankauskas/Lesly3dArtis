@@ -18,6 +18,8 @@ PUBLIC_ROOT_FILES = (
     "styles.css",
     "script.js",
     "case-study.js",
+    "robots.txt",
+    "sitemap.xml",
 )
 OPTIONAL_PUBLIC_ROOT_FILES = ("CNAME",)
 PRIVATE_TOP_LEVEL_PATHS = {
