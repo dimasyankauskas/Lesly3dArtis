@@ -15,14 +15,14 @@
   <meta property="og:title" content="Lesly | 3D Character Artist — Characters, Avatars &amp; Mascots" />
   <meta property="og:description" content="Stylized character direction for games, creators, and brands, spanning silhouettes, costumes, avatars, mascots, materials, and presentation." />
   <meta property="og:url" content="https://leslyyankauskas.com/" />
-  <meta property="og:image" content="https://leslyyankauskas.com/assets/rebuild/desert-guardian/hero-wide-v2.webp" />
+  <meta property="og:image" content="https://leslyyankauskas.com/assets/rebuild/desert-guardian/hero-wide-v2.webp?v=__PUBLIC_ASSET_VERSION__" />
   <meta property="og:image:width" content="1672" />
   <meta property="og:image:height" content="941" />
   <meta property="og:image:alt" content="Desert Guardian character direction study by Lesly." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lesly | 3D Character Artist" />
   <meta name="twitter:description" content="Stylized character direction for games, creators, and brands." />
-  <meta name="twitter:image" content="https://leslyyankauskas.com/assets/rebuild/desert-guardian/hero-wide-v2.webp" />
+  <meta name="twitter:image" content="https://leslyyankauskas.com/assets/rebuild/desert-guardian/hero-wide-v2.webp?v=__PUBLIC_ASSET_VERSION__" />
   <meta name="twitter:image:alt" content="Desert Guardian character direction study by Lesly." />
   <script type="application/ld+json">
   {
@@ -40,7 +40,7 @@
         "@id": "https://leslyyankauskas.com/#lesly",
         "name": "Lesly",
         "url": "https://leslyyankauskas.com/",
-        "image": "https://leslyyankauskas.com/assets/profile/lesly-about-portrait-illustrated.png",
+        "image": "https://leslyyankauskas.com/assets/profile/lesly-about-portrait-illustrated.webp?v=__PUBLIC_ASSET_VERSION__",
         "jobTitle": "3D Character Artist",
         "description": "3D Character Artist developing stylized characters, avatars, mascots, costumes, and material direction."
       }
@@ -50,9 +50,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/brand/lesly-luxury-icon.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/brand/lesly-luxury-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20260721-61112e1" />
+  <link rel="icon" href="assets/brand/lesly-luxury-icon-192.png?v=__PUBLIC_ASSET_VERSION__" type="image/png">
+  <link rel="apple-touch-icon" href="assets/brand/lesly-luxury-icon-192.png?v=__PUBLIC_ASSET_VERSION__">
+  <link rel="stylesheet" href="styles.css?v=__PUBLIC_ASSET_VERSION__-single-hero-4" />
   <script>document.documentElement.classList.add('js');document.documentElement.setAttribute('data-theme',localStorage.getItem('lesly-theme')==='dark'?'dark':'light');</script>
 </head>
 <body>
@@ -61,7 +61,7 @@
 
   <header class="site-header">
     <div class="site-header-inner">
-      <a class="brand" href="#top"><span class="mark" aria-hidden="true"><img src="assets/brand/lesly-luxury-icon.png?v=luxury-png-20260609" width="72" height="72" alt=""></span><em>Lesly</em></a>
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"><img src="assets/brand/lesly-luxury-icon-192.png?v=__PUBLIC_ASSET_VERSION__" width="192" height="192" alt="" fetchpriority="high"></span><em>Lesly</em></a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
       <div class="header-actions">
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">☀</button>
@@ -82,21 +82,25 @@
     <!-- ============== HERO ============== -->
     <section class="hero reveal">
       <div class="hero-copy">
-        <p class="eyebrow">3D Character Artist</p>
-        <h1>Stylized characters with clear silhouette, costume, and material choices.</h1>
-        <p class="lead">I develop characters, avatars, mascots, and outfits from sketches, references, and rough briefs. The result is focused visual direction and a practical brief for the next 3D stage.</p>
-        <div class="ornament" aria-hidden="true"><span class="o-dot"></span><span class="o-dia"></span><span class="o-dot"></span></div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Start a Project</a>
-          <a class="btn" href="#work">View Character Work</a>
+        <div class="hero-intro">
+          <p class="eyebrow">3D Character Artist</p>
+          <h1>Stylized characters with clear silhouette, costume, and material choices.</h1>
+        </div>
+        <div class="hero-details">
+          <p class="lead">I develop characters, avatars, mascots, and outfits from sketches, references, and rough briefs. The result is focused visual direction and a practical brief for the next 3D stage.</p>
+          <div class="ornament" aria-hidden="true"><span class="o-dot"></span><span class="o-dia"></span><span class="o-dot"></span></div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start a Project</a>
+            <a class="btn" href="#work">View Character Work</a>
+          </div>
         </div>
       </div>
       <figure class="hero-visual">
-        <picture>
-          <source media="(max-width: 767px)" srcset="assets/rebuild/desert-guardian/hero-portrait-4x5-v1.webp" width="1000" height="1250">
-          <img class="hero-image" src="assets/rebuild/desert-guardian/hero-wide-v2.webp" width="1672" height="941" alt="Desert Guardian 3D reconstruction direction with a crescent polearm, layered cloth, bronze armor, and a grounded stone stage." fetchpriority="high">
-        </picture>
-        <figcaption class="hero-media-note">Desert Guardian · Character direction study</figcaption>
+        <div class="hero-picture-stack">
+          <picture class="hero-picture">
+            <img class="hero-image hero-image--living" src="assets/demos/living-sculpture/desert-guardian-living.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/demos/living-sculpture/desert-guardian-living-480.webp?v=__PUBLIC_ASSET_VERSION__ 480w, assets/demos/living-sculpture/desert-guardian-living-720.webp?v=__PUBLIC_ASSET_VERSION__ 720w, assets/demos/living-sculpture/desert-guardian-living-900.webp?v=__PUBLIC_ASSET_VERSION__ 900w, assets/demos/living-sculpture/desert-guardian-living.webp?v=__PUBLIC_ASSET_VERSION__ 1003w" sizes="(max-width: 900px) 100vw, 640px" width="1003" height="1568" alt="Desert Guardian in bronze armor and layered terracotta cloth, holding a crescent spear on a carved stone plinth." loading="eager" fetchpriority="high" decoding="async">
+          </picture>
+        </div>
       </figure>
     </section>
 
@@ -122,7 +126,7 @@
         <div class="work-grid" id="case-study-grid">
           <a class="work-card reveal" data-priority="featured" data-category="game process" href="case-study.html?id=original-site-concept">
             <div class="thumb">
-              <img src="assets/portfolio/work-concept-to-3d.webp" width="1200" height="900" alt="Fantasy-warrior montage with line-focused, neutral-value, and polished color directions." loading="eager">
+              <img src="assets/portfolio/work-concept-to-3d.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/portfolio/work-concept-to-3d-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/portfolio/work-concept-to-3d-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/portfolio/work-concept-to-3d.webp?v=__PUBLIC_ASSET_VERSION__ 1200w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1200" height="900" alt="Fantasy-warrior montage with line-focused, neutral-value, and polished color directions." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Character Study</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -135,7 +139,7 @@
           </a>
           <a class="work-card reveal" data-priority="featured" data-category="game process texturing" href="case-study.html?id=pbr-texturing">
             <div class="thumb">
-              <img src="assets/rebuild/pbr-marsh-warden/hero-4x3-v1.webp" width="1448" height="1086" alt="Marsh Warden material-study character with teal cloth, ivory linen, leather, oxidized bronze, and a lantern staff." loading="eager">
+              <img src="assets/rebuild/pbr-marsh-warden/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/pbr-marsh-warden/hero-4x3-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/pbr-marsh-warden/hero-4x3-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/pbr-marsh-warden/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Marsh Warden material-study character with teal cloth, ivory linen, leather, oxidized bronze, and a lantern staff." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Material Study</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -148,7 +152,7 @@
           </a>
           <a class="work-card reveal" data-priority="featured" data-category="game process" href="case-study.html?id=game-hero">
             <div class="thumb">
-              <img src="assets/rebuild/game-forge-warden/hero-4x3-v1.webp" width="1448" height="1086" alt="Stocky silver-haired Forge Warden holding a square-headed two-handed hammer on a dark studio plinth." loading="eager">
+              <img src="assets/rebuild/game-forge-warden/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/game-forge-warden/hero-4x3-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/game-forge-warden/hero-4x3-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/game-forge-warden/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Stocky silver-haired Forge Warden holding a square-headed two-handed hammer on a dark studio plinth." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Character Study</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -161,7 +165,7 @@
           </a>
           <a class="work-card reveal" data-priority="extended" data-category="staging game process" href="case-study.html?id=character-environment">
             <div class="thumb">
-              <img src="assets/rebuild/character-staging-frostline/hero-4x3-v1.webp" width="1448" height="1086" alt="Older Frostline Ranger archer on a restrained black-stone stage with one milestone and cool studio lighting." loading="lazy">
+              <img src="assets/rebuild/character-staging-frostline/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/character-staging-frostline/hero-4x3-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/character-staging-frostline/hero-4x3-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/character-staging-frostline/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Older Frostline Ranger archer on a restrained black-stone stage with one milestone and cool studio lighting." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Character Staging</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -174,7 +178,7 @@
           </a>
           <a class="work-card reveal" data-priority="extended" data-category="props process" href="case-study.html?id=interior-props">
             <div class="thumb">
-              <img src="assets/rebuild/interior-direction/shelf-hero-4x3-v1.webp" width="1448" height="1086" alt="Ornate carved-wood shelf direction with storage chests, ceramic vessels, aged brass, books, folded textiles, and warm window light." loading="lazy">
+              <img src="assets/rebuild/interior-direction/shelf-hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/interior-direction/shelf-hero-4x3-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/interior-direction/shelf-hero-4x3-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/interior-direction/shelf-hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Ornate carved-wood shelf direction with storage chests, ceramic vessels, aged brass, books, folded textiles, and warm window light." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Props &amp; Set Dressing</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -187,7 +191,7 @@
           </a>
           <a class="work-card reveal" data-priority="featured" data-category="process" href="case-study.html?id=sculpt-to-retopo">
             <div class="thumb">
-              <img src="assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1.webp" width="1448" height="1086" alt="Resolved warm-gray Lyra bust with a tapered face, layered braided hair, diamond ornament, high collar, and neutral studio lighting." loading="eager">
+              <img src="assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/sculpt-retopo-lyra/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Resolved warm-gray Lyra bust with a tapered face, layered braided hair, diamond ornament, high collar, and neutral studio lighting." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Facial Form</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -200,7 +204,7 @@
           </a>
           <a class="work-card reveal" data-priority="extended" data-category="workflow process" href="case-study.html?id=santa-cruz-ai-visual-pipeline">
             <div class="thumb">
-              <img src="assets/rebuild/coastal-residential-workflow/hero-4x3-v1.webp" width="1448" height="1086" alt="Editorial Coastal Residence board with a blue-hour exterior, an illustrative elevation, context views, and stone, timber, metal, and planting references." loading="lazy">
+              <img src="assets/rebuild/coastal-residential-workflow/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/coastal-residential-workflow/hero-4x3-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/coastal-residential-workflow/hero-4x3-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/coastal-residential-workflow/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Editorial Coastal Residence board with a blue-hour exterior, an illustrative elevation, context views, and stone, timber, metal, and planting references." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Visualization Direction</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -213,7 +217,7 @@
           </a>
           <a class="work-card reveal" data-priority="extended" data-category="workflow process" href="case-study.html?id=ai-visual-pipeline">
             <div class="thumb">
-              <img src="assets/rebuild/tideglass-workflow/hero-4x3-v1.webp" width="1448" height="1086" alt="Tideglass Courier presentation with a resolved character target, sketch-style studies, gray-form direction, and material references." loading="lazy">
+              <img src="assets/rebuild/tideglass-workflow/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/tideglass-workflow/hero-4x3-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/tideglass-workflow/hero-4x3-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/tideglass-workflow/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Tideglass Courier presentation with a resolved character target, sketch-style studies, gray-form direction, and material references." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Character Direction</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -226,7 +230,7 @@
           </a>
           <a class="work-card reveal" data-priority="extended" data-category="workflow process" href="case-study.html?id=construction-client-progress-workflow">
             <div class="thumb">
-              <img src="assets/rebuild/northlight-workshop-progress/hero-4x3-v1.webp" width="1448" height="1086" alt="Fictional Northlight Workshop interior with weathered red brick, arched windows, a pale timber roof, clerestory glazing, exposed services, and a black-steel courtyard opening." loading="lazy">
+              <img src="assets/rebuild/northlight-workshop-progress/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/northlight-workshop-progress/hero-4x3-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/northlight-workshop-progress/hero-4x3-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/northlight-workshop-progress/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Fictional Northlight Workshop interior with weathered red brick, arched windows, a pale timber roof, clerestory glazing, exposed services, and a black-steel courtyard opening." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Visual Sequence</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -239,7 +243,7 @@
           </a>
           <a class="work-card reveal" data-priority="featured" data-category="avatar" href="case-study.html?id=avatar-character">
             <div class="thumb">
-              <img src="assets/rebuild/avatar-mira/hero-4x3-v1.webp" width="1448" height="1086" alt="Stylized young-adult Mira avatar with a high black ponytail, rust hooded layer, black foundation garment, and geometric gold jewelry." loading="eager">
+              <img src="assets/rebuild/avatar-mira/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/avatar-mira/hero-4x3-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/avatar-mira/hero-4x3-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/avatar-mira/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Stylized young-adult Mira avatar with a high black ponytail, rust hooded layer, black foundation garment, and geometric gold jewelry." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Avatar Identity</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -252,7 +256,7 @@
           </a>
           <a class="work-card reveal" data-priority="featured" data-category="mascot" href="case-study.html?id=mascot-character">
             <div class="thumb thumb--portrait">
-              <img src="assets/rebuild/sol-mascot/sol-hero-4x5-v1.webp" width="1120" height="1400" alt="Sol the fennec fox mascot with oversized ears, three forehead markings, one patterned tail, animal paws, and a leaf-topped staff." loading="eager">
+              <img src="assets/rebuild/sol-mascot/sol-hero-4x5-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/sol-mascot/sol-hero-4x5-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/sol-mascot/sol-hero-4x5-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/sol-mascot/sol-hero-4x5-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1120w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1120" height="1400" alt="Sol the fennec fox mascot with oversized ears, three forehead markings, one patterned tail, animal paws, and a leaf-topped staff." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Mascot Range</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -265,7 +269,7 @@
           </a>
           <a class="work-card reveal" data-priority="extended" data-category="print process" href="case-study.html?id=print-startup-direction">
             <div class="thumb">
-              <img src="assets/rebuild/sol-print/sol-collectible-4x3-v2.webp" width="1448" height="1086" alt="Sol collectible presentation with coordinated color and neutral-clay figures, both showing the fennec identity, costume, staff, patterned tail, and broad tiered base." loading="lazy">
+              <img src="assets/rebuild/sol-print/sol-collectible-4x3-v2.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/sol-print/sol-collectible-4x3-v2-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/sol-print/sol-collectible-4x3-v2-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/sol-print/sol-collectible-4x3-v2.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Sol collectible presentation with coordinated color and neutral-clay figures, both showing the fennec identity, costume, staff, patterned tail, and broad tiered base." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Collectible Direction</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -278,7 +282,7 @@
           </a>
           <a class="work-card reveal" data-priority="featured" data-category="outfit" href="case-study.html?id=outfits-accessories">
             <div class="thumb">
-              <img src="assets/rebuild/outfit-ember-duelist/hero-4x3-v1.webp" width="1448" height="1086" alt="Ember Duelist in layered plum and ivory tailoring with asymmetric aged-gold protection and a swept-hilt rapier." loading="eager">
+              <img src="assets/rebuild/outfit-ember-duelist/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/rebuild/outfit-ember-duelist/hero-4x3-v1-800.webp?v=__PUBLIC_ASSET_VERSION__ 800w, assets/rebuild/outfit-ember-duelist/hero-4x3-v1-960.webp?v=__PUBLIC_ASSET_VERSION__ 960w, assets/rebuild/outfit-ember-duelist/hero-4x3-v1.webp?v=__PUBLIC_ASSET_VERSION__ 1448w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px" width="1448" height="1086" alt="Ember Duelist in layered plum and ivory tailoring with asymmetric aged-gold protection and a swept-hilt rapier." loading="lazy" decoding="async" data-progressive-image>
               <span class="work-tag" aria-hidden="true">Costume Study</span>
               <span class="card-corner card-corner-tl" aria-hidden="true"></span>
               <span class="card-corner card-corner-tr" aria-hidden="true"></span>
@@ -350,7 +354,7 @@
 
         <div class="about mt-2">
           <figure class="about-portrait reveal">
-            <img src="assets/profile/lesly-about-portrait-illustrated.png?v=approved-about-portrait-20260609" width="1086" height="1448" alt="Lesly in a warm character art studio with dragon sketches, sculpting references, and a laptop.">
+            <img src="assets/profile/lesly-about-portrait-illustrated.webp?v=__PUBLIC_ASSET_VERSION__" srcset="assets/profile/lesly-about-portrait-illustrated-720.webp?v=__PUBLIC_ASSET_VERSION__ 720w, assets/profile/lesly-about-portrait-illustrated.webp?v=__PUBLIC_ASSET_VERSION__ 1086w" sizes="(max-width: 767px) calc(100vw - 2rem), 520px" width="1086" height="1448" alt="Lesly in a warm character art studio with dragon sketches, sculpting references, and a laptop." loading="lazy" decoding="async" data-progressive-image>
           </figure>
           <div class="about-bio">
             <p>Her painting background shapes how she approaches color, form, anatomy, silhouette, costume language, and material separation.</p>
@@ -439,6 +443,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260721-61112e1"></script>
+  <script src="script.js?v=__PUBLIC_ASSET_VERSION__-single-hero-4"></script>
 </body>
 </html>

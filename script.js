@@ -98,6 +98,29 @@ themeToggles.forEach(themeToggle=>themeToggle.addEventListener('click',()=>{
   applyTheme(current==='dark'?'light':'dark');
 }));
 
+const revealProgressiveImage=(image,animate=true)=>{
+  if(!(image instanceof HTMLImageElement)||!image.matches('[data-progressive-image]'))return;
+  if(image.classList.contains('is-loaded'))return;
+  image.classList.add('is-loaded');
+  if(!animate)image.classList.add('is-loaded-instantly');
+};
+
+const prepareProgressiveImages=(root=document)=>{
+  const images=root.matches?.('[data-progressive-image]')
+    ?[root]
+    :[...(root.querySelectorAll?.('[data-progressive-image]')||[])];
+  images.forEach(image=>{
+    if(image.complete&&image.naturalWidth>0)revealProgressiveImage(image,false);
+  });
+};
+
+document.addEventListener('load',event=>{
+  revealProgressiveImage(event.target);
+},true);
+
+window.prepareProgressiveImages=prepareProgressiveImages;
+prepareProgressiveImages();
+
 const filterButtons=[...document.querySelectorAll('[data-filter]')];
 const workCards=[...document.querySelectorAll('[data-category]')];
 const workMoreButton=document.querySelector('[data-work-more]');

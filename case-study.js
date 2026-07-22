@@ -320,6 +320,38 @@ const APPROVED_MEDIA={
   }
 };
 
+const RESPONSIVE_MEDIA_VARIANTS={
+  forgeWardenBack:{small:'assets/rebuild/game-forge-warden/back-construction-16x9-v1-720.webp',medium:'assets/rebuild/game-forge-warden/back-construction-16x9-v1-1200.webp'},
+  forgeWardenGrip:{small:'assets/rebuild/game-forge-warden/grip-articulation-16x9-v1-720.webp',medium:'assets/rebuild/game-forge-warden/grip-articulation-16x9-v1-1200.webp'},
+  frostlineStageProgression:{small:'assets/rebuild/character-staging-frostline/stage-progression-16x9-v1-720.webp',medium:'assets/rebuild/character-staging-frostline/stage-progression-16x9-v1-1200.webp'},
+  frostlineCameraGrounding:{small:'assets/rebuild/character-staging-frostline/camera-grounding-16x9-v1-720.webp',medium:'assets/rebuild/character-staging-frostline/camera-grounding-16x9-v1-1200.webp'},
+  interiorPropFamily:{small:'assets/rebuild/interior-props-system/prop-family-16x9-v1-720.webp',medium:'assets/rebuild/interior-props-system/prop-family-16x9-v1-1200.webp'},
+  interiorStagingDevelopment:{small:'assets/rebuild/interior-props-system/staging-development-16x9-v1-720.webp',medium:'assets/rebuild/interior-props-system/staging-development-16x9-v1-1200.webp'},
+  visualPipelineSequence:{small:'assets/rebuild/tideglass-workflow/direction-sequence-16x9-v1-720.webp',medium:'assets/rebuild/tideglass-workflow/direction-sequence-16x9-v1-1200.webp'},
+  visualPipelineReview:{small:'assets/rebuild/tideglass-workflow/review-handoff-16x9-v1-720.webp',medium:'assets/rebuild/tideglass-workflow/review-handoff-16x9-v1-1200.webp'},
+  residentialMaterialOptions:{small:'assets/rebuild/coastal-residential-workflow/material-options-16x9-v1-720.webp',medium:'assets/rebuild/coastal-residential-workflow/material-options-16x9-v1-1200.webp'},
+  residentialContextLighting:{small:'assets/rebuild/coastal-residential-workflow/context-lighting-16x9-v1-720.webp',medium:'assets/rebuild/coastal-residential-workflow/context-lighting-16x9-v1-1200.webp'},
+  constructionDetailDirection:{small:'assets/rebuild/northlight-workshop-progress/evidence-hierarchy-16x9-v1-720.webp',medium:'assets/rebuild/northlight-workshop-progress/evidence-hierarchy-16x9-v1-1200.webp'},
+  constructionPhaseSequence:{small:'assets/rebuild/northlight-workshop-progress/phase-sequence-16x9-v1-720.webp',medium:'assets/rebuild/northlight-workshop-progress/phase-sequence-16x9-v1-1200.webp'},
+  solPrintContacts:{small:'assets/rebuild/sol-print-system/contact-views-16x9-v1-720.webp',medium:'assets/rebuild/sol-print-system/contact-views-16x9-v1-1200.webp'},
+  solPrintAssembly:{small:'assets/rebuild/sol-print-system/assembly-direction-16x9-v2-720.webp',medium:'assets/rebuild/sol-print-system/assembly-direction-16x9-v2-1200.webp'},
+  lyraFormStudy:{small:'assets/rebuild/sculpt-retopo-lyra/form-deformation-study-16x9-v1-720.webp',medium:'assets/rebuild/sculpt-retopo-lyra/form-deformation-study-16x9-v1-1200.webp'},
+  lyraSculptDevelopment:{small:'assets/rebuild/sculpt-retopo-lyra/sculpt-development-16x9-v1-720.webp',medium:'assets/rebuild/sculpt-retopo-lyra/sculpt-development-16x9-v1-1200.webp'},
+  miraIdentityViews:{small:'assets/rebuild/avatar-mira/identity-views-16x9-v1-720.webp',medium:'assets/rebuild/avatar-mira/identity-views-16x9-v1-1200.webp'},
+  miraExpressions:{small:'assets/rebuild/avatar-mira/expression-direction-16x9-v1-720.webp',medium:'assets/rebuild/avatar-mira/expression-direction-16x9-v1-1200.webp'},
+  solIdentityViews:{small:'assets/rebuild/sol-mascot-system/identity-views-16x9-v1-720.webp',medium:'assets/rebuild/sol-mascot-system/identity-views-16x9-v1-1200.webp'},
+  solPoseExpressions:{small:'assets/rebuild/sol-mascot-system/pose-expression-16x9-v1-720.webp',medium:'assets/rebuild/sol-mascot-system/pose-expression-16x9-v1-1200.webp'},
+  emberDuelistFrontBack:{small:'assets/rebuild/outfit-ember-duelist/front-back-accessories-16x9-v1-720.webp',medium:'assets/rebuild/outfit-ember-duelist/front-back-accessories-16x9-v1-1200.webp'},
+  emberDuelistLayers:{small:'assets/rebuild/outfit-ember-duelist/layer-progression-16x9-v1-720.webp',medium:'assets/rebuild/outfit-ember-duelist/layer-progression-16x9-v1-1200.webp'},
+  marshWardenMaterials:{small:'assets/rebuild/pbr-marsh-warden/material-inspection-16x9-v1-720.webp',medium:'assets/rebuild/pbr-marsh-warden/material-inspection-16x9-v1-1200.webp'},
+  conceptSculpt:{small:'assets/rebuild/concept-to-character/sculpt-development-16x9-v1-720.webp',medium:'assets/rebuild/concept-to-character/sculpt-development-16x9-v1-1200.webp'},
+  conceptMaterials:{small:'assets/rebuild/concept-to-character/material-construction-16x9-v1-720.webp',medium:'assets/rebuild/concept-to-character/material-construction-16x9-v1-1200.webp'}
+};
+
+Object.entries(RESPONSIVE_MEDIA_VARIANTS).forEach(([key,responsive])=>{
+  APPROVED_MEDIA[key].responsive=responsive;
+});
+
 const PUBLIC_PRESENTATION={
   'game-hero':{
     hero:APPROVED_MEDIA.forgeWardenHero,
@@ -1128,10 +1160,27 @@ CASE_STUDIES.forEach(study=>{
 
 const fallbackStudy=CASE_STUDIES[0];
 const params=new URLSearchParams(window.location.search);
-const selectedId=params.get('id')||'game-hero';
+const selectedId=document.body.dataset.caseId||params.get('id')||'game-hero';
 const selectedStudy=CASE_STUDIES.find(item=>item.id===selectedId);
 const currentStudy=selectedStudy||fallbackStudy;
 const SEO_SITE_ORIGIN='https://leslyyankauskas.com';
+const PUBLIC_ASSET_VERSION='__PUBLIC_ASSET_VERSION__';
+
+function caseStudyHref(id){
+  return document.body.hasAttribute?.('data-static-case')
+    ?`work/${encodeURIComponent(id)}/`
+    :`case-study.html?id=${encodeURIComponent(id)}`;
+}
+
+function caseStudyCanonicalUrl(id){
+  return `${SEO_SITE_ORIGIN}/work/${encodeURIComponent(id)}/`;
+}
+
+function versionedAssetUrl(value){
+  if(!value||!value.startsWith('assets/'))return value;
+  const separator=value.includes('?')?'&':'?';
+  return `${value}${separator}v=${PUBLIC_ASSET_VERSION}`;
+}
 
 function setMetaContent(selector,value){
   const node=document.querySelector(selector);
@@ -1149,12 +1198,13 @@ function conciseSeoDescription(value,maxLength=180){
 function renderSeo(study,isValidStudy){
   const pageTitle=`${study.title} | Lesly`;
   const description=conciseSeoDescription(study.seoDescription||study.lead);
-  const canonicalUrl=`${SEO_SITE_ORIGIN}/case-study.html?id=${encodeURIComponent(study.id)}`;
+  const canonicalUrl=caseStudyCanonicalUrl(study.id);
   const imageUrl=new URL(study.hero?.src||study.image||'',`${SEO_SITE_ORIGIN}/`).href;
+  const isStaticCase=Boolean(document.body.hasAttribute?.('data-static-case'));
 
   document.title=pageTitle;
   setMetaContent('[data-seo-description]',description);
-  setMetaContent('[data-seo-robots]',isValidStudy
+  setMetaContent('[data-seo-robots]',isValidStudy&&isStaticCase
     ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
     : 'noindex, follow');
   setMetaContent('[data-seo-og-title]',pageTitle);
@@ -1274,12 +1324,16 @@ function renderGallery(study){
   node.innerHTML=study.gallery.map(media=>{
     const aspectClass=`case-media--${media.aspect.replace('/','x')}`;
     const isWide=media.aspect==='16/9';
+    const srcset=media.responsive
+      ?` srcset="${versionedAssetUrl(media.responsive.small)} 720w, ${versionedAssetUrl(media.responsive.medium)} 1200w, ${versionedAssetUrl(media.src)} ${media.width}w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1200px) calc(100vw - 4rem), 900px"`
+      :'';
     return `
     <figure class="case-media ${isWide?'is-wide ':''}${aspectClass}">
-      <img src="${media.src}" width="${media.width}" height="${media.height}" alt="${media.alt}" loading="lazy" decoding="async">
+      <img src="${versionedAssetUrl(media.src)}"${srcset} width="${media.width}" height="${media.height}" alt="${media.alt}" loading="lazy" decoding="async" data-progressive-image>
       <figcaption>${media.caption}</figcaption>
     </figure>`;
   }).join('');
+  window.prepareProgressiveImages?.(node);
 }
 
 function renderResult(study,isVisible=true){
@@ -1345,15 +1399,25 @@ function renderRelated(study){
     .map(item=>{
       const relatedScope=item.kicker||'Selected work';
       const relatedLead=item.relatedLead||'Explore the project story and final presentation.';
-      const thumb=item.hero?`<img src="${item.hero.src}" width="${item.hero.width}" height="${item.hero.height}" alt="" loading="lazy" decoding="async">`:`<span class="thumb-label">${relatedScope}<small>Project story</small></span>`;
+      const responsiveSrc=item.hero?.src.endsWith('.webp')
+        ?item.hero.src.replace(/\.webp$/, '-800.webp')
+        :'';
+      const responsiveSrcLarge=item.hero?.src.endsWith('.webp')
+        ?item.hero.src.replace(/\.webp$/, '-960.webp')
+        :'';
+      const srcset=responsiveSrc
+        ?` srcset="${versionedAssetUrl(responsiveSrc)} 800w, ${versionedAssetUrl(responsiveSrcLarge)} 960w, ${versionedAssetUrl(item.hero.src)} ${item.hero.width}w" sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2rem), 360px"`
+        :'';
+      const thumb=item.hero?`<img src="${versionedAssetUrl(item.hero.src)}"${srcset} width="${item.hero.width}" height="${item.hero.height}" alt="" loading="lazy" decoding="async" data-progressive-image>`:`<span class="thumb-label">${relatedScope}<small>Project story</small></span>`;
       return `
-      <a class="work-card" data-related-case="${item.id}" data-visual-family="${CASE_VISUAL_FAMILY[item.id]||item.id}" href="case-study.html?id=${item.id}">
+      <a class="work-card" data-related-case="${item.id}" data-visual-family="${CASE_VISUAL_FAMILY[item.id]||item.id}" href="${caseStudyHref(item.id)}">
         <div class="thumb${item.hero?'':' thumb--text'}">${thumb}</div>
         <h3>${item.title}</h3>
         <p class="meta">${relatedScope}</p>
         <p>${relatedLead}</p>
       </a>
     `}).join('');
+  window.prepareProgressiveImages?.(node);
 }
 
 function renderStudy(study){
@@ -1368,7 +1432,7 @@ function renderStudy(study){
     if(study.hero){
       heroFigure?.removeAttribute('hidden');
       hero.removeAttribute('hidden');
-      hero.src=study.hero.src;
+      hero.src=versionedAssetUrl(study.hero.src);
       hero.alt=study.hero.alt;
       hero.width=study.hero.width;
       hero.height=study.hero.height;
